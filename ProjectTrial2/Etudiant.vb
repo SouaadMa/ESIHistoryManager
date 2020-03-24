@@ -1,22 +1,22 @@
 ﻿Public Class Etudiant
-    Implements IComparable(Of Etudiant)
+    Implements IComparable(Of Etudiant)  'La classe implémente Comparable
 
-    Private Id As String
+    Private Id As String 'L'identité de l'étudiant (son matricule)
 
-    Public Function getId() As String
+    Public Function getId() As String 'Getter pour l'Id
         Return Me.Id
     End Function
 
     Public Function CompareTo(ByVal other As Etudiant) As Integer _
-        Implements IComparable(Of WindowsApplication1.Etudiant).CompareTo
+        Implements IComparable(Of WindowsApplication1.Etudiant).CompareTo 'La méthode de la classe Comparable
 
-        Return (Me.getInfo("Moyenne").CompareTo(other.getInfo("Moyenne")))
+        Return (Me.getInfo("Moyenne").CompareTo(other.getInfo("Moyenne"))) 'Elle compare entre les moyennes des deux étudiants
 
     End Function
 
     Public Function getInfo(ByVal champs As String) As Object
-        'Return ClasseBDD.getInfoBDD(Id, champs)
-        Return Nothing
+        'Return BDD.getInfoBDD(Id, champs)    'Décommenter lorsque la méthode getInfoBDD est disponible
+        Return Nothing 'Supprimer cette ligne lorsque vous décommenter la ligne précédente
 
     End Function
 

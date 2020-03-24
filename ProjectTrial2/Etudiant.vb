@@ -10,7 +10,7 @@
     Public Function CompareTo(ByVal other As Etudiant) As Integer _
         Implements IComparable(Of WindowsApplication1.Etudiant).CompareTo
 
-        Return (Me.Id.CompareTo(other.getId()))
+        Return (Me.getInfo("Moyenne").CompareTo(other.getInfo("Moyenne")))
 
     End Function
 

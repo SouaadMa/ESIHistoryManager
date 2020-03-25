@@ -7,6 +7,10 @@
         Return Me.Id
     End Function
 
+    Public Sub New(ByVal i As String)
+        Id = i
+    End Sub
+
     Public Function CompareTo(ByVal other As Etudiant) As Integer _
         Implements IComparable(Of WindowsApplication1.Etudiant).CompareTo 'La méthode de la classe Comparable
 

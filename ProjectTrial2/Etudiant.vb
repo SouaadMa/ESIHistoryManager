@@ -12,7 +12,7 @@
     End Sub
 
     Public Function CompareTo(ByVal other As Etudiant) As Integer _
-        Implements IComparable(Of WindowsApplication1.Etudiant).CompareTo 'La méthode de la classe Comparable
+        Implements IComparable(Of Etudiant).CompareTo 'La méthode de la classe Comparable
 
         Return (Me.getInfo("Moyenne").CompareTo(other.getInfo("Moyenne"))) 'Elle compare entre les moyennes des deux étudiants
 

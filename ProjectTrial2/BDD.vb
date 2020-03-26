@@ -2,6 +2,8 @@
 
 Public Class BDD
 
+    ' les tableaux qui contient les champs des tableaux de base de donnée :
+    Private stringETUDIANT() As String = {"NomEtud", "Prenoms", "NomEtudA", "PrenomsA", "MATRIC_INS", "MATRIN", "DateNais", "LieuNaisA", "WilayaNaisA",
          "LieuNais", "ADRESSE", "VILLE", "WILAYA", "CODEPOS", "WILBAC", "SERIEBAC", "FILS_DE", "ET_DE"}
     Private stringINSECRIPTION() As String = {"MATRIN", "CodeGroupe", "DECIIN", "DEC", "ADM"}
     Private stringGROUP() As String = {"NG"}

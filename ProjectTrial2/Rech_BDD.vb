@@ -50,7 +50,7 @@ Public Class Rech_BDD
                     instructionSQL = " SELECT * FROM ETUDIANT WHERE "  ' -> affecter la valeur d'une requete de rechercher retourne tout les champs de tableau ETUDIANT
                 ElseIf instructionSQL.Contains("WHERE") Then           ' Sinon, Si la instructionSQL contient WHERE
                     If Not LastWord(instructionSQL, "WHERE") Then      '-> Si WHERE n'est pas la derniere mot de instructionSQL
-                        instructionSQL = instructionSQL + ", "                    '-> ajouter un vergule "," au instructionSQL 
+                        instructionSQL = instructionSQL + " AND "                    '-> ajouter un vergule "," au instructionSQL 
                     End If
                 Else                                            ' Sinon ( Si la instructionSQL n'est pas vide et ne contient pas WHERE
                     instructionSQL = instructionSQL + " WHERE "               '-> ajouter WHERE au instructionSQL

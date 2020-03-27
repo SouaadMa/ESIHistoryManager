@@ -56,7 +56,7 @@ Public Class BDD
     Public Shared Function executeRequete(ByVal requete As String) As DataTable
         ' exécuter le requet SQL 'requet' sur la base de donnée 
         Dim cnx As OleDbConnection                  ' la connection 
-        cnx = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\2CP\S2\PROJET\VisualStudioProject\Project\Project\Base de données.accdb")
+        cnx = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\Base_de_donnees.accdb")
         Dim cmd As OleDbCommand                     ' la commande
         Dim ta As OleDbDataAdapter                  ' le Data Adapter
         Dim dts As New DataSet                      ' le Data Set

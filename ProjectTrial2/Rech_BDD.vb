@@ -28,17 +28,22 @@ Public Class Rech_BDD
                     valeur = critere.getValeur
                     'Case Else     tab = {}
             End Select
-            While Not found And ind < tab.Length                ' Chercher si le champ donnée existe dans les tableaux de la base de donnée  
-                i = 0
-                While Not found And i < tab(ind).Length         ' Parcourir les tableaux jusqu'a trouver le champ ou atteindre la fin de tableau
-                    If critere.getChamps.Equals(tab(ind)(i)) Then
-                        found = True
-                    Else
-                        i += 1
-                    End If
+            Try
+                While Not found And ind < tab.Length                ' Chercher si le champ donnée existe dans les tableaux de la base de donnée  
+                    i = 0
+                    While Not found And i < tab(ind).Length         ' Parcourir les tableaux jusqu'a trouver le champ ou atteindre la fin de tableau
+                        If critere.getChamps.Equals(tab(ind)(i)) Then
+                            found = True
+                        Else
+                            i += 1
+                        End If
+                    End While
+                    ind += 1
                 End While
-                ind += 1
-            End While
+            Catch ex As Exception
+                MsgBox(" NULL REFERENCE EXCEPTION! ")
+            End Try
+            
             If found Then                                       ' Si le champ donnée existe dans la base de donnée
                 If stringvide(instructionSQL) Then                     ' Si la requete donnée vide ou contient seulement des espaces
                     instructionSQL = " SELECT * FROM ETUDIANT WHERE "  ' -> affecter la valeur d'une requete de rechercher retourne tout les champs de tableau ETUDIANT

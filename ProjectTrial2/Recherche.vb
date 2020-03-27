@@ -15,11 +15,11 @@
 
         'Pour chaque critère on fait appel à génèreRequete
         For Each crit As Critere In criteres
-            Rech_BDD.genereRechRequetes(instructionSQL, crit)
+        instructionSQL=Rech_BDD.genereRechRequetes(instructionSQL, crit)
         Next
 
         'On passe la requête finale à ExécuteRequ et on sauvegarde son résultat
-        resultatRech = BDD.executeRecherche(instructionSQL)
+    resultatRech = BDD.executeRequete(instructionSQL)
 
         'Pour chaque ligne du DataTable on crée un objet étudiant
         'Et on ajoute l'objet créé à la collection des étudiants à retourner

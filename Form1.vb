@@ -21,9 +21,10 @@ Public Class Form1
 
 
 
-    Function GETINFO(ByVal CHAMP As String, ByVal Matricule As String) As String
+    Function getInfoBDD(ByVal chmaps As String, ByVal matricule As String) As String
+
         Dim Resultat As String
-        con = New OleDbConnection("provider=Microsoft.jet.oledb.4.0; data source=VISUAL.accdb")
+        con = New OleDbConnection("provider=Microsoft.jet.oledb.4.0; data source=.accdb")
         sql = "Select * from INSCRIPTION where MATRICULE='" & 2 / 149 & "'"
         Try
             con.Open()

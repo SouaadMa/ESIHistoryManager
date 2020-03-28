@@ -18,9 +18,9 @@
 
     End Function
 
-    Public Function getInfo(ByVal champs As String) As Object
-        'Return BDD.getInfoBDD(Id, champs)    'Décommenter lorsque la méthode getInfoBDD est disponible
-        Return Nothing 'Supprimer cette ligne lorsque vous décommenter la ligne précédente
+    Public Function getInfo(ByVal champs As String) As String
+
+        Return BDD.getInfoBDD(champs, Id) 'retourner l'information du champs 'champs' de l'étudiant
 
     End Function
 

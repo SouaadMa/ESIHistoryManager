@@ -20,7 +20,7 @@
 
         'On passe la requête finale à ExécuteRequ et on sauvegarde son résultat
 
-  resultatRech = BDD.executeRequete(instructionSQL)
+        resultatRech = BDD.executeRequete(instructionSQL)
 
 
         'Pour chaque ligne du DataTable on crée un objet étudiant

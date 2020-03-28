@@ -283,9 +283,9 @@
             Me.worningrech.Text = "Vous devez remplir en mois un champs !"
         Else
 
-            'no research if he had fill the long fealds with des chaines de char
+            'aucune recherche est éffectuée si tous les champs sont vides 
 
-            'exeption pour le matricule
+            'ecxeption pour le matricule
 
             If Me.TXT_MATRICUL.Text <> "" Then
                 i = 0
@@ -338,7 +338,7 @@
                 End While
             End If
 
-            'filling la collections des crietere
+            'remplir la collections des criteres
 
             Dim collection_critere As New List(Of Critere)
 
@@ -423,6 +423,9 @@
             ' appel a traite rechercher
 
 
+            Dim listeEtudiants As List(Of Etudiant) = Recherche.traitRechercher(collection_critere)
+
+   
             'handling the appearnce of the affichage form
 
             Home.f = New affichResearchResult()         ' assign the search form to  the f form
@@ -524,4 +527,7 @@
         Me.worningrech.Visible = False
     End Sub
 
+    Private Sub generalesGroupBox_Enter(sender As System.Object, e As System.EventArgs) Handles generalesGroupBox.Enter
+
+    End Sub
 End Class

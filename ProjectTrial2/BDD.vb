@@ -2,7 +2,7 @@
 
 Public Class BDD
 
-    ' les tableaux qui contient les champs des tableaux de base de donnée :
+    ' les tableaux qui contiennet les champs des tableaux de base de données :
     Private stringETUDIANT() As String = {"NomEtud", "Prenoms", "NomEtudA", "PrenomsA", "MATRIC_INS", "MATRIN", "DateNais", "LieuNaisA", "WilayaNaisA",
          "LieuNais", "ADRESSE", "VILLE", "WILAYA", "CODEPOS", "WILBAC", "SERIEBAC", "FILS_DE", "ET_DE"}
     Private stringINSECRIPTION() As String = {"MATRIN", "CodeGroupe", "DECIIN", "DEC", "ADM"}
@@ -54,9 +54,9 @@ Public Class BDD
     End Function
 
     Public Shared Function executeRequete(ByVal requete As String) As DataTable
-        ' exécuter le requet SQL 'requet' sur la base de donnée 
-        Dim cnx As OleDbConnection                  ' la connection 
-        cnx = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\Base_de_donnees.accdb")
+        'retourner un dataTable contenant les étudiants qui vérifient la requête
+
+        Dim cnx As OleDbConnection = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\Base_de_donnees.accdb")  'la connexion à la BDD
         Dim cmd As OleDbCommand                     ' la commande
         Dim ta As OleDbDataAdapter                  ' le Data Adapter
         Dim dts As New DataSet                      ' le Data Set
@@ -65,26 +65,68 @@ Public Class BDD
         dt = New DataTable()
 
         Try
-            cnx.Open()                               ' ouvrir la connection avec la base de donnée
-            Try
+            cnx.Open()                               ' ouvrir la connection avec la base de données
 
-                cmd = New OleDbCommand(requete, cnx) ' donner le requete SQL et la connection au commande
-                ta = New OleDbDataAdapter(cmd)       ' creer un nouveau DataAdapter
-                ta.Fill(dts)                         ' fill le data set par le résultat de l'éxécution de requete ( de data adapter ) 
 
-                dt = dts.Tables("table")             'mettre dans le data table le résultat de l'éxécution de requete ( le data set )
+            cmd = New OleDbCommand(requete, cnx) ' la connection au commande
+            ta = New OleDbDataAdapter(cmd)       ' creer un nouveau DataAdapter
+            ta.Fill(dts)                         ' remplir le data set par le résultat de l'éxécution de la requête ( de data adapter ) 
 
-                MsgBox(" Command execute ")
-            Catch ex As Exception
-                MsgBox(" Command non execute ")
-            End Try
+            dt = dts.Tables("table")              'mettre dans le data table le résultat de l'éxécution de requête ( le data set )
 
-            'ta.Dispose()            
-            cnx.Close()                              'fermer la connection
         Catch ex As Exception
-            MsgBox(" Connection not openning ! ")
+            MsgBox("  La connexion à la base de données est échouée :( ")
+        Finally
+            cnx.Close()                              'fermer la connexion
         End Try
+
         Return dt
+
+    End Function
+
+
+    Public Shared Function getInfoBDD(ByVal champs As String, ByVal matricule As String) As String
+        ' retourner une information d'un champ spécifié "champs"  d'un étudiant idantifié par son "MATRICULE" 
+
+
+        Dim da As New OleDb.OleDbDataAdapter        'le data adapter
+        Dim con As OleDb.OleDbConnection = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;data source=..\..\Base_de_donnees.accdb")       'la connexion à la BDD
+        Dim dt As New DataTable                     'le datatable
+        Dim cmd As OleDbCommand                     'la commande
+        Dim dts As New DataSet                      'le Data Set
+        Dim Resultat As Object = ""  'l'information qu'on cherche sur l'étudiant
+        Dim sql As String = " SELECT * FROM ETUDIANT WHERE MATRIN='" & matricule & "'"  'l'instruction SQL 
+
+
+        Try
+            con.Open()  'ouvrir la connexion
+
+            'creer un adaptateur à partir de la connexion et l'instruction SQL
+
+            cmd = New OleDbCommand(sql, con) ' donner le requete SQL et la connection au commande
+            da = New OleDbDataAdapter(cmd)       ' creer un nouveau DataAdapter
+
+
+            'remplir le dataset par le résultat de l'exécution de la requête
+            da.Fill(dts)
+
+            'extraire le dataTable
+            dt = dts.Tables("table")
+
+            'parcourir le dataTable pour récupérer l'information 
+
+            For Each row As DataRow In dt.Rows
+                Resultat = CType(row(champs), String)
+            Next
+
+        Catch ex As Exception
+            MsgBox(" La connexion à la base de données est échouée :( ")
+        Finally
+            'close connection
+            con.Close()
+        End Try
+
+        Return Resultat
 
     End Function
 

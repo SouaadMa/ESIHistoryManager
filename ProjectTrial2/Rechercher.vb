@@ -425,7 +425,9 @@
 
             Dim listeEtudiants As List(Of Etudiant) = Recherche.traitRechercher(collection_critere)
 
-   
+
+
+
             'handling the appearnce of the affichage form
 
             Home.f = New affichResearchResult()         ' assign the search form to  the f form

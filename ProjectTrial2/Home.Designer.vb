@@ -56,7 +56,6 @@ Partial Class Home
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.SideBar.SuspendLayout()
         Me.ProfilePane.SuspendLayout()
         CType(Me.mode_photo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -74,7 +73,6 @@ Partial Class Home
         Me.SideBar.Controls.Add(Me.BT_STAT, 0, 2)
         Me.SideBar.Controls.Add(Me.BT_RECH, 0, 3)
         Me.SideBar.Controls.Add(Me.BT_PV, 0, 4)
-        Me.SideBar.Controls.Add(Me.Label1, 0, 5)
         Me.SideBar.Location = New System.Drawing.Point(0, 117)
         Me.SideBar.Margin = New System.Windows.Forms.Padding(0)
         Me.SideBar.Name = "SideBar"
@@ -593,16 +591,6 @@ Partial Class Home
         Me.Label3.TabIndex = 1
         Me.Label3.Text = "Bienvenue a"
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.ForeColor = System.Drawing.Color.Cornsilk
-        Me.Label1.Location = New System.Drawing.Point(3, 381)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(42, 14)
-        Me.Label1.TabIndex = 6
-        Me.Label1.Text = "Label1"
-        '
         'Home
         '
         Me.AcceptButton = Me.MenuButton
@@ -630,7 +618,6 @@ Partial Class Home
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Home"
         Me.SideBar.ResumeLayout(False)
-        Me.SideBar.PerformLayout()
         Me.ProfilePane.ResumeLayout(False)
         Me.ProfilePane.PerformLayout()
         CType(Me.mode_photo, System.ComponentModel.ISupportInitialize).EndInit()
@@ -675,6 +662,5 @@ Partial Class Home
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label1 As System.Windows.Forms.Label
 
 End Class

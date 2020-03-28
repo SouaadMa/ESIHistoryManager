@@ -416,10 +416,10 @@
                 If Me.CB_ANNEEB.Text <> "" Then
                     collection_critere.Add(New Critere("ANNEEBAC", Me.CB_ANNEEB.Text))
                 End If
-
+                Me.Close()
             End If
 
-            Me.Close()
+
             ' appel a traite rechercher
 
 

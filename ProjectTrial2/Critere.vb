@@ -1,5 +1,4 @@
-﻿
-Public Class Critere
+﻿Public Class Critere
     Private champs As String 'Le nom du champs
     Private valeur As Object 'La valeur correspondante au champs
 

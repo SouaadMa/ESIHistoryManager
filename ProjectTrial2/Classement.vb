@@ -1,5 +1,5 @@
 ﻿Public Class Classement
-    
+    'Classe pour la fonctionnalité du classement et du tri des étudiants
 
     Public Shared Function SortCollection(ByVal collection As List(Of Etudiant), ByVal champs As String) As List(Of Etudiant)
 

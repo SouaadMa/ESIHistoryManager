@@ -2,9 +2,11 @@
 
     Private dtp_changed As Boolean
 
-    ' initialize the language button in the search form
+    ' initialize les noms des buttons de la forme de recherche
+
     Private Sub ARButton_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ARButton1.CheckedChanged
-        If ARButton1.Checked Then
+        'Manipuler les buttons de langage de recherche de nom et prénom
+        If ARButton1.Checked Then       ' Si le botton de langage de recherche de nom et prenom est en arabe
             With ARButton1
                 .BackColor = Color.FromArgb(0, 64, 104)
                 .FlatStyle = FlatStyle.Popup
@@ -39,7 +41,7 @@
                 .Enabled = True
                 .Visible = True
             End With
-        Else
+        Else                        ' Si le botton de langage de recherche de nom et prenom est en français
             With ARButton1
                 .BackColor = Color.FromArgb(162, 119, 113)
                 .FlatStyle = FlatStyle.Standard
@@ -81,7 +83,8 @@
 
 
     Private Sub ARButton2_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ARButton2.CheckedChanged
-        If ARButton2.Checked Then
+        'Manipuler les buttons de langage de recherche de lieu de naissance
+        If ARButton2.Checked Then   ' Si la recherche de lieu de naissance est en arabe
             With ARButton2
                 .BackColor = Color.FromArgb(0, 64, 104)
                 .FlatStyle = FlatStyle.Popup
@@ -104,7 +107,7 @@
                 .Visible = True
             End With
 
-        Else
+        Else                ' Si la recherche de lieu de naissance est en français
             With ARButton2
                 .BackColor = Color.FromArgb(162, 119, 113)
                 .FlatStyle = FlatStyle.Standard
@@ -132,7 +135,8 @@
     End Sub
 
     Private Sub ARButton3_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ARButton3.CheckedChanged
-        If ARButton3.Checked Then
+        'Manipuler les buttons de langage de recherche de wilaya de naissance
+        If ARButton3.Checked Then   ' Si la recherche de wilaya de naissance est en arabe
             With ARButton3
                 .BackColor = Color.FromArgb(0, 64, 104)
                 .FlatStyle = FlatStyle.Popup
@@ -155,7 +159,7 @@
                 .Visible = True
             End With
 
-        Else
+        Else            ' Si la recherche de wilaya de naissance est en français
             With ARButton3
                 .BackColor = Color.FromArgb(162, 119, 113)
                 .FlatStyle = FlatStyle.Standard
@@ -199,7 +203,7 @@
     End Sub
 
     Private Sub recherche_load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
+        ' Initialiser les champs de fenetre de recherche
         Dim i As Integer
 
         'insialize the worning messages
@@ -270,14 +274,14 @@
     End Sub
 
     Private Sub BT_LANCERRECH_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_LANCERRECH.Click
-
+        ' Lancement et traitement de fenetre de recherche
         Dim i As Integer
-
 
         'les exeptions possibles
 
         'no research if he had fill nothing
 
+        'Exception Si tous les champs sont vides
         If Me.TXT_ADR.Text = "" And Me.TXT_CODEPOS.Text = "" And Me.TXT_LIEUN.Text = "" And Me.TXT_LIEUNA.Text = "" And Me.TXT_MATRICUL.Text = "" And Me.TXT_MATRICULB.Text = "" And Me.TXT_MOYBAC.Text = "" And Me.TXT_NOM.Text = "" And Me.TXT_NOMA.Text = "" And Me.TXT_PRENOM.Text = "" And Me.TXT_PRENOMA.Text = "" And Me.TXT_VILLE.Text = "" And Me.CB_ANNEEB.Text = "" And Me.CB_SERI.Text = "" And Me.CB_SEXE.Text = "" And Me.CB_WILAYA.Text = "" And Me.CB_WILAYAB.Text = "" And Me.CB_WILAYAN.Text = "" And Me.CB_WILAYANA.Text = "" And Me.dtp_changed = False Then
             Me.worningrech.Visible = True
             Me.worningrech.Text = "Vous devez remplir en mois un champs !"
@@ -287,7 +291,7 @@
 
             'exeption pour le matricule
 
-            If Me.TXT_MATRICUL.Text <> "" Then
+            If Me.TXT_MATRICUL.Text <> "" Then   ' Si l'utilisateur écrit un matricule
                 i = 0
                 While i < TXT_MATRICUL.Text.Length And Me.worningrech.Visible = False
                     If Me.TXT_MATRICUL.Text(i) > "9" Or Me.TXT_MATRICUL.Text(i) < "0" Then
@@ -299,8 +303,8 @@
                 End While
             End If
 
-            'exeption pour le matricul du bac
-            If Me.TXT_MATRICULB.Text <> "" Then
+            'exeption pour le matricule du bac
+            If Me.TXT_MATRICULB.Text <> "" Then     ' Si l'utilisateur écrit un matricule de BAC
                 i = 0
                 While i < TXT_MATRICULB.Text.Length And Me.worningrech.Visible = False
                     If Me.TXT_MATRICULB.Text(i) > "9" Or Me.TXT_MATRICULB.Text(i) < "0" Then
@@ -313,7 +317,7 @@
             End If
 
             'exeption pour la moyenne du bac
-            If Me.TXT_MOYBAC.Text <> "" Then
+            If Me.TXT_MOYBAC.Text <> "" Then        ' Si l'utilisateur écrit une moyenne de BAC
                 i = 0
                 While i < TXT_MOYBAC.Text.Length And Me.worningrech.Visible = False
                     If Me.TXT_MOYBAC.Text(i) > "9" Or Me.TXT_MOYBAC.Text(i) < "0" Then
@@ -326,7 +330,7 @@
             End If
 
             'exeption pour le code postal
-            If Me.TXT_CODEPOS.Text <> "" Then
+            If Me.TXT_CODEPOS.Text <> "" Then   ' Si l'utilisateur écrit un code postale
                 i = 0
                 While i < TXT_CODEPOS.Text.Length And Me.worningrech.Visible = False
                     If Me.TXT_CODEPOS.Text(i) > "9" Or Me.TXT_CODEPOS.Text(i) < "0" Then
@@ -338,7 +342,7 @@
                 End While
             End If
 
-            'filling la collections des crietere
+            'Remlir la collections des crietere
 
             Dim collection_critere As New List(Of Critere)
 
@@ -419,9 +423,17 @@
                 Me.Close()
             End If
 
+            'Essaye de list des criteres , affichage de list:
+            Dim s As String = ""
+            For Each ele As Critere In collection_critere
+                s = s + " ( " + ele.getChamps + " ; " + ele.getValeur + " ) "
+            Next
+            MsgBox(s)
+            'Effacer ces lignes après 
 
+            Dim resultat As List(Of Etudiant) = New List(Of Etudiant)
             ' appel a traite rechercher
-
+            resultat = Recherche.traitRechercher(collection_critere)
 
             'handling the appearnce of the affichage form
 

@@ -84,6 +84,7 @@
     </Compile>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="BDD.vb" />
+    <Compile Include="Classement.vb" />
     <Compile Include="Critere.vb" />
     <Compile Include="Etudiant.vb" />
     <Compile Include="Form1.Designer.vb">

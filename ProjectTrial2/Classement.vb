@@ -37,7 +37,7 @@
             Dim y_cust As Etudiant = DirectCast(y,  _
                 Etudiant)
 
-            Return x_cust.getInfo(ChampsComparaison).CompareTo(y_cust.getInfo(ChampsComparaison))
+            Return x_cust.GetInfoChamps(ChampsComparaison).CompareTo(y_cust.GetInfoChamps(ChampsComparaison))
 
         End Function
     End Class

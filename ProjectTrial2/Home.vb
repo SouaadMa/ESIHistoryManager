@@ -76,12 +76,12 @@
             With Me.MainContainer
                 .Location = New System.Drawing.Point(185, 1)
                 .Width = 680
-                If .Controls.Count > 0 Then
-                    '.Controls.Item(0).Scale(New System.Drawing.SizeF(0.9, 1))
-                    .Controls.Item(0).Anchor = AnchorStyles.None
-                    .Controls.Item(0).Dock = DockStyle.Fill
-                    Console.Write(.Controls.Item(0).Name)
-                End If
+                'If .Controls.Count > 0 Then
+                '    .Controls.Item(0).Scale(New System.Drawing.SizeF(1 / 1.2, 1))
+                '    .Controls.Item(0).Anchor = AnchorStyles.None
+                '    .Controls.Item(0).Dock = DockStyle.Fill
+                '    Console.Write(.Controls.Item(0).Name)
+                'End If
             End With
 
         Else
@@ -93,12 +93,12 @@
             With Me.MainContainer
                 .Location = New System.Drawing.Point(60, 1)
                 .Width += 125
-                If .Controls.Count > 0 Then
-                    '.Controls.Item(0).Scale(New System.Drawing.SizeF(1.1, 1))
-                    .Controls.Item(0).Anchor = AnchorStyles.None
-                    .Controls.Item(0).Dock = DockStyle.Fill
-                    Console.Write(.Controls.Item(0).Name)
-                End If
+                'If .Controls.Count > 0 Then
+                '    .Controls.Item(0).Scale(New System.Drawing.SizeF(1.2, 1))
+                '    .Controls.Item(0).Anchor = AnchorStyles.None
+                '    .Controls.Item(0).Dock = DockStyle.Fill
+                '    Console.Write(.Controls.Item(0).Name)
+                'End If
             End With
 
         End If
@@ -222,18 +222,54 @@
         Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
         f = New Rechercher()         ' assign the search form to  the f form
         f.TopLevel = False
-        'f.TopMost = True
+        f.TopMost = True
         f.WindowState = FormWindowState.Normal
         Me.MainContainer.Controls.Add(f)        ' add the controlers of the searche page to the main form f 
         f.Show()                                ' show the form f in the middle of the home page
         Me.MainContainer.Visible = True
-        Me.MainContainer.Width = 680            ' adjust its appearance
+        'Me.MainContainer.Width = 680            ' adjust its appearance
 
     End Sub
 
     Private Sub BT_modif_mdp_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_modif_mdp.Click
         modifpassword.Show()
     End Sub
+
+    Private Sub maincontainer_sizechanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MainContainer.SizeChanged
+        If MainContainer.Width = 680 Then
+            With MainContainer
+                If .Controls.Count > 0 Then
+                    .Controls.Item(0).Scale(New System.Drawing.SizeF(1 / 1.2, 1))
+                    .Controls.Item(0).Anchor = AnchorStyles.None
+                    .Controls.Item(0).Dock = DockStyle.Fill
+                    Console.Write(.Controls.Item(0).Name + " sized little")
+                End If
+            End With
+        Else
+            With MainContainer
+                If .Controls.Count > 0 Then
+                    .Controls.Item(0).Scale(New System.Drawing.SizeF(1.2, 1))
+                    .Controls.Item(0).Anchor = AnchorStyles.None
+                    .Controls.Item(0).Dock = DockStyle.Fill
+                    Console.Write(.Controls.Item(0).Name + "sized big")
+                End If
+            End With
+        End If
+    End Sub
+
+    Private Sub MainContainer_ControlAdded(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ControlEventArgs) Handles MainContainer.ControlAdded
+        If MainContainer.Width = 805 Then
+            With MainContainer
+                If .Controls.Count > 0 Then
+                    .Controls.Item(0).Scale(New System.Drawing.SizeF(1.2, 1))
+                    .Controls.Item(0).Anchor = AnchorStyles.None
+                    .Controls.Item(0).Dock = DockStyle.Fill
+                    Console.Write(.Controls.Item(0).Name + "added ")
+                End If
+            End With
+        End If
+    End Sub
+
 End Class
 
 

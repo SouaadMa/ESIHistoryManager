@@ -427,12 +427,12 @@
 
             Home.f = New affichResearchResult()         ' assign the search form to  the f form
             Home.f.TopLevel = False
-            'f.TopMost = True
+            Home.f.TopMost = True
             Home.f.WindowState = FormWindowState.Normal
             Home.MainContainer.Controls.Add(Home.f)        ' add the controlers of the searche page to the main form f 
             Home.f.Show()                                ' show the form f in the middle of the home page
             Home.MainContainer.Visible = True
-            Home.MainContainer.Width = 680            ' adjust its appearance
+            'Home.MainContainer.Width = 680            ' adjust its appearance
 
         End If
 

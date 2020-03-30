@@ -14,13 +14,13 @@
         nb_stdRech.Visible = True
         LB_INFOAFFICH.Visible = True
         LB_noresult.Visible = False
-        BT_PREV.Visible = False
+        BT_PREV.Enabled = False
 
         'appel a la fonction qui nous donne la collection des etudiants 
-
+        Me.AffPanel.Dock = DockStyle.Fill   ' dock the seach form in the parent container
 
         ' inisializer le nombre des esist
-        Me.nb_stdRech.Text = collection_etudiant.Count.ToString
+        Me.nb_stdRech.Text = collection_etudiant.Count.ToString + " etudiants trouves"
 
         'inisializer le bar des pages
         If (collection_etudiant.Count Mod 7) = 0 Then
@@ -30,11 +30,11 @@
         End If
 
         If nb_page = 0 Then 'if there is no result
-            PN_AFFICHRECH.Visible = False
-            PN_PAGES.Visible = False
-            nb_stdRech.Visible = False
-            LB_INFOAFFICH.Visible = False
-            LB_noresult.Visible = True
+            'PN_AFFICHRECH.Visible = False
+            'PN_PAGES.Visible = False
+            'nb_stdRech.Visible = False
+            'LB_INFOAFFICH.Visible = False
+            'LB_noresult.Visible = True
         Else
             If nb_page <= 4 Then
                 BT_NEXT.Visible = False
@@ -54,6 +54,8 @@
 
 
         End If
+
+
 
 
 
@@ -98,4 +100,5 @@
             Me.BT_PREV.Visible = False
         End If
     End Sub
+
 End Class

@@ -497,7 +497,7 @@ Partial Class Home
         '
         'MainContainer
         '
-        Me.MainContainer.BackColor = System.Drawing.Color.Transparent
+        Me.MainContainer.BackColor = System.Drawing.Color.White
         Me.MainContainer.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MainContainer.Location = New System.Drawing.Point(185, 1)
         Me.MainContainer.Margin = New System.Windows.Forms.Padding(0)

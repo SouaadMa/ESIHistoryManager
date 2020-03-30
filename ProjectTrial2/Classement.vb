@@ -19,7 +19,8 @@
         Implements IComparer(Of Etudiant)
 
         ' L'attribut décide le champs avec lequel les étudiants seront comparés.
-        Public ChampsComparaison As String = "Matricule"
+        Public ChampsComparaison As String = BDD.champsMATRIN
+
 
         Public Sub New(ByVal compare_type As String)
             ChampsComparaison = compare_type

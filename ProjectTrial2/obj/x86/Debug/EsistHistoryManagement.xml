@@ -147,6 +147,14 @@ EsistHistoryManagement
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.page_num_current">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.page_num_hover">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.page_num1">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

@@ -528,7 +528,7 @@ Partial Class Home
         Me.Label8.Location = New System.Drawing.Point(84, 370)
         Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(399, 20)
+        Me.Label8.Size = New System.Drawing.Size(373, 18)
         Me.Label8.TabIndex = 6
         Me.Label8.Text = "il existe un guide en ligne, vous pouvez le consulter *__*"
         '
@@ -540,7 +540,7 @@ Partial Class Home
         Me.Label7.Location = New System.Drawing.Point(58, 339)
         Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(300, 20)
+        Me.Label7.Size = New System.Drawing.Size(283, 18)
         Me.Label7.TabIndex = 5
         Me.Label7.Text = "Nouveau en Esist History Manager ?"
         '
@@ -551,7 +551,7 @@ Partial Class Home
         Me.Label6.Location = New System.Drawing.Point(51, 275)
         Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(537, 20)
+        Me.Label6.Size = New System.Drawing.Size(502, 18)
         Me.Label6.TabIndex = 4
         Me.Label6.Text = "on sert a l’obtention de données sur l’historique individuel ou par promotion."
         '
@@ -563,7 +563,7 @@ Partial Class Home
         Me.Label5.Location = New System.Drawing.Point(56, 155)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(341, 39)
+        Me.Label5.Size = New System.Drawing.Size(318, 36)
         Me.Label5.TabIndex = 3
         Me.Label5.Text = "Esist History Manager "
         '
@@ -574,10 +574,10 @@ Partial Class Home
         Me.Label4.Location = New System.Drawing.Point(51, 251)
         Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(678, 20)
+        Me.Label4.Size = New System.Drawing.Size(628, 18)
         Me.Label4.TabIndex = 2
         Me.Label4.Text = "Un outil de gestion du cursus des anciens étudiants de l’ESI durant leur parcours" & _
-    " universitaire,  "
+            " universitaire,  "
         '
         'Label3
         '
@@ -587,7 +587,7 @@ Partial Class Home
         Me.Label3.Location = New System.Drawing.Point(67, 117)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(192, 39)
+        Me.Label3.Size = New System.Drawing.Size(177, 36)
         Me.Label3.TabIndex = 1
         Me.Label3.Text = "Bienvenue a"
         '

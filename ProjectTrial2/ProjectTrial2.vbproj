@@ -168,6 +168,8 @@
     <None Include="Resources\user profile.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\page_num_current.png" />
+    <Content Include="Resources\page_num_hover.png" />
     <None Include="Resources\039-alert1.png" />
     <None Include="Resources\039-alert.png" />
     <None Include="Resources\diagram_bl.png" />

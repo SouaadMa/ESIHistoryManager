@@ -2,37 +2,91 @@
 
 Public Class BDD
 
-    ' les tableaux qui contiennet les champs des tableaux de base de données :
-    Private stringETUDIANT() As String = {"NomEtud", "Prenoms", "NomEtudA", "PrenomsA", "MATRIC_INS", "MATRIN", "DateNais", "LieuNaisA", "WilayaNaisA",
+    'Les noms des champs de la table Etudiant
+    Public Const champsNomEtud = "NomEtud", champsPrenoms = "Prenoms"
+    Public Const champsNomEtudA = "NomEtudA", champsPrenomsA = "PrenomsA"
+    Public Const champsMATRIC_INS = "MATRIC_INS", champsMATRIN = "MATRIN"
+    Public Const champsDateNais = "DateNais", champsLieuNaisA = "LieuNaisA"
+    Public Const champsWilayaNaisA = "WilayaNaisA", champsLieuNais = "LieuNais"
+    Public Const champsWILNAIS = "WILNAIS", champsADRESSE = "ADRESSE"
+    Public Const champsVILLE = "VILLE", champsWILAYA = "WILAYA"
+    Public Const champsCODEPOS = "CODEPOS", champsWILBAC = "WILBAC"
+    Public Const champsSEXE = "SEXE", champsSERIEBAC = "SERIEBAC"
+    Public Const champsMOYBAC = "MOYBAC", champsANNEEBAC = "ANNEEBAC"
+    Public Const champsFILS_DE = "FILS_DE", champsET_DE = "ET_DE"
+
+    'Les noms des champs de la table INSCRIPTION
+    Public Const champsCodeGroupe = "CodeGroupe", champsMOYEIN = "MOYEIN"
+    Public Const champsRANGIN = "RANGIN", champsMENTIN = "MENTIN"
+    Public Const champsELIMININ = "ELIMININ", champsRATRIN = "RATRIN"
+    Public Const champsDECIIN = "DECIIN", champsDEC = "DEC"
+    Public Const champsADM = "ADM"
+
+    'Les noms des champs de la table NOTE
+    Public Const champsCodeMat = "CodeMat", champsNOJUNO = "NOJUNO"
+    Public Const champsNOSYNO = "NOSYNO", champsNORANO = "NORANO"
+    Public Const champsELIMNO = "ELIMNO", champsRATRNO = "RATRNO"
+
+    'Les noms des champs de la table NoteRATRAP
+    Public Const champsCodeRat = "CodeRatr", champsMOYERA = "MOYERA"
+    Public Const champsMENTRA = "MENTRA", champsELIMRA = "ELIMRA"
+    Public Const champsRATRRA = "RATTRA"
+
+    'Les noms des champs de la table GROUP
+    Public Const champsNG = "NG", champsCodeSection = "CodeSection"
+
+    'Les noms des champs de la table Section
+    Public Const champsNS = "NS", champsCodePromo = "CodePromo"
+
+    'Les noms des champs de la table PROMO
+    Public Const champsNiveau = "Niveau", champsOption = "Option"
+    Public Const champsAnnee = "Annee", champsNbreEtudiant = "NbreEtudiant"
+    Public Const champsMoyenne = "Moyenne"
+
+    'Les noms des champs de la table MATIERE
+    Public Const champsANSCMA = "ANSCMA", champsANETMA = "ANETMA"
+    Public Const champsCYCLMA = "CYCLMA", champsOPTIMA = "OPTIMA"
+    Public Const champsCOMAMA = "COMAMA", champsLIBEMA = "LIBEMA"
+    Public Const champsTYPEMA = "TYPEMA", champsCOEFMA = "COEFMA"
+    Public Const champsMOYMAT = "MOYMAT"
+
+    'Les noms des champs de la table RATRAP
+    Public Const champsANSCRA = "ANSCRA", champsANETRA = "ANETRA"
+    Public Const champsCYCLRA = "CYCLRA", champsOPTIRA = "OPTIRA"
+
+
+
+    ' les tableaux qui contiennet les champs des tables de base de données :
+    Public Shared stringETUDIANT() As String = {"NomEtud", "Prenoms", "NomEtudA", "PrenomsA", "MATRIC_INS", "MATRIN", "DateNais", "LieuNaisA", "WilayaNaisA",
          "LieuNais", "ADRESSE", "VILLE", "WILAYA", "CODEPOS", "WILBAC", "SERIEBAC", "FILS_DE", "ET_DE"}
-    Private stringINSECRIPTION() As String = {"MATRIN", "CodeGroupe", "DECIIN", "DEC", "ADM"}
-    Private stringGROUP() As String = {"NG"}
-    Private stringSection() As String = {"NS"}
-    Private stringPROMO() As String = {"Option"}
-    Private stringNOTE() As String = {}
-    Private stringMATIERE() As String = {"CYCLMA", "OPTIMA", "COMAMA", "LIBEMA", "TYPEMA"}
-    Private stringNOTERATRAP() As String
-    Private stringRATRAP() As String = {"CYCLRA", "OPTIRA"}
+    Public Shared stringINSECRIPTION() As String = {"MATRIN", "CodeGroupe", "DECIIN", "DEC", "ADM"}
+    Public Shared stringGROUP() As String = {"NG"}
+    Public Shared stringSection() As String = {"NS"}
+    Public Shared stringPROMO() As String = {"Option"}
+    Public Shared stringNOTE() As String = {}
+    Public Shared stringMATIERE() As String = {"CYCLMA", "OPTIMA", "COMAMA", "LIBEMA", "TYPEMA"}
+    Public Shared stringNOTERATRAP() As String
+    Public Shared stringRATRAP() As String = {"CYCLRA", "OPTIRA"}
 
-    Private numETUDIANT() As String = {"WILNAIS", "SEXE", "MOYBAC", "ANNEEBAC"}
-    Private numINSECRIPTION() As String = {"MOYEIN", "RANGIN", "MENTIN", "ELIMININ", "RATRIN"}
-    Private numGROUP() As String = {}
-    Private numSection() As String = {}
-    Private numPROMO() As String = {"Niveau", "Annee"}
-    Private numNOTE() As String = {"NOJUNO", "NOSYNO", "NORANO", "ELIMNO", "RATRNO"}
-    Private numMATIERE() As String = {"ANSCMA", "ANETMA", "COEFMA", "MOYMAT"}
-    Private numNOTERATRAP() As String = {"MOYERA", "MENTRA", "ELIMRA", "RATRRA"}
-    Private numRATRAP() As String = {"ANSCRA", "ANETRA"}
+    Public Shared numETUDIANT() As String = {"WILNAIS", "SEXE", "MOYBAC", "ANNEEBAC"}
+    Public Shared numINSECRIPTION() As String = {"MOYEIN", "RANGIN", "MENTIN", "ELIMININ", "RATRIN"}
+    Public Shared numGROUP() As String = {}
+    Public Shared numSection() As String = {}
+    Public Shared numPROMO() As String = {"Niveau", "Annee"}
+    Public Shared numNOTE() As String = {"NOJUNO", "NOSYNO", "NORANO", "ELIMNO", "RATRNO"}
+    Public Shared numMATIERE() As String = {"ANSCMA", "ANETMA", "COEFMA", "MOYMAT"}
+    Public Shared numNOTERATRAP() As String = {"MOYERA", "MENTRA", "ELIMRA", "RATRRA"}
+    Public Shared numRATRAP() As String = {"ANSCRA", "ANETRA"}
 
-    Private boolETUDIANT() As String = {}
-    Private boolINSECRIPTION() As String = {}
-    Private boolGROUP() As String = {}
-    Private boolSection() As String = {}
-    Private boolPROMO() As String = {}
-    Private boolNOTE() As String = {"ELIMNO"}
-    Private boolMATIERE() As String = {}
-    Private boolNOTERATRAP() As String = {}
-    Private boolRATRAP() As String = {}
+    Public Shared boolETUDIANT() As String = {}
+    Public Shared boolINSECRIPTION() As String = {}
+    Public Shared boolGROUP() As String = {}
+    Public Shared boolSection() As String = {}
+    Public Shared boolPROMO() As String = {}
+    Public Shared boolNOTE() As String = {"ELIMNO"}
+    Public Shared boolMATIERE() As String = {}
+    Public Shared boolNOTERATRAP() As String = {}
+    Public Shared boolRATRAP() As String = {}
 
     Private stringChamp()() As String = {stringETUDIANT, stringINSECRIPTION, stringGROUP, stringSection, stringPROMO,
                               stringNOTE, stringMATIERE, stringNOTERATRAP, stringRATRAP}
@@ -95,7 +149,7 @@ Public Class BDD
         Dim cmd As OleDbCommand                     'la commande
         Dim dts As New DataSet                      'le Data Set
         Dim Resultat As Object = ""  'l'information qu'on cherche sur l'étudiant
-        Dim sql As String = " SELECT * FROM ETUDIANT WHERE MATRIN='" & matricule & "'"  'l'instruction SQL 
+        Dim sql As String = " SELECT * FROM ETUDIANT WHERE " & champsMATRIN & "='" & matricule & "'"  'l'instruction SQL 
 
 
         Try

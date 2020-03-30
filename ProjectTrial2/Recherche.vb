@@ -26,7 +26,7 @@
         'Pour chaque ligne du DataTable on crée un objet étudiant
         'Et on ajoute l'objet créé à la collection des étudiants à retourner
         For Each ligne As DataRow In resultatRech.Rows
-            listeEtudiants.Add(New Etudiant(ligne("Matricule")))
+            listeEtudiants.Add(New Etudiant(ligne))
         Next
 
         Return listeEtudiants

@@ -87,12 +87,6 @@
     <Compile Include="Classement.vb" />
     <Compile Include="Critere.vb" />
     <Compile Include="Etudiant.vb" />
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="modifpassword.Designer.vb">
       <DependentUpon>modifpassword.vb</DependentUpon>
     </Compile>

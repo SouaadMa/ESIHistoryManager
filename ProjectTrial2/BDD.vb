@@ -109,8 +109,9 @@ Public Class BDD
 
     Public Shared Function executeRequete(ByVal requete As String) As DataTable
         'retourner un dataTable contenant les étudiants qui vérifient la requête
-
-        Dim cnx As OleDbConnection = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\Base_de_donnees.accdb")  'la connexion à la BDD
+        Console.Write("excecute")
+        Dim cnx As OleDbConnection = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\VISUAL.accdb")  'la connexion à la BDD
+        Console.Write("opened")
         Dim cmd As OleDbCommand                     ' la commande
         Dim ta As OleDbDataAdapter                  ' le Data Adapter
         Dim dts As New DataSet                      ' le Data Set
@@ -121,7 +122,7 @@ Public Class BDD
         Try
             cnx.Open()                               ' ouvrir la connection avec la base de données
 
-
+            Console.Write("open")
             cmd = New OleDbCommand(requete, cnx) ' la connection au commande
             ta = New OleDbDataAdapter(cmd)       ' creer un nouveau DataAdapter
             ta.Fill(dts)                         ' remplir le data set par le résultat de l'éxécution de la requête ( de data adapter ) 
@@ -129,7 +130,7 @@ Public Class BDD
             dt = dts.Tables("table")              'mettre dans le data table le résultat de l'éxécution de requête ( le data set )
 
         Catch ex As Exception
-            MsgBox("  La connexion à la base de données est échouée :( ")
+            MsgBox(ex.Message())
         Finally
             cnx.Close()                              'fermer la connexion
         End Try
@@ -144,12 +145,12 @@ Public Class BDD
 
 
         Dim da As New OleDb.OleDbDataAdapter        'le data adapter
-        Dim con As OleDb.OleDbConnection = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;data source=..\..\Base_de_donnees.accdb")       'la connexion à la BDD
+        Dim con As OleDb.OleDbConnection = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;data source=..\..\VISUAL.accdb")       'la connexion à la BDD
         Dim dt As New DataTable                     'le datatable
         Dim cmd As OleDbCommand                     'la commande
         Dim dts As New DataSet                      'le Data Set
         Dim Resultat As Object = ""  'l'information qu'on cherche sur l'étudiant
-        Dim sql As String = " SELECT * FROM ETUDIANT WHERE " & champsMATRIN & "='" & matricule & "'"  'l'instruction SQL 
+        Dim sql As String = " SELECT * FROM INSCRIPTION WHERE " & champsMATRIN & "='" & matricule & "'"  'l'instruction SQL 
 
 
         Try
@@ -174,7 +175,7 @@ Public Class BDD
             Next
 
         Catch ex As Exception
-            MsgBox(" La connexion à la base de données est échouée :( ")
+            MsgBox(" La connexion à la base de données est échouée :( ", ex.Message)
         Finally
             'close connection
             con.Close()
@@ -185,5 +186,3 @@ Public Class BDD
     End Function
 
 End Class
-
-

@@ -12,12 +12,12 @@
         'DataTable qui va contenir le résultat retourné par la BDD
         Dim listeEtudiants As List(Of Etudiant) = New List(Of Etudiant)
         'La collection des étudiants à retourner à la fin de la méthode
-
+        Console.WriteLine("trait")
         'Pour chaque critère on fait appel à génèreRequete
         For Each crit As Critere In criteres
         instructionSQL=Rech_BDD.genereRechRequetes(instructionSQL, crit)
         Next
-
+        Console.WriteLine("traited")
         'On passe la requête finale à ExécuteRequ et on sauvegarde son résultat
 
         resultatRech = BDD.executeRequete(instructionSQL)

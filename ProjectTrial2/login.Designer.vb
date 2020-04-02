@@ -289,6 +289,7 @@ Partial Class Login
         Me.Name = "Login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"
+        Me.TopMost = True
         Me.ConnexionPanel.ResumeLayout(False)
         Me.ConnexionPanel.PerformLayout()
         Me.ModeDeConnexionPanel.ResumeLayout(False)

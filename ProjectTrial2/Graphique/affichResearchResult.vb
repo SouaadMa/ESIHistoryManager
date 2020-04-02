@@ -170,7 +170,9 @@
         With DirectCast(sender, TableLayoutPanel)
             .BackgroundImage = My.Resources.background_affiche_2
             SelectedStudent = CType(sender.Name.ToString.Chars(sender.Name.ToString.Length - 1).ToString, Integer)
-            Console.WriteLine(SelectedStudent.ToString)
+
+            Console.WriteLine(SelectedStudent - 1 + (CURRENT_PAGE - 1) * 7)
+
         End With
 
         For Each b As Control In Home.NavBar.Controls
@@ -212,7 +214,7 @@
                 affich_pageResult()
         End Select
 
-        Console.WriteLine("sorted by : " + SortModeBox.SelectedIndex.ToString)
+        'Console.WriteLine("sorted by : " + SortModeBox.SelectedIndex.ToString)
         'For Each student In StudentList
         '    Console.Write(student.GetInfoChamps("NomEtud"))
         '    Console.Write(student.GetInfoChamps("Prenoms"))
@@ -314,9 +316,9 @@
     End Sub
 
     Private Sub TableLayoutPanel1_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TableLayoutPanel1.Leave, TableLayoutPanel2.Leave, TableLayoutPanel3.Leave, TableLayoutPanel4.Leave, TableLayoutPanel5.Leave, TableLayoutPanel6.Leave, TableLayoutPanel7.Leave
-        For Each ctrl As Control In DirectCast(sender, TableLayoutPanel).Controls
-            OnLeave(New EventArgs())
-        Next
+        'For Each ctrl As Control In DirectCast(sender, TableLayoutPanel).Controls
+        '    OnLeave(New EventArgs())
+        'Next
         DirectCast(sender, TableLayoutPanel).BackgroundImage = My.Resources.background_affiche1
         Home.NavBar.Enabled = False
     End Sub

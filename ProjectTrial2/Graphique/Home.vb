@@ -326,7 +326,7 @@
                 f.Close()
             End If
 
-            f = New details(affichResearchResult.StudentList.Item(affichResearchResult.SelectedStudent - 1 + affichResearchResult.CURRENT_PAGE * 7))         ' assign the search form to  the f form
+            f = New details(affichResearchResult.StudentList.Item(affichResearchResult.SelectedStudent - 1 + (affichResearchResult.CURRENT_PAGE - 1) * 7))         ' assign the search form to  the f form
             f.TopLevel = False
             f.TopMost = True
             f.WindowState = FormWindowState.Normal
@@ -345,7 +345,7 @@
                 f.Close()
             End If
 
-            f = New modifier(affichResearchResult.StudentList.Item(affichResearchResult.SelectedStudent - 1 + affichResearchResult.CURRENT_PAGE * 7))         ' assign the search form to  the f form
+            f = New modifier(affichResearchResult.StudentList.Item(affichResearchResult.SelectedStudent - 1 + (affichResearchResult.CURRENT_PAGE - 1) * 7))         ' assign the search form to  the f form
             f.TopLevel = False
             f.TopMost = True
             f.WindowState = FormWindowState.Normal

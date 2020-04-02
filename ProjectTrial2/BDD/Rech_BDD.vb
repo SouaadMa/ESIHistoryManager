@@ -17,30 +17,30 @@ Public Class Rech_BDD
         If requeteRechValide(instructionSQL) Then      ' Si la instructionSQL donnee peut etre un requete de recherche
             Select Case (critere.getValeur.GetType).ToString       ' Savoir le type de la valeur :
                 Case "System.String"                                      ' valeur Text
-                    Console.WriteLine("string")
+                    'Console.WriteLine("string")
                     tab = Bdd.getStringChamp                                           ' Chercher dans le tableau des champs Text
                     valeur = "'" + critere.getValeur + "'"
                 Case GetType(Integer).ToString, GetType(Double).ToString  ' valeur Numérique
-                    Console.WriteLine("num")
+                    'Console.WriteLine("num")
                     tab = Bdd.getNumChamp                                              ' Chercher dans le tableau des champs Numerique                    
                     valeur = critere.getValeur.ToString
                 Case "System.Boolean"                                     ' valeur Booleen
-                    Console.WriteLine("bool")
+                    'Console.WriteLine("bool")
                     tab = Bdd.getBoolChamp                                             ' Chercher dans le tableau des champs Booleen
                     valeur = critere.getValeur
                     'Case Else     tab = {}
             End Select
             Console.WriteLine("critere = " + critere.getChamps())
             Try
-                Console.WriteLine(tab.Length)
+                'Console.WriteLine(tab.Length)
                 While Not found And ind < tab.Length                ' Chercher si le champ donnée existe dans les tableaux de la base de donnée  
-                    Console.WriteLine("ind = " + ind.ToString)
+                    'Console.WriteLine("ind = " + ind.ToString)
                     i = 0
                     While Not found And i < tab(ind).Length         ' Parcourir les tableaux jusqu'a trouver le champ ou atteindre la fin de tableau
-                        Console.WriteLine("i = " + i.ToString + "champs :" + tab(ind)(i).ToString)
+                        'Console.WriteLine("i = " + i.ToString + "champs :" + tab(ind)(i).ToString)
                         If critere.getChamps.Equals(tab(ind)(i)) Then
                             found = True
-                            Console.WriteLine("found !")
+                            'Console.WriteLine("found !")
                         Else
                             i += 1
                         End If

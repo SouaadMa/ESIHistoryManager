@@ -126,15 +126,15 @@ Public Class BDD
 
         Try
             cnx.Open()                               ' ouvrir la connection avec la base de données
-            Console.WriteLine("problem here1")
+            'Console.WriteLine("problem here1")
             cmd = New OleDbCommand(requete, cnx) ' la connection au commande
-            Console.WriteLine("problem here2")
+            'Console.WriteLine("problem here2")
             ta = New OleDbDataAdapter(cmd)       ' creer un nouveau DataAdapter
-            Console.WriteLine("problem here3")
+            'Console.WriteLine("problem here3")
             ta.Fill(dts)                         ' remplir le data set par le résultat de l'éxécution de la requête ( de data adapter ) 
-            Console.WriteLine("problem here4")
+            'Console.WriteLine("problem here4")
             dt = dts.Tables("table")              'mettre dans le data table le résultat de l'éxécution de requête ( le data set )
-            Console.WriteLine("problem here5")
+            'Console.WriteLine("problem here5")
 
         Catch ex As Exception
             MsgBox("excecute recherche problem" + ex.Message())

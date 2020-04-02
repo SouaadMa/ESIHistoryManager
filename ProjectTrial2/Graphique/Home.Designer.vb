@@ -399,6 +399,7 @@ Partial Class Home
         Me.DetailButton.Name = "DetailButton"
         Me.DetailButton.Size = New System.Drawing.Size(77, 50)
         Me.DetailButton.TabIndex = 6
+        Me.DetailButton.Text = "7"
         Me.DetailButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.DetailButton.UseVisualStyleBackColor = True
         '

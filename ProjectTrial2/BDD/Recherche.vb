@@ -17,12 +17,12 @@
         For Each crit As Critere In criteres
         instructionSQL=Rech_BDD.genereRechRequetes(instructionSQL, crit)
         Next
-        Console.WriteLine("traited")
+        'Console.WriteLine("traited")
         'On passe la requête finale à ExécuteRequ et on sauvegarde son résultat
 
         resultatRech = BDD.executeRequete(instructionSQL)
 
-        Console.WriteLine(" execute requete success")
+        'Console.WriteLine(" execute requete success")
         'Form1.DataGridView1.DataSource = resultatRech
         'Form1.Show()
 

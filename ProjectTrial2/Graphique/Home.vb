@@ -326,13 +326,13 @@
                 f.Close()
             End If
 
-            f = New details(affichResearchResult.StudentList.Item(affichResearchResult.SelectedStudent - 1 + affichResearchResult.CURRENT_PAGE * 7))         ' assign the search form to  the f form
-            f.TopLevel = False
-            f.TopMost = True
-            f.WindowState = FormWindowState.Normal
-            Me.MainContainer.Controls.Add(f)        ' add the controlers of the searche page to the main form f 
-            f.Show()                                ' show the form f in the middle of the home page
-            Me.MainContainer.Visible = True
+            'f = New details(affichResearchResult.StudentList.Item(affichResearchResult.SelectedStudent - 1 + affichResearchResult.CURRENT_PAGE * 7))         ' assign the search form to  the f form
+            'f.TopLevel = False
+            'f.TopMost = True
+            'f.WindowState = FormWindowState.Normal
+            'Me.MainContainer.Controls.Add(f)        ' add the controlers of the searche page to the main form f 
+            'f.Show()                                ' show the form f in the middle of the home page
+            'Me.MainContainer.Visible = True
             'Me.MainContainer.Width = 680            ' adjust its appearance
 
         End If
@@ -345,13 +345,13 @@
                 f.Close()
             End If
 
-            f = New modifier(affichResearchResult.StudentList.Item(affichResearchResult.SelectedStudent - 1 + affichResearchResult.CURRENT_PAGE * 7))         ' assign the search form to  the f form
-            f.TopLevel = False
-            f.TopMost = True
-            f.WindowState = FormWindowState.Normal
-            Me.MainContainer.Controls.Add(f)        ' add the controlers of the searche page to the main form f 
-            f.Show()                                ' show the form f in the middle of the home page
-            Me.MainContainer.Visible = True
+            ' f = New modifier(affichResearchResult.StudentList.Item(affichResearchResult.SelectedStudent - 1 + affichResearchResult.CURRENT_PAGE * 7))         ' assign the search form to  the f form
+            'f.TopLevel = False
+            'f.TopMost = True
+            'f.WindowState = FormWindowState.Normal
+            'Me.MainContainer.Controls.Add(f)        ' add the controlers of the searche page to the main form f 
+            'f.Show()                                ' show the form f in the middle of the home page
+            'Me.MainContainer.Visible = True
             'Me.MainContainer.Width = 680            ' adjust its appearance
         End If
     End Sub

@@ -422,17 +422,36 @@
 
             ' appel a traite rechercher
 
+            Dim StudentList As List(Of Etudiant) = New List(Of Etudiant)
+            Console.WriteLine("count is : ", StudentList.Count)
+            StudentList = Recherche.traitRechercher(collection_critere)
+            If (StudentList.Count = 0) Then
+                Console.WriteLine("vide")
+            Else
+                For Each student In StudentList
+                    Console.Write(student.GetInfoChamps("NomEtud"))
+                    Console.Write(student.GetInfoChamps("Prenoms"))
+                    Console.Write(student.GetInfoChamps("MATRIN"))
+                    Console.Write(student.GetInfoChamps("ADRESSE"))
+                    Console.Write(student.GetInfoChamps("VILLE"))
+                    Console.Write(student.GetInfoChamps("WILAYA"))
+                    Console.Write(student.GetInfoChamps("CodePromo"))
+                    Console.WriteLine()
+                    Console.WriteLine()
+                Next
+            End If
+            
 
             'handling the appearnce of the affichage form
 
-            Home.f = New affichResearchResult()         ' assign the search form to  the f form
-            Home.f.TopLevel = False
-            Home.f.TopMost = True
-            Home.f.WindowState = FormWindowState.Normal
-            Home.MainContainer.Controls.Add(Home.f)        ' add the controlers of the searche page to the main form f 
-            Home.f.Show()                                ' show the form f in the middle of the home page
-            Home.MainContainer.Visible = True
-            'Home.MainContainer.Width = 680            ' adjust its appearance
+                Home.f = New affichResearchResult()         ' assign the search form to  the f form
+                Home.f.TopLevel = False
+                Home.f.TopMost = True
+                Home.f.WindowState = FormWindowState.Normal
+                Home.MainContainer.Controls.Add(Home.f)        ' add the controlers of the searche page to the main form f 
+                Home.f.Show()                                ' show the form f in the middle of the home page
+                Home.MainContainer.Visible = True
+                'Home.MainContainer.Width = 680            ' adjust its appearance
 
         End If
 

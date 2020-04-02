@@ -16,6 +16,13 @@
         LB_noresult.Visible = False
         BT_PREV.Enabled = False
 
+        SortModeBox.Items.Add("Matricule")
+        SortModeBox.Items.Add("Nom")
+        SortModeBox.Items.Add("Prenom")
+        SortModeBox.Items.Add("Promo")
+
+        SortModeBox.SelectedIndex = 0
+
         'make the nav bar desactivated
 
         For Each b As Control In Home.NavBar.Controls

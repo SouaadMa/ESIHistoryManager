@@ -127,7 +127,7 @@ Partial Class Rechercher
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 22.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(87, 0)
+        Me.Label1.Location = New System.Drawing.Point(140, 4)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(326, 34)
@@ -140,7 +140,7 @@ Partial Class Rechercher
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Maroon
-        Me.Label2.Location = New System.Drawing.Point(63, 66)
+        Me.Label2.Location = New System.Drawing.Point(116, 66)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(368, 18)
@@ -155,7 +155,7 @@ Partial Class Rechercher
         Me.RechButtons.Controls.Add(Me.BT_LANCERRECH)
         Me.RechButtons.Location = New System.Drawing.Point(12, 1030)
         Me.RechButtons.Name = "RechButtons"
-        Me.RechButtons.Size = New System.Drawing.Size(603, 100)
+        Me.RechButtons.Size = New System.Drawing.Size(586, 100)
         Me.RechButtons.TabIndex = 44
         '
         'worningrech
@@ -214,7 +214,7 @@ Partial Class Rechercher
         '
         'IMG_ALERTMTB
         '
-        Me.IMG_ALERTMTB.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources._039_alert1
+        Me.IMG_ALERTMTB.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
         Me.IMG_ALERTMTB.Location = New System.Drawing.Point(538, 78)
         Me.IMG_ALERTMTB.Name = "IMG_ALERTMTB"
         Me.IMG_ALERTMTB.Size = New System.Drawing.Size(30, 30)
@@ -224,7 +224,7 @@ Partial Class Rechercher
         '
         'IMG_ALERTMAT
         '
-        Me.IMG_ALERTMAT.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources._039_alert1
+        Me.IMG_ALERTMAT.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
         Me.IMG_ALERTMAT.Location = New System.Drawing.Point(538, 29)
         Me.IMG_ALERTMAT.Name = "IMG_ALERTMAT"
         Me.IMG_ALERTMAT.Size = New System.Drawing.Size(30, 30)
@@ -505,7 +505,7 @@ Partial Class Rechercher
         '
         'IMG_ALERTCODPOS
         '
-        Me.IMG_ALERTCODPOS.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources._039_alert1
+        Me.IMG_ALERTCODPOS.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
         Me.IMG_ALERTCODPOS.Location = New System.Drawing.Point(534, 242)
         Me.IMG_ALERTCODPOS.Name = "IMG_ALERTCODPOS"
         Me.IMG_ALERTCODPOS.Size = New System.Drawing.Size(30, 30)
@@ -797,7 +797,7 @@ Partial Class Rechercher
         '
         'IMG_ALERTMOY
         '
-        Me.IMG_ALERTMOY.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources._039_alert1
+        Me.IMG_ALERTMOY.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
         Me.IMG_ALERTMOY.Location = New System.Drawing.Point(534, 58)
         Me.IMG_ALERTMOY.Name = "IMG_ALERTMOY"
         Me.IMG_ALERTMOY.Size = New System.Drawing.Size(30, 30)

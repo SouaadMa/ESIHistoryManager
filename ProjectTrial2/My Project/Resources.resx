@@ -124,10 +124,10 @@
   <data name="chart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gantt_chart_bj.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="039-alert1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="alert1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\039-alert1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="background affiche1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="background_affiche1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background affiche1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Ellipse_11" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -187,9 +187,6 @@
   <data name="historique" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\historique.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="page num1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\page num1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="RNG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RNG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -202,10 +199,10 @@
   <data name="details" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\details.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="next" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="_next" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\next.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="background affiche2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="background_affiche2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background affiche2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="prev1" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -223,7 +220,7 @@
   <data name="Rectangle_rose" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Rectangle_rose.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="page num" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="page_num" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\page num.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="diagram" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -238,7 +235,7 @@
   <data name="chart_bl" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\chart_blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="039-alert" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="alert" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\039-alert.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="modifier" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -250,7 +247,7 @@
   <data name="printer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\printer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="background affiche" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="background_affiche" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background affiche.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="hamburger" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -267,5 +264,8 @@
   </data>
   <data name="page_num_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\page_num_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="page_num_desactivate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\page_num_desactivate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

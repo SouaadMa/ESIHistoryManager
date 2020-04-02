@@ -2,6 +2,13 @@
 
 Public Class BDD
 
+    'Les noms des tables de la BDD
+    Public Const nomTableEtudiant = "Etudiant", nomTableINSCRIPTION = "INSCRIPTION"
+    Public Const nomTableNOTE = "NOTE", nomTableNoteRATRAP = "NoteRATRAP"
+    Public Const nomTableGROUP = "GROUP", nomTableSection = "Section"
+    Public Const nomTablePROMO = "PROMO", nomTableMATIERE = "MATIERE"
+    Public Const nomTableRATRAP = "RATRAP"
+
     'Les noms des champs de la table Etudiant
     Public Const champsNomEtud = "NomEtud", champsPrenoms = "Prenoms"
     Public Const champsNomEtudA = "NomEtudA", champsPrenomsA = "PrenomsA"
@@ -57,15 +64,14 @@ Public Class BDD
 
 
     ' les tableaux qui contiennet les champs des tables de base de données :
-    Public Shared stringETUDIANT() As String = {"NomEtud", "Prenoms", "NomEtudA", "PrenomsA", "MATRIC_INS", "MATRIN", "DateNais", "LieuNaisA", "WilayaNaisA",
-         "LieuNais", "ADRESSE", "VILLE", "WILAYA", "CODEPOS", "WILBAC", "SERIEBAC", "FILS_DE", "ET_DE"}
+    Public Shared stringETUDIANT() As String = {"NomEtud", "Prenoms", "NomEtudA", "PrenomsA", "MATRIC_INS", "MATRIN", "DateNais", "LieuNaisA", "WilayaNaisA", "LieuNais", "ADRESSE", "VILLE", "WILAYA", "CODEPOS", "WILBAC", "SERIEBAC", "FILS_DE", "ET_DE"}
     Public Shared stringINSECRIPTION() As String = {"MATRIN", "CodeGroupe", "DECIIN", "DEC", "ADM"}
     Public Shared stringGROUP() As String = {"NG"}
     Public Shared stringSection() As String = {"NS"}
     Public Shared stringPROMO() As String = {"Option"}
     Public Shared stringNOTE() As String = {}
     Public Shared stringMATIERE() As String = {"CYCLMA", "OPTIMA", "COMAMA", "LIBEMA", "TYPEMA"}
-    Public Shared stringNOTERATRAP() As String
+    Public Shared stringNOTERATRAP() As String = {}
     Public Shared stringRATRAP() As String = {"CYCLRA", "OPTIRA"}
 
     Public Shared numETUDIANT() As String = {"WILNAIS", "SEXE", "MOYBAC", "ANNEEBAC"}

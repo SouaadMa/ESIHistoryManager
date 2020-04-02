@@ -33,7 +33,6 @@
             InfosETUDIANT.Add(champs, ligne(champs))
         Next
 
-
     End Sub
 
 

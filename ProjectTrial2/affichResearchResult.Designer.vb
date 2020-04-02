@@ -34,21 +34,21 @@ Partial Class affichResearchResult
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.PN_PAGES = New System.Windows.Forms.Panel()
-        Me.BT_NEXT = New System.Windows.Forms.Button()
+        Me.PagesNumButtons = New System.Windows.Forms.TableLayoutPanel()
+        Me.BT_P1 = New System.Windows.Forms.Button()
+        Me.BT_P2 = New System.Windows.Forms.Button()
         Me.BT_P4 = New System.Windows.Forms.Button()
         Me.BT_P3 = New System.Windows.Forms.Button()
-        Me.BT_P2 = New System.Windows.Forms.Button()
-        Me.BT_P1 = New System.Windows.Forms.Button()
+        Me.BT_NEXT = New System.Windows.Forms.Button()
         Me.BT_PREV = New System.Windows.Forms.Button()
         Me.LB_noresult = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.AffPanel = New System.Windows.Forms.Panel()
-        Me.PagesNumButtons = New System.Windows.Forms.TableLayoutPanel()
         Me.EtudiantPanel.SuspendLayout()
         Me.PN_PAGES.SuspendLayout()
+        Me.PagesNumButtons.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.AffPanel.SuspendLayout()
-        Me.PagesNumButtons.SuspendLayout()
         Me.SuspendLayout()
         '
         'LB_INFOAFFICH
@@ -60,7 +60,7 @@ Partial Class affichResearchResult
         Me.LB_INFOAFFICH.Location = New System.Drawing.Point(41, 72)
         Me.LB_INFOAFFICH.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_INFOAFFICH.Name = "LB_INFOAFFICH"
-        Me.LB_INFOAFFICH.Size = New System.Drawing.Size(418, 17)
+        Me.LB_INFOAFFICH.Size = New System.Drawing.Size(493, 20)
         Me.LB_INFOAFFICH.TabIndex = 21
         Me.LB_INFOAFFICH.Text = "Vous pouvez selectionner un etudiant puis l'operation associee   "
         '
@@ -73,7 +73,7 @@ Partial Class affichResearchResult
         Me.nb_stdRech.Location = New System.Drawing.Point(463, 51)
         Me.nb_stdRech.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.nb_stdRech.Name = "nb_stdRech"
-        Me.nb_stdRech.Size = New System.Drawing.Size(145, 19)
+        Me.nb_stdRech.Size = New System.Drawing.Size(183, 23)
         Me.nb_stdRech.TabIndex = 20
         Me.nb_stdRech.Text = "nombre des resultats"
         '
@@ -86,7 +86,7 @@ Partial Class affichResearchResult
         Me.RechLabel.Location = New System.Drawing.Point(200, 10)
         Me.RechLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.RechLabel.Name = "RechLabel"
-        Me.RechLabel.Size = New System.Drawing.Size(283, 34)
+        Me.RechLabel.Size = New System.Drawing.Size(347, 43)
         Me.RechLabel.TabIndex = 18
         Me.RechLabel.Text = "Resultat de recherche"
         '
@@ -270,20 +270,63 @@ Partial Class affichResearchResult
         Me.PN_PAGES.Size = New System.Drawing.Size(655, 55)
         Me.PN_PAGES.TabIndex = 25
         '
-        'BT_NEXT
+        'PagesNumButtons
         '
-        Me.BT_NEXT.AutoSize = True
-        Me.BT_NEXT.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.next1
-        Me.BT_NEXT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.BT_NEXT.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BT_NEXT.FlatAppearance.BorderSize = 0
-        Me.BT_NEXT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BT_NEXT.Location = New System.Drawing.Point(217, 3)
-        Me.BT_NEXT.Margin = New System.Windows.Forms.Padding(0)
-        Me.BT_NEXT.Name = "BT_NEXT"
-        Me.BT_NEXT.Size = New System.Drawing.Size(36, 34)
-        Me.BT_NEXT.TabIndex = 5
-        Me.BT_NEXT.UseVisualStyleBackColor = True
+        Me.PagesNumButtons.AutoSize = True
+        Me.PagesNumButtons.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.PagesNumButtons.ColumnCount = 4
+        Me.PagesNumButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34.0!))
+        Me.PagesNumButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34.0!))
+        Me.PagesNumButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34.0!))
+        Me.PagesNumButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34.0!))
+        Me.PagesNumButtons.Controls.Add(Me.BT_P1, 0, 0)
+        Me.PagesNumButtons.Controls.Add(Me.BT_P2, 1, 0)
+        Me.PagesNumButtons.Controls.Add(Me.BT_P4, 3, 0)
+        Me.PagesNumButtons.Controls.Add(Me.BT_P3, 2, 0)
+        Me.PagesNumButtons.Location = New System.Drawing.Point(79, 3)
+        Me.PagesNumButtons.Name = "PagesNumButtons"
+        Me.PagesNumButtons.RowCount = 1
+        Me.PagesNumButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.PagesNumButtons.Size = New System.Drawing.Size(136, 34)
+        Me.PagesNumButtons.TabIndex = 7
+        '
+        'BT_P1
+        '
+        Me.BT_P1.AutoSize = True
+        Me.BT_P1.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.page_num
+        Me.BT_P1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BT_P1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BT_P1.FlatAppearance.BorderSize = 0
+        Me.BT_P1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BT_P1.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BT_P1.ForeColor = System.Drawing.Color.White
+        Me.BT_P1.Location = New System.Drawing.Point(2, 2)
+        Me.BT_P1.Margin = New System.Windows.Forms.Padding(2)
+        Me.BT_P1.Name = "BT_P1"
+        Me.BT_P1.Size = New System.Drawing.Size(30, 30)
+        Me.BT_P1.TabIndex = 1
+        Me.BT_P1.Text = "1"
+        Me.BT_P1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.BT_P1.UseVisualStyleBackColor = True
+        '
+        'BT_P2
+        '
+        Me.BT_P2.AutoSize = True
+        Me.BT_P2.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.page_num
+        Me.BT_P2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BT_P2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BT_P2.FlatAppearance.BorderSize = 0
+        Me.BT_P2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BT_P2.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BT_P2.ForeColor = System.Drawing.Color.White
+        Me.BT_P2.Location = New System.Drawing.Point(36, 2)
+        Me.BT_P2.Margin = New System.Windows.Forms.Padding(2)
+        Me.BT_P2.Name = "BT_P2"
+        Me.BT_P2.Size = New System.Drawing.Size(30, 30)
+        Me.BT_P2.TabIndex = 2
+        Me.BT_P2.Text = "2"
+        Me.BT_P2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.BT_P2.UseVisualStyleBackColor = True
         '
         'BT_P4
         '
@@ -323,43 +366,20 @@ Partial Class affichResearchResult
         Me.BT_P3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
         Me.BT_P3.UseVisualStyleBackColor = True
         '
-        'BT_P2
+        'BT_NEXT
         '
-        Me.BT_P2.AutoSize = True
-        Me.BT_P2.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.page_num
-        Me.BT_P2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BT_P2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BT_P2.FlatAppearance.BorderSize = 0
-        Me.BT_P2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BT_P2.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BT_P2.ForeColor = System.Drawing.Color.White
-        Me.BT_P2.Location = New System.Drawing.Point(36, 2)
-        Me.BT_P2.Margin = New System.Windows.Forms.Padding(2)
-        Me.BT_P2.Name = "BT_P2"
-        Me.BT_P2.Size = New System.Drawing.Size(30, 30)
-        Me.BT_P2.TabIndex = 2
-        Me.BT_P2.Text = "2"
-        Me.BT_P2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.BT_P2.UseVisualStyleBackColor = True
-        '
-        'BT_P1
-        '
-        Me.BT_P1.AutoSize = True
-        Me.BT_P1.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.page_num
-        Me.BT_P1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BT_P1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BT_P1.FlatAppearance.BorderSize = 0
-        Me.BT_P1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BT_P1.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BT_P1.ForeColor = System.Drawing.Color.White
-        Me.BT_P1.Location = New System.Drawing.Point(2, 2)
-        Me.BT_P1.Margin = New System.Windows.Forms.Padding(2)
-        Me.BT_P1.Name = "BT_P1"
-        Me.BT_P1.Size = New System.Drawing.Size(30, 30)
-        Me.BT_P1.TabIndex = 1
-        Me.BT_P1.Text = "1"
-        Me.BT_P1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.BT_P1.UseVisualStyleBackColor = True
+        Me.BT_NEXT.AutoSize = True
+        Me.BT_NEXT.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.next1
+        Me.BT_NEXT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.BT_NEXT.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BT_NEXT.FlatAppearance.BorderSize = 0
+        Me.BT_NEXT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BT_NEXT.Location = New System.Drawing.Point(217, 3)
+        Me.BT_NEXT.Margin = New System.Windows.Forms.Padding(0)
+        Me.BT_NEXT.Name = "BT_NEXT"
+        Me.BT_NEXT.Size = New System.Drawing.Size(36, 34)
+        Me.BT_NEXT.TabIndex = 5
+        Me.BT_NEXT.UseVisualStyleBackColor = True
         '
         'BT_PREV
         '
@@ -385,7 +405,7 @@ Partial Class affichResearchResult
         Me.LB_noresult.Location = New System.Drawing.Point(39, 72)
         Me.LB_noresult.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_noresult.Name = "LB_noresult"
-        Me.LB_noresult.Size = New System.Drawing.Size(538, 17)
+        Me.LB_noresult.Size = New System.Drawing.Size(620, 20)
         Me.LB_noresult.TabIndex = 26
         Me.LB_noresult.Text = "Aucun message ne correspond à votre recherche ! ressayer de nouveau "
         '
@@ -413,26 +433,6 @@ Partial Class affichResearchResult
         Me.AffPanel.Size = New System.Drawing.Size(675, 638)
         Me.AffPanel.TabIndex = 27
         '
-        'PagesNumButtons
-        '
-        Me.PagesNumButtons.AutoSize = True
-        Me.PagesNumButtons.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.PagesNumButtons.ColumnCount = 4
-        Me.PagesNumButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34.0!))
-        Me.PagesNumButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34.0!))
-        Me.PagesNumButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34.0!))
-        Me.PagesNumButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34.0!))
-        Me.PagesNumButtons.Controls.Add(Me.BT_P1, 0, 0)
-        Me.PagesNumButtons.Controls.Add(Me.BT_P2, 1, 0)
-        Me.PagesNumButtons.Controls.Add(Me.BT_P4, 3, 0)
-        Me.PagesNumButtons.Controls.Add(Me.BT_P3, 2, 0)
-        Me.PagesNumButtons.Location = New System.Drawing.Point(79, 3)
-        Me.PagesNumButtons.Name = "PagesNumButtons"
-        Me.PagesNumButtons.RowCount = 1
-        Me.PagesNumButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.PagesNumButtons.Size = New System.Drawing.Size(136, 34)
-        Me.PagesNumButtons.TabIndex = 7
-        '
         'affichResearchResult
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
@@ -448,11 +448,11 @@ Partial Class affichResearchResult
         Me.EtudiantPanel.ResumeLayout(False)
         Me.PN_PAGES.ResumeLayout(False)
         Me.PN_PAGES.PerformLayout()
+        Me.PagesNumButtons.ResumeLayout(False)
+        Me.PagesNumButtons.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.AffPanel.ResumeLayout(False)
-        Me.PagesNumButtons.ResumeLayout(False)
-        Me.PagesNumButtons.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

@@ -123,6 +123,26 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property backBTcheked() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("backBTcheked", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property backBTchekedNone() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("backBTchekedNone", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property background() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("background", resourceCulture)
@@ -206,6 +226,26 @@ Namespace My.Resources
         Friend ReadOnly Property details() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("details", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property details_general_back() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("details general back", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property detailsBACBack() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("detailsBACBack", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

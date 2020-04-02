@@ -86,6 +86,12 @@
     <Compile Include="BDD.vb" />
     <Compile Include="Classement.vb" />
     <Compile Include="Critere.vb" />
+    <Compile Include="details.Designer.vb">
+      <DependentUpon>details.vb</DependentUpon>
+    </Compile>
+    <Compile Include="details.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Etudiant.vb" />
     <Compile Include="modifpassword.Designer.vb">
       <DependentUpon>modifpassword.vb</DependentUpon>
@@ -133,6 +139,9 @@
   <ItemGroup>
     <EmbeddedResource Include="affichResearchResult.resx">
       <DependentUpon>affichResearchResult.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="details.resx">
+      <DependentUpon>details.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modifpassword.resx">
       <DependentUpon>modifpassword.vb</DependentUpon>

@@ -1,5 +1,4 @@
 ﻿
-
 Public Class Rech_BDD
 
 

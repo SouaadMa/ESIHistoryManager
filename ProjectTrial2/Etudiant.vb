@@ -24,13 +24,34 @@
     Public Sub New(ByVal ligne As DataRow)
 
         For Each champs As String In BDD.stringETUDIANT
-            InfosETUDIANT.Add(champs, ligne(champs))
+            Console.Write(champs + " : ")
+            Try
+                'Console.WriteLine(ligne(champs).ToString)
+                InfosETUDIANT.Add(champs, CType(ligne(champs), String))
+            Catch ex As Exception
+                Console.WriteLine("Valeur erronnee !")
+            End Try
+
         Next
         For Each champs As String In BDD.numETUDIANT
-            InfosETUDIANT.Add(champs, ligne(champs))
+            'Console.Write(champs + " : ")
+            Try
+                'Console.WriteLine(ligne(champs).ToString)
+                InfosETUDIANT.Add(champs, CType(ligne(champs), String))
+            Catch ex As Exception
+                Console.WriteLine("Valeur erronnee !")
+            End Try
+
         Next
         For Each champs As String In BDD.boolETUDIANT
-            InfosETUDIANT.Add(champs, ligne(champs))
+            'Console.Write(champs + " : ")
+            Try
+                'Console.WriteLine(ligne(champs).ToString)
+                InfosETUDIANT.Add(champs, CType(ligne(champs), String))
+            Catch ex As Exception
+                Console.WriteLine("Valeur erronnee !")
+            End Try
+
         Next
 
     End Sub

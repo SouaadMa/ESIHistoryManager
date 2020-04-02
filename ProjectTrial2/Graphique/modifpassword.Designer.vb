@@ -335,7 +335,6 @@ Partial Class modifpassword
         Me.Name = "modifpassword"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Changer le mot de passe"
-        Me.TopMost = True
         CType(Me.profile_photo_login, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.logo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ModeDeConnexionPanel.ResumeLayout(False)

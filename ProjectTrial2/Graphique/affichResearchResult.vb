@@ -1,8 +1,9 @@
 ﻿Public Class affichResearchResult
 
-    Public StudentList As New List(Of Etudiant)
+    Public Shared StudentList As New List(Of Etudiant)
     Private nb_page As Integer = 0
-    Private CURRENT_PAGE As Integer = 1
+    Public Shared CURRENT_PAGE As Integer = 1
+    Public Shared SelectedStudent As Integer = -1
 
     Public Sub New(ByVal CritList)
 
@@ -18,7 +19,7 @@
         'Dim tab_etudiant() As String = collection_etudiant.ToArray
 
         ' inisializer le form
-
+        'Console.WriteLine("loaded :" + Me.GetType.ToString)
         EtudiantPanel.Visible = True
         PN_PAGES.Visible = True
         LB_INFOAFFICH.Visible = True
@@ -85,7 +86,7 @@
         Console.WriteLine("pages number is : " + nb_page.ToString)
 
         If nb_page = 0 Then 'if there is no result
-            
+
         Else
             If nb_page <= 4 Then
                 BT_NEXT.Visible = False
@@ -109,7 +110,7 @@
 
     End Sub
 
-   
+
     Private Sub BT_NEXT_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_NEXT.Click
 
         Me.BT_PREV.Visible = True
@@ -133,7 +134,7 @@
                 If Me.BT_P4.Text > nb_page Then
                     BT_P4.Visible = False
                     BT_NEXT.Visible = False
-                ElseIf Me.BT_P4.Text = nb_page  Then
+                ElseIf Me.BT_P4.Text = nb_page Then
                     BT_NEXT.Visible = False
                 End If
             End If
@@ -156,17 +157,21 @@
             Me.BT_P3.Text = (Me.BT_P3.Text - 4).ToString
             Me.BT_P4.Text = (Me.BT_P4.Text - 4).ToString
         End If
-        
+
         BT_P1_Click(BT_P1, e)
     End Sub
-    
+
     Private Sub TableLayoutPanel1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TableLayoutPanel1.Click, TableLayoutPanel2.Click, TableLayoutPanel3.Click, TableLayoutPanel4.Click, TableLayoutPanel5.Click, TableLayoutPanel6.Click, TableLayoutPanel7.Click
 
         For Each t As TableLayoutPanel In EtudiantPanel.Controls
             DirectCast(t, TableLayoutPanel).BackgroundImage = My.Resources.background_affiche1
         Next
 
-        DirectCast(sender, TableLayoutPanel).BackgroundImage = My.Resources.background_affiche_2
+        With DirectCast(sender, TableLayoutPanel)
+            .BackgroundImage = My.Resources.background_affiche_2
+            SelectedStudent = CType(sender.Name.ToString.Chars(sender.Name.ToString.Length - 1).ToString, Integer)
+            Console.WriteLine(SelectedStudent.ToString)
+        End With
 
         For Each b As Control In Home.NavBar.Controls
             If b.GetType.ToString = "System.Windows.Forms.Button" Then
@@ -312,8 +317,8 @@
         For Each ctrl As Control In DirectCast(sender, TableLayoutPanel).Controls
             OnLeave(New EventArgs())
         Next
-            DirectCast(sender, TableLayoutPanel).BackgroundImage = My.Resources.background_affiche1
-            Home.NavBar.Enabled = False
+        DirectCast(sender, TableLayoutPanel).BackgroundImage = My.Resources.background_affiche1
+        Home.NavBar.Enabled = False
     End Sub
 
     Private Sub affichResearchResult_Shown(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Shown
@@ -329,10 +334,10 @@
         End If
     End Sub
 
-    Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
-        affichResearchResult_Shown(Me, New EventArgs())
-        'affich_pageResult()
-        Timer1.Enabled = False
-        Home.PictureBox1.Visible = False
-    End Sub
+    'Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
+    '    affichResearchResult_Shown(Me, New EventArgs())
+    '    'affich_pageResult()
+    '    Timer1.Enabled = False
+    '    Home.PictureBox1.Visible = False
+    'End Sub
 End Class

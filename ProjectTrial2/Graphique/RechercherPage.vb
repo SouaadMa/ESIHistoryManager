@@ -427,6 +427,7 @@
 
 
             'handling the appearnce of the affichage form
+            Home.PictureBox1.ImageLocation = "..\..\Resources\Spinner-1s-220px.gif"
             Home.PictureBox1.Visible = True
             Home.f = New affichResearchResult(collection_critere)         ' assign the search form to  the f form
             Home.f.TopLevel = False

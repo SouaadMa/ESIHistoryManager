@@ -84,6 +84,18 @@
     </Compile>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="BDD\BDD.vb" />
+    <Compile Include="Graphique\details.Designer.vb">
+      <DependentUpon>details.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Graphique\details.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Graphique\modifier.Designer.vb">
+      <DependentUpon>modifier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Graphique\modifier.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Graphique\PVPage.Designer.vb">
       <DependentUpon>PVPage.vb</DependentUpon>
     </Compile>
@@ -166,8 +178,14 @@
     <EmbeddedResource Include="Graphique\ClassementPage.resx">
       <DependentUpon>ClassementPage.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Graphique\details.resx">
+      <DependentUpon>details.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Graphique\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Graphique\modifier.resx">
+      <DependentUpon>modifier.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Graphique\modifpassword.resx">
       <DependentUpon>modifpassword.vb</DependentUpon>
@@ -222,7 +240,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Asset 2.png" />
+    <None Include="Resources\backBTchekedNone.png" />
+    <None Include="Resources\backBTcheked.png" />
     <Content Include="Resources\background_affiche_2.png" />
+    <None Include="Resources\detailsBACBack.png" />
+    <None Include="Resources\details general back.png" />
     <Content Include="Resources\page_num_current.png" />
     <None Include="Resources\Spinner-1s-220px.gif" />
     <Content Include="VISUAL.accdb">

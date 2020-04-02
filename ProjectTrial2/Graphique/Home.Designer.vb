@@ -595,10 +595,10 @@ Partial Class Home
         '
         'PictureBox1
         '
-        Me.PictureBox1.BackColor = System.Drawing.Color.White
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.PictureBox1.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.Spinner_1s_220px
-        Me.PictureBox1.Location = New System.Drawing.Point(400, 265)
+        Me.PictureBox1.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.Spinner
+        Me.PictureBox1.Location = New System.Drawing.Point(400, 243)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(217, 213)
         Me.PictureBox1.TabIndex = 29

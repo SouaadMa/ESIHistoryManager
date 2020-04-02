@@ -43,6 +43,14 @@ EsistHistoryManagement
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.backBTcheked">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.backBTchekedNone">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.background">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -76,6 +84,14 @@ EsistHistoryManagement
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.details">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.details_general_back">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.detailsBACBack">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -215,7 +231,7 @@ EsistHistoryManagement
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
-</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.Spinner_1s_220px">
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.Spinner">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

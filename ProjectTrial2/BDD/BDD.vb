@@ -2,6 +2,13 @@
 
 Public Class BDD
 
+    'Les noms des tables de la BDD
+    Public Const nomTableEtudiant = "Etudiant", nomTableINSCRIPTION = "INSCRIPTION"
+    Public Const nomTableNOTE = "NOTE", nomTableNoteRATRAP = "NoteRATRAP"
+    Public Const nomTableGROUP = "GROUP", nomTableSection = "Section"
+    Public Const nomTablePROMO = "PROMO", nomTableMATIERE = "MATIERE"
+    Public Const nomTableRATRAP = "RATRAP"
+
     'Les noms des champs de la table Etudiant
     Public Const champsNomEtud = "NomEtud", champsPrenoms = "Prenoms"
     Public Const champsNomEtudA = "NomEtudA", champsPrenomsA = "PrenomsA"

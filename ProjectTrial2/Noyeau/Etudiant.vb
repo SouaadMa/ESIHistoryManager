@@ -26,18 +26,19 @@
             Console.Write(champs + " : ")
             Try
                 'Console.WriteLine(ligne(champs).ToString)
-                InfosETUDIANT.Add(champs, ligne(champs))
+                InfosETUDIANT.Add(champs, CType(ligne(champs), String))
             Catch ex As Exception
-                Console.WriteLine("valeur erronnee !")
+                Console.WriteLine("Valeur erronnee !")
             End Try
         Next
         For Each champs As String In BDD.numETUDIANT
             'Console.Write(champs + " : ")
             Try
                 'Console.WriteLine(ligne(champs).ToString)
-                InfosETUDIANT.Add(champs, ligne(champs))
+                InfosETUDIANT.Add(champs, CType(ligne(champs), String))
             Catch ex As Exception
-                Console.WriteLine("valeur erronee !")
+                Console.WriteLine("Valeur erronnee !")
+
             End Try
 
         Next
@@ -45,9 +46,9 @@
             'Console.Write(champs + " : ")
             Try
                 'Console.WriteLine(ligne(champs).ToString)
-                InfosETUDIANT.Add(champs, ligne(champs))
+                InfosETUDIANT.Add(champs, CType(ligne(champs), String))
             Catch ex As Exception
-                Console.WriteLine("valeur erronnee !")
+                Console.WriteLine("Valeur erronnee !")
             End Try
         Next
         'Console.WriteLine("------------------------------------------------------")

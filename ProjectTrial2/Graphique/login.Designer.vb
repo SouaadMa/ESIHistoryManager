@@ -274,7 +274,7 @@ Partial Class Login
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(232, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(232, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1018, 701)
+        Me.ClientSize = New System.Drawing.Size(1018, 671)
         Me.Controls.Add(Me.avertissemnt)
         Me.Controls.Add(Me.ConnexionPanel)
         Me.Controls.Add(Me.profile_photo_login)
@@ -283,7 +283,7 @@ Partial Class Login
         Me.Controls.Add(Me.bagrd_ellipse)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MaximumSize = New System.Drawing.Size(1400, 1000)
+        Me.MaximumSize = New System.Drawing.Size(1050, 700)
         Me.MinimizeBox = False
         Me.MinimumSize = New System.Drawing.Size(1024, 646)
         Me.Name = "Login"

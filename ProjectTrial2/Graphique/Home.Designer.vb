@@ -337,6 +337,7 @@ Partial Class Home
         Me.NavBar.Controls.Add(Me.Help_Button, 6, 0)
         Me.NavBar.Location = New System.Drawing.Point(185, 642)
         Me.NavBar.Margin = New System.Windows.Forms.Padding(15)
+        Me.NavBar.MaximumSize = New System.Drawing.Size(900, 60)
         Me.NavBar.Name = "NavBar"
         Me.NavBar.RowCount = 1
         Me.NavBar.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))

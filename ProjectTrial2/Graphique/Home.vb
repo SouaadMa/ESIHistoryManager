@@ -56,6 +56,9 @@
             If Not f Is Nothing Then
                 f.Close()
             End If
+            If Not h Is Nothing Then
+                h.Close()
+            End If
             Login.Show()
         End If
     End Sub

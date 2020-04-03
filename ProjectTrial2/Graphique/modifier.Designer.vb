@@ -41,34 +41,33 @@ Partial Class modifier
         Me.P_GENERALITE = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel11 = New System.Windows.Forms.Panel()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.TXT_FILSDE = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel12 = New System.Windows.Forms.Panel()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
+        Me.TXT_ETDE = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TXT_MATRIN = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TXT_MATRIC_INS = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TXT_NomEtud = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.TXT_Prenoms = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel8 = New System.Windows.Forms.Panel()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.TXT_NomEtudA = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.TXT_PrenomsA = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel9 = New System.Windows.Forms.Panel()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel10 = New System.Windows.Forms.Panel()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.TXT_SEXE = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.P_RESIDENCE = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
@@ -265,6 +264,7 @@ Partial Class modifier
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.DTP_DATENAIS = New System.Windows.Forms.DateTimePicker()
         Me.PN_MODIFIER.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -358,10 +358,10 @@ Partial Class modifier
         'PN_MODIFIER
         '
         Me.PN_MODIFIER.BackColor = System.Drawing.Color.Transparent
-        Me.PN_MODIFIER.Controls.Add(Me.Panel1)
         Me.PN_MODIFIER.Controls.Add(Me.BT_SORTIR)
         Me.PN_MODIFIER.Controls.Add(Me.Panel3)
         Me.PN_MODIFIER.Controls.Add(Me.TabControl1)
+        Me.PN_MODIFIER.Controls.Add(Me.Panel1)
         Me.PN_MODIFIER.Location = New System.Drawing.Point(0, 0)
         Me.PN_MODIFIER.Name = "PN_MODIFIER"
         Me.PN_MODIFIER.Size = New System.Drawing.Size(678, 640)
@@ -675,23 +675,23 @@ Partial Class modifier
         '
         'Panel11
         '
-        Me.Panel11.Controls.Add(Me.TextBox9)
+        Me.Panel11.Controls.Add(Me.TXT_FILSDE)
         Me.Panel11.Controls.Add(Me.Label3)
         Me.Panel11.Location = New System.Drawing.Point(27, 482)
         Me.Panel11.Name = "Panel11"
         Me.Panel11.Size = New System.Drawing.Size(370, 54)
         Me.Panel11.TabIndex = 1
         '
-        'TextBox9
+        'TXT_FILSDE
         '
-        Me.TextBox9.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox9.ForeColor = System.Drawing.Color.DarkGray
-        Me.TextBox9.Location = New System.Drawing.Point(193, 17)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(177, 20)
-        Me.TextBox9.TabIndex = 94
-        Me.TextBox9.Text = "nom du pere"
+        Me.TXT_FILSDE.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TXT_FILSDE.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TXT_FILSDE.ForeColor = System.Drawing.Color.DarkGray
+        Me.TXT_FILSDE.Location = New System.Drawing.Point(193, 17)
+        Me.TXT_FILSDE.Name = "TXT_FILSDE"
+        Me.TXT_FILSDE.Size = New System.Drawing.Size(177, 20)
+        Me.TXT_FILSDE.TabIndex = 94
+        Me.TXT_FILSDE.Text = "nom du pere"
         '
         'Label3
         '
@@ -707,23 +707,23 @@ Partial Class modifier
         '
         'Panel12
         '
-        Me.Panel12.Controls.Add(Me.TextBox10)
+        Me.Panel12.Controls.Add(Me.TXT_ETDE)
         Me.Panel12.Controls.Add(Me.Label2)
         Me.Panel12.Location = New System.Drawing.Point(27, 543)
         Me.Panel12.Name = "Panel12"
         Me.Panel12.Size = New System.Drawing.Size(370, 54)
         Me.Panel12.TabIndex = 1
         '
-        'TextBox10
+        'TXT_ETDE
         '
-        Me.TextBox10.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox10.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox10.ForeColor = System.Drawing.Color.DarkGray
-        Me.TextBox10.Location = New System.Drawing.Point(193, 17)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(177, 20)
-        Me.TextBox10.TabIndex = 95
-        Me.TextBox10.Text = "nom de la mere"
+        Me.TXT_ETDE.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TXT_ETDE.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TXT_ETDE.ForeColor = System.Drawing.Color.DarkGray
+        Me.TXT_ETDE.Location = New System.Drawing.Point(193, 17)
+        Me.TXT_ETDE.Name = "TXT_ETDE"
+        Me.TXT_ETDE.Size = New System.Drawing.Size(177, 20)
+        Me.TXT_ETDE.TabIndex = 95
+        Me.TXT_ETDE.Text = "nom de la mere"
         '
         'Label2
         '
@@ -739,23 +739,23 @@ Partial Class modifier
         '
         'Panel4
         '
-        Me.Panel4.Controls.Add(Me.TextBox2)
+        Me.Panel4.Controls.Add(Me.TXT_MATRIN)
         Me.Panel4.Controls.Add(Me.Label6)
         Me.Panel4.Location = New System.Drawing.Point(27, 3)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(370, 54)
         Me.Panel4.TabIndex = 1
         '
-        'TextBox2
+        'TXT_MATRIN
         '
-        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.ForeColor = System.Drawing.Color.DarkGray
-        Me.TextBox2.Location = New System.Drawing.Point(193, 17)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(177, 20)
-        Me.TextBox2.TabIndex = 48
-        Me.TextBox2.Text = "Matricule"
+        Me.TXT_MATRIN.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TXT_MATRIN.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TXT_MATRIN.ForeColor = System.Drawing.Color.DarkGray
+        Me.TXT_MATRIN.Location = New System.Drawing.Point(193, 17)
+        Me.TXT_MATRIN.Name = "TXT_MATRIN"
+        Me.TXT_MATRIN.Size = New System.Drawing.Size(177, 20)
+        Me.TXT_MATRIN.TabIndex = 48
+        Me.TXT_MATRIN.Text = "Matricule"
         '
         'Label6
         '
@@ -771,23 +771,23 @@ Partial Class modifier
         '
         'Panel2
         '
-        Me.Panel2.Controls.Add(Me.TextBox1)
+        Me.Panel2.Controls.Add(Me.TXT_MATRIC_INS)
         Me.Panel2.Controls.Add(Me.Label11)
         Me.Panel2.Location = New System.Drawing.Point(27, 63)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(370, 54)
         Me.Panel2.TabIndex = 0
         '
-        'TextBox1
+        'TXT_MATRIC_INS
         '
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.ForeColor = System.Drawing.Color.DarkGray
-        Me.TextBox1.Location = New System.Drawing.Point(193, 17)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(177, 20)
-        Me.TextBox1.TabIndex = 47
-        Me.TextBox1.Text = "Matricule de BAC"
+        Me.TXT_MATRIC_INS.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TXT_MATRIC_INS.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TXT_MATRIC_INS.ForeColor = System.Drawing.Color.DarkGray
+        Me.TXT_MATRIC_INS.Location = New System.Drawing.Point(193, 17)
+        Me.TXT_MATRIC_INS.Name = "TXT_MATRIC_INS"
+        Me.TXT_MATRIC_INS.Size = New System.Drawing.Size(177, 20)
+        Me.TXT_MATRIC_INS.TabIndex = 47
+        Me.TXT_MATRIC_INS.Text = "Matricule de BAC"
         '
         'Label11
         '
@@ -803,23 +803,23 @@ Partial Class modifier
         '
         'Panel5
         '
-        Me.Panel5.Controls.Add(Me.TextBox3)
+        Me.Panel5.Controls.Add(Me.TXT_NomEtud)
         Me.Panel5.Controls.Add(Me.Label7)
         Me.Panel5.Location = New System.Drawing.Point(27, 123)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(370, 54)
         Me.Panel5.TabIndex = 1
         '
-        'TextBox3
+        'TXT_NomEtud
         '
-        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.ForeColor = System.Drawing.Color.DarkGray
-        Me.TextBox3.Location = New System.Drawing.Point(193, 17)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(177, 20)
-        Me.TextBox3.TabIndex = 87
-        Me.TextBox3.Text = "Nom"
+        Me.TXT_NomEtud.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TXT_NomEtud.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TXT_NomEtud.ForeColor = System.Drawing.Color.DarkGray
+        Me.TXT_NomEtud.Location = New System.Drawing.Point(193, 17)
+        Me.TXT_NomEtud.Name = "TXT_NomEtud"
+        Me.TXT_NomEtud.Size = New System.Drawing.Size(177, 20)
+        Me.TXT_NomEtud.TabIndex = 87
+        Me.TXT_NomEtud.Text = "Nom"
         '
         'Label7
         '
@@ -835,23 +835,23 @@ Partial Class modifier
         '
         'Panel7
         '
-        Me.Panel7.Controls.Add(Me.TextBox4)
+        Me.Panel7.Controls.Add(Me.TXT_Prenoms)
         Me.Panel7.Controls.Add(Me.Label8)
         Me.Panel7.Location = New System.Drawing.Point(27, 183)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(370, 53)
         Me.Panel7.TabIndex = 1
         '
-        'TextBox4
+        'TXT_Prenoms
         '
-        Me.TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.ForeColor = System.Drawing.Color.DarkGray
-        Me.TextBox4.Location = New System.Drawing.Point(193, 16)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(177, 20)
-        Me.TextBox4.TabIndex = 91
-        Me.TextBox4.Text = "Prenom"
+        Me.TXT_Prenoms.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TXT_Prenoms.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TXT_Prenoms.ForeColor = System.Drawing.Color.DarkGray
+        Me.TXT_Prenoms.Location = New System.Drawing.Point(193, 16)
+        Me.TXT_Prenoms.Name = "TXT_Prenoms"
+        Me.TXT_Prenoms.Size = New System.Drawing.Size(177, 20)
+        Me.TXT_Prenoms.TabIndex = 91
+        Me.TXT_Prenoms.Text = "Prenom"
         '
         'Label8
         '
@@ -867,24 +867,24 @@ Partial Class modifier
         '
         'Panel8
         '
-        Me.Panel8.Controls.Add(Me.TextBox5)
+        Me.Panel8.Controls.Add(Me.TXT_NomEtudA)
         Me.Panel8.Controls.Add(Me.Label4)
         Me.Panel8.Location = New System.Drawing.Point(27, 242)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(370, 54)
         Me.Panel8.TabIndex = 1
         '
-        'TextBox5
+        'TXT_NomEtudA
         '
-        Me.TextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox5.ForeColor = System.Drawing.Color.DarkGray
-        Me.TextBox5.Location = New System.Drawing.Point(0, 17)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.TextBox5.Size = New System.Drawing.Size(177, 20)
-        Me.TextBox5.TabIndex = 93
-        Me.TextBox5.Text = "اللقب"
+        Me.TXT_NomEtudA.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TXT_NomEtudA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TXT_NomEtudA.ForeColor = System.Drawing.Color.DarkGray
+        Me.TXT_NomEtudA.Location = New System.Drawing.Point(0, 17)
+        Me.TXT_NomEtudA.Name = "TXT_NomEtudA"
+        Me.TXT_NomEtudA.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.TXT_NomEtudA.Size = New System.Drawing.Size(177, 20)
+        Me.TXT_NomEtudA.TabIndex = 93
+        Me.TXT_NomEtudA.Text = "اللقب"
         '
         'Label4
         '
@@ -900,24 +900,24 @@ Partial Class modifier
         '
         'Panel6
         '
-        Me.Panel6.Controls.Add(Me.TextBox6)
+        Me.Panel6.Controls.Add(Me.TXT_PrenomsA)
         Me.Panel6.Controls.Add(Me.Label5)
         Me.Panel6.Location = New System.Drawing.Point(27, 303)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(370, 54)
         Me.Panel6.TabIndex = 1
         '
-        'TextBox6
+        'TXT_PrenomsA
         '
-        Me.TextBox6.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox6.ForeColor = System.Drawing.Color.DarkGray
-        Me.TextBox6.Location = New System.Drawing.Point(0, 17)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.TextBox6.Size = New System.Drawing.Size(177, 20)
-        Me.TextBox6.TabIndex = 94
-        Me.TextBox6.Text = "الاسم"
+        Me.TXT_PrenomsA.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TXT_PrenomsA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TXT_PrenomsA.ForeColor = System.Drawing.Color.DarkGray
+        Me.TXT_PrenomsA.Location = New System.Drawing.Point(0, 17)
+        Me.TXT_PrenomsA.Name = "TXT_PrenomsA"
+        Me.TXT_PrenomsA.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.TXT_PrenomsA.Size = New System.Drawing.Size(177, 20)
+        Me.TXT_PrenomsA.TabIndex = 94
+        Me.TXT_PrenomsA.Text = "الاسم"
         '
         'Label5
         '
@@ -933,23 +933,12 @@ Partial Class modifier
         '
         'Panel9
         '
-        Me.Panel9.Controls.Add(Me.TextBox7)
+        Me.Panel9.Controls.Add(Me.DTP_DATENAIS)
         Me.Panel9.Controls.Add(Me.Label10)
         Me.Panel9.Location = New System.Drawing.Point(27, 363)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(370, 54)
         Me.Panel9.TabIndex = 1
-        '
-        'TextBox7
-        '
-        Me.TextBox7.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox7.ForeColor = System.Drawing.Color.DarkGray
-        Me.TextBox7.Location = New System.Drawing.Point(193, 17)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(177, 20)
-        Me.TextBox7.TabIndex = 92
-        Me.TextBox7.Text = "Date de naissance"
         '
         'Label10
         '
@@ -965,23 +954,23 @@ Partial Class modifier
         '
         'Panel10
         '
-        Me.Panel10.Controls.Add(Me.TextBox8)
+        Me.Panel10.Controls.Add(Me.TXT_SEXE)
         Me.Panel10.Controls.Add(Me.Label9)
         Me.Panel10.Location = New System.Drawing.Point(27, 423)
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(370, 53)
         Me.Panel10.TabIndex = 1
         '
-        'TextBox8
+        'TXT_SEXE
         '
-        Me.TextBox8.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox8.ForeColor = System.Drawing.Color.DarkGray
-        Me.TextBox8.Location = New System.Drawing.Point(193, 16)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(177, 20)
-        Me.TextBox8.TabIndex = 93
-        Me.TextBox8.Text = "Sexe"
+        Me.TXT_SEXE.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TXT_SEXE.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TXT_SEXE.ForeColor = System.Drawing.Color.DarkGray
+        Me.TXT_SEXE.Location = New System.Drawing.Point(193, 16)
+        Me.TXT_SEXE.Name = "TXT_SEXE"
+        Me.TXT_SEXE.Size = New System.Drawing.Size(177, 20)
+        Me.TXT_SEXE.TabIndex = 93
+        Me.TXT_SEXE.Text = "Sexe"
         '
         'Label9
         '
@@ -3320,6 +3309,18 @@ Partial Class modifier
         Me.Label1.TabIndex = 12
         Me.Label1.Text = "Modifer les informations de l'étudiant"
         '
+        'DTP_DATENAIS
+        '
+        Me.DTP_DATENAIS.Checked = False
+        Me.DTP_DATENAIS.CustomFormat = "dd/mm/yyyy"
+        Me.DTP_DATENAIS.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DTP_DATENAIS.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DTP_DATENAIS.Location = New System.Drawing.Point(193, 13)
+        Me.DTP_DATENAIS.Margin = New System.Windows.Forms.Padding(2)
+        Me.DTP_DATENAIS.Name = "DTP_DATENAIS"
+        Me.DTP_DATENAIS.Size = New System.Drawing.Size(177, 30)
+        Me.DTP_DATENAIS.TabIndex = 88
+        '
         'modifier
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
@@ -3511,34 +3512,33 @@ Partial Class modifier
     Friend WithEvents P_GENERALITE As System.Windows.Forms.TabPage
     Friend WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents Panel11 As System.Windows.Forms.Panel
-    Friend WithEvents TextBox9 As System.Windows.Forms.TextBox
+    Friend WithEvents TXT_FILSDE As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Panel12 As System.Windows.Forms.Panel
-    Friend WithEvents TextBox10 As System.Windows.Forms.TextBox
+    Friend WithEvents TXT_ETDE As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Panel4 As System.Windows.Forms.Panel
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents TXT_MATRIN As System.Windows.Forms.TextBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents TXT_MATRIC_INS As System.Windows.Forms.TextBox
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents Panel5 As System.Windows.Forms.Panel
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
+    Friend WithEvents TXT_NomEtud As System.Windows.Forms.TextBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Panel7 As System.Windows.Forms.Panel
-    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
+    Friend WithEvents TXT_Prenoms As System.Windows.Forms.TextBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Panel8 As System.Windows.Forms.Panel
-    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
+    Friend WithEvents TXT_NomEtudA As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Panel6 As System.Windows.Forms.Panel
-    Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
+    Friend WithEvents TXT_PrenomsA As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Panel9 As System.Windows.Forms.Panel
-    Friend WithEvents TextBox7 As System.Windows.Forms.TextBox
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents Panel10 As System.Windows.Forms.Panel
-    Friend WithEvents TextBox8 As System.Windows.Forms.TextBox
+    Friend WithEvents TXT_SEXE As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents P_RESIDENCE As System.Windows.Forms.TabPage
     Friend WithEvents TableLayoutPanel2 As System.Windows.Forms.TableLayoutPanel
@@ -3733,4 +3733,5 @@ Partial Class modifier
     Friend WithEvents LB_ANSCRA As System.Windows.Forms.Label
     Friend WithEvents CB_CODERATRAT As System.Windows.Forms.ComboBox
     Friend WithEvents Label21 As System.Windows.Forms.Label
+    Friend WithEvents DTP_DATENAIS As System.Windows.Forms.DateTimePicker
 End Class

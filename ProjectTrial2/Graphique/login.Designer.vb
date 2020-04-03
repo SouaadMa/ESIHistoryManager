@@ -283,7 +283,7 @@ Partial Class Login
         Me.Controls.Add(Me.bagrd_ellipse)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MaximumSize = New System.Drawing.Size(1024, 950)
+        Me.MaximumSize = New System.Drawing.Size(1400, 1000)
         Me.MinimizeBox = False
         Me.MinimumSize = New System.Drawing.Size(1024, 646)
         Me.Name = "Login"

@@ -84,6 +84,30 @@
     </Compile>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="BDD\BDD.vb" />
+    <Compile Include="Graphique\Imprimer.Designer.vb">
+      <DependentUpon>Imprimer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Graphique\Imprimer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Graphique\RNG.Designer.vb">
+      <DependentUpon>RNG.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Graphique\RNG.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Graphique\RN.Designer.vb">
+      <DependentUpon>RN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Graphique\RN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Graphique\Historique.Designer.vb">
+      <DependentUpon>Historique.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Graphique\Historique.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Graphique\details.Designer.vb">
       <DependentUpon>details.vb</DependentUpon>
     </Compile>
@@ -177,6 +201,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Graphique\ClassementPage.resx">
       <DependentUpon>ClassementPage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Graphique\Imprimer.resx">
+      <DependentUpon>Imprimer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Graphique\RNG.resx">
+      <DependentUpon>RNG.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Graphique\RN.resx">
+      <DependentUpon>RN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Graphique\Historique.resx">
+      <DependentUpon>Historique.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Graphique\details.resx">
       <DependentUpon>details.vb</DependentUpon>

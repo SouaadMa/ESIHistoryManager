@@ -23,7 +23,7 @@
         'initiliser les champs
         Me.LB_ADR.Text = esistselect.GetInfoChamps("ADRESSE")
         Me.LB_ANNEEB.Text = esistselect.GetInfoChamps("ANNEEBAC")
-        Me.LB_CODEPOS.Text = esistselect.GetInfoChamps("CODEPOS")
+        Me.LB_CODEPOS.Text = esistselect.GetInfoChamps("CODPOST")
         Me.LB_DATEN.Text = esistselect.GetInfoChamps("DateNais")
         Me.LB_ETDE.Text = esistselect.GetInfoChamps("ET_DE")
         Me.LB_FILSDE.Text = esistselect.GetInfoChamps("FILS_DE")
@@ -41,8 +41,8 @@
         Me.LB_VILLE.Text = esistselect.GetInfoChamps("VILLE")
         Me.LB_WILAYA.Text = esistselect.GetInfoChamps("WILAYA")
         Me.LB_WILAYAB.Text = esistselect.GetInfoChamps("WILBAC")
-        Me.LB_WILAYAN.Text = esistselect.GetInfoChamps("WilayaNais")
-        Me.LB_WILAYANA.Text = esistselect.GetInfoChamps("WILNAIS")
+        Me.LB_WILAYAN.Text = esistselect.GetInfoChamps("WILNAIS")
+        Me.LB_WILAYANA.Text = esistselect.GetInfoChamps("WILNAISA")
 
     End Sub
 
@@ -84,7 +84,9 @@
 
     Private Sub BT_SORTIR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_SORTIR.Click
         Me.Close()
+        'Home.f.Show()
+        Home.MainContainer2.Visible = False
+        Home.MainContainer1.Visible = True
     End Sub
 
-    
 End Class

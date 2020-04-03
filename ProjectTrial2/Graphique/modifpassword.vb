@@ -78,7 +78,7 @@
     Private Sub modifpassword_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.Size = New System.Drawing.Size(1024, 678)
         Me.MinimumSize = New System.Drawing.Size(1023, 595)
-        Me.MaximumSize = New System.Drawing.Size(1025, 950)
+        Me.MaximumSize = New System.Drawing.Size(1400, 1000)
         AgentButton.Checked = True
     End Sub
 

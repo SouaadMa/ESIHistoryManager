@@ -61,6 +61,6 @@
         AgentButton.Checked = True
         Me.Size = New System.Drawing.Size(1024, 728)
         Me.MinimumSize = New System.Drawing.Size(1023, 700)
-        Me.MaximumSize = New System.Drawing.Size(1025, 950)
+        Me.MaximumSize = New System.Drawing.Size(1400, 1000)
     End Sub
 End Class

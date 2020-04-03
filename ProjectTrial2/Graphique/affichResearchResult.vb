@@ -89,8 +89,8 @@
 
         Else
             If nb_page <= 4 Then
-                BT_NEXT.Visible = False
-                BT_PREV.Visible = False
+                BT_NEXT.Enabled = False
+                BT_PREV.Enabled = False
                 If nb_page <= 3 Then
                     BT_P4.Visible = False
                 End If
@@ -113,8 +113,8 @@
 
     Private Sub BT_NEXT_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_NEXT.Click
 
-        Me.BT_PREV.Visible = True
         Me.BT_PREV.Enabled = True
+        'Me.BT_PREV.Enabled = True
         Me.BT_P1.Text = (Me.BT_P1.Text + 4).ToString
         Me.BT_P2.Text = (Me.BT_P2.Text + 4).ToString
 
@@ -122,20 +122,20 @@
             BT_P2.Visible = False
             BT_P3.Visible = False
             BT_P4.Visible = False
-            BT_NEXT.Visible = False
+            BT_NEXT.Enabled = False
         Else
             Me.BT_P3.Text = (Me.BT_P3.Text + 4).ToString
             If Me.BT_P3.Text > nb_page Then
                 BT_P3.Visible = False
                 BT_P4.Visible = False
-                BT_NEXT.Visible = False
+                BT_NEXT.Enabled = False
             Else
                 Me.BT_P4.Text = (Me.BT_P4.Text + 4).ToString
                 If Me.BT_P4.Text > nb_page Then
                     BT_P4.Visible = False
-                    BT_NEXT.Visible = False
+                    BT_NEXT.Enabled = False
                 ElseIf Me.BT_P4.Text = nb_page Then
-                    BT_NEXT.Visible = False
+                    BT_NEXT.Enabled = False
                 End If
             End If
         End If
@@ -147,7 +147,7 @@
         BT_P2.Visible = True
         BT_P3.Visible = True
         BT_P4.Visible = True
-        BT_NEXT.Visible = True
+        BT_NEXT.Enabled = True
 
         If Me.BT_P1.Text = "1" Then
             Me.BT_PREV.Enabled = False
@@ -183,7 +183,7 @@
 
     End Sub
 
-    Private Sub BT_P1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_P1.Click, BT_P2.Click, BT_P3.Click, BT_P4.Click
+    Private Sub BT_P1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_P1.Click, BT_P4.Click, BT_P3.Click, BT_P2.Click
         For Each b As Button In PagesNumButtons.Controls
             b.BackgroundImage = My.Resources.page_num
         Next
@@ -315,19 +315,28 @@
         TableLayoutPanel1_Click(Label7_1.Parent, e)
     End Sub
 
-    Private Sub TableLayoutPanel1_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TableLayoutPanel1.Leave, TableLayoutPanel2.Leave, TableLayoutPanel3.Leave, TableLayoutPanel4.Leave, TableLayoutPanel5.Leave, TableLayoutPanel6.Leave, TableLayoutPanel7.Leave
+    Private Sub TableLayoutPanel1_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs)  'Handles TableLayoutPanel1.Leave, TableLayoutPanel2.Leave, TableLayoutPanel3.Leave, TableLayoutPanel4.Leave, TableLayoutPanel5.Leave, TableLayoutPanel6.Leave, TableLayoutPanel7.Leave
         'For Each ctrl As Control In DirectCast(sender, TableLayoutPanel).Controls
         '    OnLeave(New EventArgs())
         'Next
-        DirectCast(sender, TableLayoutPanel).BackgroundImage = My.Resources.background_affiche1
-        Home.NavBar.Enabled = False
+        'If Not sender.GetType.ToString.Equals("System.Windows.Forms.TableLayoutPanel") Then
+        For Each t As TableLayoutPanel In EtudiantPanel.Controls
+            t.BackgroundImage = My.Resources.background_affiche1
+        Next
+        For Each b As Control In Home.NavBar.Controls
+            If b.GetType.ToString = "System.Windows.Forms.Button" Then
+                b.Enabled = False
+            End If
+        Next
+        'End If
     End Sub
 
     Private Sub affichResearchResult_Shown(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Shown
         affich_pageResult()
+        watch_focusLocation(Me)
     End Sub
 
-    Private Sub BT_P1_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_P1.TextChanged
+    Private Sub BT_P1_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
         If BT_P1.Text = "1" Then
             BT_PREV.Enabled = False
         End If
@@ -342,4 +351,22 @@
     '    Timer1.Enabled = False
     '    Home.PictureBox1.Visible = False
     'End Sub
+
+    Private Sub TableLayoutPanel1_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles TableLayoutPanel1.LostFocus, TableLayoutPanel2.LostFocus, TableLayoutPanel3.LostFocus, TableLayoutPanel4.LostFocus, TableLayoutPanel5.LostFocus, TableLayoutPanel6.LostFocus, TableLayoutPanel7.LostFocus
+        TableLayoutPanel1_Leave(sender, e)
+    End Sub
+
+    Public Sub watch_focusLocation(ByVal ctrlParent As Control)
+        For Each ctrl As Control In ctrlParent.Controls
+            If Not ctrl.GetType.ToString.Equals("System.Windows.Forms.TableLayoutPanel") Then
+                AddHandler ctrl.MouseClick, AddressOf TableLayoutPanel1_Leave
+                Console.WriteLine(ctrl.Name)
+                If (ctrl.HasChildren) Then
+                    watch_focusLocation(ctrl)
+                End If
+            End If
+        Next
+
+    End Sub
+
 End Class

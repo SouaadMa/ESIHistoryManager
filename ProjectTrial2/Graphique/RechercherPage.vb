@@ -433,9 +433,9 @@
             Home.f.TopLevel = False
             Home.f.TopMost = True
             Home.f.WindowState = FormWindowState.Normal
-            Home.MainContainer.Controls.Add(Home.f)        ' add the controlers of the searche page to the main form f 
+            Home.MainContainer1.Controls.Add(Home.f)        ' add the controlers of the searche page to the main form f 
             Home.f.Show()                                ' show the form f in the middle of the home page
-            Home.MainContainer.Visible = True
+            Home.MainContainer1.Visible = True
             Home.PictureBox1.Visible = False
             'Home.MainContainer.Width = 680            ' adjust its appearance
 

@@ -2,14 +2,15 @@
 
     Public _ModeConnexion As Boolean = Login.AdminButton.Checked        'the boolean to determine the connected profile type 
 
-    Public f As Form    ' the form that will be shown in the middle of the page
+    Public f As Form    ' the form that will be shown in the middle of the page for the side bar operations
+    Public h As Form    ' the form that will be shown in the middle of the page for the nav bar operations
 
 
     Private Sub Home_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'initialize the home page componants
         Me.Size = New System.Drawing.Size(1024, 728)
         Me.MinimumSize = New System.Drawing.Size(1023, 700)
-        Me.MaximumSize = New System.Drawing.Size(1025, 950)
+        Me.MaximumSize = New System.Drawing.Size(1400, 1000)
         PN_BIENVENUE.Location = New System.Drawing.Point(71, 3)
 
         MenuButton.Location = New System.Drawing.Point(0, 0) 'initialize the hamburger button to the top left corner
@@ -74,7 +75,7 @@
             NavBar.Location = New System.Drawing.Point(188, 639)
             Me.PN_BIENVENUE.Location = New System.Drawing.Point(160, 4)
             
-            With Me.MainContainer
+            With Me.MainContainer1
                 .Location = New System.Drawing.Point(185, 1)
                 .Width = 680
                 'If .Controls.Count > 0 Then
@@ -84,14 +85,33 @@
                 '    Console.Write(.Controls.Item(0).Name)
                 'End If
             End With
-
+            With Me.MainContainer2
+                .Location = New System.Drawing.Point(185, 1)
+                .Width = 680
+                'If .Controls.Count > 0 Then
+                '    .Controls.Item(0).Scale(New System.Drawing.SizeF(1 / 1.2, 1))
+                '    .Controls.Item(0).Anchor = AnchorStyles.None
+                '    .Controls.Item(0).Dock = DockStyle.Fill
+                '    Console.Write(.Controls.Item(0).Name)
+                'End If
+            End With
         Else
 
             SideBar.Width = 55
             NavBar.Width = 800
             NavBar.Location = New System.Drawing.Point(61, 639)
             Me.PN_BIENVENUE.Location = New System.Drawing.Point(95, 4)
-            With Me.MainContainer
+            With Me.MainContainer1
+                .Location = New System.Drawing.Point(60, 1)
+                .Width += 125
+                'If .Controls.Count > 0 Then
+                '    .Controls.Item(0).Scale(New System.Drawing.SizeF(1.2, 1))
+                '    .Controls.Item(0).Anchor = AnchorStyles.None
+                '    .Controls.Item(0).Dock = DockStyle.Fill
+                '    Console.Write(.Controls.Item(0).Name)
+                'End If
+            End With
+            With Me.MainContainer2
                 .Location = New System.Drawing.Point(60, 1)
                 .Width += 125
                 'If .Controls.Count > 0 Then
@@ -228,9 +248,9 @@
         f.TopLevel = False
         f.TopMost = True
         f.WindowState = FormWindowState.Normal
-        Me.MainContainer.Controls.Add(f)        ' add the controlers of the searche page to the main form f 
+        Me.MainContainer1.Controls.Add(f)        ' add the controlers of the searche page to the main form f 
         f.Show()                                ' show the form f in the middle of the home page
-        Me.MainContainer.Visible = True
+        Me.MainContainer1.Visible = True
         'Me.MainContainer.Width = 680            ' adjust its appearance
 
     End Sub
@@ -239,9 +259,9 @@
         modifpassword.Show()
     End Sub
 
-    Private Sub maincontainer_sizechanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MainContainer.SizeChanged
-        If MainContainer.Width = 680 Then
-            With MainContainer
+    Private Sub maincontainer_sizechanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MainContainer1.SizeChanged
+        If MainContainer1.Width = 680 Then
+            With MainContainer1
                 If .Controls.Count > 0 Then
                     .Controls.Item(0).Scale(New System.Drawing.SizeF(1 / 1.2, 1))
                     .Controls.Item(0).Anchor = AnchorStyles.None
@@ -250,7 +270,28 @@
                 End If
             End With
         Else
-            With MainContainer
+            With MainContainer1
+                If .Controls.Count > 0 Then
+                    .Controls.Item(0).Scale(New System.Drawing.SizeF(1.2, 1))
+                    .Controls.Item(0).Anchor = AnchorStyles.None
+                    .Controls.Item(0).Dock = DockStyle.Fill
+                    Console.Write(.Controls.Item(0).Name + "sized big")
+                End If
+            End With
+        End If
+    End Sub
+    Private Sub maincontainer2_sizechanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MainContainer2.SizeChanged
+        If MainContainer2.Width = 680 Then
+            With MainContainer2
+                If .Controls.Count > 0 Then
+                    .Controls.Item(0).Scale(New System.Drawing.SizeF(1 / 1.2, 1))
+                    .Controls.Item(0).Anchor = AnchorStyles.None
+                    .Controls.Item(0).Dock = DockStyle.Fill
+                    Console.Write(.Controls.Item(0).Name + " sized little")
+                End If
+            End With
+        Else
+            With MainContainer2
                 If .Controls.Count > 0 Then
                     .Controls.Item(0).Scale(New System.Drawing.SizeF(1.2, 1))
                     .Controls.Item(0).Anchor = AnchorStyles.None
@@ -261,9 +302,22 @@
         End If
     End Sub
 
-    Private Sub MainContainer_ControlAdded(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ControlEventArgs) Handles MainContainer.ControlAdded
-        If MainContainer.Width = 805 Then
-            With MainContainer
+    Private Sub MainContainer_ControlAdded(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ControlEventArgs) Handles MainContainer1.ControlAdded
+        If MainContainer1.Width = 805 Then
+            With MainContainer1
+                If .Controls.Count > 0 Then
+                    .Controls.Item(0).Scale(New System.Drawing.SizeF(1.2, 1))
+                    .Controls.Item(0).Anchor = AnchorStyles.None
+                    .Controls.Item(0).Dock = DockStyle.Fill
+                    Console.Write(.Controls.Item(0).Name + "added ")
+                End If
+            End With
+        End If
+    End Sub
+
+    Private Sub MainContainer2_ControlAdded(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ControlEventArgs) Handles MainContainer2.ControlAdded
+        If MainContainer2.Width = 805 Then
+            With MainContainer2
                 If .Controls.Count > 0 Then
                     .Controls.Item(0).Scale(New System.Drawing.SizeF(1.2, 1))
                     .Controls.Item(0).Anchor = AnchorStyles.None
@@ -283,9 +337,9 @@
         f.TopLevel = False
         f.TopMost = True
         f.WindowState = FormWindowState.Normal
-        Me.MainContainer.Controls.Add(f)        ' add the controlers of the searche page to the main form f 
+        Me.MainContainer1.Controls.Add(f)        ' add the controlers of the searche page to the main form f 
         f.Show()                                ' show the form f in the middle of the home page
-        Me.MainContainer.Visible = True
+        Me.MainContainer1.Visible = True
         'Me.MainContainer.Width = 680            ' adjust its appearance
     End Sub
 
@@ -298,9 +352,9 @@
         f.TopLevel = False
         f.TopMost = True
         f.WindowState = FormWindowState.Normal
-        Me.MainContainer.Controls.Add(f)        ' add the controlers of the searche page to the main form f 
+        Me.MainContainer1.Controls.Add(f)        ' add the controlers of the searche page to the main form f 
         f.Show()                                ' show the form f in the middle of the home page
-        Me.MainContainer.Visible = True
+        Me.MainContainer1.Visible = True
         'Me.MainContainer.Width = 680            ' adjust its appearance
     End Sub
 
@@ -313,9 +367,9 @@
         f.TopLevel = False
         f.TopMost = True
         f.WindowState = FormWindowState.Normal
-        Me.MainContainer.Controls.Add(f)        ' add the controlers of the searche page to the main form f 
+        Me.MainContainer1.Controls.Add(f)        ' add the controlers of the searche page to the main form f 
         f.Show()                                ' show the form f in the middle of the home page
-        Me.MainContainer.Visible = True
+        Me.MainContainer1.Visible = True
         'Me.MainContainer.Width = 680            ' adjust its appearance
     End Sub
 
@@ -323,39 +377,124 @@
         If f.GetType.ToString.Equals("EsistHistoryManagement_v1.affichResearchResult") Then
             Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
             If Not f Is Nothing Then
-                f.Close()
+                'f.Hide()
+                MainContainer1.Visible = False
             End If
 
-            'f = New details(affichResearchResult.StudentList.Item(affichResearchResult.SelectedStudent - 1 + affichResearchResult.CURRENT_PAGE * 7))         ' assign the search form to  the f form
-            'f.TopLevel = False
-            'f.TopMost = True
-            'f.WindowState = FormWindowState.Normal
-            'Me.MainContainer.Controls.Add(f)        ' add the controlers of the searche page to the main form f 
-            'f.Show()                                ' show the form f in the middle of the home page
-            'Me.MainContainer.Visible = True
-            'Me.MainContainer.Width = 680            ' adjust its appearance
+            h = New details(affichResearchResult.StudentList.Item(affichResearchResult.SelectedStudent - 1 + (affichResearchResult.CURRENT_PAGE - 1) * 7))         ' assign the search form to  the f form
+            h.TopLevel = False
+            h.TopMost = True
+            h.WindowState = FormWindowState.Normal
+            Me.MainContainer2.Controls.Add(h)        ' add the controlers of the searche page to the main form f 
+            h.Show()                                ' show the form f in the middle of the home page
+            Me.MainContainer2.Visible = True
+            Me.MainContainer1.Visible = False
+            'Me.MainContainer1.Width = 680            ' adjust its appearance
 
         End If
     End Sub
 
     Private Sub ModifButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ModifButton.Click
+        'If f.GetType.ToString.Equals("EsistHistoryManagement_v1.affichResearchResult") Then
+        '    Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
+        '    If Not f Is Nothing Then
+        '        f.Close()
+        '    End If
+
+        '    f = New modifier(affichResearchResult.StudentList.Item(affichResearchResult.SelectedStudent - 1 + (affichResearchResult.CURRENT_PAGE - 1) * 7))         ' assign the search form to  the f form
+        '    f.TopLevel = False
+        '    f.TopMost = True
+        '    f.WindowState = FormWindowState.Normal
+        '    Me.MainContainer1.Controls.Add(f)        ' add the controlers of the searche page to the main form f 
+        '    f.Show()                                ' show the form f in the middle of the home page
+        '    Me.MainContainer1.Visible = True
+        '    Me.MainContainer1.Width = 680            ' adjust its appearance
+        'End If
+    End Sub
+
+    Private Sub RNButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RNButton.Click
         If f.GetType.ToString.Equals("EsistHistoryManagement_v1.affichResearchResult") Then
             Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
             If Not f Is Nothing Then
-                f.Close()
+                'f.Hide()
+                MainContainer1.Visible = False
             End If
 
-            ' f = New modifier(affichResearchResult.StudentList.Item(affichResearchResult.SelectedStudent - 1 + affichResearchResult.CURRENT_PAGE * 7))         ' assign the search form to  the f form
-            'f.TopLevel = False
-            'f.TopMost = True
-            'f.WindowState = FormWindowState.Normal
-            'Me.MainContainer.Controls.Add(f)        ' add the controlers of the searche page to the main form f 
-            'f.Show()                                ' show the form f in the middle of the home page
-            'Me.MainContainer.Visible = True
-            'Me.MainContainer.Width = 680            ' adjust its appearance
+            h = New RN(affichResearchResult.StudentList.Item(affichResearchResult.SelectedStudent - 1 + (affichResearchResult.CURRENT_PAGE - 1) * 7))         ' assign the search form to  the f form
+            h.TopLevel = False
+            h.TopMost = True
+            h.WindowState = FormWindowState.Normal
+            Me.MainContainer2.Controls.Add(h)        ' add the controlers of the searche page to the main form f 
+            h.Show()                                ' show the form f in the middle of the home page
+            Me.MainContainer2.Visible = True
+            Me.MainContainer1.Visible = False
+            'Me.MainContainer1.Width = 680            ' adjust its appearance
+
         End If
     End Sub
 
+    Private Sub RNGButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RNGButton.Click
+        If f.GetType.ToString.Equals("EsistHistoryManagement_v1.affichResearchResult") Then
+            Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
+            If Not f Is Nothing Then
+                'f.Hide()
+                MainContainer1.Visible = False
+            End If
+
+            h = New RNG(affichResearchResult.StudentList.Item(affichResearchResult.SelectedStudent - 1 + (affichResearchResult.CURRENT_PAGE - 1) * 7))         ' assign the search form to  the f form
+            h.TopLevel = False
+            h.TopMost = True
+            h.WindowState = FormWindowState.Normal
+            Me.MainContainer2.Controls.Add(h)        ' add the controlers of the searche page to the main form f 
+            h.Show()                                ' show the form f in the middle of the home page
+            Me.MainContainer2.Visible = True
+            Me.MainContainer1.Visible = False
+            'Me.MainContainer1.Width = 680            ' adjust its appearance
+
+        End If
+    End Sub
+
+    Private Sub HistoryButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HistoryButton.Click
+        If f.GetType.ToString.Equals("EsistHistoryManagement_v1.affichResearchResult") Then
+            Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
+            If Not f Is Nothing Then
+                'f.Hide()
+                MainContainer1.Visible = False
+            End If
+
+            h = New Historique(affichResearchResult.StudentList.Item(affichResearchResult.SelectedStudent - 1 + (affichResearchResult.CURRENT_PAGE - 1) * 7))         ' assign the search form to  the f form
+            h.TopLevel = False
+            h.TopMost = True
+            h.WindowState = FormWindowState.Normal
+            Me.MainContainer2.Controls.Add(h)        ' add the controlers of the searche page to the main form f 
+            h.Show()                                ' show the form f in the middle of the home page
+            Me.MainContainer2.Visible = True
+            Me.MainContainer1.Visible = False
+            'Me.MainContainer1.Width = 680            ' adjust its appearance
+
+        End If
+    End Sub
+
+    Private Sub PrintButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PrintButton.Click
+        If f.GetType.ToString.Equals("EsistHistoryManagement_v1.affichResearchResult") Then
+            Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
+            If Not f Is Nothing Then
+                'f.Hide()
+                MainContainer1.Visible = False
+            End If
+
+            h = New Imprimer(affichResearchResult.StudentList.Item(affichResearchResult.SelectedStudent - 1 + (affichResearchResult.CURRENT_PAGE - 1) * 7))         ' assign the search form to  the f form
+            h.TopLevel = False
+            h.TopMost = True
+            h.WindowState = FormWindowState.Normal
+            Me.MainContainer2.Controls.Add(h)        ' add the controlers of the searche page to the main form f 
+            h.Show()                                ' show the form f in the middle of the home page
+            Me.MainContainer2.Visible = True
+            Me.MainContainer1.Visible = False
+            'Me.MainContainer1.Width = 680            ' adjust its appearance
+
+        End If
+    End Sub
 End Class
 
 

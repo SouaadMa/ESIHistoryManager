@@ -119,37 +119,37 @@ Partial Class details
         Me.BT_INFORESIDENCE.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BT_INFORESIDENCE.FlatAppearance.BorderSize = 0
         Me.BT_INFORESIDENCE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BT_INFORESIDENCE.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BT_INFORESIDENCE.Font = New System.Drawing.Font("Arial", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BT_INFORESIDENCE.ForeColor = System.Drawing.Color.Gray
         Me.BT_INFORESIDENCE.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BT_INFORESIDENCE.Location = New System.Drawing.Point(3, 73)
         Me.BT_INFORESIDENCE.Name = "BT_INFORESIDENCE"
-        Me.BT_INFORESIDENCE.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
-        Me.BT_INFORESIDENCE.Size = New System.Drawing.Size(218, 73)
-        Me.BT_INFORESIDENCE.TabIndex = 5
-        Me.BT_INFORESIDENCE.Text = "Informations de la " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "residence"
+        Me.BT_INFORESIDENCE.Padding = New System.Windows.Forms.Padding(2)
+        Me.BT_INFORESIDENCE.Size = New System.Drawing.Size(227, 73)
+        Me.BT_INFORESIDENCE.TabIndex = 15
+        Me.BT_INFORESIDENCE.Text = "Informations de la residence"
         Me.BT_INFORESIDENCE.UseVisualStyleBackColor = False
         '
         'BT_INFOBAC
         '
         Me.BT_INFOBAC.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.BT_INFOBAC.Appearance = System.Windows.Forms.Appearance.Button
+        Me.BT_INFOBAC.AutoEllipsis = True
         Me.BT_INFOBAC.BackColor = System.Drawing.Color.Transparent
         Me.BT_INFOBAC.BackgroundImage = CType(resources.GetObject("BT_INFOBAC.BackgroundImage"), System.Drawing.Image)
         Me.BT_INFOBAC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BT_INFOBAC.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BT_INFOBAC.FlatAppearance.BorderSize = 0
         Me.BT_INFOBAC.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BT_INFOBAC.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BT_INFOBAC.Font = New System.Drawing.Font("Arial", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BT_INFOBAC.ForeColor = System.Drawing.Color.Gray
         Me.BT_INFOBAC.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BT_INFOBAC.Location = New System.Drawing.Point(3, 146)
         Me.BT_INFOBAC.Name = "BT_INFOBAC"
-        Me.BT_INFOBAC.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.BT_INFOBAC.Padding = New System.Windows.Forms.Padding(2)
         Me.BT_INFOBAC.Size = New System.Drawing.Size(218, 72)
         Me.BT_INFOBAC.TabIndex = 4
-        Me.BT_INFOBAC.Text = "Informations du BAC          "
-        Me.BT_INFOBAC.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BT_INFOBAC.Text = "Informations du BAC"
         Me.BT_INFOBAC.UseVisualStyleBackColor = False
         '
         'BT_GENERALINFO
@@ -162,16 +162,15 @@ Partial Class details
         Me.BT_GENERALINFO.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BT_GENERALINFO.FlatAppearance.BorderSize = 0
         Me.BT_GENERALINFO.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BT_GENERALINFO.Font = New System.Drawing.Font("Arial", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BT_GENERALINFO.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BT_GENERALINFO.ForeColor = System.Drawing.Color.MidnightBlue
         Me.BT_GENERALINFO.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BT_GENERALINFO.Location = New System.Drawing.Point(3, 0)
         Me.BT_GENERALINFO.Name = "BT_GENERALINFO"
-        Me.BT_GENERALINFO.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.BT_GENERALINFO.Padding = New System.Windows.Forms.Padding(2)
         Me.BT_GENERALINFO.Size = New System.Drawing.Size(218, 73)
         Me.BT_GENERALINFO.TabIndex = 3
         Me.BT_GENERALINFO.Text = "Generalite                          "
-        Me.BT_GENERALINFO.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BT_GENERALINFO.UseVisualStyleBackColor = False
         '
         'PN_INFOGENERAL
@@ -236,9 +235,11 @@ Partial Class details
         Me.Label4.Location = New System.Drawing.Point(374, 143)
         Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
+        Me.Label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.Label4.Size = New System.Drawing.Size(38, 18)
         Me.Label4.TabIndex = 50
         Me.Label4.Text = "اللقب"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Label5
         '
@@ -248,9 +249,11 @@ Partial Class details
         Me.Label5.Location = New System.Drawing.Point(374, 204)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
+        Me.Label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.Label5.Size = New System.Drawing.Size(38, 18)
         Me.Label5.TabIndex = 49
         Me.Label5.Text = "الاسم"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Label6
         '
@@ -353,9 +356,11 @@ Partial Class details
         Me.LB_NOMA.Location = New System.Drawing.Point(379, 172)
         Me.LB_NOMA.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_NOMA.Name = "LB_NOMA"
+        Me.LB_NOMA.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.LB_NOMA.Size = New System.Drawing.Size(31, 17)
         Me.LB_NOMA.TabIndex = 40
         Me.LB_NOMA.Text = "اللقب"
+        Me.LB_NOMA.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'LB_PRENOMA
         '
@@ -364,9 +369,11 @@ Partial Class details
         Me.LB_PRENOMA.Location = New System.Drawing.Point(379, 232)
         Me.LB_PRENOMA.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_PRENOMA.Name = "LB_PRENOMA"
+        Me.LB_PRENOMA.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.LB_PRENOMA.Size = New System.Drawing.Size(32, 17)
         Me.LB_PRENOMA.TabIndex = 39
         Me.LB_PRENOMA.Text = "الاسم"
+        Me.LB_PRENOMA.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'LB_MATRICUL
         '

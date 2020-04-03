@@ -278,11 +278,12 @@
     <None Include="Resources\Asset 2.png" />
     <None Include="Resources\backBTchekedNone.png" />
     <None Include="Resources\backBTcheked.png" />
-    <Content Include="Resources\background_affiche_2.png" />
     <None Include="Resources\detailsBACBack.png" />
     <None Include="Resources\details general back.png" />
     <Content Include="Resources\page_num_current.png" />
     <None Include="Resources\Spinner-1s-220px.gif" />
+    <None Include="Resources\table_blanc.png" />
+    <None Include="Resources\table_bleu.png" />
     <Content Include="VISUAL.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

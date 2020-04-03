@@ -164,11 +164,11 @@
     Private Sub TableLayoutPanel1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TableLayoutPanel1.Click, TableLayoutPanel2.Click, TableLayoutPanel3.Click, TableLayoutPanel4.Click, TableLayoutPanel5.Click, TableLayoutPanel6.Click, TableLayoutPanel7.Click
 
         For Each t As TableLayoutPanel In EtudiantPanel.Controls
-            DirectCast(t, TableLayoutPanel).BackgroundImage = My.Resources.background_affiche1
+            DirectCast(t, TableLayoutPanel).BackgroundImage = My.Resources.table_blanc
         Next
 
         With DirectCast(sender, TableLayoutPanel)
-            .BackgroundImage = My.Resources.background_affiche_2
+            .BackgroundImage = My.Resources.table_bleu
             SelectedStudent = CType(sender.Name.ToString.Chars(sender.Name.ToString.Length - 1).ToString, Integer)
 
             Console.WriteLine(SelectedStudent - 1 + (CURRENT_PAGE - 1) * 7)
@@ -321,7 +321,7 @@
         'Next
         'If Not sender.GetType.ToString.Equals("System.Windows.Forms.TableLayoutPanel") Then
         For Each t As TableLayoutPanel In EtudiantPanel.Controls
-            t.BackgroundImage = My.Resources.background_affiche1
+            t.BackgroundImage = My.Resources.table_blanc
         Next
         For Each b As Control In Home.NavBar.Controls
             If b.GetType.ToString = "System.Windows.Forms.Button" Then

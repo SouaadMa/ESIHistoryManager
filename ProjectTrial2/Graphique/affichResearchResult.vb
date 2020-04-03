@@ -51,6 +51,7 @@
         Console.WriteLine("results number is : " + StudentList.Count.ToString)
         If (StudentList.Count = 0) Then
             EtudiantPanel.Visible = False
+            'AffPanel.Visible = False
             PN_PAGES.Visible = False
             LB_INFOAFFICH.Visible = False
             NoResultLabel.Visible = True
@@ -153,9 +154,9 @@
             Me.BT_PREV.Enabled = False
         Else
             Me.BT_P1.Text = (Me.BT_P1.Text - 4).ToString
-            Me.BT_P2.Text = (Me.BT_P2.Text - 4).ToString
-            Me.BT_P3.Text = (Me.BT_P3.Text - 4).ToString
-            Me.BT_P4.Text = (Me.BT_P4.Text - 4).ToString
+            Me.BT_P2.Text = (Me.BT_P1.Text + 1).ToString
+            Me.BT_P3.Text = (Me.BT_P1.Text + 2).ToString
+            Me.BT_P4.Text = (Me.BT_P1.Text + 3).ToString
         End If
 
         BT_P1_Click(BT_P1, e)
@@ -333,7 +334,9 @@
 
     Private Sub affichResearchResult_Shown(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Shown
         affich_pageResult()
-        watch_focusLocation(Me)
+        If StudentList.Count > 0 Then
+            watch_focusLocation(Me)
+        End If
     End Sub
 
     Private Sub BT_P1_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)

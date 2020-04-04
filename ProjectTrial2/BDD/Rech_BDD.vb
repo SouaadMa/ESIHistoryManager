@@ -1,7 +1,6 @@
 ﻿
 Public Class Rech_BDD
 
-
     Public Shared Function genereRechRequetes(ByRef instructionSQL As String, ByVal critere As Critere) As String
 
         'Générer un requete de recherche SQL apartir d'une requete existe déja 'instructionSQL' ou non ( si instructionSQL est vide )
@@ -71,7 +70,7 @@ Public Class Rech_BDD
     End Function
 
     Private Shared Function LastWord(ByVal sentence As String, ByVal word As String) As Boolean
-        'Vérifier si word est la derniére 'mot' dans la chaine 'sentence'
+        'Vérifier si word est le dernier 'mot' dans la chaine 'sentence'
         Dim last As Boolean = False
         Dim ind As Integer = 0
         Dim len As Integer = sentence.IndexOf(word) + word.Length
@@ -106,11 +105,14 @@ Public Class Rech_BDD
         Dim valide As Boolean = True
         Dim i As Integer = 0
         Dim c As String = ""
-        If Not stringvide(requete) Then
-            While requete.Substring(i, 1) = " "
+        If Not stringvide(requete) Then 'Si la chaine n'est pas vide
+
+            While requete.Substring(i, 1) = " " 'Tant que il y a des espaces
                 i += 1
             End While
-            c = requete.Substring(i, 6).ToUpper()
+
+            c = requete.Substring(i, 6).ToUpper() 'On vérifie le premier mot
+
             If c.Equals("SELECT") Then
                 valide = (requete.Contains("FROM") Or requete.Contains("from"))
             Else

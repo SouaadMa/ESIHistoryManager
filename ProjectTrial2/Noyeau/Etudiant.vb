@@ -54,6 +54,57 @@
         'Console.WriteLine("------------------------------------------------------")
     End Sub
 
+    'Méthode qui charge les informations de la table INSCRIPTION de l'étudiant selon le critère donné (l'année)
+    Public Sub ChargementInfosINSCRIPTION(ByVal critere As Critere)
+
+        If (BDD.ExisteDansTable(critere.getChamps, BDD.nomTableINSCRIPTION)) Then
+
+            Dim ligne As DataRow = BDD.GetFromTableInscription(Me.GetInfoChamps(BDD.champsMATRIN), critere)
+
+
+            For Each champs As String In BDD.stringINSCRIPTION
+
+                Try
+
+                    InfosINSCRIPTION.Add(champs, CType(ligne(champs), String))
+                Catch ex As Exception
+
+                End Try
+            Next
+            For Each champs As String In BDD.numINSCRIPTION
+
+                Try
+
+                    InfosINSCRIPTION.Add(champs, CType(ligne(champs), String))
+                Catch ex As Exception
+
+
+                End Try
+
+            Next
+            For Each champs As String In BDD.boolINSCRIPTION
+
+                Try
+
+                    InfosINSCRIPTION.Add(champs, CType(ligne(champs), String))
+
+                Catch ex As Exception
+
+                    MsgBox(ex.Message)
+
+                End Try
+            Next
+
+        End If
+
+
+
+
+
+
+    End Sub
+
+
 
     Public Function CompareTo(ByVal other As Etudiant) As Integer _
         Implements IComparable(Of Etudiant).CompareTo 'La méthode de la classe Comparable

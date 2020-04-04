@@ -65,7 +65,7 @@ Public Class BDD
 
     ' les tableaux qui contiennet les champs des tables de base de données :
     Public Shared stringETUDIANT() As String = {"NomEtud", "Prenoms", "NomEtudA", "PrenomsA", "MATRIC_INS", "MATRIN", "DateNais", "LieuNaisA", "LieuNais", "ADRESSE", "VILLE", "WILAYA", "WILBAC", "SERIEBAC", "FILS_DE", "ET_DE", "CODPOST", "WILNAISA", "ANNEEBAC"}
-    Public Shared stringINSECRIPTION() As String = {"MATRIN", "CodeGroupe", "DECIIN", "DEC", "ADM"}
+    Public Shared stringINSCRIPTION() As String = {"MATRIN", "CodeGroupe", "DECIIN", "DEC", "ADM"}
     Public Shared stringGROUP() As String = {"NG"}
     Public Shared stringSection() As String = {"NS"}
     Public Shared stringPROMO() As String = {"Option"}
@@ -76,7 +76,7 @@ Public Class BDD
 
     'Public Shared numETUDIANT() As String = {"WILNAIS", "SEXE", "MOYBAC", "ANNEEBAC"}
     Public Shared numETUDIANT() As String = {"WILNAIS", "SEXE", "MOYBAC"}
-    Public Shared numINSECRIPTION() As String = {"MOYEIN", "RANGIN", "MENTIN", "ELIMININ", "RATRIN"}
+    Public Shared numINSCRIPTION() As String = {"MOYEIN", "RANGIN", "MENTIN", "ELIMININ", "RATRIN"}
     Public Shared numGROUP() As String = {}
     Public Shared numSection() As String = {}
     Public Shared numPROMO() As String = {"Niveau", "Annee"}
@@ -86,7 +86,7 @@ Public Class BDD
     Public Shared numRATRAP() As String = {"ANSCRA", "ANETRA"}
 
     Public Shared boolETUDIANT() As String = {}
-    Public Shared boolINSECRIPTION() As String = {}
+    Public Shared boolINSCRIPTION() As String = {}
     Public Shared boolGROUP() As String = {}
     Public Shared boolSection() As String = {}
     Public Shared boolPROMO() As String = {}
@@ -95,11 +95,11 @@ Public Class BDD
     Public Shared boolNOTERATRAP() As String = {}
     Public Shared boolRATRAP() As String = {}
 
-    Private stringChamp()() As String = {stringETUDIANT, stringINSECRIPTION, stringGROUP, stringSection, stringPROMO,
+    Private stringChamp()() As String = {stringETUDIANT, stringINSCRIPTION, stringGROUP, stringSection, stringPROMO,
                               stringNOTE, stringMATIERE, stringNOTERATRAP, stringRATRAP}
-    Private numChamp()() As String = {numETUDIANT, numINSECRIPTION, numGROUP, numSection, numPROMO,
+    Private numChamp()() As String = {numETUDIANT, numINSCRIPTION, numGROUP, numSection, numPROMO,
                               numNOTE, numMATIERE, numNOTERATRAP, numRATRAP}
-    Private boolChamp()() As String = {boolETUDIANT, boolINSECRIPTION, boolGROUP, boolSection, boolPROMO,
+    Private boolChamp()() As String = {boolETUDIANT, boolINSCRIPTION, boolGROUP, boolSection, boolPROMO,
                               boolNOTE, boolMATIERE, boolNOTERATRAP, boolRATRAP}
 
     Public Function getStringChamp() As String()()
@@ -172,6 +172,7 @@ Public Class BDD
             'remplir le dataset par le résultat de l'exécution de la requête
             da.Fill(dts)
 
+
             'extraire le dataTable
             dt = dts.Tables("table")
 
@@ -182,6 +183,7 @@ Public Class BDD
             Next
 
         Catch ex As Exception
+
             MsgBox(" La connexion à la base de données est échouée :( ", ex.Message)
         Finally
             'close connection
@@ -189,6 +191,90 @@ Public Class BDD
         End Try
 
         Return Resultat
+
+    End Function
+
+    
+
+    Public Shared Function GetFromTableInscription(ByVal matrin As String, ByVal critere As Critere) As DataRow
+        'Méthode qui retourne toutes les informations de la table INSCRIPTION qui correspondent 
+        'à un étudiant
+        'de matricule matrin, + un critère avec lequel on détermine l'année
+
+        'Création de la requête
+        Dim SqlQuery As String = "SELECT * FROM " + nomTableINSCRIPTION + " WHERE " + champsMATRIN + " = '" + matrin + "' AND " + CompareToCodeGroupe(critere) + ";"
+
+        'Exécution de la requête
+        Dim table As DataTable = executeRequete(SqlQuery)
+
+        'Récupération de la première (et seule) ligne de la table du résultat
+        Dim resultat As DataRow = table.Rows.Item(0)
+
+        Return resultat
+
+    End Function
+
+    ' Méthode qui génère la condition pour que le critère ressemble au CodeGroupe 
+
+    Private Shared Function CompareToCodeGroupe(ByVal critere As Critere) As String
+
+        Dim chaine As String = ""
+        Dim champs As String = critere.getChamps
+
+        ' Le CodeGroupe s'écrit de la forme NG/NS/Niv/Option/Annee
+
+        Select Case champs
+
+            Case BDD.champsNG
+                chaine = "CodeGroupe LIKE '" + champs + "/%'"
+            Case BDD.champsNS
+                chaine = "CodeGroupe LIKE '__/" + champs + "/%'"
+            Case BDD.champsNiveau
+                chaine = "CodeGroupe LIKE '%/" + champs + "/%'"
+            Case BDD.champsOption
+                chaine = "CodeGroupe LIKE '%/" + champs + "/%'"
+            Case BDD.champsAnnee
+                chaine = "CodeGroupe LIKE '%/" + champs + "'"
+            Case BDD.champsCodeGroupe
+                chaine = "CodeGroupe = '" + champs + "'"
+
+                'A ajouter CodePROMO et CodeSection
+
+
+        End Select
+
+
+        Return chaine
+
+    End Function
+
+    ' Méthode qui vérifie si le champs "champs" existe dans la table "table"
+
+    Public Shared Function ExisteDansTable(ByVal champs As String, ByVal table As String) As Boolean
+
+        Select Case table
+            Case nomTableEtudiant
+                Return (stringETUDIANT.Contains(champs) Or numETUDIANT.Contains(champs) Or boolETUDIANT.Contains(champs))
+            Case nomTableGROUP
+                Return (stringGROUP.Contains(champs) Or numGROUP.Contains(champs) Or boolGROUP.Contains(champs))
+            Case nomTableINSCRIPTION
+                Return (stringINSCRIPTION.Contains(champs) Or numINSCRIPTION.Contains(champs) Or boolINSCRIPTION.Contains(champs))
+            Case nomTableMATIERE
+                Return (stringMATIERE.Contains(champs) Or numMATIERE.Contains(champs) Or boolMATIERE.Contains(champs))
+            Case nomTableNOTE
+                Return (stringNOTE.Contains(champs) Or numNOTE.Contains(champs) Or boolNOTE.Contains(champs))
+            Case nomTableSection
+                Return (stringSection.Contains(champs) Or numSection.Contains(champs) Or boolSection.Contains(champs))
+            Case nomTableNoteRATRAP
+                Return (stringNOTERATRAP.Contains(champs) Or numNOTERATRAP.Contains(champs) Or boolNOTERATRAP.Contains(champs))
+            Case nomTablePROMO
+                Return (stringPROMO.Contains(champs) Or numPROMO.Contains(champs) Or boolPROMO.Contains(champs))
+            Case nomTableRATRAP
+                Return (stringRATRAP.Contains(champs) Or numRATRAP.Contains(champs) Or boolRATRAP.Contains(champs))
+            Case Else
+                Return False
+        End Select
+
 
     End Function
 

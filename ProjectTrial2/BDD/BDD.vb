@@ -194,15 +194,34 @@ Public Class BDD
 
     End Function
 
-    
+    Public Shared Function GetFromTable(ByVal nomTable As String, ByVal critere As Critere) As DataRow
 
-    Public Shared Function GetFromTableInscription(ByVal matrin As String, ByVal critere As Critere) As DataRow
-        'Méthode qui retourne toutes les informations de la table INSCRIPTION qui correspondent 
+        'Méthode qui retourne toutes les informations de la table "nomTable" qui correspondent 
+        ' au critère en entrée
+
+        'Création de la requête
+        Dim SqlQuery As String = "SELECT * FROM " + nomTable + " WHERE " + CompareToCodeTable(nomTable, critere) + ";"
+
+        'Exécution de la requête
+        Dim table As DataTable = executeRequete(SqlQuery)
+
+        'Récupération de la première (et seule) ligne de la table du résultat
+        Dim resultat As DataRow = table.Rows.Item(0)
+
+        Return resultat
+
+
+    End Function
+
+
+
+    Public Shared Function GetFromTable(ByVal nomTable As String, ByVal matrin As String, ByVal critere As Critere) As DataRow
+        'Méthode qui retourne toutes les informations de la table "nomTable" qui correspondent 
         'à un étudiant
         'de matricule matrin, + un critère avec lequel on détermine l'année
 
         'Création de la requête
-        Dim SqlQuery As String = "SELECT * FROM " + nomTableINSCRIPTION + " WHERE " + champsMATRIN + " = '" + matrin + "' AND " + CompareToCodeGroupe(critere) + ";"
+        Dim SqlQuery As String = "SELECT * FROM " + nomTable + " WHERE " + champsMATRIN + " = '" + matrin + "' AND " + CompareToCodeTable(nomTable, critere) + ";"
 
         'Exécution de la requête
         Dim table As DataTable = executeRequete(SqlQuery)
@@ -214,14 +233,36 @@ Public Class BDD
 
     End Function
 
-    ' Méthode qui génère la condition pour que le critère ressemble au CodeGroupe 
+    Public Shared Function CompareToCodeTable(ByVal nomTable As String, ByVal critere As Critere) As String
+
+        Select Case nomTable
+            Case nomTableINSCRIPTION
+                Return CompareToCodeGroupe(critere)
+            Case nomTableGROUP
+                Return CompareToCodeGroupe(critere)
+            Case nomTableSection
+                Return CompareToCodeSection(critere)
+            Case nomTableNOTE
+                Return CompareToCodeMat(critere)
+            Case Else
+                Return ""
+        End Select
+
+    End Function
+
+
+
 
     Private Shared Function CompareToCodeGroupe(ByVal critere As Critere) As String
+
+        ' Méthode qui génère la condition pour que le critère ressemble au CodeGroupe 
 
         Dim chaine As String = ""
         Dim champs As String = critere.getChamps
 
         ' Le CodeGroupe s'écrit de la forme NG/NS/Niv/Option/Annee
+        ' __________________________________NG/CodeSection
+        ' __________________________________NG/NS/CodePromo
 
         Select Case champs
 
@@ -235,11 +276,14 @@ Public Class BDD
                 chaine = "CodeGroupe LIKE '%/" + champs + "/%'"
             Case BDD.champsAnnee
                 chaine = "CodeGroupe LIKE '%/" + champs + "'"
+            Case BDD.champsCodeSection
+                chaine = "CodeGroupe LIKE '%/" + champs + "'"
+            Case BDD.champsCodePromo
+                chaine = "CodeGroupe LIKE '%/" + champs + "'"
             Case BDD.champsCodeGroupe
                 chaine = "CodeGroupe = '" + champs + "'"
 
                 'A ajouter CodePROMO et CodeSection
-
 
         End Select
 
@@ -247,6 +291,82 @@ Public Class BDD
         Return chaine
 
     End Function
+
+    Private Shared Function CompareToCodeSection(ByVal critere As Critere) As String
+
+        ' Méthode qui génère la condition pour que le critère ressemble au CodeSection
+
+        Dim chaine As String = ""
+        Dim champs As String = critere.getChamps
+
+        ' Le CodeSection s'écrit de la forme NS/Niv/Option/Annee
+        '____________________________________NS/CodePROMO 
+
+        Select Case champs
+
+            Case BDD.champsNS
+                chaine = "CodeSection LIKE '" + champs + "/%'"
+            Case BDD.champsNiveau
+                chaine = "CodeSection LIKE '_/" + champs + "/%'"
+            Case BDD.champsOption
+                chaine = "CodeSection LIKE '%/" + champs + "/%'"
+            Case BDD.champsAnnee
+                chaine = "CodeSection LIKE '%/" + champs + "'"
+            Case BDD.champsCodePromo
+                chaine = "CodeSection = '%/" + champs + "'"
+            Case BDD.champsCodeSection
+                chaine = "CodeSection = '" + champs + "'"
+            Case Else
+                chaine = ""
+        End Select
+
+        Return chaine
+
+    End Function
+
+    Private Shared Function CompareToCodePROMO(ByVal critere As Critere) As String
+
+        ' Méthode qui génère la condition pour que le critère ressemble au CodePROMO
+
+        Dim chaine As String = ""
+        Dim champs As String = critere.getChamps
+
+        ' Le CodePROMO s'écrit de la forme Niv/Option/Annee
+
+        Select Case champs
+
+            Case BDD.champsNiveau
+                chaine = "CodePROMO LIKE '" + champs + "/%'"
+            Case BDD.champsOption
+                chaine = "CodePROMO LIKE '%/" + champs + "/%'"
+            Case BDD.champsAnnee
+                chaine = "CodePROMO LIKE '%/" + champs + "'"
+            Case BDD.champsCodePromo
+                chaine = "CodePROMO = '" + champs + "'"
+            Case Else
+                chaine = ""
+
+        End Select
+
+        Return chaine
+
+    End Function
+
+    Private Shared Function CompareToCodeMat(ByVal critere As Critere) As String
+
+        ' Méthode qui génère la condition pour que le critère ressemble au CodeMat
+
+        Dim chaine As String = ""
+        Dim champs As String = critere.getChamps
+
+        ' Le CodeMat s'écrit de la forme Nom/Annee/Option/Niveau
+
+        Return ""
+
+
+
+    End Function
+
 
     ' Méthode qui vérifie si le champs "champs" existe dans la table "table"
 

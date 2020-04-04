@@ -59,7 +59,7 @@
 
         If (BDD.ExisteDansTable(critere.getChamps, BDD.nomTableINSCRIPTION)) Then
 
-            Dim ligne As DataRow = BDD.GetFromTableInscription(Me.GetInfoChamps(BDD.champsMATRIN), critere)
+            Dim ligne As DataRow = BDD.GetFromTable(BDD.nomTableINSCRIPTION, Me.GetInfoChamps(BDD.champsMATRIN), critere)
 
 
             For Each champs As String In BDD.stringINSCRIPTION
@@ -96,10 +96,6 @@
             Next
 
         End If
-
-
-
-
 
 
     End Sub

@@ -56,7 +56,6 @@ Partial Class Home
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MainContainer2 = New System.Windows.Forms.Panel()
         Me.SideBar.SuspendLayout()
         Me.ProfilePane.SuspendLayout()
@@ -64,7 +63,6 @@ Partial Class Home
         Me.NavBar.SuspendLayout()
         CType(Me.logo_bleu, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PN_BIENVENUE.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SideBar
@@ -595,18 +593,6 @@ Partial Class Home
         Me.Label3.TabIndex = 1
         Me.Label3.Text = "Bienvenue a"
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.PictureBox1.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.Spinner
-        Me.PictureBox1.Location = New System.Drawing.Point(400, 243)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(217, 213)
-        Me.PictureBox1.TabIndex = 29
-        Me.PictureBox1.TabStop = False
-        Me.PictureBox1.Visible = False
-        '
         'MainContainer2
         '
         Me.MainContainer2.BackColor = System.Drawing.Color.Transparent
@@ -627,7 +613,6 @@ Partial Class Home
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.CancelButton = Me.BT_LOGOUT
         Me.ClientSize = New System.Drawing.Size(1017, 699)
-        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.MenuButton)
         Me.Controls.Add(Me.SideBar)
         Me.Controls.Add(Me.NavBar)
@@ -654,7 +639,6 @@ Partial Class Home
         CType(Me.logo_bleu, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PN_BIENVENUE.ResumeLayout(False)
         Me.PN_BIENVENUE.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -691,7 +675,6 @@ Partial Class Home
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents MainContainer2 As System.Windows.Forms.Panel
 
 End Class

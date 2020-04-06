@@ -27,6 +27,16 @@ Partial Class affichResearchResult
         Me.LB_INFOAFFICH = New System.Windows.Forms.Label()
         Me.RechLabel = New System.Windows.Forms.Label()
         Me.EtudiantPanel = New System.Windows.Forms.Panel()
+        Me.PN_PAGES = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PagesNumButtons = New System.Windows.Forms.Panel()
+        Me.IntroPanel = New System.Windows.Forms.Panel()
+        Me.FlecheList = New System.Windows.Forms.ImageList(Me.components)
+        Me.triLabel = New System.Windows.Forms.Label()
+        Me.SortModeBox = New System.Windows.Forms.ComboBox()
+        Me.AffPanel = New System.Windows.Forms.Panel()
+        Me.TableAdapterManager1 = New EsistHistoryManagement_v1.VISUALDataSetTableAdapters.TableAdapterManager()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.TableLayoutPanel7 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label7_5 = New System.Windows.Forms.Label()
         Me.Label7_4 = New System.Windows.Forms.Label()
@@ -69,23 +79,20 @@ Partial Class affichResearchResult
         Me.Label1_3 = New System.Windows.Forms.Label()
         Me.Label1_2 = New System.Windows.Forms.Label()
         Me.Label1_1 = New System.Windows.Forms.Label()
-        Me.PN_PAGES = New System.Windows.Forms.Panel()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.BT_PREV = New System.Windows.Forms.Button()
         Me.BT_NEXT = New System.Windows.Forms.Button()
-        Me.PagesNumButtons = New System.Windows.Forms.Panel()
         Me.BT_P1 = New System.Windows.Forms.Button()
         Me.BT_P2 = New System.Windows.Forms.Button()
         Me.BT_P4 = New System.Windows.Forms.Button()
         Me.BT_P3 = New System.Windows.Forms.Button()
-        Me.IntroPanel = New System.Windows.Forms.Panel()
-        Me.triLabel = New System.Windows.Forms.Label()
-        Me.SortModeBox = New System.Windows.Forms.ComboBox()
-        Me.AffPanel = New System.Windows.Forms.Panel()
-        Me.TableAdapterManager1 = New EsistHistoryManagement_v1.VISUALDataSetTableAdapters.TableAdapterManager()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.SortDirectionButton = New System.Windows.Forms.Button()
         Me.NoResultLabel = New System.Windows.Forms.Label()
         Me.EtudiantPanel.SuspendLayout()
+        Me.PN_PAGES.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        Me.PagesNumButtons.SuspendLayout()
+        Me.IntroPanel.SuspendLayout()
+        Me.AffPanel.SuspendLayout()
         Me.TableLayoutPanel7.SuspendLayout()
         Me.TableLayoutPanel6.SuspendLayout()
         Me.TableLayoutPanel5.SuspendLayout()
@@ -93,11 +100,6 @@ Partial Class affichResearchResult
         Me.TableLayoutPanel3.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
-        Me.PN_PAGES.SuspendLayout()
-        Me.Panel1.SuspendLayout()
-        Me.PagesNumButtons.SuspendLayout()
-        Me.IntroPanel.SuspendLayout()
-        Me.AffPanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'LB_INFOAFFICH
@@ -119,7 +121,7 @@ Partial Class affichResearchResult
         Me.RechLabel.BackColor = System.Drawing.Color.Transparent
         Me.RechLabel.Font = New System.Drawing.Font("Times New Roman", 22.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RechLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.RechLabel.Location = New System.Drawing.Point(161, 18)
+        Me.RechLabel.Location = New System.Drawing.Point(188, 18)
         Me.RechLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.RechLabel.Name = "RechLabel"
         Me.RechLabel.Size = New System.Drawing.Size(283, 34)
@@ -144,9 +146,116 @@ Partial Class affichResearchResult
         Me.EtudiantPanel.Size = New System.Drawing.Size(658, 479)
         Me.EtudiantPanel.TabIndex = 24
         '
+        'PN_PAGES
+        '
+        Me.PN_PAGES.BackColor = System.Drawing.Color.Transparent
+        Me.PN_PAGES.Controls.Add(Me.Panel1)
+        Me.PN_PAGES.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.PN_PAGES.Location = New System.Drawing.Point(10, 585)
+        Me.PN_PAGES.Margin = New System.Windows.Forms.Padding(0)
+        Me.PN_PAGES.Name = "PN_PAGES"
+        Me.PN_PAGES.Padding = New System.Windows.Forms.Padding(15, 8, 15, 15)
+        Me.PN_PAGES.Size = New System.Drawing.Size(658, 55)
+        Me.PN_PAGES.TabIndex = 25
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.BT_PREV)
+        Me.Panel1.Controls.Add(Me.BT_NEXT)
+        Me.Panel1.Controls.Add(Me.PagesNumButtons)
+        Me.Panel1.Location = New System.Drawing.Point(27, 7)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(213, 36)
+        Me.Panel1.TabIndex = 9
+        '
+        'PagesNumButtons
+        '
+        Me.PagesNumButtons.AutoSize = True
+        Me.PagesNumButtons.Controls.Add(Me.BT_P1)
+        Me.PagesNumButtons.Controls.Add(Me.BT_P2)
+        Me.PagesNumButtons.Controls.Add(Me.BT_P4)
+        Me.PagesNumButtons.Controls.Add(Me.BT_P3)
+        Me.PagesNumButtons.Location = New System.Drawing.Point(39, 1)
+        Me.PagesNumButtons.Name = "PagesNumButtons"
+        Me.PagesNumButtons.Size = New System.Drawing.Size(136, 34)
+        Me.PagesNumButtons.TabIndex = 8
+        '
+        'IntroPanel
+        '
+        Me.IntroPanel.Controls.Add(Me.SortDirectionButton)
+        Me.IntroPanel.Controls.Add(Me.triLabel)
+        Me.IntroPanel.Controls.Add(Me.SortModeBox)
+        Me.IntroPanel.Controls.Add(Me.LB_INFOAFFICH)
+        Me.IntroPanel.Controls.Add(Me.RechLabel)
+        Me.IntroPanel.Dock = System.Windows.Forms.DockStyle.Top
+        Me.IntroPanel.Location = New System.Drawing.Point(10, 0)
+        Me.IntroPanel.Name = "IntroPanel"
+        Me.IntroPanel.Size = New System.Drawing.Size(658, 106)
+        Me.IntroPanel.TabIndex = 27
+        '
+        'FlecheList
+        '
+        Me.FlecheList.ImageStream = CType(resources.GetObject("FlecheList.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.FlecheList.TransparentColor = System.Drawing.Color.Transparent
+        Me.FlecheList.Images.SetKeyName(0, "sort-down (1).png")
+        Me.FlecheList.Images.SetKeyName(1, "sort-ascending.png")
+        '
+        'triLabel
+        '
+        Me.triLabel.AutoSize = True
+        Me.triLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.triLabel.Location = New System.Drawing.Point(23, 66)
+        Me.triLabel.Name = "triLabel"
+        Me.triLabel.Size = New System.Drawing.Size(66, 20)
+        Me.triLabel.TabIndex = 29
+        Me.triLabel.Text = "trie par :"
+        Me.triLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'SortModeBox
+        '
+        Me.SortModeBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
+        Me.SortModeBox.DropDownWidth = 90
+        Me.SortModeBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SortModeBox.FormattingEnabled = True
+        Me.SortModeBox.Location = New System.Drawing.Point(89, 64)
+        Me.SortModeBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.SortModeBox.Name = "SortModeBox"
+        Me.SortModeBox.Size = New System.Drawing.Size(90, 24)
+        Me.SortModeBox.TabIndex = 0
+        '
+        'AffPanel
+        '
+        Me.AffPanel.BackColor = System.Drawing.Color.Transparent
+        Me.AffPanel.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.background
+        Me.AffPanel.Controls.Add(Me.EtudiantPanel)
+        Me.AffPanel.Controls.Add(Me.PN_PAGES)
+        Me.AffPanel.Controls.Add(Me.IntroPanel)
+        Me.AffPanel.Controls.Add(Me.NoResultLabel)
+        Me.AffPanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.AffPanel.Location = New System.Drawing.Point(0, 0)
+        Me.AffPanel.Name = "AffPanel"
+        Me.AffPanel.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
+        Me.AffPanel.Size = New System.Drawing.Size(678, 640)
+        Me.AffPanel.TabIndex = 27
+        '
+        'TableAdapterManager1
+        '
+        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager1.Connection = Nothing
+        Me.TableAdapterManager1.INSCRIPTIONTableAdapter = Nothing
+        Me.TableAdapterManager1.MATIERETableAdapter = Nothing
+        Me.TableAdapterManager1.NOTETableAdapter = Nothing
+        Me.TableAdapterManager1.RATRAPTableAdapter = Nothing
+        Me.TableAdapterManager1.UpdateOrder = EsistHistoryManagement_v1.VISUALDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 1000
+        '
         'TableLayoutPanel7
         '
-        Me.TableLayoutPanel7.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.table_blanc
+        Me.TableLayoutPanel7.BackgroundImage = CType(resources.GetObject("TableLayoutPanel7.BackgroundImage"), System.Drawing.Image)
         Me.TableLayoutPanel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.TableLayoutPanel7.ColumnCount = 5
         Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.0!))
@@ -232,7 +341,7 @@ Partial Class affichResearchResult
         '
         'TableLayoutPanel6
         '
-        Me.TableLayoutPanel6.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.table_blanc
+        Me.TableLayoutPanel6.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.table_blanc1
         Me.TableLayoutPanel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.TableLayoutPanel6.ColumnCount = 5
         Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.0!))
@@ -318,7 +427,7 @@ Partial Class affichResearchResult
         '
         'TableLayoutPanel5
         '
-        Me.TableLayoutPanel5.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.table_blanc
+        Me.TableLayoutPanel5.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.table_blanc1
         Me.TableLayoutPanel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.TableLayoutPanel5.ColumnCount = 5
         Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.0!))
@@ -404,7 +513,7 @@ Partial Class affichResearchResult
         '
         'TableLayoutPanel4
         '
-        Me.TableLayoutPanel4.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.table_blanc
+        Me.TableLayoutPanel4.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.table_blanc1
         Me.TableLayoutPanel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.TableLayoutPanel4.ColumnCount = 5
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.0!))
@@ -490,7 +599,7 @@ Partial Class affichResearchResult
         '
         'TableLayoutPanel3
         '
-        Me.TableLayoutPanel3.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.table_blanc
+        Me.TableLayoutPanel3.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.table_blanc1
         Me.TableLayoutPanel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.TableLayoutPanel3.ColumnCount = 5
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.0!))
@@ -576,7 +685,7 @@ Partial Class affichResearchResult
         '
         'TableLayoutPanel2
         '
-        Me.TableLayoutPanel2.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.table_blanc
+        Me.TableLayoutPanel2.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.table_blanc1
         Me.TableLayoutPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.TableLayoutPanel2.ColumnCount = 5
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.0!))
@@ -663,7 +772,7 @@ Partial Class affichResearchResult
         'TableLayoutPanel1
         '
         Me.TableLayoutPanel1.BackColor = System.Drawing.Color.Transparent
-        Me.TableLayoutPanel1.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.table_blanc
+        Me.TableLayoutPanel1.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.table_blanc1
         Me.TableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.TableLayoutPanel1.ColumnCount = 5
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.0!))
@@ -747,28 +856,6 @@ Partial Class affichResearchResult
         Me.Label1_1.Text = "NameLabel"
         Me.Label1_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'PN_PAGES
-        '
-        Me.PN_PAGES.BackColor = System.Drawing.Color.Transparent
-        Me.PN_PAGES.Controls.Add(Me.Panel1)
-        Me.PN_PAGES.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PN_PAGES.Location = New System.Drawing.Point(10, 585)
-        Me.PN_PAGES.Margin = New System.Windows.Forms.Padding(0)
-        Me.PN_PAGES.Name = "PN_PAGES"
-        Me.PN_PAGES.Padding = New System.Windows.Forms.Padding(15, 8, 15, 15)
-        Me.PN_PAGES.Size = New System.Drawing.Size(658, 55)
-        Me.PN_PAGES.TabIndex = 25
-        '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.BT_PREV)
-        Me.Panel1.Controls.Add(Me.BT_NEXT)
-        Me.Panel1.Controls.Add(Me.PagesNumButtons)
-        Me.Panel1.Location = New System.Drawing.Point(27, 7)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(213, 36)
-        Me.Panel1.TabIndex = 9
-        '
         'BT_PREV
         '
         Me.BT_PREV.AutoSize = True
@@ -800,18 +887,6 @@ Partial Class affichResearchResult
         Me.BT_NEXT.Size = New System.Drawing.Size(36, 36)
         Me.BT_NEXT.TabIndex = 5
         Me.BT_NEXT.UseVisualStyleBackColor = True
-        '
-        'PagesNumButtons
-        '
-        Me.PagesNumButtons.AutoSize = True
-        Me.PagesNumButtons.Controls.Add(Me.BT_P1)
-        Me.PagesNumButtons.Controls.Add(Me.BT_P2)
-        Me.PagesNumButtons.Controls.Add(Me.BT_P4)
-        Me.PagesNumButtons.Controls.Add(Me.BT_P3)
-        Me.PagesNumButtons.Location = New System.Drawing.Point(39, 1)
-        Me.PagesNumButtons.Name = "PagesNumButtons"
-        Me.PagesNumButtons.Size = New System.Drawing.Size(136, 34)
-        Me.PagesNumButtons.TabIndex = 8
         '
         'BT_P1
         '
@@ -889,69 +964,18 @@ Partial Class affichResearchResult
         Me.BT_P3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
         Me.BT_P3.UseVisualStyleBackColor = True
         '
-        'IntroPanel
+        'SortDirectionButton
         '
-        Me.IntroPanel.Controls.Add(Me.triLabel)
-        Me.IntroPanel.Controls.Add(Me.SortModeBox)
-        Me.IntroPanel.Controls.Add(Me.LB_INFOAFFICH)
-        Me.IntroPanel.Controls.Add(Me.RechLabel)
-        Me.IntroPanel.Dock = System.Windows.Forms.DockStyle.Top
-        Me.IntroPanel.Location = New System.Drawing.Point(10, 0)
-        Me.IntroPanel.Name = "IntroPanel"
-        Me.IntroPanel.Size = New System.Drawing.Size(658, 106)
-        Me.IntroPanel.TabIndex = 27
-        '
-        'triLabel
-        '
-        Me.triLabel.AutoSize = True
-        Me.triLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.triLabel.Location = New System.Drawing.Point(23, 66)
-        Me.triLabel.Name = "triLabel"
-        Me.triLabel.Size = New System.Drawing.Size(66, 20)
-        Me.triLabel.TabIndex = 29
-        Me.triLabel.Text = "trie par :"
-        Me.triLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'SortModeBox
-        '
-        Me.SortModeBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
-        Me.SortModeBox.DropDownWidth = 90
-        Me.SortModeBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SortModeBox.FormattingEnabled = True
-        Me.SortModeBox.Location = New System.Drawing.Point(89, 64)
-        Me.SortModeBox.Margin = New System.Windows.Forms.Padding(2)
-        Me.SortModeBox.Name = "SortModeBox"
-        Me.SortModeBox.Size = New System.Drawing.Size(90, 24)
-        Me.SortModeBox.TabIndex = 0
-        '
-        'AffPanel
-        '
-        Me.AffPanel.BackColor = System.Drawing.Color.Transparent
-        Me.AffPanel.Controls.Add(Me.EtudiantPanel)
-        Me.AffPanel.Controls.Add(Me.PN_PAGES)
-        Me.AffPanel.Controls.Add(Me.IntroPanel)
-        Me.AffPanel.Controls.Add(Me.NoResultLabel)
-        Me.AffPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.AffPanel.Location = New System.Drawing.Point(0, 0)
-        Me.AffPanel.Name = "AffPanel"
-        Me.AffPanel.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
-        Me.AffPanel.Size = New System.Drawing.Size(678, 640)
-        Me.AffPanel.TabIndex = 27
-        '
-        'TableAdapterManager1
-        '
-        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager1.Connection = Nothing
-        Me.TableAdapterManager1.INSCRIPTIONTableAdapter = Nothing
-        Me.TableAdapterManager1.MATIERETableAdapter = Nothing
-        Me.TableAdapterManager1.NOTETableAdapter = Nothing
-        Me.TableAdapterManager1.RATRAPTableAdapter = Nothing
-        Me.TableAdapterManager1.UpdateOrder = EsistHistoryManagement_v1.VISUALDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'Timer1
-        '
-        Me.Timer1.Enabled = True
-        Me.Timer1.Interval = 1000
+        Me.SortDirectionButton.FlatAppearance.BorderSize = 0
+        Me.SortDirectionButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.SortDirectionButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.SortDirectionButton.ImageIndex = 0
+        Me.SortDirectionButton.ImageList = Me.FlecheList
+        Me.SortDirectionButton.Location = New System.Drawing.Point(179, 61)
+        Me.SortDirectionButton.Name = "SortDirectionButton"
+        Me.SortDirectionButton.Size = New System.Drawing.Size(30, 30)
+        Me.SortDirectionButton.TabIndex = 30
+        Me.SortDirectionButton.UseVisualStyleBackColor = True
         '
         'NoResultLabel
         '
@@ -979,6 +1003,14 @@ Partial Class affichResearchResult
         Me.TopMost = True
         Me.WindowState = System.Windows.Forms.FormWindowState.Minimized
         Me.EtudiantPanel.ResumeLayout(False)
+        Me.PN_PAGES.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.PagesNumButtons.ResumeLayout(False)
+        Me.PagesNumButtons.PerformLayout()
+        Me.IntroPanel.ResumeLayout(False)
+        Me.IntroPanel.PerformLayout()
+        Me.AffPanel.ResumeLayout(False)
         Me.TableLayoutPanel7.ResumeLayout(False)
         Me.TableLayoutPanel7.PerformLayout()
         Me.TableLayoutPanel6.ResumeLayout(False)
@@ -993,14 +1025,6 @@ Partial Class affichResearchResult
         Me.TableLayoutPanel2.PerformLayout()
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
-        Me.PN_PAGES.ResumeLayout(False)
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        Me.PagesNumButtons.ResumeLayout(False)
-        Me.PagesNumButtons.PerformLayout()
-        Me.IntroPanel.ResumeLayout(False)
-        Me.IntroPanel.PerformLayout()
-        Me.AffPanel.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -1065,4 +1089,6 @@ Partial Class affichResearchResult
     Friend WithEvents BT_P4 As System.Windows.Forms.Button
     Friend WithEvents BT_P3 As System.Windows.Forms.Button
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents SortDirectionButton As System.Windows.Forms.Button
+    Friend WithEvents FlecheList As System.Windows.Forms.ImageList
 End Class

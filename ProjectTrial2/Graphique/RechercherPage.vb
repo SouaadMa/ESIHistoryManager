@@ -1,7 +1,7 @@
 ﻿Public Class RechercherPage
 
     Private dtp_changed As Boolean
-
+    Private _loop As Integer = 100
     ' initialize the language button in the search form
     Private Sub ARButton_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ARButton1.CheckedChanged
 
@@ -417,7 +417,21 @@
                 If Me.CB_ANNEEB.Text <> "" Then
                     collection_critere.Add(New Critere("ANNEEBAC", CB_ANNEEB.Text))
                 End If
-                Me.Close()
+
+                ' backgroundWorker1
+                BackgroundWorker1.WorkerReportsProgress = True
+                BackgroundWorker1.WorkerSupportsCancellation = True
+
+                'handling the appearnce of the affichage form
+                PictureBox2.Size = PictureBox2.MinimumSize
+                Panel1.Visible = True
+                'PN_FORUMRECH
+                PN_FORUMRECH.Visible = False
+                PictureBox2.Size = New System.Drawing.Size(226, 0)
+
+                BackgroundWorker1.RunWorkerAsync(collection_critere)
+
+                'Me.Close()
             End If
 
             ' appel a traite rechercher
@@ -425,20 +439,7 @@
             'Dim StudentList As List(Of Etudiant)
             'StudentList = Recherche.traitRechercher(collection_critere)
 
-
-            'handling the appearnce of the affichage form
-            Home.PictureBox1.ImageLocation = "..\..\Resources\Spinner-1s-220px.gif"
-            Home.PictureBox1.Visible = True
-            Home.f = New affichResearchResult(collection_critere)         ' assign the search form to  the f form
-            Home.f.TopLevel = False
-            Home.f.TopMost = True
-            Home.f.WindowState = FormWindowState.Normal
-            Home.MainContainer1.Controls.Add(Home.f)        ' add the controlers of the searche page to the main form f 
-            Home.f.Show()                                ' show the form f in the middle of the home page
-            Home.MainContainer1.Visible = True
-            Home.PictureBox1.Visible = False
-            'Home.MainContainer.Width = 680            ' adjust its appearance
-
+            
         End If
 
     End Sub
@@ -528,5 +529,110 @@
     Private Sub CB_ANNEEB_GotFocus(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CB_ANNEEB.GotFocus, CB_ANNEEB.TextChanged, CB_ANNEEB.Click
         Me.worningrech.Visible = False
     End Sub
+
+    Private Sub BackgroundWorker1_DoWork(ByVal sender As System.Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
+        ' Do some time-consuming work on this thread.
+        Dim worker As System.ComponentModel.BackgroundWorker = DirectCast(sender, System.ComponentModel.BackgroundWorker)
+        'For x As Integer = 0 To _loop - 1
+        '    worker.ReportProgress(CInt((x / _loop) * 100))
+        '    'UpdateProgressLabel(Home.ProgressLabel, FormatPercent(x / _loop, 2))
+        'Next
+        ' System.Threading.Thread.Sleep(1000)
+
+        Dim collection_critere As List(Of Critere) = CType(e.Argument, List(Of Critere))
+        Try
+            e.Result = search_inBackground(worker, e, collection_critere)
+        Catch ex As NullReferenceException
+            e.Cancel = True
+        End Try
+
+        If worker.CancellationPending Then
+            e.Cancel = True
+        End If
+    End Sub
+
+    Private Sub BackgroundWorker1_RunWorkerCompleted(ByVal sender As System.Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorker1.RunWorkerCompleted
+        If e.Cancelled Then
+            Panel1.Visible = False
+            'PN_FORUMRECH
+            PN_FORUMRECH.Visible = True
+            'Home.f = New RechercherPage()
+        Else
+            'Home.ProgressLabel.Text = "completed"
+            Me.Close()
+            Home.f = New affichResearchResult(e.Result)         ' assign the search form to  the f form
+        End If
+
+        Home.f.TopLevel = False
+        Home.f.TopMost = True
+        Home.f.WindowState = FormWindowState.Normal
+        Home.MainContainer1.Controls.Add(Home.f)        ' add the controlers of the searche page to the main form f 
+        Home.f.Show()                                ' show the form f in the middle of the home page
+        Home.MainContainer1.Visible = True
+        Panel1.Visible = False
+        ' Called when the BackgroundWorker is completed.
+        
+    End Sub
+
+    Private Sub BackgroundWorker1_ProgressChanged(ByVal sender As System.Object, ByVal e As System.ComponentModel.ProgressChangedEventArgs) Handles BackgroundWorker1.ProgressChanged
+        'If DirectCast(sender, System.ComponentModel.BackgroundWorker).CancellationPending Then
+        'e. = True
+        'End If
+        ProgressLabel.Text = e.ProgressPercentage.ToString + "%"
+        PictureBox2.Size = New System.Drawing.Size(226, (e.ProgressPercentage * (PictureBox2.MaximumSize.Height)) \ 100)
+        'Home.ProgressBar1.Value = e.ProgressPercentage
+    End Sub
+
+    Private Function search_inBackground(ByVal bw As System.ComponentModel.BackgroundWorker, ByVal e As System.ComponentModel.DoWorkEventArgs, ByVal collection_critere As List(Of Critere)) As List(Of Etudiant)
+        Dim list As List(Of Etudiant) = Recherche.traitRechercher(collection_critere, bw, e)
+        Return list
+    End Function
+    'Private Function watch_inBackground(ByVal bw As System.ComponentModel.BackgroundWorker, ByVal e As System.ComponentModel.DoWorkEventArgs) As System.ComponentModel.DoWorkEventArgs
+    '    If bw.CancellationPending Then
+    '        e.Cancel = True
+    '    End If
+    '    Return e
+    'End Function
+    Private Sub CancelButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CancelBackgroundButton.Click
+        With BackgroundWorker1
+            'If .IsBusy Then
+            If .WorkerSupportsCancellation Then
+                .CancelAsync()
+                'Console.WriteLine(BackgroundWorker1.IsBusy)
+                'Panel1.Visible = False
+                'Home.MainContainer1.Visible = True
+            End If
+            'End If
+        End With
+    End Sub
+
+    'Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
+    '    PictureBox2.Size = New System.Drawing.Size(226, (((PictureBox2.Size.Height + 1) Mod PictureBox2.MaximumSize.Height)))
+
+    '    'System.ComponentModel.DoWorkEventArgs 
+    'End Sub
+
+    Private Sub Panel1_VisibleChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Panel1.VisibleChanged
+        If Panel1.Visible Then
+            Timer1.Enabled = True
+            Timer1.Start()
+        Else
+            Timer1.Enabled = False
+            Timer1.Stop()
+        End If
+    End Sub
+
+    'Delegate Sub takeWorkerArguments(ByVal bw As System.ComponentModel.BackgroundWorker, ByVal e As System.ComponentModel.DoWorkEventArgs)
+
+    'Delegate Sub SetLabelTextDelegate(ByVal [Label] As Label, ByVal [text] As String)
+
+    'Private Sub UpdateProgressLabel(ByVal [Label] As Label, ByVal [text] As String)
+    '    If [Label].InvokeRequired Then
+    '        Dim myDelegate As New SetLabelTextDelegate(AddressOf UpdateProgressLabel)
+    '        Me.Invoke(myDelegate, New Object() {[Label], [text]})
+    '    Else
+    '        [Label].Text = [text]
+    '    End If
+    'End Sub
 
 End Class

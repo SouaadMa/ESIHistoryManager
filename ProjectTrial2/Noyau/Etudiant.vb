@@ -27,7 +27,7 @@
             Try
                 'Console.WriteLine(ligne(champs).ToString)
                 InfosETUDIANT.Add(champs, CType(ligne(champs), String))
-            Catch ex As Exception
+            Catch ex As InvalidCastException
                 'Console.WriteLine("Valeur erronnee !")
             End Try
         Next
@@ -36,7 +36,7 @@
             Try
                 'Console.WriteLine(ligne(champs).ToString)
                 InfosETUDIANT.Add(champs, CType(ligne(champs), String))
-            Catch ex As Exception
+            Catch ex As InvalidCastException
                 'Console.WriteLine("Valeur erronnee !")
 
             End Try
@@ -47,7 +47,7 @@
             Try
                 'Console.WriteLine(ligne(champs).ToString)
                 InfosETUDIANT.Add(champs, CType(ligne(champs), String))
-            Catch ex As Exception
+            Catch ex As InvalidCastException
                 'Console.WriteLine("Valeur erronnee !")
             End Try
         Next

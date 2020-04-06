@@ -1,7 +1,7 @@
 ﻿Public Class Home
 
     Public _ModeConnexion As Boolean = Login.AdminButton.Checked        'the boolean to determine the connected profile type 
-
+    'Public loading As Integer = 0
     Public f As Form    ' the form that will be shown in the middle of the page for the side bar operations
     Public h As Form    ' the form that will be shown in the middle of the page for the nav bar operations
 
@@ -351,6 +351,8 @@
         If Not f Is Nothing Then
             f.Close()
         End If
+        RechercherPage.Panel1.Visible = False
+        MainContainer1.Visible = True
         f = New StatistiquePage()         ' assign the search form to  the f form
         f.TopLevel = False
         f.TopMost = True
@@ -384,7 +386,7 @@
                 MainContainer1.Visible = False
             End If
 
-            h = New details(affichResearchResult.StudentList.Item(affichResearchResult.SelectedStudent - 1 + (affichResearchResult.CURRENT_PAGE - 1) * 7))         ' assign the search form to  the f form
+            h = New details(CType(f, affichResearchResult).StudentList.Item(CType(f, affichResearchResult).SelectedStudent - 1 + (CType(f, affichResearchResult).CURRENT_PAGE - 1) * 7))         ' assign the search form to  the f form
             h.TopLevel = False
             h.TopMost = True
             h.WindowState = FormWindowState.Normal
@@ -423,7 +425,7 @@
                 MainContainer1.Visible = False
             End If
 
-            h = New RN(affichResearchResult.StudentList.Item(affichResearchResult.SelectedStudent - 1 + (affichResearchResult.CURRENT_PAGE - 1) * 7))         ' assign the search form to  the f form
+            h = New RN(CType(f, affichResearchResult).StudentList.Item(CType(f, affichResearchResult).SelectedStudent - 1 + (CType(f, affichResearchResult).CURRENT_PAGE - 1) * 7))         ' assign the search form to  the f form
             h.TopLevel = False
             h.TopMost = True
             h.WindowState = FormWindowState.Normal
@@ -444,7 +446,7 @@
                 MainContainer1.Visible = False
             End If
 
-            h = New RNG(affichResearchResult.StudentList.Item(affichResearchResult.SelectedStudent - 1 + (affichResearchResult.CURRENT_PAGE - 1) * 7))         ' assign the search form to  the f form
+            h = New RNG(CType(f, affichResearchResult).StudentList.Item(CType(f, affichResearchResult).SelectedStudent - 1 + (CType(f, affichResearchResult).CURRENT_PAGE - 1) * 7))         ' assign the search form to  the f form
             h.TopLevel = False
             h.TopMost = True
             h.WindowState = FormWindowState.Normal
@@ -465,7 +467,7 @@
                 MainContainer1.Visible = False
             End If
 
-            h = New Historique(affichResearchResult.StudentList.Item(affichResearchResult.SelectedStudent - 1 + (affichResearchResult.CURRENT_PAGE - 1) * 7))         ' assign the search form to  the f form
+            h = New Historique(CType(f, affichResearchResult).StudentList.Item(CType(f, affichResearchResult).SelectedStudent - 1 + (CType(f, affichResearchResult).CURRENT_PAGE - 1) * 7))         ' assign the search form to  the f form
             h.TopLevel = False
             h.TopMost = True
             h.WindowState = FormWindowState.Normal
@@ -486,7 +488,7 @@
                 MainContainer1.Visible = False
             End If
 
-            h = New Imprimer(affichResearchResult.StudentList.Item(affichResearchResult.SelectedStudent - 1 + (affichResearchResult.CURRENT_PAGE - 1) * 7))         ' assign the search form to  the f form
+            h = New Imprimer(CType(f, affichResearchResult).StudentList.Item(CType(f, affichResearchResult).SelectedStudent - 1 + (CType(f, affichResearchResult).CURRENT_PAGE - 1) * 7))         ' assign the search form to  the f form
             h.TopLevel = False
             h.TopMost = True
             h.WindowState = FormWindowState.Normal
@@ -498,6 +500,8 @@
 
         End If
     End Sub
+
+    
 End Class
 
 

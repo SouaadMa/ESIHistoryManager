@@ -791,6 +791,7 @@ Partial Class details
         '
         'DetailPanel
         '
+        Me.DetailPanel.BackColor = System.Drawing.Color.Transparent
         Me.DetailPanel.Controls.Add(Me.TitlePanel)
         Me.DetailPanel.Controls.Add(Me.CategoriePanel)
         Me.DetailPanel.Controls.Add(Me.PN_INFOGENERAL)

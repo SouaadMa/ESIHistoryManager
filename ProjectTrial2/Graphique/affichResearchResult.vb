@@ -1,15 +1,16 @@
 ﻿Public Class affichResearchResult
 
-    Public Shared StudentList As New List(Of Etudiant)
+    Public StudentList As New List(Of Etudiant)
     Private nb_page As Integer = 0
-    Public Shared CURRENT_PAGE As Integer = 1
-    Public Shared SelectedStudent As Integer = -1
+    Public CURRENT_PAGE As Integer = 1
+    Public SelectedStudent As Integer = -1
+    Public Shared SortDirectionAscendant As Boolean = True
 
-    Public Sub New(ByVal CritList)
-
+    'Public Sub New(ByVal CritList)
+    Public Sub New(ByVal List As List(Of Etudiant))
         ' This call is required by the designer.
         InitializeComponent()
-        StudentList = Recherche.traitRechercher(CritList)
+        StudentList = List
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
@@ -45,8 +46,12 @@
 
         'appel a la fonction qui nous donne la collection des etudiants 
         Me.AffPanel.Dock = DockStyle.Fill   ' dock the seach form in the parent container
+        If SortDirectionAscendant Then
+            Classement.SortASCCollection(StudentList, "MATRIN")
+        Else
+            Classement.SortDESCollection(StudentList, "MATRIN")
+        End If
 
-        Classement.SortCollection(StudentList, "MATRIN")
 
         Console.WriteLine("results number is : " + StudentList.Count.ToString)
         If (StudentList.Count = 0) Then
@@ -198,19 +203,39 @@
         Dim l As List(Of Etudiant)
         Select Case SortModeBox.SelectedIndex
             Case 0
-                l = Classement.SortCollection(StudentList, "MATRIN")
+                If SortDirectionAscendant Then
+                    l = Classement.SortASCCollection(StudentList, "MATRIN")
+                Else
+                    l = Classement.SortDESCollection(StudentList, "MATRIN")
+                End If
+
                 StudentList = l
                 affich_pageResult()
             Case 1
-                l = Classement.SortCollection(StudentList, "NomEtud")
+                If SortDirectionAscendant Then
+                    l = Classement.SortASCCollection(StudentList, "NomEtud")
+                Else
+                    l = Classement.SortDESCollection(StudentList, "NomEtud")
+                End If
+
                 StudentList = l
                 affich_pageResult()
             Case 2
-                l = Classement.SortCollection(StudentList, "Prenoms")
+                If SortDirectionAscendant Then
+                    l = Classement.SortASCCollection(StudentList, "Prenoms")
+                Else
+                    l = Classement.SortDESCollection(StudentList, "Prenoms")
+                End If
+
                 StudentList = l
                 affich_pageResult()
             Case 3
-                l = Classement.SortCollection(StudentList, "ANNEEBAC")
+                If SortDirectionAscendant Then
+                    l = Classement.SortASCCollection(StudentList, "ANNEEBAC")
+                Else
+                    l = Classement.SortDESCollection(StudentList, "ANNEEBAC")
+                End If
+
                 StudentList = l
                 affich_pageResult()
         End Select
@@ -363,7 +388,7 @@
         For Each ctrl As Control In ctrlParent.Controls
             If Not ctrl.GetType.ToString.Equals("System.Windows.Forms.TableLayoutPanel") Then
                 AddHandler ctrl.MouseClick, AddressOf TableLayoutPanel1_Leave
-                Console.WriteLine(ctrl.Name)
+                'Console.WriteLine(ctrl.Name)
                 If (ctrl.HasChildren) Then
                     watch_focusLocation(ctrl)
                 End If
@@ -372,4 +397,10 @@
 
     End Sub
 
+
+    Private Sub SortDirectionButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SortDirectionButton.Click
+        SortDirectionButton.ImageIndex = (SortDirectionButton.ImageIndex + 1) Mod 2
+        SortDirectionAscendant = Not SortDirectionAscendant
+        SortModeBox_SelectedIndexChanged(SortModeBox, New EventArgs())
+    End Sub
 End Class

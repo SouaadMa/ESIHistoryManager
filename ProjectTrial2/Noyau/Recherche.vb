@@ -2,10 +2,9 @@
 
     Private Sub New()
     End Sub
-
-    Public Shared Function traitRechercher(ByVal criteres As List(Of Critere)) As List(Of Etudiant)
+    Public Shared Function traitRechercher(ByVal criteres As List(Of Critere), ByVal bw As System.ComponentModel.BackgroundWorker, ByVal e As System.ComponentModel.DoWorkEventArgs) As List(Of Etudiant)
         'La méthode qui retourne la collection des étudiants filtrés selon la collection des critères en entrée
-
+        '        e.Cancel = True
         Dim instructionSQL As String = ""
         'L'instruction SQL à générer
         Dim resultatRech As DataTable = New DataTable
@@ -14,25 +13,40 @@
         'La collection des étudiants à retourner à la fin de la méthode
         'Console.WriteLine("trait")
         'Pour chaque critère on fait appel à génèreRequete
-        For Each crit As Critere In criteres
-        instructionSQL=Rech_BDD.genereRechRequetes(instructionSQL, crit)
-        Next
-        'Console.WriteLine("traited")
-        'On passe la requête finale à ExécuteRequ et on sauvegarde son résultat
+        If Not bw.CancellationPending Then
 
-        resultatRech = BDD.executeRequete(instructionSQL)
+            For Each crit As Critere In criteres
+                instructionSQL = Rech_BDD.genereRechRequetes(instructionSQL, crit)
+            Next
+            'Console.WriteLine("traited")
+            'On passe la requête finale à ExécuteRequ et on sauvegarde son résultat
+            If Not bw.CancellationPending Then
+                resultatRech = BDD.executeRequete(instructionSQL)
+            Else
+                e.Cancel = True
+            End If
+            'Console.WriteLine(" execute requete success")
+            'Form1.DataGridView1.DataSource = resultatRech
+            'Form1.Show()
 
-        'Console.WriteLine(" execute requete success")
-        'Form1.DataGridView1.DataSource = resultatRech
-        'Form1.Show()
-
-        'Pour chaque ligne du DataTable on crée un objet étudiant
-        'Et on ajoute l'objet créé à la collection des étudiants à retourner
-
-        For Each ligne As DataRow In resultatRech.Rows
-            listeEtudiants.Add(New Etudiant(ligne))
-        Next
-
+            'Pour chaque ligne du DataTable on crée un objet étudiant
+            'Et on ajoute l'objet créé à la collection des étudiants à retourner
+            Dim x As Integer = 0
+            Dim _loop As Integer = resultatRech.Rows.Count
+            For Each ligne As DataRow In resultatRech.Rows
+                If Not bw.CancellationPending Then
+                    listeEtudiants.Add(New Etudiant(ligne))
+                    bw.ReportProgress(CInt((x / _loop) * 100))
+                    x += 1
+                Else
+                    e.Cancel = True
+                    Throw New NullReferenceException()
+                    'Exit Function
+                End If
+            Next
+        Else
+            e.Cancel = True
+        End If
         Return listeEtudiants
 
     End Function

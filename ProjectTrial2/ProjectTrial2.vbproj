@@ -91,6 +91,7 @@
     <Compile Include="Graphique\Imprimer.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Graphique\InfosGenerales.vb" />
     <Compile Include="Graphique\RNG.Designer.vb">
       <DependentUpon>RNG.vb</DependentUpon>
     </Compile>
@@ -285,6 +286,17 @@
     <None Include="Resources\logo_white.png" />
     <None Include="Resources\layeredAsset.png" />
     <None Include="Resources\layeredAssetWhite.png" />
+    <None Include="Resources\background-modif-generalite scroll.png" />
+    <None Include="Resources\background-modif-generalite.png" />
+    <None Include="Resources\background-modif-bac scroll.png" />
+    <None Include="Resources\background-modif-inscription scroll.png" />
+    <None Include="Resources\background-modif-groupe scroll.png" />
+    <None Include="Resources\background-modif-groupe scroll1.png" />
+    <None Include="Resources\background-modif-promo scroll.png" />
+    <None Include="Resources\background-modif-note scroll.png" />
+    <None Include="Resources\background-modif-generalite scroll1.png" />
+    <None Include="Resources\background-modif-noterat scroll.png" />
+    <None Include="Resources\background-modif-noterat scroll1.png" />
     <Content Include="Resources\page_num_current.png" />
     <None Include="Resources\Spinner-1s-220px.gif" />
     <None Include="Resources\table_bleu.png" />

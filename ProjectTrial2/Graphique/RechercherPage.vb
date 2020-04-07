@@ -235,38 +235,40 @@
 
         Me.PN_FORUMRECH.Dock = DockStyle.Fill   ' dock the seach form in the parent container
 
-        'inisialiser les wilayas combobox
-        Dim wilaya() As String = {"Adrar", "Chlef", "Laghouat", "Oum El Bouaghi", "Batna", "Béjaïa", "Biskra", "Béchar", "Blida", "Bouira", "Tamanrasset", "Tébessa", "Tlemcen", "Tiaret", "Tizi Ouzou", "Alger", "Djelfa", "Jijel", "Sétif", "Saïda", "Skikda", "Sidi Bel Abbès", "Annaba", "Guelma", "Constantine", "Médéa", "Mostaganem", "M'Sila", "Mascara", "Ouargla", "Oran", "El Bayadh", "Illizi", "Bordj Bou Arreridj", "Boumerdès", "El Tarf", "Tindouf", "Tissemsilt", "El Oued", "Khenchela", "Souk Ahras", "Tipaza", "Mila", "Aïn Defla", "Naâma", "Aïn Témouchent", "Ghardaïa", "Relizane"}
-        Dim wilayaarabe() As String = {"أدرار", "الشلف", "الأغواط", "أم البواقي", "باتنة", "بجاية", "بسكرة", "بشار", "البليدة", "البويرة", "تمنراست", "تبسة", "تلمسان", "تيارت", "تيزي وزو", "الجزائر العاصمة", "الجلفة", "جيجل", "سطيف", "سعيدة", "سكيكدة", "سيدي بلعباس", "عنابة", "قالمة", "قسنطينة", "المدية", "مستغانم", "المسيلة", "معسكر", "ورقلة", "وهران", "البيض", "إليزي", "برج بوعريريج", "بومرداس", "الطارف", "تندوف", "تيسمسيلت", "الوادي", "خنشلة", "سوق أهراس", "تيبازة", "ميلة", "عين الدفلى", "النعامة", "عين تموشنت", "غرداية", "غليزان"}
+        'initialiser :
 
-        For i = 0 To wilaya.Length - 1
+        'inisialiser les wilayas combobox
+        For Each Critere As String In InfosGenerales.wilaya
+            Me.CB_WILAYAB.Items.Add(Critere)
+            Me.CB_WILAYA.Items.Add(Critere)
+        Next
+
+        For Each Critere As String In InfosGenerales.wilayaarabe
+            Me.CB_WILAYANA.Items.Add(Critere)
+        Next
+
+        For i = 1 To InfosGenerales.wilaya.Count
             Me.CB_WILAYAN.Items.Add(i)
-            Me.CB_WILAYANA.Items.Add(wilayaarabe(i))
-            Me.CB_WILAYAB.Items.Add(wilaya(i))
-            Me.CB_WILAYA.Items.Add(wilaya(i))
         Next
 
         'inisialize sexe combobox 
-        Dim sexe() As String = {"Homme", "Femme", "Autre"}
 
-        For i = 0 To sexe.Length - 1
-            Me.CB_SEXE.Items.Add(sexe(i))
+        For Each Critere As String In InfosGenerales.sexe
+            Me.CB_SEXE.Items.Add(Critere)
         Next
 
         'inisialize seri de bac combobox 
 
-        Dim seribac() As String = {"000", "G00", "0G0", "G04", "G05", "G06", "G07", "G08", "G17", "GO5", "(vides)"}
-
-        For i = 0 To seribac.Length - 1
-            Me.CB_SERI.Items.Add(seribac(i))
+        For Each Critere As String In InfosGenerales.seribac
+            Me.CB_SERI.Items.Add(Critere)
         Next
 
         'inisialize annee de bac combobox 
 
-        For i = 1989 To 2011
+        For i = InfosGenerales.firstYear To InfosGenerales.lastYear
             Me.CB_ANNEEB.Items.Add(i)
         Next
-
+       
         ' fin initilize recherche form
     End Sub
 
@@ -292,9 +294,11 @@
                 i = 0
                 While i < TXT_MATRICUL.Text.Length And Me.worningrech.Visible = False
                     If Me.TXT_MATRICUL.Text(i) > "9" Or Me.TXT_MATRICUL.Text(i) < "0" Then
-                        Me.worningrech.Visible = True
-                        Me.worningrech.Text = "Vous devez remplir les champs correctement !"
-                        Me.IMG_ALERTMAT.Visible = True
+                        If Me.TXT_MATRICUL.Text(i) <> "/" Then
+                            Me.worningrech.Visible = True
+                            Me.worningrech.Text = "Vous devez remplir les champs correctement !"
+                            Me.IMG_ALERTMAT.Visible = True
+                        End If
                     End If
                     i = i + 1
                 End While
@@ -305,9 +309,11 @@
                 i = 0
                 While i < TXT_MATRICULB.Text.Length And Me.worningrech.Visible = False
                     If Me.TXT_MATRICULB.Text(i) > "9" Or Me.TXT_MATRICULB.Text(i) < "0" Then
-                        Me.worningrech.Visible = True
-                        Me.worningrech.Text = "Vous devez remplir les champs correctement !"
-                        Me.IMG_ALERTMTB.Visible = True
+                        If Me.TXT_MATRICULB.Text(i) <> "/" Then
+                            Me.worningrech.Visible = True
+                            Me.worningrech.Text = "Vous devez remplir les champs correctement !"
+                            Me.IMG_ALERTMTB.Visible = True
+                        End If
                     End If
                     i = i + 1
                 End While
@@ -318,9 +324,11 @@
                 i = 0
                 While i < TXT_MOYBAC.Text.Length And Me.worningrech.Visible = False
                     If Me.TXT_MOYBAC.Text(i) > "9" Or Me.TXT_MOYBAC.Text(i) < "0" Then
-                        Me.worningrech.Visible = True
-                        Me.worningrech.Text = "Vous devez remplir les champs correctement !"
-                        Me.IMG_ALERTMOY.Visible = True
+                        If Me.TXT_MOYBAC.Text(i) <> "." Then
+                            Me.worningrech.Visible = True
+                            Me.worningrech.Text = "Vous devez remplir les champs correctement !"
+                            Me.IMG_ALERTMOY.Visible = True
+                        End If
                     End If
                     i = i + 1
                 End While
@@ -351,6 +359,10 @@
 
                 If Me.TXT_NOMA.Text <> "" Then
                     collection_critere.Add(New Critere("NomEtudA", Me.TXT_NOMA.Text))
+                End If
+
+                If Me.TXT_PRENOMA.Text <> "" Then
+                    collection_critere.Add(New Critere("PrenomsA", Me.TXT_PRENOMA.Text))
                 End If
 
                 If Me.TXT_PRENOM.Text <> "" Then
@@ -416,6 +428,10 @@
 
                 If Me.CB_ANNEEB.Text <> "" Then
                     collection_critere.Add(New Critere("ANNEEBAC", CB_ANNEEB.Text))
+                End If
+
+                If Me.CB_WILAYAB.Text <> "" Then
+                    collection_critere.Add(New Critere("WILBAC", Me.CB_WILAYAB.Text))
                 End If
 
                 ' backgroundWorker1

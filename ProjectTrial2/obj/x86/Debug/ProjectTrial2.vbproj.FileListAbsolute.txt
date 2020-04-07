@@ -58,3 +58,7 @@ D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\
 D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.RNG.resources
 D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.RN.resources
 D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.Historique.resources
+C:\Users\hadia\Documents\GitHub\New folder\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.Imprimer.resources
+C:\Users\hadia\Documents\GitHub\New folder\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.RNG.resources
+C:\Users\hadia\Documents\GitHub\New folder\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.RN.resources
+C:\Users\hadia\Documents\GitHub\New folder\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.Historique.resources

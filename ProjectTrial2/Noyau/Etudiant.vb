@@ -54,48 +54,78 @@
         'Console.WriteLine("------------------------------------------------------")
     End Sub
 
-    'Méthode qui charge les informations de la table INSCRIPTION de l'étudiant selon le critère donné (l'année)
-    Public Sub ChargementInfosINSCRIPTION(ByVal critere As Critere)
+    
 
-        If (BDD.ExisteDansTable(critere.getChamps, BDD.nomTableINSCRIPTION)) Then
+    'Méthode qui charge les informations de l'étudiant selon le critère donné 
+    Public Sub ChargementInfos(ByVal critere As Critere)
 
-            Dim ligne As DataRow = BDD.GetFromTable(BDD.nomTableINSCRIPTION, Me.GetInfoChamps(BDD.champsMATRIN), critere)
-
-
-            For Each champs As String In BDD.stringINSCRIPTION
-
-                Try
-
-                    InfosINSCRIPTION.Add(champs, CType(ligne(champs), String))
-                Catch ex As Exception
-
-                End Try
-            Next
-            For Each champs As String In BDD.numINSCRIPTION
-
-                Try
-
-                    InfosINSCRIPTION.Add(champs, CType(ligne(champs), String))
-                Catch ex As Exception
+        Dim ligne As DataRow
 
 
-                End Try
+        'Les tables qui ont relation avec un seul étudiant
+        If (critere.getTable.Equals(BDD.nomTableINSCRIPTION) Or critere.getTable.Equals(BDD.nomTableNOTE) Or critere.getTable.Equals(BDD.nomTableNoteRATRAP)) Then
 
-            Next
-            For Each champs As String In BDD.boolINSCRIPTION
+            ligne = BDD.GetFromTable(critere.getTable, Me.GetInfoChamps(BDD.champsMATRIN), critere)
+            FillCollection(critere.getTable, ligne)
 
-                Try
+        Else
 
-                    InfosINSCRIPTION.Add(champs, CType(ligne(champs), String))
+            'MATIERE, RATRAP, GROUP, Section, PROMO 
+            'Sont des tables indépendantes de l'étudiant
 
-                Catch ex As Exception
-
-                    MsgBox(ex.Message)
-
-                End Try
-            Next
+            ligne = BDD.GetFromTable(critere.getTable, critere)
+            FillCollection(critere.getTable, ligne)
 
         End If
+
+
+    End Sub
+
+    'Méthode qui charge les informations de la table INSCRIPTION de l'étudiant selon le critère donné (l'année)
+    'We don't need to use it as long as we have ChargementInfos, the method above
+    'But don't delete it
+
+    Public Sub ChargementInfosINSCRIPTION(ByVal critere As Critere)
+
+
+
+        Dim ligne As DataRow = BDD.GetFromTable(BDD.nomTableINSCRIPTION, Me.GetInfoChamps(BDD.champsMATRIN), critere)
+
+
+        For Each champs As String In BDD.stringINSCRIPTION
+
+            Try
+
+                InfosINSCRIPTION.Add(champs, CType(ligne(champs), String))
+            Catch ex As Exception
+
+            End Try
+        Next
+        For Each champs As String In BDD.numINSCRIPTION
+
+            Try
+
+                InfosINSCRIPTION.Add(champs, CType(ligne(champs), String))
+            Catch ex As Exception
+
+
+            End Try
+
+        Next
+        For Each champs As String In BDD.boolINSCRIPTION
+
+            Try
+
+                InfosINSCRIPTION.Add(champs, CType(ligne(champs), String))
+
+            Catch ex As Exception
+
+                MsgBox(ex.Message)
+
+            End Try
+        Next
+
+
 
 
     End Sub
@@ -146,6 +176,90 @@
         End If
 
         Return ""
+
+    End Function
+
+
+    'FillCollection est une méthode qui remplie la collection avec le nom "nameTable" avec les informations
+    'Qui sont dans la ligne "ligne"
+    Public Sub FillCollection(ByVal nameTable As String, ByVal ligne As DataRow)
+
+        For Each champs As String In BDD.getStringTable(nameTable)
+
+            Try
+
+                getCollection(nameTable).Add(champs, CType(ligne(champs), String))
+
+            Catch ex As Exception
+
+                'MsgBox(ex.Message)
+
+            End Try
+
+        Next
+
+        For Each champs As String In BDD.getNumTable(nameTable)
+
+            Try
+
+                getCollection(nameTable).Add(champs, CType(ligne(champs), String))
+
+            Catch ex As Exception
+
+                'MsgBox(ex.Message)
+
+            End Try
+
+        Next
+
+        For Each champs As String In BDD.getBoolTable(nameTable)
+
+            Try
+
+                getCollection(nameTable).Add(champs, CType(ligne(champs), String))
+
+            Catch ex As Exception
+
+                'MsgBox(ex.Message)
+
+            End Try
+        Next
+
+
+    End Sub
+
+    Private Function getCollection(ByVal nameTable) As Dictionary(Of String, String)
+
+        Select Case nameTable
+            Case BDD.nomTableEtudiant
+                Return InfosETUDIANT
+            Case BDD.nomTableGROUP
+                Return InfosGROUP
+            Case BDD.nomTableINSCRIPTION
+                Return InfosINSCRIPTION
+            Case BDD.nomTableMATIERE
+                Return InfosMATIERE
+            Case BDD.nomTableNOTE
+                Return InfosNOTE
+            Case BDD.nomTableSection
+                Return InfosSECTION
+            Case BDD.nomTableNoteRATRAP
+                Return InfosNOTERATRAP
+            Case BDD.nomTablePROMO
+                Return InfosPROMO
+            Case BDD.nomTableRATRAP
+                Return InfosRATRAP
+            Case Else
+
+                'ATTENTION !! !! !!
+                'There should be an exception here if the table name doesn't exist
+
+
+                Return InfosETUDIANT
+
+        End Select
+
+
 
     End Function
 

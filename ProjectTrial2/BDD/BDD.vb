@@ -114,6 +114,107 @@ Public Class BDD
         Return boolChamp
     End Function
 
+    'Fonction qui retourne la table des champs de type "chaine"
+    'Créé pour faciliter la généralisation des autres méthodes
+    Public Shared Function getStringTable(ByVal name) As String()
+
+        Select Case name
+
+            Case nomTableEtudiant
+                Return stringETUDIANT
+            Case nomTableGROUP
+                Return stringGROUP
+            Case nomTableINSCRIPTION
+                Return stringINSCRIPTION
+            Case nomTableMATIERE
+                Return stringMATIERE
+            Case nomTableNOTE
+                Return stringNOTE
+            Case nomTableNoteRATRAP
+                Return stringNOTERATRAP
+            Case nomTablePROMO
+                Return stringPROMO
+            Case nomTableRATRAP
+                Return stringRATRAP
+            Case nomTableSection
+                Return stringSection
+            Case Else
+                MsgBox("Le nom de la table entrée n'existe pas")
+                Return stringETUDIANT
+
+
+        End Select
+
+
+    End Function
+
+
+    'Fonction qui retourne la table des champs de type "numérique"
+    Public Shared Function getNumTable(ByVal name) As String()
+
+        Select Case name
+
+            Case nomTableEtudiant
+                Return numETUDIANT
+            Case nomTableGROUP
+                Return numGROUP
+            Case nomTableINSCRIPTION
+                Return numINSCRIPTION
+            Case nomTableMATIERE
+                Return numMATIERE
+            Case nomTableNOTE
+                Return numNOTE
+            Case nomTableNoteRATRAP
+                Return numNOTERATRAP
+            Case nomTablePROMO
+                Return numPROMO
+            Case nomTableRATRAP
+                Return numRATRAP
+            Case nomTableSection
+                Return numSection
+            Case Else
+                MsgBox("Le nom de la table entrée n'existe pas")
+                Return numETUDIANT
+
+
+        End Select
+
+    End Function
+
+
+    'Fonction qui retourne la table des champs de type "booléen"
+    Public Shared Function getBoolTable(ByVal name) As String()
+
+        Select Case name
+
+            Case nomTableEtudiant
+                Return boolETUDIANT
+            Case nomTableGROUP
+                Return boolGROUP
+            Case nomTableINSCRIPTION
+                Return boolINSCRIPTION
+            Case nomTableMATIERE
+                Return boolMATIERE
+            Case nomTableNOTE
+                Return boolNOTE
+            Case nomTableNoteRATRAP
+                Return boolNOTERATRAP
+            Case nomTablePROMO
+                Return boolPROMO
+            Case nomTableRATRAP
+                Return boolRATRAP
+            Case nomTableSection
+                Return boolSection
+            Case Else
+                MsgBox("Le nom de la table entrée n'existe pas")
+                Return boolETUDIANT
+
+
+        End Select
+
+
+    End Function
+
     Public Shared Function executeRequete(ByVal requete As String) As DataTable
         'retourner un dataTable contenant les étudiants qui vérifient la requête
         Dim cnx As OleDbConnection = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\VISUAL.accdb")  'la connexion à la BDD
@@ -145,6 +246,8 @@ Public Class BDD
         Return dt
 
     End Function
+
+
 
 
     Public Shared Function getInfoBDD(ByVal champs As String, ByVal matricule As String) As String
@@ -361,8 +464,24 @@ Public Class BDD
 
         ' Le CodeMat s'écrit de la forme Nom/Annee/Option/Niveau
 
-        Return ""
+        Select Case champs
 
+            Case BDD.champsLIBEMA
+                Return "CodeMat LIKE '" + champs + "/%'"
+            Case BDD.champsAnnee
+                Return "CodeMat LIKE '%/" + champs + "/%'"
+            Case BDD.champsOption
+                Return "CodeMat LIKE '%/" + champs + "/%'"
+            Case BDD.champsNiveau
+                Return "CodeMat LIKE '%/" + champs + "'"
+            Case BDD.champsCodeMat
+                Return "CodeMat = '" + champs + "'"
+            Case Else
+                Return ""
+
+                'A ajouter CodePROMO si on en aura besoin
+
+        End Select
 
 
     End Function

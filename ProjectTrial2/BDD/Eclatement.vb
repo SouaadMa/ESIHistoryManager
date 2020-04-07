@@ -3,12 +3,15 @@
 Public Class Eclatement
 
     Public Shared Sub importExcelAccess(ByVal fileExcel As String, ByVal sheetExcel As String, ByVal fileAccess As String, ByVal tableName As String)
+
         Dim tables As DataTableCollection = Eclatement.lireExcelFile(fileExcel, sheetExcel)
+
         If tables.Count > 0 Then
             ecrireDataTable(fileAccess, tableName, tables(0))
         Else
             MsgBox(" La feuille excel ne contient aucun tableau !")
         End If
+
     End Sub
 
     Public Shared Function lireExcelFile(ByVal fileExcel As String, ByVal sheetExcel As String) As DataTableCollection
@@ -16,7 +19,9 @@ Public Class Eclatement
         Dim dt As DataTableCollection
 
         Dim cnx As System.Data.OleDb.OleDbConnection
+
         Dim dts As System.Data.DataSet
+
         Dim cmd As System.Data.OleDb.OleDbDataAdapter
 
         cnx = New System.Data.OleDb.OleDbConnection(" provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + fileExcel + "; Extended Properties='Excel 12.0 Xml; HDR=YES'")
@@ -28,6 +33,7 @@ Public Class Eclatement
         dt = (dts.Tables)
 
         Return dt
+
     End Function
 
     Public Shared Sub ecrireDataTable(ByVal fileAccess As String, ByVal tableName As String, ByVal dt As DataTable)

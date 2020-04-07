@@ -1,4 +1,5 @@
 ﻿Public Class Critere
+
     Private champs As String 'Le nom du champs
     Private valeur As Object 'La valeur correspondante au champs
     Private table As String 'Le nom de la table qui contient le champs

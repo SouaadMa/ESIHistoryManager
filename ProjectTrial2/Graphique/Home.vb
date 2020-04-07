@@ -27,8 +27,7 @@
             BT_modif_mdp.Visible = True
             BT_modif_mdp.Enabled = True
             With LBL_MODE
-                .Text = "Agent administarteur"
-                .TextAlign = ContentAlignment.MiddleCenter
+                .Text = "administrateur"
             End With
 
             With ModifButton        ' initialize the modif button according to the mode
@@ -351,7 +350,7 @@
         If Not f Is Nothing Then
             f.Close()
         End If
-        RechercherPage.Panel1.Visible = False
+        RechercherPage.ProgressPanel.Visible = False
         MainContainer1.Visible = True
         f = New StatistiquePage()         ' assign the search form to  the f form
         f.TopLevel = False
@@ -400,21 +399,24 @@
     End Sub
 
     Private Sub ModifButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ModifButton.Click
-        'If f.GetType.ToString.Equals("EsistHistoryManagement_v1.affichResearchResult") Then
-        '    Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
-        '    If Not f Is Nothing Then
-        '        f.Close()
-        '    End If
+        If f.GetType.ToString.Equals("EsistHistoryManagement_v1.affichResearchResult") Then
+            Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
+            If Not f Is Nothing Then
+                'f.Hide()
+                MainContainer1.Visible = False
+            End If
 
-        '    f = New modifier(affichResearchResult.StudentList.Item(affichResearchResult.SelectedStudent - 1 + (affichResearchResult.CURRENT_PAGE - 1) * 7))         ' assign the search form to  the f form
-        '    f.TopLevel = False
-        '    f.TopMost = True
-        '    f.WindowState = FormWindowState.Normal
-        '    Me.MainContainer1.Controls.Add(f)        ' add the controlers of the searche page to the main form f 
-        '    f.Show()                                ' show the form f in the middle of the home page
-        '    Me.MainContainer1.Visible = True
-        '    Me.MainContainer1.Width = 680            ' adjust its appearance
-        'End If
+            h = New modifier(CType(f, affichResearchResult).StudentList.Item(CType(f, affichResearchResult).SelectedStudent - 1 + (CType(f, affichResearchResult).CURRENT_PAGE - 1) * 7))         ' assign the search form to  the f form
+            h.TopLevel = False
+            h.TopMost = True
+            h.WindowState = FormWindowState.Normal
+            Me.MainContainer2.Controls.Add(h)        ' add the controlers of the searche page to the main form f 
+            h.Show()                                ' show the form f in the middle of the home page
+            Me.MainContainer2.Visible = True
+            Me.MainContainer1.Visible = False
+            'Me.MainContainer1.Width = 680            ' adjust its appearance
+
+        End If
     End Sub
 
     Private Sub RNButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RNButton.Click

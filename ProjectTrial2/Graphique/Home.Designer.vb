@@ -258,7 +258,7 @@ Partial Class Home
         Me.BT_modif_mdp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(186, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(130, Byte), Integer))
         Me.BT_modif_mdp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BT_modif_mdp.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.gear
-        Me.BT_modif_mdp.Location = New System.Drawing.Point(114, 192)
+        Me.BT_modif_mdp.Location = New System.Drawing.Point(118, 189)
         Me.BT_modif_mdp.Margin = New System.Windows.Forms.Padding(2)
         Me.BT_modif_mdp.Name = "BT_modif_mdp"
         Me.BT_modif_mdp.Size = New System.Drawing.Size(30, 30)
@@ -304,12 +304,12 @@ Partial Class Home
         Me.LBL_MODE.BackColor = System.Drawing.Color.Transparent
         Me.LBL_MODE.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LBL_MODE.ForeColor = System.Drawing.Color.White
-        Me.LBL_MODE.Location = New System.Drawing.Point(1, 218)
+        Me.LBL_MODE.Location = New System.Drawing.Point(1, 217)
         Me.LBL_MODE.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LBL_MODE.Name = "LBL_MODE"
         Me.LBL_MODE.Size = New System.Drawing.Size(149, 79)
         Me.LBL_MODE.TabIndex = 5
-        Me.LBL_MODE.Text = "Agent"
+        Me.LBL_MODE.Text = "Employée"
         Me.LBL_MODE.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'NavBar

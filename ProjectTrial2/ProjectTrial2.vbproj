@@ -76,6 +76,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BDD\Eclatement.vb" />
     <Compile Include="Graphique\affichResearchResult.Designer.vb">
       <DependentUpon>affichResearchResult.vb</DependentUpon>
     </Compile>
@@ -90,6 +91,7 @@
     <Compile Include="Graphique\Imprimer.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Graphique\InfosGenerales.vb" />
     <Compile Include="Graphique\RNG.Designer.vb">
       <DependentUpon>RNG.vb</DependentUpon>
     </Compile>

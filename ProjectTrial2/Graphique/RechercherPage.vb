@@ -1,203 +1,6 @@
 ﻿Public Class RechercherPage
 
     Private dtp_changed As Boolean
-    Private _loop As Integer = 100
-    ' initialize the language button in the search form
-    Private Sub ARButton_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ARButton1.CheckedChanged
-
-        If ARButton1.Checked Then
-            With ARButton1
-                .BackColor = Color.FromArgb(0, 64, 104)
-                .FlatStyle = FlatStyle.Popup
-            End With
-            With FRButton1
-                .BackColor = Color.FromArgb(162, 119, 113)
-                .FlatStyle = FlatStyle.Standard
-            End With
-            With LB_NOMA
-                .Text = "Nom en Arabe"
-            End With
-            With LB_PRENOMA
-                .Text = "Prenom en Arabe"
-            End With
-
-            With TXT_NOM
-                .Enabled = False
-                .Visible = False
-            End With
-
-            With TXT_NOMA
-                .Enabled = True
-                .Visible = True
-            End With
-
-            With TXT_PRENOM
-                .Enabled = False
-                .Visible = False
-            End With
-
-            With TXT_PRENOMA
-                .Enabled = True
-                .Visible = True
-            End With
-        Else
-            With ARButton1
-                .BackColor = Color.FromArgb(162, 119, 113)
-                .FlatStyle = FlatStyle.Standard
-
-            End With
-            With FRButton1
-                .BackColor = Color.FromArgb(0, 64, 104)
-                .FlatStyle = FlatStyle.Popup
-            End With
-            With LB_NOMA
-                .Text = "Nom en Francais"
-            End With
-            With LB_PRENOMA
-                .Text = "Prenom en Francais"
-            End With
-
-            With TXT_NOM
-                .Enabled = True
-                .Visible = True
-            End With
-
-            With TXT_NOMA
-                .Enabled = False
-                .Visible = False
-            End With
-
-            With TXT_PRENOM
-                .Enabled = True
-                .Visible = True
-            End With
-
-            With TXT_PRENOMA
-                .Enabled = False
-                .Visible = False
-            End With
-
-        End If
-    End Sub
-
-
-    Private Sub ARButton2_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ARButton2.CheckedChanged
-        If ARButton2.Checked Then
-            With ARButton2
-                .BackColor = Color.FromArgb(0, 64, 104)
-                .FlatStyle = FlatStyle.Popup
-            End With
-            With FRButton2
-                .BackColor = Color.FromArgb(162, 119, 113)
-                .FlatStyle = FlatStyle.Standard
-            End With
-            With LB_LIEUNA
-                .Text = "Lieu de naissance en Arabe"
-            End With
-
-            With TXT_LIEUN
-                .Enabled = False
-                .Visible = False
-            End With
-
-            With TXT_LIEUNA
-                .Enabled = True
-                .Visible = True
-            End With
-
-        Else
-            With ARButton2
-                .BackColor = Color.FromArgb(162, 119, 113)
-                .FlatStyle = FlatStyle.Standard
-
-            End With
-            With FRButton2
-                .BackColor = Color.FromArgb(0, 64, 104)
-                .FlatStyle = FlatStyle.Popup
-            End With
-            With LB_LIEUNA
-                .Text = "Lieu de naissance en Francais"
-            End With
-
-            With TXT_LIEUN
-                .Enabled = True
-                .Visible = True
-            End With
-
-            With TXT_LIEUNA
-                .Enabled = False
-                .Visible = False
-            End With
-
-        End If
-    End Sub
-
-    Private Sub ARButton3_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ARButton3.CheckedChanged
-        If ARButton3.Checked Then
-            With ARButton3
-                .BackColor = Color.FromArgb(0, 64, 104)
-                .FlatStyle = FlatStyle.Popup
-            End With
-            With FRButton3
-                .BackColor = Color.FromArgb(162, 119, 113)
-                .FlatStyle = FlatStyle.Standard
-            End With
-            With LB_WILAYANA
-                .Text = "Wilaya de naissance en Arabe"
-            End With
-
-            With CB_WILAYAN
-                .Enabled = False
-                .Visible = False
-            End With
-
-            With CB_WILAYANA
-                .Enabled = True
-                .Visible = True
-            End With
-
-        Else
-            With ARButton3
-                .BackColor = Color.FromArgb(162, 119, 113)
-                .FlatStyle = FlatStyle.Standard
-
-            End With
-            With FRButton3
-                .BackColor = Color.FromArgb(0, 64, 104)
-                .FlatStyle = FlatStyle.Popup
-            End With
-            With LB_WILAYANA
-                .Text = "Code de wilaya de naissance "
-            End With
-
-            With CB_WILAYAN
-                .Enabled = True
-                .Visible = True
-            End With
-
-            With CB_WILAYANA
-                .Enabled = False
-                .Visible = False
-            End With
-
-        End If
-    End Sub
-
-    'handle the residence caterorie label click
-    Private Sub ResidenceLabel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ResidenceLabel.Click
-        SpliterMain.SplitterDistance = IIf(SplitContainer1.Panel2Collapsed, 330, 25)    'adjust the spliter distance
-        SplitContainer1.Panel2Collapsed = Not SplitContainer1.Panel2Collapsed           'reverse the collapse state
-        ResidenceLabel.ImageIndex = IIf(SplitContainer1.Panel2Collapsed, 0, 1)          'change the arrow image
-        RechButtons.Location = New Point(25, RechButtons.Location.Y + IIf(SplitContainer1.Panel2Collapsed, -280, 280)) 'adjust the search button position
-    End Sub
-
-    'handle the residence caterorie label click
-    Private Sub BACLabel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BACLabel.Click
-        SplitContainer2.Panel2Collapsed = Not SplitContainer2.Panel2Collapsed
-        BACLabel.ImageIndex = IIf(SplitContainer2.Panel2Collapsed, 0, 1)
-        RechButtons.Location = New Point(25, RechButtons.Location.Y + IIf(SplitContainer2.Panel2Collapsed, -170, 170))
-        'RechButtons.Location = New Point(25, SplitContainer2.Panel2.ClientRectangle.Bottom)
-    End Sub
 
     Private Sub recherche_load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
@@ -228,10 +31,7 @@
             .panel2collapsed = True
         End With
         ' make the arabic flanuge checked at the beggining
-        RechButtons.Location = New System.Drawing.Point(25, 525)
-        arbutton1.checked = True
-        arbutton2.checked = True
-        ARButton3.Checked = True
+        RechButtons.Location = New System.Drawing.Point(25, 605)
 
         Me.PN_FORUMRECH.Dock = DockStyle.Fill   ' dock the seach form in the parent container
 
@@ -281,7 +81,7 @@
 
         'no research if he had fill nothing
 
-        If Me.TXT_ADR.Text = "" And Me.TXT_CODEPOS.Text = "" And Me.TXT_LIEUN.Text = "" And Me.TXT_LIEUNA.Text = "" And Me.TXT_MATRICUL.Text = "" And Me.TXT_MATRICULB.Text = "" And Me.TXT_MOYBAC.Text = "" And Me.TXT_NOM.Text = "" And Me.TXT_NOMA.Text = "" And Me.TXT_PRENOM.Text = "" And Me.TXT_PRENOMA.Text = "" And Me.TXT_VILLE.Text = "" And Me.CB_ANNEEB.Text = "" And Me.CB_SERI.Text = "" And Me.CB_SEXE.Text = "" And Me.CB_WILAYA.Text = "" And Me.CB_WILAYAB.Text = "" And Me.CB_WILAYAN.Text = "" And Me.CB_WILAYANA.Text = "" And Me.dtp_changed = False Then
+        If Me.TXT_CODEPOS.Text = "" And Me.TXT_LIEUN.Text = "" And Me.TXT_LIEUNA.Text = "" And Me.TXT_MATRICUL.Text = "" And Me.TXT_MATRICULB.Text = "" And Me.TXT_MOYBAC.Text = "" And Me.TXT_NOM.Text = "" And Me.TXT_NOMA.Text = "" And Me.TXT_PRENOM.Text = "" And Me.TXT_PRENOMA.Text = "" And Me.TXT_VILLE.Text = "" And Me.CB_ANNEEB.Text = "" And Me.CB_SERI.Text = "" And Me.CB_SEXE.Text = "" And Me.CB_WILAYA.Text = "" And Me.CB_WILAYAB.Text = "" And Me.CB_WILAYAN.Text = "" And Me.CB_WILAYANA.Text = "" And Me.dtp_changed = False Then
             Me.worningrech.Visible = True
             Me.worningrech.Text = "Vous devez remplir en mois un champs !"
         Else
@@ -398,9 +198,9 @@
                     collection_critere.Add(New Critere("WILNAIS", Me.CB_WILAYAN.Text)) ' numerique
                 End If
 
-                If Me.TXT_ADR.Text <> "" Then
-                    collection_critere.Add(New Critere("ADRESSE", Me.TXT_ADR.Text))
-                End If
+                'If  <> "" Then
+                '    collection_critere.Add(New Critere("ADRESSE", Me.TXT_ADR.Text))
+                'End If
 
                 If Me.TXT_VILLE.Text <> "" Then
                     collection_critere.Add(New Critere("VILLE", Me.TXT_VILLE.Text))
@@ -440,14 +240,13 @@
 
                 'handling the appearnce of the affichage form
                 PictureBox2.Size = PictureBox2.MinimumSize
-                Panel1.Visible = True
+                ProgressPanel.Visible = True
                 'PN_FORUMRECH
                 PN_FORUMRECH.Visible = False
                 PictureBox2.Size = New System.Drawing.Size(226, 0)
 
                 BackgroundWorker1.RunWorkerAsync(collection_critere)
 
-                'Me.Close()
             End If
 
             ' appel a traite rechercher
@@ -455,9 +254,23 @@
             'Dim StudentList As List(Of Etudiant)
             'StudentList = Recherche.traitRechercher(collection_critere)
 
-            
         End If
+    End Sub
 
+    Private Sub ResidenceLabel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ResidenceLabel.Click
+        'handle the residence caterorie label click
+        SpliterMain.SplitterDistance = IIf(SplitContainer1.Panel2Collapsed, 290, 25)    'adjust the spliter distance
+        SplitContainer1.Panel2Collapsed = Not SplitContainer1.Panel2Collapsed           'reverse the collapse state
+        ResidenceLabel.ImageIndex = IIf(SplitContainer1.Panel2Collapsed, 0, 1)          'change the arrow image
+        RechButtons.Location = New Point(25, RechButtons.Location.Y + IIf(SplitContainer1.Panel2Collapsed, -265, 265)) 'adjust the search button position
+    End Sub
+
+    'handle the residence caterorie label click
+    Private Sub BACLabel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BACLabel.Click
+        SplitContainer2.Panel2Collapsed = Not SplitContainer2.Panel2Collapsed
+        BACLabel.ImageIndex = IIf(SplitContainer2.Panel2Collapsed, 0, 1)
+        RechButtons.Location = New Point(25, RechButtons.Location.Y + IIf(SplitContainer2.Panel2Collapsed, -200, 200))
+        'RechButtons.Location = New Point(25, SplitContainer2.Panel2.ClientRectangle.Bottom)
     End Sub
 
     Private Sub DTP_DATEN_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DTP_DATEN.ValueChanged, DTP_DATEN.GotFocus, DTP_DATEN.Click
@@ -486,7 +299,6 @@
         Me.worningrech.Visible = False
     End Sub
 
-
     Private Sub TXT_PRENOM_GotFocus(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_PRENOM.GotFocus, TXT_PRENOM.TextChanged, TXT_PRENOM.Click
         Me.worningrech.Visible = False
     End Sub
@@ -494,7 +306,6 @@
     Private Sub TXT_NOMA_GotFocus(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_NOMA.GotFocus, TXT_NOMA.TextChanged, TXT_NOMA.Click
         Me.worningrech.Visible = False
     End Sub
-
 
     Private Sub TXT_PRENOMA_GotFocus(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_PRENOMA.GotFocus, TXT_PRENOMA.TextChanged, TXT_PRENOMA.Click
         Me.worningrech.Visible = False
@@ -512,7 +323,7 @@
         Me.worningrech.Visible = False
     End Sub
 
-    Private Sub TXT_ADR_GotFocus(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_ADR.GotFocus, TXT_ADR.TextChanged, TXT_ADR.Click
+    Private Sub TXT_ADR_GotFocus(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Me.worningrech.Visible = False
     End Sub
 
@@ -549,11 +360,6 @@
     Private Sub BackgroundWorker1_DoWork(ByVal sender As System.Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
         ' Do some time-consuming work on this thread.
         Dim worker As System.ComponentModel.BackgroundWorker = DirectCast(sender, System.ComponentModel.BackgroundWorker)
-        'For x As Integer = 0 To _loop - 1
-        '    worker.ReportProgress(CInt((x / _loop) * 100))
-        '    'UpdateProgressLabel(Home.ProgressLabel, FormatPercent(x / _loop, 2))
-        'Next
-        ' System.Threading.Thread.Sleep(1000)
 
         Dim collection_critere As List(Of Critere) = CType(e.Argument, List(Of Critere))
         Try
@@ -569,7 +375,7 @@
 
     Private Sub BackgroundWorker1_RunWorkerCompleted(ByVal sender As System.Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorker1.RunWorkerCompleted
         If e.Cancelled Then
-            Panel1.Visible = False
+            ProgressPanel.Visible = False
             'PN_FORUMRECH
             PN_FORUMRECH.Visible = True
             'Home.f = New RechercherPage()
@@ -585,9 +391,9 @@
         Home.MainContainer1.Controls.Add(Home.f)        ' add the controlers of the searche page to the main form f 
         Home.f.Show()                                ' show the form f in the middle of the home page
         Home.MainContainer1.Visible = True
-        Panel1.Visible = False
+        ProgressPanel.Visible = False
         ' Called when the BackgroundWorker is completed.
-        
+
     End Sub
 
     Private Sub BackgroundWorker1_ProgressChanged(ByVal sender As System.Object, ByVal e As System.ComponentModel.ProgressChangedEventArgs) Handles BackgroundWorker1.ProgressChanged
@@ -603,40 +409,31 @@
         Dim list As List(Of Etudiant) = Recherche.traitRechercher(collection_critere, bw, e)
         Return list
     End Function
+
+    Private Sub CancelButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CancelBackgroundButton.Click
+        With BackgroundWorker1
+            If .WorkerSupportsCancellation Then
+                .CancelAsync()
+            End If
+            'End If
+        End With
+    End Sub
+
+    Private Sub Panel1_VisibleChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ProgressPanel.VisibleChanged
+        Me.PN_FORUMRECH.Visible = Not ProgressPanel.Visible
+    End Sub
     'Private Function watch_inBackground(ByVal bw As System.ComponentModel.BackgroundWorker, ByVal e As System.ComponentModel.DoWorkEventArgs) As System.ComponentModel.DoWorkEventArgs
     '    If bw.CancellationPending Then
     '        e.Cancel = True
     '    End If
     '    Return e
     'End Function
-    Private Sub CancelButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CancelBackgroundButton.Click
-        With BackgroundWorker1
-            'If .IsBusy Then
-            If .WorkerSupportsCancellation Then
-                .CancelAsync()
-                'Console.WriteLine(BackgroundWorker1.IsBusy)
-                'Panel1.Visible = False
-                'Home.MainContainer1.Visible = True
-            End If
-            'End If
-        End With
-    End Sub
 
     'Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
     '    PictureBox2.Size = New System.Drawing.Size(226, (((PictureBox2.Size.Height + 1) Mod PictureBox2.MaximumSize.Height)))
 
     '    'System.ComponentModel.DoWorkEventArgs 
     'End Sub
-
-    Private Sub Panel1_VisibleChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Panel1.VisibleChanged
-        If Panel1.Visible Then
-            Timer1.Enabled = True
-            Timer1.Start()
-        Else
-            Timer1.Enabled = False
-            Timer1.Stop()
-        End If
-    End Sub
 
     'Delegate Sub takeWorkerArguments(ByVal bw As System.ComponentModel.BackgroundWorker, ByVal e As System.ComponentModel.DoWorkEventArgs)
 

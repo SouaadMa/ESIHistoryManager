@@ -19,22 +19,22 @@
         BT_GENERALINFO.Checked = True
         'initialiser les criteres de laffichage avant modification
 
-        For Each critere As String In esistselect.getannees()
-            CB_ANNEEIN.Items.Add(critere)
-            CB_ANNEEGRP.Items.Add(critere)
-            CB_ANNEESEC.Items.Add(critere)
-            CB_ANNEEPROMO.Items.Add(critere)
-        Next
+        'For Each critere As String In esistselect.getannees()
+        '    CB_ANNEEIN.Items.Add(critere)
+        '    CB_ANNEEGRP.Items.Add(critere)
+        '    CB_ANNEESEC.Items.Add(critere)
+        '    CB_ANNEEPROMO.Items.Add(critere)
+        'Next
 
-        For Each critere As String In esistselect.getcodeMat()
-            CB_CodeMatMAT.Items.Add(critere)
-            CB_CodeMatNOTE.Items.Add(critere)
-        Next
+        'For Each critere As String In esistselect.getcodeMat()
+        '    CB_CodeMatMAT.Items.Add(critere)
+        '    CB_CodeMatNOTE.Items.Add(critere)
+        'Next
 
-        For Each critere As String In esistselect.getcodeRattrap()
-            CB_CODERATNOT.Items.Add(critere)
-            CB_CODERATRAT.Items.Add(critere)
-        Next
+        'For Each critere As String In esistselect.getcodeRattrap()
+        '    CB_CODERATNOT.Items.Add(critere)
+        '    CB_CODERATRAT.Items.Add(critere)
+        'Next
 
         'initialiser etudiant
 
@@ -296,7 +296,7 @@
         If CB_ANNEEIN.Text <> "" Then
             'collecter le critere
             Dim critere As Critere = New Critere("ANETIN", CB_ANNEEIN.Text, "PROMO")
-            esistselect.chargementInfoInscription(critere)
+            'esistselect.chargementInfoInscription(critere)
 
             TXT_MOYEIN.Visible = True
             CB_DEC.Visible = True
@@ -356,7 +356,7 @@
 
             'collecter le critere
             Dim critere As Critere = New Critere("ANETIN", CB_ANNEEIN.Text, "PROMO")
-            esistselect.chargementInfoInscription(critere)
+            'esistselect.chargementInfoInscription(critere)
 
             TXT_CB_codeGroupe.Visible = True
             CB_NG.Visible = True
@@ -378,7 +378,7 @@
 
             'collecter le critere
             Dim critere As Critere = New Critere("ANETIN", CB_ANNEEIN.Text, "PROMO")
-            esistselect.chargementInfoInscription(critere)
+            'esistselect.chargementInfoInscription(critere)
 
             TXT_CodeSection.Visible = True
             CB_NS.Visible = True
@@ -398,7 +398,7 @@
         If CB_ANNEEPROMO.Text <> "" Then
             'collecter le critere
             Dim critere As Critere = New Critere("ANETIN", CB_ANNEEIN.Text, "PROMO")
-            esistselect.chargementInfoInscription(critere)
+            'esistselect.chargementInfoInscription(critere)
 
             TXT_CodePromo.Visible = True
             CB_Niveau.Visible = True
@@ -439,7 +439,7 @@
         If CB_CodeMatNOTE.Text <> "" Then
             'collecter le critere
             Dim critere As Critere = New Critere("CodeMat", CB_ANNEEIN.Text, "NOTE")
-            esistselect.chargementInfoInscription(critere)
+            'esistselect.chargementInfoInscription(critere)
 
             TXT_NOJUNO.Visible = True
             TXT_NOSYNO.Visible = True
@@ -472,7 +472,7 @@
 
             'collecter le critere
             Dim critere As Critere = New Critere("CodeMat", CB_ANNEEIN.Text, "MATIERE")
-            esistselect.chargementInfoInscription(critere)
+            'esistselect.chargementInfoInscription(critere)
 
             CB_ANSCMA.Visible = True
             CB_ANETMA.Visible = True
@@ -532,7 +532,7 @@
         If CB_CODERATNOT.Text <> "" Then
             'collecter le critere
             Dim critere As Critere = New Critere("CodeRat", CB_ANNEEIN.Text, "NoteRATRAP")
-            esistselect.chargementInfoInscription(critere)
+            'esistselect.chargementInfoInscription(critere)
 
             TXT_MOYERA.Visible = True
             CB_MENTRA.Visible = True
@@ -567,7 +567,7 @@
         If CB_CODERATRAT.Text <> "" Then
             'collecter le critere
             Dim critere As Critere = New Critere("CodeRat", CB_ANNEEIN.Text, "RATRAP")
-            esistselect.chargementInfoInscription(critere)
+            'esistselect.chargementInfoInscription(critere)
 
             CB_ANSCRA.Visible = True
             CB_ANETRA.Visible = True
@@ -2311,4 +2311,17 @@
         TXT_DATENAIS.BackColor = Color.WhiteSmoke
     End Sub
 
+    Private Sub BT_RATRAP_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_SECTION.MouseHover, BT_RATRAP.MouseHover, BT_PROMO.MouseHover, BT_NOTERAT.MouseHover, BT_NOTE.MouseHover, BT_MATIERE.MouseHover, BT_INSCRIP.MouseHover, BT_INFORESIDENCE.MouseHover, BT_INFOBAC.MouseHover, BT_GRP.MouseHover, BT_GENERALINFO.MouseHover
+        For Each ctrl In Panel3.Controls
+            CType(ctrl, Control).Padding = New Padding(5, 0, 0, 0)
+        Next
+        CType(sender, Control).Padding = New Padding(25, 0, 0, 0)
+    End Sub
+
+    Private Sub BT_SORTIR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_SORTIR.Click
+        Me.Close()
+        'Home.f.Show()
+        Home.MainContainer2.Visible = False
+        Home.MainContainer1.Visible = True
+    End Sub
 End Class

@@ -195,9 +195,8 @@ Partial Class Login
         Me.AgentButton.Name = "AgentButton"
         Me.AgentButton.Size = New System.Drawing.Size(216, 96)
         Me.AgentButton.TabIndex = 10
-        Me.AgentButton.Text = "Agent"
-        Me.AgentButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.AgentButton.UseVisualStyleBackColor = False
+        Me.AgentButton.Text = "      Employée"
+        Me.AgentButton.UseVisualStyleBackColor = True
         '
         'AdminButton
         '
@@ -221,7 +220,7 @@ Partial Class Login
         Me.AdminButton.Name = "AdminButton"
         Me.AdminButton.Size = New System.Drawing.Size(216, 97)
         Me.AdminButton.TabIndex = 11
-        Me.AdminButton.Text = "Agent Administratif"
+        Me.AdminButton.Text = "Administrateur"
         Me.AdminButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.AdminButton.UseVisualStyleBackColor = False
         '
@@ -232,9 +231,9 @@ Partial Class Login
         Me.avertissemnt.ForeColor = System.Drawing.Color.LightCoral
         Me.avertissemnt.Location = New System.Drawing.Point(303, 595)
         Me.avertissemnt.Name = "avertissemnt"
-        Me.avertissemnt.Size = New System.Drawing.Size(348, 20)
+        Me.avertissemnt.Size = New System.Drawing.Size(368, 20)
         Me.avertissemnt.TabIndex = 5
-        Me.avertissemnt.Text = "Mot de passe errone ! ressayez a nouveau"
+        Me.avertissemnt.Text = "Mot de passe erronée ! réessayez à nouveau"
         Me.avertissemnt.Visible = False
         '
         'profile_photo_login

@@ -24,7 +24,8 @@ Partial Class modifier
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(modifier))
         Me.PN_MODIFIER = New System.Windows.Forms.Panel()
-        Me.BT_SORTIR = New System.Windows.Forms.Button()
+        Me.Worning = New System.Windows.Forms.Label()
+        Me.BT_MODIFIER = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.BT_RATRAP = New System.Windows.Forms.RadioButton()
         Me.BT_NOTERAT = New System.Windows.Forms.RadioButton()
@@ -37,7 +38,7 @@ Partial Class modifier
         Me.BT_GENERALINFO = New System.Windows.Forms.RadioButton()
         Me.BT_INFOBAC = New System.Windows.Forms.RadioButton()
         Me.BT_INFORESIDENCE = New System.Windows.Forms.RadioButton()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TAB_PAGES = New System.Windows.Forms.TabControl()
         Me.P_GENERALITE = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel11 = New System.Windows.Forms.Panel()
@@ -65,21 +66,23 @@ Partial Class modifier
         Me.TXT_PrenomsA = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.TXT_DATENAIS = New System.Windows.Forms.TextBox()
+        Me.DTP_DATENAIS = New System.Windows.Forms.DateTimePicker()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel10 = New System.Windows.Forms.Panel()
-        Me.TXT_SEXE = New System.Windows.Forms.TextBox()
+        Me.CB_SEXE = New System.Windows.Forms.ComboBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.P_RESIDENCE = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel15 = New System.Windows.Forms.Panel()
         Me.LB_LIEUN = New System.Windows.Forms.Label()
-        Me.TXT_LIEUNA = New System.Windows.Forms.TextBox()
+        Me.TXT_LIEUN = New System.Windows.Forms.TextBox()
         Me.Panel16 = New System.Windows.Forms.Panel()
         Me.LB_WILAYAN = New System.Windows.Forms.Label()
         Me.CB_WILAYAN = New System.Windows.Forms.ComboBox()
         Me.Panel17 = New System.Windows.Forms.Panel()
         Me.LB_LIEUNA = New System.Windows.Forms.Label()
-        Me.TXT_LIEUN = New System.Windows.Forms.TextBox()
+        Me.TXT_LIEUNA = New System.Windows.Forms.TextBox()
         Me.Panel18 = New System.Windows.Forms.Panel()
         Me.LB_WILAYANA = New System.Windows.Forms.Label()
         Me.CB_WILAYANA = New System.Windows.Forms.ComboBox()
@@ -110,7 +113,7 @@ Partial Class modifier
         Me.CB_ANNEEB = New System.Windows.Forms.ComboBox()
         Me.LB_ANNEEB = New System.Windows.Forms.Label()
         Me.P_INSCRIPTION = New System.Windows.Forms.TabPage()
-        Me.worningrech = New System.Windows.Forms.Label()
+        Me.lbin = New System.Windows.Forms.Label()
         Me.CB_ANNEEIN = New System.Windows.Forms.ComboBox()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel25 = New System.Windows.Forms.Panel()
@@ -118,10 +121,10 @@ Partial Class modifier
         Me.CB_ADM = New System.Windows.Forms.ComboBox()
         Me.Panel34 = New System.Windows.Forms.Panel()
         Me.LB_DECIIN = New System.Windows.Forms.Label()
-        Me.TXT_DECIIN = New System.Windows.Forms.TextBox()
+        Me.CB_DECIIN = New System.Windows.Forms.ComboBox()
         Me.Panel33 = New System.Windows.Forms.Panel()
         Me.LB_DEC = New System.Windows.Forms.Label()
-        Me.TXT_DEC = New System.Windows.Forms.TextBox()
+        Me.CB_DEC = New System.Windows.Forms.ComboBox()
         Me.Panel31 = New System.Windows.Forms.Panel()
         Me.LB_RATRIN = New System.Windows.Forms.Label()
         Me.CB_RATRIN = New System.Windows.Forms.ComboBox()
@@ -138,7 +141,7 @@ Partial Class modifier
         Me.LB_RANGIN = New System.Windows.Forms.Label()
         Me.CB_RANGIN = New System.Windows.Forms.ComboBox()
         Me.P_GRP = New System.Windows.Forms.TabPage()
-        Me.Label12 = New System.Windows.Forms.Label()
+        Me.lbgrp = New System.Windows.Forms.Label()
         Me.CB_ANNEEGRP = New System.Windows.Forms.ComboBox()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel40 = New System.Windows.Forms.Panel()
@@ -202,7 +205,7 @@ Partial Class modifier
         Me.P_MATIERE = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel8 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel51 = New System.Windows.Forms.Panel()
-        Me.TXT_CYCLMA = New System.Windows.Forms.TextBox()
+        Me.CB_CYCLMA = New System.Windows.Forms.ComboBox()
         Me.LB_CYCLMA = New System.Windows.Forms.Label()
         Me.Panel50 = New System.Windows.Forms.Panel()
         Me.TXT_MOYMAT = New System.Windows.Forms.TextBox()
@@ -258,16 +261,15 @@ Partial Class modifier
         Me.LB_ANETRA = New System.Windows.Forms.Label()
         Me.CB_ANETRA = New System.Windows.Forms.ComboBox()
         Me.Panel60 = New System.Windows.Forms.Panel()
-        Me.TXT_ANSCRA = New System.Windows.Forms.TextBox()
+        Me.CB_ANSCRA = New System.Windows.Forms.ComboBox()
         Me.LB_ANSCRA = New System.Windows.Forms.Label()
         Me.CB_CODERATRAT = New System.Windows.Forms.ComboBox()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.DTP_DATENAIS = New System.Windows.Forms.DateTimePicker()
         Me.PN_MODIFIER.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        Me.TabControl1.SuspendLayout()
+        Me.TAB_PAGES.SuspendLayout()
         Me.P_GENERALITE.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Panel11.SuspendLayout()
@@ -358,29 +360,43 @@ Partial Class modifier
         'PN_MODIFIER
         '
         Me.PN_MODIFIER.BackColor = System.Drawing.Color.Transparent
-        Me.PN_MODIFIER.Controls.Add(Me.BT_SORTIR)
-        Me.PN_MODIFIER.Controls.Add(Me.Panel3)
-        Me.PN_MODIFIER.Controls.Add(Me.TabControl1)
         Me.PN_MODIFIER.Controls.Add(Me.Panel1)
+        Me.PN_MODIFIER.Controls.Add(Me.Worning)
+        Me.PN_MODIFIER.Controls.Add(Me.BT_MODIFIER)
+        Me.PN_MODIFIER.Controls.Add(Me.Panel3)
+        Me.PN_MODIFIER.Controls.Add(Me.TAB_PAGES)
         Me.PN_MODIFIER.Location = New System.Drawing.Point(0, 0)
         Me.PN_MODIFIER.Name = "PN_MODIFIER"
         Me.PN_MODIFIER.Size = New System.Drawing.Size(678, 640)
-        Me.PN_MODIFIER.TabIndex = 1
+        Me.PN_MODIFIER.TabIndex = 2
         '
-        'BT_SORTIR
+        'Worning
         '
-        Me.BT_SORTIR.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.BT_SORTIR.FlatAppearance.BorderSize = 0
-        Me.BT_SORTIR.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BT_SORTIR.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BT_SORTIR.ForeColor = System.Drawing.Color.White
-        Me.BT_SORTIR.Location = New System.Drawing.Point(32, 551)
-        Me.BT_SORTIR.Margin = New System.Windows.Forms.Padding(2, 2, 2, 100)
-        Me.BT_SORTIR.Name = "BT_SORTIR"
-        Me.BT_SORTIR.Size = New System.Drawing.Size(150, 37)
-        Me.BT_SORTIR.TabIndex = 53
-        Me.BT_SORTIR.Text = "Modifier"
-        Me.BT_SORTIR.UseVisualStyleBackColor = False
+        Me.Worning.AutoSize = True
+        Me.Worning.BackColor = System.Drawing.Color.Transparent
+        Me.Worning.Font = New System.Drawing.Font("Times New Roman", 13.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Worning.ForeColor = System.Drawing.Color.Firebrick
+        Me.Worning.Location = New System.Drawing.Point(20, 576)
+        Me.Worning.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Worning.Name = "Worning"
+        Me.Worning.Size = New System.Drawing.Size(181, 28)
+        Me.Worning.TabIndex = 13
+        Me.Worning.Text = "Rien a modifier !"
+        '
+        'BT_MODIFIER
+        '
+        Me.BT_MODIFIER.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.BT_MODIFIER.FlatAppearance.BorderSize = 0
+        Me.BT_MODIFIER.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BT_MODIFIER.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BT_MODIFIER.ForeColor = System.Drawing.Color.White
+        Me.BT_MODIFIER.Location = New System.Drawing.Point(27, 524)
+        Me.BT_MODIFIER.Margin = New System.Windows.Forms.Padding(2, 2, 2, 100)
+        Me.BT_MODIFIER.Name = "BT_MODIFIER"
+        Me.BT_MODIFIER.Size = New System.Drawing.Size(150, 37)
+        Me.BT_MODIFIER.TabIndex = 53
+        Me.BT_MODIFIER.Text = "Modifier"
+        Me.BT_MODIFIER.UseVisualStyleBackColor = False
         '
         'Panel3
         '
@@ -398,7 +414,7 @@ Partial Class modifier
         Me.Panel3.Controls.Add(Me.BT_INFORESIDENCE)
         Me.Panel3.Location = New System.Drawing.Point(0, 82)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(214, 420)
+        Me.Panel3.Size = New System.Drawing.Size(214, 385)
         Me.Panel3.TabIndex = 52
         '
         'BT_RATRAP
@@ -409,14 +425,14 @@ Partial Class modifier
         Me.BT_RATRAP.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BT_RATRAP.FlatAppearance.BorderSize = 0
         Me.BT_RATRAP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BT_RATRAP.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BT_RATRAP.Font = New System.Drawing.Font("Cambria", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BT_RATRAP.ForeColor = System.Drawing.Color.Gray
         Me.BT_RATRAP.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BT_RATRAP.Location = New System.Drawing.Point(0, 361)
+        Me.BT_RATRAP.Location = New System.Drawing.Point(8, 345)
         Me.BT_RATRAP.Name = "BT_RATRAP"
-        Me.BT_RATRAP.Size = New System.Drawing.Size(204, 52)
+        Me.BT_RATRAP.Size = New System.Drawing.Size(195, 32)
         Me.BT_RATRAP.TabIndex = 13
-        Me.BT_RATRAP.Text = "Informations des codes de rattrapage        "
+        Me.BT_RATRAP.Text = " Codes de rattrapage        "
         Me.BT_RATRAP.UseVisualStyleBackColor = False
         '
         'BT_NOTERAT
@@ -427,14 +443,14 @@ Partial Class modifier
         Me.BT_NOTERAT.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BT_NOTERAT.FlatAppearance.BorderSize = 0
         Me.BT_NOTERAT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BT_NOTERAT.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BT_NOTERAT.Font = New System.Drawing.Font("Cambria", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BT_NOTERAT.ForeColor = System.Drawing.Color.Gray
         Me.BT_NOTERAT.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BT_NOTERAT.Location = New System.Drawing.Point(0, 304)
+        Me.BT_NOTERAT.Location = New System.Drawing.Point(8, 311)
         Me.BT_NOTERAT.Name = "BT_NOTERAT"
-        Me.BT_NOTERAT.Size = New System.Drawing.Size(204, 49)
+        Me.BT_NOTERAT.Size = New System.Drawing.Size(195, 32)
         Me.BT_NOTERAT.TabIndex = 12
-        Me.BT_NOTERAT.Text = "Informations des notes de rattrapage      "
+        Me.BT_NOTERAT.Text = " Notes de rattrapage      "
         Me.BT_NOTERAT.UseVisualStyleBackColor = False
         '
         'BT_MATIERE
@@ -445,14 +461,14 @@ Partial Class modifier
         Me.BT_MATIERE.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BT_MATIERE.FlatAppearance.BorderSize = 0
         Me.BT_MATIERE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BT_MATIERE.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BT_MATIERE.Font = New System.Drawing.Font("Cambria", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BT_MATIERE.ForeColor = System.Drawing.Color.Gray
         Me.BT_MATIERE.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BT_MATIERE.Location = New System.Drawing.Point(0, 233)
+        Me.BT_MATIERE.Location = New System.Drawing.Point(8, 243)
         Me.BT_MATIERE.Name = "BT_MATIERE"
-        Me.BT_MATIERE.Size = New System.Drawing.Size(210, 27)
+        Me.BT_MATIERE.Size = New System.Drawing.Size(195, 32)
         Me.BT_MATIERE.TabIndex = 11
-        Me.BT_MATIERE.Text = " Informations des matières       "
+        Me.BT_MATIERE.Text = " Matière  "
         Me.BT_MATIERE.UseVisualStyleBackColor = False
         '
         'BT_NOTE
@@ -463,15 +479,14 @@ Partial Class modifier
         Me.BT_NOTE.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BT_NOTE.FlatAppearance.BorderSize = 0
         Me.BT_NOTE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BT_NOTE.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BT_NOTE.Font = New System.Drawing.Font("Cambria", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BT_NOTE.ForeColor = System.Drawing.Color.Gray
         Me.BT_NOTE.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BT_NOTE.Location = New System.Drawing.Point(0, 269)
+        Me.BT_NOTE.Location = New System.Drawing.Point(8, 277)
         Me.BT_NOTE.Name = "BT_NOTE"
-        Me.BT_NOTE.Size = New System.Drawing.Size(204, 27)
+        Me.BT_NOTE.Size = New System.Drawing.Size(195, 32)
         Me.BT_NOTE.TabIndex = 10
-        Me.BT_NOTE.Text = "Informations des notes       "
-        Me.BT_NOTE.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.BT_NOTE.Text = " Note       "
         Me.BT_NOTE.UseVisualStyleBackColor = False
         '
         'BT_PROMO
@@ -482,15 +497,14 @@ Partial Class modifier
         Me.BT_PROMO.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BT_PROMO.FlatAppearance.BorderSize = 0
         Me.BT_PROMO.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BT_PROMO.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BT_PROMO.Font = New System.Drawing.Font("Cambria", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BT_PROMO.ForeColor = System.Drawing.Color.Gray
         Me.BT_PROMO.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BT_PROMO.Location = New System.Drawing.Point(0, 199)
+        Me.BT_PROMO.Location = New System.Drawing.Point(8, 209)
         Me.BT_PROMO.Name = "BT_PROMO"
-        Me.BT_PROMO.Size = New System.Drawing.Size(201, 27)
+        Me.BT_PROMO.Size = New System.Drawing.Size(195, 32)
         Me.BT_PROMO.TabIndex = 9
-        Me.BT_PROMO.Text = "Informations du promo       "
-        Me.BT_PROMO.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.BT_PROMO.Text = " Promo       "
         Me.BT_PROMO.UseVisualStyleBackColor = False
         '
         'BT_SECTION
@@ -501,15 +515,14 @@ Partial Class modifier
         Me.BT_SECTION.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BT_SECTION.FlatAppearance.BorderSize = 0
         Me.BT_SECTION.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BT_SECTION.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BT_SECTION.Font = New System.Drawing.Font("Cambria", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BT_SECTION.ForeColor = System.Drawing.Color.Gray
         Me.BT_SECTION.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BT_SECTION.Location = New System.Drawing.Point(-2, 166)
+        Me.BT_SECTION.Location = New System.Drawing.Point(6, 175)
         Me.BT_SECTION.Name = "BT_SECTION"
-        Me.BT_SECTION.Size = New System.Drawing.Size(203, 27)
+        Me.BT_SECTION.Size = New System.Drawing.Size(195, 32)
         Me.BT_SECTION.TabIndex = 8
-        Me.BT_SECTION.Text = "Informations de section      "
-        Me.BT_SECTION.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.BT_SECTION.Text = " Section      "
         Me.BT_SECTION.UseVisualStyleBackColor = False
         '
         'BT_INSCRIP
@@ -520,15 +533,14 @@ Partial Class modifier
         Me.BT_INSCRIP.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BT_INSCRIP.FlatAppearance.BorderSize = 0
         Me.BT_INSCRIP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BT_INSCRIP.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BT_INSCRIP.Font = New System.Drawing.Font("Cambria", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BT_INSCRIP.ForeColor = System.Drawing.Color.Gray
         Me.BT_INSCRIP.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BT_INSCRIP.Location = New System.Drawing.Point(0, 100)
+        Me.BT_INSCRIP.Location = New System.Drawing.Point(8, 107)
         Me.BT_INSCRIP.Name = "BT_INSCRIP"
-        Me.BT_INSCRIP.Size = New System.Drawing.Size(202, 27)
+        Me.BT_INSCRIP.Size = New System.Drawing.Size(195, 32)
         Me.BT_INSCRIP.TabIndex = 7
-        Me.BT_INSCRIP.Text = "Informations d'inscrption    "
-        Me.BT_INSCRIP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.BT_INSCRIP.Text = " Inscrption    "
         Me.BT_INSCRIP.UseVisualStyleBackColor = False
         '
         'BT_GRP
@@ -539,32 +551,32 @@ Partial Class modifier
         Me.BT_GRP.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BT_GRP.FlatAppearance.BorderSize = 0
         Me.BT_GRP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BT_GRP.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BT_GRP.Font = New System.Drawing.Font("Cambria", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BT_GRP.ForeColor = System.Drawing.Color.Gray
         Me.BT_GRP.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BT_GRP.Location = New System.Drawing.Point(0, 133)
+        Me.BT_GRP.Location = New System.Drawing.Point(8, 141)
         Me.BT_GRP.Name = "BT_GRP"
-        Me.BT_GRP.Size = New System.Drawing.Size(202, 27)
+        Me.BT_GRP.Size = New System.Drawing.Size(195, 32)
         Me.BT_GRP.TabIndex = 6
-        Me.BT_GRP.Text = "Informations du groupe      "
-        Me.BT_GRP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.BT_GRP.Text = " Groupe      "
         Me.BT_GRP.UseVisualStyleBackColor = False
         '
         'BT_GENERALINFO
         '
         Me.BT_GENERALINFO.Appearance = System.Windows.Forms.Appearance.Button
         Me.BT_GENERALINFO.BackColor = System.Drawing.Color.Transparent
+        Me.BT_GENERALINFO.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.backBTcheked
         Me.BT_GENERALINFO.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BT_GENERALINFO.FlatAppearance.BorderSize = 0
         Me.BT_GENERALINFO.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BT_GENERALINFO.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BT_GENERALINFO.Font = New System.Drawing.Font("Cambria", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BT_GENERALINFO.ForeColor = System.Drawing.Color.MidnightBlue
         Me.BT_GENERALINFO.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BT_GENERALINFO.Location = New System.Drawing.Point(0, 3)
+        Me.BT_GENERALINFO.Location = New System.Drawing.Point(9, 5)
         Me.BT_GENERALINFO.Name = "BT_GENERALINFO"
-        Me.BT_GENERALINFO.Size = New System.Drawing.Size(210, 27)
+        Me.BT_GENERALINFO.Size = New System.Drawing.Size(195, 32)
         Me.BT_GENERALINFO.TabIndex = 3
-        Me.BT_GENERALINFO.Text = "Generalite                          "
+        Me.BT_GENERALINFO.Text = "Generalite                     "
         Me.BT_GENERALINFO.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.BT_GENERALINFO.UseVisualStyleBackColor = False
         '
@@ -576,15 +588,14 @@ Partial Class modifier
         Me.BT_INFOBAC.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BT_INFOBAC.FlatAppearance.BorderSize = 0
         Me.BT_INFOBAC.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BT_INFOBAC.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BT_INFOBAC.Font = New System.Drawing.Font("Cambria", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BT_INFOBAC.ForeColor = System.Drawing.Color.Gray
         Me.BT_INFOBAC.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BT_INFOBAC.Location = New System.Drawing.Point(0, 67)
+        Me.BT_INFOBAC.Location = New System.Drawing.Point(8, 73)
         Me.BT_INFOBAC.Name = "BT_INFOBAC"
-        Me.BT_INFOBAC.Size = New System.Drawing.Size(201, 27)
+        Me.BT_INFOBAC.Size = New System.Drawing.Size(195, 32)
         Me.BT_INFOBAC.TabIndex = 4
-        Me.BT_INFOBAC.Text = "Informations du BAC          "
-        Me.BT_INFOBAC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.BT_INFOBAC.Text = " BAC          "
         Me.BT_INFOBAC.UseVisualStyleBackColor = False
         '
         'BT_INFORESIDENCE
@@ -595,37 +606,36 @@ Partial Class modifier
         Me.BT_INFORESIDENCE.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BT_INFORESIDENCE.FlatAppearance.BorderSize = 0
         Me.BT_INFORESIDENCE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BT_INFORESIDENCE.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BT_INFORESIDENCE.Font = New System.Drawing.Font("Cambria", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BT_INFORESIDENCE.ForeColor = System.Drawing.Color.Gray
         Me.BT_INFORESIDENCE.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BT_INFORESIDENCE.Location = New System.Drawing.Point(0, 34)
+        Me.BT_INFORESIDENCE.Location = New System.Drawing.Point(8, 39)
         Me.BT_INFORESIDENCE.Name = "BT_INFORESIDENCE"
-        Me.BT_INFORESIDENCE.Size = New System.Drawing.Size(210, 27)
+        Me.BT_INFORESIDENCE.Size = New System.Drawing.Size(195, 32)
         Me.BT_INFORESIDENCE.TabIndex = 5
-        Me.BT_INFORESIDENCE.Text = "Informations de residence   "
-        Me.BT_INFORESIDENCE.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.BT_INFORESIDENCE.Text = " Residence          "
         Me.BT_INFORESIDENCE.UseVisualStyleBackColor = False
         '
-        'TabControl1
+        'TAB_PAGES
         '
-        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons
-        Me.TabControl1.Controls.Add(Me.P_GENERALITE)
-        Me.TabControl1.Controls.Add(Me.P_RESIDENCE)
-        Me.TabControl1.Controls.Add(Me.P_BAC)
-        Me.TabControl1.Controls.Add(Me.P_INSCRIPTION)
-        Me.TabControl1.Controls.Add(Me.P_GRP)
-        Me.TabControl1.Controls.Add(Me.P_SECTION)
-        Me.TabControl1.Controls.Add(Me.P_PROMO)
-        Me.TabControl1.Controls.Add(Me.P_NOTES)
-        Me.TabControl1.Controls.Add(Me.P_MATIERE)
-        Me.TabControl1.Controls.Add(Me.P_NOTERAT)
-        Me.TabControl1.Controls.Add(Me.P_RATRAP)
-        Me.TabControl1.Location = New System.Drawing.Point(216, 57)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.Padding = New System.Drawing.Point(0, 0)
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(458, 572)
-        Me.TabControl1.TabIndex = 54
+        Me.TAB_PAGES.Appearance = System.Windows.Forms.TabAppearance.FlatButtons
+        Me.TAB_PAGES.Controls.Add(Me.P_GENERALITE)
+        Me.TAB_PAGES.Controls.Add(Me.P_RESIDENCE)
+        Me.TAB_PAGES.Controls.Add(Me.P_BAC)
+        Me.TAB_PAGES.Controls.Add(Me.P_INSCRIPTION)
+        Me.TAB_PAGES.Controls.Add(Me.P_GRP)
+        Me.TAB_PAGES.Controls.Add(Me.P_SECTION)
+        Me.TAB_PAGES.Controls.Add(Me.P_PROMO)
+        Me.TAB_PAGES.Controls.Add(Me.P_NOTES)
+        Me.TAB_PAGES.Controls.Add(Me.P_MATIERE)
+        Me.TAB_PAGES.Controls.Add(Me.P_NOTERAT)
+        Me.TAB_PAGES.Controls.Add(Me.P_RATRAP)
+        Me.TAB_PAGES.Location = New System.Drawing.Point(216, 57)
+        Me.TAB_PAGES.Name = "TAB_PAGES"
+        Me.TAB_PAGES.Padding = New System.Drawing.Point(0, 0)
+        Me.TAB_PAGES.SelectedIndex = 0
+        Me.TAB_PAGES.Size = New System.Drawing.Size(458, 572)
+        Me.TAB_PAGES.TabIndex = 54
         '
         'P_GENERALITE
         '
@@ -643,6 +653,7 @@ Partial Class modifier
         '
         'TableLayoutPanel1
         '
+        Me.TableLayoutPanel1.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.background_modif_generalite_scroll
         Me.TableLayoutPanel1.ColumnCount = 1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -696,12 +707,12 @@ Partial Class modifier
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label3.Location = New System.Drawing.Point(3, 17)
+        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.Location = New System.Drawing.Point(3, 16)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(113, 20)
+        Me.Label3.Size = New System.Drawing.Size(111, 22)
         Me.Label3.TabIndex = 93
         Me.Label3.Text = "nom du pere"
         '
@@ -728,12 +739,12 @@ Partial Class modifier
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label2.Location = New System.Drawing.Point(3, 17)
+        Me.Label2.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.Location = New System.Drawing.Point(3, 16)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(139, 20)
+        Me.Label2.Size = New System.Drawing.Size(135, 22)
         Me.Label2.TabIndex = 94
         Me.Label2.Text = "nom de la mere"
         '
@@ -760,12 +771,12 @@ Partial Class modifier
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label6.Location = New System.Drawing.Point(3, 17)
         Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(87, 20)
+        Me.Label6.Size = New System.Drawing.Size(90, 22)
         Me.Label6.TabIndex = 85
         Me.Label6.Text = "Matricule"
         '
@@ -780,6 +791,7 @@ Partial Class modifier
         '
         'TXT_MATRIC_INS
         '
+        Me.TXT_MATRIC_INS.BackColor = System.Drawing.Color.White
         Me.TXT_MATRIC_INS.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TXT_MATRIC_INS.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TXT_MATRIC_INS.ForeColor = System.Drawing.Color.DarkGray
@@ -792,12 +804,12 @@ Partial Class modifier
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label11.Location = New System.Drawing.Point(3, 17)
+        Me.Label11.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.Black
+        Me.Label11.Location = New System.Drawing.Point(3, 16)
         Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(157, 20)
+        Me.Label11.Size = New System.Drawing.Size(159, 22)
         Me.Label11.TabIndex = 86
         Me.Label11.Text = "Matricule de BAC"
         '
@@ -824,12 +836,12 @@ Partial Class modifier
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label7.Location = New System.Drawing.Point(3, 17)
+        Me.Label7.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.Black
+        Me.Label7.Location = New System.Drawing.Point(3, 16)
         Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(53, 20)
+        Me.Label7.Size = New System.Drawing.Size(54, 22)
         Me.Label7.TabIndex = 90
         Me.Label7.Text = "Nom "
         '
@@ -856,12 +868,12 @@ Partial Class modifier
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label8.Location = New System.Drawing.Point(3, 16)
+        Me.Label8.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.Black
+        Me.Label8.Location = New System.Drawing.Point(3, 15)
         Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(79, 20)
+        Me.Label8.Size = New System.Drawing.Size(79, 22)
         Me.Label8.TabIndex = 89
         Me.Label8.Text = "Prenom "
         '
@@ -889,12 +901,12 @@ Partial Class modifier
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label4.Location = New System.Drawing.Point(325, 17)
+        Me.Label4.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.Location = New System.Drawing.Point(325, 16)
         Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(42, 20)
+        Me.Label4.Size = New System.Drawing.Size(40, 22)
         Me.Label4.TabIndex = 92
         Me.Label4.Text = "اللقب"
         '
@@ -922,17 +934,18 @@ Partial Class modifier
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label5.Location = New System.Drawing.Point(325, 17)
+        Me.Label5.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Black
+        Me.Label5.Location = New System.Drawing.Point(325, 16)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(41, 20)
+        Me.Label5.Size = New System.Drawing.Size(42, 22)
         Me.Label5.TabIndex = 91
         Me.Label5.Text = "الاسم"
         '
         'Panel9
         '
+        Me.Panel9.Controls.Add(Me.TXT_DATENAIS)
         Me.Panel9.Controls.Add(Me.DTP_DATENAIS)
         Me.Panel9.Controls.Add(Me.Label10)
         Me.Panel9.Location = New System.Drawing.Point(27, 363)
@@ -940,47 +953,72 @@ Partial Class modifier
         Me.Panel9.Size = New System.Drawing.Size(370, 54)
         Me.Panel9.TabIndex = 1
         '
+        'TXT_DATENAIS
+        '
+        Me.TXT_DATENAIS.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TXT_DATENAIS.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TXT_DATENAIS.ForeColor = System.Drawing.Color.DarkGray
+        Me.TXT_DATENAIS.Location = New System.Drawing.Point(193, 17)
+        Me.TXT_DATENAIS.Name = "TXT_DATENAIS"
+        Me.TXT_DATENAIS.Size = New System.Drawing.Size(177, 20)
+        Me.TXT_DATENAIS.TabIndex = 92
+        '
+        'DTP_DATENAIS
+        '
+        Me.DTP_DATENAIS.Checked = False
+        Me.DTP_DATENAIS.CustomFormat = "dd/mm/yyyy"
+        Me.DTP_DATENAIS.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DTP_DATENAIS.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DTP_DATENAIS.Location = New System.Drawing.Point(193, 13)
+        Me.DTP_DATENAIS.Margin = New System.Windows.Forms.Padding(2)
+        Me.DTP_DATENAIS.Name = "DTP_DATENAIS"
+        Me.DTP_DATENAIS.Size = New System.Drawing.Size(177, 30)
+        Me.DTP_DATENAIS.TabIndex = 88
+        '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label10.Location = New System.Drawing.Point(3, 17)
+        Me.Label10.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.Black
+        Me.Label10.Location = New System.Drawing.Point(3, 16)
         Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(166, 20)
+        Me.Label10.Size = New System.Drawing.Size(157, 22)
         Me.Label10.TabIndex = 87
         Me.Label10.Text = "Date de naissance"
         '
         'Panel10
         '
-        Me.Panel10.Controls.Add(Me.TXT_SEXE)
+        Me.Panel10.Controls.Add(Me.CB_SEXE)
         Me.Panel10.Controls.Add(Me.Label9)
         Me.Panel10.Location = New System.Drawing.Point(27, 423)
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(370, 53)
         Me.Panel10.TabIndex = 1
         '
-        'TXT_SEXE
+        'CB_SEXE
         '
-        Me.TXT_SEXE.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TXT_SEXE.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TXT_SEXE.ForeColor = System.Drawing.Color.DarkGray
-        Me.TXT_SEXE.Location = New System.Drawing.Point(193, 16)
-        Me.TXT_SEXE.Name = "TXT_SEXE"
-        Me.TXT_SEXE.Size = New System.Drawing.Size(177, 20)
-        Me.TXT_SEXE.TabIndex = 93
-        Me.TXT_SEXE.Text = "Sexe"
+        Me.CB_SEXE.BackColor = System.Drawing.Color.White
+        Me.CB_SEXE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CB_SEXE.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CB_SEXE.ForeColor = System.Drawing.Color.DarkGray
+        Me.CB_SEXE.FormattingEnabled = True
+        Me.CB_SEXE.Location = New System.Drawing.Point(193, 13)
+        Me.CB_SEXE.Margin = New System.Windows.Forms.Padding(2)
+        Me.CB_SEXE.Name = "CB_SEXE"
+        Me.CB_SEXE.Size = New System.Drawing.Size(177, 28)
+        Me.CB_SEXE.TabIndex = 89
+        Me.CB_SEXE.Text = "Sexe"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label9.Location = New System.Drawing.Point(3, 16)
+        Me.Label9.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.Black
+        Me.Label9.Location = New System.Drawing.Point(3, 15)
         Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(50, 20)
+        Me.Label9.Size = New System.Drawing.Size(48, 22)
         Me.Label9.TabIndex = 88
         Me.Label9.Text = "Sexe"
         '
@@ -998,6 +1036,7 @@ Partial Class modifier
         '
         'TableLayoutPanel2
         '
+        Me.TableLayoutPanel2.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.background_modif_generalite
         Me.TableLayoutPanel2.ColumnCount = 1
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -1029,7 +1068,7 @@ Partial Class modifier
         'Panel15
         '
         Me.Panel15.Controls.Add(Me.LB_LIEUN)
-        Me.Panel15.Controls.Add(Me.TXT_LIEUNA)
+        Me.Panel15.Controls.Add(Me.TXT_LIEUN)
         Me.Panel15.Location = New System.Drawing.Point(15, 3)
         Me.Panel15.Name = "Panel15"
         Me.Panel15.Size = New System.Drawing.Size(420, 54)
@@ -1038,26 +1077,26 @@ Partial Class modifier
         'LB_LIEUN
         '
         Me.LB_LIEUN.AutoSize = True
-        Me.LB_LIEUN.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_LIEUN.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_LIEUN.ForeColor = System.Drawing.Color.Black
         Me.LB_LIEUN.Location = New System.Drawing.Point(3, 17)
         Me.LB_LIEUN.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_LIEUN.Name = "LB_LIEUN"
-        Me.LB_LIEUN.Size = New System.Drawing.Size(162, 20)
+        Me.LB_LIEUN.Size = New System.Drawing.Size(154, 22)
         Me.LB_LIEUN.TabIndex = 87
         Me.LB_LIEUN.Text = "Lieu de naissance"
         '
-        'TXT_LIEUNA
+        'TXT_LIEUN
         '
-        Me.TXT_LIEUNA.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TXT_LIEUNA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TXT_LIEUNA.ForeColor = System.Drawing.Color.DarkGray
-        Me.TXT_LIEUNA.Location = New System.Drawing.Point(199, 17)
-        Me.TXT_LIEUNA.Margin = New System.Windows.Forms.Padding(2)
-        Me.TXT_LIEUNA.Name = "TXT_LIEUNA"
-        Me.TXT_LIEUNA.Size = New System.Drawing.Size(220, 20)
-        Me.TXT_LIEUNA.TabIndex = 86
-        Me.TXT_LIEUNA.Text = "Lieu de naissance"
+        Me.TXT_LIEUN.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TXT_LIEUN.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TXT_LIEUN.ForeColor = System.Drawing.Color.DarkGray
+        Me.TXT_LIEUN.Location = New System.Drawing.Point(199, 17)
+        Me.TXT_LIEUN.Margin = New System.Windows.Forms.Padding(2)
+        Me.TXT_LIEUN.Name = "TXT_LIEUN"
+        Me.TXT_LIEUN.Size = New System.Drawing.Size(220, 20)
+        Me.TXT_LIEUN.TabIndex = 86
+        Me.TXT_LIEUN.Text = "Lieu de naissance"
         '
         'Panel16
         '
@@ -1071,12 +1110,12 @@ Partial Class modifier
         'LB_WILAYAN
         '
         Me.LB_WILAYAN.AutoSize = True
-        Me.LB_WILAYAN.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_WILAYAN.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_WILAYAN.ForeColor = System.Drawing.Color.Black
         Me.LB_WILAYAN.Location = New System.Drawing.Point(3, 19)
         Me.LB_WILAYAN.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_WILAYAN.Name = "LB_WILAYAN"
-        Me.LB_WILAYAN.Size = New System.Drawing.Size(182, 20)
+        Me.LB_WILAYAN.Size = New System.Drawing.Size(176, 22)
         Me.LB_WILAYAN.TabIndex = 86
         Me.LB_WILAYAN.Text = "Wilaya de naissance"
         '
@@ -1097,7 +1136,7 @@ Partial Class modifier
         'Panel17
         '
         Me.Panel17.Controls.Add(Me.LB_LIEUNA)
-        Me.Panel17.Controls.Add(Me.TXT_LIEUN)
+        Me.Panel17.Controls.Add(Me.TXT_LIEUNA)
         Me.Panel17.Location = New System.Drawing.Point(15, 123)
         Me.Panel17.Name = "Panel17"
         Me.Panel17.Size = New System.Drawing.Size(420, 54)
@@ -1106,29 +1145,29 @@ Partial Class modifier
         'LB_LIEUNA
         '
         Me.LB_LIEUNA.AutoSize = True
-        Me.LB_LIEUNA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_LIEUNA.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_LIEUNA.ForeColor = System.Drawing.Color.Black
         Me.LB_LIEUNA.Location = New System.Drawing.Point(330, 17)
         Me.LB_LIEUNA.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_LIEUNA.Name = "LB_LIEUNA"
         Me.LB_LIEUNA.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.LB_LIEUNA.Size = New System.Drawing.Size(87, 20)
+        Me.LB_LIEUNA.Size = New System.Drawing.Size(82, 22)
         Me.LB_LIEUNA.TabIndex = 83
         Me.LB_LIEUNA.Text = "مكان الميلاد"
         '
-        'TXT_LIEUN
+        'TXT_LIEUNA
         '
-        Me.TXT_LIEUN.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TXT_LIEUN.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TXT_LIEUN.ForeColor = System.Drawing.Color.DarkGray
-        Me.TXT_LIEUN.Location = New System.Drawing.Point(1, 17)
-        Me.TXT_LIEUN.Margin = New System.Windows.Forms.Padding(2)
-        Me.TXT_LIEUN.Name = "TXT_LIEUN"
-        Me.TXT_LIEUN.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.TXT_LIEUN.Size = New System.Drawing.Size(220, 20)
-        Me.TXT_LIEUN.TabIndex = 82
-        Me.TXT_LIEUN.Text = "مكان الميلاد"
-        Me.TXT_LIEUN.Visible = False
+        Me.TXT_LIEUNA.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TXT_LIEUNA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TXT_LIEUNA.ForeColor = System.Drawing.Color.DarkGray
+        Me.TXT_LIEUNA.Location = New System.Drawing.Point(1, 17)
+        Me.TXT_LIEUNA.Margin = New System.Windows.Forms.Padding(2)
+        Me.TXT_LIEUNA.Name = "TXT_LIEUNA"
+        Me.TXT_LIEUNA.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.TXT_LIEUNA.Size = New System.Drawing.Size(220, 20)
+        Me.TXT_LIEUNA.TabIndex = 82
+        Me.TXT_LIEUNA.Text = "مكان الميلاد"
+        Me.TXT_LIEUNA.Visible = False
         '
         'Panel18
         '
@@ -1142,13 +1181,13 @@ Partial Class modifier
         'LB_WILAYANA
         '
         Me.LB_WILAYANA.AutoSize = True
-        Me.LB_WILAYANA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_WILAYANA.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_WILAYANA.ForeColor = System.Drawing.Color.Black
         Me.LB_WILAYANA.Location = New System.Drawing.Point(331, 15)
         Me.LB_WILAYANA.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_WILAYANA.Name = "LB_WILAYANA"
         Me.LB_WILAYANA.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.LB_WILAYANA.Size = New System.Drawing.Size(86, 20)
+        Me.LB_WILAYANA.Size = New System.Drawing.Size(84, 22)
         Me.LB_WILAYANA.TabIndex = 82
         Me.LB_WILAYANA.Text = "ولاية الميلاد"
         '
@@ -1190,12 +1229,12 @@ Partial Class modifier
         'LB_ADR
         '
         Me.LB_ADR.AutoSize = True
-        Me.LB_ADR.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_ADR.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_ADR.ForeColor = System.Drawing.Color.Black
         Me.LB_ADR.Location = New System.Drawing.Point(2, 17)
         Me.LB_ADR.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_ADR.Name = "LB_ADR"
-        Me.LB_ADR.Size = New System.Drawing.Size(135, 20)
+        Me.LB_ADR.Size = New System.Drawing.Size(129, 22)
         Me.LB_ADR.TabIndex = 80
         Me.LB_ADR.Text = "Adresse actuel"
         '
@@ -1223,12 +1262,12 @@ Partial Class modifier
         'LB_VILLE
         '
         Me.LB_VILLE.AutoSize = True
-        Me.LB_VILLE.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_VILLE.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_VILLE.ForeColor = System.Drawing.Color.Black
         Me.LB_VILLE.Location = New System.Drawing.Point(3, 17)
         Me.LB_VILLE.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_VILLE.Name = "LB_VILLE"
-        Me.LB_VILLE.Size = New System.Drawing.Size(118, 20)
+        Me.LB_VILLE.Size = New System.Drawing.Size(114, 22)
         Me.LB_VILLE.TabIndex = 81
         Me.LB_VILLE.Text = "Ville actuelle"
         '
@@ -1244,12 +1283,12 @@ Partial Class modifier
         'LB_WILAYA
         '
         Me.LB_WILAYA.AutoSize = True
-        Me.LB_WILAYA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_WILAYA.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_WILAYA.ForeColor = System.Drawing.Color.Black
         Me.LB_WILAYA.Location = New System.Drawing.Point(2, 16)
         Me.LB_WILAYA.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_WILAYA.Name = "LB_WILAYA"
-        Me.LB_WILAYA.Size = New System.Drawing.Size(137, 20)
+        Me.LB_WILAYA.Size = New System.Drawing.Size(136, 22)
         Me.LB_WILAYA.TabIndex = 84
         Me.LB_WILAYA.Text = "Wilaya actuelle"
         '
@@ -1278,12 +1317,12 @@ Partial Class modifier
         'LB_CODEPOS
         '
         Me.LB_CODEPOS.AutoSize = True
-        Me.LB_CODEPOS.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_CODEPOS.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_CODEPOS.ForeColor = System.Drawing.Color.Black
         Me.LB_CODEPOS.Location = New System.Drawing.Point(3, 16)
         Me.LB_CODEPOS.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_CODEPOS.Name = "LB_CODEPOS"
-        Me.LB_CODEPOS.Size = New System.Drawing.Size(116, 20)
+        Me.LB_CODEPOS.Size = New System.Drawing.Size(111, 22)
         Me.LB_CODEPOS.TabIndex = 85
         Me.LB_CODEPOS.Text = "code postale"
         '
@@ -1313,6 +1352,7 @@ Partial Class modifier
         '
         'TableLayoutPanel3
         '
+        Me.TableLayoutPanel3.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.background_modif_bac_scroll
         Me.TableLayoutPanel3.ColumnCount = 1
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -1349,12 +1389,12 @@ Partial Class modifier
         'LB_WILAYAB
         '
         Me.LB_WILAYAB.AutoSize = True
-        Me.LB_WILAYAB.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_WILAYAB.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_WILAYAB.ForeColor = System.Drawing.Color.Black
         Me.LB_WILAYAB.Location = New System.Drawing.Point(3, 13)
         Me.LB_WILAYAB.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_WILAYAB.Name = "LB_WILAYAB"
-        Me.LB_WILAYAB.Size = New System.Drawing.Size(135, 20)
+        Me.LB_WILAYAB.Size = New System.Drawing.Size(137, 22)
         Me.LB_WILAYAB.TabIndex = 56
         Me.LB_WILAYAB.Text = "Wilaya de BAC"
         '
@@ -1395,12 +1435,12 @@ Partial Class modifier
         'LB_MOYBAC
         '
         Me.LB_MOYBAC.AutoSize = True
-        Me.LB_MOYBAC.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_MOYBAC.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_MOYBAC.ForeColor = System.Drawing.Color.Black
         Me.LB_MOYBAC.Location = New System.Drawing.Point(3, 17)
         Me.LB_MOYBAC.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_MOYBAC.Name = "LB_MOYBAC"
-        Me.LB_MOYBAC.Size = New System.Drawing.Size(153, 20)
+        Me.LB_MOYBAC.Size = New System.Drawing.Size(154, 22)
         Me.LB_MOYBAC.TabIndex = 55
         Me.LB_MOYBAC.Text = "Moyenne de BAC"
         '
@@ -1416,12 +1456,12 @@ Partial Class modifier
         'LB_SERI
         '
         Me.LB_SERI.AutoSize = True
-        Me.LB_SERI.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_SERI.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_SERI.ForeColor = System.Drawing.Color.Black
         Me.LB_SERI.Location = New System.Drawing.Point(3, 14)
         Me.LB_SERI.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_SERI.Name = "LB_SERI"
-        Me.LB_SERI.Size = New System.Drawing.Size(123, 20)
+        Me.LB_SERI.Size = New System.Drawing.Size(121, 22)
         Me.LB_SERI.TabIndex = 57
         Me.LB_SERI.Text = "Serie de BAC"
         '
@@ -1463,12 +1503,12 @@ Partial Class modifier
         'LB_ANNEEB
         '
         Me.LB_ANNEEB.AutoSize = True
-        Me.LB_ANNEEB.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_ANNEEB.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_ANNEEB.ForeColor = System.Drawing.Color.Black
         Me.LB_ANNEEB.Location = New System.Drawing.Point(3, 15)
         Me.LB_ANNEEB.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_ANNEEB.Name = "LB_ANNEEB"
-        Me.LB_ANNEEB.Size = New System.Drawing.Size(131, 20)
+        Me.LB_ANNEEB.Size = New System.Drawing.Size(130, 22)
         Me.LB_ANNEEB.TabIndex = 54
         Me.LB_ANNEEB.Text = "Annee de BAC"
         '
@@ -1476,7 +1516,7 @@ Partial Class modifier
         '
         Me.P_INSCRIPTION.AutoScroll = True
         Me.P_INSCRIPTION.BackColor = System.Drawing.Color.White
-        Me.P_INSCRIPTION.Controls.Add(Me.worningrech)
+        Me.P_INSCRIPTION.Controls.Add(Me.lbin)
         Me.P_INSCRIPTION.Controls.Add(Me.CB_ANNEEIN)
         Me.P_INSCRIPTION.Controls.Add(Me.TableLayoutPanel4)
         Me.P_INSCRIPTION.Location = New System.Drawing.Point(4, 28)
@@ -1485,32 +1525,33 @@ Partial Class modifier
         Me.P_INSCRIPTION.TabIndex = 3
         Me.P_INSCRIPTION.Text = "P_INSCRIPTION"
         '
-        'worningrech
+        'lbin
         '
-        Me.worningrech.AutoSize = True
-        Me.worningrech.BackColor = System.Drawing.Color.Transparent
-        Me.worningrech.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.worningrech.ForeColor = System.Drawing.Color.Maroon
-        Me.worningrech.Location = New System.Drawing.Point(3, 14)
-        Me.worningrech.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.worningrech.Name = "worningrech"
-        Me.worningrech.Size = New System.Drawing.Size(254, 24)
-        Me.worningrech.TabIndex = 44
-        Me.worningrech.Text = "Choississez l'année d'étude :"
-        Me.worningrech.Visible = False
+        Me.lbin.AutoSize = True
+        Me.lbin.BackColor = System.Drawing.Color.Transparent
+        Me.lbin.Font = New System.Drawing.Font("Cambria", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbin.ForeColor = System.Drawing.Color.Maroon
+        Me.lbin.Location = New System.Drawing.Point(3, 14)
+        Me.lbin.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbin.Name = "lbin"
+        Me.lbin.Size = New System.Drawing.Size(269, 23)
+        Me.lbin.TabIndex = 44
+        Me.lbin.Text = "Choississez l'année d'étude :"
+        Me.lbin.Visible = False
         '
         'CB_ANNEEIN
         '
         Me.CB_ANNEEIN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CB_ANNEEIN.FormattingEnabled = True
-        Me.CB_ANNEEIN.Location = New System.Drawing.Point(258, 10)
+        Me.CB_ANNEEIN.Location = New System.Drawing.Point(276, 10)
         Me.CB_ANNEEIN.Margin = New System.Windows.Forms.Padding(2)
         Me.CB_ANNEEIN.Name = "CB_ANNEEIN"
-        Me.CB_ANNEEIN.Size = New System.Drawing.Size(162, 33)
+        Me.CB_ANNEEIN.Size = New System.Drawing.Size(146, 33)
         Me.CB_ANNEEIN.TabIndex = 43
         '
         'TableLayoutPanel4
         '
+        Me.TableLayoutPanel4.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.background_modif_inscription_scroll
         Me.TableLayoutPanel4.ColumnCount = 1
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -1550,12 +1591,12 @@ Partial Class modifier
         'LB_ADM
         '
         Me.LB_ADM.AutoSize = True
-        Me.LB_ADM.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_ADM.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_ADM.ForeColor = System.Drawing.Color.Black
         Me.LB_ADM.Location = New System.Drawing.Point(3, 16)
         Me.LB_ADM.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_ADM.Name = "LB_ADM"
-        Me.LB_ADM.Size = New System.Drawing.Size(181, 20)
+        Me.LB_ADM.Size = New System.Drawing.Size(173, 22)
         Me.LB_ADM.TabIndex = 65
         Me.LB_ADM.Text = "Decision du join/sep"
         '
@@ -1574,7 +1615,7 @@ Partial Class modifier
         'Panel34
         '
         Me.Panel34.Controls.Add(Me.LB_DECIIN)
-        Me.Panel34.Controls.Add(Me.TXT_DECIIN)
+        Me.Panel34.Controls.Add(Me.CB_DECIIN)
         Me.Panel34.Location = New System.Drawing.Point(3, 398)
         Me.Panel34.Name = "Panel34"
         Me.Panel34.Size = New System.Drawing.Size(420, 53)
@@ -1583,30 +1624,31 @@ Partial Class modifier
         'LB_DECIIN
         '
         Me.LB_DECIIN.AutoSize = True
-        Me.LB_DECIIN.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_DECIIN.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_DECIIN.ForeColor = System.Drawing.Color.Black
         Me.LB_DECIIN.Location = New System.Drawing.Point(2, 16)
         Me.LB_DECIIN.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_DECIIN.Name = "LB_DECIIN"
-        Me.LB_DECIIN.Size = New System.Drawing.Size(71, 20)
+        Me.LB_DECIIN.Size = New System.Drawing.Size(79, 22)
         Me.LB_DECIIN.TabIndex = 65
         Me.LB_DECIIN.Text = "DECIIN"
         '
-        'TXT_DECIIN
+        'CB_DECIIN
         '
-        Me.TXT_DECIIN.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TXT_DECIIN.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TXT_DECIIN.ForeColor = System.Drawing.Color.DarkGray
-        Me.TXT_DECIIN.Location = New System.Drawing.Point(198, 16)
-        Me.TXT_DECIIN.Margin = New System.Windows.Forms.Padding(2)
-        Me.TXT_DECIIN.Name = "TXT_DECIIN"
-        Me.TXT_DECIIN.Size = New System.Drawing.Size(220, 20)
-        Me.TXT_DECIIN.TabIndex = 64
+        Me.CB_DECIIN.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CB_DECIIN.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CB_DECIIN.ForeColor = System.Drawing.Color.DarkGray
+        Me.CB_DECIIN.FormattingEnabled = True
+        Me.CB_DECIIN.Location = New System.Drawing.Point(197, 13)
+        Me.CB_DECIIN.Margin = New System.Windows.Forms.Padding(2)
+        Me.CB_DECIIN.Name = "CB_DECIIN"
+        Me.CB_DECIIN.Size = New System.Drawing.Size(220, 28)
+        Me.CB_DECIIN.TabIndex = 63
         '
         'Panel33
         '
         Me.Panel33.Controls.Add(Me.LB_DEC)
-        Me.Panel33.Controls.Add(Me.TXT_DEC)
+        Me.Panel33.Controls.Add(Me.CB_DEC)
         Me.Panel33.Location = New System.Drawing.Point(3, 338)
         Me.Panel33.Name = "Panel33"
         Me.Panel33.Size = New System.Drawing.Size(420, 54)
@@ -1615,25 +1657,26 @@ Partial Class modifier
         'LB_DEC
         '
         Me.LB_DEC.AutoSize = True
-        Me.LB_DEC.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_DEC.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_DEC.ForeColor = System.Drawing.Color.Black
         Me.LB_DEC.Location = New System.Drawing.Point(3, 17)
         Me.LB_DEC.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_DEC.Name = "LB_DEC"
-        Me.LB_DEC.Size = New System.Drawing.Size(48, 20)
+        Me.LB_DEC.Size = New System.Drawing.Size(51, 22)
         Me.LB_DEC.TabIndex = 61
         Me.LB_DEC.Text = "DEC"
         '
-        'TXT_DEC
+        'CB_DEC
         '
-        Me.TXT_DEC.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TXT_DEC.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TXT_DEC.ForeColor = System.Drawing.Color.DarkGray
-        Me.TXT_DEC.Location = New System.Drawing.Point(198, 17)
-        Me.TXT_DEC.Margin = New System.Windows.Forms.Padding(2)
-        Me.TXT_DEC.Name = "TXT_DEC"
-        Me.TXT_DEC.Size = New System.Drawing.Size(220, 20)
-        Me.TXT_DEC.TabIndex = 60
+        Me.CB_DEC.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CB_DEC.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CB_DEC.ForeColor = System.Drawing.Color.DarkGray
+        Me.CB_DEC.FormattingEnabled = True
+        Me.CB_DEC.Location = New System.Drawing.Point(197, 14)
+        Me.CB_DEC.Margin = New System.Windows.Forms.Padding(2)
+        Me.CB_DEC.Name = "CB_DEC"
+        Me.CB_DEC.Size = New System.Drawing.Size(220, 28)
+        Me.CB_DEC.TabIndex = 64
         '
         'Panel31
         '
@@ -1646,7 +1689,7 @@ Partial Class modifier
         '
         'LB_RATRIN
         '
-        Me.LB_RATRIN.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_RATRIN.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_RATRIN.ForeColor = System.Drawing.Color.Black
         Me.LB_RATRIN.Location = New System.Drawing.Point(2, 3)
         Me.LB_RATRIN.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
@@ -1678,7 +1721,7 @@ Partial Class modifier
         '
         'LB_ELIMININ
         '
-        Me.LB_ELIMININ.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_ELIMININ.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_ELIMININ.ForeColor = System.Drawing.Color.Black
         Me.LB_ELIMININ.Location = New System.Drawing.Point(3, 13)
         Me.LB_ELIMININ.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
@@ -1711,12 +1754,12 @@ Partial Class modifier
         'LB_MENTIN
         '
         Me.LB_MENTIN.AutoSize = True
-        Me.LB_MENTIN.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_MENTIN.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_MENTIN.ForeColor = System.Drawing.Color.Black
         Me.LB_MENTIN.Location = New System.Drawing.Point(3, 16)
         Me.LB_MENTIN.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_MENTIN.Name = "LB_MENTIN"
-        Me.LB_MENTIN.Size = New System.Drawing.Size(75, 20)
+        Me.LB_MENTIN.Size = New System.Drawing.Size(78, 22)
         Me.LB_MENTIN.TabIndex = 61
         Me.LB_MENTIN.Text = "Mention"
         '
@@ -1744,12 +1787,12 @@ Partial Class modifier
         'LB_MOYEIN
         '
         Me.LB_MOYEIN.AutoSize = True
-        Me.LB_MOYEIN.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_MOYEIN.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_MOYEIN.ForeColor = System.Drawing.Color.Black
         Me.LB_MOYEIN.Location = New System.Drawing.Point(3, 16)
         Me.LB_MOYEIN.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_MOYEIN.Name = "LB_MOYEIN"
-        Me.LB_MOYEIN.Size = New System.Drawing.Size(167, 20)
+        Me.LB_MOYEIN.Size = New System.Drawing.Size(165, 22)
         Me.LB_MOYEIN.TabIndex = 60
         Me.LB_MOYEIN.Text = "Moyenne generale "
         '
@@ -1776,12 +1819,12 @@ Partial Class modifier
         'LB_RANGIN
         '
         Me.LB_RANGIN.AutoSize = True
-        Me.LB_RANGIN.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_RANGIN.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_RANGIN.ForeColor = System.Drawing.Color.Black
         Me.LB_RANGIN.Location = New System.Drawing.Point(3, 17)
         Me.LB_RANGIN.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_RANGIN.Name = "LB_RANGIN"
-        Me.LB_RANGIN.Size = New System.Drawing.Size(52, 20)
+        Me.LB_RANGIN.Size = New System.Drawing.Size(54, 22)
         Me.LB_RANGIN.TabIndex = 61
         Me.LB_RANGIN.Text = "Rang"
         '
@@ -1801,7 +1844,7 @@ Partial Class modifier
         '
         Me.P_GRP.AutoScroll = True
         Me.P_GRP.BackColor = System.Drawing.Color.White
-        Me.P_GRP.Controls.Add(Me.Label12)
+        Me.P_GRP.Controls.Add(Me.lbgrp)
         Me.P_GRP.Controls.Add(Me.CB_ANNEEGRP)
         Me.P_GRP.Controls.Add(Me.TableLayoutPanel5)
         Me.P_GRP.Location = New System.Drawing.Point(4, 28)
@@ -1810,25 +1853,25 @@ Partial Class modifier
         Me.P_GRP.TabIndex = 4
         Me.P_GRP.Text = "P_GRP"
         '
-        'Label12
+        'lbgrp
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.BackColor = System.Drawing.Color.Transparent
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.Maroon
-        Me.Label12.Location = New System.Drawing.Point(13, 28)
-        Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(254, 24)
-        Me.Label12.TabIndex = 47
-        Me.Label12.Text = "Choississez l'année d'étude :"
-        Me.Label12.Visible = False
+        Me.lbgrp.AutoSize = True
+        Me.lbgrp.BackColor = System.Drawing.Color.Transparent
+        Me.lbgrp.Font = New System.Drawing.Font("Cambria", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbgrp.ForeColor = System.Drawing.Color.Maroon
+        Me.lbgrp.Location = New System.Drawing.Point(6, 34)
+        Me.lbgrp.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbgrp.Name = "lbgrp"
+        Me.lbgrp.Size = New System.Drawing.Size(269, 23)
+        Me.lbgrp.TabIndex = 47
+        Me.lbgrp.Text = "Choississez l'année d'étude :"
+        Me.lbgrp.Visible = False
         '
         'CB_ANNEEGRP
         '
         Me.CB_ANNEEGRP.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CB_ANNEEGRP.FormattingEnabled = True
-        Me.CB_ANNEEGRP.Location = New System.Drawing.Point(271, 24)
+        Me.CB_ANNEEGRP.Location = New System.Drawing.Point(280, 30)
         Me.CB_ANNEEGRP.Margin = New System.Windows.Forms.Padding(2)
         Me.CB_ANNEEGRP.Name = "CB_ANNEEGRP"
         Me.CB_ANNEEGRP.Size = New System.Drawing.Size(162, 33)
@@ -1836,17 +1879,18 @@ Partial Class modifier
         '
         'TableLayoutPanel5
         '
+        Me.TableLayoutPanel5.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.background_modif_groupe_scroll
         Me.TableLayoutPanel5.ColumnCount = 1
         Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel5.Controls.Add(Me.Panel40, 0, 0)
         Me.TableLayoutPanel5.Controls.Add(Me.Panel38, 0, 1)
-        Me.TableLayoutPanel5.Location = New System.Drawing.Point(0, 74)
+        Me.TableLayoutPanel5.Location = New System.Drawing.Point(0, 86)
         Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
         Me.TableLayoutPanel5.Padding = New System.Windows.Forms.Padding(12, 0, 12, 0)
         Me.TableLayoutPanel5.RowCount = 2
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.33333!))
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 82.66666!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.3516!))
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 82.6484!))
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60.0!))
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75.0!))
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80.0!))
@@ -1855,7 +1899,7 @@ Partial Class modifier
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59.0!))
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8.0!))
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32.0!))
-        Me.TableLayoutPanel5.Size = New System.Drawing.Size(450, 450)
+        Me.TableLayoutPanel5.Size = New System.Drawing.Size(450, 438)
         Me.TableLayoutPanel5.TabIndex = 45
         '
         'Panel40
@@ -1881,12 +1925,12 @@ Partial Class modifier
         'LB_codeGroupe
         '
         Me.LB_codeGroupe.AutoSize = True
-        Me.LB_codeGroupe.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_codeGroupe.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_codeGroupe.ForeColor = System.Drawing.Color.Black
         Me.LB_codeGroupe.Location = New System.Drawing.Point(3, 23)
         Me.LB_codeGroupe.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_codeGroupe.Name = "LB_codeGroupe"
-        Me.LB_codeGroupe.Size = New System.Drawing.Size(141, 20)
+        Me.LB_codeGroupe.Size = New System.Drawing.Size(140, 22)
         Me.LB_codeGroupe.TabIndex = 61
         Me.LB_codeGroupe.Text = "Code du groupe"
         '
@@ -1894,7 +1938,7 @@ Partial Class modifier
         '
         Me.Panel38.Controls.Add(Me.LB_NG)
         Me.Panel38.Controls.Add(Me.CB_NG)
-        Me.Panel38.Location = New System.Drawing.Point(15, 80)
+        Me.Panel38.Location = New System.Drawing.Point(15, 79)
         Me.Panel38.Name = "Panel38"
         Me.Panel38.Size = New System.Drawing.Size(420, 66)
         Me.Panel38.TabIndex = 62
@@ -1902,12 +1946,12 @@ Partial Class modifier
         'LB_NG
         '
         Me.LB_NG.AutoSize = True
-        Me.LB_NG.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_NG.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_NG.ForeColor = System.Drawing.Color.Black
         Me.LB_NG.Location = New System.Drawing.Point(3, 22)
         Me.LB_NG.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_NG.Name = "LB_NG"
-        Me.LB_NG.Size = New System.Drawing.Size(163, 20)
+        Me.LB_NG.Size = New System.Drawing.Size(162, 22)
         Me.LB_NG.TabIndex = 61
         Me.LB_NG.Text = "Numéro de groupe"
         '
@@ -1940,12 +1984,12 @@ Partial Class modifier
         '
         Me.Label13.AutoSize = True
         Me.Label13.BackColor = System.Drawing.Color.Transparent
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Font = New System.Drawing.Font("Cambria", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.Maroon
-        Me.Label13.Location = New System.Drawing.Point(13, 12)
+        Me.Label13.Location = New System.Drawing.Point(13, 35)
         Me.Label13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(254, 24)
+        Me.Label13.Size = New System.Drawing.Size(255, 22)
         Me.Label13.TabIndex = 50
         Me.Label13.Text = "Choississez l'année d'étude :"
         Me.Label13.Visible = False
@@ -1954,7 +1998,7 @@ Partial Class modifier
         '
         Me.CB_ANNEESEC.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CB_ANNEESEC.FormattingEnabled = True
-        Me.CB_ANNEESEC.Location = New System.Drawing.Point(271, 8)
+        Me.CB_ANNEESEC.Location = New System.Drawing.Point(276, 29)
         Me.CB_ANNEESEC.Margin = New System.Windows.Forms.Padding(2)
         Me.CB_ANNEESEC.Name = "CB_ANNEESEC"
         Me.CB_ANNEESEC.Size = New System.Drawing.Size(162, 33)
@@ -1962,17 +2006,18 @@ Partial Class modifier
         '
         'TableLayoutPanel6
         '
+        Me.TableLayoutPanel6.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.background_modif_groupe_scroll1
         Me.TableLayoutPanel6.ColumnCount = 1
         Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel6.Controls.Add(Me.Panel26, 0, 0)
         Me.TableLayoutPanel6.Controls.Add(Me.Panel32, 0, 1)
-        Me.TableLayoutPanel6.Location = New System.Drawing.Point(0, 46)
+        Me.TableLayoutPanel6.Location = New System.Drawing.Point(0, 96)
         Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
         Me.TableLayoutPanel6.Padding = New System.Windows.Forms.Padding(12, 0, 12, 0)
         Me.TableLayoutPanel6.RowCount = 2
-        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.78947!))
-        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 84.21053!))
+        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.14286!))
+        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.85714!))
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60.0!))
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75.0!))
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80.0!))
@@ -1981,7 +2026,7 @@ Partial Class modifier
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59.0!))
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8.0!))
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32.0!))
-        Me.TableLayoutPanel6.Size = New System.Drawing.Size(450, 494)
+        Me.TableLayoutPanel6.Size = New System.Drawing.Size(450, 350)
         Me.TableLayoutPanel6.TabIndex = 48
         '
         'Panel26
@@ -2007,12 +2052,12 @@ Partial Class modifier
         'LB_CodeSection
         '
         Me.LB_CodeSection.AutoSize = True
-        Me.LB_CodeSection.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_CodeSection.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_CodeSection.ForeColor = System.Drawing.Color.Black
         Me.LB_CodeSection.Location = New System.Drawing.Point(3, 23)
         Me.LB_CodeSection.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_CodeSection.Name = "LB_CodeSection"
-        Me.LB_CodeSection.Size = New System.Drawing.Size(145, 20)
+        Me.LB_CodeSection.Size = New System.Drawing.Size(140, 22)
         Me.LB_CodeSection.TabIndex = 63
         Me.LB_CodeSection.Text = "Code du section"
         '
@@ -2020,7 +2065,7 @@ Partial Class modifier
         '
         Me.Panel32.Controls.Add(Me.LB_NS)
         Me.Panel32.Controls.Add(Me.CB_NS)
-        Me.Panel32.Location = New System.Drawing.Point(15, 80)
+        Me.Panel32.Location = New System.Drawing.Point(15, 84)
         Me.Panel32.Name = "Panel32"
         Me.Panel32.Size = New System.Drawing.Size(420, 66)
         Me.Panel32.TabIndex = 62
@@ -2028,12 +2073,12 @@ Partial Class modifier
         'LB_NS
         '
         Me.LB_NS.AutoSize = True
-        Me.LB_NS.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_NS.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_NS.ForeColor = System.Drawing.Color.Black
         Me.LB_NS.Location = New System.Drawing.Point(3, 22)
         Me.LB_NS.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_NS.Name = "LB_NS"
-        Me.LB_NS.Size = New System.Drawing.Size(167, 20)
+        Me.LB_NS.Size = New System.Drawing.Size(162, 22)
         Me.LB_NS.TabIndex = 63
         Me.LB_NS.Text = "Numéro de section"
         '
@@ -2066,12 +2111,12 @@ Partial Class modifier
         '
         Me.Label14.AutoSize = True
         Me.Label14.BackColor = System.Drawing.Color.Transparent
-        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Font = New System.Drawing.Font("Cambria", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.Maroon
-        Me.Label14.Location = New System.Drawing.Point(13, 12)
+        Me.Label14.Location = New System.Drawing.Point(13, 14)
         Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(254, 24)
+        Me.Label14.Size = New System.Drawing.Size(255, 22)
         Me.Label14.TabIndex = 56
         Me.Label14.Text = "Choississez l'année d'étude :"
         Me.Label14.Visible = False
@@ -2080,7 +2125,7 @@ Partial Class modifier
         '
         Me.CB_ANNEEPROMO.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CB_ANNEEPROMO.FormattingEnabled = True
-        Me.CB_ANNEEPROMO.Location = New System.Drawing.Point(271, 8)
+        Me.CB_ANNEEPROMO.Location = New System.Drawing.Point(271, 11)
         Me.CB_ANNEEPROMO.Margin = New System.Windows.Forms.Padding(2)
         Me.CB_ANNEEPROMO.Name = "CB_ANNEEPROMO"
         Me.CB_ANNEEPROMO.Size = New System.Drawing.Size(162, 33)
@@ -2088,6 +2133,7 @@ Partial Class modifier
         '
         'TableLayoutPanel7
         '
+        Me.TableLayoutPanel7.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.background_modif_promo_scroll
         Me.TableLayoutPanel7.ColumnCount = 1
         Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -2125,7 +2171,7 @@ Partial Class modifier
         '
         'LB_Moypromo
         '
-        Me.LB_Moypromo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_Moypromo.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_Moypromo.ForeColor = System.Drawing.Color.Black
         Me.LB_Moypromo.Location = New System.Drawing.Point(2, 9)
         Me.LB_Moypromo.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
@@ -2156,7 +2202,7 @@ Partial Class modifier
         '
         'LB_NbreEtudiant
         '
-        Me.LB_NbreEtudiant.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_NbreEtudiant.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_NbreEtudiant.ForeColor = System.Drawing.Color.Black
         Me.LB_NbreEtudiant.Location = New System.Drawing.Point(2, 9)
         Me.LB_NbreEtudiant.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
@@ -2188,12 +2234,12 @@ Partial Class modifier
         'LB_Annee
         '
         Me.LB_Annee.AutoSize = True
-        Me.LB_Annee.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_Annee.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_Annee.ForeColor = System.Drawing.Color.Black
         Me.LB_Annee.Location = New System.Drawing.Point(3, 21)
         Me.LB_Annee.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_Annee.Name = "LB_Annee"
-        Me.LB_Annee.Size = New System.Drawing.Size(148, 20)
+        Me.LB_Annee.Size = New System.Drawing.Size(144, 22)
         Me.LB_Annee.TabIndex = 67
         Me.LB_Annee.Text = "L'année scolaire"
         '
@@ -2221,12 +2267,12 @@ Partial Class modifier
         'LB_Option
         '
         Me.LB_Option.AutoSize = True
-        Me.LB_Option.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_Option.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_Option.ForeColor = System.Drawing.Color.Black
         Me.LB_Option.Location = New System.Drawing.Point(3, 21)
         Me.LB_Option.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_Option.Name = "LB_Option"
-        Me.LB_Option.Size = New System.Drawing.Size(131, 20)
+        Me.LB_Option.Size = New System.Drawing.Size(130, 22)
         Me.LB_Option.TabIndex = 65
         Me.LB_Option.Text = "Option d'étude"
         '
@@ -2254,12 +2300,12 @@ Partial Class modifier
         'LB_CodePromo
         '
         Me.LB_CodePromo.AutoSize = True
-        Me.LB_CodePromo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_CodePromo.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_CodePromo.ForeColor = System.Drawing.Color.Black
         Me.LB_CodePromo.Location = New System.Drawing.Point(3, 22)
         Me.LB_CodePromo.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_CodePromo.Name = "LB_CodePromo"
-        Me.LB_CodePromo.Size = New System.Drawing.Size(138, 20)
+        Me.LB_CodePromo.Size = New System.Drawing.Size(137, 22)
         Me.LB_CodePromo.TabIndex = 62
         Me.LB_CodePromo.Text = "Code de Promo"
         '
@@ -2286,12 +2332,12 @@ Partial Class modifier
         'LB_Niveau
         '
         Me.LB_Niveau.AutoSize = True
-        Me.LB_Niveau.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_Niveau.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_Niveau.ForeColor = System.Drawing.Color.Black
         Me.LB_Niveau.Location = New System.Drawing.Point(3, 21)
         Me.LB_Niveau.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_Niveau.Name = "LB_Niveau"
-        Me.LB_Niveau.Size = New System.Drawing.Size(133, 20)
+        Me.LB_Niveau.Size = New System.Drawing.Size(131, 22)
         Me.LB_Niveau.TabIndex = 63
         Me.LB_Niveau.Text = "Niveau d'étude"
         '
@@ -2322,6 +2368,7 @@ Partial Class modifier
         '
         'TableLayoutPanel9
         '
+        Me.TableLayoutPanel9.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.background_modif_note_scroll
         Me.TableLayoutPanel9.ColumnCount = 1
         Me.TableLayoutPanel9.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel9.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -2360,12 +2407,12 @@ Partial Class modifier
         'LB_RATRNO
         '
         Me.LB_RATRNO.AutoSize = True
-        Me.LB_RATRNO.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_RATRNO.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_RATRNO.ForeColor = System.Drawing.Color.Black
         Me.LB_RATRNO.Location = New System.Drawing.Point(3, 17)
         Me.LB_RATRNO.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_RATRNO.Name = "LB_RATRNO"
-        Me.LB_RATRNO.Size = New System.Drawing.Size(95, 20)
+        Me.LB_RATRNO.Size = New System.Drawing.Size(97, 22)
         Me.LB_RATRNO.TabIndex = 71
         Me.LB_RATRNO.Text = "rattrapage"
         '
@@ -2404,12 +2451,12 @@ Partial Class modifier
         'LB_ELIMNO
         '
         Me.LB_ELIMNO.AutoSize = True
-        Me.LB_ELIMNO.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_ELIMNO.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_ELIMNO.ForeColor = System.Drawing.Color.Black
         Me.LB_ELIMNO.Location = New System.Drawing.Point(3, 17)
         Me.LB_ELIMNO.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_ELIMNO.Name = "LB_ELIMNO"
-        Me.LB_ELIMNO.Size = New System.Drawing.Size(157, 20)
+        Me.LB_ELIMNO.Size = New System.Drawing.Size(155, 22)
         Me.LB_ELIMNO.TabIndex = 67
         Me.LB_ELIMNO.Text = "Note éléminatoire"
         '
@@ -2448,12 +2495,12 @@ Partial Class modifier
         'LB_NORANO
         '
         Me.LB_NORANO.AutoSize = True
-        Me.LB_NORANO.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_NORANO.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_NORANO.ForeColor = System.Drawing.Color.Black
         Me.LB_NORANO.Location = New System.Drawing.Point(3, 16)
         Me.LB_NORANO.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_NORANO.Name = "LB_NORANO"
-        Me.LB_NORANO.Size = New System.Drawing.Size(201, 20)
+        Me.LB_NORANO.Size = New System.Drawing.Size(201, 22)
         Me.LB_NORANO.TabIndex = 65
         Me.LB_NORANO.Text = "Moyenne de rattrapage"
         '
@@ -2469,12 +2516,12 @@ Partial Class modifier
         'LB_NOJUNO
         '
         Me.LB_NOJUNO.AutoSize = True
-        Me.LB_NOJUNO.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_NOJUNO.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_NOJUNO.ForeColor = System.Drawing.Color.Black
         Me.LB_NOJUNO.Location = New System.Drawing.Point(3, 17)
         Me.LB_NOJUNO.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_NOJUNO.Name = "LB_NOJUNO"
-        Me.LB_NOJUNO.Size = New System.Drawing.Size(145, 20)
+        Me.LB_NOJUNO.Size = New System.Drawing.Size(145, 22)
         Me.LB_NOJUNO.TabIndex = 62
         Me.LB_NOJUNO.Text = "Moyenne de juin"
         '
@@ -2512,12 +2559,12 @@ Partial Class modifier
         'LB_NOSYNO
         '
         Me.LB_NOSYNO.AutoSize = True
-        Me.LB_NOSYNO.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_NOSYNO.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_NOSYNO.ForeColor = System.Drawing.Color.Black
         Me.LB_NOSYNO.Location = New System.Drawing.Point(3, 17)
         Me.LB_NOSYNO.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_NOSYNO.Name = "LB_NOSYNO"
-        Me.LB_NOSYNO.Size = New System.Drawing.Size(190, 20)
+        Me.LB_NOSYNO.Size = New System.Drawing.Size(183, 22)
         Me.LB_NOSYNO.TabIndex = 63
         Me.LB_NOSYNO.Text = "Moyenne de synthèse"
         '
@@ -2525,7 +2572,7 @@ Partial Class modifier
         '
         Me.CB_CodeMatNOTE.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CB_CodeMatNOTE.FormattingEnabled = True
-        Me.CB_CodeMatNOTE.Location = New System.Drawing.Point(258, 20)
+        Me.CB_CodeMatNOTE.Location = New System.Drawing.Point(258, 25)
         Me.CB_CodeMatNOTE.Margin = New System.Windows.Forms.Padding(2)
         Me.CB_CodeMatNOTE.Name = "CB_CodeMatNOTE"
         Me.CB_CodeMatNOTE.Size = New System.Drawing.Size(188, 33)
@@ -2535,12 +2582,12 @@ Partial Class modifier
         '
         Me.Label15.AutoSize = True
         Me.Label15.BackColor = System.Drawing.Color.Transparent
-        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Font = New System.Drawing.Font("Cambria", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.Color.Maroon
-        Me.Label15.Location = New System.Drawing.Point(4, 25)
+        Me.Label15.Location = New System.Drawing.Point(0, 30)
         Me.Label15.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(254, 24)
+        Me.Label15.Size = New System.Drawing.Size(257, 22)
         Me.Label15.TabIndex = 58
         Me.Label15.Text = "Choississez le code matière :"
         Me.Label15.Visible = False
@@ -2560,6 +2607,7 @@ Partial Class modifier
         '
         'TableLayoutPanel8
         '
+        Me.TableLayoutPanel8.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.background_modif_generalite_scroll1
         Me.TableLayoutPanel8.ColumnCount = 1
         Me.TableLayoutPanel8.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel8.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -2591,29 +2639,30 @@ Partial Class modifier
         '
         'Panel51
         '
-        Me.Panel51.Controls.Add(Me.TXT_CYCLMA)
+        Me.Panel51.Controls.Add(Me.CB_CYCLMA)
         Me.Panel51.Controls.Add(Me.LB_CYCLMA)
         Me.Panel51.Location = New System.Drawing.Point(18, 483)
         Me.Panel51.Name = "Panel51"
         Me.Panel51.Size = New System.Drawing.Size(392, 53)
         Me.Panel51.TabIndex = 17
         '
-        'TXT_CYCLMA
+        'CB_CYCLMA
         '
-        Me.TXT_CYCLMA.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TXT_CYCLMA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TXT_CYCLMA.ForeColor = System.Drawing.Color.DarkGray
-        Me.TXT_CYCLMA.Location = New System.Drawing.Point(169, 16)
-        Me.TXT_CYCLMA.Margin = New System.Windows.Forms.Padding(2)
-        Me.TXT_CYCLMA.Name = "TXT_CYCLMA"
-        Me.TXT_CYCLMA.Size = New System.Drawing.Size(220, 20)
-        Me.TXT_CYCLMA.TabIndex = 82
+        Me.CB_CYCLMA.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CB_CYCLMA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CB_CYCLMA.ForeColor = System.Drawing.Color.DarkGray
+        Me.CB_CYCLMA.FormattingEnabled = True
+        Me.CB_CYCLMA.Location = New System.Drawing.Point(169, 13)
+        Me.CB_CYCLMA.Margin = New System.Windows.Forms.Padding(2)
+        Me.CB_CYCLMA.Name = "CB_CYCLMA"
+        Me.CB_CYCLMA.Size = New System.Drawing.Size(220, 28)
+        Me.CB_CYCLMA.TabIndex = 80
         '
         'LB_CYCLMA
         '
-        Me.LB_CYCLMA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_CYCLMA.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_CYCLMA.ForeColor = System.Drawing.Color.Black
-        Me.LB_CYCLMA.Location = New System.Drawing.Point(3, 6)
+        Me.LB_CYCLMA.Location = New System.Drawing.Point(4, 6)
         Me.LB_CYCLMA.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_CYCLMA.Name = "LB_CYCLMA"
         Me.LB_CYCLMA.Size = New System.Drawing.Size(144, 40)
@@ -2643,9 +2692,9 @@ Partial Class modifier
         '
         'LB_MOYMAT
         '
-        Me.LB_MOYMAT.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_MOYMAT.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_MOYMAT.ForeColor = System.Drawing.Color.Black
-        Me.LB_MOYMAT.Location = New System.Drawing.Point(3, 6)
+        Me.LB_MOYMAT.Location = New System.Drawing.Point(4, 6)
         Me.LB_MOYMAT.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_MOYMAT.Name = "LB_MOYMAT"
         Me.LB_MOYMAT.Size = New System.Drawing.Size(144, 40)
@@ -2676,9 +2725,9 @@ Partial Class modifier
         '
         'LB_COEFMA
         '
-        Me.LB_COEFMA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_COEFMA.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_COEFMA.ForeColor = System.Drawing.Color.Black
-        Me.LB_COEFMA.Location = New System.Drawing.Point(3, 6)
+        Me.LB_COEFMA.Location = New System.Drawing.Point(4, 6)
         Me.LB_COEFMA.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_COEFMA.Name = "LB_COEFMA"
         Me.LB_COEFMA.Size = New System.Drawing.Size(144, 40)
@@ -2709,12 +2758,12 @@ Partial Class modifier
         'LB_TYPEMA
         '
         Me.LB_TYPEMA.AutoSize = True
-        Me.LB_TYPEMA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_TYPEMA.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_TYPEMA.ForeColor = System.Drawing.Color.Black
-        Me.LB_TYPEMA.Location = New System.Drawing.Point(3, 16)
+        Me.LB_TYPEMA.Location = New System.Drawing.Point(4, 16)
         Me.LB_TYPEMA.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_TYPEMA.Name = "LB_TYPEMA"
-        Me.LB_TYPEMA.Size = New System.Drawing.Size(144, 20)
+        Me.LB_TYPEMA.Size = New System.Drawing.Size(141, 22)
         Me.LB_TYPEMA.TabIndex = 75
         Me.LB_TYPEMA.Text = "Type de matière"
         '
@@ -2741,12 +2790,12 @@ Partial Class modifier
         'LB_LIBEMA
         '
         Me.LB_LIBEMA.AutoSize = True
-        Me.LB_LIBEMA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_LIBEMA.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_LIBEMA.ForeColor = System.Drawing.Color.Black
-        Me.LB_LIBEMA.Location = New System.Drawing.Point(3, 16)
+        Me.LB_LIBEMA.Location = New System.Drawing.Point(4, 16)
         Me.LB_LIBEMA.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_LIBEMA.Name = "LB_LIBEMA"
-        Me.LB_LIBEMA.Size = New System.Drawing.Size(142, 20)
+        Me.LB_LIBEMA.Size = New System.Drawing.Size(140, 22)
         Me.LB_LIBEMA.TabIndex = 73
         Me.LB_LIBEMA.Text = "Nom de matière"
         '
@@ -2772,9 +2821,9 @@ Partial Class modifier
         '
         'LB_COMAMA
         '
-        Me.LB_COMAMA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_COMAMA.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_COMAMA.ForeColor = System.Drawing.Color.Black
-        Me.LB_COMAMA.Location = New System.Drawing.Point(3, 3)
+        Me.LB_COMAMA.Location = New System.Drawing.Point(4, 3)
         Me.LB_COMAMA.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_COMAMA.Name = "LB_COMAMA"
         Me.LB_COMAMA.Size = New System.Drawing.Size(133, 47)
@@ -2793,12 +2842,12 @@ Partial Class modifier
         'LB_OPTIMA
         '
         Me.LB_OPTIMA.AutoSize = True
-        Me.LB_OPTIMA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_OPTIMA.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_OPTIMA.ForeColor = System.Drawing.Color.Black
-        Me.LB_OPTIMA.Location = New System.Drawing.Point(3, 16)
+        Me.LB_OPTIMA.Location = New System.Drawing.Point(4, 16)
         Me.LB_OPTIMA.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_OPTIMA.Name = "LB_OPTIMA"
-        Me.LB_OPTIMA.Size = New System.Drawing.Size(64, 20)
+        Me.LB_OPTIMA.Size = New System.Drawing.Size(66, 22)
         Me.LB_OPTIMA.TabIndex = 69
         Me.LB_OPTIMA.Text = "Option"
         '
@@ -2826,12 +2875,12 @@ Partial Class modifier
         'LB_ANETMA
         '
         Me.LB_ANETMA.AutoSize = True
-        Me.LB_ANETMA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_ANETMA.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_ANETMA.ForeColor = System.Drawing.Color.Black
-        Me.LB_ANETMA.Location = New System.Drawing.Point(3, 16)
+        Me.LB_ANETMA.Location = New System.Drawing.Point(4, 16)
         Me.LB_ANETMA.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_ANETMA.Name = "LB_ANETMA"
-        Me.LB_ANETMA.Size = New System.Drawing.Size(133, 20)
+        Me.LB_ANETMA.Size = New System.Drawing.Size(131, 22)
         Me.LB_ANETMA.TabIndex = 67
         Me.LB_ANETMA.Text = "Niveau d'étude"
         '
@@ -2859,12 +2908,12 @@ Partial Class modifier
         'LB_ANSCMA
         '
         Me.LB_ANSCMA.AutoSize = True
-        Me.LB_ANSCMA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_ANSCMA.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_ANSCMA.ForeColor = System.Drawing.Color.Black
-        Me.LB_ANSCMA.Location = New System.Drawing.Point(3, 16)
+        Me.LB_ANSCMA.Location = New System.Drawing.Point(4, 16)
         Me.LB_ANSCMA.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_ANSCMA.Name = "LB_ANSCMA"
-        Me.LB_ANSCMA.Size = New System.Drawing.Size(134, 20)
+        Me.LB_ANSCMA.Size = New System.Drawing.Size(130, 22)
         Me.LB_ANSCMA.TabIndex = 65
         Me.LB_ANSCMA.Text = "Année scolaire"
         '
@@ -2884,7 +2933,7 @@ Partial Class modifier
         '
         Me.CB_CodeMatMAT.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CB_CodeMatMAT.FormattingEnabled = True
-        Me.CB_CodeMatMAT.Location = New System.Drawing.Point(260, 11)
+        Me.CB_CodeMatMAT.Location = New System.Drawing.Point(265, 15)
         Me.CB_CodeMatMAT.Margin = New System.Windows.Forms.Padding(2)
         Me.CB_CodeMatMAT.Name = "CB_CodeMatMAT"
         Me.CB_CodeMatMAT.Size = New System.Drawing.Size(160, 33)
@@ -2894,12 +2943,12 @@ Partial Class modifier
         '
         Me.Label16.AutoSize = True
         Me.Label16.BackColor = System.Drawing.Color.Transparent
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Font = New System.Drawing.Font("Cambria", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label16.ForeColor = System.Drawing.Color.Maroon
-        Me.Label16.Location = New System.Drawing.Point(5, 16)
+        Me.Label16.Location = New System.Drawing.Point(5, 20)
         Me.Label16.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(254, 24)
+        Me.Label16.Size = New System.Drawing.Size(257, 22)
         Me.Label16.TabIndex = 60
         Me.Label16.Text = "Choississez le code matière :"
         Me.Label16.Visible = False
@@ -2918,6 +2967,7 @@ Partial Class modifier
         '
         'TableLayoutPanel10
         '
+        Me.TableLayoutPanel10.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.background_modif_noterat_scroll
         Me.TableLayoutPanel10.ColumnCount = 1
         Me.TableLayoutPanel10.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel10.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -2953,7 +3003,7 @@ Partial Class modifier
         '
         'LB_RATRRA
         '
-        Me.LB_RATRRA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_RATRRA.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_RATRRA.ForeColor = System.Drawing.Color.Black
         Me.LB_RATRRA.Location = New System.Drawing.Point(3, 3)
         Me.LB_RATRRA.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
@@ -2961,6 +3011,7 @@ Partial Class modifier
         Me.LB_RATRRA.Size = New System.Drawing.Size(133, 47)
         Me.LB_RATRRA.TabIndex = 71
         Me.LB_RATRRA.Text = "Passer le rattrapage"
+        Me.LB_RATRRA.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'CB_RATRRA
         '
@@ -2985,7 +3036,7 @@ Partial Class modifier
         '
         'LB_ELIMRA
         '
-        Me.LB_ELIMRA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_ELIMRA.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_ELIMRA.ForeColor = System.Drawing.Color.Black
         Me.LB_ELIMRA.Location = New System.Drawing.Point(3, 3)
         Me.LB_ELIMRA.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
@@ -2993,6 +3044,7 @@ Partial Class modifier
         Me.LB_ELIMRA.Size = New System.Drawing.Size(162, 47)
         Me.LB_ELIMRA.TabIndex = 69
         Me.LB_ELIMRA.Text = "Nombre des notes éliminatoire"
+        Me.LB_ELIMRA.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'CB_ELIMRA
         '
@@ -3018,14 +3070,15 @@ Partial Class modifier
         'LB_MENTRA
         '
         Me.LB_MENTRA.AutoSize = True
-        Me.LB_MENTRA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_MENTRA.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_MENTRA.ForeColor = System.Drawing.Color.Black
         Me.LB_MENTRA.Location = New System.Drawing.Point(3, 16)
         Me.LB_MENTRA.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_MENTRA.Name = "LB_MENTRA"
-        Me.LB_MENTRA.Size = New System.Drawing.Size(102, 20)
+        Me.LB_MENTRA.Size = New System.Drawing.Size(102, 22)
         Me.LB_MENTRA.TabIndex = 67
         Me.LB_MENTRA.Text = "La mention"
+        Me.LB_MENTRA.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'CB_MENTRA
         '
@@ -3061,20 +3114,21 @@ Partial Class modifier
         '
         'LB_MOYERA
         '
-        Me.LB_MOYERA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_MOYERA.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_MOYERA.ForeColor = System.Drawing.Color.Black
-        Me.LB_MOYERA.Location = New System.Drawing.Point(3, 6)
+        Me.LB_MOYERA.Location = New System.Drawing.Point(3, 1)
         Me.LB_MOYERA.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_MOYERA.Name = "LB_MOYERA"
-        Me.LB_MOYERA.Size = New System.Drawing.Size(134, 41)
+        Me.LB_MOYERA.Size = New System.Drawing.Size(134, 47)
         Me.LB_MOYERA.TabIndex = 65
         Me.LB_MOYERA.Text = "La moyenne de rattrapage"
+        Me.LB_MOYERA.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'CB_CODERATNOT
         '
         Me.CB_CODERATNOT.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CB_CODERATNOT.FormattingEnabled = True
-        Me.CB_CODERATNOT.Location = New System.Drawing.Point(243, 52)
+        Me.CB_CODERATNOT.Location = New System.Drawing.Point(241, 52)
         Me.CB_CODERATNOT.Margin = New System.Windows.Forms.Padding(2)
         Me.CB_CODERATNOT.Name = "CB_CODERATNOT"
         Me.CB_CODERATNOT.Size = New System.Drawing.Size(187, 33)
@@ -3084,12 +3138,12 @@ Partial Class modifier
         '
         Me.Label26.AutoSize = True
         Me.Label26.BackColor = System.Drawing.Color.Transparent
-        Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label26.Font = New System.Drawing.Font("Cambria", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label26.ForeColor = System.Drawing.Color.Maroon
-        Me.Label26.Location = New System.Drawing.Point(24, 19)
+        Me.Label26.Location = New System.Drawing.Point(26, 19)
         Me.Label26.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(302, 24)
+        Me.Label26.Size = New System.Drawing.Size(306, 22)
         Me.Label26.TabIndex = 63
         Me.Label26.Text = "Choississez le code de rattrapage :"
         Me.Label26.Visible = False
@@ -3108,6 +3162,7 @@ Partial Class modifier
         '
         'TableLayoutPanel11
         '
+        Me.TableLayoutPanel11.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.background_modif_noterat_scroll1
         Me.TableLayoutPanel11.ColumnCount = 1
         Me.TableLayoutPanel11.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel11.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -3144,12 +3199,12 @@ Partial Class modifier
         'LB_OPTIRA
         '
         Me.LB_OPTIRA.AutoSize = True
-        Me.LB_OPTIRA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_OPTIRA.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_OPTIRA.ForeColor = System.Drawing.Color.Black
         Me.LB_OPTIRA.Location = New System.Drawing.Point(3, 16)
         Me.LB_OPTIRA.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_OPTIRA.Name = "LB_OPTIRA"
-        Me.LB_OPTIRA.Size = New System.Drawing.Size(64, 20)
+        Me.LB_OPTIRA.Size = New System.Drawing.Size(66, 22)
         Me.LB_OPTIRA.TabIndex = 71
         Me.LB_OPTIRA.Text = "Option"
         '
@@ -3177,12 +3232,12 @@ Partial Class modifier
         'LB_CYCLRA
         '
         Me.LB_CYCLRA.AutoSize = True
-        Me.LB_CYCLRA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_CYCLRA.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_CYCLRA.ForeColor = System.Drawing.Color.Black
         Me.LB_CYCLRA.Location = New System.Drawing.Point(3, 16)
         Me.LB_CYCLRA.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_CYCLRA.Name = "LB_CYCLRA"
-        Me.LB_CYCLRA.Size = New System.Drawing.Size(53, 20)
+        Me.LB_CYCLRA.Size = New System.Drawing.Size(51, 22)
         Me.LB_CYCLRA.TabIndex = 69
         Me.LB_CYCLRA.Text = "cycle"
         '
@@ -3210,12 +3265,12 @@ Partial Class modifier
         'LB_ANETRA
         '
         Me.LB_ANETRA.AutoSize = True
-        Me.LB_ANETRA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_ANETRA.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_ANETRA.ForeColor = System.Drawing.Color.Black
         Me.LB_ANETRA.Location = New System.Drawing.Point(3, 16)
         Me.LB_ANETRA.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_ANETRA.Name = "LB_ANETRA"
-        Me.LB_ANETRA.Size = New System.Drawing.Size(133, 20)
+        Me.LB_ANETRA.Size = New System.Drawing.Size(131, 22)
         Me.LB_ANETRA.TabIndex = 67
         Me.LB_ANETRA.Text = "Niveau d'étude"
         '
@@ -3233,27 +3288,29 @@ Partial Class modifier
         '
         'Panel60
         '
-        Me.Panel60.Controls.Add(Me.TXT_ANSCRA)
+        Me.Panel60.Controls.Add(Me.CB_ANSCRA)
         Me.Panel60.Controls.Add(Me.LB_ANSCRA)
         Me.Panel60.Location = New System.Drawing.Point(18, 3)
         Me.Panel60.Name = "Panel60"
         Me.Panel60.Size = New System.Drawing.Size(411, 53)
         Me.Panel60.TabIndex = 10
         '
-        'TXT_ANSCRA
+        'CB_ANSCRA
         '
-        Me.TXT_ANSCRA.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TXT_ANSCRA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TXT_ANSCRA.ForeColor = System.Drawing.Color.DarkGray
-        Me.TXT_ANSCRA.Location = New System.Drawing.Point(189, 16)
-        Me.TXT_ANSCRA.Margin = New System.Windows.Forms.Padding(2)
-        Me.TXT_ANSCRA.Name = "TXT_ANSCRA"
-        Me.TXT_ANSCRA.Size = New System.Drawing.Size(220, 20)
-        Me.TXT_ANSCRA.TabIndex = 72
+        Me.CB_ANSCRA.BackColor = System.Drawing.Color.White
+        Me.CB_ANSCRA.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CB_ANSCRA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CB_ANSCRA.ForeColor = System.Drawing.Color.DarkGray
+        Me.CB_ANSCRA.FormattingEnabled = True
+        Me.CB_ANSCRA.Location = New System.Drawing.Point(189, 13)
+        Me.CB_ANSCRA.Margin = New System.Windows.Forms.Padding(2)
+        Me.CB_ANSCRA.Name = "CB_ANSCRA"
+        Me.CB_ANSCRA.Size = New System.Drawing.Size(220, 28)
+        Me.CB_ANSCRA.TabIndex = 68
         '
         'LB_ANSCRA
         '
-        Me.LB_ANSCRA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_ANSCRA.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_ANSCRA.ForeColor = System.Drawing.Color.Black
         Me.LB_ANSCRA.Location = New System.Drawing.Point(3, 15)
         Me.LB_ANSCRA.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
@@ -3276,12 +3333,12 @@ Partial Class modifier
         '
         Me.Label21.AutoSize = True
         Me.Label21.BackColor = System.Drawing.Color.Transparent
-        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.Font = New System.Drawing.Font("Cambria", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label21.ForeColor = System.Drawing.Color.Maroon
-        Me.Label21.Location = New System.Drawing.Point(23, 27)
+        Me.Label21.Location = New System.Drawing.Point(24, 24)
         Me.Label21.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(302, 24)
+        Me.Label21.Size = New System.Drawing.Size(306, 22)
         Me.Label21.TabIndex = 66
         Me.Label21.Text = "Choississez le code de rattrapage :"
         Me.Label21.Visible = False
@@ -3302,24 +3359,12 @@ Partial Class modifier
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 16.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(59, 32)
+        Me.Label1.Location = New System.Drawing.Point(55, 31)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(451, 32)
         Me.Label1.TabIndex = 12
         Me.Label1.Text = "Modifer les informations de l'étudiant"
-        '
-        'DTP_DATENAIS
-        '
-        Me.DTP_DATENAIS.Checked = False
-        Me.DTP_DATENAIS.CustomFormat = "dd/mm/yyyy"
-        Me.DTP_DATENAIS.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DTP_DATENAIS.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DTP_DATENAIS.Location = New System.Drawing.Point(193, 13)
-        Me.DTP_DATENAIS.Margin = New System.Windows.Forms.Padding(2)
-        Me.DTP_DATENAIS.Name = "DTP_DATENAIS"
-        Me.DTP_DATENAIS.Size = New System.Drawing.Size(177, 30)
-        Me.DTP_DATENAIS.TabIndex = 88
         '
         'modifier
         '
@@ -3336,8 +3381,9 @@ Partial Class modifier
         Me.TopMost = True
         Me.WindowState = System.Windows.Forms.FormWindowState.Minimized
         Me.PN_MODIFIER.ResumeLayout(False)
+        Me.PN_MODIFIER.PerformLayout()
         Me.Panel3.ResumeLayout(False)
-        Me.TabControl1.ResumeLayout(False)
+        Me.TAB_PAGES.ResumeLayout(False)
         Me.P_GENERALITE.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.Panel11.ResumeLayout(False)
@@ -3451,7 +3497,6 @@ Partial Class modifier
         Me.P_MATIERE.PerformLayout()
         Me.TableLayoutPanel8.ResumeLayout(False)
         Me.Panel51.ResumeLayout(False)
-        Me.Panel51.PerformLayout()
         Me.Panel50.ResumeLayout(False)
         Me.Panel50.PerformLayout()
         Me.Panel49.ResumeLayout(False)
@@ -3486,16 +3531,13 @@ Partial Class modifier
         Me.Panel59.ResumeLayout(False)
         Me.Panel59.PerformLayout()
         Me.Panel60.ResumeLayout(False)
-        Me.Panel60.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents PN_MODIFIER As System.Windows.Forms.Panel
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents BT_SORTIR As System.Windows.Forms.Button
+    Friend WithEvents BT_MODIFIER As System.Windows.Forms.Button
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents BT_RATRAP As System.Windows.Forms.RadioButton
     Friend WithEvents BT_NOTERAT As System.Windows.Forms.RadioButton
@@ -3508,7 +3550,7 @@ Partial Class modifier
     Friend WithEvents BT_GENERALINFO As System.Windows.Forms.RadioButton
     Friend WithEvents BT_INFOBAC As System.Windows.Forms.RadioButton
     Friend WithEvents BT_INFORESIDENCE As System.Windows.Forms.RadioButton
-    Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
+    Friend WithEvents TAB_PAGES As System.Windows.Forms.TabControl
     Friend WithEvents P_GENERALITE As System.Windows.Forms.TabPage
     Friend WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents Panel11 As System.Windows.Forms.Panel
@@ -3536,21 +3578,22 @@ Partial Class modifier
     Friend WithEvents TXT_PrenomsA As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Panel9 As System.Windows.Forms.Panel
+    Friend WithEvents DTP_DATENAIS As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents Panel10 As System.Windows.Forms.Panel
-    Friend WithEvents TXT_SEXE As System.Windows.Forms.TextBox
+    Friend WithEvents CB_SEXE As System.Windows.Forms.ComboBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents P_RESIDENCE As System.Windows.Forms.TabPage
     Friend WithEvents TableLayoutPanel2 As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents Panel15 As System.Windows.Forms.Panel
     Friend WithEvents LB_LIEUN As System.Windows.Forms.Label
-    Friend WithEvents TXT_LIEUNA As System.Windows.Forms.TextBox
+    Friend WithEvents TXT_LIEUN As System.Windows.Forms.TextBox
     Friend WithEvents Panel16 As System.Windows.Forms.Panel
     Friend WithEvents LB_WILAYAN As System.Windows.Forms.Label
     Friend WithEvents CB_WILAYAN As System.Windows.Forms.ComboBox
     Friend WithEvents Panel17 As System.Windows.Forms.Panel
     Friend WithEvents LB_LIEUNA As System.Windows.Forms.Label
-    Friend WithEvents TXT_LIEUN As System.Windows.Forms.TextBox
+    Friend WithEvents TXT_LIEUNA As System.Windows.Forms.TextBox
     Friend WithEvents Panel18 As System.Windows.Forms.Panel
     Friend WithEvents LB_WILAYANA As System.Windows.Forms.Label
     Friend WithEvents CB_WILAYANA As System.Windows.Forms.ComboBox
@@ -3581,7 +3624,7 @@ Partial Class modifier
     Friend WithEvents CB_ANNEEB As System.Windows.Forms.ComboBox
     Friend WithEvents LB_ANNEEB As System.Windows.Forms.Label
     Friend WithEvents P_INSCRIPTION As System.Windows.Forms.TabPage
-    Friend WithEvents worningrech As System.Windows.Forms.Label
+    Friend WithEvents lbin As System.Windows.Forms.Label
     Friend WithEvents CB_ANNEEIN As System.Windows.Forms.ComboBox
     Friend WithEvents TableLayoutPanel4 As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents Panel25 As System.Windows.Forms.Panel
@@ -3589,10 +3632,10 @@ Partial Class modifier
     Friend WithEvents CB_ADM As System.Windows.Forms.ComboBox
     Friend WithEvents Panel34 As System.Windows.Forms.Panel
     Friend WithEvents LB_DECIIN As System.Windows.Forms.Label
-    Friend WithEvents TXT_DECIIN As System.Windows.Forms.TextBox
+    Friend WithEvents CB_DECIIN As System.Windows.Forms.ComboBox
     Friend WithEvents Panel33 As System.Windows.Forms.Panel
     Friend WithEvents LB_DEC As System.Windows.Forms.Label
-    Friend WithEvents TXT_DEC As System.Windows.Forms.TextBox
+    Friend WithEvents CB_DEC As System.Windows.Forms.ComboBox
     Friend WithEvents Panel31 As System.Windows.Forms.Panel
     Friend WithEvents LB_RATRIN As System.Windows.Forms.Label
     Friend WithEvents CB_RATRIN As System.Windows.Forms.ComboBox
@@ -3609,7 +3652,7 @@ Partial Class modifier
     Friend WithEvents LB_RANGIN As System.Windows.Forms.Label
     Friend WithEvents CB_RANGIN As System.Windows.Forms.ComboBox
     Friend WithEvents P_GRP As System.Windows.Forms.TabPage
-    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents lbgrp As System.Windows.Forms.Label
     Friend WithEvents CB_ANNEEGRP As System.Windows.Forms.ComboBox
     Friend WithEvents TableLayoutPanel5 As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents Panel40 As System.Windows.Forms.Panel
@@ -3673,7 +3716,6 @@ Partial Class modifier
     Friend WithEvents P_MATIERE As System.Windows.Forms.TabPage
     Friend WithEvents TableLayoutPanel8 As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents Panel51 As System.Windows.Forms.Panel
-    Friend WithEvents TXT_CYCLMA As System.Windows.Forms.TextBox
     Friend WithEvents LB_CYCLMA As System.Windows.Forms.Label
     Friend WithEvents Panel50 As System.Windows.Forms.Panel
     Friend WithEvents TXT_MOYMAT As System.Windows.Forms.TextBox
@@ -3729,9 +3771,13 @@ Partial Class modifier
     Friend WithEvents LB_ANETRA As System.Windows.Forms.Label
     Friend WithEvents CB_ANETRA As System.Windows.Forms.ComboBox
     Friend WithEvents Panel60 As System.Windows.Forms.Panel
-    Friend WithEvents TXT_ANSCRA As System.Windows.Forms.TextBox
+    Friend WithEvents CB_ANSCRA As System.Windows.Forms.ComboBox
     Friend WithEvents LB_ANSCRA As System.Windows.Forms.Label
     Friend WithEvents CB_CODERATRAT As System.Windows.Forms.ComboBox
     Friend WithEvents Label21 As System.Windows.Forms.Label
-    Friend WithEvents DTP_DATENAIS As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents CB_CYCLMA As System.Windows.Forms.ComboBox
+    Friend WithEvents TXT_DATENAIS As System.Windows.Forms.TextBox
+    Friend WithEvents Worning As System.Windows.Forms.Label
 End Class

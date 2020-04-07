@@ -360,11 +360,11 @@ Partial Class modifier
         'PN_MODIFIER
         '
         Me.PN_MODIFIER.BackColor = System.Drawing.Color.Transparent
+        Me.PN_MODIFIER.Controls.Add(Me.Panel1)
         Me.PN_MODIFIER.Controls.Add(Me.Worning)
         Me.PN_MODIFIER.Controls.Add(Me.BT_MODIFIER)
         Me.PN_MODIFIER.Controls.Add(Me.Panel3)
         Me.PN_MODIFIER.Controls.Add(Me.TAB_PAGES)
-        Me.PN_MODIFIER.Controls.Add(Me.Panel1)
         Me.PN_MODIFIER.Location = New System.Drawing.Point(0, 0)
         Me.PN_MODIFIER.Name = "PN_MODIFIER"
         Me.PN_MODIFIER.Size = New System.Drawing.Size(678, 640)

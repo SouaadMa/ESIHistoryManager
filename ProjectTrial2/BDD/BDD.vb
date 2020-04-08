@@ -487,6 +487,29 @@ Public Class BDD
     End Function
 
 
+    'Une fonction qui ramène toutes les valeurs possibles (distinctes) d'un certain champs de la BDD
+
+    Public Function GetALL(ByVal nomChamps As String, ByVal nomTable As String) As DataTable
+
+        If ExisteDansTable(nomChamps, nomTable) Then
+
+            Dim SqlQuery = "SELECT DISTINCT " & nomChamps & " FROM " & nomTable & ";"
+
+            Return executeRequete(SqlQuery)
+
+        Else
+
+            MsgBox("Ce champs n'existe pas dans la table")
+            Return Nothing
+
+
+        End If
+
+    End Function
+
+
+
+
     ' Méthode qui vérifie si le champs "champs" existe dans la table "table"
 
     Public Shared Function ExisteDansTable(ByVal champs As String, ByVal table As String) As Boolean

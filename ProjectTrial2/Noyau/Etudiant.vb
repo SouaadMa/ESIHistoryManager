@@ -139,6 +139,7 @@
 
     End Function
 
+
     Public Function GetInfoChamps(ByVal champs As String) As String
 
         If InfosETUDIANT.ContainsKey(champs) Then

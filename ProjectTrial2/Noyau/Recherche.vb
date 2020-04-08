@@ -1,7 +1,6 @@
 ﻿Public Class Recherche  'La classe qui contient les méthodes du traitement
 
-    Private Sub New()
-    End Sub
+    
     Public Shared Function traitRechercher(ByVal criteres As List(Of Critere), ByVal bw As System.ComponentModel.BackgroundWorker, ByVal e As System.ComponentModel.DoWorkEventArgs) As List(Of Etudiant)
         'La méthode qui retourne la collection des étudiants filtrés selon la collection des critères en entrée
         '        e.Cancel = True
@@ -50,5 +49,25 @@
         Return listeEtudiants
 
     End Function
+
+    'Fonction qui retourne une liste de toutes les valeurs (chaine) possible de "champs" dans INSCRIPTION
+
+    Public Shared Function GetALL(ByVal champs As String) As List(Of String)
+
+        Dim dt As DataTable = BDD.GetALL(champs, BDD.nomTableINSCRIPTION)
+
+        Dim liste As New List(Of String)
+
+        For Each ligne As DataRow In dt.Rows
+
+            liste.Add(CType(ligne(champs), String))
+
+        Next
+
+        Return liste
+
+    End Function
+
+
 End Class
 

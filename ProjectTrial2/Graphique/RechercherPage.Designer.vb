@@ -56,16 +56,10 @@ Partial Class RechercherPage
         Me.SpliterMain = New System.Windows.Forms.SplitContainer()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.ResidenceLabel = New System.Windows.Forms.Label()
-        Me.IMG_ALERTCODPOS = New System.Windows.Forms.PictureBox()
-        Me.LB_CODEPOS = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.LB_WILAYA = New System.Windows.Forms.Label()
-        Me.TXT_CODEPOS = New System.Windows.Forms.TextBox()
-        Me.LB_LIEUNA = New System.Windows.Forms.Label()
-        Me.TXT_VILLE = New System.Windows.Forms.TextBox()
         Me.LB_WILAYANA = New System.Windows.Forms.Label()
-        Me.TXT_LIEUNA = New System.Windows.Forms.TextBox()
-        Me.TXT_LIEUN = New System.Windows.Forms.TextBox()
-        Me.LB_VILLE = New System.Windows.Forms.Label()
         Me.CB_WILAYAN = New System.Windows.Forms.ComboBox()
         Me.CB_WILAYANA = New System.Windows.Forms.ComboBox()
         Me.CB_WILAYA = New System.Windows.Forms.ComboBox()
@@ -100,7 +94,6 @@ Partial Class RechercherPage
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
-        CType(Me.IMG_ALERTCODPOS, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer2.Panel1.SuspendLayout()
         Me.SplitContainer2.Panel2.SuspendLayout()
@@ -139,7 +132,7 @@ Partial Class RechercherPage
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RechButtons.Controls.Add(Me.worningrech)
         Me.RechButtons.Controls.Add(Me.BT_LANCERRECH)
-        Me.RechButtons.Location = New System.Drawing.Point(24, 1089)
+        Me.RechButtons.Location = New System.Drawing.Point(24, 975)
         Me.RechButtons.MinimumSize = New System.Drawing.Size(610, 0)
         Me.RechButtons.Name = "RechButtons"
         Me.RechButtons.Size = New System.Drawing.Size(610, 87)
@@ -451,8 +444,8 @@ Partial Class RechercherPage
         '
         Me.SpliterMain.Panel2.Controls.Add(Me.SplitContainer2)
         Me.SpliterMain.Panel2MinSize = 0
-        Me.SpliterMain.Size = New System.Drawing.Size(615, 533)
-        Me.SpliterMain.SplitterDistance = 293
+        Me.SpliterMain.Size = New System.Drawing.Size(615, 418)
+        Me.SpliterMain.SplitterDistance = 190
         Me.SpliterMain.TabIndex = 43
         '
         'SplitContainer1
@@ -469,16 +462,10 @@ Partial Class RechercherPage
         '
         'SplitContainer1.Panel2
         '
-        Me.SplitContainer1.Panel2.Controls.Add(Me.IMG_ALERTCODPOS)
-        Me.SplitContainer1.Panel2.Controls.Add(Me.LB_CODEPOS)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.Label6)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.ComboBox1)
         Me.SplitContainer1.Panel2.Controls.Add(Me.LB_WILAYA)
-        Me.SplitContainer1.Panel2.Controls.Add(Me.TXT_CODEPOS)
-        Me.SplitContainer1.Panel2.Controls.Add(Me.LB_LIEUNA)
-        Me.SplitContainer1.Panel2.Controls.Add(Me.TXT_VILLE)
         Me.SplitContainer1.Panel2.Controls.Add(Me.LB_WILAYANA)
-        Me.SplitContainer1.Panel2.Controls.Add(Me.TXT_LIEUNA)
-        Me.SplitContainer1.Panel2.Controls.Add(Me.TXT_LIEUN)
-        Me.SplitContainer1.Panel2.Controls.Add(Me.LB_VILLE)
         Me.SplitContainer1.Panel2.Controls.Add(Me.CB_WILAYAN)
         Me.SplitContainer1.Panel2.Controls.Add(Me.CB_WILAYANA)
         Me.SplitContainer1.Panel2.Controls.Add(Me.CB_WILAYA)
@@ -501,66 +488,37 @@ Partial Class RechercherPage
         Me.ResidenceLabel.Text = "     Informations sur la residence"
         Me.ResidenceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'IMG_ALERTCODPOS
+        'Label6
         '
-        Me.IMG_ALERTCODPOS.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
-        Me.IMG_ALERTCODPOS.Location = New System.Drawing.Point(534, 207)
-        Me.IMG_ALERTCODPOS.Name = "IMG_ALERTCODPOS"
-        Me.IMG_ALERTCODPOS.Size = New System.Drawing.Size(30, 30)
-        Me.IMG_ALERTCODPOS.TabIndex = 39
-        Me.IMG_ALERTCODPOS.TabStop = False
-        Me.IMG_ALERTCODPOS.Visible = False
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(30, 21)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(216, 17)
+        Me.Label6.TabIndex = 70
+        Me.Label6.Text = "Wilaya de naissance en Francais"
         '
-        'LB_CODEPOS
+        'ComboBox1
         '
-        Me.LB_CODEPOS.AutoSize = True
-        Me.LB_CODEPOS.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LB_CODEPOS.Location = New System.Drawing.Point(34, 209)
-        Me.LB_CODEPOS.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.LB_CODEPOS.Name = "LB_CODEPOS"
-        Me.LB_CODEPOS.Size = New System.Drawing.Size(89, 17)
-        Me.LB_CODEPOS.TabIndex = 69
-        Me.LB_CODEPOS.Text = "code postale"
+        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(254, 16)
+        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(2)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(264, 28)
+        Me.ComboBox1.TabIndex = 69
         '
         'LB_WILAYA
         '
         Me.LB_WILAYA.AutoSize = True
         Me.LB_WILAYA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LB_WILAYA.Location = New System.Drawing.Point(34, 159)
+        Me.LB_WILAYA.Location = New System.Drawing.Point(34, 115)
         Me.LB_WILAYA.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_WILAYA.Name = "LB_WILAYA"
         Me.LB_WILAYA.Size = New System.Drawing.Size(103, 17)
         Me.LB_WILAYA.TabIndex = 68
         Me.LB_WILAYA.Text = "Wilaya actuelle"
-        '
-        'TXT_CODEPOS
-        '
-        Me.TXT_CODEPOS.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TXT_CODEPOS.Location = New System.Drawing.Point(254, 209)
-        Me.TXT_CODEPOS.Margin = New System.Windows.Forms.Padding(2)
-        Me.TXT_CODEPOS.Name = "TXT_CODEPOS"
-        Me.TXT_CODEPOS.Size = New System.Drawing.Size(264, 26)
-        Me.TXT_CODEPOS.TabIndex = 54
-        '
-        'LB_LIEUNA
-        '
-        Me.LB_LIEUNA.AutoSize = True
-        Me.LB_LIEUNA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LB_LIEUNA.Location = New System.Drawing.Point(34, 19)
-        Me.LB_LIEUNA.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.LB_LIEUNA.Name = "LB_LIEUNA"
-        Me.LB_LIEUNA.Size = New System.Drawing.Size(185, 17)
-        Me.LB_LIEUNA.TabIndex = 67
-        Me.LB_LIEUNA.Text = "Lieu de naissance en Arabe"
-        '
-        'TXT_VILLE
-        '
-        Me.TXT_VILLE.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TXT_VILLE.Location = New System.Drawing.Point(254, 111)
-        Me.TXT_VILLE.Margin = New System.Windows.Forms.Padding(2)
-        Me.TXT_VILLE.Name = "TXT_VILLE"
-        Me.TXT_VILLE.Size = New System.Drawing.Size(264, 26)
-        Me.TXT_VILLE.TabIndex = 55
         '
         'LB_WILAYANA
         '
@@ -572,36 +530,6 @@ Partial Class RechercherPage
         Me.LB_WILAYANA.Size = New System.Drawing.Size(200, 17)
         Me.LB_WILAYANA.TabIndex = 65
         Me.LB_WILAYANA.Text = "Wilaya de naissance en Arabe"
-        '
-        'TXT_LIEUNA
-        '
-        Me.TXT_LIEUNA.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TXT_LIEUNA.Location = New System.Drawing.Point(254, 19)
-        Me.TXT_LIEUNA.Margin = New System.Windows.Forms.Padding(2)
-        Me.TXT_LIEUNA.Name = "TXT_LIEUNA"
-        Me.TXT_LIEUNA.Size = New System.Drawing.Size(264, 26)
-        Me.TXT_LIEUNA.TabIndex = 57
-        '
-        'TXT_LIEUN
-        '
-        Me.TXT_LIEUN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TXT_LIEUN.Location = New System.Drawing.Point(254, 19)
-        Me.TXT_LIEUN.Margin = New System.Windows.Forms.Padding(2)
-        Me.TXT_LIEUN.Name = "TXT_LIEUN"
-        Me.TXT_LIEUN.Size = New System.Drawing.Size(264, 26)
-        Me.TXT_LIEUN.TabIndex = 58
-        Me.TXT_LIEUN.Visible = False
-        '
-        'LB_VILLE
-        '
-        Me.LB_VILLE.AutoSize = True
-        Me.LB_VILLE.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LB_VILLE.Location = New System.Drawing.Point(34, 111)
-        Me.LB_VILLE.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.LB_VILLE.Name = "LB_VILLE"
-        Me.LB_VILLE.Size = New System.Drawing.Size(87, 17)
-        Me.LB_VILLE.TabIndex = 63
-        Me.LB_VILLE.Text = "Ville actuelle"
         '
         'CB_WILAYAN
         '
@@ -628,7 +556,7 @@ Partial Class RechercherPage
         '
         Me.CB_WILAYA.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CB_WILAYA.FormattingEnabled = True
-        Me.CB_WILAYA.Location = New System.Drawing.Point(254, 159)
+        Me.CB_WILAYA.Location = New System.Drawing.Point(254, 110)
         Me.CB_WILAYA.Margin = New System.Windows.Forms.Padding(2)
         Me.CB_WILAYA.Name = "CB_WILAYA"
         Me.CB_WILAYA.Size = New System.Drawing.Size(264, 28)
@@ -657,7 +585,7 @@ Partial Class RechercherPage
         Me.SplitContainer2.Panel2.Controls.Add(Me.CB_WILAYAB)
         Me.SplitContainer2.Panel2.Controls.Add(Me.LB_ANNEEB)
         Me.SplitContainer2.Panel2MinSize = 0
-        Me.SplitContainer2.Size = New System.Drawing.Size(615, 234)
+        Me.SplitContainer2.Size = New System.Drawing.Size(615, 222)
         Me.SplitContainer2.SplitterDistance = 25
         Me.SplitContainer2.TabIndex = 48
         '
@@ -884,7 +812,6 @@ Partial Class RechercherPage
         Me.SplitContainer1.Panel2.PerformLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.ResumeLayout(False)
-        CType(Me.IMG_ALERTCODPOS, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer2.Panel1.ResumeLayout(False)
         Me.SplitContainer2.Panel2.ResumeLayout(False)
         Me.SplitContainer2.Panel2.PerformLayout()
@@ -920,15 +847,8 @@ Partial Class RechercherPage
     Friend WithEvents SpliterMain As System.Windows.Forms.SplitContainer
     Friend WithEvents SplitContainer1 As System.Windows.Forms.SplitContainer
     Friend WithEvents ResidenceLabel As System.Windows.Forms.Label
-    Friend WithEvents LB_CODEPOS As System.Windows.Forms.Label
     Friend WithEvents LB_WILAYA As System.Windows.Forms.Label
-    Friend WithEvents TXT_CODEPOS As System.Windows.Forms.TextBox
-    Friend WithEvents LB_LIEUNA As System.Windows.Forms.Label
-    Friend WithEvents TXT_VILLE As System.Windows.Forms.TextBox
     Friend WithEvents LB_WILAYANA As System.Windows.Forms.Label
-    Friend WithEvents TXT_LIEUNA As System.Windows.Forms.TextBox
-    Friend WithEvents TXT_LIEUN As System.Windows.Forms.TextBox
-    Friend WithEvents LB_VILLE As System.Windows.Forms.Label
     Friend WithEvents CB_WILAYAN As System.Windows.Forms.ComboBox
     Friend WithEvents CB_WILAYANA As System.Windows.Forms.ComboBox
     Friend WithEvents CB_WILAYA As System.Windows.Forms.ComboBox
@@ -947,7 +867,6 @@ Partial Class RechercherPage
     Friend WithEvents worningrech As System.Windows.Forms.Label
     Friend WithEvents IMG_ALERTMAT As System.Windows.Forms.PictureBox
     Friend WithEvents IMG_ALERTMTB As System.Windows.Forms.PictureBox
-    Friend WithEvents IMG_ALERTCODPOS As System.Windows.Forms.PictureBox
     Friend WithEvents IMG_ALERTMOY As System.Windows.Forms.PictureBox
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents ProgressPanel As System.Windows.Forms.Panel
@@ -961,4 +880,6 @@ Partial Class RechercherPage
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
 End Class

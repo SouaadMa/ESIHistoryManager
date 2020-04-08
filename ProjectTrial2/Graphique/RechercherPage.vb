@@ -8,7 +8,7 @@
 
         'insialize the worning messages
         Me.worningrech.Visible = False
-        Me.IMG_ALERTCODPOS.Visible = False
+        'Me.IMG_ALERTCODPOS.Visible = False
         Me.IMG_ALERTMAT.Visible = False
         Me.IMG_ALERTMOY.Visible = False
         Me.IMG_ALERTMTB.Visible = False
@@ -81,7 +81,7 @@
 
         'no research if he had fill nothing
 
-        If Me.TXT_CODEPOS.Text = "" And Me.TXT_LIEUN.Text = "" And Me.TXT_LIEUNA.Text = "" And Me.TXT_MATRICUL.Text = "" And Me.TXT_MATRICULB.Text = "" And Me.TXT_MOYBAC.Text = "" And Me.TXT_NOM.Text = "" And Me.TXT_NOMA.Text = "" And Me.TXT_PRENOM.Text = "" And Me.TXT_PRENOMA.Text = "" And Me.TXT_VILLE.Text = "" And Me.CB_ANNEEB.Text = "" And Me.CB_SERI.Text = "" And Me.CB_SEXE.Text = "" And Me.CB_WILAYA.Text = "" And Me.CB_WILAYAB.Text = "" And Me.CB_WILAYAN.Text = "" And Me.CB_WILAYANA.Text = "" And Me.dtp_changed = False Then
+        If Me.TXT_MATRICUL.Text = "" And Me.TXT_MATRICULB.Text = "" And Me.TXT_MOYBAC.Text = "" And Me.TXT_NOM.Text = "" And Me.TXT_NOMA.Text = "" And Me.TXT_PRENOM.Text = "" And Me.TXT_PRENOMA.Text = "" And Me.CB_ANNEEB.Text = "" And Me.CB_SERI.Text = "" And Me.CB_SEXE.Text = "" And Me.CB_WILAYA.Text = "" And Me.CB_WILAYAB.Text = "" And Me.CB_WILAYAN.Text = "" And Me.CB_WILAYANA.Text = "" And Me.dtp_changed = False Then
             Me.worningrech.Visible = True
             Me.worningrech.Text = "Vous devez remplir en mois un champs !"
         Else
@@ -135,23 +135,23 @@
             End If
 
             'exeption pour le code postal
-            If Me.TXT_CODEPOS.Text <> "" Then
-                i = 0
-                While i < TXT_CODEPOS.Text.Length And Me.worningrech.Visible = False
-                    If Me.TXT_CODEPOS.Text(i) > "9" Or Me.TXT_CODEPOS.Text(i) < "0" Then
-                        Me.worningrech.Visible = True
-                        Me.worningrech.Text = "Vous devez remplir les champs correctement !"
-                        Me.IMG_ALERTCODPOS.Visible = True
-                    End If
-                    i = i + 1
-                End While
-            End If
+            'If Me.TXT_CODEPOS.Text <> "" Then
+            'i = 0
+            'While i < TXT_CODEPOS.Text.Length And Me.worningrech.Visible = False
+            'If Me.TXT_CODEPOS.Text(i) > "9" Or Me.TXT_CODEPOS.Text(i) < "0" Then
+            'Me.worningrech.Visible = True
+            ' Me.worningrech.Text = "Vous devez remplir les champs correctement !"
+            'Me.IMG_ALERTCODPOS.Visible = True
+            'End If
+            'i = i + 1
+            'End While
+            'End If
 
             'filling la collections des crietere
 
             Dim collection_critere As New List(Of Critere)
 
-            If (Me.worningrech.Visible = False And Me.IMG_ALERTCODPOS.Visible = False And Me.IMG_ALERTMOY.Visible = False And Me.IMG_ALERTMTB.Visible = False And Me.IMG_ALERTMAT.Visible = False) Then
+            If (Me.worningrech.Visible = False And Me.IMG_ALERTMOY.Visible = False And Me.IMG_ALERTMTB.Visible = False And Me.IMG_ALERTMAT.Visible = False) Then
 
                 If Me.TXT_NOM.Text <> "" Then
                     collection_critere.Add(New Critere("NomEtud", Me.TXT_NOM.Text))
@@ -182,13 +182,13 @@
                     collection_critere.Add(New Critere("DateNais", Me.DTP_DATEN.Text))
                 End If
 
-                If Me.TXT_LIEUNA.Text <> "" Then
-                    collection_critere.Add(New Critere("LieuNaisA", Me.TXT_LIEUNA.Text))
-                End If
+                'If Me.TXT_LIEUNA.Text <> "" Then
+                '    collection_critere.Add(New Critere("LieuNaisA", Me.TXT_LIEUNA.Text))
+                'End If
 
-                If Me.TXT_LIEUN.Text <> "" Then
-                    collection_critere.Add(New Critere("LieuNais", Me.TXT_LIEUN.Text))
-                End If
+                'If Me.TXT_LIEUN.Text <> "" Then
+                '    collection_critere.Add(New Critere("LieuNais", Me.TXT_LIEUN.Text))
+                'End If
 
                 If Me.CB_WILAYANA.Text <> "" Then
                     collection_critere.Add(New Critere("WilayaNaisA", Me.CB_WILAYANA.Text))
@@ -202,17 +202,17 @@
                 '    collection_critere.Add(New Critere("ADRESSE", Me.TXT_ADR.Text))
                 'End If
 
-                If Me.TXT_VILLE.Text <> "" Then
-                    collection_critere.Add(New Critere("VILLE", Me.TXT_VILLE.Text))
-                End If
+                'If Me.TXT_VILLE.Text <> "" Then
+                '    collection_critere.Add(New Critere("VILLE", Me.TXT_VILLE.Text))
+                'End If
 
                 If Me.CB_WILAYA.Text <> "" Then
                     collection_critere.Add(New Critere("WILAYA", Me.CB_WILAYA.Text))
                 End If
 
-                If Me.TXT_CODEPOS.Text <> "" Then
-                    collection_critere.Add(New Critere("CODEPOS", Me.TXT_CODEPOS.Text))
-                End If
+                'If Me.TXT_CODEPOS.Text <> "" Then
+                '    collection_critere.Add(New Critere("CODEPOS", Me.TXT_CODEPOS.Text))
+                'End If
 
                 If Me.CB_SEXE.Text <> "" Then
                     collection_critere.Add(New Critere("SEXE", Me.CB_SEXE.SelectedIndex))
@@ -259,10 +259,10 @@
 
     Private Sub ResidenceLabel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ResidenceLabel.Click
         'handle the residence caterorie label click
-        SpliterMain.SplitterDistance = IIf(SplitContainer1.Panel2Collapsed, 290, 25)    'adjust the spliter distance
+        SpliterMain.SplitterDistance = IIf(SplitContainer1.Panel2Collapsed, 190, 25)    'adjust the spliter distance
         SplitContainer1.Panel2Collapsed = Not SplitContainer1.Panel2Collapsed           'reverse the collapse state
         ResidenceLabel.ImageIndex = IIf(SplitContainer1.Panel2Collapsed, 0, 1)          'change the arrow image
-        RechButtons.Location = New Point(25, RechButtons.Location.Y + IIf(SplitContainer1.Panel2Collapsed, -265, 265)) 'adjust the search button position
+        RechButtons.Location = New Point(25, RechButtons.Location.Y + IIf(SplitContainer1.Panel2Collapsed, -180, 180)) 'adjust the search button position
     End Sub
 
     'handle the residence caterorie label click
@@ -277,7 +277,7 @@
         Me.dtp_changed = True
     End Sub
 
-    Private Sub TXT_LIEUN_GotFocus(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_LIEUN.GotFocus, TXT_LIEUN.TextChanged, TXT_LIEUN.Click
+    Private Sub TXT_LIEUN_GotFocus(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Me.worningrech.Visible = False
     End Sub
 
@@ -286,7 +286,7 @@
         Me.IMG_ALERTMAT.Visible = False
     End Sub
 
-    Private Sub TXT_LIEUNA_GotFocus(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_LIEUNA.GotFocus, TXT_LIEUNA.TextChanged, TXT_LIEUNA.Click
+    Private Sub TXT_LIEUNA_GotFocus(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Me.worningrech.Visible = False
     End Sub
 
@@ -327,7 +327,7 @@
         Me.worningrech.Visible = False
     End Sub
 
-    Private Sub TXT_VILLE_GotFocus(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_VILLE.GotFocus, TXT_VILLE.TextChanged, TXT_VILLE.Click
+    Private Sub TXT_VILLE_GotFocus(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Me.worningrech.Visible = False
     End Sub
 
@@ -335,9 +335,9 @@
         Me.worningrech.Visible = False
     End Sub
 
-    Private Sub TXT_CODEPOS_GotFocus(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_CODEPOS.GotFocus, TXT_CODEPOS.TextChanged, TXT_CODEPOS.Click
+    Private Sub TXT_CODEPOS_GotFocus(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Me.worningrech.Visible = False
-        Me.IMG_ALERTCODPOS.Visible = False
+        'Me.IMG_ALERTCODPOS.Visible = False
     End Sub
 
     Private Sub CB_WILAYAB_GotFocus(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CB_WILAYAB.GotFocus, CB_WILAYAB.TextChanged, CB_WILAYAB.Click

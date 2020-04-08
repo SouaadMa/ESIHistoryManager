@@ -6,6 +6,8 @@
     Public h As Form    ' the form that will be shown in the middle of the page for the nav bar operations
 
 
+
+
     Private Sub Home_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'initialize the home page componants
         Me.Size = New System.Drawing.Size(1024, 728)
@@ -21,6 +23,24 @@
 
         NavBar.Width = 795                      ' initialize the nav bar
         NavBar.Location = New System.Drawing.Point(58, 639)
+
+        Dim RNTip As ToolTip = New ToolTip()
+        RNTip.SetToolTip(RNButton, "RN")
+
+        Dim RNGTip As ToolTip = New ToolTip()
+        RNGTip.SetToolTip(RNGButton, "RNG")
+
+        Dim DetailTip As ToolTip = New ToolTip()
+        DetailTip.SetToolTip(DetailButton, "Details")
+
+        Dim HistoryTip As ToolTip = New ToolTip()
+        HistoryTip.SetToolTip(HistoryButton, "Historique")
+
+        Dim ImprimerTip As ToolTip = New ToolTip()
+        ImprimerTip.SetToolTip(PrintButton, "Imprimer")
+
+        Dim ModifTip As ToolTip = New ToolTip()
+        ModifTip.SetToolTip(ModifButton, "Modifier")
 
         If _ModeConnexion Then                  ' initialize th profile  bar according to the selected mode
             Me.mode_photo.Image = My.Resources.admin_mode
@@ -503,7 +523,6 @@
         End If
     End Sub
 
-    
 End Class
 
 

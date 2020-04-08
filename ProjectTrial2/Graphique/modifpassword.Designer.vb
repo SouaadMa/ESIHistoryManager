@@ -179,7 +179,7 @@ Partial Class modifpassword
         Me.AgentButton.Name = "AgentButton"
         Me.AgentButton.Size = New System.Drawing.Size(216, 96)
         Me.AgentButton.TabIndex = 10
-        Me.AgentButton.Text = "Agent"
+        Me.AgentButton.Text = "Employée"
         Me.AgentButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.AgentButton.UseVisualStyleBackColor = False
         '
@@ -205,7 +205,7 @@ Partial Class modifpassword
         Me.AdminButton.Name = "AdminButton"
         Me.AdminButton.Size = New System.Drawing.Size(216, 97)
         Me.AdminButton.TabIndex = 11
-        Me.AdminButton.Text = "Agent Administratif"
+        Me.AdminButton.Text = "Administrateur"
         Me.AdminButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.AdminButton.UseVisualStyleBackColor = False
         '

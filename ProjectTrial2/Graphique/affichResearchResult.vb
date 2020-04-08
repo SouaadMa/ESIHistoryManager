@@ -286,7 +286,7 @@
 
                 c = EtudiantPanel.Controls.Find("Label" + (i + 1).ToString + "_4", True)(0)
                 If c IsNot Nothing Then
-                    CType(c, Label).Text = StudentList.Item(cpt).GetInfoChamps("ADRESSE") + StudentList.Item(i).GetInfoChamps("VILLE") + StudentList.Item(i).GetInfoChamps("WILAYA")
+                    CType(c, Label).Text = StudentList.Item(i).GetInfoChamps("VILLE") + " " + StudentList.Item(i).GetInfoChamps("WILAYA")
                 End If
 
                 c = EtudiantPanel.Controls.Find("Label" + (i + 1).ToString + "_5", True)(0)

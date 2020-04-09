@@ -58,6 +58,8 @@
 
         Dim liste As New List(Of String)
 
+
+
         For Each ligne As DataRow In dt.Rows
 
             liste.Add(CType(ligne(champs), String))

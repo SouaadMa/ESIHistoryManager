@@ -1,7 +1,35 @@
 ﻿Public Class Classement
     'Classe pour la fonctionnalité du classement et du tri des étudiants
 
-    ' Méthode pour le classement ascendant
+
+    ' Méthode pour le tri ascendant d'une datatable 
+    Public Shared Function SortASCCollection(ByVal table As DataTable, ByVal champs As String) As DataTable
+
+        Dim dataview As New DataView(table)
+
+        dataview.Sort = champs + "ASC"
+
+        Return dataview.ToTable
+
+
+    End Function
+
+
+    ' Méthode pour le tri ascendant d'une datatable 
+    Public Shared Function SortDESCollection(ByVal table As DataTable, ByVal champs As String) As DataTable
+
+        Dim dataview As New DataView(table)
+
+        dataview.Sort = champs + "DESC"
+
+        Return dataview.ToTable
+
+
+    End Function
+
+
+
+    ' Méthode pour le classement ascendant d'une collection d'étudiants
     Public Shared Function SortASCCollection(ByVal collection As List(Of Etudiant), ByVal champs As String) As List(Of Etudiant)
 
         ' Création du comparateur selon le champs donné
@@ -14,7 +42,7 @@
         Return collection
     End Function
 
-    ' Méthode pour le classement descendant
+    ' Méthode pour le classement descendant d'une collection d'étudiants
     Public Shared Function SortDESCollection(ByVal collection As List(Of Etudiant), ByVal champs As String) As List(Of Etudiant)
 
         ' Création du comparateur selon le champs donné

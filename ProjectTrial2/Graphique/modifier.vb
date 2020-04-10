@@ -1,6 +1,6 @@
 ﻿Public Class modifier
 
-    Dim worning_format As Boolean
+    Public worning_format As Boolean
     Dim esistselect As Etudiant ' letudiant selection f affichresult
 
     Public Sub New(ByVal e As Etudiant)
@@ -66,17 +66,17 @@
         'initialiser :
 
         'inisialiser les wilayas combobox
-        For Each Critere As String In InfosGenerales.wilaya
+        For Each Critere As String In Login.Infosgenerale.wilaya
             'Me.CB_WILAYAB.Items.Add(Critere)
             Me.CB_WILAYA.Items.Add(Critere)
         Next
 
-        For Each Critere As String In InfosGenerales.wilayaarabe
+        For Each Critere As String In Login.Infosgenerale.wilayaarabe
             Me.CB_WILAYANA.Items.Add(Critere)
         Next
 
-        For i = 1 To InfosGenerales.wilaya.Count
-            Me.CB_WILAYAN.Items.Add(i)
+        For Each Critere As String In Login.Infosgenerale.codewilaya
+            Me.CB_WILAYAN.Items.Add(Critere)
         Next
 
         'inisialize sexe combobox 
@@ -748,6 +748,9 @@
 
             If Me.CB_WILAYA.Text <> esistselect.GetInfoChamps("WILAYA") And Me.CB_WILAYA.Text <> "" Then
                 collection_critere.Add(New Critere("WILAYA", Me.CB_WILAYA.Text, "ETUDIANT"))
+                If (Login.Infosgenerale.wilaya.Contains(Me.CB_WILAYA.Text) = False) Then
+                    Login.Infosgenerale.wilaya.Add(Me.CB_WILAYA.Text)
+                End If
             End If
 
 
@@ -757,10 +760,16 @@
 
             If Me.CB_WILAYAN.Text <> esistselect.GetInfoChamps("WILNAIS") And Me.CB_WILAYAN.Text <> "" Then
                 collection_critere.Add(New Critere("WILNAIS", Me.CB_WILAYAN.Text, "ETUDIANT"))
+                If (Login.Infosgenerale.codewilaya.Contains(Me.CB_WILAYAN.Text) = False) Then
+                    Login.Infosgenerale.codewilaya.Add(Me.CB_WILAYAN.Text)
+                End If
             End If
 
             If Me.CB_WILAYANA.Text <> esistselect.GetInfoChamps("WILNAISA") And Me.CB_WILAYANA.Text <> "" Then
                 collection_critere.Add(New Critere("WILNAISA", Me.CB_WILAYANA.Text, "ETUDIANT"))
+                If (Login.Infosgenerale.wilayaarabe.Contains(Me.CB_WILAYANA.Text) = False) Then
+                    Login.Infosgenerale.wilayaarabe.Add(Me.CB_WILAYANA.Text)
+                End If
             End If
 
 

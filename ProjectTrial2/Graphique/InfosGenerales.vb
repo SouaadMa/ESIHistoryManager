@@ -18,6 +18,17 @@ Public Class InfosGenerales
         wilayaarabe = Recherche.GetALL(BDD.champsWilayaNaisA)
         seribac = Recherche.GetALL(BDD.champsSERIEBAC)
         codewilaya = Recherche.GetALL(BDD.champsWILNAIS)
+
+        For Each item As String In seribac
+            'Console.WriteLine("tatatata")
+            Console.WriteLine(item)
+        Next
+
+
+
+        'Console.WriteLine(wilayaarabe.ToString)
+        'Console.WriteLine(seribac.ToString)
+        'Console.WriteLine(codewilaya.ToString)
     End Sub
 
 End Class

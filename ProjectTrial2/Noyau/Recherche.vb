@@ -60,11 +60,17 @@
 
         Dim liste As New List(Of String)
 
-
+        'MsgBox("GetALLRech")
 
         For Each ligne As DataRow In dt.Rows
 
-            liste.Add(CType(ligne(champs), String))
+            Try
+                liste.Add(CType(ligne(champs), String))
+            Catch ex As Exception
+                'MsgBox(ex.Message)
+                liste.Add(" ")
+            End Try
+
 
         Next
 

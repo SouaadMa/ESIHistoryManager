@@ -53,7 +53,7 @@ Public Class Rech_BDD
             End Try
             If found Then                                       ' Si le champ donnée existe dans la base de donnée
                 If stringvide(instructionSQL) Then                     ' Si la requete donnée vide ou contient seulement des espaces
-                    instructionSQL = " SELECT * FROM INSCRIPTION WHERE "  ' -> affecter la valeur d'une requete de rechercher retourne tout les champs de tableau ETUDIANT
+                    instructionSQL = " SELECT * FROM Etudiant WHERE "  ' -> affecter la valeur d'une requete de rechercher retourne tout les champs de tableau ETUDIANT
                 ElseIf instructionSQL.Contains("WHERE") Then           ' Sinon, Si la instructionSQL contient WHERE
                     If Not LastWord(instructionSQL, "WHERE") Then      '-> Si WHERE n'est pas la derniere mot de instructionSQL
                         instructionSQL = instructionSQL + " AND "                    '-> ajouter un vergule "," au instructionSQL 

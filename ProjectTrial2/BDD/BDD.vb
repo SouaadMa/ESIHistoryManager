@@ -3,9 +3,9 @@
 Public Class BDD
 
     'Les noms des tables de la BDD
-    Public Const nomTableEtudiant = "Etudiant", nomTableINSCRIPTION = "INSCRIPTION"
+    Public Const nomTableEtudiant = "ETUDIANT", nomTableINSCRIPTION = "INSCRIPTION"
     Public Const nomTableNOTE = "NOTE", nomTableNoteRATRAP = "NoteRATRAP"
-    Public Const nomTableGROUP = "GROUP", nomTableSection = "Section"
+    Public Const nomTableGROUP = "GROUP", nomTableSection = "SECTION"
     Public Const nomTablePROMO = "PROMO", nomTableMATIERE = "MATIERE"
     Public Const nomTableRATRAP = "RATRAP"
 
@@ -217,7 +217,11 @@ Public Class BDD
 
     Public Shared Function executeRequete(ByVal requete As String) As DataTable
         'retourner un dataTable contenant les étudiants qui vérifient la requête
-        Dim cnx As OleDbConnection = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\VISUAL.accdb")  'la connexion à la BDD
+
+
+        Dim cnx As OleDbConnection = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\BDD_TABLES_ECLATES.accdb")  'la connexion à la BDD
+
+
         Dim cmd As OleDbCommand                     ' la commande
         Dim ta As OleDbDataAdapter                  ' le Data Adapter
         Dim dts As New DataSet                      ' le Data Set
@@ -226,6 +230,7 @@ Public Class BDD
         dt = New DataTable()
 
         Try
+            'Console.WriteLine("problem here0")
             cnx.Open()                               ' ouvrir la connection avec la base de données
             'Console.WriteLine("problem here1")
             cmd = New OleDbCommand(requete, cnx) ' la connection au commande
@@ -253,6 +258,7 @@ Public Class BDD
     Public Shared Function getInfoBDD(ByVal champs As String, ByVal matricule As String) As String
         ' retourner une information d'un champ spécifié "champs"  d'un étudiant idantifié par son "MATRICULE" 
 
+        'MsgBox("INSIDE GETINFO")
 
         Dim da As New OleDb.OleDbDataAdapter        'le data adapter
         Dim con As OleDb.OleDbConnection = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;data source=..\..\VISUAL.accdb")       'la connexion à la BDD
@@ -494,6 +500,8 @@ Public Class BDD
         If ExisteDansTable(nomChamps, nomTable) Then
 
             Dim SqlQuery = "SELECT DISTINCT " & nomChamps & " FROM " & nomTable & ";"
+
+            'MsgBox("before execute")
 
             Return executeRequete(SqlQuery)
 

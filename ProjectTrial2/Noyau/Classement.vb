@@ -5,29 +5,18 @@
     ' Méthode pour le tri ascendant d'une datatable 
     Public Shared Function SortASCCollection(ByVal table As DataTable, ByVal champs As String) As DataTable
 
-        Dim dataview As New DataView(table)
-
-        dataview.Sort = champs + "ASC"
-
-        Return dataview.ToTable
-
+        table.DefaultView.Sort = champs + " ASC"
+        Return table.DefaultView.ToTable
 
     End Function
-
 
     ' Méthode pour le tri ascendant d'une datatable 
     Public Shared Function SortDESCollection(ByVal table As DataTable, ByVal champs As String) As DataTable
 
-        Dim dataview As New DataView(table)
-
-        dataview.Sort = champs + "DESC"
-
-        Return dataview.ToTable
-
+        table.DefaultView.Sort = champs + " DESC"
+        Return table.DefaultView.ToTable
 
     End Function
-
-
 
     ' Méthode pour le classement ascendant d'une collection d'étudiants
     Public Shared Function SortASCCollection(ByVal collection As List(Of Etudiant), ByVal champs As String) As List(Of Etudiant)

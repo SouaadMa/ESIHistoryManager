@@ -25,73 +25,74 @@ Partial Class ClassementPage
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ClassementPage))
         Me.FlecheList = New System.Windows.Forms.ImageList(Me.components)
+        Me.Label2_5 = New System.Windows.Forms.Label()
         Me.AffPanel = New System.Windows.Forms.Panel()
         Me.EtudiantPanel = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel7 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7_5 = New System.Windows.Forms.Label()
         Me.Label7_4 = New System.Windows.Forms.Label()
         Me.Label7_3 = New System.Windows.Forms.Label()
         Me.Label7_2 = New System.Windows.Forms.Label()
         Me.Label7_1 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6_5 = New System.Windows.Forms.Label()
         Me.Label6_4 = New System.Windows.Forms.Label()
         Me.Label6_3 = New System.Windows.Forms.Label()
         Me.Label6_2 = New System.Windows.Forms.Label()
         Me.Label6_1 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5_4 = New System.Windows.Forms.Label()
         Me.Label5_5 = New System.Windows.Forms.Label()
         Me.Label5_3 = New System.Windows.Forms.Label()
         Me.Label5_2 = New System.Windows.Forms.Label()
         Me.Label5_1 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4_4 = New System.Windows.Forms.Label()
         Me.Label4_5 = New System.Windows.Forms.Label()
         Me.Label4_3 = New System.Windows.Forms.Label()
         Me.Label4_2 = New System.Windows.Forms.Label()
         Me.Label4_1 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3_5 = New System.Windows.Forms.Label()
         Me.Label3_4 = New System.Windows.Forms.Label()
         Me.Label3_3 = New System.Windows.Forms.Label()
         Me.Label3_2 = New System.Windows.Forms.Label()
         Me.Label3_1 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Label2_5 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2_4 = New System.Windows.Forms.Label()
         Me.Label2_3 = New System.Windows.Forms.Label()
         Me.Label2_2 = New System.Windows.Forms.Label()
         Me.Label2_1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label1_4 = New System.Windows.Forms.Label()
-        Me.Label1_5 = New System.Windows.Forms.Label()
         Me.Label1_3 = New System.Windows.Forms.Label()
         Me.Label1_2 = New System.Windows.Forms.Label()
         Me.Label1_1 = New System.Windows.Forms.Label()
+        Me.Label1_5 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.PN_PAGES = New System.Windows.Forms.Panel()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.BT_PREV = New System.Windows.Forms.Button()
-        Me.BT_NEXT = New System.Windows.Forms.Button()
-        Me.IntroPanel = New System.Windows.Forms.Panel()
-        Me.LB_INFOAFFICH = New System.Windows.Forms.Label()
-        Me.RechLabel = New System.Windows.Forms.Label()
-        Me.NoResultLabel = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
-        Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.PromoButton = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.BT_NEXT = New System.Windows.Forms.Button()
+        Me.BT_PREV = New System.Windows.Forms.Button()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.PromoButton = New System.Windows.Forms.Button()
+        Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.IntroPanel = New System.Windows.Forms.Panel()
+        Me.LB_INFOAFFICH = New System.Windows.Forms.Label()
+        Me.RechLabel = New System.Windows.Forms.Label()
+        Me.NoResultLabel = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.AffPanel.SuspendLayout()
         Me.EtudiantPanel.SuspendLayout()
         Me.TableLayoutPanel7.SuspendLayout()
@@ -102,10 +103,10 @@ Partial Class ClassementPage
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.PN_PAGES.SuspendLayout()
-        Me.Panel1.SuspendLayout()
-        Me.IntroPanel.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.ShapeContainer1.SuspendLayout()
+        Me.IntroPanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'FlecheList
@@ -114,6 +115,18 @@ Partial Class ClassementPage
         Me.FlecheList.TransparentColor = System.Drawing.Color.Transparent
         Me.FlecheList.Images.SetKeyName(0, "fleche ascendant.png")
         Me.FlecheList.Images.SetKeyName(1, "fleche decendant.png")
+        '
+        'Label2_5
+        '
+        Me.Label2_5.AutoEllipsis = True
+        Me.Label2_5.AutoSize = True
+        Me.Label2_5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label2_5.Location = New System.Drawing.Point(632, 2)
+        Me.Label2_5.Name = "Label2_5"
+        Me.Label2_5.Size = New System.Drawing.Size(16, 63)
+        Me.Label2_5.TabIndex = 5
+        Me.Label2_5.Text = "adresseLabel"
+        Me.Label2_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'AffPanel
         '
@@ -177,6 +190,18 @@ Partial Class ClassementPage
         Me.TableLayoutPanel7.Size = New System.Drawing.Size(653, 67)
         Me.TableLayoutPanel7.TabIndex = 6
         '
+        'Label8
+        '
+        Me.Label8.AutoEllipsis = True
+        Me.Label8.AutoSize = True
+        Me.Label8.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label8.Location = New System.Drawing.Point(5, 2)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(58, 63)
+        Me.Label8.TabIndex = 8
+        Me.Label8.Text = "RankingLabel"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'Label7_5
         '
         Me.Label7_5.AutoEllipsis = True
@@ -186,7 +211,7 @@ Partial Class ClassementPage
         Me.Label7_5.Name = "Label7_5"
         Me.Label7_5.Size = New System.Drawing.Size(115, 63)
         Me.Label7_5.TabIndex = 5
-        Me.Label7_5.Text = "adresseLabel"
+        Me.Label7_5.Text = "mentionLabel"
         Me.Label7_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label7_4
@@ -210,7 +235,7 @@ Partial Class ClassementPage
         Me.Label7_3.Name = "Label7_3"
         Me.Label7_3.Size = New System.Drawing.Size(110, 63)
         Me.Label7_3.TabIndex = 3
-        Me.Label7_3.Text = "MaticuleLabel"
+        Me.Label7_3.Text = "MatriculeLabel"
         Me.Label7_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label7_2
@@ -266,6 +291,18 @@ Partial Class ClassementPage
         Me.TableLayoutPanel6.Size = New System.Drawing.Size(653, 67)
         Me.TableLayoutPanel6.TabIndex = 5
         '
+        'Label7
+        '
+        Me.Label7.AutoEllipsis = True
+        Me.Label7.AutoSize = True
+        Me.Label7.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label7.Location = New System.Drawing.Point(5, 2)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(58, 63)
+        Me.Label7.TabIndex = 8
+        Me.Label7.Text = "RankingLabel"
+        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'Label6_5
         '
         Me.Label6_5.AutoEllipsis = True
@@ -275,7 +312,7 @@ Partial Class ClassementPage
         Me.Label6_5.Name = "Label6_5"
         Me.Label6_5.Size = New System.Drawing.Size(115, 63)
         Me.Label6_5.TabIndex = 5
-        Me.Label6_5.Text = "adresseLabel"
+        Me.Label6_5.Text = "mentionLabel"
         Me.Label6_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label6_4
@@ -299,7 +336,7 @@ Partial Class ClassementPage
         Me.Label6_3.Name = "Label6_3"
         Me.Label6_3.Size = New System.Drawing.Size(110, 63)
         Me.Label6_3.TabIndex = 3
-        Me.Label6_3.Text = "MaticuleLabel"
+        Me.Label6_3.Text = "MatriculeLabel"
         Me.Label6_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label6_2
@@ -355,6 +392,18 @@ Partial Class ClassementPage
         Me.TableLayoutPanel5.Size = New System.Drawing.Size(653, 67)
         Me.TableLayoutPanel5.TabIndex = 4
         '
+        'Label6
+        '
+        Me.Label6.AutoEllipsis = True
+        Me.Label6.AutoSize = True
+        Me.Label6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label6.Location = New System.Drawing.Point(5, 2)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(58, 63)
+        Me.Label6.TabIndex = 8
+        Me.Label6.Text = "RankingLabel"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'Label5_4
         '
         Me.Label5_4.AutoEllipsis = True
@@ -376,7 +425,7 @@ Partial Class ClassementPage
         Me.Label5_5.Name = "Label5_5"
         Me.Label5_5.Size = New System.Drawing.Size(115, 63)
         Me.Label5_5.TabIndex = 4
-        Me.Label5_5.Text = "adresseLabel"
+        Me.Label5_5.Text = "mentionLabel"
         Me.Label5_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label5_3
@@ -388,7 +437,7 @@ Partial Class ClassementPage
         Me.Label5_3.Name = "Label5_3"
         Me.Label5_3.Size = New System.Drawing.Size(110, 63)
         Me.Label5_3.TabIndex = 3
-        Me.Label5_3.Text = "MaticuleLabel"
+        Me.Label5_3.Text = "MatriculeLabel"
         Me.Label5_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label5_2
@@ -444,6 +493,18 @@ Partial Class ClassementPage
         Me.TableLayoutPanel4.Size = New System.Drawing.Size(653, 67)
         Me.TableLayoutPanel4.TabIndex = 3
         '
+        'Label5
+        '
+        Me.Label5.AutoEllipsis = True
+        Me.Label5.AutoSize = True
+        Me.Label5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label5.Location = New System.Drawing.Point(5, 2)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(58, 63)
+        Me.Label5.TabIndex = 8
+        Me.Label5.Text = "RankingLabel"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'Label4_4
         '
         Me.Label4_4.AutoEllipsis = True
@@ -465,7 +526,7 @@ Partial Class ClassementPage
         Me.Label4_5.Name = "Label4_5"
         Me.Label4_5.Size = New System.Drawing.Size(115, 63)
         Me.Label4_5.TabIndex = 4
-        Me.Label4_5.Text = "adresseLabel"
+        Me.Label4_5.Text = "mentionLabel"
         Me.Label4_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label4_3
@@ -477,7 +538,7 @@ Partial Class ClassementPage
         Me.Label4_3.Name = "Label4_3"
         Me.Label4_3.Size = New System.Drawing.Size(110, 63)
         Me.Label4_3.TabIndex = 3
-        Me.Label4_3.Text = "MaticuleLabel"
+        Me.Label4_3.Text = "MatriculeLabel"
         Me.Label4_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label4_2
@@ -533,6 +594,18 @@ Partial Class ClassementPage
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(653, 67)
         Me.TableLayoutPanel3.TabIndex = 2
         '
+        'Label4
+        '
+        Me.Label4.AutoEllipsis = True
+        Me.Label4.AutoSize = True
+        Me.Label4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label4.Location = New System.Drawing.Point(5, 2)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(58, 63)
+        Me.Label4.TabIndex = 8
+        Me.Label4.Text = "RankingLabel"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'Label3_5
         '
         Me.Label3_5.AutoEllipsis = True
@@ -542,7 +615,7 @@ Partial Class ClassementPage
         Me.Label3_5.Name = "Label3_5"
         Me.Label3_5.Size = New System.Drawing.Size(115, 63)
         Me.Label3_5.TabIndex = 5
-        Me.Label3_5.Text = "adresseLabel"
+        Me.Label3_5.Text = "mentionLabel"
         Me.Label3_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label3_4
@@ -566,7 +639,7 @@ Partial Class ClassementPage
         Me.Label3_3.Name = "Label3_3"
         Me.Label3_3.Size = New System.Drawing.Size(110, 63)
         Me.Label3_3.TabIndex = 3
-        Me.Label3_3.Text = "MaticuleLabel"
+        Me.Label3_3.Text = "MatriculeLabel"
         Me.Label3_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label3_2
@@ -622,17 +695,17 @@ Partial Class ClassementPage
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(653, 67)
         Me.TableLayoutPanel2.TabIndex = 1
         '
-        'Label2_5
+        'Label3
         '
-        Me.Label2_5.AutoEllipsis = True
-        Me.Label2_5.AutoSize = True
-        Me.Label2_5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label2_5.Location = New System.Drawing.Point(632, 2)
-        Me.Label2_5.Name = "Label2_5"
-        Me.Label2_5.Size = New System.Drawing.Size(16, 63)
-        Me.Label2_5.TabIndex = 5
-        Me.Label2_5.Text = "adresseLabel"
-        Me.Label2_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label3.AutoEllipsis = True
+        Me.Label3.AutoSize = True
+        Me.Label3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label3.Location = New System.Drawing.Point(5, 2)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(58, 63)
+        Me.Label3.TabIndex = 7
+        Me.Label3.Text = "RankingLabel"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label2_4
         '
@@ -655,7 +728,7 @@ Partial Class ClassementPage
         Me.Label2_3.Name = "Label2_3"
         Me.Label2_3.Size = New System.Drawing.Size(110, 63)
         Me.Label2_3.TabIndex = 3
-        Me.Label2_3.Text = "MaticuleLabel"
+        Me.Label2_3.Text = "MatriculeLabel"
         Me.Label2_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label2_2
@@ -681,6 +754,18 @@ Partial Class ClassementPage
         Me.Label2_1.TabIndex = 1
         Me.Label2_1.Text = "NameLabel"
         Me.Label2_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label2
+        '
+        Me.Label2.AutoEllipsis = True
+        Me.Label2.AutoSize = True
+        Me.Label2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label2.Location = New System.Drawing.Point(533, 2)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(115, 63)
+        Me.Label2.TabIndex = 6
+        Me.Label2.Text = "mentionLabel"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'TableLayoutPanel1
         '
@@ -724,18 +809,6 @@ Partial Class ClassementPage
         Me.Label1_4.Text = "MoyenneLabel"
         Me.Label1_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label1_5
-        '
-        Me.Label1_5.AutoEllipsis = True
-        Me.Label1_5.AutoSize = True
-        Me.Label1_5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label1_5.Location = New System.Drawing.Point(5, 2)
-        Me.Label1_5.Name = "Label1_5"
-        Me.Label1_5.Size = New System.Drawing.Size(58, 63)
-        Me.Label1_5.TabIndex = 3
-        Me.Label1_5.Text = "RankingLabel"
-        Me.Label1_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'Label1_3
         '
         Me.Label1_3.AutoEllipsis = True
@@ -745,7 +818,7 @@ Partial Class ClassementPage
         Me.Label1_3.Name = "Label1_3"
         Me.Label1_3.Size = New System.Drawing.Size(110, 63)
         Me.Label1_3.TabIndex = 2
-        Me.Label1_3.Text = "MaticuleLabel"
+        Me.Label1_3.Text = "MatriculeLabel"
         Me.Label1_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label1_2
@@ -772,9 +845,34 @@ Partial Class ClassementPage
         Me.Label1_1.Text = "NameLabel"
         Me.Label1_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'Label1_5
+        '
+        Me.Label1_5.AutoEllipsis = True
+        Me.Label1_5.AutoSize = True
+        Me.Label1_5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label1_5.Location = New System.Drawing.Point(5, 2)
+        Me.Label1_5.Name = "Label1_5"
+        Me.Label1_5.Size = New System.Drawing.Size(58, 63)
+        Me.Label1_5.TabIndex = 3
+        Me.Label1_5.Text = "RankingLabel"
+        Me.Label1_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label1
+        '
+        Me.Label1.AutoEllipsis = True
+        Me.Label1.AutoSize = True
+        Me.Label1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label1.Location = New System.Drawing.Point(533, 2)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(115, 63)
+        Me.Label1.TabIndex = 5
+        Me.Label1.Text = "mentionLabel"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'PN_PAGES
         '
         Me.PN_PAGES.BackColor = System.Drawing.Color.Transparent
+        Me.PN_PAGES.Controls.Add(Me.PromoButton)
         Me.PN_PAGES.Controls.Add(Me.Panel2)
         Me.PN_PAGES.Controls.Add(Me.Panel1)
         Me.PN_PAGES.Dock = System.Windows.Forms.DockStyle.Bottom
@@ -785,6 +883,71 @@ Partial Class ClassementPage
         Me.PN_PAGES.Size = New System.Drawing.Size(658, 91)
         Me.PN_PAGES.TabIndex = 25
         '
+        'Panel2
+        '
+        Me.Panel2.AutoSize = True
+        Me.Panel2.Controls.Add(Me.Button1)
+        Me.Panel2.Controls.Add(Me.Button2)
+        Me.Panel2.Controls.Add(Me.Button4)
+        Me.Panel2.Location = New System.Drawing.Point(523, 36)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(75, 26)
+        Me.Panel2.TabIndex = 9
+        '
+        'Button1
+        '
+        Me.Button1.AutoSize = True
+        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(2, 2)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(22, 22)
+        Me.Button1.TabIndex = 5
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.AutoSize = True
+        Me.Button2.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.Ellipse_4
+        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.White
+        Me.Button2.Location = New System.Drawing.Point(27, 2)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(21, 22)
+        Me.Button2.TabIndex = 6
+        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.AutoSize = True
+        Me.Button4.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.Ellipse_4
+        Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button4.FlatAppearance.BorderSize = 0
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.ForeColor = System.Drawing.Color.White
+        Me.Button4.Location = New System.Drawing.Point(51, 2)
+        Me.Button4.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(21, 22)
+        Me.Button4.TabIndex = 7
+        Me.Button4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.BT_NEXT)
@@ -794,6 +957,21 @@ Partial Class ClassementPage
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(160, 41)
         Me.Panel1.TabIndex = 9
+        '
+        'BT_NEXT
+        '
+        Me.BT_NEXT.AutoSize = True
+        Me.BT_NEXT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.BT_NEXT.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BT_NEXT.FlatAppearance.BorderSize = 0
+        Me.BT_NEXT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BT_NEXT.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.next1
+        Me.BT_NEXT.Location = New System.Drawing.Point(120, 0)
+        Me.BT_NEXT.Margin = New System.Windows.Forms.Padding(0)
+        Me.BT_NEXT.Name = "BT_NEXT"
+        Me.BT_NEXT.Size = New System.Drawing.Size(36, 42)
+        Me.BT_NEXT.TabIndex = 5
+        Me.BT_NEXT.UseVisualStyleBackColor = True
         '
         'BT_PREV
         '
@@ -811,20 +989,45 @@ Partial Class ClassementPage
         Me.BT_PREV.TabIndex = 0
         Me.BT_PREV.UseVisualStyleBackColor = True
         '
-        'BT_NEXT
+        'ShapeContainer1
         '
-        Me.BT_NEXT.AutoSize = True
-        Me.BT_NEXT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.BT_NEXT.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BT_NEXT.FlatAppearance.BorderSize = 0
-        Me.BT_NEXT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BT_NEXT.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.next1
-        Me.BT_NEXT.Location = New System.Drawing.Point(120, 0)
-        Me.BT_NEXT.Margin = New System.Windows.Forms.Padding(0)
-        Me.BT_NEXT.Name = "BT_NEXT"
-        Me.BT_NEXT.Size = New System.Drawing.Size(36, 42)
-        Me.BT_NEXT.TabIndex = 5
-        Me.BT_NEXT.UseVisualStyleBackColor = True
+        Me.ShapeContainer1.Controls.Add(Me.ComboBox1)
+        Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
+        Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer1.Name = "ShapeContainer1"
+        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape1})
+        Me.ShapeContainer1.Size = New System.Drawing.Size(160, 41)
+        Me.ShapeContainer1.TabIndex = 6
+        Me.ShapeContainer1.TabStop = False
+        '
+        'PromoButton
+        '
+        Me.PromoButton.AutoSize = True
+        Me.PromoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PromoButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PromoButton.FlatAppearance.BorderSize = 0
+        Me.PromoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.PromoButton.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PromoButton.ForeColor = System.Drawing.Color.White
+        Me.PromoButton.Location = New System.Drawing.Point(17, 27)
+        Me.PromoButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.PromoButton.Name = "PromoButton"
+        Me.PromoButton.Size = New System.Drawing.Size(66, 29)
+        Me.PromoButton.TabIndex = 8
+        Me.PromoButton.Text = "2000"
+        Me.PromoButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.PromoButton.UseVisualStyleBackColor = True
+        '
+        'RectangleShape1
+        '
+        Me.RectangleShape1.BorderColor = System.Drawing.SystemColors.ButtonFace
+        Me.RectangleShape1.CornerRadius = 17
+        Me.RectangleShape1.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.RectangleShape1.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
+        Me.RectangleShape1.Location = New System.Drawing.Point(39, 3)
+        Me.RectangleShape1.Name = "RectangleShape1"
+        Me.RectangleShape1.SelectionColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.RectangleShape1.Size = New System.Drawing.Size(80, 35)
         '
         'IntroPanel
         '
@@ -875,209 +1078,15 @@ Partial Class ClassementPage
         Me.NoResultLabel.TabIndex = 28
         Me.NoResultLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'Panel2
+        'ComboBox1
         '
-        Me.Panel2.AutoSize = True
-        Me.Panel2.Controls.Add(Me.Button1)
-        Me.Panel2.Controls.Add(Me.Button2)
-        Me.Panel2.Controls.Add(Me.Button4)
-        Me.Panel2.Location = New System.Drawing.Point(523, 36)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(102, 34)
-        Me.Panel2.TabIndex = 9
-        '
-        'Button1
-        '
-        Me.Button1.AutoSize = True
-        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(2, 2)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(30, 30)
-        Me.Button1.TabIndex = 5
-        Me.Button1.Text = "1"
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.AutoSize = True
-        Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
-        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(36, 2)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(30, 30)
-        Me.Button2.TabIndex = 6
-        Me.Button2.Text = "2"
-        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button4
-        '
-        Me.Button4.AutoSize = True
-        Me.Button4.BackgroundImage = CType(resources.GetObject("Button4.BackgroundImage"), System.Drawing.Image)
-        Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button4.FlatAppearance.BorderSize = 0
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.ForeColor = System.Drawing.Color.White
-        Me.Button4.Location = New System.Drawing.Point(70, 2)
-        Me.Button4.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(30, 30)
-        Me.Button4.TabIndex = 7
-        Me.Button4.Text = "3"
-        Me.Button4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'RectangleShape1
-        '
-        Me.RectangleShape1.BorderColor = System.Drawing.SystemColors.ButtonFace
-        Me.RectangleShape1.CornerRadius = 17
-        Me.RectangleShape1.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.RectangleShape1.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
-        Me.RectangleShape1.Location = New System.Drawing.Point(39, 3)
-        Me.RectangleShape1.Name = "RectangleShape1"
-        Me.RectangleShape1.SelectionColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.RectangleShape1.Size = New System.Drawing.Size(80, 35)
-        '
-        'PromoButton
-        '
-        Me.PromoButton.AutoSize = True
-        Me.PromoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PromoButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PromoButton.FlatAppearance.BorderSize = 0
-        Me.PromoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.PromoButton.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PromoButton.ForeColor = System.Drawing.Color.White
-        Me.PromoButton.Location = New System.Drawing.Point(46, 7)
-        Me.PromoButton.Margin = New System.Windows.Forms.Padding(2)
-        Me.PromoButton.Name = "PromoButton"
-        Me.PromoButton.Size = New System.Drawing.Size(66, 29)
-        Me.PromoButton.TabIndex = 8
-        Me.PromoButton.Text = "2000"
-        Me.PromoButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.PromoButton.UseVisualStyleBackColor = True
-        '
-        'ShapeContainer1
-        '
-        Me.ShapeContainer1.Controls.Add(Me.PromoButton)
-        Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
-        Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
-        Me.ShapeContainer1.Name = "ShapeContainer1"
-        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(160, 41)
-        Me.ShapeContainer1.TabIndex = 6
-        Me.ShapeContainer1.TabStop = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoEllipsis = True
-        Me.Label1.AutoSize = True
-        Me.Label1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label1.Location = New System.Drawing.Point(533, 2)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(115, 63)
-        Me.Label1.TabIndex = 5
-        Me.Label1.Text = "NameLabel"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label2
-        '
-        Me.Label2.AutoEllipsis = True
-        Me.Label2.AutoSize = True
-        Me.Label2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label2.Location = New System.Drawing.Point(533, 2)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(115, 63)
-        Me.Label2.TabIndex = 6
-        Me.Label2.Text = "adresseLabel"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label3
-        '
-        Me.Label3.AutoEllipsis = True
-        Me.Label3.AutoSize = True
-        Me.Label3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label3.Location = New System.Drawing.Point(5, 2)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(58, 63)
-        Me.Label3.TabIndex = 7
-        Me.Label3.Text = "RankingLabel"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label4
-        '
-        Me.Label4.AutoEllipsis = True
-        Me.Label4.AutoSize = True
-        Me.Label4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label4.Location = New System.Drawing.Point(5, 2)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(58, 63)
-        Me.Label4.TabIndex = 8
-        Me.Label4.Text = "RankingLabel"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label5
-        '
-        Me.Label5.AutoEllipsis = True
-        Me.Label5.AutoSize = True
-        Me.Label5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label5.Location = New System.Drawing.Point(5, 2)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(58, 63)
-        Me.Label5.TabIndex = 8
-        Me.Label5.Text = "RankingLabel"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label6
-        '
-        Me.Label6.AutoEllipsis = True
-        Me.Label6.AutoSize = True
-        Me.Label6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label6.Location = New System.Drawing.Point(5, 2)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(58, 63)
-        Me.Label6.TabIndex = 8
-        Me.Label6.Text = "RankingLabel"
-        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label7
-        '
-        Me.Label7.AutoEllipsis = True
-        Me.Label7.AutoSize = True
-        Me.Label7.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label7.Location = New System.Drawing.Point(5, 2)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(58, 63)
-        Me.Label7.TabIndex = 8
-        Me.Label7.Text = "RankingLabel"
-        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label8
-        '
-        Me.Label8.AutoEllipsis = True
-        Me.Label8.AutoSize = True
-        Me.Label8.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label8.Location = New System.Drawing.Point(5, 2)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(58, 63)
-        Me.Label8.TabIndex = 8
-        Me.Label8.Text = "RankingLabel"
-        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.ComboBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.ComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(50, 10)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(66, 21)
+        Me.ComboBox1.TabIndex = 10
         '
         'ClassementPage
         '
@@ -1110,14 +1119,13 @@ Partial Class ClassementPage
         Me.TableLayoutPanel1.PerformLayout()
         Me.PN_PAGES.ResumeLayout(False)
         Me.PN_PAGES.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        Me.IntroPanel.ResumeLayout(False)
-        Me.IntroPanel.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ShapeContainer1.ResumeLayout(False)
-        Me.ShapeContainer1.PerformLayout()
+        Me.IntroPanel.ResumeLayout(False)
+        Me.IntroPanel.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1189,4 +1197,5 @@ Partial Class ClassementPage
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
 End Class

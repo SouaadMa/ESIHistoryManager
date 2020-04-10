@@ -1,26 +1,23 @@
 ﻿Public Class affichResearchResult
 
     Public StudentList As New List(Of Etudiant)
+    Public StudentTable As DataTable
     Private nb_page As Integer = 0
     Public CURRENT_PAGE As Integer = 1
     Public SelectedStudent As Integer = -1
     Public Shared SortDirectionAscendant As Boolean = True
 
     'Public Sub New(ByVal CritList)
-    Public Sub New(ByVal List As List(Of Etudiant))
+    Public Sub New(ByVal t As DataTable)
         ' This call is required by the designer.
         InitializeComponent()
-        StudentList = List
+        StudentTable = t
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
 
     Private Sub affichResearchResult_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
-        'Dim tab_etudiant() As String = collection_etudiant.ToArray
-
         ' inisializer le form
-        'Console.WriteLine("loaded :" + Me.GetType.ToString)
         EtudiantPanel.Visible = True
         PN_PAGES.Visible = True
         LB_INFOAFFICH.Visible = True
@@ -32,7 +29,7 @@
         SortModeBox.Items.Add("Prenom")
         SortModeBox.Items.Add("Promo")
 
-        SortModeBox.SelectedIndex = 0
+        'SortModeBox.SelectedIndex = 0
 
         'make the nav bar desactivated
 
@@ -47,14 +44,13 @@
         'appel a la fonction qui nous donne la collection des etudiants 
         Me.AffPanel.Dock = DockStyle.Fill   ' dock the seach form in the parent container
         If SortDirectionAscendant Then
-            Classement.SortASCCollection(StudentList, "MATRIN")
+            Classement.SortASCCollection(StudentTable, "MATRIN")
         Else
-            Classement.SortDESCollection(StudentList, "MATRIN")
+            Classement.SortDESCollection(StudentTable, "MATRIN")
         End If
 
-
-        Console.WriteLine("results number is : " + StudentList.Count.ToString)
-        If (StudentList.Count = 0) Then
+        Console.WriteLine("results number is : " + StudentTable.Rows.Count.ToString)
+        If (StudentTable.Rows.Count = 0) Then
             EtudiantPanel.Visible = False
             'AffPanel.Visible = False
             PN_PAGES.Visible = False
@@ -65,28 +61,18 @@
             Console.WriteLine("Liste des etudiants est vide")
         Else
             'affich_pageResult()
-            SortModeBox_SelectedIndexChanged(SortModeBox, New EventArgs())
+            'SortModeBox_SelectedIndexChanged(SortModeBox, New EventArgs())
 
-
-            'Console.Write(student.GetInfoChamps("NomEtud"))
-            'Console.Write(student.GetInfoChamps("Prenoms"))
-            'Console.Write(student.GetInfoChamps("MATRIN"))
-            'Console.Write(student.GetInfoChamps("ADRESSE"))
-            'Console.Write(student.GetInfoChamps("VILLE"))
-            'Console.Write(student.GetInfoChamps("WILAYA"))
-            'Console.Write(student.GetInfoChamps("ANNEEBAC"))
-            'Console.WriteLine()
-            'Console.WriteLine()
         End If
 
         ' inisializer le nombre des esist
-        Me.RechLabel.Text += "(" + StudentList.Count.ToString + ")"
+        Me.RechLabel.Text += "(" + StudentTable.Rows.Count.ToString + ")"
 
         'inisializer le bar des pages
-        If (StudentList.Count Mod 7) = 0 Then
-            nb_page = StudentList.Count \ 7
+        If (StudentTable.Rows.Count Mod 7) = 0 Then
+            nb_page = StudentTable.Rows.Count \ 7
         Else
-            nb_page = (StudentList.Count \ 7) + 1
+            nb_page = (StudentTable.Rows.Count \ 7) + 1
         End If
 
         Console.WriteLine("pages number is : " + nb_page.ToString)
@@ -107,13 +93,8 @@
                     BT_P2.Visible = False
                 End If
             End If
-
-
             'inisializer le tab de laffichage 
-
-
         End If
-
     End Sub
 
 
@@ -176,7 +157,8 @@
         With DirectCast(sender, TableLayoutPanel)
             .BackgroundImage = My.Resources.table_bleu
             SelectedStudent = CType(sender.Name.ToString.Chars(sender.Name.ToString.Length - 1).ToString, Integer)
-
+            StudentList.Clear()
+            StudentList.Add(New Etudiant(StudentTable.Rows.Item(SelectedStudent - 1 + (CURRENT_PAGE - 1) * 7)))
             Console.WriteLine(SelectedStudent - 1 + (CURRENT_PAGE - 1) * 7)
 
         End With
@@ -200,108 +182,117 @@
 
 
     Private Sub SortModeBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SortModeBox.SelectedIndexChanged ', SortModeBox.TextUpdate, SortModeBox.TextChanged, SortModeBox.SelectionChangeCommitted, SortModeBox.SelectedValueChanged, SortModeBox.Leave, SortModeBox.DropDownClosed
-        Dim l As List(Of Etudiant)
+        Dim l As DataTable = New DataTable()
         Select Case SortModeBox.SelectedIndex
             Case 0
                 If SortDirectionAscendant Then
-                    l = Classement.SortASCCollection(StudentList, "MATRIN")
+                    l = Classement.SortASCCollection(StudentTable, "MATRIN")
                 Else
-                    l = Classement.SortDESCollection(StudentList, "MATRIN")
+                    l = Classement.SortDESCollection(StudentTable, "MATRIN")
                 End If
-
-                StudentList = l
-                affich_pageResult()
             Case 1
                 If SortDirectionAscendant Then
-                    l = Classement.SortASCCollection(StudentList, "NomEtud")
+                    l = Classement.SortASCCollection(StudentTable, "NomEtud")
                 Else
-                    l = Classement.SortDESCollection(StudentList, "NomEtud")
+                    l = Classement.SortDESCollection(StudentTable, "NomEtud")
                 End If
-
-                StudentList = l
-                affich_pageResult()
             Case 2
                 If SortDirectionAscendant Then
-                    l = Classement.SortASCCollection(StudentList, "Prenoms")
+                    l = Classement.SortASCCollection(StudentTable, "Prenoms")
                 Else
-                    l = Classement.SortDESCollection(StudentList, "Prenoms")
+                    l = Classement.SortDESCollection(StudentTable, "Prenoms")
                 End If
-
-                StudentList = l
-                affich_pageResult()
             Case 3
                 If SortDirectionAscendant Then
-                    l = Classement.SortASCCollection(StudentList, "ANNEEBAC")
+                    l = Classement.SortASCCollection(StudentTable, "ANNEEBAC")
                 Else
-                    l = Classement.SortDESCollection(StudentList, "ANNEEBAC")
+                    l = Classement.SortDESCollection(StudentTable, "ANNEEBAC")
                 End If
-
-                StudentList = l
-                affich_pageResult()
         End Select
-
-        'Console.WriteLine("sorted by : " + SortModeBox.SelectedIndex.ToString)
-        'For Each student In StudentList
-        '    Console.Write(student.GetInfoChamps("NomEtud"))
-        '    Console.Write(student.GetInfoChamps("Prenoms"))
-        '    Console.Write(student.GetInfoChamps("MATRIN"))
-        '    Console.Write(student.GetInfoChamps("ADRESSE"))
-        '    Console.Write(student.GetInfoChamps("VILLE"))
-        '    Console.Write(student.GetInfoChamps("WILAYA"))
-        '    Console.Write(student.GetInfoChamps("ANNEEBAC"))
-        '    Console.WriteLine()
-        'Next
-        'Console.Write(student.GetInfoChamps("NomEtud"))
-        'Console.Write(student.GetInfoChamps("Prenoms"))
-        'Console.Write(student.GetInfoChamps("MATRIN"))
-        'Console.Write(student.GetInfoChamps("ADRESSE"))
-        'Console.Write(student.GetInfoChamps("VILLE"))
-        'Console.Write(student.GetInfoChamps("WILAYA"))
-        'Console.Write(student.GetInfoChamps("ANNEEBAC"))
-        'Console.WriteLine()
-        'Console.WriteLine()
-
+        StudentTable = l
+        affich_pageResult()
     End Sub
 
     Public Sub affich_pageResult()
         Dim i As Integer = 0
         Dim cpt As Integer = (CURRENT_PAGE - 1) * 7
-        While cpt < StudentList.Count And i < 7
-            i = 0
-            While cpt < StudentList.Count And i < 7
-                Dim c As Control = EtudiantPanel.Controls.Find("Label" + (i + 1).ToString + "_1", True)(0)
-                If c IsNot Nothing Then
-                    CType(c, Label).Text = StudentList.Item(cpt).GetInfoChamps("NomEtud")
-                End If
+        StudentList.Clear()
+        'Console.WriteLine("Called !")
+        While (cpt < StudentTable.Rows.Count And i < 7)
+            'StudentList.Add(New Etudiant(StudentTable.Rows.Item(cpt)))
+            Dim c As Control = EtudiantPanel.Controls.Find("Label" + (i + 1).ToString + "_1", True)(0)
+            If c IsNot Nothing Then
+                Try
+                    CType(c, Label).ForeColor = Color.Black
+                    CType(c, Label).Text = StudentTable.Rows.Item(cpt)("NomEtud")
+                Catch ex As InvalidCastException
+                    With CType(c, Label)
+                        .ForeColor = Color.Red
+                        CType(c, Label).Text = "Unknown"
+                    End With
+                End Try
+            End If
 
-                c = EtudiantPanel.Controls.Find("Label" + (i + 1).ToString + "_2", True)(0)
-                If c IsNot Nothing Then
-                    CType(c, Label).Text = StudentList.Item(cpt).GetInfoChamps("Prenoms")
-                End If
+            c = EtudiantPanel.Controls.Find("Label" + (i + 1).ToString + "_2", True)(0)
+            If c IsNot Nothing Then
+                Try
+                    CType(c, Label).ForeColor = Color.Black
+                    CType(c, Label).Text = StudentTable.Rows.Item(cpt)("Prenoms")
+                Catch ex As InvalidCastException
+                    With CType(c, Label)
+                        .ForeColor = Color.Red
+                        .Text = "Unknown"
+                    End With
+                End Try
+            End If
 
-                c = EtudiantPanel.Controls.Find("Label" + (i + 1).ToString + "_3", True)(0)
-                If c IsNot Nothing Then
-                    CType(c, Label).Text = StudentList.Item(cpt).GetInfoChamps("MATRIN")
-                End If
+            c = EtudiantPanel.Controls.Find("Label" + (i + 1).ToString + "_3", True)(0)
+            If c IsNot Nothing Then
+                Try
+                    CType(c, Label).ForeColor = Color.Black
+                    CType(c, Label).Text = StudentTable.Rows.Item(cpt)("MATRIN")
+                Catch ex As InvalidCastException
+                    With CType(c, Label)
+                        .ForeColor = Color.Red
+                        .Text = "Unknown"
+                    End With
+                End Try
+            End If
 
-                c = EtudiantPanel.Controls.Find("Label" + (i + 1).ToString + "_4", True)(0)
-                If c IsNot Nothing Then
-                    CType(c, Label).Text = StudentList.Item(i).GetInfoChamps("VILLE") + " " + StudentList.Item(i).GetInfoChamps("WILAYA")
-                End If
+            c = EtudiantPanel.Controls.Find("Label" + (i + 1).ToString + "_4", True)(0)
+            If c IsNot Nothing Then
+                Try
+                    CType(c, Label).ForeColor = Color.Black
+                    CType(c, Label).Text = StudentTable.Rows.Item(cpt)("VILLE") + " " + StudentTable.Rows.Item(cpt)("WILAYA")
+                Catch ex As InvalidCastException
+                    With CType(c, Label)
+                        .ForeColor = Color.Red
+                        .Text = "Unknown , Unknown"
+                    End With
+                End Try
+            End If
 
-                c = EtudiantPanel.Controls.Find("Label" + (i + 1).ToString + "_5", True)(0)
-                If c IsNot Nothing Then
-                    CType(c, Label).Text = StudentList.Item(cpt).GetInfoChamps("ANNEEBAC")
-                End If
+            c = EtudiantPanel.Controls.Find("Label" + (i + 1).ToString + "_5", True)(0)
+            If c IsNot Nothing Then
+                Try
+                    CType(c, Label).ForeColor = Color.Black
+                    CType(c, Label).Text = StudentTable.Rows.Item(cpt)("ANNEEBAC")
+                Catch ex As InvalidCastException
+                    With CType(c, Label)
+                        .ForeColor = Color.Red
+                        .Text = "Unknown"
+                    End With
+                End Try
+            End If
 
-                i += 1
-                cpt += 1
-            End While
+            i += 1
+            cpt += 1
         End While
-        If StudentList.Count Mod 7 <> 0 And CURRENT_PAGE = nb_page Then
+
+        If StudentTable.Rows.Count Mod 7 <> 0 And CURRENT_PAGE = nb_page Then
             For Each ctrl As Control In EtudiantPanel.Controls
                 If ctrl.GetType.ToString.Equals("System.Windows.Forms.TableLayoutPanel") Then
-                    Dim endb As Integer = 8 - nb_page * 7 + StudentList.Count
+                    Dim endb As Integer = 8 - nb_page * 7 + StudentTable.Rows.Count
                     For ind As Integer = 7 To endb Step -1
                         If ctrl.Name.Equals("TableLayoutPanel" + ind.ToString) Then
                             ctrl.Visible = False
@@ -358,8 +349,11 @@
     End Sub
 
     Private Sub affichResearchResult_Shown(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Shown
-        affich_pageResult()
-        If StudentList.Count > 0 Then
+        'affich_pageResult()
+        SortModeBox.SelectedIndex = 0
+        Home.MainContainer1.Visible = True
+        Home.ProgressPanel.Visible = False
+        If StudentTable.Rows.Count > 0 Then
             watch_focusLocation(Me)
         End If
     End Sub
@@ -372,13 +366,6 @@
             BT_NEXT.Enabled = False
         End If
     End Sub
-
-    'Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
-    '    affichResearchResult_Shown(Me, New EventArgs())
-    '    'affich_pageResult()
-    '    Timer1.Enabled = False
-    '    Home.PictureBox1.Visible = False
-    'End Sub
 
     Private Sub TableLayoutPanel1_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles TableLayoutPanel1.LostFocus, TableLayoutPanel2.LostFocus, TableLayoutPanel3.LostFocus, TableLayoutPanel4.LostFocus, TableLayoutPanel5.LostFocus, TableLayoutPanel6.LostFocus, TableLayoutPanel7.LostFocus
         TableLayoutPanel1_Leave(sender, e)
@@ -404,3 +391,37 @@
         SortModeBox_SelectedIndexChanged(SortModeBox, New EventArgs())
     End Sub
 End Class
+
+
+'Console.Write(student.GetInfoChamps("NomEtud"))
+'Console.Write(student.GetInfoChamps("Prenoms"))
+'Console.Write(student.GetInfoChamps("MATRIN"))
+'Console.Write(student.GetInfoChamps("ADRESSE"))
+'Console.Write(student.GetInfoChamps("VILLE"))
+'Console.Write(student.GetInfoChamps("WILAYA"))
+'Console.Write(student.GetInfoChamps("ANNEEBAC"))
+'Console.WriteLine()
+'Console.WriteLine()
+
+
+
+'Console.WriteLine("sorted by : " + SortModeBox.SelectedIndex.ToString)
+'For Each student In StudentList
+'    Console.Write(student.GetInfoChamps("NomEtud"))
+'    Console.Write(student.GetInfoChamps("Prenoms"))
+'    Console.Write(student.GetInfoChamps("MATRIN"))
+'    Console.Write(student.GetInfoChamps("ADRESSE"))
+'    Console.Write(student.GetInfoChamps("VILLE"))
+'    Console.Write(student.GetInfoChamps("WILAYA"))
+'    Console.Write(student.GetInfoChamps("ANNEEBAC"))
+'    Console.WriteLine()
+'Next
+'Console.Write(student.GetInfoChamps("NomEtud"))
+'Console.Write(student.GetInfoChamps("Prenoms"))
+'Console.Write(student.GetInfoChamps("MATRIN"))
+'Console.Write(student.GetInfoChamps("ADRESSE"))
+'Console.Write(student.GetInfoChamps("VILLE"))
+'Console.Write(student.GetInfoChamps("WILAYA"))
+'Console.Write(student.GetInfoChamps("ANNEEBAC"))
+'Console.WriteLine()
+'Console.WriteLine()

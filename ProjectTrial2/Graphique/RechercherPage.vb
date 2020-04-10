@@ -234,25 +234,20 @@
                     collection_critere.Add(New Critere("WILBAC", Me.CB_WILAYAB.Text))
                 End If
 
+                'handling the appearnce of the affichage form
+                Home.PictureBox2.Size = Home.PictureBox2.MinimumSize
+                'PN_FORUMRECH
+                PN_FORUMRECH.Visible = False
+                Home.PictureBox2.Size = New System.Drawing.Size(226, 0)
+                Home.ProgressPanel.Visible = True
+
                 ' backgroundWorker1
                 BackgroundWorker1.WorkerReportsProgress = True
                 BackgroundWorker1.WorkerSupportsCancellation = True
-
-                'handling the appearnce of the affichage form
-                PictureBox2.Size = PictureBox2.MinimumSize
-                ProgressPanel.Visible = True
-                'PN_FORUMRECH
-                PN_FORUMRECH.Visible = False
-                PictureBox2.Size = New System.Drawing.Size(226, 0)
-
                 BackgroundWorker1.RunWorkerAsync(collection_critere)
 
             End If
-
             ' appel a traite rechercher
-
-            'Dim StudentList As List(Of Etudiant)
-            'StudentList = Recherche.traitRechercher(collection_critere)
 
         End If
     End Sub
@@ -360,27 +355,26 @@
     Private Sub BackgroundWorker1_DoWork(ByVal sender As System.Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
         ' Do some time-consuming work on this thread.
         Dim worker As System.ComponentModel.BackgroundWorker = DirectCast(sender, System.ComponentModel.BackgroundWorker)
-
         Dim collection_critere As List(Of Critere) = CType(e.Argument, List(Of Critere))
         Try
             e.Result = search_inBackground(worker, e, collection_critere)
         Catch ex As NullReferenceException
             e.Cancel = True
         End Try
-
         If worker.CancellationPending Then
             e.Cancel = True
         End If
     End Sub
 
     Private Sub BackgroundWorker1_RunWorkerCompleted(ByVal sender As System.Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorker1.RunWorkerCompleted
+        ' Called when the BackgroundWorker is completed.
         If e.Cancelled Then
-            ProgressPanel.Visible = False
-            'PN_FORUMRECH
+            Home.ProgressPanel.Visible = False
             PN_FORUMRECH.Visible = True
-            'Home.f = New RechercherPage()
         Else
-            'Home.ProgressLabel.Text = "completed"
+            'Form1.DataGridView1.DataSource = e.Result
+            'Form1.Activate()
+            'Form1.Show()
             Me.Close()
             Home.f = New affichResearchResult(e.Result)         ' assign the search form to  the f form
         End If
@@ -390,27 +384,20 @@
         Home.f.WindowState = FormWindowState.Normal
         Home.MainContainer1.Controls.Add(Home.f)        ' add the controlers of the searche page to the main form f 
         Home.f.Show()                                ' show the form f in the middle of the home page
-        Home.MainContainer1.Visible = True
-        ProgressPanel.Visible = False
-        ' Called when the BackgroundWorker is completed.
-
+        
     End Sub
 
     Private Sub BackgroundWorker1_ProgressChanged(ByVal sender As System.Object, ByVal e As System.ComponentModel.ProgressChangedEventArgs) Handles BackgroundWorker1.ProgressChanged
-        'If DirectCast(sender, System.ComponentModel.BackgroundWorker).CancellationPending Then
-        'e. = True
-        'End If
-        ProgressLabel.Text = e.ProgressPercentage.ToString + "%"
-        PictureBox2.Size = New System.Drawing.Size(226, (e.ProgressPercentage * (PictureBox2.MaximumSize.Height)) \ 100)
-        'Home.ProgressBar1.Value = e.ProgressPercentage
+        'ProgressLabel.Text = e.ProgressPercentage.ToString + "%"
+        'PictureBox2.Size = New System.Drawing.Size(226, (e.ProgressPercentage * (PictureBox2.MaximumSize.Height)) \ 100)
     End Sub
 
-    Private Function search_inBackground(ByVal bw As System.ComponentModel.BackgroundWorker, ByVal e As System.ComponentModel.DoWorkEventArgs, ByVal collection_critere As List(Of Critere)) As List(Of Etudiant)
-        Dim list As List(Of Etudiant) = Recherche.traitRechercher(collection_critere, bw, e)
-        Return list
+    Private Function search_inBackground(ByVal bw As System.ComponentModel.BackgroundWorker, ByVal e As System.ComponentModel.DoWorkEventArgs, ByVal collection_critere As List(Of Critere)) As DataTable
+        Dim table As DataTable = Recherche.traitRechercher(collection_critere, bw, e)
+        Return table
     End Function
 
-    Private Sub CancelButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CancelBackgroundButton.Click
+    Private Sub CancelButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         With BackgroundWorker1
             If .WorkerSupportsCancellation Then
                 .CancelAsync()
@@ -419,9 +406,10 @@
         End With
     End Sub
 
-    Private Sub Panel1_VisibleChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ProgressPanel.VisibleChanged
-        Me.PN_FORUMRECH.Visible = Not ProgressPanel.Visible
+    Private Sub Panel1_VisibleChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        Me.PN_FORUMRECH.Visible = Not Home.ProgressPanel.Visible
     End Sub
+
     'Private Function watch_inBackground(ByVal bw As System.ComponentModel.BackgroundWorker, ByVal e As System.ComponentModel.DoWorkEventArgs) As System.ComponentModel.DoWorkEventArgs
     '    If bw.CancellationPending Then
     '        e.Cancel = True
@@ -448,4 +436,5 @@
     '    End If
     'End Sub
 
+    
 End Class

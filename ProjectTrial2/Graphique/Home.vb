@@ -4,7 +4,8 @@
     'Public loading As Integer = 0
     Public f As Form    ' the form that will be shown in the middle of the page for the side bar operations
     Public h As Form    ' the form that will be shown in the middle of the page for the nav bar operations
-
+    Public Shared alarm As System.Threading.Timer
+    Public Shared x As Integer = 0
 
 
 
@@ -370,7 +371,7 @@
         If Not f Is Nothing Then
             f.Close()
         End If
-        RechercherPage.ProgressPanel.Visible = False
+        Me.ProgressPanel.Visible = False
         MainContainer1.Visible = True
         f = New StatistiquePage()         ' assign the search form to  the f form
         f.TopLevel = False
@@ -405,7 +406,7 @@
                 MainContainer1.Visible = False
             End If
 
-            h = New details(CType(f, affichResearchResult).StudentList.Item(CType(f, affichResearchResult).SelectedStudent - 1 + (CType(f, affichResearchResult).CURRENT_PAGE - 1) * 7))         ' assign the search form to  the f form
+            h = New details(CType(f, affichResearchResult).StudentList.Item(0))        ' assign the search form to  the f form
             h.TopLevel = False
             h.TopMost = True
             h.WindowState = FormWindowState.Normal
@@ -426,7 +427,7 @@
                 MainContainer1.Visible = False
             End If
 
-            h = New modifier(CType(f, affichResearchResult).StudentList.Item(CType(f, affichResearchResult).SelectedStudent - 1 + (CType(f, affichResearchResult).CURRENT_PAGE - 1) * 7))         ' assign the search form to  the f form
+            h = New modifier(CType(f, affichResearchResult).StudentList.Item(0))        ' assign the search form to  the f form
             h.TopLevel = False
             h.TopMost = True
             h.WindowState = FormWindowState.Normal
@@ -523,6 +524,30 @@
         End If
     End Sub
 
+    Private Sub ProgressPanel_VisibleChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ProgressPanel.VisibleChanged
+
+        If Not ProgressPanel.Visible Then
+            x = 0
+        Else
+            ProgressLabel.Text = "0%"
+            Home.alarm = New System.Threading.Timer(AddressOf alarm_Tick_1, Nothing, 0, 2)
+        End If
+
+    End Sub
+
+    Private Sub alarm_Tick_1(ByVal state As Object)
+        x += 5
+        If x > 100 Then
+            alarm.Change(System.Threading.Timeout.Infinite, System.Threading.Timeout.Infinite)
+            x = 0
+        Else
+            Me.Invoke(New MethodInvoker(AddressOf UpdateLabels))
+        End If
+    End Sub
+    Private Sub UpdateLabels()
+        ProgressLabel.Text = x.ToString + "%"
+        PictureBox2.Size = New System.Drawing.Size(226, (x * (PictureBox2.MaximumSize.Height)) \ 100)
+    End Sub
 End Class
 
 

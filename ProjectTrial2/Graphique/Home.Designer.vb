@@ -57,12 +57,20 @@ Partial Class Home
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.MainContainer2 = New System.Windows.Forms.Panel()
+        Me.ProgressPanel = New System.Windows.Forms.Panel()
+        Me.ProgressLabel = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.CancelBackgroundButton = New System.Windows.Forms.Button()
         Me.SideBar.SuspendLayout()
         Me.ProfilePane.SuspendLayout()
         CType(Me.mode_photo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.NavBar.SuspendLayout()
         CType(Me.logo_bleu, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PN_BIENVENUE.SuspendLayout()
+        Me.ProgressPanel.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SideBar
@@ -603,6 +611,70 @@ Partial Class Home
         Me.MainContainer2.Size = New System.Drawing.Size(680, 640)
         Me.MainContainer2.TabIndex = 30
         '
+        'ProgressPanel
+        '
+        Me.ProgressPanel.BackColor = System.Drawing.Color.Transparent
+        Me.ProgressPanel.Controls.Add(Me.ProgressLabel)
+        Me.ProgressPanel.Controls.Add(Me.PictureBox2)
+        Me.ProgressPanel.Controls.Add(Me.PictureBox1)
+        Me.ProgressPanel.Controls.Add(Me.CancelBackgroundButton)
+        Me.ProgressPanel.Location = New System.Drawing.Point(187, 0)
+        Me.ProgressPanel.Name = "ProgressPanel"
+        Me.ProgressPanel.Size = New System.Drawing.Size(678, 640)
+        Me.ProgressPanel.TabIndex = 50
+        Me.ProgressPanel.Visible = False
+        '
+        'ProgressLabel
+        '
+        Me.ProgressLabel.BackColor = System.Drawing.Color.Transparent
+        Me.ProgressLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ProgressLabel.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.layeredAssetWhite
+        Me.ProgressLabel.Location = New System.Drawing.Point(290, 322)
+        Me.ProgressLabel.Name = "ProgressLabel"
+        Me.ProgressLabel.Size = New System.Drawing.Size(74, 26)
+        Me.ProgressLabel.TabIndex = 31
+        Me.ProgressLabel.Text = "0%"
+        Me.ProgressLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox2.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.logo_coloree
+        Me.PictureBox2.InitialImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.Spinner
+        Me.PictureBox2.Location = New System.Drawing.Point(224, 215)
+        Me.PictureBox2.MaximumSize = New System.Drawing.Size(226, 206)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(226, 206)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox2.TabIndex = 34
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.logo_white1
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.PictureBox1.InitialImage = Nothing
+        Me.PictureBox1.Location = New System.Drawing.Point(224, 215)
+        Me.PictureBox1.MaximumSize = New System.Drawing.Size(226, 206)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(226, 206)
+        Me.PictureBox1.TabIndex = 29
+        Me.PictureBox1.TabStop = False
+        '
+        'CancelBackgroundButton
+        '
+        Me.CancelBackgroundButton.Enabled = False
+        Me.CancelBackgroundButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CancelBackgroundButton.Location = New System.Drawing.Point(272, 468)
+        Me.CancelBackgroundButton.Name = "CancelBackgroundButton"
+        Me.CancelBackgroundButton.Size = New System.Drawing.Size(127, 42)
+        Me.CancelBackgroundButton.TabIndex = 33
+        Me.CancelBackgroundButton.Text = "Cancel"
+        Me.CancelBackgroundButton.UseVisualStyleBackColor = True
+        Me.CancelBackgroundButton.Visible = False
+        '
         'Home
         '
         Me.AcceptButton = Me.MenuButton
@@ -613,6 +685,7 @@ Partial Class Home
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.CancelButton = Me.BT_LOGOUT
         Me.ClientSize = New System.Drawing.Size(1017, 699)
+        Me.Controls.Add(Me.ProgressPanel)
         Me.Controls.Add(Me.MenuButton)
         Me.Controls.Add(Me.SideBar)
         Me.Controls.Add(Me.NavBar)
@@ -639,6 +712,9 @@ Partial Class Home
         CType(Me.logo_bleu, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PN_BIENVENUE.ResumeLayout(False)
         Me.PN_BIENVENUE.PerformLayout()
+        Me.ProgressPanel.ResumeLayout(False)
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -676,5 +752,10 @@ Partial Class Home
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents MainContainer2 As System.Windows.Forms.Panel
+    Friend WithEvents ProgressPanel As System.Windows.Forms.Panel
+    Friend WithEvents ProgressLabel As System.Windows.Forms.Label
+    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents CancelBackgroundButton As System.Windows.Forms.Button
 
 End Class

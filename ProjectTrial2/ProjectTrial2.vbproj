@@ -58,6 +58,7 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -282,6 +283,8 @@
     <None Include="Resources\backBTcheked.png" />
     <None Include="Resources\detailsBACBack.png" />
     <None Include="Resources\details general back.png" />
+    <None Include="Resources\Ellipse 5.png" />
+    <None Include="Resources\Ellipse 4.png" />
     <Content Include="Resources\page_num_current.png" />
     <None Include="Resources\Spinner-1s-220px.gif" />
     <None Include="Resources\table_blanc.png" />

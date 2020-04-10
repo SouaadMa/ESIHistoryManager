@@ -19,7 +19,6 @@
         Me.PN_RESIDENCE.Visible = False
         Me.PN_BAC.Visible = False
 
-
         'initiliser les champs
         Me.LB_ADR.Text = esistselect.GetInfoChamps("ADRESSE")
         Me.LB_ANNEEB.Text = esistselect.GetInfoChamps("ANNEEBAC")

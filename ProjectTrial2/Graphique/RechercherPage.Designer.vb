@@ -76,11 +76,6 @@ Partial Class RechercherPage
         Me.LB_ANNEEB = New System.Windows.Forms.Label()
         Me.PN_FORUMRECH = New System.Windows.Forms.Panel()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.ProgressPanel = New System.Windows.Forms.Panel()
-        Me.ProgressLabel = New System.Windows.Forms.Label()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.CancelBackgroundButton = New System.Windows.Forms.Button()
         Me.RechIntroPanel.SuspendLayout()
         Me.RechButtons.SuspendLayout()
         Me.generalesGroupBox.SuspendLayout()
@@ -100,9 +95,6 @@ Partial Class RechercherPage
         Me.SplitContainer2.SuspendLayout()
         CType(Me.IMG_ALERTMOY, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PN_FORUMRECH.SuspendLayout()
-        Me.ProgressPanel.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RechIntroPanel
@@ -144,7 +136,7 @@ Partial Class RechercherPage
         Me.worningrech.BackColor = System.Drawing.Color.Transparent
         Me.worningrech.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.worningrech.ForeColor = System.Drawing.Color.Maroon
-        Me.worningrech.Location = New System.Drawing.Point(27, 32)
+        Me.worningrech.Location = New System.Drawing.Point(4, 32)
         Me.worningrech.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.worningrech.Name = "worningrech"
         Me.worningrech.Size = New System.Drawing.Size(322, 18)
@@ -445,7 +437,7 @@ Partial Class RechercherPage
         Me.SpliterMain.Panel2.Controls.Add(Me.SplitContainer2)
         Me.SpliterMain.Panel2MinSize = 0
         Me.SpliterMain.Size = New System.Drawing.Size(615, 418)
-        Me.SpliterMain.SplitterDistance = 190
+        Me.SpliterMain.SplitterDistance = 189
         Me.SpliterMain.TabIndex = 43
         '
         'SplitContainer1
@@ -719,75 +711,12 @@ Partial Class RechercherPage
         Me.BackgroundWorker1.WorkerReportsProgress = True
         Me.BackgroundWorker1.WorkerSupportsCancellation = True
         '
-        'ProgressPanel
-        '
-        Me.ProgressPanel.BackColor = System.Drawing.Color.Transparent
-        Me.ProgressPanel.Controls.Add(Me.ProgressLabel)
-        Me.ProgressPanel.Controls.Add(Me.PictureBox2)
-        Me.ProgressPanel.Controls.Add(Me.PictureBox1)
-        Me.ProgressPanel.Controls.Add(Me.CancelBackgroundButton)
-        Me.ProgressPanel.Location = New System.Drawing.Point(0, 0)
-        Me.ProgressPanel.Name = "ProgressPanel"
-        Me.ProgressPanel.Size = New System.Drawing.Size(678, 640)
-        Me.ProgressPanel.TabIndex = 49
-        Me.ProgressPanel.Visible = False
-        '
-        'ProgressLabel
-        '
-        Me.ProgressLabel.BackColor = System.Drawing.Color.Transparent
-        Me.ProgressLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ProgressLabel.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.layeredAssetWhite
-        Me.ProgressLabel.Location = New System.Drawing.Point(290, 322)
-        Me.ProgressLabel.Name = "ProgressLabel"
-        Me.ProgressLabel.Size = New System.Drawing.Size(74, 26)
-        Me.ProgressLabel.TabIndex = 31
-        Me.ProgressLabel.Text = "0%"
-        Me.ProgressLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox2.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.logo_coloree
-        Me.PictureBox2.InitialImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.Spinner
-        Me.PictureBox2.Location = New System.Drawing.Point(224, 215)
-        Me.PictureBox2.MaximumSize = New System.Drawing.Size(226, 206)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(226, 206)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox2.TabIndex = 34
-        Me.PictureBox2.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.logo_white1
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.PictureBox1.InitialImage = Nothing
-        Me.PictureBox1.Location = New System.Drawing.Point(224, 215)
-        Me.PictureBox1.MaximumSize = New System.Drawing.Size(226, 206)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(226, 206)
-        Me.PictureBox1.TabIndex = 29
-        Me.PictureBox1.TabStop = False
-        '
-        'CancelBackgroundButton
-        '
-        Me.CancelBackgroundButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CancelBackgroundButton.Location = New System.Drawing.Point(272, 468)
-        Me.CancelBackgroundButton.Name = "CancelBackgroundButton"
-        Me.CancelBackgroundButton.Size = New System.Drawing.Size(127, 42)
-        Me.CancelBackgroundButton.TabIndex = 33
-        Me.CancelBackgroundButton.Text = "Cancel"
-        Me.CancelBackgroundButton.UseVisualStyleBackColor = True
-        '
         'RechercherPage
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(678, 640)
         Me.Controls.Add(Me.PN_FORUMRECH)
-        Me.Controls.Add(Me.ProgressPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False
         Me.MinimumSize = New System.Drawing.Size(650, 595)
@@ -819,9 +748,6 @@ Partial Class RechercherPage
         Me.SplitContainer2.ResumeLayout(False)
         CType(Me.IMG_ALERTMOY, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PN_FORUMRECH.ResumeLayout(False)
-        Me.ProgressPanel.ResumeLayout(False)
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -869,11 +795,6 @@ Partial Class RechercherPage
     Friend WithEvents IMG_ALERTMTB As System.Windows.Forms.PictureBox
     Friend WithEvents IMG_ALERTMOY As System.Windows.Forms.PictureBox
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
-    Friend WithEvents ProgressPanel As System.Windows.Forms.Panel
-    Friend WithEvents ProgressLabel As System.Windows.Forms.Label
-    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents CancelBackgroundButton As System.Windows.Forms.Button
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox

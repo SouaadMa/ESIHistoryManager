@@ -1,10 +1,13 @@
-﻿Public Class modifpassword
+﻿Imports System.Runtime.Serialization.Formatters.Binary
+Imports System.IO
+
+Public Class modifpassword
 
     ' a function to show the responce to the connexion request ( launch the home page or the error message )
     Private Sub Changer_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles changer.Click
-        If Connexion(Me.TXT_Password.Text) = False Or Me.TXT_PasswordN.Text <> Me.TXT_PasswordNC.Text Or TXT_PasswordN.Text = "" Then
+        If Login.Connexion(Me.TXT_Password.Text) = False Or Me.TXT_PasswordN.Text <> Me.TXT_PasswordNC.Text Or TXT_PasswordN.Text = "" Then
 
-            If Connexion(Me.TXT_Password.Text) = False Then
+            If Login.Connexion(Me.TXT_Password.Text) = False Then
                 Me.avertissemnt.Text = "Mot de passe errone ! ressayez a nouveau "
                 Me.avertissemnt.Visible = True
 
@@ -16,30 +19,26 @@
         Else
 
             If AgentButton.Checked Then
-                Login._agent_mdp = TXT_PasswordN.Text
+                Login.password_._agent_mdp = TXT_PasswordN.Text
 
             Else
-                Login._admin_mdp = TXT_PasswordN.Text
+                Login.password_._admin_mdp = TXT_PasswordN.Text
             End If
+
+            'serialiser password
+
+            'open our filestream
+            Dim stream As FileStream
+            stream = File.OpenWrite("password.txt")
+
+            'create the binary formatter
+            Dim formatter As New BinaryFormatter
+            formatter.Serialize(stream, Login.password_)
+            stream.Close()
+
             Me.Close()
         End If
     End Sub
-
-    Function Connexion(ByVal mdp As String) As Boolean ' fnction that return the responce to the password according to the mode of connexion
-        Dim correct As Boolean = False
-        If AgentButton.Checked Then
-            If mdp = "agent" Then
-                correct = True
-            End If
-        End If
-
-        If AdminButton.Checked Then
-            If mdp = "admin" Then
-                correct = True
-            End If
-        End If
-        Return correct
-    End Function
 
     ' handle the appearnace when focusing on the password inputs
     Private Sub TXT_Password_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles TXT_Password.GotFocus, TXT_Password.TextChanged, TXT_Password.Click

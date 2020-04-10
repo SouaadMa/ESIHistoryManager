@@ -1,4 +1,7 @@
-﻿Public Class Home
+﻿Imports System.Runtime.Serialization.Formatters.Binary
+Imports System.IO
+
+Public Class Home
 
     Public _ModeConnexion As Boolean = Login.AdminButton.Checked        'the boolean to determine the connected profile type 
     'Public loading As Integer = 0
@@ -62,6 +65,16 @@
     End Sub
 
     Private Sub BT_LOGOUT_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_LOGOUT.Click
+
+        'open our filestream
+        Dim stream As FileStream
+        stream = File.OpenWrite("InfosGenerale.txt")
+
+        'create the binary formatter
+        Dim formatter As New BinaryFormatter
+        formatter.Serialize(stream, Login.Infosgenerale)
+        stream.Close()
+
         Me.Close()
     End Sub
 
@@ -97,7 +110,7 @@
             NavBar.Width = 675
             NavBar.Location = New System.Drawing.Point(188, 639)
             Me.PN_BIENVENUE.Location = New System.Drawing.Point(160, 4)
-            
+
             With Me.MainContainer1
                 .Location = New System.Drawing.Point(185, 1)
                 .Width = 680

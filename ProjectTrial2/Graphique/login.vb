@@ -1,18 +1,25 @@
-﻿Public Class Login
+﻿Imports System.Runtime.Serialization.Formatters.Binary
+Imports System.IO
 
-    Public _agent_mdp As String = "agent"
-    Public _admin_mdp As String = "admin"     ' the two passwords
+Public Class Login
+
+    Public Shared password_ As password = Nothing
+    Public Shared password_n As password = Nothing
+
+    Public Shared Infosgenerale As InfosGenerales = Nothing
 
     Function Connexion(ByVal mdp As String) As Boolean ' fnction that return the responce to the password according to the mode of connexion
+
         Dim correct As Boolean = False
+
         If AgentButton.Checked Then
-            If mdp = "agent" Then
+            If mdp = password_._agent_mdp Then
                 correct = True
             End If
         End If
 
         If AdminButton.Checked Then
-            If mdp = "admin" Then
+            If mdp = password_._admin_mdp Then
                 correct = True
             End If
         End If
@@ -45,6 +52,16 @@
     ' a function to show the responce to the connexion request ( launch the home page or the error message )
     Private Sub ConexionButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConexionButton.Click
         If Connexion(Me.MotDePasseTextField.Text) Then
+            Infosgenerale = New InfosGenerales()
+            'open our filestream
+            ' Dim stream As FileStream
+            'stream = File.OpenRead("InfosGenerale.txt")
+
+            'create the binary formatter
+            'Dim formatter As New BinaryFormatter
+            'Infosgenerale = formatter.Deserialize(stream)
+
+            'stream.Close()
             Home.Show()
         Else
             Me.avertissemnt.Visible = True
@@ -62,5 +79,15 @@
         Me.Size = New System.Drawing.Size(1024, 728)
         Me.MinimumSize = New System.Drawing.Size(1023, 700)
         Me.MaximumSize = New System.Drawing.Size(1050, 700)
+
+        'open our filestream
+        Dim stream As FileStream
+        stream = File.OpenRead("password.txt")
+
+        'create the binary formatter
+        Dim formatter As New BinaryFormatter
+        Login.password_ = formatter.Deserialize(stream)
+        stream.Close()
     End Sub
+
 End Class

@@ -93,6 +93,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Graphique\InfosGenerales.vb" />
+    <Compile Include="Graphique\password.vb" />
     <Compile Include="Graphique\RNG.Designer.vb">
       <DependentUpon>RNG.vb</DependentUpon>
     </Compile>

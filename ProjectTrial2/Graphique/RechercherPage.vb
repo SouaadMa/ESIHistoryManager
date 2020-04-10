@@ -38,17 +38,17 @@
         'initialiser :
 
         'inisialiser les wilayas combobox
-        For Each Critere As String In InfosGenerales.wilaya
+        For Each Critere As String In Login.Infosgenerale.wilaya
             Me.CB_WILAYAB.Items.Add(Critere)
             Me.CB_WILAYA.Items.Add(Critere)
         Next
 
-        For Each Critere As String In InfosGenerales.wilayaarabe
+        For Each Critere As String In Login.Infosgenerale.wilayaarabe
             Me.CB_WILAYANA.Items.Add(Critere)
         Next
 
-        For i = 1 To InfosGenerales.wilaya.Count
-            Me.CB_WILAYAN.Items.Add(i)
+        For Each Critere As String In Login.Infosgenerale.codewilaya
+            Me.CB_WILAYAN.Items.Add(Critere)
         Next
 
         'inisialize sexe combobox 
@@ -59,7 +59,7 @@
 
         'inisialize seri de bac combobox 
 
-        For Each Critere As String In InfosGenerales.seribac
+        For Each Critere As String In Login.Infosgenerale.seribac
             Me.CB_SERI.Items.Add(Critere)
         Next
 
@@ -81,7 +81,7 @@
 
         'no research if he had fill nothing
 
-        If Me.TXT_MATRICUL.Text = "" And Me.TXT_MATRICULB.Text = "" And Me.TXT_MOYBAC.Text = "" And Me.TXT_NOM.Text = "" And Me.TXT_NOMA.Text = "" And Me.TXT_PRENOM.Text = "" And Me.TXT_PRENOMA.Text = "" And Me.CB_ANNEEB.Text = "" And Me.CB_SERI.Text = "" And Me.CB_SEXE.Text = "" And Me.CB_WILAYA.Text = "" And Me.CB_WILAYAB.Text = "" And Me.CB_WILAYAN.Text = "" And Me.CB_WILAYANA.Text = "" And Me.dtp_changed = False Then
+        If Me.TXT_MATRICUL.Text = "" And Me.TXT_MATRICULB.Text = "" And Me.TXT_MOYBAC.Text = "" And Me.TXT_NOM.Text = "" And Me.TXT_NOMA.Text = "" And Me.TXT_PRENOM.Text = "" And Me.TXT_PRENOMA.Text = "" And Me.CB_ANNEEB.Text = "" And Me.CB_SERI.Text = "" And Me.CB_SEXE.Text = "" And Me.CB_WILAYA.Text = "" And Me.CB_WILAYAB.Text = "" And Me.CB_WILAYAN.Text = "" And Me.CB_WILAYANA.Text = "" And Me.dtp_changed = False And TXT_MERE.Text = "" And TXT_PERE.Text = "" Then
             Me.worningrech.Visible = True
             Me.worningrech.Text = "Vous devez remplir en mois un champs !"
         Else
@@ -232,6 +232,14 @@
 
                 If Me.CB_WILAYAB.Text <> "" Then
                     collection_critere.Add(New Critere("WILBAC", Me.CB_WILAYAB.Text))
+                End If
+
+                If Me.TXT_MERE.Text <> "" Then
+                    collection_critere.Add(New Critere("ET_DE", Me.TXT_MERE.Text))
+                End If
+
+                If Me.TXT_PERE.Text <> "" Then
+                    collection_critere.Add(New Critere("FILS_DE", Me.TXT_PERE.Text))
                 End If
 
                 'handling the appearnce of the affichage form

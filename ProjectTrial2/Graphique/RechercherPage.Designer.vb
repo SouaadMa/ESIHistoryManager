@@ -30,9 +30,9 @@ Partial Class RechercherPage
         Me.worningrech = New System.Windows.Forms.Label()
         Me.BT_LANCERRECH = New System.Windows.Forms.Button()
         Me.generalesGroupBox = New System.Windows.Forms.GroupBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TXT_MERE = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TXT_PERE = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -57,7 +57,6 @@ Partial Class RechercherPage
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.ResidenceLabel = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.LB_WILAYA = New System.Windows.Forms.Label()
         Me.LB_WILAYANA = New System.Windows.Forms.Label()
         Me.CB_WILAYAN = New System.Windows.Forms.ComboBox()
@@ -114,7 +113,7 @@ Partial Class RechercherPage
         Me.Label1.Location = New System.Drawing.Point(140, 4)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(326, 34)
+        Me.Label1.Size = New System.Drawing.Size(417, 44)
         Me.Label1.TabIndex = 11
         Me.Label1.Text = "Formulaire de recherche"
         '
@@ -139,7 +138,7 @@ Partial Class RechercherPage
         Me.worningrech.Location = New System.Drawing.Point(4, 32)
         Me.worningrech.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.worningrech.Name = "worningrech"
-        Me.worningrech.Size = New System.Drawing.Size(322, 18)
+        Me.worningrech.Size = New System.Drawing.Size(403, 24)
         Me.worningrech.TabIndex = 41
         Me.worningrech.Text = "Vous devez remplir au moins un champs !"
         Me.worningrech.Visible = False
@@ -160,9 +159,9 @@ Partial Class RechercherPage
         '
         'generalesGroupBox
         '
-        Me.generalesGroupBox.Controls.Add(Me.TextBox2)
+        Me.generalesGroupBox.Controls.Add(Me.TXT_MERE)
         Me.generalesGroupBox.Controls.Add(Me.Label5)
-        Me.generalesGroupBox.Controls.Add(Me.TextBox1)
+        Me.generalesGroupBox.Controls.Add(Me.TXT_PERE)
         Me.generalesGroupBox.Controls.Add(Me.Label4)
         Me.generalesGroupBox.Controls.Add(Me.Label3)
         Me.generalesGroupBox.Controls.Add(Me.Label2)
@@ -189,14 +188,14 @@ Partial Class RechercherPage
         Me.generalesGroupBox.TabStop = False
         Me.generalesGroupBox.Text = "Generalites"
         '
-        'TextBox2
+        'TXT_MERE
         '
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(249, 439)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(2)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(264, 26)
-        Me.TextBox2.TabIndex = 43
+        Me.TXT_MERE.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TXT_MERE.Location = New System.Drawing.Point(249, 439)
+        Me.TXT_MERE.Margin = New System.Windows.Forms.Padding(2)
+        Me.TXT_MERE.Name = "TXT_MERE"
+        Me.TXT_MERE.Size = New System.Drawing.Size(264, 30)
+        Me.TXT_MERE.TabIndex = 43
         '
         'Label5
         '
@@ -205,18 +204,18 @@ Partial Class RechercherPage
         Me.Label5.Location = New System.Drawing.Point(61, 444)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(108, 17)
+        Me.Label5.Size = New System.Drawing.Size(128, 20)
         Me.Label5.TabIndex = 44
         Me.Label5.Text = "Nom de la mere"
         '
-        'TextBox1
+        'TXT_PERE
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(249, 388)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(2)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(264, 26)
-        Me.TextBox1.TabIndex = 41
+        Me.TXT_PERE.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TXT_PERE.Location = New System.Drawing.Point(249, 388)
+        Me.TXT_PERE.Margin = New System.Windows.Forms.Padding(2)
+        Me.TXT_PERE.Name = "TXT_PERE"
+        Me.TXT_PERE.Size = New System.Drawing.Size(264, 30)
+        Me.TXT_PERE.TabIndex = 41
         '
         'Label4
         '
@@ -225,7 +224,7 @@ Partial Class RechercherPage
         Me.Label4.Location = New System.Drawing.Point(61, 393)
         Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(91, 17)
+        Me.Label4.Size = New System.Drawing.Size(107, 20)
         Me.Label4.TabIndex = 42
         Me.Label4.Text = "Nom du Pere"
         '
@@ -236,7 +235,7 @@ Partial Class RechercherPage
         Me.Label3.Location = New System.Drawing.Point(61, 168)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(99, 17)
+        Me.Label3.Size = New System.Drawing.Size(116, 20)
         Me.Label3.TabIndex = 40
         Me.Label3.Text = "Nom en Arabe"
         '
@@ -247,7 +246,7 @@ Partial Class RechercherPage
         Me.Label2.Location = New System.Drawing.Point(61, 212)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(135, 17)
+        Me.Label2.Size = New System.Drawing.Size(160, 20)
         Me.Label2.TabIndex = 39
         Me.Label2.Text = "Prénom en Français"
         '
@@ -278,7 +277,7 @@ Partial Class RechercherPage
         Me.LB_MATRICUL.Location = New System.Drawing.Point(61, 36)
         Me.LB_MATRICUL.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_MATRICUL.Name = "LB_MATRICUL"
-        Me.LB_MATRICUL.Size = New System.Drawing.Size(65, 17)
+        Me.LB_MATRICUL.Size = New System.Drawing.Size(78, 20)
         Me.LB_MATRICUL.TabIndex = 20
         Me.LB_MATRICUL.Text = "Matricule"
         '
@@ -288,7 +287,7 @@ Partial Class RechercherPage
         Me.TXT_MATRICUL.Location = New System.Drawing.Point(249, 31)
         Me.TXT_MATRICUL.Margin = New System.Windows.Forms.Padding(2)
         Me.TXT_MATRICUL.Name = "TXT_MATRICUL"
-        Me.TXT_MATRICUL.Size = New System.Drawing.Size(264, 26)
+        Me.TXT_MATRICUL.Size = New System.Drawing.Size(264, 30)
         Me.TXT_MATRICUL.TabIndex = 0
         '
         'TXT_MATRICULB
@@ -297,7 +296,7 @@ Partial Class RechercherPage
         Me.TXT_MATRICULB.Location = New System.Drawing.Point(249, 75)
         Me.TXT_MATRICULB.Margin = New System.Windows.Forms.Padding(2)
         Me.TXT_MATRICULB.Name = "TXT_MATRICULB"
-        Me.TXT_MATRICULB.Size = New System.Drawing.Size(264, 26)
+        Me.TXT_MATRICULB.Size = New System.Drawing.Size(264, 30)
         Me.TXT_MATRICULB.TabIndex = 1
         '
         'TXT_PRENOMA
@@ -306,7 +305,7 @@ Partial Class RechercherPage
         Me.TXT_PRENOMA.Location = New System.Drawing.Point(249, 251)
         Me.TXT_PRENOMA.Margin = New System.Windows.Forms.Padding(2)
         Me.TXT_PRENOMA.Name = "TXT_PRENOMA"
-        Me.TXT_PRENOMA.Size = New System.Drawing.Size(264, 26)
+        Me.TXT_PRENOMA.Size = New System.Drawing.Size(264, 30)
         Me.TXT_PRENOMA.TabIndex = 8
         '
         'TXT_NOMA
@@ -315,7 +314,7 @@ Partial Class RechercherPage
         Me.TXT_NOMA.Location = New System.Drawing.Point(249, 163)
         Me.TXT_NOMA.Margin = New System.Windows.Forms.Padding(2)
         Me.TXT_NOMA.Name = "TXT_NOMA"
-        Me.TXT_NOMA.Size = New System.Drawing.Size(264, 26)
+        Me.TXT_NOMA.Size = New System.Drawing.Size(264, 30)
         Me.TXT_NOMA.TabIndex = 9
         '
         'LB_NOMA
@@ -325,7 +324,7 @@ Partial Class RechercherPage
         Me.LB_NOMA.Location = New System.Drawing.Point(61, 124)
         Me.LB_NOMA.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_NOMA.Name = "LB_NOMA"
-        Me.LB_NOMA.Size = New System.Drawing.Size(115, 17)
+        Me.LB_NOMA.Size = New System.Drawing.Size(137, 20)
         Me.LB_NOMA.TabIndex = 32
         Me.LB_NOMA.Text = "Nom en Français"
         '
@@ -335,7 +334,7 @@ Partial Class RechercherPage
         Me.TXT_PRENOM.Location = New System.Drawing.Point(249, 207)
         Me.TXT_PRENOM.Margin = New System.Windows.Forms.Padding(2)
         Me.TXT_PRENOM.Name = "TXT_PRENOM"
-        Me.TXT_PRENOM.Size = New System.Drawing.Size(264, 26)
+        Me.TXT_PRENOM.Size = New System.Drawing.Size(264, 30)
         Me.TXT_PRENOM.TabIndex = 10
         '
         'LB_PRENOMA
@@ -345,7 +344,7 @@ Partial Class RechercherPage
         Me.LB_PRENOMA.Location = New System.Drawing.Point(61, 256)
         Me.LB_PRENOMA.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_PRENOMA.Name = "LB_PRENOMA"
-        Me.LB_PRENOMA.Size = New System.Drawing.Size(119, 17)
+        Me.LB_PRENOMA.Size = New System.Drawing.Size(139, 20)
         Me.LB_PRENOMA.TabIndex = 31
         Me.LB_PRENOMA.Text = "Prénom en Arabe"
         '
@@ -355,7 +354,7 @@ Partial Class RechercherPage
         Me.TXT_NOM.Location = New System.Drawing.Point(249, 119)
         Me.TXT_NOM.Margin = New System.Windows.Forms.Padding(2)
         Me.TXT_NOM.Name = "TXT_NOM"
-        Me.TXT_NOM.Size = New System.Drawing.Size(264, 26)
+        Me.TXT_NOM.Size = New System.Drawing.Size(264, 30)
         Me.TXT_NOM.TabIndex = 11
         '
         'LB_SEXE
@@ -365,7 +364,7 @@ Partial Class RechercherPage
         Me.LB_SEXE.Location = New System.Drawing.Point(72, 344)
         Me.LB_SEXE.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_SEXE.Name = "LB_SEXE"
-        Me.LB_SEXE.Size = New System.Drawing.Size(39, 17)
+        Me.LB_SEXE.Size = New System.Drawing.Size(46, 20)
         Me.LB_SEXE.TabIndex = 30
         Me.LB_SEXE.Text = "Sexe"
         '
@@ -378,7 +377,7 @@ Partial Class RechercherPage
         Me.DTP_DATEN.Location = New System.Drawing.Point(249, 295)
         Me.DTP_DATEN.Margin = New System.Windows.Forms.Padding(2)
         Me.DTP_DATEN.Name = "DTP_DATEN"
-        Me.DTP_DATEN.Size = New System.Drawing.Size(264, 26)
+        Me.DTP_DATEN.Size = New System.Drawing.Size(264, 30)
         Me.DTP_DATEN.TabIndex = 12
         '
         'CB_SEXE
@@ -388,7 +387,7 @@ Partial Class RechercherPage
         Me.CB_SEXE.Location = New System.Drawing.Point(249, 339)
         Me.CB_SEXE.Margin = New System.Windows.Forms.Padding(2)
         Me.CB_SEXE.Name = "CB_SEXE"
-        Me.CB_SEXE.Size = New System.Drawing.Size(154, 28)
+        Me.CB_SEXE.Size = New System.Drawing.Size(154, 33)
         Me.CB_SEXE.TabIndex = 13
         '
         'LB_DATEN
@@ -398,7 +397,7 @@ Partial Class RechercherPage
         Me.LB_DATEN.Location = New System.Drawing.Point(61, 300)
         Me.LB_DATEN.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_DATEN.Name = "LB_DATEN"
-        Me.LB_DATEN.Size = New System.Drawing.Size(126, 17)
+        Me.LB_DATEN.Size = New System.Drawing.Size(149, 20)
         Me.LB_DATEN.TabIndex = 25
         Me.LB_DATEN.Text = "Date de naissance"
         '
@@ -409,7 +408,7 @@ Partial Class RechercherPage
         Me.LB_MATRICULB.Location = New System.Drawing.Point(61, 80)
         Me.LB_MATRICULB.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_MATRICULB.Name = "LB_MATRICULB"
-        Me.LB_MATRICULB.Size = New System.Drawing.Size(116, 17)
+        Me.LB_MATRICULB.Size = New System.Drawing.Size(141, 20)
         Me.LB_MATRICULB.TabIndex = 21
         Me.LB_MATRICULB.Text = "Matricule de BAC"
         '
@@ -455,7 +454,6 @@ Partial Class RechercherPage
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.Label6)
-        Me.SplitContainer1.Panel2.Controls.Add(Me.ComboBox1)
         Me.SplitContainer1.Panel2.Controls.Add(Me.LB_WILAYA)
         Me.SplitContainer1.Panel2.Controls.Add(Me.LB_WILAYANA)
         Me.SplitContainer1.Panel2.Controls.Add(Me.CB_WILAYAN)
@@ -487,19 +485,9 @@ Partial Class RechercherPage
         Me.Label6.Location = New System.Drawing.Point(30, 21)
         Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(216, 17)
+        Me.Label6.Size = New System.Drawing.Size(256, 20)
         Me.Label6.TabIndex = 70
         Me.Label6.Text = "Wilaya de naissance en Francais"
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(254, 16)
-        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(2)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(264, 28)
-        Me.ComboBox1.TabIndex = 69
         '
         'LB_WILAYA
         '
@@ -508,7 +496,7 @@ Partial Class RechercherPage
         Me.LB_WILAYA.Location = New System.Drawing.Point(34, 115)
         Me.LB_WILAYA.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_WILAYA.Name = "LB_WILAYA"
-        Me.LB_WILAYA.Size = New System.Drawing.Size(103, 17)
+        Me.LB_WILAYA.Size = New System.Drawing.Size(122, 20)
         Me.LB_WILAYA.TabIndex = 68
         Me.LB_WILAYA.Text = "Wilaya actuelle"
         '
@@ -519,7 +507,7 @@ Partial Class RechercherPage
         Me.LB_WILAYANA.Location = New System.Drawing.Point(34, 63)
         Me.LB_WILAYANA.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_WILAYANA.Name = "LB_WILAYANA"
-        Me.LB_WILAYANA.Size = New System.Drawing.Size(200, 17)
+        Me.LB_WILAYANA.Size = New System.Drawing.Size(235, 20)
         Me.LB_WILAYANA.TabIndex = 65
         Me.LB_WILAYANA.Text = "Wilaya de naissance en Arabe"
         '
@@ -527,10 +515,10 @@ Partial Class RechercherPage
         '
         Me.CB_WILAYAN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CB_WILAYAN.FormattingEnabled = True
-        Me.CB_WILAYAN.Location = New System.Drawing.Point(254, 63)
+        Me.CB_WILAYAN.Location = New System.Drawing.Point(254, 14)
         Me.CB_WILAYAN.Margin = New System.Windows.Forms.Padding(2)
         Me.CB_WILAYAN.Name = "CB_WILAYAN"
-        Me.CB_WILAYAN.Size = New System.Drawing.Size(264, 28)
+        Me.CB_WILAYAN.Size = New System.Drawing.Size(264, 33)
         Me.CB_WILAYAN.TabIndex = 59
         Me.CB_WILAYAN.Visible = False
         '
@@ -541,7 +529,7 @@ Partial Class RechercherPage
         Me.CB_WILAYANA.Location = New System.Drawing.Point(254, 63)
         Me.CB_WILAYANA.Margin = New System.Windows.Forms.Padding(2)
         Me.CB_WILAYANA.Name = "CB_WILAYANA"
-        Me.CB_WILAYANA.Size = New System.Drawing.Size(264, 28)
+        Me.CB_WILAYANA.Size = New System.Drawing.Size(264, 33)
         Me.CB_WILAYANA.TabIndex = 60
         '
         'CB_WILAYA
@@ -551,7 +539,7 @@ Partial Class RechercherPage
         Me.CB_WILAYA.Location = New System.Drawing.Point(254, 110)
         Me.CB_WILAYA.Margin = New System.Windows.Forms.Padding(2)
         Me.CB_WILAYA.Name = "CB_WILAYA"
-        Me.CB_WILAYA.Size = New System.Drawing.Size(264, 28)
+        Me.CB_WILAYA.Size = New System.Drawing.Size(264, 33)
         Me.CB_WILAYA.TabIndex = 61
         '
         'SplitContainer2
@@ -613,7 +601,7 @@ Partial Class RechercherPage
         Me.CB_ANNEEB.Location = New System.Drawing.Point(254, 148)
         Me.CB_ANNEEB.Margin = New System.Windows.Forms.Padding(2)
         Me.CB_ANNEEB.Name = "CB_ANNEEB"
-        Me.CB_ANNEEB.Size = New System.Drawing.Size(264, 28)
+        Me.CB_ANNEEB.Size = New System.Drawing.Size(264, 33)
         Me.CB_ANNEEB.TabIndex = 42
         '
         'LB_SERI
@@ -623,7 +611,7 @@ Partial Class RechercherPage
         Me.LB_SERI.Location = New System.Drawing.Point(34, 103)
         Me.LB_SERI.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_SERI.Name = "LB_SERI"
-        Me.LB_SERI.Size = New System.Drawing.Size(92, 17)
+        Me.LB_SERI.Size = New System.Drawing.Size(111, 20)
         Me.LB_SERI.TabIndex = 47
         Me.LB_SERI.Text = "Série de BAC"
         '
@@ -633,7 +621,7 @@ Partial Class RechercherPage
         Me.TXT_MOYBAC.Location = New System.Drawing.Point(254, 58)
         Me.TXT_MOYBAC.Margin = New System.Windows.Forms.Padding(2)
         Me.TXT_MOYBAC.Name = "TXT_MOYBAC"
-        Me.TXT_MOYBAC.Size = New System.Drawing.Size(264, 26)
+        Me.TXT_MOYBAC.Size = New System.Drawing.Size(264, 30)
         Me.TXT_MOYBAC.TabIndex = 40
         '
         'LB_WILAYAB
@@ -643,7 +631,7 @@ Partial Class RechercherPage
         Me.LB_WILAYAB.Location = New System.Drawing.Point(34, 13)
         Me.LB_WILAYAB.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_WILAYAB.Name = "LB_WILAYAB"
-        Me.LB_WILAYAB.Size = New System.Drawing.Size(101, 17)
+        Me.LB_WILAYAB.Size = New System.Drawing.Size(122, 20)
         Me.LB_WILAYAB.TabIndex = 46
         Me.LB_WILAYAB.Text = "Wilaya de BAC"
         '
@@ -654,7 +642,7 @@ Partial Class RechercherPage
         Me.CB_SERI.Location = New System.Drawing.Point(254, 103)
         Me.CB_SERI.Margin = New System.Windows.Forms.Padding(2)
         Me.CB_SERI.Name = "CB_SERI"
-        Me.CB_SERI.Size = New System.Drawing.Size(264, 28)
+        Me.CB_SERI.Size = New System.Drawing.Size(264, 33)
         Me.CB_SERI.TabIndex = 41
         '
         'LB_MOYBAC
@@ -664,7 +652,7 @@ Partial Class RechercherPage
         Me.LB_MOYBAC.Location = New System.Drawing.Point(34, 58)
         Me.LB_MOYBAC.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_MOYBAC.Name = "LB_MOYBAC"
-        Me.LB_MOYBAC.Size = New System.Drawing.Size(117, 17)
+        Me.LB_MOYBAC.Size = New System.Drawing.Size(139, 20)
         Me.LB_MOYBAC.TabIndex = 45
         Me.LB_MOYBAC.Text = "Moyenne de BAC"
         '
@@ -675,7 +663,7 @@ Partial Class RechercherPage
         Me.CB_WILAYAB.Location = New System.Drawing.Point(254, 13)
         Me.CB_WILAYAB.Margin = New System.Windows.Forms.Padding(2)
         Me.CB_WILAYAB.Name = "CB_WILAYAB"
-        Me.CB_WILAYAB.Size = New System.Drawing.Size(264, 28)
+        Me.CB_WILAYAB.Size = New System.Drawing.Size(264, 33)
         Me.CB_WILAYAB.TabIndex = 43
         '
         'LB_ANNEEB
@@ -685,7 +673,7 @@ Partial Class RechercherPage
         Me.LB_ANNEEB.Location = New System.Drawing.Point(34, 148)
         Me.LB_ANNEEB.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_ANNEEB.Name = "LB_ANNEEB"
-        Me.LB_ANNEEB.Size = New System.Drawing.Size(100, 17)
+        Me.LB_ANNEEB.Size = New System.Drawing.Size(119, 20)
         Me.LB_ANNEEB.TabIndex = 44
         Me.LB_ANNEEB.Text = "Annee de BAC"
         '
@@ -797,10 +785,9 @@ Partial Class RechercherPage
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents TXT_MERE As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents TXT_PERE As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
 End Class

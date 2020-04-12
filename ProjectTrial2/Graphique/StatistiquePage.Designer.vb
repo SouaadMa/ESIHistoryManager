@@ -26,25 +26,25 @@ Partial Class StatistiquePage
         Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.StatistiquesPanel = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.CB_MOYENNE = New System.Windows.Forms.ComboBox()
+        Me.CB_SPECIALIT = New System.Windows.Forms.ComboBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.CB_GROUPE = New System.Windows.Forms.ComboBox()
+        Me.CB_MAT = New System.Windows.Forms.ComboBox()
+        Me.CB_PROMO = New System.Windows.Forms.ComboBox()
+        Me.CB_SEC = New System.Windows.Forms.ComboBox()
         Me.BT_NEXT = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.BT_CHART = New System.Windows.Forms.Button()
         Me.CB_CHARTKIND = New System.Windows.Forms.ComboBox()
-        Me.CB_SEC = New System.Windows.Forms.ComboBox()
-        Me.CB_MAT = New System.Windows.Forms.ComboBox()
-        Me.CB_PROMO = New System.Windows.Forms.ComboBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
-        Me.CB_GROUPE = New System.Windows.Forms.ComboBox()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.CB_SPECIALIT = New System.Windows.Forms.ComboBox()
-        Me.CB_MOYENNE = New System.Windows.Forms.ComboBox()
         Me.StatistiquesPanel.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'StatistiquesPanel
@@ -53,19 +53,96 @@ Partial Class StatistiquePage
         Me.StatistiquesPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.StatistiquesPanel.BackColor = System.Drawing.Color.Transparent
         Me.StatistiquesPanel.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.background
+        Me.StatistiquesPanel.Controls.Add(Me.Chart1)
         Me.StatistiquesPanel.Controls.Add(Me.Panel2)
         Me.StatistiquesPanel.Controls.Add(Me.BT_NEXT)
         Me.StatistiquesPanel.Controls.Add(Me.Button1)
         Me.StatistiquesPanel.Controls.Add(Me.BT_CHART)
         Me.StatistiquesPanel.Controls.Add(Me.CB_CHARTKIND)
         Me.StatistiquesPanel.Controls.Add(Me.Panel1)
-        Me.StatistiquesPanel.Controls.Add(Me.Chart1)
         Me.StatistiquesPanel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.StatistiquesPanel.Location = New System.Drawing.Point(2, 1)
         Me.StatistiquesPanel.Margin = New System.Windows.Forms.Padding(0)
         Me.StatistiquesPanel.Name = "StatistiquesPanel"
         Me.StatistiquesPanel.Size = New System.Drawing.Size(675, 638)
         Me.StatistiquesPanel.TabIndex = 12
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.CB_MOYENNE)
+        Me.Panel2.Controls.Add(Me.CB_SPECIALIT)
+        Me.Panel2.Controls.Add(Me.ComboBox1)
+        Me.Panel2.Controls.Add(Me.CB_GROUPE)
+        Me.Panel2.Controls.Add(Me.CB_MAT)
+        Me.Panel2.Controls.Add(Me.CB_PROMO)
+        Me.Panel2.Controls.Add(Me.CB_SEC)
+        Me.Panel2.Location = New System.Drawing.Point(0, 77)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(675, 132)
+        Me.Panel2.TabIndex = 11
+        '
+        'CB_MOYENNE
+        '
+        Me.CB_MOYENNE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CB_MOYENNE.FormattingEnabled = True
+        Me.CB_MOYENNE.Location = New System.Drawing.Point(403, 45)
+        Me.CB_MOYENNE.Name = "CB_MOYENNE"
+        Me.CB_MOYENNE.Size = New System.Drawing.Size(120, 33)
+        Me.CB_MOYENNE.TabIndex = 12
+        '
+        'CB_SPECIALIT
+        '
+        Me.CB_SPECIALIT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CB_SPECIALIT.FormattingEnabled = True
+        Me.CB_SPECIALIT.Location = New System.Drawing.Point(403, 84)
+        Me.CB_SPECIALIT.Name = "CB_SPECIALIT"
+        Me.CB_SPECIALIT.Size = New System.Drawing.Size(120, 33)
+        Me.CB_SPECIALIT.TabIndex = 11
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(10, 6)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(294, 33)
+        Me.ComboBox1.TabIndex = 2
+        '
+        'CB_GROUPE
+        '
+        Me.CB_GROUPE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CB_GROUPE.FormattingEnabled = True
+        Me.CB_GROUPE.Location = New System.Drawing.Point(542, 84)
+        Me.CB_GROUPE.Name = "CB_GROUPE"
+        Me.CB_GROUPE.Size = New System.Drawing.Size(120, 33)
+        Me.CB_GROUPE.TabIndex = 10
+        '
+        'CB_MAT
+        '
+        Me.CB_MAT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CB_MAT.FormattingEnabled = True
+        Me.CB_MAT.Location = New System.Drawing.Point(403, 6)
+        Me.CB_MAT.Name = "CB_MAT"
+        Me.CB_MAT.Size = New System.Drawing.Size(120, 33)
+        Me.CB_MAT.TabIndex = 4
+        '
+        'CB_PROMO
+        '
+        Me.CB_PROMO.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CB_PROMO.FormattingEnabled = True
+        Me.CB_PROMO.Location = New System.Drawing.Point(542, 6)
+        Me.CB_PROMO.Name = "CB_PROMO"
+        Me.CB_PROMO.Size = New System.Drawing.Size(120, 33)
+        Me.CB_PROMO.TabIndex = 3
+        '
+        'CB_SEC
+        '
+        Me.CB_SEC.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CB_SEC.FormattingEnabled = True
+        Me.CB_SEC.Location = New System.Drawing.Point(542, 45)
+        Me.CB_SEC.Name = "CB_SEC"
+        Me.CB_SEC.Size = New System.Drawing.Size(120, 33)
+        Me.CB_SEC.TabIndex = 5
         '
         'BT_NEXT
         '
@@ -114,42 +191,6 @@ Partial Class StatistiquePage
         Me.CB_CHARTKIND.Size = New System.Drawing.Size(160, 33)
         Me.CB_CHARTKIND.TabIndex = 6
         '
-        'CB_SEC
-        '
-        Me.CB_SEC.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CB_SEC.FormattingEnabled = True
-        Me.CB_SEC.Location = New System.Drawing.Point(542, 45)
-        Me.CB_SEC.Name = "CB_SEC"
-        Me.CB_SEC.Size = New System.Drawing.Size(120, 33)
-        Me.CB_SEC.TabIndex = 5
-        '
-        'CB_MAT
-        '
-        Me.CB_MAT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CB_MAT.FormattingEnabled = True
-        Me.CB_MAT.Location = New System.Drawing.Point(403, 6)
-        Me.CB_MAT.Name = "CB_MAT"
-        Me.CB_MAT.Size = New System.Drawing.Size(120, 33)
-        Me.CB_MAT.TabIndex = 4
-        '
-        'CB_PROMO
-        '
-        Me.CB_PROMO.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CB_PROMO.FormattingEnabled = True
-        Me.CB_PROMO.Location = New System.Drawing.Point(542, 6)
-        Me.CB_PROMO.Name = "CB_PROMO"
-        Me.CB_PROMO.Size = New System.Drawing.Size(120, 33)
-        Me.CB_PROMO.TabIndex = 3
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(10, 6)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(294, 33)
-        Me.ComboBox1.TabIndex = 2
-        '
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.Label1)
@@ -178,56 +219,15 @@ Partial Class StatistiquePage
         Me.Chart1.ChartAreas.Add(ChartArea1)
         Legend1.Name = "Legend1"
         Me.Chart1.Legends.Add(Legend1)
-        Me.Chart1.Location = New System.Drawing.Point(84, 229)
+        Me.Chart1.Location = New System.Drawing.Point(123, 273)
         Me.Chart1.Name = "Chart1"
         Series1.ChartArea = "ChartArea1"
         Series1.Legend = "Legend1"
         Series1.Name = "Series1"
         Me.Chart1.Series.Add(Series1)
-        Me.Chart1.Size = New System.Drawing.Size(515, 359)
-        Me.Chart1.TabIndex = 0
+        Me.Chart1.Size = New System.Drawing.Size(439, 300)
+        Me.Chart1.TabIndex = 12
         Me.Chart1.Text = "Chart1"
-        '
-        'CB_GROUPE
-        '
-        Me.CB_GROUPE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CB_GROUPE.FormattingEnabled = True
-        Me.CB_GROUPE.Location = New System.Drawing.Point(542, 84)
-        Me.CB_GROUPE.Name = "CB_GROUPE"
-        Me.CB_GROUPE.Size = New System.Drawing.Size(120, 33)
-        Me.CB_GROUPE.TabIndex = 10
-        '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.CB_MOYENNE)
-        Me.Panel2.Controls.Add(Me.CB_SPECIALIT)
-        Me.Panel2.Controls.Add(Me.ComboBox1)
-        Me.Panel2.Controls.Add(Me.CB_GROUPE)
-        Me.Panel2.Controls.Add(Me.CB_MAT)
-        Me.Panel2.Controls.Add(Me.CB_PROMO)
-        Me.Panel2.Controls.Add(Me.CB_SEC)
-        Me.Panel2.Location = New System.Drawing.Point(0, 77)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(675, 132)
-        Me.Panel2.TabIndex = 11
-        '
-        'CB_SPECIALIT
-        '
-        Me.CB_SPECIALIT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CB_SPECIALIT.FormattingEnabled = True
-        Me.CB_SPECIALIT.Location = New System.Drawing.Point(403, 84)
-        Me.CB_SPECIALIT.Name = "CB_SPECIALIT"
-        Me.CB_SPECIALIT.Size = New System.Drawing.Size(120, 33)
-        Me.CB_SPECIALIT.TabIndex = 11
-        '
-        'CB_MOYENNE
-        '
-        Me.CB_MOYENNE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CB_MOYENNE.FormattingEnabled = True
-        Me.CB_MOYENNE.Location = New System.Drawing.Point(403, 45)
-        Me.CB_MOYENNE.Name = "CB_MOYENNE"
-        Me.CB_MOYENNE.Size = New System.Drawing.Size(120, 33)
-        Me.CB_MOYENNE.TabIndex = 12
         '
         'StatistiquePage
         '
@@ -243,10 +243,10 @@ Partial Class StatistiquePage
         Me.TopMost = True
         Me.WindowState = System.Windows.Forms.FormWindowState.Minimized
         Me.StatistiquesPanel.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -259,11 +259,11 @@ Partial Class StatistiquePage
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Chart1 As System.Windows.Forms.DataVisualization.Charting.Chart
     Friend WithEvents BT_NEXT As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents CB_GROUPE As System.Windows.Forms.ComboBox
     Friend WithEvents CB_MOYENNE As System.Windows.Forms.ComboBox
     Friend WithEvents CB_SPECIALIT As System.Windows.Forms.ComboBox
+    Friend WithEvents Chart1 As System.Windows.Forms.DataVisualization.Charting.Chart
 End Class

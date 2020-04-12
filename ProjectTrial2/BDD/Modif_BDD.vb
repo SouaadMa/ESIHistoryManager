@@ -71,7 +71,6 @@
         Next
 
         requete = requete + " WHERE MATRIN = '" + matrin + "' " '    ' Completer l'instruction sql de modification en ajoutant le condition ( la valeur de matricule de l'étudiant qui va etre changée
-        MsgBox(" - " + requete)
         Return requete                                              ' Retourner l'instruction sql de modification
 
     End Function

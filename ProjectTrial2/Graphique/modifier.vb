@@ -32,7 +32,7 @@
         Me.TXT_NomEtudA.Text = esistselect.GetInfoChamps("NomEtudA")
         Me.TXT_Prenoms.Text = esistselect.GetInfoChamps("Prenoms")
         Me.TXT_PrenomsA.Text = esistselect.GetInfoChamps("PrenomsA")
-        Me.CB_SEXE.Text = esistselect.GetInfoChamps("SEXE")
+        Me.CB_SEXE.Text = InfosGenerales.sexe(CInt(esistselect.GetInfoChamps("SEXE")))
         Me.TXT_VILLE.Text = esistselect.GetInfoChamps("VILLE")
         Me.CB_WILAYA.Text = esistselect.GetInfoChamps("WILAYA")
         Me.CB_WILAYAN.Text = esistselect.GetInfoChamps("WILNAIS")
@@ -158,7 +158,7 @@
             End If
 
             If Me.CB_SEXE.Text <> esistselect.GetInfoChamps("SEXE") And Me.CB_SEXE.Text <> "" Then
-                collection_critere.Add(New Critere("SEXE", Me.CB_SEXE.Text, "ETUDIANT"))
+                collection_critere.Add(New Critere("SEXE", Me.CB_SEXE.SelectedIndex, "ETUDIANT"))
             End If
 
             If Me.TXT_VILLE.Text <> esistselect.GetInfoChamps("VILLE") And Me.TXT_VILLE.Text <> "" Then
@@ -190,8 +190,14 @@
                 BT_MODIFIER.Enabled = False
                 Worning.Visible = True
             Else
-                Modification.traitModifier(collection_critere, esistselect)
 
+                Modification.traitModifier(collection_critere, esistselect)
+                For Each Critere As Critere In collection_critere
+                    CType(Home.f, affichResearchResult).StudentTable.Rows.Item(CType(Home.f, affichResearchResult).SelectedStudent)(Critere.getChamps) = Critere.getValeur
+                Next
+                CType(Home.f, affichResearchResult).StudentList.Clear()
+                CType(Home.f, affichResearchResult).affich_pageResult()
+                CType(Home.f, affichResearchResult).TableLayoutPanel1_Leave(TableLayoutPanel1, New EventArgs())
             End If
         End If
 
@@ -308,154 +314,168 @@
         Worning.Visible = False
         TXT_DATENAIS.BackColor = Color.White
         TXT_DATENAIS.ForeColor = Color.DarkGray
-        DTP_DATENAIS.ForeColor = Color.DarkGray
+        TXT_DATENAIS.ForeColor = Color.White
     End Sub
 
     Private Sub TXT_NomEtud_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_NomEtud.MouseLeave
-        If TXT_NomEtud.Text <> "" Then
+        If TXT_NomEtud.Text <> "" And TXT_NomEtud.Text <> esistselect.GetInfoChamps("NomEtud") Then
             BT_MODIFIER.Enabled = True
+            TXT_NomEtud.ForeColor = Color.DimGray
         Else
             Me.TXT_NomEtud.Text = esistselect.GetInfoChamps("NomEtud")
         End If
-        TXT_NomEtud.ForeColor = Color.DimGray
+        TXT_NomEtud.BackColor = Color.White
     End Sub
 
     Private Sub TXT_Prenoms_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_Prenoms.MouseLeave
-        If TXT_Prenoms.Text <> "" Then
+        If TXT_Prenoms.Text <> "" And TXT_Prenoms.Text <> esistselect.GetInfoChamps("Prenoms") Then
             BT_MODIFIER.Enabled = True
+            TXT_Prenoms.ForeColor = Color.DimGray
         Else
             Me.TXT_Prenoms.Text = esistselect.GetInfoChamps("Prenoms")
         End If
-        TXT_Prenoms.ForeColor = Color.DimGray
+        TXT_Prenoms.BackColor = Color.White
     End Sub
 
     Private Sub TXT_NomEtudA_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_NomEtudA.MouseLeave
-        If TXT_NomEtudA.Text <> "" Then
+        If TXT_NomEtudA.Text <> "" And TXT_NomEtudA.Text <> esistselect.GetInfoChamps("NomEtudA") Then
             BT_MODIFIER.Enabled = True
+            TXT_NomEtudA.ForeColor = Color.DimGray
         Else
             Me.TXT_NomEtudA.Text = esistselect.GetInfoChamps("NomEtudA")
         End If
-        TXT_NomEtudA.ForeColor = Color.DimGray
+        TXT_NomEtudA.BackColor = Color.White
     End Sub
 
     Private Sub TXT_PrenomsA_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_PrenomsA.MouseLeave
-        If TXT_PrenomsA.Text <> "" Then
+        If TXT_PrenomsA.Text <> "" And TXT_PrenomsA.Text <> esistselect.GetInfoChamps("PrenomsA") Then
             BT_MODIFIER.Enabled = True
+            TXT_PrenomsA.ForeColor = Color.DimGray
         Else
             Me.TXT_PrenomsA.Text = esistselect.GetInfoChamps("PrenomsA")
         End If
-        TXT_PrenomsA.ForeColor = Color.DimGray
+        TXT_PrenomsA.BackColor = Color.White
     End Sub
 
     Private Sub CB_SEXE_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CB_SEXE.MouseLeave
-        If CB_SEXE.Text <> "" Then
+        If CB_SEXE.Text <> "" And CB_SEXE.Text <> InfosGenerales.sexe(CInt(esistselect.GetInfoChamps("SEXE"))) Then
             BT_MODIFIER.Enabled = True
+            CB_SEXE.ForeColor = Color.DimGray
         Else
-            Me.CB_SEXE.Text = esistselect.GetInfoChamps("SEXE")
+            Me.CB_SEXE.Text = InfosGenerales.sexe(CInt(esistselect.GetInfoChamps("SEXE")))
         End If
-        CB_SEXE.ForeColor = Color.DimGray
+        CB_SEXE.BackColor = Color.White
     End Sub
 
     Private Sub TXT_FILSDE_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_FILSDE.MouseLeave
-        If TXT_FILSDE.Text <> "" Then
+        If TXT_FILSDE.Text <> "" And TXT_FILSDE.Text <> esistselect.GetInfoChamps("FILS_DE") Then
             BT_MODIFIER.Enabled = True
+            TXT_FILSDE.ForeColor = Color.DimGray
         Else
             Me.TXT_FILSDE.Text = esistselect.GetInfoChamps("FILS_DE")
         End If
-        TXT_FILSDE.ForeColor = Color.DimGray
+        TXT_FILSDE.BackColor = Color.White
     End Sub
 
     Private Sub TXT_ETDE_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_ETDE.MouseLeave
-        If TXT_ETDE.Text <> "" Then
+        If TXT_ETDE.Text <> "" And TXT_ETDE.Text <> esistselect.GetInfoChamps("ET_DE") Then
             BT_MODIFIER.Enabled = True
+            TXT_ETDE.ForeColor = Color.DimGray
         Else
             Me.TXT_ETDE.Text = esistselect.GetInfoChamps("ET_DE")
         End If
-        TXT_ETDE.ForeColor = Color.DimGray
+        TXT_ETDE.BackColor = Color.White
     End Sub
 
     Private Sub TXT_LIEUNA_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_LIEUN.MouseLeave
-        If TXT_LIEUNA.Text <> "" Then
+        If TXT_LIEUNA.Text <> "" And TXT_LIEUNA.Text <> esistselect.GetInfoChamps("LieuNaisA") Then
             BT_MODIFIER.Enabled = True
+            TXT_LIEUNA.ForeColor = Color.DimGray
         Else
             Me.TXT_LIEUNA.Text = esistselect.GetInfoChamps("LieuNaisA")
         End If
-        TXT_LIEUNA.ForeColor = Color.DimGray
+        TXT_LIEUNA.BackColor = Color.White
     End Sub
 
     Private Sub CB_WILAYAN_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CB_WILAYAN.MouseLeave
-        If CB_WILAYAN.Text <> "" Then
+        If CB_WILAYAN.Text <> "" And CB_WILAYAN.Text <> esistselect.GetInfoChamps("WILNAIS") Then
             BT_MODIFIER.Enabled = True
+            CB_WILAYAN.ForeColor = Color.DimGray
         Else
             Me.CB_WILAYAN.Text = esistselect.GetInfoChamps("WILNAIS")
         End If
-        CB_WILAYAN.ForeColor = Color.DimGray
+        CB_WILAYAN.BackColor = Color.White
     End Sub
 
     Private Sub TXT_LIEUN_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_LIEUNA.MouseLeave
-        If TXT_LIEUN.Text <> "" Then
+        If TXT_LIEUN.Text <> "" And TXT_LIEUN.Text <> esistselect.GetInfoChamps("LieuNais") Then
             BT_MODIFIER.Enabled = True
+            TXT_LIEUN.ForeColor = Color.DimGray
         Else
             Me.TXT_LIEUN.Text = esistselect.GetInfoChamps("LieuNais")
         End If
-        TXT_LIEUN.ForeColor = Color.DimGray
+        TXT_LIEUN.BackColor = Color.White
     End Sub
 
     Private Sub CB_WILAYANA_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CB_WILAYANA.MouseLeave
-        If CB_WILAYANA.Text <> "" Then
+        If CB_WILAYANA.Text <> "" And CB_WILAYANA.Text <> esistselect.GetInfoChamps("WILNAISA") Then
             BT_MODIFIER.Enabled = True
+            CB_WILAYANA.ForeColor = Color.DimGray
         Else
             Me.CB_WILAYANA.Text = esistselect.GetInfoChamps("WILNAISA")
         End If
-        CB_WILAYANA.ForeColor = Color.DimGray
+        CB_WILAYANA.BackColor = Color.White
     End Sub
 
     Private Sub TXT_ADR_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_ADR.MouseLeave
-        If TXT_ADR.Text <> "" Then
+        If TXT_ADR.Text <> "" And TXT_ADR.Text <> esistselect.GetInfoChamps("ADRESSE") Then
             BT_MODIFIER.Enabled = True
+            TXT_ADR.ForeColor = Color.DimGray
         Else
             Me.TXT_ADR.Text = esistselect.GetInfoChamps("ADRESSE")
         End If
-        TXT_ADR.ForeColor = Color.DimGray
+        TXT_ADR.BackColor = Color.White
     End Sub
 
     Private Sub TXT_VILLE_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_VILLE.MouseLeave
-        If TXT_VILLE.Text <> "" Then
+        If TXT_VILLE.Text <> "" And TXT_VILLE.Text <> esistselect.GetInfoChamps("VILLE") Then
             BT_MODIFIER.Enabled = True
+            TXT_VILLE.ForeColor = Color.DimGray
         Else
             Me.TXT_VILLE.Text = esistselect.GetInfoChamps("VILLE")
         End If
-        TXT_VILLE.ForeColor = Color.DimGray
+        TXT_VILLE.BackColor = Color.White
     End Sub
 
     Private Sub CB_WILAYA_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CB_WILAYA.MouseLeave
-        If CB_WILAYA.Text <> "" Then
+        If CB_WILAYA.Text <> "" And CB_WILAYA.Text <> esistselect.GetInfoChamps("WILAYA") Then
             BT_MODIFIER.Enabled = True
+            CB_WILAYA.ForeColor = Color.DimGray
         Else
             Me.CB_WILAYA.Text = esistselect.GetInfoChamps("WILAYA")
         End If
-        CB_WILAYA.ForeColor = Color.DimGray
+        CB_WILAYA.BackColor = Color.White
     End Sub
 
     Private Sub TXT_CODEPOS_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_CODEPOS.MouseLeave
-        If TXT_CODEPOS.Text <> "" Then
+        If TXT_CODEPOS.Text <> "" And TXT_CODEPOS.Text <> esistselect.GetInfoChamps("CODPOST") Then
             BT_MODIFIER.Enabled = True
+            TXT_CODEPOS.ForeColor = Color.DimGray
         Else
             Me.TXT_CODEPOS.Text = esistselect.GetInfoChamps("CODPOST")
         End If
-        TXT_CODEPOS.ForeColor = Color.DimGray
+        TXT_CODEPOS.BackColor = Color.White
     End Sub
 
     Private Sub DTP_DATENAIS_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DTP_DATENAIS.MouseLeave
         If DTP_DATENAIS.Text <> "" And Me.DTP_DATENAIS.Text <> esistselect.GetInfoChamps("DateNais") Then
             BT_MODIFIER.Enabled = True
             TXT_DATENAIS.Text = DTP_DATENAIS.Text
+            DTP_DATENAIS.ForeColor = Color.DimGray
         Else
             TXT_DATENAIS.Text = esistselect.GetInfoChamps("DateNais")
         End If
-        DTP_DATENAIS.Visible = False
-        TXT_DATENAIS.Visible = True
-        DTP_DATENAIS.ForeColor = Color.DimGray
+        DTP_DATENAIS.BackColor = Color.White
     End Sub
 
     Private Sub TXT_NomEtud_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_NomEtud.MouseHover
@@ -532,6 +552,7 @@
     Private Sub BT_SORTIR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_SORTIR.Click
         Me.Close()
         'Home.f.Show()
+
         Home.MainContainer2.Visible = False
         Home.MainContainer1.Visible = True
     End Sub

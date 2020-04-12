@@ -36,7 +36,7 @@
         Me.LB_PRENOM.Text = esistselect.GetInfoChamps("Prenoms")
         Me.LB_PRENOMA.Text = esistselect.GetInfoChamps("PrenomsA")
         Me.LB_SERI.Text = esistselect.GetInfoChamps("SERIEBAC")
-        Me.LB_SEXE.Text = esistselect.GetInfoChamps("SEXE")
+        Me.LB_SEXE.Text = InfosGenerales.sexe(CInt(esistselect.GetInfoChamps("SEXE")))
         Me.LB_VILLE.Text = esistselect.GetInfoChamps("VILLE")
         Me.LB_WILAYA.Text = esistselect.GetInfoChamps("WILAYA")
         Me.LB_WILAYAB.Text = esistselect.GetInfoChamps("WILBAC")

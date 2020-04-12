@@ -14,21 +14,14 @@ Public Class InfosGenerales
     Public Shared lastYear As Integer = 2011
 
     Public Sub New()
-        wilaya = Recherche.GetALL(BDD.champsWILAYA)
-        wilayaarabe = Recherche.GetALL(BDD.champsWilayaNaisA)
-        seribac = Recherche.GetALL(BDD.champsSERIEBAC)
-        codewilaya = Recherche.GetALL(BDD.champsWILNAIS)
+        'wilaya = Recherche.GetALL(BDD.champsWILAYA)
+        'wilayaarabe = Recherche.GetALL(BDD.champsWilayaNaisA)
+        'seribac = Recherche.GetALL(BDD.champsSERIEBAC)
+        'codewilaya = Recherche.GetALL(BDD.champsWILNAIS)
 
-        For Each item As String In seribac
-            'Console.WriteLine("tatatata")
-            Console.WriteLine(item)
-        Next
-
-
-
-        'Console.WriteLine(wilayaarabe.ToString)
-        'Console.WriteLine(seribac.ToString)
-        'Console.WriteLine(codewilaya.ToString)
+        'For Each item As String In seribac
+        'Console.WriteLine(item)
+        'Next
     End Sub
 
 End Class

@@ -4,7 +4,6 @@ Imports System.IO
 Public Class Home
 
     Public _ModeConnexion As Boolean = Login.AdminButton.Checked        'the boolean to determine the connected profile type 
-    'Public loading As Integer = 0
     Public f As Form    ' the form that will be shown in the middle of the page for the side bar operations
     Public h As Form    ' the form that will be shown in the middle of the page for the nav bar operations
     Public Shared alarm As System.Threading.Timer

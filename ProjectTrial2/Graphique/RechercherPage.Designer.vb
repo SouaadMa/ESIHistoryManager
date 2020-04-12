@@ -520,7 +520,6 @@ Partial Class RechercherPage
         Me.CB_WILAYAN.Name = "CB_WILAYAN"
         Me.CB_WILAYAN.Size = New System.Drawing.Size(264, 33)
         Me.CB_WILAYAN.TabIndex = 59
-        Me.CB_WILAYAN.Visible = False
         '
         'CB_WILAYANA
         '

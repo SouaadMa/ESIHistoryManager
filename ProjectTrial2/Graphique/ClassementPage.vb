@@ -334,7 +334,7 @@
 
     Private Sub GetClassemntResult()
         Dim crit As New List(Of Critere)
-        crit.Add(New Critere("ANNEEBAC", PromoButton.Text))
+        crit.Add(New Critere("ANNEEBAC", CInt(PromoButton.Text)))
         StudentTable = Recherche.traitRechercher(crit, RechercherPage.BackgroundWorker1, New System.ComponentModel.DoWorkEventArgs(Nothing))
 
         Console.WriteLine("results number is : " + StudentTable.Rows.Count.ToString)

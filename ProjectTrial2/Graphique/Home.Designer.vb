@@ -223,6 +223,7 @@ Partial Class Home
         Me.MenuButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
         Me.MenuButton.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.hamburger
         Me.MenuButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.MenuButton.CausesValidation = False
         Me.MenuButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.MenuButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
         Me.MenuButton.FlatAppearance.BorderSize = 0
@@ -236,7 +237,8 @@ Partial Class Home
         Me.MenuButton.MinimumSize = New System.Drawing.Size(45, 49)
         Me.MenuButton.Name = "MenuButton"
         Me.MenuButton.Size = New System.Drawing.Size(55, 117)
-        Me.MenuButton.TabIndex = 0
+        Me.MenuButton.TabIndex = 1
+        Me.MenuButton.TabStop = False
         Me.MenuButton.UseVisualStyleBackColor = True
         '
         'ProfilePane
@@ -680,10 +682,11 @@ Partial Class Home
         Me.AcceptButton = Me.MenuButton
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange
+        Me.AutoValidate = System.Windows.Forms.AutoValidate.Disable
         Me.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.background
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.CancelButton = Me.BT_LOGOUT
+        Me.CausesValidation = False
         Me.ClientSize = New System.Drawing.Size(1017, 699)
         Me.Controls.Add(Me.ProgressPanel)
         Me.Controls.Add(Me.MenuButton)

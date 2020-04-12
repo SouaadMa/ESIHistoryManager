@@ -95,7 +95,7 @@ Public Class Home
         End If
     End Sub
 
-    Private Sub MenuButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuButton.Click
+    Private Sub MenuButton_Click(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MenuButton.MouseClick
         ' handle the meunubutton click ( slide the side bar)
 
         logo_bleu.Visible = Not logo_bleu.Visible
@@ -560,6 +560,7 @@ Public Class Home
         ProgressLabel.Text = x.ToString + "%"
         PictureBox2.Size = New System.Drawing.Size(226, (x * (PictureBox2.MaximumSize.Height)) \ 100)
     End Sub
+
 End Class
 
 

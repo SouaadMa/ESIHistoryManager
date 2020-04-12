@@ -6,6 +6,7 @@
     Public CURRENT_PAGE As Integer = 1
     Public SelectedStudent As Integer = -1
     Public Shared SortDirectionAscendant As Boolean = True
+    Public collectionList As New AutoCompleteStringCollection
 
 
     Private Sub ClassementPage_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -13,7 +14,6 @@
         EtudiantPanel.Visible = True
         PN_PAGES.Visible = True
         NoResultLabel.Visible = False
-        BT_PREV.Enabled = False
         ListBox.Size = ListBox.MinimumSize
 
         ClassementModeBox.Items.Add("Promotion")
@@ -22,10 +22,8 @@
         ClassementModeBox.Items.Add("Section")
         ClassementModeBox.Items.Add("Groupe")
 
-        ClassementModeBox.SelectedIndex = 0
-
         For i = InfosGenerales.firstYear To InfosGenerales.lastYear
-            Me.ListBox.Items.Add(i.ToString)
+            Me.collectionList.Add(i)
         Next
 
         'make the nav bar desactivated
@@ -135,7 +133,7 @@
         Dim i As Integer = 0
         Dim cpt As Integer = (CURRENT_PAGE - 1) * 7
         ' inisializer le nombre des esist
-        Me.RechLabel.Text = "Classement (" + StudentTable.Rows.Count.ToString + ")"
+        'Me.RechLabel.Text = "Classement (" + StudentTable.Rows.Count.ToString + ")"
         For Each ctrl As Control In EtudiantPanel.Controls
             ctrl.Visible = True
         Next
@@ -334,17 +332,15 @@
 
     Private Sub GetClassemntResult()
         Dim crit As New List(Of Critere)
-        crit.Add(New Critere("ANNEEBAC", CInt(PromoButton.Text)))
+        crit.Add(New Critere("ANNEEBAC", CInt(ValueTextBox.Text)))
         StudentTable = Recherche.traitRechercher(crit, RechercherPage.BackgroundWorker1, New System.ComponentModel.DoWorkEventArgs(Nothing))
-
+        Me.RechLabel.Text = "Classement (" + StudentTable.Rows.Count.ToString + ")"
         Console.WriteLine("results number is : " + StudentTable.Rows.Count.ToString)
         If (StudentTable.Rows.Count = 0) Then
             EtudiantPanel.Visible = False
-            PN_PAGES.Visible = False
-            NoResultLabel.Visible = True
-            ClassementModeBox.Visible = False
             Console.WriteLine("Liste des etudiants est vide")
         Else
+            EtudiantPanel.Visible = True
             StudentTable = Classement.SortASCCollection(StudentTable, "MOYBAC")
             'inisializer le bar des pages
             If (StudentTable.Rows.Count Mod 7) = 0 Then
@@ -367,23 +363,57 @@
 
     Private Sub BT_PREV_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_PREV.Click
         BT_NEXT.Enabled = True
-        If Me.PromoButton.Text = "1990" Then
+        Me.ValueTextBox.Text = (Me.ValueTextBox.Text - 1).ToString
+        If Me.ValueTextBox.Text = "1989" Then
             Me.BT_PREV.Enabled = False
-        Else
-            Me.PromoButton.Text = (Me.PromoButton.Text - 1).ToString
         End If
-        GetClassemntResult()
+        ValueTextBox_PreviewKeyDown(ValueTextBox, New System.Windows.Forms.PreviewKeyDownEventArgs(Keys.Enter))
     End Sub
 
     Private Sub BT_NEXT_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_NEXT.Click
         BT_PREV.Enabled = True
-        If Me.PromoButton.Text = "2011" Then
+        Me.ValueTextBox.Text = (Me.ValueTextBox.Text + 1).ToString
+        If Me.ValueTextBox.Text = "2011" Then
             Me.BT_NEXT.Enabled = False
-        Else
-            Me.PromoButton.Text = (Me.PromoButton.Text + 1).ToString
         End If
-        GetClassemntResult()
+        ValueTextBox_PreviewKeyDown(ValueTextBox, New System.Windows.Forms.PreviewKeyDownEventArgs(Keys.Enter))
     End Sub
 
+    Private Sub PromoButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PromoButton.Click
+        ValueTextBox_Click(ValueTextBox, e)
+    End Sub
 
+    Private Sub EtudiantPanel_VisibleChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EtudiantPanel.VisibleChanged
+        NoResultLabel.Visible = Not EtudiantPanel.Visible
+        PagesButtons.Visible = EtudiantPanel.Visible
+        ClassmentCritPanel.Visible = EtudiantPanel.Visible
+        LimitDomain.Visible = EtudiantPanel.Visible
+    End Sub
+
+    'Private Sub ValueTextBox_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ValueTextBox.Leave, ValueTextBox.Validated, ValueTextBox.LostFocus, ValueTextBox.KeyPress
+    '    ValueTextBox.ForeColor = Color.White
+    '    ValueTextBox.BackColor = Color.FromArgb(0, 64, 104)
+    '    Console.WriteLine(e.GetType.ToString)
+    '    GetClassemntResult()
+    'End Sub
+
+    Private Sub ValueTextBox_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ValueTextBox.Click, ValueTextBox.MouseDoubleClick
+        ValueTextBox.AutoCompleteCustomSource = collectionList
+        ValueTextBox.BackColor = Color.White
+        ValueTextBox.ForeColor = Color.FromArgb(0, 64, 104)
+    End Sub
+
+    'Private Sub ValueTextBox_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles ValueTextBox.KeyPress
+
+    'End Sub
+
+    Private Sub ValueTextBox_PreviewKeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PreviewKeyDownEventArgs) Handles ValueTextBox.PreviewKeyDown
+        If e.KeyCode = Keys.Enter Then
+            ValueTextBox.ForeColor = Color.White
+            ValueTextBox.BackColor = Color.FromArgb(0, 64, 104)
+            Console.WriteLine(e.ToString)
+            GetClassemntResult()
+            Me.ActiveControl = Nothing
+        End If
+    End Sub
 End Class

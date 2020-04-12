@@ -65,6 +65,9 @@
 
         'inisialize annee de bac combobox 
 
+        'For Each Critere As String In Login.Infosgenerale.anneebac
+        '    Me.CB_ANNEEB.Items.Add(Critere)
+        'Next
         For i = InfosGenerales.firstYear To InfosGenerales.lastYear
             Me.CB_ANNEEB.Items.Add(i)
         Next
@@ -227,7 +230,7 @@
                 End If
 
                 If Me.CB_ANNEEB.Text <> "" Then
-                    collection_critere.Add(New Critere("ANNEEBAC", CB_ANNEEB.Text))
+                    collection_critere.Add(New Critere("ANNEEBAC", CB_ANNEEB.SelectedIndex + 1989))
                 End If
 
                 If Me.CB_WILAYAB.Text <> "" Then

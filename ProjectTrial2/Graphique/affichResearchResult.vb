@@ -43,13 +43,12 @@
 
         'appel a la fonction qui nous donne la collection des etudiants 
         Me.AffPanel.Dock = DockStyle.Fill   ' dock the seach form in the parent container
-        If SortDirectionAscendant Then
-            Classement.SortASCCollection(StudentTable, "MATRIN")
-        Else
-            Classement.SortDESCollection(StudentTable, "MATRIN")
-        End If
 
         Console.WriteLine("results number is : " + StudentTable.Rows.Count.ToString)
+        ' inisializer le nombre des esist
+        Me.RechLabel.Text += "(" + StudentTable.Rows.Count.ToString + ")"
+        Console.WriteLine("pages number is : " + nb_page.ToString)
+
         If (StudentTable.Rows.Count = 0) Then
             EtudiantPanel.Visible = False
             'AffPanel.Visible = False
@@ -60,26 +59,19 @@
             triLabel.Visible = False
             Console.WriteLine("Liste des etudiants est vide")
         Else
-            'affich_pageResult()
-            'SortModeBox_SelectedIndexChanged(SortModeBox, New EventArgs())
+            If SortDirectionAscendant Then
+                Classement.SortASCCollection(StudentTable, "MATRIN")
+            Else
+                Classement.SortDESCollection(StudentTable, "MATRIN")
+            End If
 
-        End If
+            'inisializer le bar des pages
+            If (StudentTable.Rows.Count Mod 7) = 0 Then
+                nb_page = StudentTable.Rows.Count \ 7
+            Else
+                nb_page = (StudentTable.Rows.Count \ 7) + 1
+            End If
 
-        ' inisializer le nombre des esist
-        Me.RechLabel.Text += "(" + StudentTable.Rows.Count.ToString + ")"
-
-        'inisializer le bar des pages
-        If (StudentTable.Rows.Count Mod 7) = 0 Then
-            nb_page = StudentTable.Rows.Count \ 7
-        Else
-            nb_page = (StudentTable.Rows.Count \ 7) + 1
-        End If
-
-        Console.WriteLine("pages number is : " + nb_page.ToString)
-
-        If nb_page = 0 Then 'if there is no result
-
-        Else
             If nb_page <= 4 Then
                 BT_NEXT.Enabled = False
                 BT_PREV.Enabled = False
@@ -93,8 +85,9 @@
                     BT_P2.Visible = False
                 End If
             End If
-            'inisializer le tab de laffichage 
+
         End If
+
     End Sub
 
 
@@ -350,10 +343,10 @@
 
     Private Sub affichResearchResult_Shown(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Shown
         'affich_pageResult()
-        SortModeBox.SelectedIndex = 0
         Home.MainContainer1.Visible = True
         Home.ProgressPanel.Visible = False
         If StudentTable.Rows.Count > 0 Then
+            SortModeBox.SelectedIndex = 0
             watch_focusLocation(Me)
         End If
     End Sub

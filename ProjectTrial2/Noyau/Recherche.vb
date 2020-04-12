@@ -9,7 +9,7 @@
         'DataTable qui va contenir le résultat retourné par la BDD
         'La collection des étudiants à retourner à la fin de la méthode
 
-        'Console.WriteLine("trait")
+        'Console.WriteLine("c")
         'Pour chaque critère on fait appel à génèreRequete
         If Not bw.CancellationPending Then
 
@@ -17,7 +17,7 @@
                 instructionSQL = Rech_BDD.genereRechRequetes(instructionSQL, crit)
                 'bw.ReportProgress(CInt(x))
             Next
-            'Console.WriteLine("traited")
+            Console.WriteLine(instructionSQL)
             'On passe la requête finale à ExécuteRequ et on sauvegarde son résultat
             If Not bw.CancellationPending Then
                 resultatRech = BDD.executeRequete(instructionSQL)

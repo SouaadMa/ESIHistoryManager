@@ -14,10 +14,10 @@ Public Class BDD
     Public Const champsNomEtudA = "NomEtudA", champsPrenomsA = "PrenomsA"
     Public Const champsMATRIC_INS = "MATRIC_INS", champsMATRIN = "MATRIN"
     Public Const champsDateNais = "DateNais", champsLieuNaisA = "LieuNaisA"
-    Public Const champsWilayaNaisA = "WILNAISA", champsLieuNais = "LieuNais"
+    Public Const champsWilayaNaisA = "WilayaNaisA", champsLieuNais = "LieuNais"
     Public Const champsWILNAIS = "WILNAIS", champsADRESSE = "ADRESSE"
     Public Const champsVILLE = "VILLE", champsWILAYA = "WILAYA"
-    Public Const champsCODEPOS = "CODPOST", champsWILBAC = "WILBAC"
+    Public Const champsCODEPOS = "CODEPOS", champsWILBAC = "WILBAC"
     Public Const champsSEXE = "SEXE", champsSERIEBAC = "SERIEBAC"
     Public Const champsMOYBAC = "MOYBAC", champsANNEEBAC = "ANNEEBAC"
     Public Const champsFILS_DE = "FILS_DE", champsET_DE = "ET_DE"
@@ -64,7 +64,7 @@ Public Class BDD
     'Public Shared stringETUDIANT() As String = {"NomEtud", "Prenoms", "NomEtudA", "PrenomsA", "MATRIC_INS", "MATRIN", "DateNais", "LieuNaisA", "WilayaNaisA", "LieuNais", "ADRESSE", "VILLE", "WILAYA", "CODEPOS", "WILBAC", "SERIEBAC", "FILS_DE", "ET_DE"}
 
     ' les tableaux qui contiennet les champs des tables de base de données :
-    Public Shared stringETUDIANT() As String = {"NomEtud", "Prenoms", "NomEtudA", "PrenomsA", "MATRIC_INS", "MATRIN", "DateNais", "LieuNaisA", "LieuNais", "ADRESSE", "VILLE", "WILAYA", "WILBAC", "SERIEBAC", "FILS_DE", "ET_DE", "CODPOST", "WILNAISA", "ANNEEBAC"}
+    Public Shared stringETUDIANT() As String = {"NomEtud", "Prenoms", "NomEtudA", "PrenomsA", "MATRIC_INS", "MATRIN", "DateNais", "LieuNaisA", "LieuNais", "ADRESSE", "VILLE", "WILAYA", "WILBAC", "SERIEBAC", "FILS_DE", "ET_DE", "CODEPOS", "WilayaNaisA"}
     Public Shared stringINSCRIPTION() As String = {"MATRIN", "CodeGroupe", "DECIIN", "DEC", "ADM"}
     Public Shared stringGROUP() As String = {"NG"}
     Public Shared stringSection() As String = {"NS"}
@@ -75,7 +75,7 @@ Public Class BDD
     Public Shared stringRATRAP() As String = {"CYCLRA", "OPTIRA"}
 
     'Public Shared numETUDIANT() As String = {"WILNAIS", "SEXE", "MOYBAC", "ANNEEBAC"}
-    Public Shared numETUDIANT() As String = {"WILNAIS", "SEXE", "MOYBAC"}
+    Public Shared numETUDIANT() As String = {"WILNAIS", "SEXE", "MOYBAC", "ANNEEBAC"}
     Public Shared numINSCRIPTION() As String = {"MOYEIN", "RANGIN", "MENTIN", "ELIMININ", "RATRIN"}
     Public Shared numGROUP() As String = {}
     Public Shared numSection() As String = {}

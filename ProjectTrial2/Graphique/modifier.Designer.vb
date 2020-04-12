@@ -25,8 +25,7 @@ Partial Class modifier
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(modifier))
         Me.PN_MODIFIER = New System.Windows.Forms.Panel()
         Me.BT_SORTIR = New System.Windows.Forms.Button()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Worning = New System.Windows.Forms.Label()
         Me.BT_MODIFIER = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.BT_GENERALINFO = New System.Windows.Forms.RadioButton()
@@ -34,12 +33,6 @@ Partial Class modifier
         Me.TAB_PAGES = New System.Windows.Forms.TabControl()
         Me.P_GENERALITE = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Panel11 = New System.Windows.Forms.Panel()
-        Me.TXT_FILSDE = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Panel12 = New System.Windows.Forms.Panel()
-        Me.TXT_ETDE = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.TXT_NomEtud = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -59,6 +52,12 @@ Partial Class modifier
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.CB_SEXE = New System.Windows.Forms.ComboBox()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.TXT_FILSDE = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.TXT_ETDE = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.P_RESIDENCE = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel15 = New System.Windows.Forms.Panel()
@@ -85,21 +84,21 @@ Partial Class modifier
         Me.Panel22 = New System.Windows.Forms.Panel()
         Me.LB_CODEPOS = New System.Windows.Forms.Label()
         Me.TXT_CODEPOS = New System.Windows.Forms.TextBox()
-        Me.Worning = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.PN_MODIFIER.SuspendLayout()
-        Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.TAB_PAGES.SuspendLayout()
         Me.P_GENERALITE.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
-        Me.Panel11.SuspendLayout()
-        Me.Panel12.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.Panel7.SuspendLayout()
         Me.Panel8.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.Panel10.SuspendLayout()
+        Me.Panel11.SuspendLayout()
+        Me.Panel12.SuspendLayout()
         Me.P_RESIDENCE.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.Panel15.SuspendLayout()
@@ -110,17 +109,18 @@ Partial Class modifier
         Me.Panel20.SuspendLayout()
         Me.Panel21.SuspendLayout()
         Me.Panel22.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'PN_MODIFIER
         '
         Me.PN_MODIFIER.BackColor = System.Drawing.Color.Transparent
+        Me.PN_MODIFIER.Controls.Add(Me.Panel1)
         Me.PN_MODIFIER.Controls.Add(Me.BT_SORTIR)
         Me.PN_MODIFIER.Controls.Add(Me.Worning)
         Me.PN_MODIFIER.Controls.Add(Me.BT_MODIFIER)
         Me.PN_MODIFIER.Controls.Add(Me.Panel3)
         Me.PN_MODIFIER.Controls.Add(Me.TAB_PAGES)
-        Me.PN_MODIFIER.Controls.Add(Me.Panel1)
         Me.PN_MODIFIER.Location = New System.Drawing.Point(0, 0)
         Me.PN_MODIFIER.Name = "PN_MODIFIER"
         Me.PN_MODIFIER.Size = New System.Drawing.Size(678, 640)
@@ -141,28 +141,18 @@ Partial Class modifier
         Me.BT_SORTIR.Text = "Sortir"
         Me.BT_SORTIR.UseVisualStyleBackColor = False
         '
-        'Panel1
+        'Worning
         '
-        Me.Panel1.BackColor = System.Drawing.Color.Transparent
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(678, 82)
-        Me.Panel1.TabIndex = 51
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 16.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(131, 31)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(451, 32)
-        Me.Label1.TabIndex = 12
-        Me.Label1.Text = "Modifer les informations de l'étudiant"
+        Me.Worning.AutoSize = True
+        Me.Worning.BackColor = System.Drawing.Color.Transparent
+        Me.Worning.Font = New System.Drawing.Font("Cambria", 10.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Worning.ForeColor = System.Drawing.Color.Firebrick
+        Me.Worning.Location = New System.Drawing.Point(479, 593)
+        Me.Worning.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Worning.Name = "Worning"
+        Me.Worning.Size = New System.Drawing.Size(14, 22)
+        Me.Worning.TabIndex = 13
+        Me.Worning.Text = " "
         '
         'BT_MODIFIER
         '
@@ -283,70 +273,6 @@ Partial Class modifier
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 61.0!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(428, 602)
         Me.TableLayoutPanel1.TabIndex = 0
-        '
-        'Panel11
-        '
-        Me.Panel11.Controls.Add(Me.TXT_FILSDE)
-        Me.Panel11.Controls.Add(Me.Label3)
-        Me.Panel11.Location = New System.Drawing.Point(27, 363)
-        Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(370, 54)
-        Me.Panel11.TabIndex = 1
-        '
-        'TXT_FILSDE
-        '
-        Me.TXT_FILSDE.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TXT_FILSDE.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TXT_FILSDE.ForeColor = System.Drawing.Color.DarkGray
-        Me.TXT_FILSDE.Location = New System.Drawing.Point(193, 17)
-        Me.TXT_FILSDE.Name = "TXT_FILSDE"
-        Me.TXT_FILSDE.Size = New System.Drawing.Size(177, 20)
-        Me.TXT_FILSDE.TabIndex = 94
-        Me.TXT_FILSDE.Text = "nom du pere"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(3, 16)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(111, 22)
-        Me.Label3.TabIndex = 93
-        Me.Label3.Text = "nom du pere"
-        '
-        'Panel12
-        '
-        Me.Panel12.Controls.Add(Me.TXT_ETDE)
-        Me.Panel12.Controls.Add(Me.Label2)
-        Me.Panel12.Location = New System.Drawing.Point(27, 423)
-        Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(370, 53)
-        Me.Panel12.TabIndex = 1
-        '
-        'TXT_ETDE
-        '
-        Me.TXT_ETDE.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TXT_ETDE.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TXT_ETDE.ForeColor = System.Drawing.Color.DarkGray
-        Me.TXT_ETDE.Location = New System.Drawing.Point(193, 17)
-        Me.TXT_ETDE.Name = "TXT_ETDE"
-        Me.TXT_ETDE.Size = New System.Drawing.Size(177, 20)
-        Me.TXT_ETDE.TabIndex = 95
-        Me.TXT_ETDE.Text = "nom de la mere"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(3, 16)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(135, 22)
-        Me.Label2.TabIndex = 94
-        Me.Label2.Text = "nom de la mere"
         '
         'Panel5
         '
@@ -556,6 +482,70 @@ Partial Class modifier
         Me.Label9.Size = New System.Drawing.Size(48, 22)
         Me.Label9.TabIndex = 88
         Me.Label9.Text = "Sexe"
+        '
+        'Panel11
+        '
+        Me.Panel11.Controls.Add(Me.TXT_FILSDE)
+        Me.Panel11.Controls.Add(Me.Label3)
+        Me.Panel11.Location = New System.Drawing.Point(27, 363)
+        Me.Panel11.Name = "Panel11"
+        Me.Panel11.Size = New System.Drawing.Size(370, 54)
+        Me.Panel11.TabIndex = 1
+        '
+        'TXT_FILSDE
+        '
+        Me.TXT_FILSDE.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TXT_FILSDE.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TXT_FILSDE.ForeColor = System.Drawing.Color.DarkGray
+        Me.TXT_FILSDE.Location = New System.Drawing.Point(193, 17)
+        Me.TXT_FILSDE.Name = "TXT_FILSDE"
+        Me.TXT_FILSDE.Size = New System.Drawing.Size(177, 20)
+        Me.TXT_FILSDE.TabIndex = 94
+        Me.TXT_FILSDE.Text = "nom du pere"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.Location = New System.Drawing.Point(3, 16)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(111, 22)
+        Me.Label3.TabIndex = 93
+        Me.Label3.Text = "nom du pere"
+        '
+        'Panel12
+        '
+        Me.Panel12.Controls.Add(Me.TXT_ETDE)
+        Me.Panel12.Controls.Add(Me.Label2)
+        Me.Panel12.Location = New System.Drawing.Point(27, 423)
+        Me.Panel12.Name = "Panel12"
+        Me.Panel12.Size = New System.Drawing.Size(370, 53)
+        Me.Panel12.TabIndex = 1
+        '
+        'TXT_ETDE
+        '
+        Me.TXT_ETDE.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TXT_ETDE.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TXT_ETDE.ForeColor = System.Drawing.Color.DarkGray
+        Me.TXT_ETDE.Location = New System.Drawing.Point(193, 17)
+        Me.TXT_ETDE.Name = "TXT_ETDE"
+        Me.TXT_ETDE.Size = New System.Drawing.Size(177, 20)
+        Me.TXT_ETDE.TabIndex = 95
+        Me.TXT_ETDE.Text = "nom de la mere"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.Location = New System.Drawing.Point(3, 16)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(135, 22)
+        Me.Label2.TabIndex = 94
+        Me.Label2.Text = "nom de la mere"
         '
         'P_RESIDENCE
         '
@@ -872,18 +862,28 @@ Partial Class modifier
         Me.TXT_CODEPOS.TabIndex = 84
         Me.TXT_CODEPOS.Text = "code postale"
         '
-        'Worning
+        'Panel1
         '
-        Me.Worning.AutoSize = True
-        Me.Worning.BackColor = System.Drawing.Color.Transparent
-        Me.Worning.Font = New System.Drawing.Font("Cambria", 10.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Worning.ForeColor = System.Drawing.Color.Firebrick
-        Me.Worning.Location = New System.Drawing.Point(479, 593)
-        Me.Worning.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Worning.Name = "Worning"
-        Me.Worning.Size = New System.Drawing.Size(14, 22)
-        Me.Worning.TabIndex = 13
-        Me.Worning.Text = " "
+        Me.Panel1.BackColor = System.Drawing.Color.Transparent
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(678, 82)
+        Me.Panel1.TabIndex = 51
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 16.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(131, 31)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(451, 32)
+        Me.Label1.TabIndex = 12
+        Me.Label1.Text = "Modifer les informations de l'étudiant"
         '
         'modifier
         '
@@ -901,16 +901,10 @@ Partial Class modifier
         Me.WindowState = System.Windows.Forms.FormWindowState.Minimized
         Me.PN_MODIFIER.ResumeLayout(False)
         Me.PN_MODIFIER.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.TAB_PAGES.ResumeLayout(False)
         Me.P_GENERALITE.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.Panel11.ResumeLayout(False)
-        Me.Panel11.PerformLayout()
-        Me.Panel12.ResumeLayout(False)
-        Me.Panel12.PerformLayout()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
         Me.Panel7.ResumeLayout(False)
@@ -923,6 +917,10 @@ Partial Class modifier
         Me.Panel9.PerformLayout()
         Me.Panel10.ResumeLayout(False)
         Me.Panel10.PerformLayout()
+        Me.Panel11.ResumeLayout(False)
+        Me.Panel11.PerformLayout()
+        Me.Panel12.ResumeLayout(False)
+        Me.Panel12.PerformLayout()
         Me.P_RESIDENCE.ResumeLayout(False)
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.Panel15.ResumeLayout(False)
@@ -941,6 +939,8 @@ Partial Class modifier
         Me.Panel21.PerformLayout()
         Me.Panel22.ResumeLayout(False)
         Me.Panel22.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

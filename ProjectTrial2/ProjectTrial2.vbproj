@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BDD\Eclatement.vb" />
+    <Compile Include="BDD\Modif_BDD.vb" />
     <Compile Include="Graphique\affichResearchResult.Designer.vb">
       <DependentUpon>affichResearchResult.vb</DependentUpon>
     </Compile>
@@ -139,6 +140,7 @@
     <Compile Include="Noyau\Classement.vb" />
     <Compile Include="Noyau\Critere.vb" />
     <Compile Include="Noyau\Etudiant.vb" />
+    <Compile Include="Noyau\Modification.vb" />
     <Compile Include="Noyau\Recherche.vb" />
     <Compile Include="Graphique\ClassementPage.Designer.vb">
       <DependentUpon>ClassementPage.vb</DependentUpon>

@@ -229,7 +229,7 @@
 
     End Sub
 
-    Private Function getCollection(ByVal nameTable) As Dictionary(Of String, String)
+    Public Function getCollection(ByVal nameTable) As Dictionary(Of String, String)
 
         Select Case nameTable
             Case BDD.nomTableEtudiant

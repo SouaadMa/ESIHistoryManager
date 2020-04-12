@@ -190,7 +190,7 @@
                 BT_MODIFIER.Enabled = False
                 Worning.Visible = True
             Else
-
+                Modification.traitModifier(collection_critere, esistselect)
 
             End If
         End If

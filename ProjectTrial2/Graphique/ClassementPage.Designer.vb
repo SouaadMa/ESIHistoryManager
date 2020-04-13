@@ -1070,7 +1070,7 @@ Partial Class ClassementPage
         Me.ValueTextBox.Name = "ValueTextBox"
         Me.ValueTextBox.Size = New System.Drawing.Size(50, 20)
         Me.ValueTextBox.TabIndex = 0
-        Me.ValueTextBox.Text = "2000"
+        Me.ValueTextBox.Text = "2004"
         Me.ValueTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'BT_NEXT

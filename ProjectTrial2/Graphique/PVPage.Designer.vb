@@ -39,8 +39,6 @@ Partial Class PVPage
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.ComboBox3 = New System.Windows.Forms.ComboBox()
         Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
-        Me.CrystalReport11 = New EsistHistoryManagement_v1.CrystalReport1()
-        Me.CrystalReport12 = New EsistHistoryManagement_v1.CrystalReport1()
         Me.RechIntroPanel.SuspendLayout()
         Me.PN_FORUMRECH.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -104,12 +102,11 @@ Partial Class PVPage
         '
         'CrystalReportViewer1
         '
-        Me.CrystalReportViewer1.ActiveViewIndex = 0
+        Me.CrystalReportViewer1.ActiveViewIndex = -1
         Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
         Me.CrystalReportViewer1.Location = New System.Drawing.Point(3, 5)
         Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-        Me.CrystalReportViewer1.ReportSource = Me.CrystalReport12
         Me.CrystalReportViewer1.Size = New System.Drawing.Size(669, 513)
         Me.CrystalReportViewer1.TabIndex = 1
         Me.CrystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
@@ -250,6 +247,6 @@ Partial Class PVPage
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
-    Friend WithEvents CrystalReport12 As EsistHistoryManagement_v1.CrystalReport1
-    Friend WithEvents CrystalReport11 As EsistHistoryManagement_v1.CrystalReport1
+    Friend WithEvents Cryst12 As EsistHistoryManagement_v1.CrystalReport1
+
 End Class

@@ -116,6 +116,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BDD_ECLATESDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="BDD_TABLES_ECLATESDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDD_TABLES_ECLATESDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Graphique\affichResearchResult.Designer.vb">
       <DependentUpon>affichResearchResult.vb</DependentUpon>
     </Compile>
@@ -124,12 +129,6 @@
     </Compile>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="BDD\BDD.vb" />
-    <Compile Include="Graphique\Copy of CrystalReport1.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Copy of CrystalReport1.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Graphique\CrystalReport1.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -257,10 +256,6 @@
     <EmbeddedResource Include="Graphique\ClassementPage.resx">
       <DependentUpon>ClassementPage.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Graphique\Copy of CrystalReport1.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Copy of CrystalReport1.vb</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Graphique\CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.vb</LastGenOutput>
@@ -324,6 +319,17 @@
     <None Include="BDD_ECLATESDataSet.xss">
       <DependentUpon>BDD_ECLATESDataSet.xsd</DependentUpon>
     </None>
+    <None Include="BDD_TABLES_ECLATESDataSet.xsc">
+      <DependentUpon>BDD_TABLES_ECLATESDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BDD_TABLES_ECLATESDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BDD_TABLES_ECLATESDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BDD_TABLES_ECLATESDataSet.xss">
+      <DependentUpon>BDD_TABLES_ECLATESDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Graphique\DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
@@ -357,7 +363,7 @@
     <None Include="Resources\details general back.png" />
     <None Include="Resources\Ellipse 5.png" />
     <None Include="Resources\Ellipse 4.png" />
-    <Content Include="BDD_ECLATES.accdb">
+    <Content Include="BDD_TABLES_ECLATES.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Graphique\Database1.sdf">

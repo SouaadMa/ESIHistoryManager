@@ -22,8 +22,8 @@ Partial Class StatistiquePage
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ChartArea4 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend4 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Me.StatistiquesPanel = New System.Windows.Forms.Panel()
         Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -78,11 +78,11 @@ Partial Class StatistiquePage
         'Chart1
         '
         Me.Chart1.BackColor = System.Drawing.Color.Transparent
-        'Me.Chart1.BackImage = "C:\Users\hadia\Desktop\projet 2CP\chart back.png"
-        ChartArea4.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea4)
-        Legend4.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend4)
+        Me.Chart1.BackImage = "\..\..\Resources\chart back.png"
+        ChartArea1.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea1)
+        Legend1.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend1)
         Me.Chart1.Location = New System.Drawing.Point(104, 248)
         Me.Chart1.Name = "Chart1"
         Me.Chart1.Size = New System.Drawing.Size(470, 320)
@@ -118,7 +118,7 @@ Partial Class StatistiquePage
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.Location = New System.Drawing.Point(288, 115)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(155, 20)
+        Me.Label9.Size = New System.Drawing.Size(135, 17)
         Me.Label9.TabIndex = 29
         Me.Label9.Text = "Moyenne de seuil"
         '
@@ -128,7 +128,7 @@ Partial Class StatistiquePage
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(491, 115)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(70, 20)
+        Me.Label8.Size = New System.Drawing.Size(62, 17)
         Me.Label8.TabIndex = 28
         Me.Label8.Text = "Groupe"
         '
@@ -138,7 +138,7 @@ Partial Class StatistiquePage
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(30, 74)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(128, 20)
+        Me.Label7.Size = New System.Drawing.Size(113, 17)
         Me.Label7.TabIndex = 27
         Me.Label7.Text = "Annee d'etude"
         '
@@ -148,7 +148,7 @@ Partial Class StatistiquePage
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(491, 4)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(63, 20)
+        Me.Label6.Size = New System.Drawing.Size(54, 17)
         Me.Label6.TabIndex = 26
         Me.Label6.Text = "Promo"
         '
@@ -158,7 +158,7 @@ Partial Class StatistiquePage
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(288, 4)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(72, 20)
+        Me.Label5.Size = New System.Drawing.Size(62, 17)
         Me.Label5.TabIndex = 25
         Me.Label5.Text = "Matiere"
         '
@@ -168,7 +168,7 @@ Partial Class StatistiquePage
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(288, 58)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(92, 20)
+        Me.Label4.Size = New System.Drawing.Size(79, 17)
         Me.Label4.TabIndex = 24
         Me.Label4.Text = "Specialite"
         '
@@ -178,7 +178,7 @@ Partial Class StatistiquePage
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(491, 58)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(72, 20)
+        Me.Label3.Size = New System.Drawing.Size(62, 17)
         Me.Label3.TabIndex = 23
         Me.Label3.Text = "Section"
         '
@@ -188,7 +188,7 @@ Partial Class StatistiquePage
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(30, 3)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(207, 20)
+        Me.Label2.Size = New System.Drawing.Size(176, 17)
         Me.Label2.TabIndex = 22
         Me.Label2.Text = "Critere des statistiques"
         '
@@ -199,7 +199,7 @@ Partial Class StatistiquePage
         Me.CHB_ANNEE.FormattingEnabled = True
         Me.CHB_ANNEE.Location = New System.Drawing.Point(34, 101)
         Me.CHB_ANNEE.Name = "CHB_ANNEE"
-        Me.CHB_ANNEE.Size = New System.Drawing.Size(161, 26)
+        Me.CHB_ANNEE.Size = New System.Drawing.Size(161, 21)
         Me.CHB_ANNEE.Sorted = True
         Me.CHB_ANNEE.TabIndex = 21
         '
@@ -209,7 +209,7 @@ Partial Class StatistiquePage
         Me.TXT_MOYSEUIL.Font = New System.Drawing.Font("Cambria", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TXT_MOYSEUIL.Location = New System.Drawing.Point(292, 142)
         Me.TXT_MOYSEUIL.Name = "TXT_MOYSEUIL"
-        Me.TXT_MOYSEUIL.Size = New System.Drawing.Size(150, 24)
+        Me.TXT_MOYSEUIL.Size = New System.Drawing.Size(150, 19)
         Me.TXT_MOYSEUIL.TabIndex = 20
         '
         'CHB_PROMO
@@ -219,7 +219,7 @@ Partial Class StatistiquePage
         Me.CHB_PROMO.FormattingEnabled = True
         Me.CHB_PROMO.Location = New System.Drawing.Point(495, 28)
         Me.CHB_PROMO.Name = "CHB_PROMO"
-        Me.CHB_PROMO.Size = New System.Drawing.Size(150, 26)
+        Me.CHB_PROMO.Size = New System.Drawing.Size(150, 21)
         Me.CHB_PROMO.Sorted = True
         Me.CHB_PROMO.TabIndex = 19
         '
@@ -230,7 +230,7 @@ Partial Class StatistiquePage
         Me.CHB_SECTION.FormattingEnabled = True
         Me.CHB_SECTION.Location = New System.Drawing.Point(495, 84)
         Me.CHB_SECTION.Name = "CHB_SECTION"
-        Me.CHB_SECTION.Size = New System.Drawing.Size(150, 26)
+        Me.CHB_SECTION.Size = New System.Drawing.Size(150, 21)
         Me.CHB_SECTION.Sorted = True
         Me.CHB_SECTION.TabIndex = 18
         '
@@ -241,7 +241,7 @@ Partial Class StatistiquePage
         Me.CHB_GROUPE.FormattingEnabled = True
         Me.CHB_GROUPE.Location = New System.Drawing.Point(495, 140)
         Me.CHB_GROUPE.Name = "CHB_GROUPE"
-        Me.CHB_GROUPE.Size = New System.Drawing.Size(150, 26)
+        Me.CHB_GROUPE.Size = New System.Drawing.Size(150, 21)
         Me.CHB_GROUPE.Sorted = True
         Me.CHB_GROUPE.TabIndex = 17
         '
@@ -252,7 +252,7 @@ Partial Class StatistiquePage
         Me.CHB_MAT.FormattingEnabled = True
         Me.CHB_MAT.Location = New System.Drawing.Point(292, 28)
         Me.CHB_MAT.Name = "CHB_MAT"
-        Me.CHB_MAT.Size = New System.Drawing.Size(150, 26)
+        Me.CHB_MAT.Size = New System.Drawing.Size(150, 21)
         Me.CHB_MAT.Sorted = True
         Me.CHB_MAT.TabIndex = 16
         '
@@ -263,7 +263,7 @@ Partial Class StatistiquePage
         Me.CHB_SPECIALITE.FormattingEnabled = True
         Me.CHB_SPECIALITE.Location = New System.Drawing.Point(292, 84)
         Me.CHB_SPECIALITE.Name = "CHB_SPECIALITE"
-        Me.CHB_SPECIALITE.Size = New System.Drawing.Size(150, 26)
+        Me.CHB_SPECIALITE.Size = New System.Drawing.Size(150, 21)
         Me.CHB_SPECIALITE.Sorted = True
         Me.CHB_SPECIALITE.TabIndex = 14
         '
@@ -274,7 +274,7 @@ Partial Class StatistiquePage
         Me.CB_CRITERE.FormattingEnabled = True
         Me.CB_CRITERE.Location = New System.Drawing.Point(34, 28)
         Me.CB_CRITERE.Name = "CB_CRITERE"
-        Me.CB_CRITERE.Size = New System.Drawing.Size(235, 31)
+        Me.CB_CRITERE.Size = New System.Drawing.Size(235, 27)
         Me.CB_CRITERE.TabIndex = 2
         '
         'BT_NEXT
@@ -324,7 +324,7 @@ Partial Class StatistiquePage
         Me.CB_CHARTKIND.FormattingEnabled = True
         Me.CB_CHARTKIND.Location = New System.Drawing.Point(259, 584)
         Me.CB_CHARTKIND.Name = "CB_CHARTKIND"
-        Me.CB_CHARTKIND.Size = New System.Drawing.Size(160, 33)
+        Me.CB_CHARTKIND.Size = New System.Drawing.Size(160, 28)
         Me.CB_CHARTKIND.TabIndex = 6
         '
         'Panel1
@@ -345,7 +345,7 @@ Partial Class StatistiquePage
         Me.Label1.Location = New System.Drawing.Point(211, 11)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(257, 32)
+        Me.Label1.Size = New System.Drawing.Size(206, 25)
         Me.Label1.TabIndex = 13
         Me.Label1.Text = "Faire des statistiques"
         '

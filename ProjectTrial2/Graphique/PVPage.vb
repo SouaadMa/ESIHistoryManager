@@ -6,8 +6,8 @@ Public Class PVPage
         CrystalReportViewer1.RefreshReport()
         CrystalReportViewer1.Zoom(2)
         CrystalReportViewer1.Visible = False
-        Dim ds As New BDD_ECLATESDataSet
-        Dim adp As New BDD_ECLATESDataSetTableAdapters.ETUDIANTTableAdapter
+        Dim ds As New BDD_TABLES_ECLATESDataSet
+        Dim adp As New BDD_TABLES_ECLATESDataSetTableAdapters.ETUDIANTTableAdapter
         Dim dt As New DataTable()
 
         ds.Tables.Item(0).Merge(dt)

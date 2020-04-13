@@ -433,6 +433,26 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property histoback() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("histoback", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property histoback1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("histoback1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property historique() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("historique", resourceCulture)
@@ -746,6 +766,26 @@ Namespace My.Resources
         Friend ReadOnly Property search_bl() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("search_bl", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property sortiropp() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("sortiropp", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property sortiropp1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("sortiropp1", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

@@ -64,6 +64,7 @@
             CHB_PROMO.Items.Add(cr)
         Next
 
+        BT_PREV.Enabled = False
         'initialiser le chart
 
 
@@ -85,7 +86,17 @@
     End Sub
 
     Private Sub CB_CHARTKIND_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CB_CHARTKIND.SelectedIndexChanged
+        If CB_CHARTKIND.SelectedIndex = 0 Then
+            BT_PREV.Enabled = False
+        ElseIf CB_CHARTKIND.SelectedIndex = 3 Then
+            BT_NEXT.Enabled = False
+        Else
+            BT_NEXT.Enabled = True
+            BT_PREV.Enabled = True
+        End If
         'changer le kind of chart
+
+
     End Sub
 
     Private Sub CB_CRITERE_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CB_CRITERE.SelectedIndexChanged

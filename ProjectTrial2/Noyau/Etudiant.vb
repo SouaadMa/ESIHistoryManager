@@ -10,6 +10,8 @@
     Private InfosMATIERE As Dictionary(Of String, String) = New Dictionary(Of String, String)
     Private InfosNOTERATRAP As Dictionary(Of String, String) = New Dictionary(Of String, String)
     Private InfosRATRAP As Dictionary(Of String, String) = New Dictionary(Of String, String)
+    Public Anneedetude As New List(Of String)
+
 
     Private Id As String 'L'identité de l'étudiant (son matricule)
 

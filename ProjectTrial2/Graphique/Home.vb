@@ -502,7 +502,7 @@ Public Class Home
                 MainContainer1.Visible = False
             End If
 
-            h = New Historique(CType(f, affichResearchResult).StudentList.Item(CType(f, affichResearchResult).SelectedStudent - 1 + (CType(f, affichResearchResult).CURRENT_PAGE - 1) * 7))         ' assign the search form to  the f form
+            h = New Historique(CType(f, affichResearchResult).StudentList.Item(0))        ' assign the search form to  the f form
             h.TopLevel = False
             h.TopMost = True
             h.WindowState = FormWindowState.Normal

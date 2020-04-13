@@ -12,7 +12,7 @@ Public Class InfosGenerales
     Public matiere As New List(Of String)
     Public Shared sexe() As String = {"Homme", "Femme", "Autre"}
     Public Shared specialite() As String = {"TRC", "SI", "SIQ"}
-    Public Shared promo() As String = {"01", "02", "03", "04"}
+    Public Shared promo() As String = {"01", "02", "03", "04", "05"}
     Public seribac As New List(Of String)
     Public Shared Annee() As String = {"00", "01", "02", "03", "04", "05", "06", "08", "09", "10", "11", "88", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99", "TR"}
     Public Shared firstYear As Integer = 1989

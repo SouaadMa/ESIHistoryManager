@@ -22,8 +22,8 @@ Partial Class StatistiquePage
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ChartArea8 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend8 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim ChartArea4 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend4 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Me.StatistiquesPanel = New System.Windows.Forms.Panel()
         Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -79,10 +79,10 @@ Partial Class StatistiquePage
         '
         Me.Chart1.BackColor = System.Drawing.Color.Transparent
         Me.Chart1.BackImage = "C:\Users\hadia\Desktop\projet 2CP\chart back.png"
-        ChartArea8.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea8)
-        Legend8.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend8)
+        ChartArea4.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea4)
+        Legend4.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend4)
         Me.Chart1.Location = New System.Drawing.Point(104, 248)
         Me.Chart1.Name = "Chart1"
         Me.Chart1.Size = New System.Drawing.Size(470, 320)

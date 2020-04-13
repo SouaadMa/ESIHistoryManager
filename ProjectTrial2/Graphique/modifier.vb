@@ -201,7 +201,7 @@
                 CType(Home.f, affichResearchResult).TableLayoutPanel1_Leave(TableLayoutPanel1, New EventArgs())
             End If
         End If
-
+        BT_MODIFIER.Enabled = False
     End Sub
 
     Private Sub TXT_NomEtud_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_NomEtud.Click

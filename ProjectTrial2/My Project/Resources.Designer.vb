@@ -63,6 +63,46 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property _015_document() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("015-document", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property _015_document1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("015-document1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property _015_document2() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("015-document2", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property _015_document3() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("015-document3", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property _next() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("_next", resourceCulture)
@@ -276,6 +316,16 @@ Namespace My.Resources
         Friend ReadOnly Property background_modif_promo_scroll() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("background_modif_promo_scroll", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property certaficat() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("certaficat", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

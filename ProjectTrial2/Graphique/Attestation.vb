@@ -1,4 +1,4 @@
-﻿Public Class RN
+﻿Public Class Attestation
 
     Dim esistselect As Etudiant ' letudiant selection f affichresult
 
@@ -11,17 +11,9 @@
 
     End Sub
 
-    Private Sub RN_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub details_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         'inisializer les panels
-        'initialiser de promo
-        For Each cr As String In InfosGenerales.promo
-            CB_ANNEE.Items.Add(cr)
-        Next
-
-
-        'initialiser generale
-        CB_ANNEE.SelectedIndex = 0
 
     End Sub
 
@@ -34,14 +26,4 @@
         Home.MainContainer1.Visible = True
     End Sub
 
-
-
-
-    Private Sub CrystalReportViewer1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
-    End Sub
-
-    Private Sub BT_LOAD_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
-    End Sub
 End Class

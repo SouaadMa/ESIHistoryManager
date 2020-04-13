@@ -561,6 +561,26 @@ Public Class Home
         PictureBox2.Size = New System.Drawing.Size(226, (x * (PictureBox2.MaximumSize.Height)) \ 100)
     End Sub
 
+    Private Sub BT_CERT_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_CERT.Click
+        If f.GetType.ToString.Equals("EsistHistoryManagement_v1.affichResearchResult") Then
+            Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
+            If Not f Is Nothing Then
+                'f.Hide()
+                MainContainer1.Visible = False
+            End If
+
+            h = New Attestation(CType(f, affichResearchResult).StudentList.Item(0))        ' assign the search form to  the f form
+            h.TopLevel = False
+            h.TopMost = True
+            h.WindowState = FormWindowState.Normal
+            Me.MainContainer2.Controls.Add(h)        ' add the controlers of the searche page to the main form f 
+            h.Show()                                ' show the form f in the middle of the home page
+            Me.MainContainer2.Visible = True
+            Me.MainContainer1.Visible = False
+            'Me.MainContainer1.Width = 680            ' adjust its appearance
+
+        End If
+    End Sub
 End Class
 
 

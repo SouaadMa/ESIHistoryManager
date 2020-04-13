@@ -72,7 +72,6 @@ C:\Users\hadia\Documents\GitHub\ESIHistoryManager\ProjectTrial2\bin\Debug\EsistH
 C:\Users\hadia\Documents\GitHub\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement.exe
 C:\Users\hadia\Documents\GitHub\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement.xml
 C:\Users\hadia\Documents\GitHub\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement.pdb
-C:\Users\hadia\Documents\GitHub\ESIHistoryManager\ProjectTrial2\bin\Debug\VISUAL.accdb
 C:\Users\hadia\Documents\GitHub\ESIHistoryManager\ProjectTrial2\bin\Debug\EsistHistoryManagement.exe
 C:\Users\hadia\Documents\GitHub\ESIHistoryManager\ProjectTrial2\bin\Debug\EsistHistoryManagement.pdb
 C:\Users\hadia\Documents\GitHub\ESIHistoryManager\ProjectTrial2\bin\Debug\EsistHistoryManagement.xml
@@ -126,3 +125,6 @@ C:\Users\hadia\Documents\GitHub\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\Pr
 D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\ProjectTrial2.vbprojResolveAssemblyReference.cache
 D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\bin\Debug\Graphique\Database1.sdf
 D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\bin\Debug\BDD_TABLES_ECLATES.accdb
+C:\Users\hadia\Documents\GitHub\ESIHistoryManager\ProjectTrial2\bin\Debug\BDD_TABLES_ECLATES.accdb
+C:\Users\hadia\Documents\GitHub\ESIHistoryManager\ProjectTrial2\bin\Debug\Graphique\Database1.sdf
+C:\Users\hadia\Documents\GitHub\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.Attestation.resources

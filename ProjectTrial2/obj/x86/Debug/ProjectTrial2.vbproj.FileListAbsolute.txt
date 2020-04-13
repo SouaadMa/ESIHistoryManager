@@ -123,3 +123,4 @@ C:\Users\hadia\Documents\GitHub\New folder (2)\ESIHistoryManager\ProjectTrial2\o
 C:\Users\hadia\Documents\GitHub\New folder (2)\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.StatistiquePage.resources
 C:\Users\hadia\Documents\GitHub\New folder (2)\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.Resources.resources
 C:\Users\hadia\Documents\GitHub\New folder (2)\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\ProjectTrial2.vbproj.GenerateResource.Cache
+C:\Users\hadia\Documents\GitHub\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\ProjectTrial2.vbprojResolveAssemblyReference.cache

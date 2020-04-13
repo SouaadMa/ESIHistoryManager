@@ -26,6 +26,9 @@ Partial Class PVPage
         Me.RechIntroPanel = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PN_FORUMRECH = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.ComboBox4 = New System.Windows.Forms.ComboBox()
@@ -35,10 +38,12 @@ Partial Class PVPage
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.ComboBox3 = New System.Windows.Forms.ComboBox()
-        Me.AffichFichierPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
+        Me.CrystalReport11 = New EsistHistoryManagement_v1.CrystalReport1()
+        Me.CrystalReport12 = New EsistHistoryManagement_v1.CrystalReport1()
         Me.RechIntroPanel.SuspendLayout()
         Me.PN_FORUMRECH.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -69,8 +74,8 @@ Partial Class PVPage
         Me.PN_FORUMRECH.AutoScroll = True
         Me.PN_FORUMRECH.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.PN_FORUMRECH.BackColor = System.Drawing.Color.Transparent
+        Me.PN_FORUMRECH.Controls.Add(Me.Panel2)
         Me.PN_FORUMRECH.Controls.Add(Me.Panel1)
-        Me.PN_FORUMRECH.Controls.Add(Me.AffichFichierPanel)
         Me.PN_FORUMRECH.Controls.Add(Me.RechIntroPanel)
         Me.PN_FORUMRECH.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PN_FORUMRECH.Location = New System.Drawing.Point(1, 0)
@@ -78,6 +83,36 @@ Partial Class PVPage
         Me.PN_FORUMRECH.Name = "PN_FORUMRECH"
         Me.PN_FORUMRECH.Size = New System.Drawing.Size(675, 638)
         Me.PN_FORUMRECH.TabIndex = 11
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.Button1)
+        Me.Panel2.Controls.Add(Me.CrystalReportViewer1)
+        Me.Panel2.Location = New System.Drawing.Point(0, 120)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(675, 518)
+        Me.Panel2.TabIndex = 48
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(292, 245)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(91, 28)
+        Me.Button1.TabIndex = 0
+        Me.Button1.Text = "Afficher"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'CrystalReportViewer1
+        '
+        Me.CrystalReportViewer1.ActiveViewIndex = 0
+        Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.CrystalReportViewer1.Location = New System.Drawing.Point(3, 5)
+        Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
+        Me.CrystalReportViewer1.ReportSource = Me.CrystalReport12
+        Me.CrystalReportViewer1.Size = New System.Drawing.Size(669, 513)
+        Me.CrystalReportViewer1.TabIndex = 1
+        Me.CrystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
         '
         'Panel1
         '
@@ -97,7 +132,7 @@ Partial Class PVPage
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(416, 3)
+        Me.Label5.Location = New System.Drawing.Point(460, 3)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(154, 20)
         Me.Label5.TabIndex = 7
@@ -106,7 +141,7 @@ Partial Class PVPage
         'ComboBox4
         '
         Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Location = New System.Drawing.Point(431, 29)
+        Me.ComboBox4.Location = New System.Drawing.Point(475, 29)
         Me.ComboBox4.Margin = New System.Windows.Forms.Padding(30, 0, 50, 0)
         Me.ComboBox4.Name = "ComboBox4"
         Me.ComboBox4.Size = New System.Drawing.Size(122, 28)
@@ -115,7 +150,7 @@ Partial Class PVPage
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(289, 3)
+        Me.Label4.Location = New System.Drawing.Point(333, 3)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(88, 20)
         Me.Label4.TabIndex = 5
@@ -124,7 +159,7 @@ Partial Class PVPage
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(169, 3)
+        Me.Label3.Location = New System.Drawing.Point(213, 3)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(63, 20)
         Me.Label3.TabIndex = 4
@@ -133,7 +168,7 @@ Partial Class PVPage
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(23, 3)
+        Me.Label2.Location = New System.Drawing.Point(67, 3)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(90, 20)
         Me.Label2.TabIndex = 3
@@ -142,7 +177,7 @@ Partial Class PVPage
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(16, 29)
+        Me.ComboBox1.Location = New System.Drawing.Point(60, 29)
         Me.ComboBox1.Margin = New System.Windows.Forms.Padding(30, 0, 50, 0)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(104, 28)
@@ -152,7 +187,7 @@ Partial Class PVPage
         'ComboBox2
         '
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(149, 29)
+        Me.ComboBox2.Location = New System.Drawing.Point(193, 29)
         Me.ComboBox2.Margin = New System.Windows.Forms.Padding(30, 0, 50, 0)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(104, 28)
@@ -161,20 +196,11 @@ Partial Class PVPage
         'ComboBox3
         '
         Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(282, 29)
+        Me.ComboBox3.Location = New System.Drawing.Point(326, 29)
         Me.ComboBox3.Margin = New System.Windows.Forms.Padding(30, 0, 50, 0)
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(104, 28)
         Me.ComboBox3.TabIndex = 2
-        '
-        'AffichFichierPanel
-        '
-        Me.AffichFichierPanel.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.AffichFichierPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.AffichFichierPanel.Location = New System.Drawing.Point(0, 121)
-        Me.AffichFichierPanel.Name = "AffichFichierPanel"
-        Me.AffichFichierPanel.Size = New System.Drawing.Size(675, 517)
-        Me.AffichFichierPanel.TabIndex = 48
         '
         'PrintPreviewDialog1
         '
@@ -202,6 +228,7 @@ Partial Class PVPage
         Me.RechIntroPanel.ResumeLayout(False)
         Me.RechIntroPanel.PerformLayout()
         Me.PN_FORUMRECH.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
@@ -217,8 +244,12 @@ Partial Class PVPage
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
     Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
     Friend WithEvents ComboBox3 As System.Windows.Forms.ComboBox
-    Friend WithEvents AffichFichierPanel As System.Windows.Forms.FlowLayoutPanel
     Friend WithEvents PrintPreviewDialog1 As System.Windows.Forms.PrintPreviewDialog
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents ComboBox4 As System.Windows.Forms.ComboBox
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
+    Friend WithEvents CrystalReport12 As EsistHistoryManagement_v1.CrystalReport1
+    Friend WithEvents CrystalReport11 As EsistHistoryManagement_v1.CrystalReport1
 End Class

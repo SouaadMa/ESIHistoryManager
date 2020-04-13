@@ -121,7 +121,7 @@
   <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="background-modif-groupe scroll1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="background_modif_groupe_scroll1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background-modif-groupe scroll1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="next1" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -163,7 +163,7 @@
   <data name="background_bleu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background_bleu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="background-modif-groupe scroll" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="background_modif_groupe_scroll" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background-modif-groupe scroll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="prev" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -181,7 +181,7 @@
   <data name="table_blanc" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\table_blanc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="background-modif-generalite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="background_modif_generalite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background-modif-generalite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="histoback" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -223,10 +223,10 @@
   <data name="alert1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\039-alert1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="background-modif-bac scroll" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="background_modif_bac_scroll" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background-modif-bac scroll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="background-modif-note scroll" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="background_modif_note_scroll" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background-modif-note scroll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo_coloree" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -250,7 +250,7 @@
   <data name="administrator_profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\administrator_profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="background-modif-generalite scroll1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="background_modif_generalite_scroll1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background-modif-generalite scroll1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="gear" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -259,7 +259,7 @@
   <data name="table_bleu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\table_bleu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="background-modif-inscription scroll" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="background_modif_inscription_scroll" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background-modif-inscription scroll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="details_general_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -295,7 +295,7 @@
   <data name="search_bl" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search_blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="background-modif-generalite scroll" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="background_modif_generalite_scroll" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background-modif-generalite scroll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="imagespoints" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -313,7 +313,7 @@
   <data name="layeredAssetWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\layeredAssetWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="background-modif-noterat scroll" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="background_modif_noterat_scroll" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background-modif-noterat scroll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Rectangle_rose" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -322,10 +322,10 @@
   <data name="info" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\info.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="background-modif-promo scroll" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="background_modif_promo_scroll" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background-modif-promo scroll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="background-modif-noterat scroll1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="background_modif_noterat_scroll1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background-modif-noterat scroll1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="backBTcheked" type="System.Resources.ResXFileRef, System.Windows.Forms">

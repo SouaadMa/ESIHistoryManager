@@ -78,7 +78,7 @@ Partial Class StatistiquePage
         'Chart1
         '
         Me.Chart1.BackColor = System.Drawing.Color.Transparent
-        Me.Chart1.BackImage = "C:\Users\hadia\Desktop\projet 2CP\chart back.png"
+        'Me.Chart1.BackImage = "C:\Users\hadia\Desktop\projet 2CP\chart back.png"
         ChartArea4.Name = "ChartArea1"
         Me.Chart1.ChartAreas.Add(ChartArea4)
         Legend4.Name = "Legend1"

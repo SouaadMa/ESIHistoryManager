@@ -175,7 +175,7 @@ Namespace My.Resources
         '''</summary>
         Friend ReadOnly Property background_modif_bac_scroll() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("background-modif-bac scroll", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("background_modif_bac_scroll", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -185,7 +185,7 @@ Namespace My.Resources
         '''</summary>
         Friend ReadOnly Property background_modif_generalite() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("background-modif-generalite", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("background_modif_generalite", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -195,7 +195,7 @@ Namespace My.Resources
         '''</summary>
         Friend ReadOnly Property background_modif_generalite_scroll() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("background-modif-generalite scroll", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("background_modif_generalite_scroll", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -205,7 +205,7 @@ Namespace My.Resources
         '''</summary>
         Friend ReadOnly Property background_modif_generalite_scroll1() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("background-modif-generalite scroll1", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("background_modif_generalite_scroll1", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -215,7 +215,7 @@ Namespace My.Resources
         '''</summary>
         Friend ReadOnly Property background_modif_groupe_scroll() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("background-modif-groupe scroll", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("background_modif_groupe_scroll", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -225,7 +225,7 @@ Namespace My.Resources
         '''</summary>
         Friend ReadOnly Property background_modif_groupe_scroll1() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("background-modif-groupe scroll1", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("background_modif_groupe_scroll1", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -235,7 +235,7 @@ Namespace My.Resources
         '''</summary>
         Friend ReadOnly Property background_modif_inscription_scroll() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("background-modif-inscription scroll", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("background_modif_inscription_scroll", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -245,7 +245,7 @@ Namespace My.Resources
         '''</summary>
         Friend ReadOnly Property background_modif_note_scroll() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("background-modif-note scroll", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("background_modif_note_scroll", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -255,7 +255,7 @@ Namespace My.Resources
         '''</summary>
         Friend ReadOnly Property background_modif_noterat_scroll() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("background-modif-noterat scroll", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("background_modif_noterat_scroll", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -265,7 +265,7 @@ Namespace My.Resources
         '''</summary>
         Friend ReadOnly Property background_modif_noterat_scroll1() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("background-modif-noterat scroll1", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("background_modif_noterat_scroll1", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -275,7 +275,7 @@ Namespace My.Resources
         '''</summary>
         Friend ReadOnly Property background_modif_promo_scroll() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("background-modif-promo scroll", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("background_modif_promo_scroll", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

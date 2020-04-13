@@ -63,6 +63,28 @@ Namespace My
                 Return CType(Me("VISUALConnectionString"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\BDD_TABLES_ECLATES."& _ 
+            "accdb;Persist Security Info=True")>  _
+        Public ReadOnly Property BDD_TABLES_ECLATESConnectionString() As String
+            Get
+                Return CType(Me("BDD_TABLES_ECLATESConnectionString"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\BDD_ECLATES.accdb;P"& _ 
+            "ersist Security Info=True")>  _
+        Public ReadOnly Property BDD_ECLATESConnectionString() As String
+            Get
+                Return CType(Me("BDD_ECLATESConnectionString"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

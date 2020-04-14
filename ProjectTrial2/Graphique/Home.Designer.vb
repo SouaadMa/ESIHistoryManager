@@ -1,0 +1,790 @@
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class Home
+    Inherits System.Windows.Forms.Form
+
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        Try
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
+        Finally
+            MyBase.Dispose(disposing)
+        End Try
+    End Sub
+
+    'Required by the Windows Form Designer
+    Private components As System.ComponentModel.IContainer
+
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()> _
+    Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Home))
+        Me.SideBar = New System.Windows.Forms.TableLayoutPanel()
+        Me.BT_CLASS = New System.Windows.Forms.Button()
+        Me.ClassIconsList = New System.Windows.Forms.ImageList(Me.components)
+        Me.BT_STAT = New System.Windows.Forms.Button()
+        Me.StaticIconsList = New System.Windows.Forms.ImageList(Me.components)
+        Me.BT_RECH = New System.Windows.Forms.Button()
+        Me.SearchIconsList = New System.Windows.Forms.ImageList(Me.components)
+        Me.BT_PV = New System.Windows.Forms.Button()
+        Me.PVIconsList = New System.Windows.Forms.ImageList(Me.components)
+        Me.MenuButton = New System.Windows.Forms.Button()
+        Me.ProfilePane = New System.Windows.Forms.Panel()
+        Me.BT_modif_mdp = New System.Windows.Forms.Button()
+        Me.BT_LOGOUT = New System.Windows.Forms.Button()
+        Me.mode_photo = New System.Windows.Forms.PictureBox()
+        Me.LBL_MODE = New System.Windows.Forms.Label()
+        Me.NavBar = New System.Windows.Forms.TableLayoutPanel()
+        Me.BT_CERT = New System.Windows.Forms.Button()
+        Me.PrintButton = New System.Windows.Forms.Button()
+        Me.HistoryButton = New System.Windows.Forms.Button()
+        Me.DetailButton = New System.Windows.Forms.Button()
+        Me.RNGButton = New System.Windows.Forms.Button()
+        Me.ModifButton = New System.Windows.Forms.Button()
+        Me.RNButton = New System.Windows.Forms.Button()
+        Me.Help_Button = New System.Windows.Forms.LinkLabel()
+        Me.logo_bleu = New System.Windows.Forms.PictureBox()
+        Me.MainContainer1 = New System.Windows.Forms.Panel()
+        Me.PN_BIENVENUE = New System.Windows.Forms.Panel()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.MainContainer2 = New System.Windows.Forms.Panel()
+        Me.ProgressPanel = New System.Windows.Forms.Panel()
+        Me.ProgressLabel = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.CancelBackgroundButton = New System.Windows.Forms.Button()
+        Me.SideBar.SuspendLayout()
+        Me.ProfilePane.SuspendLayout()
+        CType(Me.mode_photo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.NavBar.SuspendLayout()
+        CType(Me.logo_bleu, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PN_BIENVENUE.SuspendLayout()
+        Me.ProgressPanel.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        '
+        'SideBar
+        '
+        Me.SideBar.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.SideBar.ColumnCount = 1
+        Me.SideBar.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
+        Me.SideBar.Controls.Add(Me.BT_CLASS, 0, 1)
+        Me.SideBar.Controls.Add(Me.BT_STAT, 0, 2)
+        Me.SideBar.Controls.Add(Me.BT_RECH, 0, 3)
+        Me.SideBar.Controls.Add(Me.BT_PV, 0, 4)
+        Me.SideBar.Location = New System.Drawing.Point(0, 144)
+        Me.SideBar.Margin = New System.Windows.Forms.Padding(0)
+        Me.SideBar.Name = "SideBar"
+        Me.SideBar.RowCount = 6
+        Me.SideBar.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 123.0!))
+        Me.SideBar.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.SideBar.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.SideBar.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.SideBar.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.SideBar.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.SideBar.Size = New System.Drawing.Size(247, 764)
+        Me.SideBar.TabIndex = 8
+        Me.SideBar.TabStop = True
+        '
+        'BT_CLASS
+        '
+        Me.BT_CLASS.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BT_CLASS.Dock = System.Windows.Forms.DockStyle.Left
+        Me.BT_CLASS.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight
+        Me.BT_CLASS.FlatAppearance.BorderSize = 0
+        Me.BT_CLASS.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.BT_CLASS.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.BT_CLASS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BT_CLASS.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BT_CLASS.ForeColor = System.Drawing.SystemColors.Window
+        Me.BT_CLASS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BT_CLASS.ImageIndex = 0
+        Me.BT_CLASS.ImageList = Me.ClassIconsList
+        Me.BT_CLASS.Location = New System.Drawing.Point(3, 125)
+        Me.BT_CLASS.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BT_CLASS.MinimumSize = New System.Drawing.Size(60, 60)
+        Me.BT_CLASS.Name = "BT_CLASS"
+        Me.BT_CLASS.Size = New System.Drawing.Size(239, 86)
+        Me.BT_CLASS.TabIndex = 2
+        Me.BT_CLASS.Text = "Classement"
+        Me.BT_CLASS.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BT_CLASS.UseVisualStyleBackColor = True
+        '
+        'ClassIconsList
+        '
+        Me.ClassIconsList.ImageStream = CType(resources.GetObject("ClassIconsList.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ClassIconsList.TransparentColor = System.Drawing.Color.Transparent
+        Me.ClassIconsList.Images.SetKeyName(0, "line_chart_bj.png")
+        Me.ClassIconsList.Images.SetKeyName(1, "line_chart.png")
+        '
+        'BT_STAT
+        '
+        Me.BT_STAT.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BT_STAT.Dock = System.Windows.Forms.DockStyle.Left
+        Me.BT_STAT.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight
+        Me.BT_STAT.FlatAppearance.BorderSize = 0
+        Me.BT_STAT.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.BT_STAT.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.BT_STAT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BT_STAT.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BT_STAT.ForeColor = System.Drawing.SystemColors.Window
+        Me.BT_STAT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BT_STAT.ImageKey = "diagram.png"
+        Me.BT_STAT.ImageList = Me.StaticIconsList
+        Me.BT_STAT.Location = New System.Drawing.Point(3, 215)
+        Me.BT_STAT.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BT_STAT.MinimumSize = New System.Drawing.Size(60, 60)
+        Me.BT_STAT.Name = "BT_STAT"
+        Me.BT_STAT.Size = New System.Drawing.Size(239, 79)
+        Me.BT_STAT.TabIndex = 3
+        Me.BT_STAT.Text = "Statistiques"
+        Me.BT_STAT.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BT_STAT.UseVisualStyleBackColor = True
+        '
+        'StaticIconsList
+        '
+        Me.StaticIconsList.ImageStream = CType(resources.GetObject("StaticIconsList.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.StaticIconsList.TransparentColor = System.Drawing.Color.Transparent
+        Me.StaticIconsList.Images.SetKeyName(0, "diagram.png")
+        Me.StaticIconsList.Images.SetKeyName(1, "diagram_bl.png")
+        '
+        'BT_RECH
+        '
+        Me.BT_RECH.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BT_RECH.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight
+        Me.BT_RECH.FlatAppearance.BorderSize = 0
+        Me.BT_RECH.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.BT_RECH.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.BT_RECH.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BT_RECH.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BT_RECH.ForeColor = System.Drawing.SystemColors.Window
+        Me.BT_RECH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BT_RECH.ImageKey = "search.png"
+        Me.BT_RECH.ImageList = Me.SearchIconsList
+        Me.BT_RECH.Location = New System.Drawing.Point(3, 298)
+        Me.BT_RECH.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BT_RECH.MinimumSize = New System.Drawing.Size(60, 60)
+        Me.BT_RECH.Name = "BT_RECH"
+        Me.BT_RECH.Size = New System.Drawing.Size(239, 82)
+        Me.BT_RECH.TabIndex = 4
+        Me.BT_RECH.Text = "Recherche"
+        Me.BT_RECH.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BT_RECH.UseVisualStyleBackColor = True
+        '
+        'SearchIconsList
+        '
+        Me.SearchIconsList.ImageStream = CType(resources.GetObject("SearchIconsList.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.SearchIconsList.TransparentColor = System.Drawing.Color.Transparent
+        Me.SearchIconsList.Images.SetKeyName(0, "search.png")
+        Me.SearchIconsList.Images.SetKeyName(1, "search_blue.png")
+        '
+        'BT_PV
+        '
+        Me.BT_PV.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BT_PV.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight
+        Me.BT_PV.FlatAppearance.BorderSize = 0
+        Me.BT_PV.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.BT_PV.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.BT_PV.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BT_PV.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BT_PV.ForeColor = System.Drawing.SystemColors.Window
+        Me.BT_PV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BT_PV.ImageKey = "gantt_chart_bj.png"
+        Me.BT_PV.ImageList = Me.PVIconsList
+        Me.BT_PV.Location = New System.Drawing.Point(3, 384)
+        Me.BT_PV.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BT_PV.MinimumSize = New System.Drawing.Size(60, 60)
+        Me.BT_PV.Name = "BT_PV"
+        Me.BT_PV.Size = New System.Drawing.Size(239, 79)
+        Me.BT_PV.TabIndex = 5
+        Me.BT_PV.Text = "           PV"
+        Me.BT_PV.UseVisualStyleBackColor = True
+        '
+        'PVIconsList
+        '
+        Me.PVIconsList.ImageStream = CType(resources.GetObject("PVIconsList.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.PVIconsList.TransparentColor = System.Drawing.Color.Transparent
+        Me.PVIconsList.Images.SetKeyName(0, "gantt_chart_bj.png")
+        Me.PVIconsList.Images.SetKeyName(1, "chart_blue.png")
+        '
+        'MenuButton
+        '
+        Me.MenuButton.AutoSize = True
+        Me.MenuButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.MenuButton.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.hamburger
+        Me.MenuButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.MenuButton.CausesValidation = False
+        Me.MenuButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.MenuButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.MenuButton.FlatAppearance.BorderSize = 0
+        Me.MenuButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.MenuButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.MenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.MenuButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MenuButton.ForeColor = System.Drawing.Color.Transparent
+        Me.MenuButton.Location = New System.Drawing.Point(0, 0)
+        Me.MenuButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.MenuButton.MinimumSize = New System.Drawing.Size(60, 60)
+        Me.MenuButton.Name = "MenuButton"
+        Me.MenuButton.Size = New System.Drawing.Size(73, 144)
+        Me.MenuButton.TabIndex = 1
+        Me.MenuButton.TabStop = False
+        Me.MenuButton.UseVisualStyleBackColor = True
+        '
+        'ProfilePane
+        '
+        Me.ProfilePane.BackColor = System.Drawing.Color.FromArgb(CType(CType(162, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.ProfilePane.Controls.Add(Me.BT_modif_mdp)
+        Me.ProfilePane.Controls.Add(Me.BT_LOGOUT)
+        Me.ProfilePane.Controls.Add(Me.mode_photo)
+        Me.ProfilePane.Controls.Add(Me.LBL_MODE)
+        Me.ProfilePane.Dock = System.Windows.Forms.DockStyle.Right
+        Me.ProfilePane.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ProfilePane.Location = New System.Drawing.Point(1155, 0)
+        Me.ProfilePane.Margin = New System.Windows.Forms.Padding(0)
+        Me.ProfilePane.Name = "ProfilePane"
+        Me.ProfilePane.Size = New System.Drawing.Size(201, 860)
+        Me.ProfilePane.TabIndex = 1
+        '
+        'BT_modif_mdp
+        '
+        Me.BT_modif_mdp.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.BT_modif_mdp.AutoSize = True
+        Me.BT_modif_mdp.BackColor = System.Drawing.Color.Transparent
+        Me.BT_modif_mdp.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BT_modif_mdp.Enabled = False
+        Me.BT_modif_mdp.FlatAppearance.BorderSize = 0
+        Me.BT_modif_mdp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(186, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(130, Byte), Integer))
+        Me.BT_modif_mdp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(186, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(130, Byte), Integer))
+        Me.BT_modif_mdp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BT_modif_mdp.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.gear
+        Me.BT_modif_mdp.Location = New System.Drawing.Point(157, 233)
+        Me.BT_modif_mdp.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BT_modif_mdp.Name = "BT_modif_mdp"
+        Me.BT_modif_mdp.Size = New System.Drawing.Size(40, 37)
+        Me.BT_modif_mdp.TabIndex = 0
+        Me.BT_modif_mdp.UseVisualStyleBackColor = False
+        Me.BT_modif_mdp.Visible = False
+        '
+        'BT_LOGOUT
+        '
+        Me.BT_LOGOUT.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BT_LOGOUT.DialogResult = System.Windows.Forms.DialogResult.Yes
+        Me.BT_LOGOUT.FlatAppearance.BorderSize = 0
+        Me.BT_LOGOUT.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(186, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(130, Byte), Integer))
+        Me.BT_LOGOUT.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(186, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(130, Byte), Integer))
+        Me.BT_LOGOUT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BT_LOGOUT.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BT_LOGOUT.ForeColor = System.Drawing.Color.White
+        Me.BT_LOGOUT.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.exit_picture
+        Me.BT_LOGOUT.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.BT_LOGOUT.Location = New System.Drawing.Point(19, 663)
+        Me.BT_LOGOUT.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BT_LOGOUT.Name = "BT_LOGOUT"
+        Me.BT_LOGOUT.Size = New System.Drawing.Size(163, 124)
+        Me.BT_LOGOUT.TabIndex = 3
+        Me.BT_LOGOUT.Text = "Deconnecter"
+        Me.BT_LOGOUT.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BT_LOGOUT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.BT_LOGOUT.UseVisualStyleBackColor = True
+        '
+        'mode_photo
+        '
+        Me.mode_photo.BackColor = System.Drawing.Color.Transparent
+        Me.mode_photo.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.agent_mode
+        Me.mode_photo.Location = New System.Drawing.Point(20, 95)
+        Me.mode_photo.Margin = New System.Windows.Forms.Padding(4)
+        Me.mode_photo.Name = "mode_photo"
+        Me.mode_photo.Size = New System.Drawing.Size(160, 170)
+        Me.mode_photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.mode_photo.TabIndex = 4
+        Me.mode_photo.TabStop = False
+        '
+        'LBL_MODE
+        '
+        Me.LBL_MODE.BackColor = System.Drawing.Color.Transparent
+        Me.LBL_MODE.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBL_MODE.ForeColor = System.Drawing.Color.White
+        Me.LBL_MODE.Location = New System.Drawing.Point(1, 267)
+        Me.LBL_MODE.Name = "LBL_MODE"
+        Me.LBL_MODE.Size = New System.Drawing.Size(199, 97)
+        Me.LBL_MODE.TabIndex = 5
+        Me.LBL_MODE.Text = "Employée"
+        Me.LBL_MODE.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'NavBar
+        '
+        Me.NavBar.AccessibleRole = System.Windows.Forms.AccessibleRole.ToolBar
+        Me.NavBar.BackColor = System.Drawing.Color.Transparent
+        Me.NavBar.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.Path
+        Me.NavBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.NavBar.ColumnCount = 8
+        Me.NavBar.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.1157!))
+        Me.NavBar.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.04959!))
+        Me.NavBar.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.18733!))
+        Me.NavBar.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.84573!))
+        Me.NavBar.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.46281!))
+        Me.NavBar.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.15152!))
+        Me.NavBar.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.18733!))
+        Me.NavBar.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 181.0!))
+        Me.NavBar.Controls.Add(Me.BT_CERT, 0, 0)
+        Me.NavBar.Controls.Add(Me.PrintButton, 4, 0)
+        Me.NavBar.Controls.Add(Me.HistoryButton, 3, 0)
+        Me.NavBar.Controls.Add(Me.DetailButton, 2, 0)
+        Me.NavBar.Controls.Add(Me.RNGButton, 1, 0)
+        Me.NavBar.Controls.Add(Me.ModifButton, 5, 0)
+        Me.NavBar.Controls.Add(Me.RNButton, 0, 0)
+        Me.NavBar.Controls.Add(Me.Help_Button, 6, 0)
+        Me.NavBar.Location = New System.Drawing.Point(247, 790)
+        Me.NavBar.Margin = New System.Windows.Forms.Padding(20, 18, 20, 18)
+        Me.NavBar.MaximumSize = New System.Drawing.Size(1200, 74)
+        Me.NavBar.Name = "NavBar"
+        Me.NavBar.RowCount = 1
+        Me.NavBar.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.NavBar.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66.0!))
+        Me.NavBar.Size = New System.Drawing.Size(907, 66)
+        Me.NavBar.TabIndex = 2
+        '
+        'BT_CERT
+        '
+        Me.BT_CERT.AutoSize = True
+        Me.BT_CERT.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BT_CERT.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.BT_CERT.Enabled = False
+        Me.BT_CERT.FlatAppearance.BorderSize = 0
+        Me.BT_CERT.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(186, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(130, Byte), Integer))
+        Me.BT_CERT.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(186, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(130, Byte), Integer))
+        Me.BT_CERT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BT_CERT.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.certaficat
+        Me.BT_CERT.Location = New System.Drawing.Point(120, 2)
+        Me.BT_CERT.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BT_CERT.MinimumSize = New System.Drawing.Size(60, 60)
+        Me.BT_CERT.Name = "BT_CERT"
+        Me.BT_CERT.Size = New System.Drawing.Size(96, 62)
+        Me.BT_CERT.TabIndex = 11
+        Me.BT_CERT.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.BT_CERT.UseVisualStyleBackColor = True
+        '
+        'PrintButton
+        '
+        Me.PrintButton.AutoSize = True
+        Me.PrintButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PrintButton.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PrintButton.Enabled = False
+        Me.PrintButton.FlatAppearance.BorderSize = 0
+        Me.PrintButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(96, Byte), Integer), CType(CType(184, Byte), Integer))
+        Me.PrintButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(96, Byte), Integer), CType(CType(184, Byte), Integer))
+        Me.PrintButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.PrintButton.Image = CType(resources.GetObject("PrintButton.Image"), System.Drawing.Image)
+        Me.PrintButton.Location = New System.Drawing.Point(516, 2)
+        Me.PrintButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PrintButton.MinimumSize = New System.Drawing.Size(60, 60)
+        Me.PrintButton.Name = "PrintButton"
+        Me.PrintButton.Size = New System.Drawing.Size(104, 62)
+        Me.PrintButton.TabIndex = 10
+        Me.PrintButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.PrintButton.UseVisualStyleBackColor = True
+        '
+        'HistoryButton
+        '
+        Me.HistoryButton.AutoSize = True
+        Me.HistoryButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.HistoryButton.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.HistoryButton.Enabled = False
+        Me.HistoryButton.FlatAppearance.BorderSize = 0
+        Me.HistoryButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(96, Byte), Integer), CType(CType(184, Byte), Integer))
+        Me.HistoryButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(96, Byte), Integer), CType(CType(184, Byte), Integer))
+        Me.HistoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.HistoryButton.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.historique
+        Me.HistoryButton.Location = New System.Drawing.Point(411, 2)
+        Me.HistoryButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.HistoryButton.MinimumSize = New System.Drawing.Size(60, 60)
+        Me.HistoryButton.Name = "HistoryButton"
+        Me.HistoryButton.Size = New System.Drawing.Size(99, 62)
+        Me.HistoryButton.TabIndex = 9
+        Me.HistoryButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.HistoryButton.UseVisualStyleBackColor = True
+        '
+        'DetailButton
+        '
+        Me.DetailButton.AutoSize = True
+        Me.DetailButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.DetailButton.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DetailButton.Enabled = False
+        Me.DetailButton.FlatAppearance.BorderSize = 0
+        Me.DetailButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(96, Byte), Integer), CType(CType(184, Byte), Integer))
+        Me.DetailButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(96, Byte), Integer), CType(CType(184, Byte), Integer))
+        Me.DetailButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.DetailButton.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.details
+        Me.DetailButton.Location = New System.Drawing.Point(325, 2)
+        Me.DetailButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.DetailButton.MinimumSize = New System.Drawing.Size(60, 60)
+        Me.DetailButton.Name = "DetailButton"
+        Me.DetailButton.Size = New System.Drawing.Size(80, 62)
+        Me.DetailButton.TabIndex = 6
+        Me.DetailButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.DetailButton.UseVisualStyleBackColor = True
+        '
+        'RNGButton
+        '
+        Me.RNGButton.AutoSize = True
+        Me.RNGButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.RNGButton.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RNGButton.Enabled = False
+        Me.RNGButton.FlatAppearance.BorderSize = 0
+        Me.RNGButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(96, Byte), Integer), CType(CType(184, Byte), Integer))
+        Me.RNGButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(96, Byte), Integer), CType(CType(184, Byte), Integer))
+        Me.RNGButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.RNGButton.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.RNG
+        Me.RNGButton.Location = New System.Drawing.Point(222, 2)
+        Me.RNGButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.RNGButton.MinimumSize = New System.Drawing.Size(60, 60)
+        Me.RNGButton.Name = "RNGButton"
+        Me.RNGButton.Size = New System.Drawing.Size(97, 62)
+        Me.RNGButton.TabIndex = 5
+        Me.RNGButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.RNGButton.UseVisualStyleBackColor = True
+        '
+        'ModifButton
+        '
+        Me.ModifButton.AutoSize = True
+        Me.ModifButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ModifButton.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ModifButton.Enabled = False
+        Me.ModifButton.FlatAppearance.BorderSize = 0
+        Me.ModifButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(186, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(130, Byte), Integer))
+        Me.ModifButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(186, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(130, Byte), Integer))
+        Me.ModifButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ModifButton.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.modifier
+        Me.ModifButton.Location = New System.Drawing.Point(626, 2)
+        Me.ModifButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.ModifButton.MinimumSize = New System.Drawing.Size(60, 60)
+        Me.ModifButton.Name = "ModifButton"
+        Me.ModifButton.Size = New System.Drawing.Size(97, 62)
+        Me.ModifButton.TabIndex = 8
+        Me.ModifButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.ModifButton.UseVisualStyleBackColor = True
+        Me.ModifButton.Visible = False
+        '
+        'RNButton
+        '
+        Me.RNButton.AutoSize = True
+        Me.RNButton.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.RN
+        Me.RNButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.RNButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.RNButton.Dock = System.Windows.Forms.DockStyle.Right
+        Me.RNButton.Enabled = False
+        Me.RNButton.FlatAppearance.BorderSize = 0
+        Me.RNButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(96, Byte), Integer), CType(CType(184, Byte), Integer))
+        Me.RNButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(96, Byte), Integer), CType(CType(184, Byte), Integer))
+        Me.RNButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.RNButton.Location = New System.Drawing.Point(30, 2)
+        Me.RNButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.RNButton.MinimumSize = New System.Drawing.Size(60, 60)
+        Me.RNButton.Name = "RNButton"
+        Me.RNButton.Size = New System.Drawing.Size(84, 62)
+        Me.RNButton.TabIndex = 3
+        Me.RNButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.RNButton.UseVisualStyleBackColor = True
+        '
+        'Help_Button
+        '
+        Me.Help_Button.ActiveLinkColor = System.Drawing.Color.Transparent
+        Me.Help_Button.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Help_Button.BackColor = System.Drawing.Color.Transparent
+        Me.Help_Button.Cursor = System.Windows.Forms.Cursors.Help
+        Me.Help_Button.DisabledLinkColor = System.Drawing.Color.Transparent
+        Me.Help_Button.ForeColor = System.Drawing.Color.Transparent
+        Me.Help_Button.Image = CType(resources.GetObject("Help_Button.Image"), System.Drawing.Image)
+        Me.Help_Button.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
+        Me.Help_Button.LinkColor = System.Drawing.Color.Pink
+        Me.Help_Button.Location = New System.Drawing.Point(779, 1)
+        Me.Help_Button.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Help_Button.Name = "Help_Button"
+        Me.Help_Button.Size = New System.Drawing.Size(75, 64)
+        Me.Help_Button.TabIndex = 4
+        Me.Help_Button.TabStop = True
+        Me.Help_Button.Text = "                                                                   "
+        Me.Help_Button.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Help_Button.VisitedLinkColor = System.Drawing.Color.Teal
+        '
+        'logo_bleu
+        '
+        Me.logo_bleu.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.logo_bleu.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.logo_white
+        Me.logo_bleu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.logo_bleu.Location = New System.Drawing.Point(72, 0)
+        Me.logo_bleu.Margin = New System.Windows.Forms.Padding(4)
+        Me.logo_bleu.Name = "logo_bleu"
+        Me.logo_bleu.Size = New System.Drawing.Size(175, 145)
+        Me.logo_bleu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.logo_bleu.TabIndex = 9
+        Me.logo_bleu.TabStop = False
+        Me.logo_bleu.Visible = False
+        '
+        'MainContainer1
+        '
+        Me.MainContainer1.BackColor = System.Drawing.Color.Transparent
+        Me.MainContainer1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MainContainer1.Location = New System.Drawing.Point(247, 1)
+        Me.MainContainer1.Margin = New System.Windows.Forms.Padding(0)
+        Me.MainContainer1.Name = "MainContainer1"
+        Me.MainContainer1.Size = New System.Drawing.Size(907, 788)
+        Me.MainContainer1.TabIndex = 10
+        Me.MainContainer1.Visible = False
+        '
+        'PN_BIENVENUE
+        '
+        Me.PN_BIENVENUE.BackColor = System.Drawing.Color.Transparent
+        Me.PN_BIENVENUE.Controls.Add(Me.Label8)
+        Me.PN_BIENVENUE.Controls.Add(Me.Label7)
+        Me.PN_BIENVENUE.Controls.Add(Me.Label6)
+        Me.PN_BIENVENUE.Controls.Add(Me.Label5)
+        Me.PN_BIENVENUE.Controls.Add(Me.Label4)
+        Me.PN_BIENVENUE.Controls.Add(Me.Label3)
+        Me.PN_BIENVENUE.Location = New System.Drawing.Point(247, 0)
+        Me.PN_BIENVENUE.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PN_BIENVENUE.Name = "PN_BIENVENUE"
+        Me.PN_BIENVENUE.Size = New System.Drawing.Size(907, 788)
+        Me.PN_BIENVENUE.TabIndex = 11
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(112, 489)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(483, 24)
+        Me.Label8.TabIndex = 6
+        Me.Label8.Text = "il existe un guide en ligne, vous pouvez le consulter *__*"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.Maroon
+        Me.Label7.Location = New System.Drawing.Point(77, 447)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(349, 24)
+        Me.Label7.TabIndex = 5
+        Me.Label7.Text = "Nouveau en Esist History Manager ?"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(103, 361)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(645, 24)
+        Me.Label6.TabIndex = 4
+        Me.Label6.Text = "on sert a l’obtention de données sur l’historique individuel ou par promotion."
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Times New Roman", 24.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.Label5.Location = New System.Drawing.Point(75, 191)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(406, 46)
+        Me.Label5.TabIndex = 3
+        Me.Label5.Text = "Esist History Manager "
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(101, 309)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(568, 48)
+        Me.Label4.TabIndex = 2
+        Me.Label4.Text = "Un outil de gestion du cursus des anciens étudiants de l’ESI durant" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " leur parcou" & _
+            "rs universitaire,  "
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 24.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.Label3.Location = New System.Drawing.Point(89, 144)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(226, 46)
+        Me.Label3.TabIndex = 1
+        Me.Label3.Text = "Bienvenue a"
+        '
+        'MainContainer2
+        '
+        Me.MainContainer2.BackColor = System.Drawing.Color.Transparent
+        Me.MainContainer2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MainContainer2.Location = New System.Drawing.Point(247, 1)
+        Me.MainContainer2.Margin = New System.Windows.Forms.Padding(0)
+        Me.MainContainer2.Name = "MainContainer2"
+        Me.MainContainer2.Size = New System.Drawing.Size(907, 788)
+        Me.MainContainer2.TabIndex = 30
+        '
+        'ProgressPanel
+        '
+        Me.ProgressPanel.BackColor = System.Drawing.Color.Transparent
+        Me.ProgressPanel.Controls.Add(Me.ProgressLabel)
+        Me.ProgressPanel.Controls.Add(Me.PictureBox2)
+        Me.ProgressPanel.Controls.Add(Me.PictureBox1)
+        Me.ProgressPanel.Controls.Add(Me.CancelBackgroundButton)
+        Me.ProgressPanel.Location = New System.Drawing.Point(249, 0)
+        Me.ProgressPanel.Margin = New System.Windows.Forms.Padding(4)
+        Me.ProgressPanel.Name = "ProgressPanel"
+        Me.ProgressPanel.Size = New System.Drawing.Size(904, 788)
+        Me.ProgressPanel.TabIndex = 50
+        Me.ProgressPanel.Visible = False
+        '
+        'ProgressLabel
+        '
+        Me.ProgressLabel.BackColor = System.Drawing.Color.Transparent
+        Me.ProgressLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ProgressLabel.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.layeredAssetWhite
+        Me.ProgressLabel.Location = New System.Drawing.Point(387, 396)
+        Me.ProgressLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.ProgressLabel.Name = "ProgressLabel"
+        Me.ProgressLabel.Size = New System.Drawing.Size(99, 32)
+        Me.ProgressLabel.TabIndex = 31
+        Me.ProgressLabel.Text = "0%"
+        Me.ProgressLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox2.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.logo_coloree
+        Me.PictureBox2.InitialImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.Spinner
+        Me.PictureBox2.Location = New System.Drawing.Point(299, 265)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox2.MaximumSize = New System.Drawing.Size(301, 254)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(301, 254)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox2.TabIndex = 34
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.logo_white1
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.PictureBox1.InitialImage = Nothing
+        Me.PictureBox1.Location = New System.Drawing.Point(299, 265)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox1.MaximumSize = New System.Drawing.Size(301, 254)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(301, 254)
+        Me.PictureBox1.TabIndex = 29
+        Me.PictureBox1.TabStop = False
+        '
+        'CancelBackgroundButton
+        '
+        Me.CancelBackgroundButton.Enabled = False
+        Me.CancelBackgroundButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CancelBackgroundButton.Location = New System.Drawing.Point(363, 576)
+        Me.CancelBackgroundButton.Margin = New System.Windows.Forms.Padding(4)
+        Me.CancelBackgroundButton.Name = "CancelBackgroundButton"
+        Me.CancelBackgroundButton.Size = New System.Drawing.Size(169, 52)
+        Me.CancelBackgroundButton.TabIndex = 33
+        Me.CancelBackgroundButton.Text = "Cancel"
+        Me.CancelBackgroundButton.UseVisualStyleBackColor = True
+        Me.CancelBackgroundButton.Visible = False
+        '
+        'Home
+        '
+        Me.AcceptButton = Me.MenuButton
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoValidate = System.Windows.Forms.AutoValidate.Disable
+        Me.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.background
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.CancelButton = Me.BT_LOGOUT
+        Me.CausesValidation = False
+        Me.ClientSize = New System.Drawing.Size(1356, 860)
+        Me.Controls.Add(Me.ProgressPanel)
+        Me.Controls.Add(Me.MenuButton)
+        Me.Controls.Add(Me.SideBar)
+        Me.Controls.Add(Me.NavBar)
+        Me.Controls.Add(Me.logo_bleu)
+        Me.Controls.Add(Me.ProfilePane)
+        Me.Controls.Add(Me.PN_BIENVENUE)
+        Me.Controls.Add(Me.MainContainer1)
+        Me.Controls.Add(Me.MainContainer2)
+        Me.DoubleBuffered = True
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.MaximumSize = New System.Drawing.Size(1362, 1160)
+        Me.MinimumSize = New System.Drawing.Size(1362, 724)
+        Me.Name = "Home"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Home"
+        Me.SideBar.ResumeLayout(False)
+        Me.ProfilePane.ResumeLayout(False)
+        Me.ProfilePane.PerformLayout()
+        CType(Me.mode_photo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.NavBar.ResumeLayout(False)
+        Me.NavBar.PerformLayout()
+        CType(Me.logo_bleu, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PN_BIENVENUE.ResumeLayout(False)
+        Me.PN_BIENVENUE.PerformLayout()
+        Me.ProgressPanel.ResumeLayout(False)
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
+
+    End Sub
+    Friend WithEvents SideBar As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents ProfilePane As System.Windows.Forms.Panel
+    Friend WithEvents BT_PV As System.Windows.Forms.Button
+    Friend WithEvents BT_RECH As System.Windows.Forms.Button
+    Friend WithEvents BT_STAT As System.Windows.Forms.Button
+    Friend WithEvents BT_CLASS As System.Windows.Forms.Button
+    Friend WithEvents BT_LOGOUT As System.Windows.Forms.Button
+    Friend WithEvents BT_modif_mdp As System.Windows.Forms.Button
+    Friend WithEvents mode_photo As System.Windows.Forms.PictureBox
+    Friend WithEvents NavBar As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents LBL_MODE As System.Windows.Forms.Label
+    Friend WithEvents RNButton As System.Windows.Forms.Button
+    Friend WithEvents RNGButton As System.Windows.Forms.Button
+    Friend WithEvents DetailButton As System.Windows.Forms.Button
+    Friend WithEvents ModifButton As System.Windows.Forms.Button
+    Friend WithEvents Help_Button As System.Windows.Forms.LinkLabel
+    Friend WithEvents MenuButton As System.Windows.Forms.Button
+    Friend WithEvents logo_bleu As System.Windows.Forms.PictureBox
+    Friend WithEvents HistoryButton As System.Windows.Forms.Button
+    Friend WithEvents PrintButton As System.Windows.Forms.Button
+    Friend WithEvents ClassIconsList As System.Windows.Forms.ImageList
+    Friend WithEvents StaticIconsList As System.Windows.Forms.ImageList
+    Friend WithEvents SearchIconsList As System.Windows.Forms.ImageList
+    Friend WithEvents PVIconsList As System.Windows.Forms.ImageList
+    Friend WithEvents MainContainer1 As System.Windows.Forms.Panel
+    Friend WithEvents PN_BIENVENUE As System.Windows.Forms.Panel
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents MainContainer2 As System.Windows.Forms.Panel
+    Friend WithEvents ProgressPanel As System.Windows.Forms.Panel
+    Friend WithEvents ProgressLabel As System.Windows.Forms.Label
+    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents CancelBackgroundButton As System.Windows.Forms.Button
+    Friend WithEvents BT_CERT As System.Windows.Forms.Button
+
+End Class

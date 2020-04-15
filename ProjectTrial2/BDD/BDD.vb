@@ -548,4 +548,46 @@ Public Class BDD
 
     End Function
 
+    '''
+
+    Private Shared tableCorespondante() As Paire = {New Paire(nomTableEtudiant, nomTableINSCRIPTION), New Paire(nomTableEtudiant, nomTableNOTE)}
+    Private Shared champCorespondante() As Paire = {New Paire(champsMATRIN, champsMATRIN), New Paire(champsMATRIN, champsMATRIN)}
+
+    Public Shared Function getCorrespondance(ByVal tabs As Paire) As Paire
+        Dim ind As Integer = IndexOf(tableCorespondante, tabs)
+        'MsgBox(ind)
+        If (ind > -1) Then
+            Return champCorespondante(ind)
+        Else
+            MsgBox("Ces deux tables n'ont pas de correspandance")
+            Return New Paire("", "")
+        End If
+    End Function
+
+    Public Shared Function getCorrespondance(ByVal tab1 As String, ByVal tab2 As String, ByVal ind As Integer) As String
+        Dim cles As Paire = getCorrespondance(New Paire(tab1, tab2))
+        Return cles.getElement(ind)
+    End Function
+
+    Public Shared Function IndexOf(ByVal table As Paire(), ByVal paire As Paire) As Integer
+        Dim ind As Integer = 0
+        Dim found As Boolean = False
+        While Not found And ind < table.Length
+            If (table(ind).getElement(1)).Equals(paire.getElement(1)) And (table(ind).getElement(2)).Equals(paire.getElement(2)) Then
+                found = True
+            Else
+                ind += 1
+            End If
+        End While
+        If (found) Then
+            Return ind
+        Else
+            Return -1
+        End If
+
+    End Function
+
+
+
+
 End Class

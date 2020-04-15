@@ -548,7 +548,8 @@ Public Class BDD
 
     End Function
 
-    '''
+    '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    ''' '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
     Private Shared tableCorespondante() As Paire = {New Paire(nomTableEtudiant, nomTableINSCRIPTION), New Paire(nomTableEtudiant, nomTableNOTE)}
     Private Shared champCorespondante() As Paire = {New Paire(champsMATRIN, champsMATRIN), New Paire(champsMATRIN, champsMATRIN)}

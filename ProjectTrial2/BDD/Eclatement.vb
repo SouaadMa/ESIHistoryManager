@@ -160,7 +160,7 @@ Public Class ECLATEMENT
         Call Eclatement_FROM_ACCESS("PROMO")
 
     End Sub
-    Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) 'Handles MyBase.Load
 
 
         ECLATEMENT()

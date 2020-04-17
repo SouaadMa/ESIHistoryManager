@@ -64,7 +64,7 @@ Public Class BDD
     'Public Shared stringETUDIANT() As String = {"NomEtud", "Prenoms", "NomEtudA", "PrenomsA", "MATRIC_INS", "MATRIN", "DateNais", "LieuNaisA", "WilayaNaisA", "LieuNais", "ADRESSE", "VILLE", "WILAYA", "CODEPOS", "WILBAC", "SERIEBAC", "FILS_DE", "ET_DE"}
 
     ' les tableaux qui contiennet les champs des tables de base de données :
-    Public Shared stringETUDIANT() As String = {"NomEtud", "Prenoms", "NomEtudA", "PrenomsA", "MATRIC_INS", "MATRIN", "DateNais", "LieuNaisA", "LieuNais", "ADRESSE", "VILLE", "WILAYA", "WILBAC", "SERIEBAC", "FILS_DE", "ET_DE", "CODEPOS", "WilayaNaisA"}
+    Public Shared stringETUDIANT() As String = {"NomEtud", "Prenoms", "NomEtudA", "PrenomsA", "MATRIC_INS", "MATRIN", "DateNais", "LieuNaisA", "LieuNais", "ADRESSE", "VILLE", "WILAYA", "WILBAC", "SERIEBAC", "FILS_DE", "ET_DE", "CODEPOS", "WilayaNaisA", "ANNEEBAC", "SEXE"}
     Public Shared stringINSCRIPTION() As String = {"MATRIN", "CodeGroupe", "DECIIN", "DEC", "ADM"}
     Public Shared stringGROUP() As String = {"NG"}
     Public Shared stringSection() As String = {"NS"}
@@ -75,7 +75,7 @@ Public Class BDD
     Public Shared stringRATRAP() As String = {"CYCLRA", "OPTIRA"}
 
     'Public Shared numETUDIANT() As String = {"WILNAIS", "SEXE", "MOYBAC", "ANNEEBAC"}
-    Public Shared numETUDIANT() As String = {"WILNAIS", "MOYBAC", "ANNEEBAC", "SEXE"}
+    Public Shared numETUDIANT() As String = {"WILNAIS", "MOYBAC"}
     Public Shared numINSCRIPTION() As String = {"MOYEIN", "RANGIN", "MENTIN", "ELIMININ", "RATRIN"}
     Public Shared numGROUP() As String = {}
     Public Shared numSection() As String = {}
@@ -219,7 +219,7 @@ Public Class BDD
         'retourner un dataTable contenant les étudiants qui vérifient la requête
 
 
-        Dim cnx As OleDbConnection = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\BDD_TABLES_ECLATES.accdb")  'la connexion à la BDD
+        Dim cnx As OleDbConnection = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\BDD_TESTE.accdb")  'la connexion à la BDD
 
 
         Dim cmd As OleDbCommand                     ' la commande

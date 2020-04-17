@@ -85,6 +85,17 @@ Namespace My
                 Return CType(Me("BDD_ECLATESConnectionString"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\BDD_TESTE.accdb;Per"& _ 
+            "sist Security Info=True")>  _
+        Public ReadOnly Property BDD_TESTEConnectionString() As String
+            Get
+                Return CType(Me("BDD_TESTEConnectionString"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

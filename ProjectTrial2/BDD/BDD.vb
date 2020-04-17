@@ -515,26 +515,6 @@ Public Class BDD
 
     End Function
 
-    Public Shared Function GetALL(ByVal nomChamps As String, ByVal nomTable As String, ByVal condition As Critere) As DataTable
-
-        If ExisteDansTable(nomChamps, nomTable) Then
-
-            Dim SqlQuery = "SELECT DISTINCT " & nomChamps & " FROM " & nomTable & " WHERE " & condition.getChamps & " = '" & condition.getValeur & "';"
-
-            'MsgBox("before execute")
-
-            Return executeRequete(SqlQuery)
-
-        Else
-
-            MsgBox("Ce champs n'existe pas dans la table")
-            Return Nothing
-
-
-        End If
-
-    End Function
-
 
 
 
@@ -568,48 +548,7 @@ Public Class BDD
 
     End Function
 
-    ' Méthode qui retourne la table qui contient le champs en entrée
-    ' Utilisé en cas d'urgence x)
-
-    Public Shared Function GetTable(ByVal champs As String) As String
-
-        If (ExisteDansTable(champs, BDD.nomTableINSCRIPTION)) Then
-            Return BDD.nomTableINSCRIPTION
-        End If
-        If (ExisteDansTable(champs, BDD.nomTableEtudiant)) Then
-            Return BDD.nomTableEtudiant
-        End If
-        If (ExisteDansTable(champs, BDD.nomTableGROUP)) Then
-            Return BDD.nomTableGROUP
-        End If
-        If (ExisteDansTable(champs, BDD.nomTableMATIERE)) Then
-            Return BDD.nomTableMATIERE
-        End If
-        If (ExisteDansTable(champs, BDD.nomTableNOTE)) Then
-            Return BDD.nomTableNOTE
-        End If
-        If (ExisteDansTable(champs, BDD.nomTableNoteRATRAP)) Then
-            Return BDD.nomTableNoteRATRAP
-        End If
-        If (ExisteDansTable(champs, BDD.nomTablePROMO)) Then
-            Return BDD.nomTablePROMO
-        End If
-        If (ExisteDansTable(champs, BDD.nomTableSection)) Then
-            Return BDD.nomTableSection
-        End If
-        If (ExisteDansTable(champs, BDD.nomTableRATRAP)) Then
-            Return BDD.nomTableRATRAP
-        End If
-
-        Return ""
-
-    End Function
-
-
-
-
-    '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    ''' '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    '''
 
     Private Shared tableCorespondante() As Paire = {New Paire(nomTableEtudiant, nomTableINSCRIPTION), New Paire(nomTableEtudiant, nomTableNOTE)}
     Private Shared champCorespondante() As Paire = {New Paire(champsMATRIN, champsMATRIN), New Paire(champsMATRIN, champsMATRIN)}

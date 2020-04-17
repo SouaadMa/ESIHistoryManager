@@ -109,8 +109,9 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BDD.vb" />
     <Compile Include="BDD\Class_BDD.vb" />
-    <Compile Include="BDD\Eclatement.vb" />
+    <Compile Include="BDD\ECLATEMENT.vb" />
     <Compile Include="BDD\Modif_BDD.vb" />
     <Compile Include="BDD\Paire.vb" />
     <Compile Include="BDD_ECLATESDataSet.Designer.vb">
@@ -374,6 +375,9 @@
     <None Include="Resources\details general back.png" />
     <None Include="Resources\Ellipse 5.png" />
     <None Include="Resources\Ellipse 4.png" />
+    <Content Include="BDD_ECLATE.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="BDD_TABLES_ECLATES.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

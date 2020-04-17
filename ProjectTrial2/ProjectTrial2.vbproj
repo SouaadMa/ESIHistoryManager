@@ -113,6 +113,7 @@
     <Compile Include="BDD\Eclatement.vb" />
     <Compile Include="BDD\Modif_BDD.vb" />
     <Compile Include="BDD\Paire.vb" />
+    <Compile Include="BDD\RN.vb" />
     <Compile Include="BDD_ECLATESDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

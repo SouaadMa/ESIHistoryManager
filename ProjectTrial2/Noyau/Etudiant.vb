@@ -304,4 +304,16 @@
 
     End Function
 
+    ' Méthodes particulières pour les sorties d'un étudiant
+
+    Public Function RNpossible(ByVal annee As String) As Boolean
+
+        Return True
+
+    End Function
+
+
+
+
+
 End Class

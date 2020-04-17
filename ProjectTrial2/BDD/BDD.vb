@@ -323,7 +323,6 @@ Public Class BDD
     End Function
 
 
-
     Public Shared Function GetFromTable(ByVal nomTable As String, ByVal matrin As String, ByVal critere As Critere) As DataRow
         'Méthode qui retourne toutes les informations de la table "nomTable" qui correspondent 
         'à un étudiant
@@ -611,8 +610,8 @@ Public Class BDD
     '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     ''' '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-    Private Shared tableCorespondante() As Paire = {New Paire(nomTableEtudiant, nomTableINSCRIPTION), New Paire(nomTableEtudiant, nomTableNOTE)}
-    Private Shared champCorespondante() As Paire = {New Paire(champsMATRIN, champsMATRIN), New Paire(champsMATRIN, champsMATRIN)}
+    Private Shared tableCorespondante() As Paire = {New Paire(nomTableEtudiant, nomTableINSCRIPTION), New Paire(nomTableEtudiant, nomTableNOTE), New Paire(nomTableNOTE, nomTableMATIERE)}
+    Private Shared champCorespondante() As Paire = {New Paire(champsMATRIN, champsMATRIN), New Paire(champsMATRIN, champsMATRIN), New Paire(champsCodeMat, champsCodeMat)}
 
     Public Shared Function getCorrespondance(ByVal tabs As Paire) As Paire
         Dim ind As Integer = IndexOf(tableCorespondante, tabs)

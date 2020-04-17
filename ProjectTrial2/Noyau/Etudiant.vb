@@ -182,6 +182,44 @@
 
     End Function
 
+    ' Méthode qui retourne toutes les valeurs possibles d'un champs dans la base de données,
+    ' et qui correspondent à l'étudiant
+
+    Public Function GetALL(ByVal champs As String) As List(Of String)
+
+        'Génération du critère MATRIN
+        Dim condition As New Critere(BDD.champsMATRIN, Me.GetInfoChamps(BDD.champsMATRIN))
+
+        'Récuperation du résultat de la requête dans la BDD
+        Dim dt As New DataTable
+        dt = BDD.GetALL(champs, BDD.GetTable(champs), condition)
+
+
+        'Création de la liste à retourner
+        Dim liste As New List(Of String)
+
+        For Each ligne As DataRow In dt.Rows
+
+            Try
+                liste.Add(CType(ligne(champs), String))
+            Catch ex As Exception
+                'MsgBox(ex.Message)
+                liste.Add(" ")
+            End Try
+
+
+        Next
+
+        Return liste
+
+
+    End Function
+
+
+
+
+
+
 
     'FillCollection est une méthode qui remplie la collection avec le nom "nameTable" avec les informations
     'Qui sont dans la ligne "ligne"

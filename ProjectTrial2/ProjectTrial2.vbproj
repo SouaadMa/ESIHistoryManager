@@ -123,6 +123,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BDD_TABLES_ECLATESDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="BDD_TESTEDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDD_TESTEDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Graphique\affichResearchResult.Designer.vb">
       <DependentUpon>affichResearchResult.vb</DependentUpon>
     </Compile>
@@ -137,10 +142,10 @@
     <Compile Include="Graphique\Attestation.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Graphique\CrystalReport1.vb">
+    <Compile Include="Graphique\PvReport.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <DependentUpon>PvReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Graphique\DataSet1.Designer.vb">
@@ -267,9 +272,9 @@
     <EmbeddedResource Include="Graphique\ClassementPage.resx">
       <DependentUpon>ClassementPage.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Graphique\CrystalReport1.rpt">
+    <EmbeddedResource Include="Graphique\PvReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.vb</LastGenOutput>
+      <LastGenOutput>PvReport.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Graphique\Imprimer.resx">
       <DependentUpon>Imprimer.vb</DependentUpon>
@@ -341,6 +346,17 @@
     <None Include="BDD_TABLES_ECLATESDataSet.xss">
       <DependentUpon>BDD_TABLES_ECLATESDataSet.xsd</DependentUpon>
     </None>
+    <None Include="BDD_TESTEDataSet.xsc">
+      <DependentUpon>BDD_TESTEDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BDD_TESTEDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BDD_TESTEDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BDD_TESTEDataSet.xss">
+      <DependentUpon>BDD_TESTEDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Graphique\DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
@@ -382,6 +398,9 @@
     <None Include="Resources\015-document2.png" />
     <None Include="Resources\015-document3.png" />
     <None Include="Resources\certaficat.png" />
+    <Content Include="BDD_TESTE.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\page_num_current.png" />
     <None Include="Resources\Spinner-1s-220px.gif" />
     <None Include="Resources\table_blanc.png" />

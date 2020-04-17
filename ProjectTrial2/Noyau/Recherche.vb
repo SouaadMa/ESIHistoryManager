@@ -66,7 +66,6 @@
 
             Try
                 liste.Add(CType(ligne(champs), String))
-                Console.WriteLine(CType(ligne(champs), String))
             Catch ex As Exception
                 'MsgBox(ex.Message)
                 liste.Add(" ")

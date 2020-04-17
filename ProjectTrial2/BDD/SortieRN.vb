@@ -1,5 +1,7 @@
 ﻿Public Class SortieRN
 
+    Private dataSet As New DataSet
+
     Public Sub New(ByVal etud As Etudiant, ByVal annee As String)
 
         If (etud.RNpossible(annee)) Then
@@ -31,6 +33,10 @@
 
 
     End Sub
+
+    Public Function GetDataSet() As DataSet
+        Return dataSet
+    End Function
 
 
 

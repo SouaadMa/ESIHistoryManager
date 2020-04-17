@@ -24,10 +24,16 @@
             tableNotesMat = BDD.executeRequete(req)
 
             'Ajout des deux tables dans une DataSet
+            'Etudiant
+            Dim dtEtud As New DataTable(BDD.nomTableEtudiant)
+            dtEtud.Rows.Add(etud.InfosETUDIANT)
+            dataSet.Tables.Add(dtEtud)
+            'NotesMat
+            dataSet.Tables.Add(tableNotesMat)
 
         End If
 
-
+        
 
 
 

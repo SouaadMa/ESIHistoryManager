@@ -22,7 +22,7 @@
         'initialiser etudiant
 
         Me.TXT_ADR.Text = esistselect.GetInfoChamps("ADRESSE")
-        Me.TXT_CODEPOS.Text = esistselect.GetInfoChamps("CODPOST")
+        Me.TXT_CODEPOS.Text = esistselect.GetInfoChamps("CODEPOS")
         Me.TXT_DATENAIS.Text = esistselect.GetInfoChamps("DateNais")
         Me.TXT_ETDE.Text = esistselect.GetInfoChamps("ET_DE")
         Me.TXT_FILSDE.Text = esistselect.GetInfoChamps("FILS_DE")

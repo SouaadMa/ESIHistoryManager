@@ -1,6 +1,6 @@
 ﻿Imports System.Data.OleDb
 
-Public Class Attestation
+Public Class SortieAttestation
 
     Public Shared Function attestation(ByVal mat As String) As DataSet
 
@@ -47,4 +47,15 @@ Public Class Attestation
     End Function
 
 
+
+    'Private Sub InitializeComponent()
+    '   Me.SuspendLayout()
+    '
+    'Attestation
+    '
+    '   Me.ClientSize = New System.Drawing.Size(284, 261)
+    '  Me.Name = "Attestation"
+    ' Me.ResumeLayout(False)
+
+    'End Sub
 End Class

@@ -48,7 +48,5 @@ Public Class PVPage
         Return ds.Tables.Item(0)
     End Function
 
-    Private Sub CrystalReportViewer1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CrystalReportViewer1.Load
-
-    End Sub
+    
 End Class

@@ -1,4 +1,5 @@
 ﻿Public Class Etudiant
+
     Implements IComparable(Of Etudiant)  'La classe implémente Comparable
 
     'Private InfosETUDIANT As Dictionary(Of String, String) = New Dictionary(Of String, String)
@@ -64,57 +65,47 @@
 
     End Sub
 
-    
+
 
 
     'Méthode qui charge les informations de la table INSCRIPTION de l'étudiant selon le critère donné (l'année)
     'We don't need to use it as long as we have ChargementInfos, the method above
     'But don't delete it
 
-    Public Sub ChargementInfosINSCRIPTION(ByVal critere As Critere)
-
-
+    Public Function ChargementInfosINSCRIPTION(ByVal critere As Critere) As DataRow
 
         Dim ligne As DataRow = BDD.GetFromTable(BDD.nomTableINSCRIPTION, Me.GetInfoChamps(BDD.champsMATRIN), critere)
 
+        Return ligne
 
-        For Each champs As String In BDD.stringINSCRIPTION
+        
 
-            Try
+    End Function
 
-                'InfosINSCRIPTION.Add(champs, CType(ligne(champs), String))
-            Catch ex As Exception
+    'Méthode qui charge les informations de l'étudiant selon le critère donné 
+    Public Function ChargementInfos(ByVal critere As Critere) As DataRow
 
-            End Try
-        Next
-        For Each champs As String In BDD.numINSCRIPTION
-
-            Try
-
-                'InfosINSCRIPTION.Add(champs, CType(ligne(champs), String))
-            Catch ex As Exception
+        Dim ligne As DataRow
 
 
-            End Try
+        'Les tables qui ont relation avec un seul étudiant
+        If (critere.getTable.Equals(BDD.nomTableINSCRIPTION) Or critere.getTable.Equals(BDD.nomTableNOTE) Or critere.getTable.Equals(BDD.nomTableNoteRATRAP)) Then
 
-        Next
-        For Each champs As String In BDD.boolINSCRIPTION
+            ligne = BDD.GetFromTable(critere.getTable, Me.GetInfoChamps(BDD.champsMATRIN), critere)
+            Return ligne
 
-            Try
+        Else
 
-                'InfosINSCRIPTION.Add(champs, CType(ligne(champs), String))
+            'MATIERE, RATRAP, GROUP, Section, PROMO 
+            'Sont des tables indépendantes de l'étudiant
 
-            Catch ex As Exception
+            ligne = BDD.GetFromTable(critere.getTable, critere)
+            Return ligne
 
-                MsgBox(ex.Message)
-
-            End Try
-        Next
-
-
+        End If
 
 
-    End Sub
+    End Function
 
 
 
@@ -129,7 +120,6 @@
     Public Function GetInfoChamps(ByVal champs As String) As String
 
         Return CType(InfosETUDIANT(champs), String)
-
 
 
     End Function
@@ -169,18 +159,7 @@
 
 
 
-
-
-
-
-
     ' Méthodes particulières pour les sorties d'un étudiant
-
-    Public Function RNpossible(ByVal annee As String) As Boolean
-
-        Return True
-
-    End Function
 
 
 

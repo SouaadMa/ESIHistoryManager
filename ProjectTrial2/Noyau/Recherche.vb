@@ -54,15 +54,15 @@
 
     'Fonction qui retourne une liste de toutes les valeurs (chaine) possible de "champs" dans Etudiant
 
-    Public Shared Function GetALL(ByVal champs As String) As List(Of String)
+    Public Shared Function GetALL(ByVal champs As String, ByVal table As String) As List(Of String)
 
-        Dim dt As DataTable = BDD.GetALL(champs, BDD.nomTableEtudiant)
+        Dim dc As DataTable = BDD.GetALL(champs, table)
 
         Dim liste As New List(Of String)
 
         'MsgBox("GetALLRech")
 
-        For Each ligne As DataRow In dt.Rows
+        For Each ligne As DataRow In dc.Rows
 
             Try
                 liste.Add(CType(ligne(champs), String))

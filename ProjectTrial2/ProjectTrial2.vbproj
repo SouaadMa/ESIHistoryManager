@@ -125,7 +125,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BDD_TABLES_ECLATESDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="BDD_TESTEDataSet.Designer.vb" />
     <Compile Include="Graphique\affichResearchResult.Designer.vb">
       <DependentUpon>affichResearchResult.vb</DependentUpon>
     </Compile>
@@ -347,17 +346,6 @@
     <None Include="BDD_TABLES_ECLATESDataSet.xss">
       <DependentUpon>BDD_TABLES_ECLATESDataSet.xsd</DependentUpon>
     </None>
-    <None Include="BDD_TESTEDataSet.xsc">
-      <DependentUpon>BDD_TESTEDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="BDD_TESTEDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BDD_TESTEDataSet1.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="BDD_TESTEDataSet.xss">
-      <DependentUpon>BDD_TESTEDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Graphique\DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
@@ -399,9 +387,6 @@
     <None Include="Resources\015-document2.png" />
     <None Include="Resources\015-document3.png" />
     <None Include="Resources\certaficat.png" />
-    <Content Include="BDD_TESTE.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Resources\page_num_current.png" />
     <None Include="Resources\Spinner-1s-220px.gif" />
     <None Include="Resources\table_blanc.png" />

@@ -113,6 +113,8 @@
     <Compile Include="BDD\Eclatement.vb" />
     <Compile Include="BDD\Modif_BDD.vb" />
     <Compile Include="BDD\Paire.vb" />
+    <Compile Include="BDD\SortieAttestation.vb" />
+    <Compile Include="BDD\SortieRN.vb" />
     <Compile Include="BDD_ECLATESDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -259,6 +261,9 @@
     <Compile Include="BDD\Rech_BDD.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="BDD\SortieAttestation.resx">
+      <DependentUpon>SortieAttestation.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Graphique\affichResearchResult.resx">
       <DependentUpon>affichResearchResult.vb</DependentUpon>
     </EmbeddedResource>

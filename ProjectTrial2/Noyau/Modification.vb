@@ -18,10 +18,13 @@
         BDD.executeRequete(instEtudiant)
 
         ' Faire les changement appliquée sur les informations sauvegarder dans l'objet ETUDIANT
-        For Each crit In criteres
-            etud.getCollection("Etudiant").Item(crit.getChamps) = crit.getValeur()
 
+
+        For Each crit In criteres
+            etud.InfosETUDIANT.Item(crit.getChamps) = crit.getValeur
+            'etud.getCollection("Etudiant").Item(crit.getChamps) = crit.getValeur()
         Next
+
 
     End Sub
 

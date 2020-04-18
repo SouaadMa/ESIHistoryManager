@@ -21,6 +21,7 @@
 
         'initialiser etudiant
 
+
         Me.TXT_ADR.Text = esistselect.GetInfoChamps(BDD.champsADRESSE)
         Me.TXT_CODEPOS.Text = esistselect.GetInfoChamps(BDD.champsCODEPOS)
         Me.TXT_DATENAIS.Text = esistselect.GetInfoChamps(BDD.champsDateNais)
@@ -37,6 +38,7 @@
         Me.CB_WILAYA.Text = esistselect.GetInfoChamps(BDD.champsWILAYA)
         Me.CB_WILAYAN.Text = esistselect.GetInfoChamps(BDD.champsLieuNaisA)
         Me.CB_WILAYANA.Text = esistselect.GetInfoChamps(BDD.champsWilayaNaisA)
+
 
         Me.DTP_DATENAIS.Visible = False
 

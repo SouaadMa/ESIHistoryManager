@@ -94,6 +94,7 @@ Namespace My
         Public ReadOnly Property BDD_TESTEConnectionString() As String
             Get
                 Return CType(Me("BDD_TESTEConnectionString"),String)
+
             End Get
         End Property
     End Class

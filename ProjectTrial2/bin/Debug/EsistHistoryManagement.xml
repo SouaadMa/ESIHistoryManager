@@ -186,6 +186,7 @@ Used to sort self-referenced table's rows
 	<summary>
 TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
 </summary>
+
 </member><member name="T:EsistHistoryManagement_v1.BDD_TABLES_ECLATESDataSet.ETUDIANTDataTable">
 	<summary>
 Represents the strongly named DataTable class.
@@ -366,6 +367,7 @@ Used to sort self-referenced table's rows
 	<summary>
 TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
 </summary>
+
 </member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.ResourceManager">
 	<summary>
   Returns the cached ResourceManager instance used by this class.

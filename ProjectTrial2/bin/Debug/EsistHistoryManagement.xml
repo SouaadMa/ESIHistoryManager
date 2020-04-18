@@ -6,7 +6,188 @@ EsistHistoryManagement
 </name>
 </assembly>
 <members>
-<member name="T:EsistHistoryManagement_v1.BDD_TABLES_ECLATESDataSet.ETUDIANTDataTable">
+<member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.ETUDIANTDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.GROUPEDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.INSCRIPTIONDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.MATIEREDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.NoteRATRAPDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.NOTESDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.PROMODataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.RATRAPDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.SECTIONSDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.ETUDIANTRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.GROUPERow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.INSCRIPTIONRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.MATIERERow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.NoteRATRAPRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.NOTESRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.PROMORow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.RATRAPRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.SECTIONSRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.ETUDIANTRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.GROUPERowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.INSCRIPTIONRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.MATIERERowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.NoteRATRAPRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.NOTESRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.PROMORowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.RATRAPRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.SECTIONSRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSetTableAdapters.ETUDIANTTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSetTableAdapters.GROUPETableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSetTableAdapters.INSCRIPTIONTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSetTableAdapters.MATIERETableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSetTableAdapters.NoteRATRAPTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSetTableAdapters.NOTESTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSetTableAdapters.PROMOTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSetTableAdapters.RATRAPTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSetTableAdapters.SECTIONSTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:EsistHistoryManagement_v1.BDD_TESTEDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(EsistHistoryManagement_v1.BDD_TESTEDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:EsistHistoryManagement_v1.BDD_TESTEDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(EsistHistoryManagement_v1.BDD_TESTEDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:EsistHistoryManagement_v1.BDD_TESTEDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(EsistHistoryManagement_v1.BDD_TESTEDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:EsistHistoryManagement_v1.BDD_TESTEDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:EsistHistoryManagement_v1.BDD_TESTEDataSetTableAdapters.TableAdapterManager.UpdateAll(EsistHistoryManagement_v1.BDD_TESTEDataSet)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSetTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+
+</member><member name="T:EsistHistoryManagement_v1.BDD_TABLES_ECLATESDataSet.ETUDIANTDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -186,6 +367,7 @@ Used to sort self-referenced table's rows
 	<summary>
 TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
 </summary>
+
 </member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.ResourceManager">
 	<summary>
   Returns the cached ResourceManager instance used by this class.

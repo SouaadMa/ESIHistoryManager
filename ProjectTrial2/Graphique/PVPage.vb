@@ -15,12 +15,12 @@ Public Class PVPage
         'New OleDbDataAdapter(sqlString, adoOleDbConnection)
         Dim ds As New DataSet1
         Dim dt As New DataTable()
-        Dim adp As OleDbDataAdapter = New OleDbDataAdapter(sqlString, New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\BDD_TABLES_ECLATES.accdb"))
+        Dim adp As OleDbDataAdapter = New OleDbDataAdapter(sqlString, New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\BDD_TESTE.accdb"))
         adp.Fill(ds.DataTable1)
         dt = ds.Tables("DataTable1")
         ds.Tables.Item(0).Merge(dt)
         CrystalReportViewer1.RefreshReport()
-        Dim cryrpt As New CrystalReport1
+        Dim cryrpt As New PvReport
         'cryrpt.Load(server)
         cryrpt.SetDataSource(ds.Tables(0))
         cryrpt.Database.Tables(0).SetDataSource(ds)
@@ -48,5 +48,4 @@ Public Class PVPage
         Return ds.Tables.Item(0)
     End Function
 
-    
 End Class

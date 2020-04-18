@@ -121,14 +121,14 @@ C:\Users\hadia\Documents\GitHub\New folder (2)\ESIHistoryManager\ProjectTrial2\o
 C:\Users\hadia\Documents\GitHub\New folder (2)\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.Resources.resources
 C:\Users\hadia\Documents\GitHub\New folder (2)\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\ProjectTrial2.vbproj.GenerateResource.Cache
 C:\Users\hadia\Documents\GitHub\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\ProjectTrial2.vbprojResolveAssemblyReference.cache
-D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\ProjectTrial2.vbprojResolveAssemblyReference.cache
 D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\bin\Debug\BDD_TABLES_ECLATES.accdb
 C:\Users\hadia\Documents\GitHub\ESIHistoryManager\ProjectTrial2\bin\Debug\BDD_TABLES_ECLATES.accdb
 C:\Users\hadia\Documents\GitHub\ESIHistoryManager\ProjectTrial2\bin\Debug\Graphique\Database1.sdf
 C:\Users\hadia\Documents\GitHub\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.Attestation.resources
 D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.Attestation.resources
-C:\Users\SIRINE\Documents\Visual Studio 2010\Projects\ProjectTrial2\ProjectTrial2\bin\Debug\BDD_TABLES_ECLATES.accdb
-C:\Users\SIRINE\Documents\Visual Studio 2010\Projects\ProjectTrial2\ProjectTrial2\obj\x86\Debug\ProjectTrial2.vbprojResolveAssemblyReference.cache
+
+D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\bin\Debug\BDD_TESTE.accdb
 C:\Users\SIRINE\Documents\Visual Studio 2010\Projects\ProjectTrial2\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.Attestation.resources
-C:\Users\SIRINE\Documents\Visual Studio 2010\Projects\ProjectTrial2\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.SortieAttestation.resources
-C:\Users\SIRINE\Documents\Visual Studio 2010\Projects\ProjectTrial2\ProjectTrial2\bin\Debug\BDD_TEST.accdb
+C:\Users\SIRINE\Documents\Visual Studio 2010\Projects\ProjectTrial2\ProjectTrial2\bin\Debug\BDD_TABLES_ECLATES.accdb
+C:\Users\SIRINE\Documents\Visual Studio 2010\Projects\ProjectTrial2\ProjectTrial2\bin\Debug\BDD_TESTE.accdb
+

@@ -218,7 +218,7 @@
                 'End If
 
                 If Me.CB_SEXE.Text <> "" Then
-                    collection_critere.Add(New Critere("SEXE", Me.CB_SEXE.SelectedIndex))
+                    collection_critere.Add(New Critere("SEXE", (Me.CB_SEXE.SelectedIndex + 1).ToString))
                 End If
 
                 If Me.CB_SERI.Text <> "" Then
@@ -230,7 +230,7 @@
                 End If
 
                 If Me.CB_ANNEEB.Text <> "" Then
-                    collection_critere.Add(New Critere("ANNEEBAC", CB_ANNEEB.SelectedIndex + 1989))
+                    collection_critere.Add(New Critere("ANNEEBAC", CB_ANNEEB.Text))
                 End If
 
                 If Me.CB_WILAYAB.Text <> "" Then

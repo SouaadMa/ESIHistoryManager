@@ -18,7 +18,7 @@ Imports System
 Imports System.ComponentModel
 
 
-Public Class CrystalReport1
+Public Class PvReport
     Inherits ReportClass
     
     Public Sub New()
@@ -27,7 +27,7 @@ Public Class CrystalReport1
     
     Public Overrides Property ResourceName() As String
         Get
-            Return "CrystalReport1.rpt"
+            Return "PvReport.rpt"
         End Get
         Set
             'Do nothing
@@ -45,7 +45,7 @@ Public Class CrystalReport1
     
     Public Overrides Property FullResourceName() As String
         Get
-            Return "EsistHistoryManagement_v1.CrystalReport1.rpt"
+            Return "EsistHistoryManagement_v1.PvReport.rpt"
         End Get
         Set
             'Do nothing
@@ -94,7 +94,7 @@ Public Class CrystalReport1
 End Class
 
 <System.Drawing.ToolboxBitmapAttribute(GetType(CrystalDecisions.[Shared].ExportOptions), "report.bmp")>  _
-Public Class CachedCrystalReport1
+Public Class CachedPvReport
     Inherits Component
     Implements ICachedReport
     
@@ -136,7 +136,7 @@ Public Class CachedCrystalReport1
     End Property
     
     Public Overridable Function CreateReport() As CrystalDecisions.CrystalReports.Engine.ReportDocument Implements CrystalDecisions.ReportSource.ICachedReport.CreateReport
-        Dim rpt As CrystalReport1 = New CrystalReport1()
+        Dim rpt As PvReport = New PvReport()
         rpt.Site = Me.Site
         Return rpt
     End Function

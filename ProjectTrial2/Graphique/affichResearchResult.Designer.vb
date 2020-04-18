@@ -85,7 +85,6 @@ Partial Class affichResearchResult
         Me.SortModeBox = New System.Windows.Forms.ComboBox()
         Me.AffPanel = New System.Windows.Forms.Panel()
         Me.NoResultLabel = New System.Windows.Forms.Label()
-        'Me.TableAdapterManager1 = New EsistHistoryManagement_v1.VISUALDataSetTableAdapters.TableAdapterManager()
         Me.EtudiantPanel.SuspendLayout()
         Me.TableLayoutPanel7.SuspendLayout()
         Me.TableLayoutPanel6.SuspendLayout()
@@ -974,16 +973,6 @@ Partial Class affichResearchResult
         Me.NoResultLabel.Size = New System.Drawing.Size(655, 477)
         Me.NoResultLabel.TabIndex = 28
         Me.NoResultLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'TableAdapterManager1
-        '
-        'Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
-        'Me.TableAdapterManager1.Connection = Nothing
-        'Me.TableAdapterManager1.INSCRIPTIONTableAdapter = Nothing
-        'Me.TableAdapterManager1.MATIERETableAdapter = Nothing
-        'Me.TableAdapterManager1.NOTETableAdapter = Nothing
-        'Me.TableAdapterManager1.RATRAPTableAdapter = Nothing
-        'Me.TableAdapterManager1.UpdateOrder = EsistHistoryManagement_v1.VISUALDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'affichResearchResult
         '

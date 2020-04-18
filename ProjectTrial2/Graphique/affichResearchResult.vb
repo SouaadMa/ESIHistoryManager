@@ -60,9 +60,9 @@
             Console.WriteLine("Liste des etudiants est vide")
         Else
             If SortDirectionAscendant Then
-                Classement.SortASCCollection(StudentTable, "MATRIN")
+                Classement.SortASCCollection(StudentTable, BDD.champsMATRIN)
             Else
-                Classement.SortDESCollection(StudentTable, "MATRIN")
+                Classement.SortDESCollection(StudentTable, BDD.champsMATRIN)
             End If
 
             'inisializer le bar des pages
@@ -179,27 +179,27 @@
         Select Case SortModeBox.SelectedIndex
             Case 0
                 If SortDirectionAscendant Then
-                    l = Classement.SortASCCollection(StudentTable, "MATRIN")
+                    l = Classement.SortASCCollection(StudentTable, BDD.champsMATRIN)
                 Else
-                    l = Classement.SortDESCollection(StudentTable, "MATRIN")
+                    l = Classement.SortDESCollection(StudentTable, BDD.champsMATRIN)
                 End If
             Case 1
                 If SortDirectionAscendant Then
-                    l = Classement.SortASCCollection(StudentTable, "NomEtud")
+                    l = Classement.SortASCCollection(StudentTable, BDD.champsNomEtud)
                 Else
-                    l = Classement.SortDESCollection(StudentTable, "NomEtud")
+                    l = Classement.SortDESCollection(StudentTable, BDD.champsNomEtud)
                 End If
             Case 2
                 If SortDirectionAscendant Then
-                    l = Classement.SortASCCollection(StudentTable, "Prenoms")
+                    l = Classement.SortASCCollection(StudentTable, BDD.champsPrenoms)
                 Else
-                    l = Classement.SortDESCollection(StudentTable, "Prenoms")
+                    l = Classement.SortDESCollection(StudentTable, BDD.champsPrenoms)
                 End If
             Case 3
                 If SortDirectionAscendant Then
-                    l = Classement.SortASCCollection(StudentTable, "ANNEEBAC")
+                    l = Classement.SortASCCollection(StudentTable, BDD.champsANNEEBAC)
                 Else
-                    l = Classement.SortDESCollection(StudentTable, "ANNEEBAC")
+                    l = Classement.SortDESCollection(StudentTable, BDD.champsANNEEBAC)
                 End If
         End Select
         StudentTable = l
@@ -217,7 +217,7 @@
             If c IsNot Nothing Then
                 Try
                     CType(c, Label).ForeColor = Color.Black
-                    CType(c, Label).Text = StudentTable.Rows.Item(cpt)("NomEtud")
+                    CType(c, Label).Text = StudentTable.Rows.Item(cpt)(BDD.champsNomEtud)
                 Catch ex As InvalidCastException
                     With CType(c, Label)
                         .ForeColor = Color.Red
@@ -230,7 +230,7 @@
             If c IsNot Nothing Then
                 Try
                     CType(c, Label).ForeColor = Color.Black
-                    CType(c, Label).Text = StudentTable.Rows.Item(cpt)("Prenoms")
+                    CType(c, Label).Text = StudentTable.Rows.Item(cpt)(BDD.champsPrenoms)
                 Catch ex As InvalidCastException
                     With CType(c, Label)
                         .ForeColor = Color.Red
@@ -243,7 +243,7 @@
             If c IsNot Nothing Then
                 Try
                     CType(c, Label).ForeColor = Color.Black
-                    CType(c, Label).Text = StudentTable.Rows.Item(cpt)("MATRIN")
+                    CType(c, Label).Text = StudentTable.Rows.Item(cpt)(BDD.champsMATRIN)
                 Catch ex As InvalidCastException
                     With CType(c, Label)
                         .ForeColor = Color.Red
@@ -256,7 +256,7 @@
             If c IsNot Nothing Then
                 Try
                     CType(c, Label).ForeColor = Color.Black
-                    CType(c, Label).Text = StudentTable.Rows.Item(cpt)("VILLE") + " " + StudentTable.Rows.Item(cpt)("WILAYA")
+                    CType(c, Label).Text = StudentTable.Rows.Item(cpt)(BDD.champsVILLE) + " " + StudentTable.Rows.Item(cpt)(BDD.champsWILAYA)
                 Catch ex As InvalidCastException
                     With CType(c, Label)
                         .ForeColor = Color.Red
@@ -269,7 +269,7 @@
             If c IsNot Nothing Then
                 Try
                     CType(c, Label).ForeColor = Color.Black
-                    CType(c, Label).Text = StudentTable.Rows.Item(cpt)("ANNEEBAC")
+                    CType(c, Label).Text = StudentTable.Rows.Item(cpt)(BDD.champsANNEEBAC)
                 Catch ex As InvalidCastException
                     With CType(c, Label)
                         .ForeColor = Color.Red
@@ -383,16 +383,20 @@
         SortDirectionAscendant = Not SortDirectionAscendant
         SortModeBox_SelectedIndexChanged(SortModeBox, New EventArgs())
     End Sub
+
+    Private Sub IntroPanel_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles IntroPanel.Paint
+
+    End Sub
 End Class
 
 
-'Console.Write(student.GetInfoChamps("NomEtud"))
-'Console.Write(student.GetInfoChamps("Prenoms"))
-'Console.Write(student.GetInfoChamps("MATRIN"))
+'Console.Write(student.GetInfoChamps(BDD.champsNomEtud))
+'Console.Write(student.GetInfoChamps(BDD.champsPrenoms))
+'Console.Write(student.GetInfoChamps(BDD.champsMATRIN))
 'Console.Write(student.GetInfoChamps("ADRESSE"))
-'Console.Write(student.GetInfoChamps("VILLE"))
-'Console.Write(student.GetInfoChamps("WILAYA"))
-'Console.Write(student.GetInfoChamps("ANNEEBAC"))
+'Console.Write(student.GetInfoChamps(BDD.champsVILLE))
+'Console.Write(student.GetInfoChamps(BDD.champsWILAYA))
+'Console.Write(student.GetInfoChamps(BDD.champsANNEEBAC))
 'Console.WriteLine()
 'Console.WriteLine()
 
@@ -400,21 +404,21 @@ End Class
 
 'Console.WriteLine("sorted by : " + SortModeBox.SelectedIndex.ToString)
 'For Each student In StudentList
-'    Console.Write(student.GetInfoChamps("NomEtud"))
-'    Console.Write(student.GetInfoChamps("Prenoms"))
-'    Console.Write(student.GetInfoChamps("MATRIN"))
+'    Console.Write(student.GetInfoChamps(BDD.champsNomEtud))
+'    Console.Write(student.GetInfoChamps(BDD.champsPrenoms))
+'    Console.Write(student.GetInfoChamps(BDD.champsMATRIN))
 '    Console.Write(student.GetInfoChamps("ADRESSE"))
-'    Console.Write(student.GetInfoChamps("VILLE"))
-'    Console.Write(student.GetInfoChamps("WILAYA"))
-'    Console.Write(student.GetInfoChamps("ANNEEBAC"))
+'    Console.Write(student.GetInfoChamps(BDD.champsVILLE))
+'    Console.Write(student.GetInfoChamps(BDD.champsWILAYA))
+'    Console.Write(student.GetInfoChamps(BDD.champsANNEEBAC))
 '    Console.WriteLine()
 'Next
-'Console.Write(student.GetInfoChamps("NomEtud"))
-'Console.Write(student.GetInfoChamps("Prenoms"))
-'Console.Write(student.GetInfoChamps("MATRIN"))
+'Console.Write(student.GetInfoChamps(BDD.champsNomEtud))
+'Console.Write(student.GetInfoChamps(BDD.champsPrenoms))
+'Console.Write(student.GetInfoChamps(BDD.champsMATRIN))
 'Console.Write(student.GetInfoChamps("ADRESSE"))
-'Console.Write(student.GetInfoChamps("VILLE"))
-'Console.Write(student.GetInfoChamps("WILAYA"))
-'Console.Write(student.GetInfoChamps("ANNEEBAC"))
+'Console.Write(student.GetInfoChamps(BDD.champsVILLE))
+'Console.Write(student.GetInfoChamps(BDD.champsWILAYA))
+'Console.Write(student.GetInfoChamps(BDD.champsANNEEBAC))
 'Console.WriteLine()
 'Console.WriteLine()

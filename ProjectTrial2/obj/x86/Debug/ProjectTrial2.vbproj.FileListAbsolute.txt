@@ -126,9 +126,7 @@ C:\Users\hadia\Documents\GitHub\ESIHistoryManager\ProjectTrial2\bin\Debug\BDD_TA
 C:\Users\hadia\Documents\GitHub\ESIHistoryManager\ProjectTrial2\bin\Debug\Graphique\Database1.sdf
 C:\Users\hadia\Documents\GitHub\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.Attestation.resources
 D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.Attestation.resources
-
 D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\bin\Debug\BDD_TESTE.accdb
 C:\Users\SIRINE\Documents\Visual Studio 2010\Projects\ProjectTrial2\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.Attestation.resources
 C:\Users\SIRINE\Documents\Visual Studio 2010\Projects\ProjectTrial2\ProjectTrial2\bin\Debug\BDD_TABLES_ECLATES.accdb
 C:\Users\SIRINE\Documents\Visual Studio 2010\Projects\ProjectTrial2\ProjectTrial2\bin\Debug\BDD_TESTE.accdb
-

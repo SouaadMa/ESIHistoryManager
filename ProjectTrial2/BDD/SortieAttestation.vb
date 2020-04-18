@@ -1,61 +1,90 @@
-﻿Imports System.Data.OleDb
 
-Public Class SortieAttestation
+﻿Public Class SortieAttestation
 
-    Public Shared Function attestation(ByVal mat As String) As DataSet
+    Public Shared Function attestation(ByVal etud As Etudiant) As DataSet
+
+        Dim dts As DataSet = New DataSet()
 
         Dim champ As List(Of String) = New List(Of String)
         Dim cond As List(Of Critere) = New List(Of Critere)
-        Dim tab1 As String
-        Dim tab2 As String
-        Dim requete As String
-
+        Dim tab1 As String = ""
+        Dim tab2 As String = ""
+        Dim requete As String = ""
+        Dim dt1 As DataTable = New DataTable(), dt2 As DataTable = New DataTable()
+        Dim row As DataRow
+        '____________________________
         champ.Add(BDD.champsMATRIN)
         champ.Add(BDD.champsAnnee)
         champ.Add(BDD.champsNiveau)
         champ.Add(BDD.champsOption)
         champ.Add(BDD.champsADM)
-        cond.Add(New Critere(BDD.champsMATRIN, mat))
+
+
+        cond.Add(New Critere(BDD.champsMATRIN, etud.getId()))
+
         tab1 = BDD.nomTableINSCRIPTION
         tab2 = BDD.nomTablePROMO
+
         requete = Class_BDD.genereRechRequete(champ, tab1, tab2, cond)
 
-        Return executeRequete(requete)
+        dt1 = (BDD.executeRequete(requete)).Copy()
+        ChangeVides(dt1)
+        dts.Tables.Add(dt1)
+        '____________________________
+        row = dt2.NewRow()
+        champ.Clear()
+        champ.Add(BDD.champsMATRIN)
+        champ.Add(BDD.champsNomEtud)
+        champ.Add(BDD.champsPrenoms)
+        champ.Add(BDD.champsDateNais)
+        champ.Add(BDD.champsLieuNais)
+        champ.Add(BDD.champsWILNAIS)
+        For Each colomn As String In champ
+            dt2.Columns.Add(colomn, GetType(System.String))
+            row(colomn) = etud.GetInfoChamps(colomn)
+        Next
+        dt2.Rows.Add(row)
 
-    End Function
-
-    Public Shared Function executeRequete(ByVal requete As String) As DataSet
-
-        Dim cnx As OleDbConnection = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\BDD_TABLES_ECLATES.accdb")  'la connexion à la BDD
-        Dim cmd As OleDbCommand                     ' la commande
-        Dim ta As OleDbDataAdapter                  ' le Data Adapter
-        Dim dts As New DataSet                      ' le Data Set
-
-        Try
-            cnx.Open()                               ' ouvrir la connection avec la base de données
-            cmd = New OleDbCommand(requete, cnx) ' la connection au commande
-            ta = New OleDbDataAdapter(cmd)       ' creer un nouveau DataAdapter
-            ta.Fill(dts)                         ' remplir le data set par le résultat de l'éxécution de la requête ( de data adapter )
-        Catch ex As Exception
-            MsgBox(ex.Message())
-        Finally
-            cnx.Close()                              'fermer la connexion
-        End Try
-
+        ChangeVides(dt2)
+        dts.Tables.Add(dt2)
+        '____________________________
         Return dts
 
+        'dt2.Columns.Add(BDD.champsNomEtud, GetType(System.String))
+        'dt2.Columns.Add(BDD.champsPrenoms, GetType(System.String))
+        'dt2.Columns.Add(BDD.champsDateNais, GetType(System.String))
+        'dt2.Columns.Add(BDD.champsLieuNais, GetType(System.String))
+        'dt2.Columns.Add(BDD.champsWILNAIS, GetType(System.String))
+        'row = dt2.NewRow()
+        'row(BDD.champsNomEtud) = etud.GetInfoChamps(BDD.champsNomEtud)
+        'row(BDD.champsNomEtud) = etud.GetInfoChamps(BDD.champsNomEtud)
+        'row(BDD.champsNomEtud) = etud.GetInfoChamps(BDD.champsNomEtud)
+        'row(BDD.champsNomEtud) = etud.GetInfoChamps(BDD.champsNomEtud)
+
     End Function
 
+    Public Shared Sub ChangeVides(ByRef dt As DataTable)
 
+        Dim defaut As Object = ""
+        Dim colomnName As String = ""
 
-    'Private Sub InitializeComponent()
-    '   Me.SuspendLayout()
-    '
-    'Attestation
-    '
-    '   Me.ClientSize = New System.Drawing.Size(284, 261)
-    '  Me.Name = "Attestation"
-    ' Me.ResumeLayout(False)
+        For Each colomn As DataColumn In dt.Columns
+            colomnName = colomn.ColumnName
+            Select Case colomn.DataType.ToString
+                Case "System.String"
+                    defaut = "_"
+                Case GetType(Integer).ToString, GetType(Double).ToString
+                    defaut = 0
+                Case Else
+                    defaut = "_"
+            End Select
+            For Each row As DataRow In dt.Rows
+                If (row(colomnName).ToString).Equals("") Then
+                    row(colomnName) = defaut
+                End If
+            Next
+        Next
 
-    'End Sub
+    End Sub
+
 End Class

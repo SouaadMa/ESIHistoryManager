@@ -1,6 +1,7 @@
 ﻿Public Class SortieRN
 
     Private dataSet As New DataSet
+    Private nbreRN As Integer
 
     Public Sub New(ByVal etud As Etudiant, ByVal annee As String)
 
@@ -26,21 +27,19 @@
         listeConditions.Add(New Critere(BDD.champsCodePromo, annee))
 
         '************Récupération des notes*************
-        Dim req As String = Class_BDD.genereRechRequete(listeChamps, BDD.nomTableNOTE, BDD.nomTableMATIERE, listeConditions)
         Dim tableNotesMat As New DataTable
-        tableNotesMat = BDD.executeRequete(req)
+        tableNotesMat = etud.GetNotesMat(listeChamps, listeConditions)
 
 
         ' Récuperation de la possibilité d'obtenir le Relevé de notes
-        Dim possible As Boolean = CType(tableNotesMat.Rows.Item(0).Item("RNPossible"), Boolean)
+        nbreRN = CType(tableNotesMat.Rows.Item(0).Item("NbreRN"), Integer)
 
-        If possible Then
-            'Ajout des deux tables dans une DataSet
-            'Etudiant
-            dataSet.Tables.Add(dtEtud)
-            'NotesMat
-            dataSet.Tables.Add(tableNotesMat)
-        End If
+
+        'Ajout des deux tables dans une DataSet
+        'Etudiant
+        dataSet.Tables.Add(dtEtud)
+        'NotesMat
+        dataSet.Tables.Add(tableNotesMat)
 
 
     End Sub
@@ -49,5 +48,25 @@
         Return dataSet
     End Function
 
+    Public Function GetNbreRN() As Integer
+        Return nbreRN
+    End Function
+
+    Public Sub SetNbreRN(ByVal etud As Etudiant, ByVal int As Integer)
+
+        Dim modification As New Critere("NbreRN", int)
+        Dim listeModif As New List(Of Critere)
+        listeModif.Add(modification)
+
+        Dim req As String
+        req = Modif_BDD.genereModifRequete(etud.GetInfoChamps(BDD.champsMATRIN), listeModif)
+
+        BDD.executeRequete(req)
+        nbreRN = int
+
+
+    End Sub
+
 
 End Class
+

@@ -161,6 +161,12 @@
 
     ' Méthodes particulières pour les sorties d'un étudiant
 
+    Public Function GetNotesMat(ByVal listeChamps As List(Of String), ByVal listeConditions As List(Of Critere)) As DataTable
+
+        Dim req As String = Class_BDD.genereRechRequete(listeChamps, BDD.nomTableNOTE, BDD.nomTableMATIERE, listeConditions)
+        Return BDD.executeRequete(req)
+
+    End Function
 
 
 

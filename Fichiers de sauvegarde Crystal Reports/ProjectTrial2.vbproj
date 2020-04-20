@@ -72,10 +72,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Data.Schema, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Microsoft.Data.Schema.UnitTesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
@@ -114,18 +114,17 @@
     <Compile Include="BDD\Modif_BDD.vb" />
     <Compile Include="BDD\Paire.vb" />
     <Compile Include="BDD\SortieAttestation.vb" />
+    <Compile Include="BDD\SortiePV.vb" />
     <Compile Include="BDD\SortieRN.vb" />
-    <Compile Include="BDD\SortieRNG.vb" />
 
-    <Compile Include="BDD_ECLATESDataSet.Designer.vb">
+    <Compile Include="BDD\SortieRNG.vb" />
+    
+
+    <Compile Include="BDD_TESTEDataSet.Designer.vb">
+
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BDD_ECLATESDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="BDD_TABLES_ECLATESDataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BDD_TABLES_ECLATESDataSet.xsd</DependentUpon>
+      <DependentUpon>BDD_TESTEDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Graphique\affichResearchResult.Designer.vb">
       <DependentUpon>affichResearchResult.vb</DependentUpon>
@@ -141,10 +140,10 @@
     <Compile Include="Graphique\Attestation.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Graphique\DataSet1.Designer.vb">
+    <Compile Include="Graphique\PvDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+      <DependentUpon>PvDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Graphique\Imprimer.Designer.vb">
       <DependentUpon>Imprimer.vb</DependentUpon>
@@ -154,6 +153,9 @@
     </Compile>
     <Compile Include="Graphique\InfosGenerales.vb" />
     <Compile Include="Graphique\password.vb" />
+    <Compile Include="Graphique\PvDataSet.vb">
+      <DependentUpon>PvDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Graphique\PvReport.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -259,7 +261,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="BDD\Rech_BDD.vb" />
+    <Compile Include="BDD\Rech_BDD.vb"/>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="BDD\SortieAttestation.resx">
@@ -326,38 +328,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="BDD_ECLATESDataSet.xsc">
-      <DependentUpon>BDD_ECLATESDataSet.xsd</DependentUpon>
+    <None Include="BDD_TESTEDataSet.xsc">
+      <DependentUpon>BDD_TESTEDataSet.xsd</DependentUpon>
     </None>
-    <None Include="BDD_ECLATESDataSet.xsd">
+    <None Include="BDD_TESTEDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BDD_ECLATESDataSet.Designer.vb</LastGenOutput>
+      <LastGenOutput>BDD_TESTEDataSet.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="BDD_ECLATESDataSet.xss">
-      <DependentUpon>BDD_ECLATESDataSet.xsd</DependentUpon>
+    <None Include="BDD_TESTEDataSet.xss">
+      <DependentUpon>BDD_TESTEDataSet.xsd</DependentUpon>
     </None>
-    <None Include="BDD_TABLES_ECLATESDataSet.xsc">
-      <DependentUpon>BDD_TABLES_ECLATESDataSet.xsd</DependentUpon>
+    <None Include="Graphique\PvDataSet.xsc">
+      <DependentUpon>PvDataSet.xsd</DependentUpon>
     </None>
-    <None Include="BDD_TABLES_ECLATESDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BDD_TABLES_ECLATESDataSet.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="BDD_TABLES_ECLATESDataSet.xss">
-      <DependentUpon>BDD_TABLES_ECLATESDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Graphique\DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="Graphique\DataSet1.xsd">
+    <None Include="Graphique\PvDataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.vb</LastGenOutput>
+      <LastGenOutput>PvDataSet.Designer.vb</LastGenOutput>
     </None>
-    <None Include="Graphique\DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <None Include="Graphique\PvDataSet.xss">
+      <DependentUpon>PvDataSet.xsd</DependentUpon>
     </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
@@ -381,14 +372,14 @@
     <None Include="Resources\details general back.png" />
     <None Include="Resources\Ellipse 5.png" />
     <None Include="Resources\Ellipse 4.png" />
-    <Content Include="BDD_TABLES_ECLATES.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="Resources\015-document.png" />
     <None Include="Resources\015-document1.png" />
     <None Include="Resources\015-document2.png" />
     <None Include="Resources\015-document3.png" />
     <None Include="Resources\certaficat.png" />
+    <Content Include="BDD_TESTE.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\page_num_current.png" />
     <None Include="Resources\Spinner-1s-220px.gif" />
     <None Include="Resources\table_blanc.png" />

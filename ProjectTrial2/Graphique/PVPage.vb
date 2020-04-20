@@ -35,10 +35,10 @@ Public Class PVPage
         'New OleDbDataAdapter(sqlString, adoOleDbConnection)
         Dim ds As New PvDataSet
         Dim dt As New DataTable()
-        Dim adp As OleDbDataAdapter = New OleDbDataAdapter(sqlString, New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\BDD_TESTE.accdb"))
-        adp.Fill(ds.DataTable1)
-        dt = ds.Tables("DataTable1")
-        ds.Tables.Item(0).Merge(dt)
+        'Dim adp As OleDbDataAdapter = New OleDbDataAdapter(sqlString, New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\BDD_TESTE.accdb"))
+        'adp.Fill(ds.DataTable1)
+        'dt = ds.Tables("DataTable1")
+        'ds.Tables.Item(0).Merge(dt)
 
         ds = SortiePV.PV_DELIBERATION(NiveauBox.Text, SpecialiteBox.Text, PromoBox.Text)
         CrystalReportViewer1.RefreshReport()
@@ -57,12 +57,10 @@ Public Class PVPage
         Dim Box As ComboBox = CType(sender, ComboBox)
         If Box.Text = "" Then
             Me.AffichButton.Enabled = False
-        ElseIf SpecialiteBox.Text <> "" And NiveauBox.Text <> "" And PromoBox.Text <> "" Then
-            Me.AffichButton.Enabled = True
         End If
     End Sub
 
-    Private Sub NiveauBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NiveauBox.SelectedIndexChanged
+    Private Sub NiveauBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NiveauBox.SelectedIndexChanged, PromoBox.SelectedIndexChanged, SpecialiteBox.SelectedIndexChanged
         If CType(sender, ComboBox).SelectedIndex < 3 Then
             If (Me.SpecialiteBox.Items.Count < 3) Then
                 Me.SpecialiteBox.Items.Insert(0, "TRC")
@@ -72,6 +70,10 @@ Public Class PVPage
         Else
             Me.SpecialiteBox.Items.Remove(Me.SpecialiteBox.Items(0))
             Me.SpecialiteBox.Enabled = True
+        End If
+
+        If SpecialiteBox.Text <> "" And NiveauBox.Text <> "" And PromoBox.Text <> "" Then
+            Me.AffichButton.Enabled = True
         End If
     End Sub
 

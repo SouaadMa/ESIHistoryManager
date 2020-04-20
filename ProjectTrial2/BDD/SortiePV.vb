@@ -39,7 +39,7 @@
         tab2 = BDD.nomTableEtudiant
 
 
-        requete = Class_BDD.genereRechRequete(champ, tab1, tab2, cond)
+        requete = Class_BDD.genereRechRequete(champ, tab2, tab1, cond)
 
         dt1 = (BDD.executeRequete(requete)).Copy()
 

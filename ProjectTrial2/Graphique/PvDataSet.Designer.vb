@@ -313,7 +313,7 @@ Partial Public Class PvDataSet
 
         Private columnMOYERA As Global.System.Data.DataColumn
 
-        Private columnDataColumn13 As Global.System.Data.DataColumn
+        Private columnDECI As Global.System.Data.DataColumn
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
@@ -472,9 +472,9 @@ Partial Public Class PvDataSet
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public ReadOnly Property DataColumn13Column() As Global.System.Data.DataColumn
+        Public ReadOnly Property DECIColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnDataColumn13
+                Return Me.columnDECI
             End Get
         End Property
 
@@ -531,9 +531,9 @@ Partial Public Class PvDataSet
                     ByVal DataColumn10 As Double, _
                     ByVal DataColumn11 As String, _
                     ByVal MOYERA As Double, _
-                    ByVal DataColumn13 As String) As DataTable1Row
+                    ByVal DECI As String) As DataTable1Row
             Dim rowDataTable1Row As DataTable1Row = CType(Me.NewRow, DataTable1Row)
-            Dim columnValuesArray() As Object = New Object() {MATRIN, NomEtud, Prenoms, DataColumn1, DataColumn2, DataColumn3, DataColumn4, DataColumn5, DataColumn6, DataColumn7, DataColumn8, DataColumn9, DataColumn10, DataColumn11, MOYERA, DataColumn13}
+            Dim columnValuesArray() As Object = New Object() {MATRIN, NomEtud, Prenoms, DataColumn1, DataColumn2, DataColumn3, DataColumn4, DataColumn5, DataColumn6, DataColumn7, DataColumn8, DataColumn9, DataColumn10, DataColumn11, MOYERA, DECI}
             rowDataTable1Row.ItemArray = columnValuesArray
             Me.Rows.Add(rowDataTable1Row)
             Return rowDataTable1Row
@@ -571,7 +571,7 @@ Partial Public Class PvDataSet
             Me.columnDataColumn10 = MyBase.Columns("DataColumn10")
             Me.columnDataColumn11 = MyBase.Columns("DataColumn11")
             Me.columnMOYERA = MyBase.Columns("MOYERA")
-            Me.columnDataColumn13 = MyBase.Columns("DataColumn13")
+            Me.columnDECI = MyBase.Columns("DECI")
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -607,8 +607,8 @@ Partial Public Class PvDataSet
             MyBase.Columns.Add(Me.columnDataColumn11)
             Me.columnMOYERA = New Global.System.Data.DataColumn("MOYERA", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnMOYERA)
-            Me.columnDataColumn13 = New Global.System.Data.DataColumn("DataColumn13", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnDataColumn13)
+            Me.columnDECI = New Global.System.Data.DataColumn("DECI", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDECI)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnMATRIN}, False))
             Me.columnMATRIN.Unique = True
             Me.columnMATRIN.DefaultValue = CType("", String)
@@ -985,16 +985,16 @@ Partial Public Class PvDataSet
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Property DataColumn13() As String
+        Public Property DECI() As String
             Get
                 Try
-                    Return CType(Me(Me.tableDataTable1.DataColumn13Column), String)
+                    Return CType(Me(Me.tableDataTable1.DECIColumn), String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'DataColumn13' in table 'DataTable1' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'DECI' in table 'DataTable1' is DBNull.", e)
                 End Try
             End Get
             Set(ByVal value As String)
-                Me(Me.tableDataTable1.DataColumn13Column) = value
+                Me(Me.tableDataTable1.DECIColumn) = value
             End Set
         End Property
 
@@ -1180,14 +1180,14 @@ Partial Public Class PvDataSet
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Function IsDataColumn13Null() As Boolean
-            Return Me.IsNull(Me.tableDataTable1.DataColumn13Column)
+        Public Function IsDECINull() As Boolean
+            Return Me.IsNull(Me.tableDataTable1.DECIColumn)
         End Function
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Sub SetDataColumn13Null()
-            Me(Me.tableDataTable1.DataColumn13Column) = Global.System.Convert.DBNull
+        Public Sub SetDECINull()
+            Me(Me.tableDataTable1.DECIColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
 

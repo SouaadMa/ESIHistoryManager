@@ -219,7 +219,7 @@ Public Class BDD
         'retourner un dataTable contenant les étudiants qui vérifient la requête
 
 
-        Dim cnx As OleDbConnection = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\BDD_TABLES_ECLATES.accdb")  'la connexion à la BDD
+        Dim cnx As OleDbConnection = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\BDD_TESTE.accdb")  'la connexion à la BDD
 
 
         Dim cmd As OleDbCommand                     ' la commande
@@ -534,7 +534,19 @@ Public Class BDD
         End If
 
     End Function
+    Public Shared Function GetALLChamps(ByVal nomChamp1 As String, ByVal nomChamp2 As String, ByVal condition As Critere) As DataTable
 
+
+
+        Dim SqlQuery = "SELECT DISTINCT " & nomChamp1 & "," & nomChamp2 & " FROM MATIERE WHERE " & condition.getChamps & " = '" & condition.getValeur & "'"
+
+        'MsgBox("before execute")
+
+        Return executeRequete(SqlQuery)
+
+
+
+    End Function
 
 
 

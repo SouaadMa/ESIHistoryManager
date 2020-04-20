@@ -28,19 +28,16 @@ Public Class Home
         NavBar.Location = New System.Drawing.Point(58, 639)
 
         Dim RNTip As ToolTip = New ToolTip()
-        RNTip.SetToolTip(RNButton, "RN")
+        RNTip.SetToolTip(RNButton, "Relevé de Note")
 
         Dim RNGTip As ToolTip = New ToolTip()
-        RNGTip.SetToolTip(RNGButton, "RNG")
+        RNGTip.SetToolTip(RNGButton, "Relevé de Note générale")
 
         Dim DetailTip As ToolTip = New ToolTip()
-        DetailTip.SetToolTip(DetailButton, "Details")
+        DetailTip.SetToolTip(DetailButton, "Détails")
 
-        Dim HistoryTip As ToolTip = New ToolTip()
-        HistoryTip.SetToolTip(HistoryButton, "Historique")
-
-        Dim ImprimerTip As ToolTip = New ToolTip()
-        ImprimerTip.SetToolTip(PrintButton, "Imprimer")
+        Dim CertificatTip As ToolTip = New ToolTip()
+        CertificatTip.SetToolTip(PrintButton, "Certificat")
 
         Dim ModifTip As ToolTip = New ToolTip()
         ModifTip.SetToolTip(ModifButton, "Modifier")
@@ -410,6 +407,21 @@ Public Class Home
         'Me.MainContainer.Width = 680            ' adjust its appearance
     End Sub
 
+    Private Sub BT_charg_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_charg.Click
+        Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
+        If Not f Is Nothing Then
+            f.Close()
+        End If
+        f = New PVPage()         ' assign the search form to  the f form
+        f.TopLevel = False
+        f.TopMost = True
+        f.WindowState = FormWindowState.Normal
+        Me.MainContainer1.Controls.Add(f)        ' add the controlers of the searche page to the main form f 
+        f.Show()                                ' show the form f in the middle of the home page
+        Me.MainContainer1.Visible = True
+        'Me.MainContainer.Width = 680            ' adjust its appearance
+    End Sub
+
     Private Sub DetailButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DetailButton.Click
         If f.GetType.ToString.Equals("EsistHistoryManagement_v1.affichResearchResult") Then
             Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
@@ -494,7 +506,7 @@ Public Class Home
         End If
     End Sub
 
-    Private Sub HistoryButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HistoryButton.Click
+    Private Sub HistoryButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         If f.GetType.ToString.Equals("EsistHistoryManagement_v1.affichResearchResult") Then
             Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
             If Not f Is Nothing Then
@@ -523,7 +535,7 @@ Public Class Home
                 MainContainer1.Visible = False
             End If
 
-            h = New Imprimer(CType(f, affichResearchResult).StudentList.Item(0))         ' assign the search form to  the f form
+            h = New Attestation(CType(f, affichResearchResult).StudentList.Item(0))         ' assign the search form to  the f form
             h.TopLevel = False
             h.TopMost = True
             h.WindowState = FormWindowState.Normal
@@ -561,7 +573,7 @@ Public Class Home
         PictureBox2.Size = New System.Drawing.Size(226, (x * (PictureBox2.MaximumSize.Height)) \ 100)
     End Sub
 
-    Private Sub BT_CERT_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_CERT.Click
+    Private Sub BT_CERT_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         If f.GetType.ToString.Equals("EsistHistoryManagement_v1.affichResearchResult") Then
             Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
             If Not f Is Nothing Then
@@ -582,9 +594,6 @@ Public Class Home
         End If
     End Sub
 
-    Private Sub ProgressPanel_Paint(sender As System.Object, e As System.Windows.Forms.PaintEventArgs) Handles ProgressPanel.Paint
-
-    End Sub
 End Class
 
 

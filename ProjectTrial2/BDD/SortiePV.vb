@@ -19,7 +19,7 @@
         Dim tab2 As String = ""
         Dim requete As String = ""
         Dim dt1 As DataTable = New DataTable(), dt2 As DataTable = New DataTable(), dt3 As DataTable = New DataTable(), dt4 As DataTable = New DataTable()
-        Dim row As DataRow
+        'Dim row As DataRow
 
         '1)get from inscription ________________________________________________________________________
 

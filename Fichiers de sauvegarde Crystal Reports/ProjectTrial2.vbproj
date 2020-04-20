@@ -116,6 +116,7 @@
     <Compile Include="BDD\SortieAttestation.vb" />
     <Compile Include="BDD\SortieRN.vb" />
     <Compile Include="BDD\SortieRNG.vb" />
+
     <Compile Include="BDD_ECLATESDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

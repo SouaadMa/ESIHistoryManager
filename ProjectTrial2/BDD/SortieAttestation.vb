@@ -1,5 +1,5 @@
 
-﻿Public Class SortieAttestation
+Public Class SortieAttestation
 
     Public Shared Function attestation(ByVal etud As Etudiant) As DataSet
 

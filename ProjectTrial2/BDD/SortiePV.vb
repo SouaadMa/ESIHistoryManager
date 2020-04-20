@@ -51,7 +51,7 @@
        
         Dim condition As Critere = New Critere("CodePromo", CodePromo)
         
-        dt2 = BDD.GetALL(BDD.champsCodeMat, BDD.champsCOEFMA, condition)
+        dt2 = BDD.GetALLChamps(BDD.champsCOMAMA, BDD.champsCOEFMA, condition)
 
 
 

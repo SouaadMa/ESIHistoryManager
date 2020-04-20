@@ -40,9 +40,10 @@ Public Class PVPage
         dt = ds.Tables("DataTable1")
         ds.Tables.Item(0).Merge(dt)
 
+        ds = SortiePV.PV_DELIBERATION(NiveauBox.Text, SpecialiteBox.Text, PromoBox.Text)
         CrystalReportViewer1.RefreshReport()
         Dim cryrpt As New PvReport
-        'cryrpt.Load(server)
+
         cryrpt.SetDataSource(ds.Tables(0))
         cryrpt.Database.Tables(0).SetDataSource(ds)
         CrystalReportViewer1.ReportSource = cryrpt
@@ -64,7 +65,7 @@ Public Class PVPage
     Private Sub NiveauBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NiveauBox.SelectedIndexChanged
         If CType(sender, ComboBox).SelectedIndex < 3 Then
             If (Me.SpecialiteBox.Items.Count < 3) Then
-                Me.SpecialiteBox.Items.Insert("TRC", 0)
+                Me.SpecialiteBox.Items.Insert(0, "TRC")
             End If
             Me.SpecialiteBox.SelectedIndex = 0
             Me.SpecialiteBox.Enabled = False

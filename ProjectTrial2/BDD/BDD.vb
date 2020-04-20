@@ -4,8 +4,8 @@ Public Class BDD
 
     'Les noms des tables de la BDD
     Public Const nomTableEtudiant = "ETUDIANT", nomTableINSCRIPTION = "INSCRIPTION"
-    Public Const nomTableNOTE = "NOTES", nomTableNoteRATRAP = "NoteRATRAP"
-    Public Const nomTableGROUP = "GROUPE", nomTableSection = "SECTIONS"
+    Public Const nomTableNOTE = "NOTE", nomTableNoteRATRAP = "NoteRATRAP"
+    Public Const nomTableGROUP = "GROUP", nomTableSection = "SECTION"
     Public Const nomTablePROMO = "PROMO", nomTableMATIERE = "MATIERE"
     Public Const nomTableRATRAP = "RATRAP"
 
@@ -26,34 +26,34 @@ Public Class BDD
     Public Const champsCodeGroupe = "CodeGroupe", champsMOYEIN = "MOYEIN"
     Public Const champsRANGIN = "RANGIN", champsMENTIN = "MENTIN"
     Public Const champsELIMININ = "ELIMININ", champsRATRIN = "RATRIN"
-    Public Const champsDECIIN = "DECIIN", champsDECI = "DECI"
+    Public Const champsDECIIN = "DECIIN", champsDEC = "DEC"
     Public Const champsADM = "ADM"
 
-    'Les noms des champs de la table NOTES
+    'Les noms des champs de la table NOTE
     Public Const champsCodeMat = "CodeMat", champsNOJUNO = "NOJUNO"
     Public Const champsNOSYNO = "NOSYNO", champsNORANO = "NORANO"
     Public Const champsELIMNO = "ELIMNO", champsRATRNO = "RATRNO"
 
     'Les noms des champs de la table NoteRATRAP
-    Public Const champsCodeRat = "CodeRat", champsMOYERA = "MOYERA"
+    Public Const champsCodeRat = "CodeRatr", champsMOYERA = "MOYERA"
     Public Const champsMENTRA = "MENTRA", champsELIMRA = "ELIMRA"
+    Public Const champsRATRRA = "RATTRA"
 
-
-    'Les noms des champs de la table GROUPE
-    Public Const champsCodeSection = "CodeSection"
+    'Les noms des champs de la table GROUP
+    Public Const champsNG = "NG", champsCodeSection = "CodeSection"
 
     'Les noms des champs de la table Section
-    Public Const champsCodePromo = "CodePromo"
+    Public Const champsNS = "NS", champsCodePromo = "CodePromo"
 
     'Les noms des champs de la table PROMO
-    Public Const champsNiveau = "Niveau", champsOption = "Optin"
+    Public Const champsNiveau = "Niveau", champsOption = "Option"
     Public Const champsAnnee = "Annee", champsNbreEtudiant = "NbreEtudiant"
     Public Const champsMoyenne = "Moyenne"
 
     'Les noms des champs de la table MATIERE
     Public Const champsANSCMA = "ANSCMA", champsANETMA = "ANETMA"
     Public Const champsCYCLMA = "CYCLMA", champsOPTIMA = "OPTIMA"
-    Public Const champsLIBEMA = "LIBEMA"
+    Public Const champsCOMAMA = "COMAMA", champsLIBEMA = "LIBEMA"
     Public Const champsTYPEMA = "TYPEMA", champsCOEFMA = "COEFMA"
     Public Const champsMOYMAT = "MOYMAT"
 
@@ -64,23 +64,23 @@ Public Class BDD
     'Public Shared stringETUDIANT() As String = {"NomEtud", "Prenoms", "NomEtudA", "PrenomsA", "MATRIC_INS", "MATRIN", "DateNais", "LieuNaisA", "WilayaNaisA", "LieuNais", "ADRESSE", "VILLE", "WILAYA", "CODEPOS", "WILBAC", "SERIEBAC", "FILS_DE", "ET_DE"}
 
     ' les tableaux qui contiennet les champs des tables de base de données :
-    Public Shared stringETUDIANT() As String = {BDD.champsNomEtud, BDD.champsPrenoms, BDD.champsNomEtudA, BDD.champsPrenomsA, BDD.champsMATRIC_INS, BDD.champsMATRIN, BDD.champsDateNais, BDD.champsLieuNaisA, BDD.champsLieuNais, BDD.champsADRESSE, BDD.champsVILLE, BDD.champsWILAYA, BDD.champsWILBAC, BDD.champsSERIEBAC, BDD.champsFILS_DE, BDD.champsET_DE, BDD.champsCODEPOS, BDD.champsWilayaNaisA, BDD.champsANNEEBAC, BDD.champsSEXE, BDD.champsWILNAIS, BDD.champsMOYBAC}
-    Public Shared stringINSCRIPTION() As String = {BDD.champsMATRIN, BDD.champsCodePromo, BDD.champsCodeSection, BDD.champsDECIIN, BDD.champsDECI, BDD.champsADM}
-    Public Shared stringGROUP() As String = {BDD.champsCodePromo, BDD.champsCodeSection}
-    Public Shared stringSection() As String = {BDD.champsCodePromo, BDD.champsCodeSection}
-    Public Shared stringPROMO() As String = {BDD.champsCodePromo, BDD.champsOption, BDD.champsAnnee}
-    Public Shared stringNOTE() As String = {BDD.champsCodeMat, BDD.champsMATRIN, BDD.champsCodePromo, BDD.champsELIMNO}
-    Public Shared stringMATIERE() As String = {BDD.champsCodeMat, BDD.champsOPTIMA, BDD.champsCYCLMA, BDD.champsLIBEMA, BDD.champsTYPEMA}
+    Public Shared stringETUDIANT() As String = {"NomEtud", "Prenoms", "NomEtudA", "PrenomsA", "MATRIC_INS", "MATRIN", "DateNais", "LieuNaisA", "LieuNais", "ADRESSE", "VILLE", "WILAYA", "WILBAC", "SERIEBAC", "FILS_DE", "ET_DE", "CODEPOS", "WilayaNaisA"}
+    Public Shared stringINSCRIPTION() As String = {"MATRIN", "CodeGroupe", "DECIIN", "DEC", "ADM"}
+    Public Shared stringGROUP() As String = {"NG"}
+    Public Shared stringSection() As String = {"NS"}
+    Public Shared stringPROMO() As String = {"Option"}
+    Public Shared stringNOTE() As String = {}
+    Public Shared stringMATIERE() As String = {"CYCLMA", "OPTIMA", "COMAMA", "LIBEMA", "TYPEMA"}
     Public Shared stringNOTERATRAP() As String = {}
     Public Shared stringRATRAP() As String = {"CYCLRA", "OPTIRA"}
 
     'Public Shared numETUDIANT() As String = {"WILNAIS", "SEXE", "MOYBAC", "ANNEEBAC"}
-    Public Shared numETUDIANT() As String = {}
-    Public Shared numINSCRIPTION() As String = {BDD.champsCodeGroupe, BDD.champsMOYEIN, BDD.champsRANGIN, BDD.champsMENTIN, BDD.champsELIMININ, BDD.champsRATRIN}
-    Public Shared numGROUP() As String = {BDD.champsCodeGroupe}
+    Public Shared numETUDIANT() As String = {"WILNAIS", "MOYBAC", "ANNEEBAC", "SEXE"}
+    Public Shared numINSCRIPTION() As String = {"MOYEIN", "RANGIN", "MENTIN", "ELIMININ", "RATRIN"}
+    Public Shared numGROUP() As String = {}
     Public Shared numSection() As String = {}
-    Public Shared numPROMO() As String = {BDD.champsNiveau, BDD.champsNbreEtudiant, BDD.champsMoyenne}
-    Public Shared numNOTE() As String = {BDD.champsNOJUNO, BDD.champsNOSYNO, BDD.champsNORANO, BDD.champsELIMNO, BDD.champsRATRNO}
+    Public Shared numPROMO() As String = {"Niveau", "Annee"}
+    Public Shared numNOTE() As String = {"NOJUNO", "NOSYNO", "NORANO", "ELIMNO", "RATRNO"}
     Public Shared numMATIERE() As String = {"ANSCMA", "ANETMA", "COEFMA", "MOYMAT"}
     Public Shared numNOTERATRAP() As String = {"MOYERA", "MENTRA", "ELIMRA", "RATRRA"}
     Public Shared numRATRAP() As String = {"ANSCRA", "ANETRA"}
@@ -219,7 +219,7 @@ Public Class BDD
         'retourner un dataTable contenant les étudiants qui vérifient la requête
 
 
-        Dim cnx As OleDbConnection = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\BDD_TESTE.accdb")  'la connexion à la BDD
+        Dim cnx As OleDbConnection = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\BDD_TABLES_ECLATES.accdb")  'la connexion à la BDD
 
 
         Dim cmd As OleDbCommand                     ' la commande
@@ -323,6 +323,7 @@ Public Class BDD
     End Function
 
 
+
     Public Shared Function GetFromTable(ByVal nomTable As String, ByVal matrin As String, ByVal critere As Critere) As DataRow
         'Méthode qui retourne toutes les informations de la table "nomTable" qui correspondent 
         'à un étudiant
@@ -374,6 +375,10 @@ Public Class BDD
 
         Select Case champs
 
+            Case BDD.champsNG
+                chaine = "CodeGroupe LIKE '" + champs + "/%'"
+            Case BDD.champsNS
+                chaine = "CodeGroupe LIKE '__/" + champs + "/%'"
             Case BDD.champsNiveau
                 chaine = "CodeGroupe LIKE '%/" + champs + "/%'"
             Case BDD.champsOption
@@ -408,6 +413,8 @@ Public Class BDD
 
         Select Case champs
 
+            Case BDD.champsNS
+                chaine = "CodeSection LIKE '" + champs + "/%'"
             Case BDD.champsNiveau
                 chaine = "CodeSection LIKE '_/" + champs + "/%'"
             Case BDD.champsOption
@@ -604,8 +611,8 @@ Public Class BDD
     '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     ''' '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-    Private Shared tableCorespondante() As Paire = {New Paire(nomTableEtudiant, nomTableINSCRIPTION), New Paire(nomTableEtudiant, nomTableNOTE), New Paire(nomTableNOTE, nomTableMATIERE)}
-    Private Shared champCorespondante() As Paire = {New Paire(champsMATRIN, champsMATRIN), New Paire(champsMATRIN, champsMATRIN), New Paire(champsCodeMat, champsCodeMat)}
+    Private Shared tableCorespondante() As Paire = {New Paire(nomTableEtudiant, nomTableINSCRIPTION), New Paire(nomTableEtudiant, nomTableNOTE)}
+    Private Shared champCorespondante() As Paire = {New Paire(champsMATRIN, champsMATRIN), New Paire(champsMATRIN, champsMATRIN)}
 
     Public Shared Function getCorrespondance(ByVal tabs As Paire) As Paire
         Dim ind As Integer = IndexOf(tableCorespondante, tabs)

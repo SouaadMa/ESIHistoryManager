@@ -183,6 +183,8 @@
                 If dtp_changed = True Then
                     Label1.Text = Me.DTP_DATEN.Text
                     collection_critere.Add(New Critere("DateNais", Me.DTP_DATEN.Text))
+
+
                 End If
 
                 'If Me.TXT_LIEUNA.Text <> "" Then

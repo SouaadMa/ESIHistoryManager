@@ -89,7 +89,7 @@ Partial Class RNG
         Me.Label2.Location = New System.Drawing.Point(217, 269)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(0, 38)
+        Me.Label2.Size = New System.Drawing.Size(0, 32)
         Me.Label2.TabIndex = 13
         '
         'Label1
@@ -101,7 +101,7 @@ Partial Class RNG
         Me.Label1.Location = New System.Drawing.Point(177, 16)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(324, 38)
+        Me.Label1.Size = New System.Drawing.Size(270, 32)
         Me.Label1.TabIndex = 12
         Me.Label1.Text = "Relevé de note globale"
         '

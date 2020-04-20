@@ -14,7 +14,7 @@
         If Not bw.CancellationPending Then
 
             For Each crit As Critere In criteres
-                instructionSQL = Rech_BDD.genereRechRequetes(instructionSQL, crit)
+                instructionSQL = Rech_BDD.genereRechRequetes(instructionSQL, crit, BDD.nomTableEtudiant)
                 'bw.ReportProgress(CInt(x))
             Next
             Console.WriteLine(instructionSQL)

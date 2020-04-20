@@ -581,6 +581,10 @@ Public Class Home
 
         End If
     End Sub
+
+    Private Sub ProgressPanel_Paint(sender As System.Object, e As System.Windows.Forms.PaintEventArgs) Handles ProgressPanel.Paint
+
+    End Sub
 End Class
 
 

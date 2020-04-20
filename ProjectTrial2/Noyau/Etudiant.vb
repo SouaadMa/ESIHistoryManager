@@ -170,5 +170,33 @@
 
 
 
+    Public Function RNGPossible(ByRef Annees_Decisions As List(Of Critere)) As Boolean
+
+        Dim dt As DataTable
+        Dim sql As String = ""
+        Dim bool As Boolean = False
+
+
+        sql = Rech_BDD.genereRechRequetes(sql, New Critere(BDD.champsMATRIN, Id), BDD.nomTableINSCRIPTION)
+        dt = BDD.executeRequete(sql)
+
+        For Each ligne As DataRow In dt.Rows
+
+            If ligne(BDD.champsCodePromo).Substring(0, 1) = "5" Then
+                bool = True
+            End If
+
+        Next
+        If bool Then
+            For Each ligne As DataRow In dt.Rows
+                Annees_Decisions.Add(New Critere(ligne(BDD.champsCodePromo), ligne(BDD.champsDECIIN)))
+            Next
+        End If
+
+        Return bool
+
+
+    End Function
+
 
 End Class

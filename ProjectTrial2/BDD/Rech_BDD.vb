@@ -1,59 +1,28 @@
 ﻿
 Public Class Rech_BDD
 
-    Public Shared Function genereRechRequetes(ByRef instructionSQL As String, ByVal critere As Critere) As String
+    Public Shared Function genereRechRequetes(ByRef instructionSQL As String, ByVal critere As Critere, ByVal nomTable As String) As String
 
         'Générer un requete de recherche SQL apartir d'une requete existe déja 'instructionSQL' ou non ( si instructionSQL est vide )
         ' en ajoutant le champ et son valeur apartir de critere
-        Dim found As Boolean = False
-        Dim i As Integer = 0
-        Dim ind As Integer = 0
-        Dim tab()() As String = {}
+
         Dim valeur As String = ""
         Dim champ As String = critere.getChamps
-        Dim Bdd As BDD = New BDD()
 
-        If requeteRechValide(instructionSQL) Then      ' Si la instructionSQL donnee peut etre un requete de recherche
+        If requeteRechValide(instructionSQL) Then      ' Si la instructionSQL donnee peut etre une requete de recherche
             Select Case (critere.getValeur.GetType).ToString       ' Savoir le type de la valeur :
                 Case "System.String"                                      ' valeur Text
-                    Console.WriteLine("string")
-                    tab = Bdd.getStringChamp                                           ' Chercher dans le tableau des champs Text
                     valeur = "'" + critere.getValeur + "'"
                 Case GetType(Integer).ToString, GetType(Double).ToString  ' valeur Numérique
-                    Console.WriteLine("num")
-                    tab = Bdd.getNumChamp                                              ' Chercher dans le tableau des champs Numerique                    
                     valeur = critere.getValeur.ToString
                 Case "System.Boolean"                                     ' valeur Booleen
-                    Console.WriteLine("bool")
-                    tab = Bdd.getBoolChamp                                             ' Chercher dans le tableau des champs Booleen
                     valeur = critere.getValeur
-                    'Case Else     tab = {}
             End Select
-            Console.WriteLine("critere = " + critere.getChamps())
-            Try
-                'Console.WriteLine(tab.Length)
-                While Not found And ind < tab.Length                ' Chercher si le champ donnée existe dans les tableaux de la base de donnée  
-                    'Console.WriteLine("ind = " + ind.ToString)
-                    i = 0
-                    While Not found And i < tab(ind).Length         ' Parcourir les tableaux jusqu'a trouver le champ ou atteindre la fin de tableau
-                        'Console.WriteLine("i = " + i.ToString + "champs :" + tab(ind)(i).ToString)
-                        If critere.getChamps.Equals(tab(ind)(i)) Then
-                            found = True
-                            Console.WriteLine("found !")
-                        Else
-                            i += 1
-                        End If
-                    End While
-                    ind += 1
-                End While
-            Catch e As NullReferenceException
-                Console.WriteLine("NullReferenceException") 'à changer par la suite 
-            Finally
 
-            End Try
-            If found Then                                       ' Si le champ donnée existe dans la base de donnée
+
+            If Bdd.ExisteDansTable(critere.getChamps, nomTable) Then                                       ' Si le champ donnée existe dans la base de donnée
                 If stringvide(instructionSQL) Then                     ' Si la requete donnée vide ou contient seulement des espaces
-                    instructionSQL = " SELECT * FROM Etudiant WHERE "  ' -> affecter la valeur d'une requete de rechercher retourne tout les champs de tableau ETUDIANT
+                    instructionSQL = " SELECT * FROM " & nomTable & " WHERE "  ' -> affecter la valeur d'une requete de rechercher retourne tout les champs de tableau ETUDIANT
                 ElseIf instructionSQL.Contains("WHERE") Then           ' Sinon, Si la instructionSQL contient WHERE
                     If Not LastWord(instructionSQL, "WHERE") Then      '-> Si WHERE n'est pas la derniere mot de instructionSQL
                         instructionSQL = instructionSQL + " AND "                    '-> ajouter un vergule "," au instructionSQL 

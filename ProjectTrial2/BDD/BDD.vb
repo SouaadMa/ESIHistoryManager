@@ -528,6 +528,20 @@ Public Class BDD
 
     End Function
 
+    Public Shared Function GetALLChamps(ByVal nomChamp1 As String, ByVal nomChamp2 As String, ByVal condition As Critere) As DataTable
+
+
+
+        Dim SqlQuery = "SELECT DISTINCT " & nomChamp1 & "," & nomChamp2 & " FROM MATIERE WHERE " & condition.getChamps & " = '" & condition.getValeur & "'"
+
+        'MsgBox("before execute")
+
+        Return executeRequete(SqlQuery)
+
+
+
+    End Function
+
 
 
 

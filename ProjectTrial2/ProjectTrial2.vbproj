@@ -188,6 +188,12 @@
     <Compile Include="Graphique\PVPage.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Graphique\RngReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RngReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Graphique\StatistiquePage.Designer.vb">
       <DependentUpon>StatistiquePage.vb</DependentUpon>
     </Compile>
@@ -302,6 +308,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Graphique\login.resx">
       <DependentUpon>login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Graphique\RngReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RngReport.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Graphique\StatistiquePage.resx">
       <DependentUpon>StatistiquePage.vb</DependentUpon>

@@ -134,6 +134,10 @@
 
         'Récuperation du résultat de la requête dans la BDD
         Dim dt As New DataTable
+
+        'Console.WriteLine(champs + " Table: " + BDD.GetTable(champs))
+
+
         dt = BDD.GetALL(champs, BDD.GetTable(champs), condition)
 
 
@@ -144,8 +148,9 @@
 
             Try
                 liste.Add(CType(ligne(champs), String))
+
             Catch ex As Exception
-                'MsgBox(ex.Message)
+                MsgBox("GetALLEtudiant " + ex.Message)
                 liste.Add(" ")
             End Try
 

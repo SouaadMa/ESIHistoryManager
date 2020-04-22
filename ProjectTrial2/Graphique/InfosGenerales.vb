@@ -23,8 +23,8 @@ Public Class InfosGenerales
         'groupe = Recherche.GetALL(BDD.champsNG)
         'section = Recherche.GetALL(BDD.champsNS)
         'matiere = Recherche.GetALL(BDD.champsCOMAMA)
-        wilayaarabe = Recherche.GetALL(BDD.champsWilayaNaisA, BDD.nomTableEtudiant)
-        seribac = Recherche.GetALL(BDD.champsSERIEBAC, BDD.nomTableEtudiant)
+        'wilayaarabe = Recherche.GetALL(BDD.champsWilayaNaisA, BDD.nomTableEtudiant)
+        'seribac = Recherche.GetALL(BDD.champsSERIEBAC, BDD.nomTableEtudiant)
         codewilaya = Recherche.GetALL(BDD.champsWILNAIS, BDD.nomTableEtudiant)
 
         For Each item As String In seribac

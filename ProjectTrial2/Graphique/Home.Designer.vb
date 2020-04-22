@@ -25,6 +25,8 @@ Partial Class Home
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Home))
         Me.SideBar = New System.Windows.Forms.TableLayoutPanel()
+        Me.BT_charg = New System.Windows.Forms.Button()
+        Me.PVIconsList = New System.Windows.Forms.ImageList(Me.components)
         Me.BT_CLASS = New System.Windows.Forms.Button()
         Me.ClassIconsList = New System.Windows.Forms.ImageList(Me.components)
         Me.BT_STAT = New System.Windows.Forms.Button()
@@ -32,7 +34,6 @@ Partial Class Home
         Me.BT_RECH = New System.Windows.Forms.Button()
         Me.SearchIconsList = New System.Windows.Forms.ImageList(Me.components)
         Me.BT_PV = New System.Windows.Forms.Button()
-        Me.PVIconsList = New System.Windows.Forms.ImageList(Me.components)
         Me.MenuButton = New System.Windows.Forms.Button()
         Me.ProfilePane = New System.Windows.Forms.Panel()
         Me.BT_modif_mdp = New System.Windows.Forms.Button()
@@ -61,7 +62,6 @@ Partial Class Home
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.CancelBackgroundButton = New System.Windows.Forms.Button()
-        Me.BT_charg = New System.Windows.Forms.Button()
         Me.SideBar.SuspendLayout()
         Me.ProfilePane.SuspendLayout()
         CType(Me.mode_photo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -98,8 +98,39 @@ Partial Class Home
         Me.SideBar.TabIndex = 8
         Me.SideBar.TabStop = True
         '
+        'BT_charg
+        '
+        Me.BT_charg.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.BT_charg.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BT_charg.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight
+        Me.BT_charg.FlatAppearance.BorderSize = 0
+        Me.BT_charg.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.BT_charg.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.BT_charg.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BT_charg.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BT_charg.ForeColor = System.Drawing.SystemColors.Window
+        Me.BT_charg.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BT_charg.ImageKey = "gantt_chart_bj.png"
+        Me.BT_charg.ImageList = Me.PVIconsList
+        Me.BT_charg.Location = New System.Drawing.Point(2, 363)
+        Me.BT_charg.Margin = New System.Windows.Forms.Padding(2)
+        Me.BT_charg.MinimumSize = New System.Drawing.Size(45, 49)
+        Me.BT_charg.Name = "BT_charg"
+        Me.BT_charg.Size = New System.Drawing.Size(183, 61)
+        Me.BT_charg.TabIndex = 6
+        Me.BT_charg.Text = "           Chargement"
+        Me.BT_charg.UseVisualStyleBackColor = False
+        '
+        'PVIconsList
+        '
+        Me.PVIconsList.ImageStream = CType(resources.GetObject("PVIconsList.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.PVIconsList.TransparentColor = System.Drawing.Color.Transparent
+        Me.PVIconsList.Images.SetKeyName(0, "gantt_chart_bj.png")
+        Me.PVIconsList.Images.SetKeyName(1, "chart_blue.png")
+        '
         'BT_CLASS
         '
+        Me.BT_CLASS.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
         Me.BT_CLASS.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BT_CLASS.Dock = System.Windows.Forms.DockStyle.Left
         Me.BT_CLASS.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight
@@ -113,14 +144,14 @@ Partial Class Home
         Me.BT_CLASS.ImageIndex = 0
         Me.BT_CLASS.ImageList = Me.ClassIconsList
         Me.BT_CLASS.Location = New System.Drawing.Point(2, 82)
-        Me.BT_CLASS.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BT_CLASS.Margin = New System.Windows.Forms.Padding(2)
         Me.BT_CLASS.MinimumSize = New System.Drawing.Size(45, 49)
         Me.BT_CLASS.Name = "BT_CLASS"
         Me.BT_CLASS.Size = New System.Drawing.Size(179, 70)
         Me.BT_CLASS.TabIndex = 2
         Me.BT_CLASS.Text = "Classement"
         Me.BT_CLASS.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BT_CLASS.UseVisualStyleBackColor = True
+        Me.BT_CLASS.UseVisualStyleBackColor = False
         '
         'ClassIconsList
         '
@@ -144,7 +175,7 @@ Partial Class Home
         Me.BT_STAT.ImageKey = "diagram.png"
         Me.BT_STAT.ImageList = Me.StaticIconsList
         Me.BT_STAT.Location = New System.Drawing.Point(2, 156)
-        Me.BT_STAT.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BT_STAT.Margin = New System.Windows.Forms.Padding(2)
         Me.BT_STAT.MinimumSize = New System.Drawing.Size(45, 49)
         Me.BT_STAT.Name = "BT_STAT"
         Me.BT_STAT.Size = New System.Drawing.Size(179, 64)
@@ -162,6 +193,7 @@ Partial Class Home
         '
         'BT_RECH
         '
+        Me.BT_RECH.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
         Me.BT_RECH.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BT_RECH.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight
         Me.BT_RECH.FlatAppearance.BorderSize = 0
@@ -174,14 +206,14 @@ Partial Class Home
         Me.BT_RECH.ImageKey = "search.png"
         Me.BT_RECH.ImageList = Me.SearchIconsList
         Me.BT_RECH.Location = New System.Drawing.Point(2, 224)
-        Me.BT_RECH.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BT_RECH.Margin = New System.Windows.Forms.Padding(2)
         Me.BT_RECH.MinimumSize = New System.Drawing.Size(45, 49)
         Me.BT_RECH.Name = "BT_RECH"
         Me.BT_RECH.Size = New System.Drawing.Size(179, 67)
         Me.BT_RECH.TabIndex = 4
         Me.BT_RECH.Text = "Recherche"
         Me.BT_RECH.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BT_RECH.UseVisualStyleBackColor = True
+        Me.BT_RECH.UseVisualStyleBackColor = False
         '
         'SearchIconsList
         '
@@ -192,6 +224,7 @@ Partial Class Home
         '
         'BT_PV
         '
+        Me.BT_PV.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
         Me.BT_PV.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BT_PV.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight
         Me.BT_PV.FlatAppearance.BorderSize = 0
@@ -204,20 +237,13 @@ Partial Class Home
         Me.BT_PV.ImageKey = "gantt_chart_bj.png"
         Me.BT_PV.ImageList = Me.PVIconsList
         Me.BT_PV.Location = New System.Drawing.Point(2, 295)
-        Me.BT_PV.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BT_PV.Margin = New System.Windows.Forms.Padding(2)
         Me.BT_PV.MinimumSize = New System.Drawing.Size(45, 49)
         Me.BT_PV.Name = "BT_PV"
         Me.BT_PV.Size = New System.Drawing.Size(179, 64)
         Me.BT_PV.TabIndex = 5
         Me.BT_PV.Text = "           PV"
-        Me.BT_PV.UseVisualStyleBackColor = True
-        '
-        'PVIconsList
-        '
-        Me.PVIconsList.ImageStream = CType(resources.GetObject("PVIconsList.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.PVIconsList.TransparentColor = System.Drawing.Color.Transparent
-        Me.PVIconsList.Images.SetKeyName(0, "gantt_chart_bj.png")
-        Me.PVIconsList.Images.SetKeyName(1, "chart_blue.png")
+        Me.BT_PV.UseVisualStyleBackColor = False
         '
         'MenuButton
         '
@@ -235,13 +261,13 @@ Partial Class Home
         Me.MenuButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MenuButton.ForeColor = System.Drawing.Color.Transparent
         Me.MenuButton.Location = New System.Drawing.Point(0, 0)
-        Me.MenuButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MenuButton.Margin = New System.Windows.Forms.Padding(2)
         Me.MenuButton.MinimumSize = New System.Drawing.Size(45, 49)
         Me.MenuButton.Name = "MenuButton"
         Me.MenuButton.Size = New System.Drawing.Size(55, 117)
         Me.MenuButton.TabIndex = 1
         Me.MenuButton.TabStop = False
-        Me.MenuButton.UseVisualStyleBackColor = True
+        Me.MenuButton.UseVisualStyleBackColor = False
         '
         'ProfilePane
         '
@@ -271,7 +297,7 @@ Partial Class Home
         Me.BT_modif_mdp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BT_modif_mdp.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.gear
         Me.BT_modif_mdp.Location = New System.Drawing.Point(118, 189)
-        Me.BT_modif_mdp.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BT_modif_mdp.Margin = New System.Windows.Forms.Padding(2)
         Me.BT_modif_mdp.Name = "BT_modif_mdp"
         Me.BT_modif_mdp.Size = New System.Drawing.Size(30, 30)
         Me.BT_modif_mdp.TabIndex = 0
@@ -291,7 +317,7 @@ Partial Class Home
         Me.BT_LOGOUT.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.exit_picture
         Me.BT_LOGOUT.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.BT_LOGOUT.Location = New System.Drawing.Point(14, 539)
-        Me.BT_LOGOUT.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BT_LOGOUT.Margin = New System.Windows.Forms.Padding(2)
         Me.BT_LOGOUT.Name = "BT_LOGOUT"
         Me.BT_LOGOUT.Size = New System.Drawing.Size(122, 101)
         Me.BT_LOGOUT.TabIndex = 3
@@ -346,7 +372,7 @@ Partial Class Home
         Me.NavBar.Controls.Add(Me.RNButton, 0, 0)
         Me.NavBar.Controls.Add(Me.Help_Button, 6, 0)
         Me.NavBar.Location = New System.Drawing.Point(185, 642)
-        Me.NavBar.Margin = New System.Windows.Forms.Padding(15, 15, 15, 15)
+        Me.NavBar.Margin = New System.Windows.Forms.Padding(15)
         Me.NavBar.MaximumSize = New System.Drawing.Size(900, 60)
         Me.NavBar.Name = "NavBar"
         Me.NavBar.RowCount = 1
@@ -366,7 +392,7 @@ Partial Class Home
         Me.PrintButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.PrintButton.Image = CType(resources.GetObject("PrintButton.Image"), System.Drawing.Image)
         Me.PrintButton.Location = New System.Drawing.Point(266, 2)
-        Me.PrintButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PrintButton.Margin = New System.Windows.Forms.Padding(2)
         Me.PrintButton.MinimumSize = New System.Drawing.Size(45, 49)
         Me.PrintButton.Name = "PrintButton"
         Me.PrintButton.Size = New System.Drawing.Size(77, 50)
@@ -386,7 +412,7 @@ Partial Class Home
         Me.DetailButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.DetailButton.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.details
         Me.DetailButton.Location = New System.Drawing.Point(185, 2)
-        Me.DetailButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DetailButton.Margin = New System.Windows.Forms.Padding(2)
         Me.DetailButton.MinimumSize = New System.Drawing.Size(45, 49)
         Me.DetailButton.Name = "DetailButton"
         Me.DetailButton.Size = New System.Drawing.Size(77, 50)
@@ -406,7 +432,7 @@ Partial Class Home
         Me.RNGButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.RNGButton.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.RNG
         Me.RNGButton.Location = New System.Drawing.Point(104, 2)
-        Me.RNGButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RNGButton.Margin = New System.Windows.Forms.Padding(2)
         Me.RNGButton.MinimumSize = New System.Drawing.Size(45, 49)
         Me.RNGButton.Name = "RNGButton"
         Me.RNGButton.Size = New System.Drawing.Size(77, 50)
@@ -426,7 +452,7 @@ Partial Class Home
         Me.ModifButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ModifButton.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.modifier
         Me.ModifButton.Location = New System.Drawing.Point(347, 2)
-        Me.ModifButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ModifButton.Margin = New System.Windows.Forms.Padding(2)
         Me.ModifButton.MinimumSize = New System.Drawing.Size(45, 49)
         Me.ModifButton.Name = "ModifButton"
         Me.ModifButton.Size = New System.Drawing.Size(77, 50)
@@ -448,7 +474,7 @@ Partial Class Home
         Me.RNButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(96, Byte), Integer), CType(CType(184, Byte), Integer))
         Me.RNButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.RNButton.Location = New System.Drawing.Point(37, 2)
-        Me.RNButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RNButton.Margin = New System.Windows.Forms.Padding(2)
         Me.RNButton.MinimumSize = New System.Drawing.Size(45, 49)
         Me.RNButton.Name = "RNButton"
         Me.RNButton.Size = New System.Drawing.Size(63, 50)
@@ -510,7 +536,7 @@ Partial Class Home
         Me.PN_BIENVENUE.Controls.Add(Me.Label4)
         Me.PN_BIENVENUE.Controls.Add(Me.Label3)
         Me.PN_BIENVENUE.Location = New System.Drawing.Point(185, 0)
-        Me.PN_BIENVENUE.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PN_BIENVENUE.Margin = New System.Windows.Forms.Padding(2)
         Me.PN_BIENVENUE.Name = "PN_BIENVENUE"
         Me.PN_BIENVENUE.Size = New System.Drawing.Size(680, 640)
         Me.PN_BIENVENUE.TabIndex = 11
@@ -659,28 +685,6 @@ Partial Class Home
         Me.CancelBackgroundButton.UseVisualStyleBackColor = True
         Me.CancelBackgroundButton.Visible = False
         '
-        'BT_charg
-        '
-        Me.BT_charg.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BT_charg.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight
-        Me.BT_charg.FlatAppearance.BorderSize = 0
-        Me.BT_charg.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.BT_charg.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.BT_charg.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BT_charg.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BT_charg.ForeColor = System.Drawing.SystemColors.Window
-        Me.BT_charg.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BT_charg.ImageKey = "gantt_chart_bj.png"
-        Me.BT_charg.ImageList = Me.PVIconsList
-        Me.BT_charg.Location = New System.Drawing.Point(2, 363)
-        Me.BT_charg.Margin = New System.Windows.Forms.Padding(2)
-        Me.BT_charg.MinimumSize = New System.Drawing.Size(45, 49)
-        Me.BT_charg.Name = "BT_charg"
-        Me.BT_charg.Size = New System.Drawing.Size(183, 61)
-        Me.BT_charg.TabIndex = 6
-        Me.BT_charg.Text = "           Chargement"
-        Me.BT_charg.UseVisualStyleBackColor = True
-        '
         'Home
         '
         Me.AcceptButton = Me.MenuButton
@@ -704,7 +708,7 @@ Partial Class Home
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.MaximumSize = New System.Drawing.Size(1023, 948)
         Me.MinimumSize = New System.Drawing.Size(1023, 594)
         Me.Name = "Home"

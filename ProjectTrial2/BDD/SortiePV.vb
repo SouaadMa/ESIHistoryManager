@@ -23,7 +23,7 @@
 
         '1)get from inscription ________________________________________________________________________
 
-        champ.Add(BDD.champsMATRIN)
+        champ.Add(BDD.champsMATRIN)    'BDD.nomTableEtudiant +
         champ.Add(BDD.champsMOYEIN)
         champ.Add(BDD.champsMENTIN)
         champ.Add(BDD.champsRANGIN)
@@ -40,17 +40,24 @@
 
 
         requete = Class_BDD.genereRechRequete(champ, tab2, tab1, cond)
-
-        dt1 = (BDD.executeRequete(requete)).Copy()
+        requete = requete.Insert(8, BDD.nomTableEtudiant + ".")
+        requete = requete.Insert(requete.IndexOf("CodePromo"), BDD.nomTableINSCRIPTION + ".")
+        dt1 = (BDD.executeRequete(requete)) '.Copy()
 
 
 
         '2)get all subject  of this promo  _________________________________________________
 
+        cond.Clear()
 
-       
+        GoTo NoNotes
+
+        cond.Add(New Critere(BDD.champsANETMA, NIVEAU))
+        cond.Add(New Critere(BDD.champsANSCMA, ANNEE))
+        cond.Add(New Critere(BDD.champsOPTIMA, OPTIN))
+
         Dim condition As Critere = New Critere("CodePromo", CodePromo)
-        
+
         dt2 = BDD.GetALLChamps(BDD.champsCOMAMA, BDD.champsCOEFMA, condition)
 
 
@@ -60,7 +67,7 @@
         champ.Add(BDD.champsMATRIN)
         champ.Add(BDD.champsNOJUNO)
         champ.Add("COMANO")
-       
+
 
         CodePromo = Const_CodePromo(NIVEAU, OPTIN, ANNEE)
         cond.Add(New Critere(BDD.champsCodePromo, CodePromo))
@@ -71,7 +78,7 @@
 
         requete = Class_BDD.genereRechRequete(champ, tab1, tab2, cond)
 
-        dt3 = (BDD.executeRequete(requete)).Copy()
+        dt3 = (BDD.executeRequete(requete))     '.Copy()
 
 
 
@@ -99,7 +106,7 @@
 
         requete = Class_BDD.genereRechRequete(champ, tab1, tab2, cond)
 
-        dt4 = (BDD.executeRequete(requete)).Copy()
+        dt4 = (BDD.executeRequete(requete))         '.Copy()
 
         'ajouter la column du ratrapage
 
@@ -116,16 +123,20 @@
             Next
 
         Next
-        dts.Tables.Add(dt1)
+
+
+NoNotes:
+
+        dts.Tables.Add(dt1.Copy())
         ' fin ____________________________________
         Return dts
 
 
 
-       
+
     End Function
 
-  
+
 
 End Class
 

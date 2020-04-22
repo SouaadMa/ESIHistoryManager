@@ -303,13 +303,13 @@ Partial Public Class PvDataSet
 
         Private columnDataColumn7 As Global.System.Data.DataColumn
 
-        Private columnDataColumn8 As Global.System.Data.DataColumn
+        Private columnELIMININ As Global.System.Data.DataColumn
 
-        Private columnDataColumn9 As Global.System.Data.DataColumn
+        Private columnMOYENIN As Global.System.Data.DataColumn
 
-        Private columnDataColumn10 As Global.System.Data.DataColumn
+        Private columnMENTIN As Global.System.Data.DataColumn
 
-        Private columnDataColumn11 As Global.System.Data.DataColumn
+        Private columnRANGIN As Global.System.Data.DataColumn
 
         Private columnMOYERA As Global.System.Data.DataColumn
 
@@ -432,33 +432,33 @@ Partial Public Class PvDataSet
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public ReadOnly Property DataColumn8Column() As Global.System.Data.DataColumn
+        Public ReadOnly Property ELIMININColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnDataColumn8
+                Return Me.columnELIMININ
             End Get
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public ReadOnly Property DataColumn9Column() As Global.System.Data.DataColumn
+        Public ReadOnly Property MOYENINColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnDataColumn9
+                Return Me.columnMOYENIN
             End Get
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public ReadOnly Property DataColumn10Column() As Global.System.Data.DataColumn
+        Public ReadOnly Property MENTINColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnDataColumn10
+                Return Me.columnMENTIN
             End Get
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public ReadOnly Property DataColumn11Column() As Global.System.Data.DataColumn
+        Public ReadOnly Property RANGINColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnDataColumn11
+                Return Me.columnRANGIN
             End Get
         End Property
 
@@ -526,14 +526,14 @@ Partial Public Class PvDataSet
                     ByVal DataColumn5 As Double, _
                     ByVal DataColumn6 As Double, _
                     ByVal DataColumn7 As Double, _
-                    ByVal DataColumn8 As Double, _
-                    ByVal DataColumn9 As Double, _
-                    ByVal DataColumn10 As Double, _
-                    ByVal DataColumn11 As String, _
+                    ByVal ELIMININ As Integer, _
+                    ByVal MOYENIN As Double, _
+                    ByVal MENTIN As Integer, _
+                    ByVal RANGIN As Integer, _
                     ByVal MOYERA As Double, _
                     ByVal DECI As String) As DataTable1Row
             Dim rowDataTable1Row As DataTable1Row = CType(Me.NewRow, DataTable1Row)
-            Dim columnValuesArray() As Object = New Object() {MATRIN, NomEtud, Prenoms, DataColumn1, DataColumn2, DataColumn3, DataColumn4, DataColumn5, DataColumn6, DataColumn7, DataColumn8, DataColumn9, DataColumn10, DataColumn11, MOYERA, DECI}
+            Dim columnValuesArray() As Object = New Object() {MATRIN, NomEtud, Prenoms, DataColumn1, DataColumn2, DataColumn3, DataColumn4, DataColumn5, DataColumn6, DataColumn7, ELIMININ, MOYENIN, MENTIN, RANGIN, MOYERA, DECI}
             rowDataTable1Row.ItemArray = columnValuesArray
             Me.Rows.Add(rowDataTable1Row)
             Return rowDataTable1Row
@@ -566,10 +566,10 @@ Partial Public Class PvDataSet
             Me.columnDataColumn5 = MyBase.Columns("DataColumn5")
             Me.columnDataColumn6 = MyBase.Columns("DataColumn6")
             Me.columnDataColumn7 = MyBase.Columns("DataColumn7")
-            Me.columnDataColumn8 = MyBase.Columns("DataColumn8")
-            Me.columnDataColumn9 = MyBase.Columns("DataColumn9")
-            Me.columnDataColumn10 = MyBase.Columns("DataColumn10")
-            Me.columnDataColumn11 = MyBase.Columns("DataColumn11")
+            Me.columnELIMININ = MyBase.Columns("ELIMININ")
+            Me.columnMOYENIN = MyBase.Columns("MOYENIN")
+            Me.columnMENTIN = MyBase.Columns("MENTIN")
+            Me.columnRANGIN = MyBase.Columns("RANGIN")
             Me.columnMOYERA = MyBase.Columns("MOYERA")
             Me.columnDECI = MyBase.Columns("DECI")
         End Sub
@@ -597,14 +597,14 @@ Partial Public Class PvDataSet
             MyBase.Columns.Add(Me.columnDataColumn6)
             Me.columnDataColumn7 = New Global.System.Data.DataColumn("DataColumn7", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnDataColumn7)
-            Me.columnDataColumn8 = New Global.System.Data.DataColumn("DataColumn8", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnDataColumn8)
-            Me.columnDataColumn9 = New Global.System.Data.DataColumn("DataColumn9", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnDataColumn9)
-            Me.columnDataColumn10 = New Global.System.Data.DataColumn("DataColumn10", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnDataColumn10)
-            Me.columnDataColumn11 = New Global.System.Data.DataColumn("DataColumn11", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnDataColumn11)
+            Me.columnELIMININ = New Global.System.Data.DataColumn("ELIMININ", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnELIMININ)
+            Me.columnMOYENIN = New Global.System.Data.DataColumn("MOYENIN", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMOYENIN)
+            Me.columnMENTIN = New Global.System.Data.DataColumn("MENTIN", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMENTIN)
+            Me.columnRANGIN = New Global.System.Data.DataColumn("RANGIN", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnRANGIN)
             Me.columnMOYERA = New Global.System.Data.DataColumn("MOYERA", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnMOYERA)
             Me.columnDECI = New Global.System.Data.DataColumn("DECI", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -910,61 +910,61 @@ Partial Public Class PvDataSet
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Property DataColumn8() As Double
+        Public Property ELIMININ() As Integer
             Get
                 Try
-                    Return CType(Me(Me.tableDataTable1.DataColumn8Column), Double)
+                    Return CType(Me(Me.tableDataTable1.ELIMININColumn), Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'DataColumn8' in table 'DataTable1' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ELIMININ' in table 'DataTable1' is DBNull.", e)
                 End Try
             End Get
-            Set(ByVal value As Double)
-                Me(Me.tableDataTable1.DataColumn8Column) = value
+            Set(ByVal value As Integer)
+                Me(Me.tableDataTable1.ELIMININColumn) = value
             End Set
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Property DataColumn9() As Double
+        Public Property MOYENIN() As Double
             Get
                 Try
-                    Return CType(Me(Me.tableDataTable1.DataColumn9Column), Double)
+                    Return CType(Me(Me.tableDataTable1.MOYENINColumn), Double)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'DataColumn9' in table 'DataTable1' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'MOYENIN' in table 'DataTable1' is DBNull.", e)
                 End Try
             End Get
             Set(ByVal value As Double)
-                Me(Me.tableDataTable1.DataColumn9Column) = value
+                Me(Me.tableDataTable1.MOYENINColumn) = value
             End Set
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Property DataColumn10() As Double
+        Public Property MENTIN() As Integer
             Get
                 Try
-                    Return CType(Me(Me.tableDataTable1.DataColumn10Column), Double)
+                    Return CType(Me(Me.tableDataTable1.MENTINColumn), Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'DataColumn10' in table 'DataTable1' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'MENTIN' in table 'DataTable1' is DBNull.", e)
                 End Try
             End Get
-            Set(ByVal value As Double)
-                Me(Me.tableDataTable1.DataColumn10Column) = value
+            Set(ByVal value As Integer)
+                Me(Me.tableDataTable1.MENTINColumn) = value
             End Set
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Property DataColumn11() As String
+        Public Property RANGIN() As Integer
             Get
                 Try
-                    Return CType(Me(Me.tableDataTable1.DataColumn11Column), String)
+                    Return CType(Me(Me.tableDataTable1.RANGINColumn), Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'DataColumn11' in table 'DataTable1' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'RANGIN' in table 'DataTable1' is DBNull.", e)
                 End Try
             End Get
-            Set(ByVal value As String)
-                Me(Me.tableDataTable1.DataColumn11Column) = value
+            Set(ByVal value As Integer)
+                Me(Me.tableDataTable1.RANGINColumn) = value
             End Set
         End Property
 
@@ -1120,50 +1120,50 @@ Partial Public Class PvDataSet
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Function IsDataColumn8Null() As Boolean
-            Return Me.IsNull(Me.tableDataTable1.DataColumn8Column)
+        Public Function IsELIMININNull() As Boolean
+            Return Me.IsNull(Me.tableDataTable1.ELIMININColumn)
         End Function
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Sub SetDataColumn8Null()
-            Me(Me.tableDataTable1.DataColumn8Column) = Global.System.Convert.DBNull
+        Public Sub SetELIMININNull()
+            Me(Me.tableDataTable1.ELIMININColumn) = Global.System.Convert.DBNull
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Function IsDataColumn9Null() As Boolean
-            Return Me.IsNull(Me.tableDataTable1.DataColumn9Column)
+        Public Function IsMOYENINNull() As Boolean
+            Return Me.IsNull(Me.tableDataTable1.MOYENINColumn)
         End Function
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Sub SetDataColumn9Null()
-            Me(Me.tableDataTable1.DataColumn9Column) = Global.System.Convert.DBNull
+        Public Sub SetMOYENINNull()
+            Me(Me.tableDataTable1.MOYENINColumn) = Global.System.Convert.DBNull
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Function IsDataColumn10Null() As Boolean
-            Return Me.IsNull(Me.tableDataTable1.DataColumn10Column)
+        Public Function IsMENTINNull() As Boolean
+            Return Me.IsNull(Me.tableDataTable1.MENTINColumn)
         End Function
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Sub SetDataColumn10Null()
-            Me(Me.tableDataTable1.DataColumn10Column) = Global.System.Convert.DBNull
+        Public Sub SetMENTINNull()
+            Me(Me.tableDataTable1.MENTINColumn) = Global.System.Convert.DBNull
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Function IsDataColumn11Null() As Boolean
-            Return Me.IsNull(Me.tableDataTable1.DataColumn11Column)
+        Public Function IsRANGINNull() As Boolean
+            Return Me.IsNull(Me.tableDataTable1.RANGINColumn)
         End Function
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Sub SetDataColumn11Null()
-            Me(Me.tableDataTable1.DataColumn11Column) = Global.System.Convert.DBNull
+        Public Sub SetRANGINNull()
+            Me(Me.tableDataTable1.RANGINColumn) = Global.System.Convert.DBNull
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _

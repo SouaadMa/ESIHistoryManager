@@ -85,7 +85,7 @@
                 End If
             Next
 
-            requete = requete + " FROM " + tab1 + " JOIN " + tab2       '   Ajouner les noms des tables de jointeur à l'instruction sql
+            requete = requete + " FROM " + tab1 + " INNER JOIN " + tab2       '   Ajouner les noms des tables de jointeur à l'instruction sql
 
             requete = requete + " ON " + tab1 + "." + cle1 + " = " + tab2 + "." + cle2      '   Ajouner les noms des champs correspondantes des tables de jointeur à l'instruction sql
 

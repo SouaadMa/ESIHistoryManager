@@ -14,7 +14,14 @@
     Private Sub details_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         'inisializer les panels
+        Dim ds As New PvDataSet
+        Dim dt As New DataTable()
+        'Dim adp As OleDbDataAdapter = New OleDbDataAdapter(sqlString, New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\BDD_TESTE.accdb"))
+        'adp.Fill(ds.DataTable1)
+        'dt = ds.Tables("DataTable1")
+        'ds.Tables.Item(0).Merge(dt)
 
+        ds = SortieAttestation.attestation(esistselect)
     End Sub
 
 

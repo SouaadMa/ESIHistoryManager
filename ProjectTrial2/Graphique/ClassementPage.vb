@@ -332,7 +332,7 @@
 
     Private Sub GetClassemntResult()
         Dim crit As New List(Of Critere)
-        crit.Add(New Critere("ANNEEBAC", CInt(ValueTextBox.Text)))
+        crit.Add(New Critere(BDD.champsANNEEBAC, ValueTextBox.Text))
         StudentTable = Recherche.traitRechercher(crit, RechercherPage.BackgroundWorker1, New System.ComponentModel.DoWorkEventArgs(Nothing))
         Me.RechLabel.Text = "Classement (" + StudentTable.Rows.Count.ToString + ")"
         Console.WriteLine("results number is : " + StudentTable.Rows.Count.ToString)

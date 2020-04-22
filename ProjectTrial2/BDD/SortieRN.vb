@@ -31,8 +31,12 @@
         tableNotesMat = etud.GetNotesMat(listeChamps, listeConditions)
 
 
-        ' Récuperation de la possibilité d'obtenir le Relevé de notes
-        nbreRN = CType(tableNotesMat.Rows.Item(0).Item("NbreRN"), Integer)
+        ' Récuperation du nombre de Relevés de notes que cet étudiant a imprimé (pas encore ajouté à la BDD)
+        'nbreRN = CType(tableNotesMat.Rows.Item(0).Item("NbreRN"), Integer)
+
+
+        'Ajout du caractère spécial à la place des notes qu'on ne veut pas afficher
+        'ArrangeRATTRA(tableNotesMat, "$")
 
 
         'Ajout des deux tables dans une DataSet
@@ -63,6 +67,28 @@
 
         BDD.executeRequete(req)
         nbreRN = int
+
+
+    End Sub
+
+    'Cette méthode passe par la dataTable et remplace les champs de rattrapage -si nécessaire-
+    ' et leur remplace par car_remplacement
+
+    Public Sub ArrangeRATTRA(ByVal dt As DataTable, ByVal car_remplacement As String)
+
+
+        For Each note As DataRow In dt.Rows
+
+            If (CType(note.Item(BDD.champsNOJUNO), Double).CompareTo(CType(note.Item(BDD.champsNORANO), Double)) >= 0) Then
+
+
+                note.Item(BDD.champsNORANO) = car_remplacement
+
+
+            End If
+
+
+        Next
 
 
     End Sub

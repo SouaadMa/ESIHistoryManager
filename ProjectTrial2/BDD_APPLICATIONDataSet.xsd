@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="BDD_TESTEDataSet" targetNamespace="http://tempuri.org/BDD_TESTEDataSet.xsd" xmlns:mstns="http://tempuri.org/BDD_TESTEDataSet.xsd" xmlns="http://tempuri.org/BDD_TESTEDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="BDD_APPLICATIONDataSet" targetNamespace="http://tempuri.org/BDD_APPLICATIONDataSet.xsd" xmlns:mstns="http://tempuri.org/BDD_APPLICATIONDataSet.xsd" xmlns="http://tempuri.org/BDD_APPLICATIONDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="BDD_TESTEConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BDD_TESTEConnectionString (MySettings)" PropertyReference="ApplicationSettings.EsistHistoryManagement_v1.My.MySettings.GlobalReference.Default.BDD_TESTEConnectionString" Provider="System.Data.OleDb" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="BDD_APPLICATIONConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BDD_APPLICATIONConnectionString (MySettings)" PropertyReference="ApplicationSettings.EsistHistoryManagement_v1.My.MySettings.GlobalReference.Default.BDD_APPLICATIONConnectionString" Provider="System.Data.OleDb" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ETUDIANTTableAdapter" GeneratorDataComponentClassName="ETUDIANTTableAdapter" Name="ETUDIANT" UserDataComponentName="ETUDIANTTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BDD_TESTEConnectionString (MySettings)" DbObjectName="ETUDIANT" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="BDD_APPLICATIONConnectionString (MySettings)" DbObjectName="ETUDIANT" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM `ETUDIANT` WHERE (((? = 1 AND `NomEtud` IS NULL) OR (`NomEtud` = ?)) AND ((? = 1 AND `Prenoms` IS NULL) OR (`Prenoms` = ?)) AND ((? = 1 AND `NomEtudA` IS NULL) OR (`NomEtudA` = ?)) AND ((? = 1 AND `PrenomsA` IS NULL) OR (`PrenomsA` = ?)) AND ((? = 1 AND `MATRIC_INS` IS NULL) OR (`MATRIC_INS` = ?)) AND (`MATRIN` = ?) AND ((? = 1 AND `DateNais` IS NULL) OR (`DateNais` = ?)) AND ((? = 1 AND `LieuNaisA` IS NULL) OR (`LieuNaisA` = ?)) AND ((? = 1 AND `WilayaNaisA` IS NULL) OR (`WilayaNaisA` = ?)) AND ((? = 1 AND `LieuNais` IS NULL) OR (`LieuNais` = ?)) AND ((? = 1 AND `WILNAIS` IS NULL) OR (`WILNAIS` = ?)) AND ((? = 1 AND `ADRESSE` IS NULL) OR (`ADRESSE` = ?)) AND ((? = 1 AND `VILLE` IS NULL) OR (`VILLE` = ?)) AND ((? = 1 AND `WILAYA` IS NULL) OR (`WILAYA` = ?)) AND ((? = 1 AND `CODEPOS` IS NULL) OR (`CODEPOS` = ?)) AND ((? = 1 AND `WILBAC` IS NULL) OR (`WILBAC` = ?)) AND ((? = 1 AND `SEXE` IS NULL) OR (`SEXE` = ?)) AND ((? = 1 AND `SERIEBAC` IS NULL) OR (`SERIEBAC` = ?)) AND ((? = 1 AND `MOYBAC` IS NULL) OR (`MOYBAC` = ?)) AND ((? = 1 AND `ANNEEBAC` IS NULL) OR (`ANNEEBAC` = ?)) AND ((? = 1 AND `FILS_DE` IS NULL) OR (`FILS_DE` = ?)) AND ((? = 1 AND `ET_DE` IS NULL) OR (`ET_DE` = ?)))</CommandText>
+                    <CommandText>DELETE FROM `ETUDIANT` WHERE (((? = 1 AND `NomEtud` IS NULL) OR (`NomEtud` = ?)) AND ((? = 1 AND `Prenoms` IS NULL) OR (`Prenoms` = ?)) AND ((? = 1 AND `NomEtudA` IS NULL) OR (`NomEtudA` = ?)) AND ((? = 1 AND `PrenomsA` IS NULL) OR (`PrenomsA` = ?)) AND ((? = 1 AND `MATRIC_INS` IS NULL) OR (`MATRIC_INS` = ?)) AND (`MATRIN` = ?) AND ((? = 1 AND `DateNais` IS NULL) OR (`DateNais` = ?)) AND ((? = 1 AND `LieuNaisA` IS NULL) OR (`LieuNaisA` = ?)) AND ((? = 1 AND `WilayaNaisA` IS NULL) OR (`WilayaNaisA` = ?)) AND ((? = 1 AND `LieuNais` IS NULL) OR (`LieuNais` = ?)) AND ((? = 1 AND `WILNAIS` IS NULL) OR (`WILNAIS` = ?)) AND ((? = 1 AND `ADRESSE` IS NULL) OR (`ADRESSE` = ?)) AND ((? = 1 AND `VILLE` IS NULL) OR (`VILLE` = ?)) AND ((? = 1 AND `WILAYA` IS NULL) OR (`WILAYA` = ?)) AND ((? = 1 AND `CODEPOS` IS NULL) OR (`CODEPOS` = ?)) AND ((? = 1 AND `WILBAC` IS NULL) OR (`WILBAC` = ?)) AND ((? = 1 AND `SEXE` IS NULL) OR (`SEXE` = ?)) AND ((? = 1 AND `SERIEBAC` IS NULL) OR (`SERIEBAC` = ?)) AND ((? = 1 AND `MOYBAC` IS NULL) OR (`MOYBAC` = ?)) AND ((? = 1 AND `ANNEEBAC` IS NULL) OR (`ANNEEBAC` = ?)) AND ((? = 1 AND `FILS_DE` IS NULL) OR (`FILS_DE` = ?)) AND ((? = 1 AND `ET_DE` IS NULL) OR (`ET_DE` = ?)) AND ((? = 1 AND `NBR_RNG` IS NULL) OR (`NBR_RNG` = ?)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_NomEtud" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="NomEtud" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_NomEtud" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="NomEtud" SourceColumnNullMapping="false" SourceVersion="Original" />
@@ -57,12 +57,14 @@
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_FILS_DE" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="FILS_DE" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ET_DE" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ET_DE" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_ET_DE" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ET_DE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_NBR_RNG" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="NBR_RNG" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_NBR_RNG" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="NBR_RNG" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO `ETUDIANT` (`NomEtud`, `Prenoms`, `NomEtudA`, `PrenomsA`, `MATRIC_INS`, `MATRIN`, `DateNais`, `LieuNaisA`, `WilayaNaisA`, `LieuNais`, `WILNAIS`, `ADRESSE`, `VILLE`, `WILAYA`, `CODEPOS`, `WILBAC`, `SEXE`, `SERIEBAC`, `MOYBAC`, `ANNEEBAC`, `FILS_DE`, `ET_DE`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</CommandText>
+                    <CommandText>INSERT INTO `ETUDIANT` (`NomEtud`, `Prenoms`, `NomEtudA`, `PrenomsA`, `MATRIC_INS`, `MATRIN`, `DateNais`, `LieuNaisA`, `WilayaNaisA`, `LieuNais`, `WILNAIS`, `ADRESSE`, `VILLE`, `WILAYA`, `CODEPOS`, `WILBAC`, `SEXE`, `SERIEBAC`, `MOYBAC`, `ANNEEBAC`, `FILS_DE`, `ET_DE`, `NBR_RNG`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="NomEtud" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="NomEtud" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Prenoms" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Prenoms" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -86,18 +88,19 @@
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="ANNEEBAC" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ANNEEBAC" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="FILS_DE" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="FILS_DE" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="ET_DE" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ET_DE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="NBR_RNG" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="NBR_RNG" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT NomEtud, Prenoms, NomEtudA, PrenomsA, MATRIC_INS, MATRIN, DateNais, LieuNaisA, WilayaNaisA, LieuNais, WILNAIS, ADRESSE, VILLE, WILAYA, CODEPOS, WILBAC, SEXE, SERIEBAC, MOYBAC, ANNEEBAC, FILS_DE, ET_DE FROM ETUDIANT</CommandText>
+                    <CommandText>SELECT NomEtud, Prenoms, NomEtudA, PrenomsA, MATRIC_INS, MATRIN, DateNais, LieuNaisA, WilayaNaisA, LieuNais, WILNAIS, ADRESSE, VILLE, WILAYA, CODEPOS, WILBAC, SEXE, SERIEBAC, MOYBAC, ANNEEBAC, FILS_DE, ET_DE, NBR_RNG FROM ETUDIANT</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE `ETUDIANT` SET `NomEtud` = ?, `Prenoms` = ?, `NomEtudA` = ?, `PrenomsA` = ?, `MATRIC_INS` = ?, `MATRIN` = ?, `DateNais` = ?, `LieuNaisA` = ?, `WilayaNaisA` = ?, `LieuNais` = ?, `WILNAIS` = ?, `ADRESSE` = ?, `VILLE` = ?, `WILAYA` = ?, `CODEPOS` = ?, `WILBAC` = ?, `SEXE` = ?, `SERIEBAC` = ?, `MOYBAC` = ?, `ANNEEBAC` = ?, `FILS_DE` = ?, `ET_DE` = ? WHERE (((? = 1 AND `NomEtud` IS NULL) OR (`NomEtud` = ?)) AND ((? = 1 AND `Prenoms` IS NULL) OR (`Prenoms` = ?)) AND ((? = 1 AND `NomEtudA` IS NULL) OR (`NomEtudA` = ?)) AND ((? = 1 AND `PrenomsA` IS NULL) OR (`PrenomsA` = ?)) AND ((? = 1 AND `MATRIC_INS` IS NULL) OR (`MATRIC_INS` = ?)) AND (`MATRIN` = ?) AND ((? = 1 AND `DateNais` IS NULL) OR (`DateNais` = ?)) AND ((? = 1 AND `LieuNaisA` IS NULL) OR (`LieuNaisA` = ?)) AND ((? = 1 AND `WilayaNaisA` IS NULL) OR (`WilayaNaisA` = ?)) AND ((? = 1 AND `LieuNais` IS NULL) OR (`LieuNais` = ?)) AND ((? = 1 AND `WILNAIS` IS NULL) OR (`WILNAIS` = ?)) AND ((? = 1 AND `ADRESSE` IS NULL) OR (`ADRESSE` = ?)) AND ((? = 1 AND `VILLE` IS NULL) OR (`VILLE` = ?)) AND ((? = 1 AND `WILAYA` IS NULL) OR (`WILAYA` = ?)) AND ((? = 1 AND `CODEPOS` IS NULL) OR (`CODEPOS` = ?)) AND ((? = 1 AND `WILBAC` IS NULL) OR (`WILBAC` = ?)) AND ((? = 1 AND `SEXE` IS NULL) OR (`SEXE` = ?)) AND ((? = 1 AND `SERIEBAC` IS NULL) OR (`SERIEBAC` = ?)) AND ((? = 1 AND `MOYBAC` IS NULL) OR (`MOYBAC` = ?)) AND ((? = 1 AND `ANNEEBAC` IS NULL) OR (`ANNEEBAC` = ?)) AND ((? = 1 AND `FILS_DE` IS NULL) OR (`FILS_DE` = ?)) AND ((? = 1 AND `ET_DE` IS NULL) OR (`ET_DE` = ?)))</CommandText>
+                    <CommandText>UPDATE `ETUDIANT` SET `NomEtud` = ?, `Prenoms` = ?, `NomEtudA` = ?, `PrenomsA` = ?, `MATRIC_INS` = ?, `MATRIN` = ?, `DateNais` = ?, `LieuNaisA` = ?, `WilayaNaisA` = ?, `LieuNais` = ?, `WILNAIS` = ?, `ADRESSE` = ?, `VILLE` = ?, `WILAYA` = ?, `CODEPOS` = ?, `WILBAC` = ?, `SEXE` = ?, `SERIEBAC` = ?, `MOYBAC` = ?, `ANNEEBAC` = ?, `FILS_DE` = ?, `ET_DE` = ?, `NBR_RNG` = ? WHERE (((? = 1 AND `NomEtud` IS NULL) OR (`NomEtud` = ?)) AND ((? = 1 AND `Prenoms` IS NULL) OR (`Prenoms` = ?)) AND ((? = 1 AND `NomEtudA` IS NULL) OR (`NomEtudA` = ?)) AND ((? = 1 AND `PrenomsA` IS NULL) OR (`PrenomsA` = ?)) AND ((? = 1 AND `MATRIC_INS` IS NULL) OR (`MATRIC_INS` = ?)) AND (`MATRIN` = ?) AND ((? = 1 AND `DateNais` IS NULL) OR (`DateNais` = ?)) AND ((? = 1 AND `LieuNaisA` IS NULL) OR (`LieuNaisA` = ?)) AND ((? = 1 AND `WilayaNaisA` IS NULL) OR (`WilayaNaisA` = ?)) AND ((? = 1 AND `LieuNais` IS NULL) OR (`LieuNais` = ?)) AND ((? = 1 AND `WILNAIS` IS NULL) OR (`WILNAIS` = ?)) AND ((? = 1 AND `ADRESSE` IS NULL) OR (`ADRESSE` = ?)) AND ((? = 1 AND `VILLE` IS NULL) OR (`VILLE` = ?)) AND ((? = 1 AND `WILAYA` IS NULL) OR (`WILAYA` = ?)) AND ((? = 1 AND `CODEPOS` IS NULL) OR (`CODEPOS` = ?)) AND ((? = 1 AND `WILBAC` IS NULL) OR (`WILBAC` = ?)) AND ((? = 1 AND `SEXE` IS NULL) OR (`SEXE` = ?)) AND ((? = 1 AND `SERIEBAC` IS NULL) OR (`SERIEBAC` = ?)) AND ((? = 1 AND `MOYBAC` IS NULL) OR (`MOYBAC` = ?)) AND ((? = 1 AND `ANNEEBAC` IS NULL) OR (`ANNEEBAC` = ?)) AND ((? = 1 AND `FILS_DE` IS NULL) OR (`FILS_DE` = ?)) AND ((? = 1 AND `ET_DE` IS NULL) OR (`ET_DE` = ?)) AND ((? = 1 AND `NBR_RNG` IS NULL) OR (`NBR_RNG` = ?)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="NomEtud" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="NomEtud" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Prenoms" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Prenoms" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -121,6 +124,7 @@
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="ANNEEBAC" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ANNEEBAC" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="FILS_DE" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="FILS_DE" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="ET_DE" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ET_DE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="NBR_RNG" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="NBR_RNG" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_NomEtud" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="NomEtud" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_NomEtud" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="NomEtud" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_Prenoms" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Prenoms" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -164,6 +168,8 @@
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_FILS_DE" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="FILS_DE" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ET_DE" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ET_DE" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_ET_DE" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ET_DE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_NBR_RNG" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="NBR_RNG" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_NBR_RNG" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="NBR_RNG" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -192,17 +198,18 @@
               <Mapping SourceColumn="ANNEEBAC" DataSetColumn="ANNEEBAC" />
               <Mapping SourceColumn="FILS_DE" DataSetColumn="FILS_DE" />
               <Mapping SourceColumn="ET_DE" DataSetColumn="ET_DE" />
+              <Mapping SourceColumn="NBR_RNG" DataSetColumn="NBR_RNG" />
             </Mappings>
             <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GROUPETableAdapter" GeneratorDataComponentClassName="GROUPETableAdapter" Name="GROUPE" UserDataComponentName="GROUPETableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BDD_TESTEConnectionString (MySettings)" DbObjectName="GROUPE" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="BDD_APPLICATIONConnectionString (MySettings)" DbObjectName="GROUPE" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `GROUPE` WHERE ((`codeGroupe` = ?) AND (`CodeSection` = ?) AND (`CodePromo` = ?))</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_codeGroupe" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="codeGroupe" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_codeGroupe" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="codeGroupe" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_CodeSection" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodeSection" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_CodePromo" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodePromo" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
@@ -212,7 +219,7 @@
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>INSERT INTO `GROUPE` (`codeGroupe`, `CodeSection`, `CodePromo`) VALUES (?, ?, ?)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="codeGroupe" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="codeGroupe" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="codeGroupe" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="codeGroupe" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="CodeSection" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodeSection" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="CodePromo" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodePromo" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -228,10 +235,10 @@
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>UPDATE `GROUPE` SET `codeGroupe` = ?, `CodeSection` = ?, `CodePromo` = ? WHERE ((`codeGroupe` = ?) AND (`CodeSection` = ?) AND (`CodePromo` = ?))</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="codeGroupe" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="codeGroupe" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="codeGroupe" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="codeGroupe" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="CodeSection" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodeSection" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="CodePromo" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodePromo" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_codeGroupe" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="codeGroupe" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_codeGroupe" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="codeGroupe" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_CodeSection" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodeSection" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_CodePromo" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodePromo" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
@@ -248,10 +255,41 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="INSCRIPTIONTableAdapter" GeneratorDataComponentClassName="INSCRIPTIONTableAdapter" Name="INSCRIPTION" UserDataComponentName="INSCRIPTIONTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BDD_TESTEConnectionString (MySettings)" DbObjectName="INSCRIPTION" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="BDD_APPLICATIONConnectionString (MySettings)" DbObjectName="INSCRIPTION" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `INSCRIPTION` WHERE ((`MATRIN` = ?) AND (`CodePromo` = ?) AND (`CodeSection` = ?) AND (`CodeGroupe` = ?) AND ((? = 1 AND `MOYEIN` IS NULL) OR (`MOYEIN` = ?)) AND ((? = 1 AND `RANGIN` IS NULL) OR (`RANGIN` = ?)) AND ((? = 1 AND `MENTIN` IS NULL) OR (`MENTIN` = ?)) AND ((? = 1 AND `ELIMININ` IS NULL) OR (`ELIMININ` = ?)) AND ((? = 1 AND `RATRIN` IS NULL) OR (`RATRIN` = ?)) AND ((? = 1 AND `DECIIN` IS NULL) OR (`DECIIN` = ?)) AND ((? = 1 AND `DECI` IS NULL) OR (`DECI` = ?)) AND ((? = 1 AND `ADM` IS NULL) OR (`ADM` = ?)) AND ((? = 1 AND `NBR_RN` IS NULL) OR (`NBR_RN` = ?)) AND ((? = 1 AND `RATRAPAGE` IS NULL) OR (`RATRAPAGE` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_MATRIN" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="MATRIN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_CodePromo" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodePromo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_CodeSection" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodeSection" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_CodeGroupe" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="CodeGroupe" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_MOYEIN" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="MOYEIN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="Original_MOYEIN" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="MOYEIN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_RANGIN" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RANGIN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_RANGIN" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RANGIN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_MENTIN" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="MENTIN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_MENTIN" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="MENTIN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ELIMININ" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ELIMININ" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ELIMININ" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ELIMININ" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_RATRIN" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RATRIN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_RATRIN" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RATRIN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_DECIIN" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="DECIIN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_DECIIN" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="DECIIN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_DECI" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="DECI" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_DECI" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="DECI" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ADM" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ADM" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_ADM" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ADM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_NBR_RN" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="NBR_RN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_NBR_RN" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="NBR_RN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_RATRAPAGE" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RATRAPAGE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="Original_RATRAPAGE" Precision="0" ProviderType="Boolean" Scale="0" Size="0" SourceColumn="RATRAPAGE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO `INSCRIPTION` (`MATRIN`, `CodePromo`, `CodeSection`, `CodeGroupe`, `MOYEIN`, `RANGIN`, `MENTIN`, `ELIMININ`, `RATRIN`, `DECIIN`, `DECI`, `ADM`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</CommandText>
+                    <CommandText>INSERT INTO `INSCRIPTION` (`MATRIN`, `CodePromo`, `CodeSection`, `CodeGroupe`, `MOYEIN`, `RANGIN`, `MENTIN`, `ELIMININ`, `RATRIN`, `DECIIN`, `DECI`, `ADM`, `NBR_RN`, `RATRAPAGE`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="MATRIN" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="MATRIN" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="CodePromo" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodePromo" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -265,15 +303,62 @@
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="DECIIN" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="DECIIN" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="DECI" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="DECI" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="ADM" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ADM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="NBR_RN" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="NBR_RN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="RATRAPAGE" Precision="0" ProviderType="Boolean" Scale="0" Size="0" SourceColumn="RATRAPAGE" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT MATRIN, CodePromo, CodeSection, CodeGroupe, MOYEIN, RANGIN, MENTIN, ELIMININ, RATRIN, DECIIN, DECI, ADM FROM INSCRIPTION</CommandText>
+                    <CommandText>SELECT MATRIN, CodePromo, CodeSection, CodeGroupe, MOYEIN, RANGIN, MENTIN, ELIMININ, RATRIN, DECIIN, DECI, ADM, NBR_RN, RATRAPAGE FROM INSCRIPTION</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `INSCRIPTION` SET `MATRIN` = ?, `CodePromo` = ?, `CodeSection` = ?, `CodeGroupe` = ?, `MOYEIN` = ?, `RANGIN` = ?, `MENTIN` = ?, `ELIMININ` = ?, `RATRIN` = ?, `DECIIN` = ?, `DECI` = ?, `ADM` = ?, `NBR_RN` = ?, `RATRAPAGE` = ? WHERE ((`MATRIN` = ?) AND (`CodePromo` = ?) AND (`CodeSection` = ?) AND (`CodeGroupe` = ?) AND ((? = 1 AND `MOYEIN` IS NULL) OR (`MOYEIN` = ?)) AND ((? = 1 AND `RANGIN` IS NULL) OR (`RANGIN` = ?)) AND ((? = 1 AND `MENTIN` IS NULL) OR (`MENTIN` = ?)) AND ((? = 1 AND `ELIMININ` IS NULL) OR (`ELIMININ` = ?)) AND ((? = 1 AND `RATRIN` IS NULL) OR (`RATRIN` = ?)) AND ((? = 1 AND `DECIIN` IS NULL) OR (`DECIIN` = ?)) AND ((? = 1 AND `DECI` IS NULL) OR (`DECI` = ?)) AND ((? = 1 AND `ADM` IS NULL) OR (`ADM` = ?)) AND ((? = 1 AND `NBR_RN` IS NULL) OR (`NBR_RN` = ?)) AND ((? = 1 AND `RATRAPAGE` IS NULL) OR (`RATRAPAGE` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="MATRIN" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="MATRIN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="CodePromo" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodePromo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="CodeSection" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodeSection" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="CodeGroupe" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="CodeGroupe" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="MOYEIN" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="MOYEIN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="RANGIN" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RANGIN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="MENTIN" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="MENTIN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ELIMININ" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ELIMININ" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="RATRIN" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RATRIN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="DECIIN" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="DECIIN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="DECI" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="DECI" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="ADM" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ADM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="NBR_RN" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="NBR_RN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="RATRAPAGE" Precision="0" ProviderType="Boolean" Scale="0" Size="0" SourceColumn="RATRAPAGE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_MATRIN" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="MATRIN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_CodePromo" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodePromo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_CodeSection" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodeSection" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_CodeGroupe" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="CodeGroupe" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_MOYEIN" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="MOYEIN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="Original_MOYEIN" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="MOYEIN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_RANGIN" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RANGIN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_RANGIN" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RANGIN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_MENTIN" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="MENTIN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_MENTIN" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="MENTIN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ELIMININ" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ELIMININ" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ELIMININ" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ELIMININ" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_RATRIN" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RATRIN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_RATRIN" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RATRIN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_DECIIN" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="DECIIN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_DECIIN" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="DECIIN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_DECI" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="DECI" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_DECI" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="DECI" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ADM" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ADM" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_ADM" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ADM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_NBR_RN" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="NBR_RN" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_NBR_RN" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="NBR_RN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_RATRAPAGE" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RATRAPAGE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="Original_RATRAPAGE" Precision="0" ProviderType="Boolean" Scale="0" Size="0" SourceColumn="RATRAPAGE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
               </DbSource>
             </MainSource>
             <Mappings>
@@ -289,20 +374,23 @@
               <Mapping SourceColumn="DECIIN" DataSetColumn="DECIIN" />
               <Mapping SourceColumn="DECI" DataSetColumn="DECI" />
               <Mapping SourceColumn="ADM" DataSetColumn="ADM" />
+              <Mapping SourceColumn="NBR_RN" DataSetColumn="NBR_RN" />
+              <Mapping SourceColumn="RATRAPAGE" DataSetColumn="RATRAPAGE" />
             </Mappings>
             <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MATIERETableAdapter" GeneratorDataComponentClassName="MATIERETableAdapter" Name="MATIERE" UserDataComponentName="MATIERETableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BDD_TESTEConnectionString (MySettings)" DbObjectName="MATIERE" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="BDD_APPLICATIONConnectionString (MySettings)" DbObjectName="MATIERE" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM `MATIERE` WHERE ((`CodeMat` = ?) AND (`ANSCMA` = ?) AND (`ANETMA` = ?) AND (`OPTIMA` = ?) AND ((? = 1 AND `CYCLMA` IS NULL) OR (`CYCLMA` = ?)) AND ((? = 1 AND `LIBEMA` IS NULL) OR (`LIBEMA` = ?)) AND ((? = 1 AND `TYPEMA` IS NULL) OR (`TYPEMA` = ?)) AND ((? = 1 AND `COEFMA` IS NULL) OR (`COEFMA` = ?)) AND ((? = 1 AND `MOYMAT` IS NULL) OR (`MOYMAT` = ?)))</CommandText>
+                    <CommandText>DELETE FROM `MATIERE` WHERE ((`CodeMat` = ?) AND ((? = 1 AND `CodePromo` IS NULL) OR (`CodePromo` = ?)) AND ((? = 1 AND `COMAMA` IS NULL) OR (`COMAMA` = ?)) AND ((? = 1 AND `CYCLMA` IS NULL) OR (`CYCLMA` = ?)) AND ((? = 1 AND `LIBEMA` IS NULL) OR (`LIBEMA` = ?)) AND ((? = 1 AND `TYPEMA` IS NULL) OR (`TYPEMA` = ?)) AND ((? = 1 AND `COEFMA` IS NULL) OR (`COEFMA` = ?)) AND ((? = 1 AND `MOYMAT` IS NULL) OR (`MOYMAT` = ?)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_CodeMat" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodeMat" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ANSCMA" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ANSCMA" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ANETMA" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ANETMA" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_OPTIMA" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="OPTIMA" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_CodePromo" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="CodePromo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_CodePromo" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodePromo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_COMAMA" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="COMAMA" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_COMAMA" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="COMAMA" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_CYCLMA" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="CYCLMA" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_CYCLMA" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CYCLMA" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_LIBEMA" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="LIBEMA" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -318,12 +406,11 @@
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO `MATIERE` (`CodeMat`, `ANSCMA`, `ANETMA`, `OPTIMA`, `CYCLMA`, `LIBEMA`, `TYPEMA`, `COEFMA`, `MOYMAT`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)</CommandText>
+                    <CommandText>INSERT INTO `MATIERE` (`CodeMat`, `CodePromo`, `COMAMA`, `CYCLMA`, `LIBEMA`, `TYPEMA`, `COEFMA`, `MOYMAT`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="CodeMat" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodeMat" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ANSCMA" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ANSCMA" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ANETMA" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ANETMA" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="OPTIMA" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="OPTIMA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="CodePromo" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodePromo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="COMAMA" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="COMAMA" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="CYCLMA" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CYCLMA" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="LIBEMA" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="LIBEMA" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TYPEMA" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TYPEMA" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -334,27 +421,27 @@
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT CodeMat, ANSCMA, ANETMA, OPTIMA, CYCLMA, LIBEMA, TYPEMA, COEFMA, MOYMAT FROM MATIERE</CommandText>
+                    <CommandText>SELECT CodeMat, CodePromo, COMAMA, CYCLMA, LIBEMA, TYPEMA, COEFMA, MOYMAT FROM MATIERE</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE `MATIERE` SET `CodeMat` = ?, `ANSCMA` = ?, `ANETMA` = ?, `OPTIMA` = ?, `CYCLMA` = ?, `LIBEMA` = ?, `TYPEMA` = ?, `COEFMA` = ?, `MOYMAT` = ? WHERE ((`CodeMat` = ?) AND (`ANSCMA` = ?) AND (`ANETMA` = ?) AND (`OPTIMA` = ?) AND ((? = 1 AND `CYCLMA` IS NULL) OR (`CYCLMA` = ?)) AND ((? = 1 AND `LIBEMA` IS NULL) OR (`LIBEMA` = ?)) AND ((? = 1 AND `TYPEMA` IS NULL) OR (`TYPEMA` = ?)) AND ((? = 1 AND `COEFMA` IS NULL) OR (`COEFMA` = ?)) AND ((? = 1 AND `MOYMAT` IS NULL) OR (`MOYMAT` = ?)))</CommandText>
+                    <CommandText>UPDATE `MATIERE` SET `CodeMat` = ?, `CodePromo` = ?, `COMAMA` = ?, `CYCLMA` = ?, `LIBEMA` = ?, `TYPEMA` = ?, `COEFMA` = ?, `MOYMAT` = ? WHERE ((`CodeMat` = ?) AND ((? = 1 AND `CodePromo` IS NULL) OR (`CodePromo` = ?)) AND ((? = 1 AND `COMAMA` IS NULL) OR (`COMAMA` = ?)) AND ((? = 1 AND `CYCLMA` IS NULL) OR (`CYCLMA` = ?)) AND ((? = 1 AND `LIBEMA` IS NULL) OR (`LIBEMA` = ?)) AND ((? = 1 AND `TYPEMA` IS NULL) OR (`TYPEMA` = ?)) AND ((? = 1 AND `COEFMA` IS NULL) OR (`COEFMA` = ?)) AND ((? = 1 AND `MOYMAT` IS NULL) OR (`MOYMAT` = ?)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="CodeMat" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodeMat" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ANSCMA" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ANSCMA" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ANETMA" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ANETMA" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="OPTIMA" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="OPTIMA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="CodePromo" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodePromo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="COMAMA" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="COMAMA" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="CYCLMA" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CYCLMA" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="LIBEMA" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="LIBEMA" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TYPEMA" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TYPEMA" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="COEFMA" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="COEFMA" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="MOYMAT" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="MOYMAT" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_CodeMat" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodeMat" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ANSCMA" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ANSCMA" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ANETMA" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ANETMA" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_OPTIMA" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="OPTIMA" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_CodePromo" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="CodePromo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_CodePromo" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodePromo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_COMAMA" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="COMAMA" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_COMAMA" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="COMAMA" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_CYCLMA" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="CYCLMA" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_CYCLMA" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CYCLMA" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_LIBEMA" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="LIBEMA" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -372,9 +459,8 @@
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="CodeMat" DataSetColumn="CodeMat" />
-              <Mapping SourceColumn="ANSCMA" DataSetColumn="ANSCMA" />
-              <Mapping SourceColumn="ANETMA" DataSetColumn="ANETMA" />
-              <Mapping SourceColumn="OPTIMA" DataSetColumn="OPTIMA" />
+              <Mapping SourceColumn="CodePromo" DataSetColumn="CodePromo" />
+              <Mapping SourceColumn="COMAMA" DataSetColumn="COMAMA" />
               <Mapping SourceColumn="CYCLMA" DataSetColumn="CYCLMA" />
               <Mapping SourceColumn="LIBEMA" DataSetColumn="LIBEMA" />
               <Mapping SourceColumn="TYPEMA" DataSetColumn="TYPEMA" />
@@ -385,7 +471,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="NoteRATRAPTableAdapter" GeneratorDataComponentClassName="NoteRATRAPTableAdapter" Name="NoteRATRAP" UserDataComponentName="NoteRATRAPTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BDD_TESTEConnectionString (MySettings)" DbObjectName="NoteRATRAP" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="BDD_APPLICATIONConnectionString (MySettings)" DbObjectName="NoteRATRAP" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `NoteRATRAP` WHERE ((`CodeRat` = ?) AND (`MATRIN` = ?) AND ((? = 1 AND `MOYERA` IS NULL) OR (`MOYERA` = ?)) AND ((? = 1 AND `MENTRA` IS NULL) OR (`MENTRA` = ?)) AND ((? = 1 AND `ELIMRA` IS NULL) OR (`ELIMRA` = ?)))</CommandText>
@@ -452,14 +538,17 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="NOTESTableAdapter" GeneratorDataComponentClassName="NOTESTableAdapter" Name="NOTES" UserDataComponentName="NOTESTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BDD_TESTEConnectionString (MySettings)" DbObjectName="NOTES" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="BDD_APPLICATIONConnectionString (MySettings)" DbObjectName="NOTES" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM `NOTES` WHERE ((`CodeMat` = ?) AND (`MATRIN` = ?) AND (`CodePromo` = ?) AND ((? = 1 AND `NOJUNO` IS NULL) OR (`NOJUNO` = ?)) AND ((? = 1 AND `NOSYNO` IS NULL) OR (`NOSYNO` = ?)) AND ((? = 1 AND `NORANO` IS NULL) OR (`NORANO` = ?)) AND ((? = 1 AND `ELIMNO` IS NULL) OR (`ELIMNO` = ?)) AND ((? = 1 AND `RATRNO` IS NULL) OR (`RATRNO` = ?)))</CommandText>
+                    <CommandText>DELETE FROM `NOTES` WHERE ((`CodeMat` = ?) AND (`MATRIN` = ?) AND ((? = 1 AND `CodePromo` IS NULL) OR (`CodePromo` = ?)) AND ((? = 1 AND `COMANO` IS NULL) OR (`COMANO` = ?)) AND ((? = 1 AND `NOJUNO` IS NULL) OR (`NOJUNO` = ?)) AND ((? = 1 AND `NOSYNO` IS NULL) OR (`NOSYNO` = ?)) AND ((? = 1 AND `NORANO` IS NULL) OR (`NORANO` = ?)) AND ((? = 1 AND `ELIMNO` IS NULL) OR (`ELIMNO` = ?)) AND ((? = 1 AND `RATRNO` IS NULL) OR (`RATRNO` = ?)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_CodeMat" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodeMat" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_MATRIN" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="MATRIN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_CodePromo" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="CodePromo" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_CodePromo" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodePromo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_COMANO" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="COMANO" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_COMANO" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="COMANO" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_NOJUNO" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="NOJUNO" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="Original_NOJUNO" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="NOJUNO" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_NOSYNO" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="NOSYNO" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -467,7 +556,7 @@
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_NORANO" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="NORANO" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="Original_NORANO" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="NORANO" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ELIMNO" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ELIMNO" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_ELIMNO" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ELIMNO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ELIMNO" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ELIMNO" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_RATRNO" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RATRNO" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_RATRNO" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RATRNO" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
@@ -475,40 +564,45 @@
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO `NOTES` (`CodeMat`, `MATRIN`, `CodePromo`, `NOJUNO`, `NOSYNO`, `NORANO`, `ELIMNO`, `RATRNO`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)</CommandText>
+                    <CommandText>INSERT INTO `NOTES` (`CodeMat`, `MATRIN`, `CodePromo`, `COMANO`, `NOJUNO`, `NOSYNO`, `NORANO`, `ELIMNO`, `RATRNO`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="CodeMat" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodeMat" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="MATRIN" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="MATRIN" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="CodePromo" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodePromo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="COMANO" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="COMANO" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="NOJUNO" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="NOJUNO" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="NOSYNO" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="NOSYNO" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="NORANO" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="NORANO" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="ELIMNO" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ELIMNO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ELIMNO" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ELIMNO" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="RATRNO" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RATRNO" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT CodeMat, MATRIN, CodePromo, NOJUNO, NOSYNO, NORANO, ELIMNO, RATRNO FROM NOTES</CommandText>
+                    <CommandText>SELECT CodeMat, MATRIN, CodePromo, COMANO, NOJUNO, NOSYNO, NORANO, ELIMNO, RATRNO FROM NOTES</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE `NOTES` SET `CodeMat` = ?, `MATRIN` = ?, `CodePromo` = ?, `NOJUNO` = ?, `NOSYNO` = ?, `NORANO` = ?, `ELIMNO` = ?, `RATRNO` = ? WHERE ((`CodeMat` = ?) AND (`MATRIN` = ?) AND (`CodePromo` = ?) AND ((? = 1 AND `NOJUNO` IS NULL) OR (`NOJUNO` = ?)) AND ((? = 1 AND `NOSYNO` IS NULL) OR (`NOSYNO` = ?)) AND ((? = 1 AND `NORANO` IS NULL) OR (`NORANO` = ?)) AND ((? = 1 AND `ELIMNO` IS NULL) OR (`ELIMNO` = ?)) AND ((? = 1 AND `RATRNO` IS NULL) OR (`RATRNO` = ?)))</CommandText>
+                    <CommandText>UPDATE `NOTES` SET `CodeMat` = ?, `MATRIN` = ?, `CodePromo` = ?, `COMANO` = ?, `NOJUNO` = ?, `NOSYNO` = ?, `NORANO` = ?, `ELIMNO` = ?, `RATRNO` = ? WHERE ((`CodeMat` = ?) AND (`MATRIN` = ?) AND ((? = 1 AND `CodePromo` IS NULL) OR (`CodePromo` = ?)) AND ((? = 1 AND `COMANO` IS NULL) OR (`COMANO` = ?)) AND ((? = 1 AND `NOJUNO` IS NULL) OR (`NOJUNO` = ?)) AND ((? = 1 AND `NOSYNO` IS NULL) OR (`NOSYNO` = ?)) AND ((? = 1 AND `NORANO` IS NULL) OR (`NORANO` = ?)) AND ((? = 1 AND `ELIMNO` IS NULL) OR (`ELIMNO` = ?)) AND ((? = 1 AND `RATRNO` IS NULL) OR (`RATRNO` = ?)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="CodeMat" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodeMat" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="MATRIN" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="MATRIN" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="CodePromo" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodePromo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="COMANO" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="COMANO" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="NOJUNO" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="NOJUNO" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="NOSYNO" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="NOSYNO" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="NORANO" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="NORANO" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="ELIMNO" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ELIMNO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ELIMNO" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ELIMNO" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="RATRNO" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RATRNO" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_CodeMat" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodeMat" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_MATRIN" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="MATRIN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_CodePromo" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="CodePromo" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_CodePromo" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="CodePromo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_COMANO" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="COMANO" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_COMANO" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="COMANO" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_NOJUNO" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="NOJUNO" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="Original_NOJUNO" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="NOJUNO" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_NOSYNO" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="NOSYNO" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -516,7 +610,7 @@
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_NORANO" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="NORANO" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="Original_NORANO" Precision="0" ProviderType="Double" Scale="0" Size="0" SourceColumn="NORANO" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ELIMNO" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ELIMNO" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_ELIMNO" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ELIMNO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ELIMNO" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ELIMNO" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_RATRNO" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RATRNO" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_RATRNO" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="RATRNO" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
@@ -528,6 +622,7 @@
               <Mapping SourceColumn="CodeMat" DataSetColumn="CodeMat" />
               <Mapping SourceColumn="MATRIN" DataSetColumn="MATRIN" />
               <Mapping SourceColumn="CodePromo" DataSetColumn="CodePromo" />
+              <Mapping SourceColumn="COMANO" DataSetColumn="COMANO" />
               <Mapping SourceColumn="NOJUNO" DataSetColumn="NOJUNO" />
               <Mapping SourceColumn="NOSYNO" DataSetColumn="NOSYNO" />
               <Mapping SourceColumn="NORANO" DataSetColumn="NORANO" />
@@ -538,7 +633,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PROMOTableAdapter" GeneratorDataComponentClassName="PROMOTableAdapter" Name="PROMO" UserDataComponentName="PROMOTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BDD_TESTEConnectionString (MySettings)" DbObjectName="PROMO" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="BDD_APPLICATIONConnectionString (MySettings)" DbObjectName="PROMO" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `PROMO` WHERE ((`CodePromo` = ?) AND ((? = 1 AND `Niveau` IS NULL) OR (`Niveau` = ?)) AND ((? = 1 AND `Optin` IS NULL) OR (`Optin` = ?)) AND ((? = 1 AND `Annee` IS NULL) OR (`Annee` = ?)) AND ((? = 1 AND `NbreEtudiant` IS NULL) OR (`NbreEtudiant` = ?)) AND ((? = 1 AND `Moyenne` IS NULL) OR (`Moyenne` = ?)))</CommandText>
@@ -614,7 +709,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RATRAPTableAdapter" GeneratorDataComponentClassName="RATRAPTableAdapter" Name="RATRAP" UserDataComponentName="RATRAPTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BDD_TESTEConnectionString (MySettings)" DbObjectName="RATRAP" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="BDD_APPLICATIONConnectionString (MySettings)" DbObjectName="RATRAP" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `RATRAP` WHERE ((`CodeRat` = ?) AND ((? = 1 AND `ANSCRA` IS NULL) OR (`ANSCRA` = ?)) AND ((? = 1 AND `ANETRA` IS NULL) OR (`ANETRA` = ?)) AND ((? = 1 AND `CYCLRA` IS NULL) OR (`CYCLRA` = ?)) AND ((? = 1 AND `OPTIRA` IS NULL) OR (`OPTIRA` = ?)))</CommandText>
@@ -683,7 +778,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SECTIONSTableAdapter" GeneratorDataComponentClassName="SECTIONSTableAdapter" Name="SECTIONS" UserDataComponentName="SECTIONSTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BDD_TESTEConnectionString (MySettings)" DbObjectName="SECTIONS" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="BDD_APPLICATIONConnectionString (MySettings)" DbObjectName="SECTIONS" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `SECTIONS` WHERE ((`CodeSection` = ?) AND (`CodePromo` = ?))</CommandText>
@@ -732,7 +827,7 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="BDD_TESTEDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="BDD_TESTEDataSet" msprop:Generator_UserDSName="BDD_TESTEDataSet">
+  <xs:element name="BDD_APPLICATIONDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="BDD_APPLICATIONDataSet" msprop:Generator_UserDSName="BDD_APPLICATIONDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="ETUDIANT" msprop:Generator_TableClassName="ETUDIANTDataTable" msprop:Generator_TableVarName="tableETUDIANT" msprop:Generator_TablePropName="ETUDIANT" msprop:Generator_RowDeletingName="ETUDIANTRowDeleting" msprop:Generator_RowChangingName="ETUDIANTRowChanging" msprop:Generator_RowEvHandlerName="ETUDIANTRowChangeEventHandler" msprop:Generator_RowDeletedName="ETUDIANTRowDeleted" msprop:Generator_UserTableName="ETUDIANT" msprop:Generator_RowChangedName="ETUDIANTRowChanged" msprop:Generator_RowEvArgName="ETUDIANTRowChangeEvent" msprop:Generator_RowClassName="ETUDIANTRow">
@@ -850,7 +945,13 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="SEXE" msprop:Generator_ColumnVarNameInTable="columnSEXE" msprop:Generator_ColumnPropNameInRow="SEXE" msprop:Generator_ColumnPropNameInTable="SEXEColumn" msprop:Generator_UserColumnName="SEXE" type="xs:string" minOccurs="0" />
+              <xs:element name="SEXE" msprop:Generator_ColumnVarNameInTable="columnSEXE" msprop:Generator_ColumnPropNameInRow="SEXE" msprop:Generator_ColumnPropNameInTable="SEXEColumn" msprop:Generator_UserColumnName="SEXE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="SERIEBAC" msprop:Generator_ColumnVarNameInTable="columnSERIEBAC" msprop:Generator_ColumnPropNameInRow="SERIEBAC" msprop:Generator_ColumnPropNameInTable="SERIEBACColumn" msprop:Generator_UserColumnName="SERIEBAC" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -886,19 +987,14 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="NBR_RNG" msprop:Generator_ColumnVarNameInTable="columnNBR_RNG" msprop:Generator_ColumnPropNameInRow="NBR_RNG" msprop:Generator_ColumnPropNameInTable="NBR_RNGColumn" msprop:Generator_UserColumnName="NBR_RNG" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
         <xs:element name="GROUPE" msprop:Generator_TableClassName="GROUPEDataTable" msprop:Generator_TableVarName="tableGROUPE" msprop:Generator_TablePropName="GROUPE" msprop:Generator_RowDeletingName="GROUPERowDeleting" msprop:Generator_RowChangingName="GROUPERowChanging" msprop:Generator_RowEvHandlerName="GROUPERowChangeEventHandler" msprop:Generator_RowDeletedName="GROUPERowDeleted" msprop:Generator_UserTableName="GROUPE" msprop:Generator_RowChangedName="GROUPERowChanged" msprop:Generator_RowEvArgName="GROUPERowChangeEvent" msprop:Generator_RowClassName="GROUPERow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="codeGroupe" msprop:Generator_ColumnVarNameInTable="columncodeGroupe" msprop:Generator_ColumnPropNameInRow="codeGroupe" msprop:Generator_ColumnPropNameInTable="codeGroupeColumn" msprop:Generator_UserColumnName="codeGroupe">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
+              <xs:element name="codeGroupe" msprop:Generator_ColumnVarNameInTable="columncodeGroupe" msprop:Generator_ColumnPropNameInRow="codeGroupe" msprop:Generator_ColumnPropNameInTable="codeGroupeColumn" msprop:Generator_UserColumnName="codeGroupe" type="xs:int" />
               <xs:element name="CodeSection" msprop:Generator_ColumnVarNameInTable="columnCodeSection" msprop:Generator_ColumnPropNameInRow="CodeSection" msprop:Generator_ColumnPropNameInTable="CodeSectionColumn" msprop:Generator_UserColumnName="CodeSection">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -919,28 +1015,28 @@
         <xs:element name="INSCRIPTION" msprop:Generator_TableClassName="INSCRIPTIONDataTable" msprop:Generator_TableVarName="tableINSCRIPTION" msprop:Generator_TablePropName="INSCRIPTION" msprop:Generator_RowDeletingName="INSCRIPTIONRowDeleting" msprop:Generator_RowChangingName="INSCRIPTIONRowChanging" msprop:Generator_RowEvHandlerName="INSCRIPTIONRowChangeEventHandler" msprop:Generator_RowDeletedName="INSCRIPTIONRowDeleted" msprop:Generator_UserTableName="INSCRIPTION" msprop:Generator_RowChangedName="INSCRIPTIONRowChanged" msprop:Generator_RowEvArgName="INSCRIPTIONRowChangeEvent" msprop:Generator_RowClassName="INSCRIPTIONRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="MATRIN" msprop:Generator_ColumnVarNameInTable="columnMATRIN" msprop:Generator_ColumnPropNameInRow="MATRIN" msprop:Generator_ColumnPropNameInTable="MATRINColumn" msprop:Generator_UserColumnName="MATRIN" minOccurs="0">
+              <xs:element name="MATRIN" msprop:Generator_ColumnVarNameInTable="columnMATRIN" msprop:Generator_ColumnPropNameInRow="MATRIN" msprop:Generator_ColumnPropNameInTable="MATRINColumn" msprop:Generator_UserColumnName="MATRIN">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="CodePromo" msprop:Generator_ColumnVarNameInTable="columnCodePromo" msprop:Generator_ColumnPropNameInRow="CodePromo" msprop:Generator_ColumnPropNameInTable="CodePromoColumn" msprop:Generator_UserColumnName="CodePromo" minOccurs="0">
+              <xs:element name="CodePromo" msprop:Generator_ColumnVarNameInTable="columnCodePromo" msprop:Generator_ColumnPropNameInRow="CodePromo" msprop:Generator_ColumnPropNameInTable="CodePromoColumn" msprop:Generator_UserColumnName="CodePromo">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="CodeSection" msprop:Generator_ColumnVarNameInTable="columnCodeSection" msprop:Generator_ColumnPropNameInRow="CodeSection" msprop:Generator_ColumnPropNameInTable="CodeSectionColumn" msprop:Generator_UserColumnName="CodeSection" minOccurs="0">
+              <xs:element name="CodeSection" msprop:Generator_ColumnVarNameInTable="columnCodeSection" msprop:Generator_ColumnPropNameInRow="CodeSection" msprop:Generator_ColumnPropNameInTable="CodeSectionColumn" msprop:Generator_UserColumnName="CodeSection">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="CodeGroupe" msprop:Generator_ColumnVarNameInTable="columnCodeGroupe" msprop:Generator_ColumnPropNameInRow="CodeGroupe" msprop:Generator_ColumnPropNameInTable="CodeGroupeColumn" msprop:Generator_UserColumnName="CodeGroupe" type="xs:int" minOccurs="0" />
+              <xs:element name="CodeGroupe" msprop:Generator_ColumnVarNameInTable="columnCodeGroupe" msprop:Generator_ColumnPropNameInRow="CodeGroupe" msprop:Generator_ColumnPropNameInTable="CodeGroupeColumn" msprop:Generator_UserColumnName="CodeGroupe" type="xs:int" />
               <xs:element name="MOYEIN" msprop:Generator_ColumnVarNameInTable="columnMOYEIN" msprop:Generator_ColumnPropNameInRow="MOYEIN" msprop:Generator_ColumnPropNameInTable="MOYEINColumn" msprop:Generator_UserColumnName="MOYEIN" type="xs:double" minOccurs="0" />
               <xs:element name="RANGIN" msprop:Generator_ColumnVarNameInTable="columnRANGIN" msprop:Generator_ColumnPropNameInRow="RANGIN" msprop:Generator_ColumnPropNameInTable="RANGINColumn" msprop:Generator_UserColumnName="RANGIN" type="xs:int" minOccurs="0" />
               <xs:element name="MENTIN" msprop:Generator_ColumnVarNameInTable="columnMENTIN" msprop:Generator_ColumnPropNameInRow="MENTIN" msprop:Generator_ColumnPropNameInTable="MENTINColumn" msprop:Generator_UserColumnName="MENTIN" type="xs:int" minOccurs="0" />
@@ -967,6 +1063,8 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="NBR_RN" msprop:Generator_ColumnVarNameInTable="columnNBR_RN" msprop:Generator_ColumnPropNameInRow="NBR_RN" msprop:Generator_ColumnPropNameInTable="NBR_RNColumn" msprop:Generator_UserColumnName="NBR_RN" type="xs:int" minOccurs="0" />
+              <xs:element name="RATRAPAGE" msprop:Generator_ColumnVarNameInTable="columnRATRAPAGE" msprop:Generator_ColumnPropNameInRow="RATRAPAGE" msprop:Generator_ColumnPropNameInTable="RATRAPAGEColumn" msprop:Generator_UserColumnName="RATRAPAGE" type="xs:boolean" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -980,9 +1078,14 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ANSCMA" msprop:Generator_ColumnVarNameInTable="columnANSCMA" msprop:Generator_ColumnPropNameInRow="ANSCMA" msprop:Generator_ColumnPropNameInTable="ANSCMAColumn" msprop:Generator_UserColumnName="ANSCMA" type="xs:int" />
-              <xs:element name="ANETMA" msprop:Generator_ColumnVarNameInTable="columnANETMA" msprop:Generator_ColumnPropNameInRow="ANETMA" msprop:Generator_ColumnPropNameInTable="ANETMAColumn" msprop:Generator_UserColumnName="ANETMA" type="xs:int" />
-              <xs:element name="OPTIMA" msprop:Generator_ColumnVarNameInTable="columnOPTIMA" msprop:Generator_ColumnPropNameInRow="OPTIMA" msprop:Generator_ColumnPropNameInTable="OPTIMAColumn" msprop:Generator_UserColumnName="OPTIMA">
+              <xs:element name="CodePromo" msprop:Generator_ColumnVarNameInTable="columnCodePromo" msprop:Generator_ColumnPropNameInRow="CodePromo" msprop:Generator_ColumnPropNameInTable="CodePromoColumn" msprop:Generator_UserColumnName="CodePromo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="COMAMA" msprop:Generator_ColumnVarNameInTable="columnCOMAMA" msprop:Generator_ColumnPropNameInRow="COMAMA" msprop:Generator_ColumnPropNameInTable="COMAMAColumn" msprop:Generator_UserColumnName="COMAMA" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
@@ -1055,7 +1158,14 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="CodePromo" msprop:Generator_ColumnVarNameInTable="columnCodePromo" msprop:Generator_ColumnPropNameInRow="CodePromo" msprop:Generator_ColumnPropNameInTable="CodePromoColumn" msprop:Generator_UserColumnName="CodePromo">
+              <xs:element name="CodePromo" msprop:Generator_ColumnVarNameInTable="columnCodePromo" msprop:Generator_ColumnPropNameInRow="CodePromo" msprop:Generator_ColumnPropNameInTable="CodePromoColumn" msprop:Generator_UserColumnName="CodePromo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="COMANO" msprop:Generator_ColumnVarNameInTable="columnCOMANO" msprop:Generator_ColumnPropNameInRow="COMANO" msprop:Generator_ColumnPropNameInTable="COMANOColumn" msprop:Generator_UserColumnName="COMANO" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
@@ -1065,13 +1175,7 @@
               <xs:element name="NOJUNO" msprop:Generator_ColumnVarNameInTable="columnNOJUNO" msprop:Generator_ColumnPropNameInRow="NOJUNO" msprop:Generator_ColumnPropNameInTable="NOJUNOColumn" msprop:Generator_UserColumnName="NOJUNO" type="xs:double" minOccurs="0" />
               <xs:element name="NOSYNO" msprop:Generator_ColumnVarNameInTable="columnNOSYNO" msprop:Generator_ColumnPropNameInRow="NOSYNO" msprop:Generator_ColumnPropNameInTable="NOSYNOColumn" msprop:Generator_UserColumnName="NOSYNO" type="xs:double" minOccurs="0" />
               <xs:element name="NORANO" msprop:Generator_ColumnVarNameInTable="columnNORANO" msprop:Generator_ColumnPropNameInRow="NORANO" msprop:Generator_ColumnPropNameInTable="NORANOColumn" msprop:Generator_UserColumnName="NORANO" type="xs:double" minOccurs="0" />
-              <xs:element name="ELIMNO" msprop:Generator_ColumnVarNameInTable="columnELIMNO" msprop:Generator_ColumnPropNameInRow="ELIMNO" msprop:Generator_ColumnPropNameInTable="ELIMNOColumn" msprop:Generator_UserColumnName="ELIMNO" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
+              <xs:element name="ELIMNO" msprop:Generator_ColumnVarNameInTable="columnELIMNO" msprop:Generator_ColumnPropNameInRow="ELIMNO" msprop:Generator_ColumnPropNameInTable="ELIMNOColumn" msprop:Generator_UserColumnName="ELIMNO" type="xs:int" minOccurs="0" />
               <xs:element name="RATRNO" msprop:Generator_ColumnVarNameInTable="columnRATRNO" msprop:Generator_ColumnPropNameInRow="RATRNO" msprop:Generator_ColumnPropNameInTable="RATRNOColumn" msprop:Generator_UserColumnName="RATRNO" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
@@ -1173,12 +1277,16 @@
       <xs:field xpath="mstns:CodeSection" />
       <xs:field xpath="mstns:CodePromo" />
     </xs:unique>
+    <xs:unique name="INSCRIPTION_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:INSCRIPTION" />
+      <xs:field xpath="mstns:MATRIN" />
+      <xs:field xpath="mstns:CodePromo" />
+      <xs:field xpath="mstns:CodeSection" />
+      <xs:field xpath="mstns:CodeGroupe" />
+    </xs:unique>
     <xs:unique name="MATIERE_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:MATIERE" />
       <xs:field xpath="mstns:CodeMat" />
-      <xs:field xpath="mstns:ANSCMA" />
-      <xs:field xpath="mstns:ANETMA" />
-      <xs:field xpath="mstns:OPTIMA" />
     </xs:unique>
     <xs:unique name="NoteRATRAP_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:NoteRATRAP" />
@@ -1189,7 +1297,6 @@
       <xs:selector xpath=".//mstns:NOTES" />
       <xs:field xpath="mstns:CodeMat" />
       <xs:field xpath="mstns:MATRIN" />
-      <xs:field xpath="mstns:CodePromo" />
     </xs:unique>
     <xs:unique name="PROMO_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:PROMO" />
@@ -1207,8 +1314,8 @@
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
+      <msdata:Relationship name="INSCRIPTIONGROUPE" msdata:parent="INSCRIPTION" msdata:child="GROUPE" msdata:parentkey="CodeGroupe" msdata:childkey="codeGroupe" msprop:Generator_UserChildTable="GROUPE" msprop:Generator_ChildPropName="GetGROUPERows" msprop:Generator_UserRelationName="INSCRIPTIONGROUPE" msprop:Generator_RelationVarName="relationINSCRIPTIONGROUPE" msprop:Generator_UserParentTable="INSCRIPTION" msprop:Generator_ParentPropName="INSCRIPTIONRow" />
       <msdata:Relationship name="ETUDIANTINSCRIPTION" msdata:parent="ETUDIANT" msdata:child="INSCRIPTION" msdata:parentkey="MATRIN" msdata:childkey="MATRIN" msprop:Generator_UserChildTable="INSCRIPTION" msprop:Generator_ChildPropName="GetINSCRIPTIONRows" msprop:Generator_UserRelationName="ETUDIANTINSCRIPTION" msprop:Generator_ParentPropName="ETUDIANTRow" msprop:Generator_RelationVarName="relationETUDIANTINSCRIPTION" msprop:Generator_UserParentTable="ETUDIANT" />
-      <msdata:Relationship name="PROMOINSCRIPTION" msdata:parent="PROMO" msdata:child="INSCRIPTION" msdata:parentkey="CodePromo" msdata:childkey="CodePromo" msprop:Generator_UserChildTable="INSCRIPTION" msprop:Generator_ChildPropName="GetINSCRIPTIONRows" msprop:Generator_UserRelationName="PROMOINSCRIPTION" msprop:Generator_RelationVarName="relationPROMOINSCRIPTION" msprop:Generator_UserParentTable="PROMO" msprop:Generator_ParentPropName="PROMORow" />
       <msdata:Relationship name="ETUDIANTNoteRATRAP" msdata:parent="ETUDIANT" msdata:child="NoteRATRAP" msdata:parentkey="MATRIN" msdata:childkey="MATRIN" msprop:Generator_UserChildTable="NoteRATRAP" msprop:Generator_ChildPropName="GetNoteRATRAPRows" msprop:Generator_UserRelationName="ETUDIANTNoteRATRAP" msprop:Generator_ParentPropName="ETUDIANTRow" msprop:Generator_RelationVarName="relationETUDIANTNoteRATRAP" msprop:Generator_UserParentTable="ETUDIANT" />
       <msdata:Relationship name="RATRAPNoteRATRAP" msdata:parent="RATRAP" msdata:child="NoteRATRAP" msdata:parentkey="CodeRat" msdata:childkey="CodeRat" msprop:Generator_UserChildTable="NoteRATRAP" msprop:Generator_ChildPropName="GetNoteRATRAPRows" msprop:Generator_UserRelationName="RATRAPNoteRATRAP" msprop:Generator_RelationVarName="relationRATRAPNoteRATRAP" msprop:Generator_UserParentTable="RATRAP" msprop:Generator_ParentPropName="RATRAPRow" />
       <msdata:Relationship name="ETUDIANTNOTES" msdata:parent="ETUDIANT" msdata:child="NOTES" msdata:parentkey="MATRIN" msdata:childkey="MATRIN" msprop:Generator_UserChildTable="NOTES" msprop:Generator_ChildPropName="GetNOTESRows" msprop:Generator_UserRelationName="ETUDIANTNOTES" msprop:Generator_ParentPropName="ETUDIANTRow" msprop:Generator_RelationVarName="relationETUDIANTNOTES" msprop:Generator_UserParentTable="ETUDIANT" />

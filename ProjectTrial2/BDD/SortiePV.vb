@@ -50,7 +50,7 @@
 
         cond.Clear()
 
-        GoTo NoNotes
+
 
         cond.Add(New Critere(BDD.champsANETMA, NIVEAU))
         cond.Add(New Critere(BDD.champsANSCMA, ANNEE))
@@ -76,8 +76,8 @@
         tab2 = BDD.nomTableNOTE
 
 
-        requete = Class_BDD.genereRechRequete(champ, tab1, tab2, cond)
-
+        requete = Class_BDD.genereRechRequete(champ, tab2, tab1, cond)
+        requete = requete.Insert(requete.IndexOf("CodePromo"), BDD.nomTableNOTE + ".")
         dt3 = (BDD.executeRequete(requete))     '.Copy()
 
 
@@ -88,6 +88,7 @@
             dt1.Columns.Add(rows("COMAMA"), GetType(System.String))
 
         Next
+        GoTo NoNotes
 
         '5)get all note de  ratrapage pour cette promotion  _______________________________________
         champ.Clear()

@@ -20,9 +20,9 @@ Option Explicit On
  Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
  Global.System.ComponentModel.ToolboxItem(true),  _
  Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema"),  _
- Global.System.Xml.Serialization.XmlRootAttribute("BDD_TESTEDataSet"),  _
+ Global.System.Xml.Serialization.XmlRootAttribute("BDD_APPLICATIONDataSet"),  _
  Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")>  _
-Partial Public Class BDD_TESTEDataSet
+Partial Public Class BDD_APPLICATIONDataSet
     Inherits Global.System.Data.DataSet
     
     Private tableETUDIANT As ETUDIANTDataTable
@@ -43,9 +43,9 @@ Partial Public Class BDD_TESTEDataSet
     
     Private tableSECTIONS As SECTIONSDataTable
     
-    Private relationETUDIANTINSCRIPTION As Global.System.Data.DataRelation
+    Private relationINSCRIPTIONGROUPE As Global.System.Data.DataRelation
     
-    Private relationPROMOINSCRIPTION As Global.System.Data.DataRelation
+    Private relationETUDIANTINSCRIPTION As Global.System.Data.DataRelation
     
     Private relationETUDIANTNoteRATRAP As Global.System.Data.DataRelation
     
@@ -264,7 +264,7 @@ Partial Public Class BDD_TESTEDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Overrides Function Clone() As Global.System.Data.DataSet
-        Dim cln As BDD_TESTEDataSet = CType(MyBase.Clone,BDD_TESTEDataSet)
+        Dim cln As BDD_APPLICATIONDataSet = CType(MyBase.Clone,BDD_APPLICATIONDataSet)
         cln.InitVars
         cln.SchemaSerializationMode = Me.SchemaSerializationMode
         Return cln
@@ -402,8 +402,8 @@ Partial Public Class BDD_TESTEDataSet
                 Me.tableSECTIONS.InitVars
             End If
         End If
+        Me.relationINSCRIPTIONGROUPE = Me.Relations("INSCRIPTIONGROUPE")
         Me.relationETUDIANTINSCRIPTION = Me.Relations("ETUDIANTINSCRIPTION")
-        Me.relationPROMOINSCRIPTION = Me.Relations("PROMOINSCRIPTION")
         Me.relationETUDIANTNoteRATRAP = Me.Relations("ETUDIANTNoteRATRAP")
         Me.relationRATRAPNoteRATRAP = Me.Relations("RATRAPNoteRATRAP")
         Me.relationETUDIANTNOTES = Me.Relations("ETUDIANTNOTES")
@@ -415,9 +415,9 @@ Partial Public Class BDD_TESTEDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Private Sub InitClass()
-        Me.DataSetName = "BDD_TESTEDataSet"
+        Me.DataSetName = "BDD_APPLICATIONDataSet"
         Me.Prefix = ""
-        Me.Namespace = "http://tempuri.org/BDD_TESTEDataSet.xsd"
+        Me.Namespace = "http://tempuri.org/BDD_APPLICATIONDataSet.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
         Me.tableETUDIANT = New ETUDIANTDataTable()
@@ -438,10 +438,10 @@ Partial Public Class BDD_TESTEDataSet
         MyBase.Tables.Add(Me.tableRATRAP)
         Me.tableSECTIONS = New SECTIONSDataTable()
         MyBase.Tables.Add(Me.tableSECTIONS)
+        Me.relationINSCRIPTIONGROUPE = New Global.System.Data.DataRelation("INSCRIPTIONGROUPE", New Global.System.Data.DataColumn() {Me.tableINSCRIPTION.CodeGroupeColumn}, New Global.System.Data.DataColumn() {Me.tableGROUPE.codeGroupeColumn}, false)
+        Me.Relations.Add(Me.relationINSCRIPTIONGROUPE)
         Me.relationETUDIANTINSCRIPTION = New Global.System.Data.DataRelation("ETUDIANTINSCRIPTION", New Global.System.Data.DataColumn() {Me.tableETUDIANT.MATRINColumn}, New Global.System.Data.DataColumn() {Me.tableINSCRIPTION.MATRINColumn}, false)
         Me.Relations.Add(Me.relationETUDIANTINSCRIPTION)
-        Me.relationPROMOINSCRIPTION = New Global.System.Data.DataRelation("PROMOINSCRIPTION", New Global.System.Data.DataColumn() {Me.tablePROMO.CodePromoColumn}, New Global.System.Data.DataColumn() {Me.tableINSCRIPTION.CodePromoColumn}, false)
-        Me.Relations.Add(Me.relationPROMOINSCRIPTION)
         Me.relationETUDIANTNoteRATRAP = New Global.System.Data.DataRelation("ETUDIANTNoteRATRAP", New Global.System.Data.DataColumn() {Me.tableETUDIANT.MATRINColumn}, New Global.System.Data.DataColumn() {Me.tableNoteRATRAP.MATRINColumn}, false)
         Me.Relations.Add(Me.relationETUDIANTNoteRATRAP)
         Me.relationRATRAPNoteRATRAP = New Global.System.Data.DataRelation("RATRAPNoteRATRAP", New Global.System.Data.DataColumn() {Me.tableRATRAP.CodeRatColumn}, New Global.System.Data.DataColumn() {Me.tableNoteRATRAP.CodeRatColumn}, false)
@@ -521,7 +521,7 @@ Partial Public Class BDD_TESTEDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Shared Function GetTypedDataSetSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-        Dim ds As BDD_TESTEDataSet = New BDD_TESTEDataSet()
+        Dim ds As BDD_APPLICATIONDataSet = New BDD_APPLICATIONDataSet()
         Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
         Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
         Dim any As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
@@ -646,6 +646,8 @@ Partial Public Class BDD_TESTEDataSet
         Private columnFILS_DE As Global.System.Data.DataColumn
         
         Private columnET_DE As Global.System.Data.DataColumn
+        
+        Private columnNBR_RNG As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -859,6 +861,14 @@ Partial Public Class BDD_TESTEDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property NBR_RNGColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNBR_RNG
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -917,9 +927,10 @@ Partial Public Class BDD_TESTEDataSet
                     ByVal MOYBAC As String,  _
                     ByVal ANNEEBAC As String,  _
                     ByVal FILS_DE As String,  _
-                    ByVal ET_DE As String) As ETUDIANTRow
+                    ByVal ET_DE As String,  _
+                    ByVal NBR_RNG As Integer) As ETUDIANTRow
             Dim rowETUDIANTRow As ETUDIANTRow = CType(Me.NewRow,ETUDIANTRow)
-            Dim columnValuesArray() As Object = New Object() {NomEtud, Prenoms, NomEtudA, PrenomsA, MATRIC_INS, MATRIN, DateNais, LieuNaisA, WilayaNaisA, LieuNais, WILNAIS, ADRESSE, VILLE, WILAYA, CODEPOS, WILBAC, SEXE, SERIEBAC, MOYBAC, ANNEEBAC, FILS_DE, ET_DE}
+            Dim columnValuesArray() As Object = New Object() {NomEtud, Prenoms, NomEtudA, PrenomsA, MATRIC_INS, MATRIN, DateNais, LieuNaisA, WilayaNaisA, LieuNais, WILNAIS, ADRESSE, VILLE, WILAYA, CODEPOS, WILBAC, SEXE, SERIEBAC, MOYBAC, ANNEEBAC, FILS_DE, ET_DE, NBR_RNG}
             rowETUDIANTRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowETUDIANTRow)
             Return rowETUDIANTRow
@@ -970,6 +981,7 @@ Partial Public Class BDD_TESTEDataSet
             Me.columnANNEEBAC = MyBase.Columns("ANNEEBAC")
             Me.columnFILS_DE = MyBase.Columns("FILS_DE")
             Me.columnET_DE = MyBase.Columns("ET_DE")
+            Me.columnNBR_RNG = MyBase.Columns("NBR_RNG")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1019,6 +1031,8 @@ Partial Public Class BDD_TESTEDataSet
             MyBase.Columns.Add(Me.columnFILS_DE)
             Me.columnET_DE = New Global.System.Data.DataColumn("ET_DE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnET_DE)
+            Me.columnNBR_RNG = New Global.System.Data.DataColumn("NBR_RNG", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNBR_RNG)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnMATRIN}, true))
             Me.columnNomEtud.MaxLength = 255
             Me.columnPrenoms.MaxLength = 255
@@ -1038,6 +1052,7 @@ Partial Public Class BDD_TESTEDataSet
             Me.columnWILAYA.MaxLength = 255
             Me.columnCODEPOS.MaxLength = 255
             Me.columnWILBAC.MaxLength = 255
+            Me.columnSEXE.MaxLength = 255
             Me.columnSERIEBAC.MaxLength = 255
             Me.columnMOYBAC.MaxLength = 255
             Me.columnANNEEBAC.MaxLength = 255
@@ -1110,7 +1125,7 @@ Partial Public Class BDD_TESTEDataSet
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As BDD_TESTEDataSet = New BDD_TESTEDataSet()
+            Dim ds As BDD_APPLICATIONDataSet = New BDD_APPLICATIONDataSet()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -1282,9 +1297,12 @@ Partial Public Class BDD_TESTEDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddGROUPERow(ByVal codeGroupe As String, ByVal CodeSection As String, ByVal CodePromo As String) As GROUPERow
+        Public Overloads Function AddGROUPERow(ByVal parentINSCRIPTIONRowByINSCRIPTIONGROUPE As INSCRIPTIONRow, ByVal CodeSection As String, ByVal CodePromo As String) As GROUPERow
             Dim rowGROUPERow As GROUPERow = CType(Me.NewRow,GROUPERow)
-            Dim columnValuesArray() As Object = New Object() {codeGroupe, CodeSection, CodePromo}
+            Dim columnValuesArray() As Object = New Object() {Nothing, CodeSection, CodePromo}
+            If (Not (parentINSCRIPTIONRowByINSCRIPTIONGROUPE) Is Nothing) Then
+                columnValuesArray(0) = parentINSCRIPTIONRowByINSCRIPTIONGROUPE(3)
+            End If
             rowGROUPERow.ItemArray = columnValuesArray
             Me.Rows.Add(rowGROUPERow)
             Return rowGROUPERow
@@ -1292,7 +1310,7 @@ Partial Public Class BDD_TESTEDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function FindBycodeGroupeCodeSectionCodePromo(ByVal codeGroupe As String, ByVal CodeSection As String, ByVal CodePromo As String) As GROUPERow
+        Public Function FindBycodeGroupeCodeSectionCodePromo(ByVal codeGroupe As Integer, ByVal CodeSection As String, ByVal CodePromo As String) As GROUPERow
             Return CType(Me.Rows.Find(New Object() {codeGroupe, CodeSection, CodePromo}),GROUPERow)
         End Function
         
@@ -1321,7 +1339,7 @@ Partial Public Class BDD_TESTEDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitClass()
-            Me.columncodeGroupe = New Global.System.Data.DataColumn("codeGroupe", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columncodeGroupe = New Global.System.Data.DataColumn("codeGroupe", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columncodeGroupe)
             Me.columnCodeSection = New Global.System.Data.DataColumn("CodeSection", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCodeSection)
@@ -1329,7 +1347,6 @@ Partial Public Class BDD_TESTEDataSet
             MyBase.Columns.Add(Me.columnCodePromo)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columncodeGroupe, Me.columnCodeSection, Me.columnCodePromo}, true))
             Me.columncodeGroupe.AllowDBNull = false
-            Me.columncodeGroupe.MaxLength = 255
             Me.columnCodeSection.AllowDBNull = false
             Me.columnCodeSection.MaxLength = 255
             Me.columnCodePromo.AllowDBNull = false
@@ -1401,7 +1418,7 @@ Partial Public Class BDD_TESTEDataSet
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As BDD_TESTEDataSet = New BDD_TESTEDataSet()
+            Dim ds As BDD_APPLICATIONDataSet = New BDD_APPLICATIONDataSet()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -1494,6 +1511,10 @@ Partial Public Class BDD_TESTEDataSet
         Private columnDECI As Global.System.Data.DataColumn
         
         Private columnADM As Global.System.Data.DataColumn
+        
+        Private columnNBR_RN As Global.System.Data.DataColumn
+        
+        Private columnRATRAPAGE As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -1627,6 +1648,22 @@ Partial Public Class BDD_TESTEDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property NBR_RNColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNBR_RN
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property RATRAPAGEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnRATRAPAGE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1663,18 +1700,21 @@ Partial Public Class BDD_TESTEDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddINSCRIPTIONRow(ByVal parentETUDIANTRowByETUDIANTINSCRIPTION As ETUDIANTRow, ByVal parentPROMORowByPROMOINSCRIPTION As PROMORow, ByVal CodeSection As String, ByVal CodeGroupe As Integer, ByVal MOYEIN As Double, ByVal RANGIN As Integer, ByVal MENTIN As Integer, ByVal ELIMININ As Integer, ByVal RATRIN As Integer, ByVal DECIIN As String, ByVal DECI As String, ByVal ADM As String) As INSCRIPTIONRow
+        Public Overloads Function AddINSCRIPTIONRow(ByVal parentETUDIANTRowByETUDIANTINSCRIPTION As ETUDIANTRow, ByVal CodePromo As String, ByVal CodeSection As String, ByVal CodeGroupe As Integer, ByVal MOYEIN As Double, ByVal RANGIN As Integer, ByVal MENTIN As Integer, ByVal ELIMININ As Integer, ByVal RATRIN As Integer, ByVal DECIIN As String, ByVal DECI As String, ByVal ADM As String, ByVal NBR_RN As Integer, ByVal RATRAPAGE As Boolean) As INSCRIPTIONRow
             Dim rowINSCRIPTIONRow As INSCRIPTIONRow = CType(Me.NewRow,INSCRIPTIONRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, CodeSection, CodeGroupe, MOYEIN, RANGIN, MENTIN, ELIMININ, RATRIN, DECIIN, DECI, ADM}
+            Dim columnValuesArray() As Object = New Object() {Nothing, CodePromo, CodeSection, CodeGroupe, MOYEIN, RANGIN, MENTIN, ELIMININ, RATRIN, DECIIN, DECI, ADM, NBR_RN, RATRAPAGE}
             If (Not (parentETUDIANTRowByETUDIANTINSCRIPTION) Is Nothing) Then
                 columnValuesArray(0) = parentETUDIANTRowByETUDIANTINSCRIPTION(5)
-            End If
-            If (Not (parentPROMORowByPROMOINSCRIPTION) Is Nothing) Then
-                columnValuesArray(1) = parentPROMORowByPROMOINSCRIPTION(0)
             End If
             rowINSCRIPTIONRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowINSCRIPTIONRow)
             Return rowINSCRIPTIONRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function FindByMATRINCodePromoCodeSectionCodeGroupe(ByVal MATRIN As String, ByVal CodePromo As String, ByVal CodeSection As String, ByVal CodeGroupe As Integer) As INSCRIPTIONRow
+            Return CType(Me.Rows.Find(New Object() {MATRIN, CodePromo, CodeSection, CodeGroupe}),INSCRIPTIONRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1706,6 +1746,8 @@ Partial Public Class BDD_TESTEDataSet
             Me.columnDECIIN = MyBase.Columns("DECIIN")
             Me.columnDECI = MyBase.Columns("DECI")
             Me.columnADM = MyBase.Columns("ADM")
+            Me.columnNBR_RN = MyBase.Columns("NBR_RN")
+            Me.columnRATRAPAGE = MyBase.Columns("RATRAPAGE")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1735,9 +1777,18 @@ Partial Public Class BDD_TESTEDataSet
             MyBase.Columns.Add(Me.columnDECI)
             Me.columnADM = New Global.System.Data.DataColumn("ADM", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnADM)
+            Me.columnNBR_RN = New Global.System.Data.DataColumn("NBR_RN", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNBR_RN)
+            Me.columnRATRAPAGE = New Global.System.Data.DataColumn("RATRAPAGE", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnRATRAPAGE)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnMATRIN, Me.columnCodePromo, Me.columnCodeSection, Me.columnCodeGroupe}, true))
+            Me.columnMATRIN.AllowDBNull = false
             Me.columnMATRIN.MaxLength = 255
+            Me.columnCodePromo.AllowDBNull = false
             Me.columnCodePromo.MaxLength = 255
+            Me.columnCodeSection.AllowDBNull = false
             Me.columnCodeSection.MaxLength = 255
+            Me.columnCodeGroupe.AllowDBNull = false
             Me.columnDECIIN.MaxLength = 255
             Me.columnDECI.MaxLength = 255
             Me.columnADM.MaxLength = 255
@@ -1808,7 +1859,7 @@ Partial Public Class BDD_TESTEDataSet
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As BDD_TESTEDataSet = New BDD_TESTEDataSet()
+            Dim ds As BDD_APPLICATIONDataSet = New BDD_APPLICATIONDataSet()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -1880,11 +1931,9 @@ Partial Public Class BDD_TESTEDataSet
         
         Private columnCodeMat As Global.System.Data.DataColumn
         
-        Private columnANSCMA As Global.System.Data.DataColumn
+        Private columnCodePromo As Global.System.Data.DataColumn
         
-        Private columnANETMA As Global.System.Data.DataColumn
-        
-        Private columnOPTIMA As Global.System.Data.DataColumn
+        Private columnCOMAMA As Global.System.Data.DataColumn
         
         Private columnCYCLMA As Global.System.Data.DataColumn
         
@@ -1941,25 +1990,17 @@ Partial Public Class BDD_TESTEDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property ANSCMAColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property CodePromoColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnANSCMA
+                Return Me.columnCodePromo
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property ANETMAColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property COMAMAColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnANETMA
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property OPTIMAColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnOPTIMA
+                Return Me.columnCOMAMA
             End Get
         End Property
         
@@ -2040,9 +2081,9 @@ Partial Public Class BDD_TESTEDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddMATIERERow(ByVal CodeMat As String, ByVal ANSCMA As Integer, ByVal ANETMA As Integer, ByVal OPTIMA As String, ByVal CYCLMA As String, ByVal LIBEMA As String, ByVal TYPEMA As String, ByVal COEFMA As Integer, ByVal MOYMAT As Double) As MATIERERow
+        Public Overloads Function AddMATIERERow(ByVal CodeMat As String, ByVal CodePromo As String, ByVal COMAMA As String, ByVal CYCLMA As String, ByVal LIBEMA As String, ByVal TYPEMA As String, ByVal COEFMA As Integer, ByVal MOYMAT As Double) As MATIERERow
             Dim rowMATIERERow As MATIERERow = CType(Me.NewRow,MATIERERow)
-            Dim columnValuesArray() As Object = New Object() {CodeMat, ANSCMA, ANETMA, OPTIMA, CYCLMA, LIBEMA, TYPEMA, COEFMA, MOYMAT}
+            Dim columnValuesArray() As Object = New Object() {CodeMat, CodePromo, COMAMA, CYCLMA, LIBEMA, TYPEMA, COEFMA, MOYMAT}
             rowMATIERERow.ItemArray = columnValuesArray
             Me.Rows.Add(rowMATIERERow)
             Return rowMATIERERow
@@ -2050,8 +2091,8 @@ Partial Public Class BDD_TESTEDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function FindByCodeMatANSCMAANETMAOPTIMA(ByVal CodeMat As String, ByVal ANSCMA As Integer, ByVal ANETMA As Integer, ByVal OPTIMA As String) As MATIERERow
-            Return CType(Me.Rows.Find(New Object() {CodeMat, ANSCMA, ANETMA, OPTIMA}),MATIERERow)
+        Public Function FindByCodeMat(ByVal CodeMat As String) As MATIERERow
+            Return CType(Me.Rows.Find(New Object() {CodeMat}),MATIERERow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2072,9 +2113,8 @@ Partial Public Class BDD_TESTEDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
             Me.columnCodeMat = MyBase.Columns("CodeMat")
-            Me.columnANSCMA = MyBase.Columns("ANSCMA")
-            Me.columnANETMA = MyBase.Columns("ANETMA")
-            Me.columnOPTIMA = MyBase.Columns("OPTIMA")
+            Me.columnCodePromo = MyBase.Columns("CodePromo")
+            Me.columnCOMAMA = MyBase.Columns("COMAMA")
             Me.columnCYCLMA = MyBase.Columns("CYCLMA")
             Me.columnLIBEMA = MyBase.Columns("LIBEMA")
             Me.columnTYPEMA = MyBase.Columns("TYPEMA")
@@ -2087,12 +2127,10 @@ Partial Public Class BDD_TESTEDataSet
         Private Sub InitClass()
             Me.columnCodeMat = New Global.System.Data.DataColumn("CodeMat", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCodeMat)
-            Me.columnANSCMA = New Global.System.Data.DataColumn("ANSCMA", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnANSCMA)
-            Me.columnANETMA = New Global.System.Data.DataColumn("ANETMA", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnANETMA)
-            Me.columnOPTIMA = New Global.System.Data.DataColumn("OPTIMA", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnOPTIMA)
+            Me.columnCodePromo = New Global.System.Data.DataColumn("CodePromo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCodePromo)
+            Me.columnCOMAMA = New Global.System.Data.DataColumn("COMAMA", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCOMAMA)
             Me.columnCYCLMA = New Global.System.Data.DataColumn("CYCLMA", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCYCLMA)
             Me.columnLIBEMA = New Global.System.Data.DataColumn("LIBEMA", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -2103,13 +2141,12 @@ Partial Public Class BDD_TESTEDataSet
             MyBase.Columns.Add(Me.columnCOEFMA)
             Me.columnMOYMAT = New Global.System.Data.DataColumn("MOYMAT", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnMOYMAT)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnCodeMat, Me.columnANSCMA, Me.columnANETMA, Me.columnOPTIMA}, true))
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnCodeMat}, true))
             Me.columnCodeMat.AllowDBNull = false
+            Me.columnCodeMat.Unique = true
             Me.columnCodeMat.MaxLength = 255
-            Me.columnANSCMA.AllowDBNull = false
-            Me.columnANETMA.AllowDBNull = false
-            Me.columnOPTIMA.AllowDBNull = false
-            Me.columnOPTIMA.MaxLength = 255
+            Me.columnCodePromo.MaxLength = 255
+            Me.columnCOMAMA.MaxLength = 255
             Me.columnCYCLMA.MaxLength = 255
             Me.columnLIBEMA.MaxLength = 255
             Me.columnTYPEMA.MaxLength = 255
@@ -2180,7 +2217,7 @@ Partial Public Class BDD_TESTEDataSet
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As BDD_TESTEDataSet = New BDD_TESTEDataSet()
+            Dim ds As BDD_APPLICATIONDataSet = New BDD_APPLICATIONDataSet()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -2501,7 +2538,7 @@ Partial Public Class BDD_TESTEDataSet
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As BDD_TESTEDataSet = New BDD_TESTEDataSet()
+            Dim ds As BDD_APPLICATIONDataSet = New BDD_APPLICATIONDataSet()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -2577,6 +2614,8 @@ Partial Public Class BDD_TESTEDataSet
         
         Private columnCodePromo As Global.System.Data.DataColumn
         
+        Private columnCOMANO As Global.System.Data.DataColumn
+        
         Private columnNOJUNO As Global.System.Data.DataColumn
         
         Private columnNOSYNO As Global.System.Data.DataColumn
@@ -2643,6 +2682,14 @@ Partial Public Class BDD_TESTEDataSet
         Public ReadOnly Property CodePromoColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnCodePromo
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property COMANOColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCOMANO
             End Get
         End Property
         
@@ -2723,9 +2770,9 @@ Partial Public Class BDD_TESTEDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddNOTESRow(ByVal parentMATIERERowByMATIERENOTES As MATIERERow, ByVal parentETUDIANTRowByETUDIANTNOTES As ETUDIANTRow, ByVal CodePromo As String, ByVal NOJUNO As Double, ByVal NOSYNO As Double, ByVal NORANO As Double, ByVal ELIMNO As String, ByVal RATRNO As Integer) As NOTESRow
+        Public Overloads Function AddNOTESRow(ByVal parentMATIERERowByMATIERENOTES As MATIERERow, ByVal parentETUDIANTRowByETUDIANTNOTES As ETUDIANTRow, ByVal CodePromo As String, ByVal COMANO As String, ByVal NOJUNO As Double, ByVal NOSYNO As Double, ByVal NORANO As Double, ByVal ELIMNO As Integer, ByVal RATRNO As Integer) As NOTESRow
             Dim rowNOTESRow As NOTESRow = CType(Me.NewRow,NOTESRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, CodePromo, NOJUNO, NOSYNO, NORANO, ELIMNO, RATRNO}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, CodePromo, COMANO, NOJUNO, NOSYNO, NORANO, ELIMNO, RATRNO}
             If (Not (parentMATIERERowByMATIERENOTES) Is Nothing) Then
                 columnValuesArray(0) = parentMATIERERowByMATIERENOTES(0)
             End If
@@ -2739,8 +2786,8 @@ Partial Public Class BDD_TESTEDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function FindByCodeMatMATRINCodePromo(ByVal CodeMat As String, ByVal MATRIN As String, ByVal CodePromo As String) As NOTESRow
-            Return CType(Me.Rows.Find(New Object() {CodeMat, MATRIN, CodePromo}),NOTESRow)
+        Public Function FindByCodeMatMATRIN(ByVal CodeMat As String, ByVal MATRIN As String) As NOTESRow
+            Return CType(Me.Rows.Find(New Object() {CodeMat, MATRIN}),NOTESRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2763,6 +2810,7 @@ Partial Public Class BDD_TESTEDataSet
             Me.columnCodeMat = MyBase.Columns("CodeMat")
             Me.columnMATRIN = MyBase.Columns("MATRIN")
             Me.columnCodePromo = MyBase.Columns("CodePromo")
+            Me.columnCOMANO = MyBase.Columns("COMANO")
             Me.columnNOJUNO = MyBase.Columns("NOJUNO")
             Me.columnNOSYNO = MyBase.Columns("NOSYNO")
             Me.columnNORANO = MyBase.Columns("NORANO")
@@ -2779,24 +2827,25 @@ Partial Public Class BDD_TESTEDataSet
             MyBase.Columns.Add(Me.columnMATRIN)
             Me.columnCodePromo = New Global.System.Data.DataColumn("CodePromo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCodePromo)
+            Me.columnCOMANO = New Global.System.Data.DataColumn("COMANO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCOMANO)
             Me.columnNOJUNO = New Global.System.Data.DataColumn("NOJUNO", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnNOJUNO)
             Me.columnNOSYNO = New Global.System.Data.DataColumn("NOSYNO", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnNOSYNO)
             Me.columnNORANO = New Global.System.Data.DataColumn("NORANO", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnNORANO)
-            Me.columnELIMNO = New Global.System.Data.DataColumn("ELIMNO", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnELIMNO = New Global.System.Data.DataColumn("ELIMNO", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnELIMNO)
             Me.columnRATRNO = New Global.System.Data.DataColumn("RATRNO", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnRATRNO)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnCodeMat, Me.columnMATRIN, Me.columnCodePromo}, true))
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnCodeMat, Me.columnMATRIN}, true))
             Me.columnCodeMat.AllowDBNull = false
             Me.columnCodeMat.MaxLength = 255
             Me.columnMATRIN.AllowDBNull = false
             Me.columnMATRIN.MaxLength = 255
-            Me.columnCodePromo.AllowDBNull = false
             Me.columnCodePromo.MaxLength = 255
-            Me.columnELIMNO.MaxLength = 255
+            Me.columnCOMANO.MaxLength = 255
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2864,7 +2913,7 @@ Partial Public Class BDD_TESTEDataSet
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As BDD_TESTEDataSet = New BDD_TESTEDataSet()
+            Dim ds As BDD_APPLICATIONDataSet = New BDD_APPLICATIONDataSet()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -3193,7 +3242,7 @@ Partial Public Class BDD_TESTEDataSet
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As BDD_TESTEDataSet = New BDD_TESTEDataSet()
+            Dim ds As BDD_APPLICATIONDataSet = New BDD_APPLICATIONDataSet()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -3510,7 +3559,7 @@ Partial Public Class BDD_TESTEDataSet
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As BDD_TESTEDataSet = New BDD_TESTEDataSet()
+            Dim ds As BDD_APPLICATIONDataSet = New BDD_APPLICATIONDataSet()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -3792,7 +3841,7 @@ Partial Public Class BDD_TESTEDataSet
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As BDD_TESTEDataSet = New BDD_TESTEDataSet()
+            Dim ds As BDD_APPLICATIONDataSet = New BDD_APPLICATIONDataSet()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -4197,6 +4246,21 @@ Partial Public Class BDD_TESTEDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property NBR_RNG() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableETUDIANT.NBR_RNGColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'NBR_RNG' in table 'ETUDIANT' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableETUDIANT.NBR_RNGColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsNomEtudNull() As Boolean
             Return Me.IsNull(Me.tableETUDIANT.NomEtudColumn)
         End Function
@@ -4449,6 +4513,18 @@ Partial Public Class BDD_TESTEDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsNBR_RNGNull() As Boolean
+            Return Me.IsNull(Me.tableETUDIANT.NBR_RNGColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetNBR_RNGNull()
+            Me(Me.tableETUDIANT.NBR_RNGColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function GetINSCRIPTIONRows() As INSCRIPTIONRow()
             If (Me.Table.ChildRelations("ETUDIANTINSCRIPTION") Is Nothing) Then
                 Return New INSCRIPTIONRow(-1) {}
@@ -4495,9 +4571,9 @@ Partial Public Class BDD_TESTEDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property codeGroupe() As String
+        Public Property codeGroupe() As Integer
             Get
-                Return CType(Me(Me.tableGROUPE.codeGroupeColumn),String)
+                Return CType(Me(Me.tableGROUPE.codeGroupeColumn),Integer)
             End Get
             Set
                 Me(Me.tableGROUPE.codeGroupeColumn) = value
@@ -4523,6 +4599,17 @@ Partial Public Class BDD_TESTEDataSet
             End Get
             Set
                 Me(Me.tableGROUPE.CodePromoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property INSCRIPTIONRow() As INSCRIPTIONRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("INSCRIPTIONGROUPE")),INSCRIPTIONRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("INSCRIPTIONGROUPE"))
             End Set
         End Property
         
@@ -4556,11 +4643,7 @@ Partial Public Class BDD_TESTEDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property MATRIN() As String
             Get
-                Try 
-                    Return CType(Me(Me.tableINSCRIPTION.MATRINColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'MATRIN' in table 'INSCRIPTION' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableINSCRIPTION.MATRINColumn),String)
             End Get
             Set
                 Me(Me.tableINSCRIPTION.MATRINColumn) = value
@@ -4571,11 +4654,7 @@ Partial Public Class BDD_TESTEDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property CodePromo() As String
             Get
-                Try 
-                    Return CType(Me(Me.tableINSCRIPTION.CodePromoColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'CodePromo' in table 'INSCRIPTION' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableINSCRIPTION.CodePromoColumn),String)
             End Get
             Set
                 Me(Me.tableINSCRIPTION.CodePromoColumn) = value
@@ -4586,11 +4665,7 @@ Partial Public Class BDD_TESTEDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property CodeSection() As String
             Get
-                Try 
-                    Return CType(Me(Me.tableINSCRIPTION.CodeSectionColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'CodeSection' in table 'INSCRIPTION' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableINSCRIPTION.CodeSectionColumn),String)
             End Get
             Set
                 Me(Me.tableINSCRIPTION.CodeSectionColumn) = value
@@ -4601,11 +4676,7 @@ Partial Public Class BDD_TESTEDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property CodeGroupe() As Integer
             Get
-                Try 
-                    Return CType(Me(Me.tableINSCRIPTION.CodeGroupeColumn),Integer)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'CodeGroupe' in table 'INSCRIPTION' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tableINSCRIPTION.CodeGroupeColumn),Integer)
             End Get
             Set
                 Me(Me.tableINSCRIPTION.CodeGroupeColumn) = value
@@ -4734,6 +4805,36 @@ Partial Public Class BDD_TESTEDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property NBR_RN() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableINSCRIPTION.NBR_RNColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'NBR_RN' in table 'INSCRIPTION' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableINSCRIPTION.NBR_RNColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property RATRAPAGE() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableINSCRIPTION.RATRAPAGEColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'RATRAPAGE' in table 'INSCRIPTION' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableINSCRIPTION.RATRAPAGEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property ETUDIANTRow() As ETUDIANTRow
             Get
                 Return CType(Me.GetParentRow(Me.Table.ParentRelations("ETUDIANTINSCRIPTION")),ETUDIANTRow)
@@ -4742,65 +4843,6 @@ Partial Public Class BDD_TESTEDataSet
                 Me.SetParentRow(value, Me.Table.ParentRelations("ETUDIANTINSCRIPTION"))
             End Set
         End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property PROMORow() As PROMORow
-            Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("PROMOINSCRIPTION")),PROMORow)
-            End Get
-            Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("PROMOINSCRIPTION"))
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsMATRINNull() As Boolean
-            Return Me.IsNull(Me.tableINSCRIPTION.MATRINColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetMATRINNull()
-            Me(Me.tableINSCRIPTION.MATRINColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsCodePromoNull() As Boolean
-            Return Me.IsNull(Me.tableINSCRIPTION.CodePromoColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetCodePromoNull()
-            Me(Me.tableINSCRIPTION.CodePromoColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsCodeSectionNull() As Boolean
-            Return Me.IsNull(Me.tableINSCRIPTION.CodeSectionColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetCodeSectionNull()
-            Me(Me.tableINSCRIPTION.CodeSectionColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsCodeGroupeNull() As Boolean
-            Return Me.IsNull(Me.tableINSCRIPTION.CodeGroupeColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetCodeGroupeNull()
-            Me(Me.tableINSCRIPTION.CodeGroupeColumn) = Global.System.Convert.DBNull
-        End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -4897,6 +4939,40 @@ Partial Public Class BDD_TESTEDataSet
         Public Sub SetADMNull()
             Me(Me.tableINSCRIPTION.ADMColumn) = Global.System.Convert.DBNull
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsNBR_RNNull() As Boolean
+            Return Me.IsNull(Me.tableINSCRIPTION.NBR_RNColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetNBR_RNNull()
+            Me(Me.tableINSCRIPTION.NBR_RNColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsRATRAPAGENull() As Boolean
+            Return Me.IsNull(Me.tableINSCRIPTION.RATRAPAGEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetRATRAPAGENull()
+            Me(Me.tableINSCRIPTION.RATRAPAGEColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function GetGROUPERows() As GROUPERow()
+            If (Me.Table.ChildRelations("INSCRIPTIONGROUPE") Is Nothing) Then
+                Return New GROUPERow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("INSCRIPTIONGROUPE")),GROUPERow())
+            End If
+        End Function
     End Class
     
     '''<summary>
@@ -4927,34 +5003,31 @@ Partial Public Class BDD_TESTEDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property ANSCMA() As Integer
+        Public Property CodePromo() As String
             Get
-                Return CType(Me(Me.tableMATIERE.ANSCMAColumn),Integer)
+                Try 
+                    Return CType(Me(Me.tableMATIERE.CodePromoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CodePromo' in table 'MATIERE' is DBNull.", e)
+                End Try
             End Get
             Set
-                Me(Me.tableMATIERE.ANSCMAColumn) = value
+                Me(Me.tableMATIERE.CodePromoColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property ANETMA() As Integer
+        Public Property COMAMA() As String
             Get
-                Return CType(Me(Me.tableMATIERE.ANETMAColumn),Integer)
+                Try 
+                    Return CType(Me(Me.tableMATIERE.COMAMAColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'COMAMA' in table 'MATIERE' is DBNull.", e)
+                End Try
             End Get
             Set
-                Me(Me.tableMATIERE.ANETMAColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property OPTIMA() As String
-            Get
-                Return CType(Me(Me.tableMATIERE.OPTIMAColumn),String)
-            End Get
-            Set
-                Me(Me.tableMATIERE.OPTIMAColumn) = value
+                Me(Me.tableMATIERE.COMAMAColumn) = value
             End Set
         End Property
         
@@ -5032,6 +5105,30 @@ Partial Public Class BDD_TESTEDataSet
                 Me(Me.tableMATIERE.MOYMATColumn) = value
             End Set
         End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsCodePromoNull() As Boolean
+            Return Me.IsNull(Me.tableMATIERE.CodePromoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetCodePromoNull()
+            Me(Me.tableMATIERE.CodePromoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsCOMAMANull() As Boolean
+            Return Me.IsNull(Me.tableMATIERE.COMAMAColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetCOMAMANull()
+            Me(Me.tableMATIERE.COMAMAColumn) = Global.System.Convert.DBNull
+        End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -5286,10 +5383,29 @@ Partial Public Class BDD_TESTEDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property CodePromo() As String
             Get
-                Return CType(Me(Me.tableNOTES.CodePromoColumn),String)
+                Try 
+                    Return CType(Me(Me.tableNOTES.CodePromoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CodePromo' in table 'NOTES' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableNOTES.CodePromoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property COMANO() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableNOTES.COMANOColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'COMANO' in table 'NOTES' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableNOTES.COMANOColumn) = value
             End Set
         End Property
         
@@ -5340,10 +5456,10 @@ Partial Public Class BDD_TESTEDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property ELIMNO() As String
+        Public Property ELIMNO() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tableNOTES.ELIMNOColumn),String)
+                    Return CType(Me(Me.tableNOTES.ELIMNOColumn),Integer)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'ELIMNO' in table 'NOTES' is DBNull.", e)
                 End Try
@@ -5389,6 +5505,30 @@ Partial Public Class BDD_TESTEDataSet
                 Me.SetParentRow(value, Me.Table.ParentRelations("MATIERENOTES"))
             End Set
         End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsCodePromoNull() As Boolean
+            Return Me.IsNull(Me.tableNOTES.CodePromoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetCodePromoNull()
+            Me(Me.tableNOTES.CodePromoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsCOMANONull() As Boolean
+            Return Me.IsNull(Me.tableNOTES.COMANOColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetCOMANONull()
+            Me(Me.tableNOTES.COMANOColumn) = Global.System.Convert.DBNull
+        End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -5611,16 +5751,6 @@ Partial Public Class BDD_TESTEDataSet
         Public Sub SetMoyenneNull()
             Me(Me.tablePROMO.MoyenneColumn) = Global.System.Convert.DBNull
         End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function GetINSCRIPTIONRows() As INSCRIPTIONRow()
-            If (Me.Table.ChildRelations("PROMOINSCRIPTION") Is Nothing) Then
-                Return New INSCRIPTIONRow(-1) {}
-            Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("PROMOINSCRIPTION")),INSCRIPTIONRow())
-            End If
-        End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -6163,7 +6293,7 @@ Partial Public Class BDD_TESTEDataSet
     End Class
 End Class
 
-Namespace BDD_TESTEDataSetTableAdapters
+Namespace BDD_APPLICATIONDataSetTableAdapters
     
     '''<summary>
     '''Represents the connection and commands used to retrieve and save data.
@@ -6314,6 +6444,7 @@ Namespace BDD_TESTEDataSetTableAdapters
             tableMapping.ColumnMappings.Add("ANNEEBAC", "ANNEEBAC")
             tableMapping.ColumnMappings.Add("FILS_DE", "FILS_DE")
             tableMapping.ColumnMappings.Add("ET_DE", "ET_DE")
+            tableMapping.ColumnMappings.Add("NBR_RNG", "NBR_RNG")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -6332,7 +6463,7 @@ Namespace BDD_TESTEDataSetTableAdapters
                 "C` IS NULL) OR (`SERIEBAC` = ?)) AND ((? = 1 AND `MOYBAC` IS NULL) OR (`MOYBAC` "& _ 
                 "= ?)) AND ((? = 1 AND `ANNEEBAC` IS NULL) OR (`ANNEEBAC` = ?)) AND ((? = 1 AND `"& _ 
                 "FILS_DE` IS NULL) OR (`FILS_DE` = ?)) AND ((? = 1 AND `ET_DE` IS NULL) OR (`ET_D"& _ 
-                "E` = ?)))"
+                "E` = ?)) AND ((? = 1 AND `NBR_RNG` IS NULL) OR (`NBR_RNG` = ?)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_NomEtud", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NomEtud", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_NomEtud", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NomEtud", Global.System.Data.DataRowVersion.Original, false, Nothing))
@@ -6377,13 +6508,15 @@ Namespace BDD_TESTEDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_FILS_DE", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "FILS_DE", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ET_DE", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ET_DE", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ET_DE", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ET_DE", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_NBR_RNG", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NBR_RNG", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_NBR_RNG", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NBR_RNG", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO `ETUDIANT` (`NomEtud`, `Prenoms`, `NomEtudA`, `PrenomsA`, `MATRIC_INS"& _ 
                 "`, `MATRIN`, `DateNais`, `LieuNaisA`, `WilayaNaisA`, `LieuNais`, `WILNAIS`, `ADR"& _ 
                 "ESSE`, `VILLE`, `WILAYA`, `CODEPOS`, `WILBAC`, `SEXE`, `SERIEBAC`, `MOYBAC`, `AN"& _ 
-                "NEEBAC`, `FILS_DE`, `ET_DE`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?"& _ 
-                ", ?, ?, ?, ?, ?, ?, ?)"
+                "NEEBAC`, `FILS_DE`, `ET_DE`, `NBR_RNG`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"& _ 
+                " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("NomEtud", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NomEtud", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Prenoms", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Prenoms", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -6407,28 +6540,30 @@ Namespace BDD_TESTEDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ANNEEBAC", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ANNEEBAC", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("FILS_DE", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "FILS_DE", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ET_DE", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ET_DE", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("NBR_RNG", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NBR_RNG", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE `ETUDIANT` SET `NomEtud` = ?, `Prenoms` = ?, `NomEtudA` = ?, `PrenomsA` = "& _ 
                 "?, `MATRIC_INS` = ?, `MATRIN` = ?, `DateNais` = ?, `LieuNaisA` = ?, `WilayaNaisA"& _ 
                 "` = ?, `LieuNais` = ?, `WILNAIS` = ?, `ADRESSE` = ?, `VILLE` = ?, `WILAYA` = ?, "& _ 
                 "`CODEPOS` = ?, `WILBAC` = ?, `SEXE` = ?, `SERIEBAC` = ?, `MOYBAC` = ?, `ANNEEBAC"& _ 
-                "` = ?, `FILS_DE` = ?, `ET_DE` = ? WHERE (((? = 1 AND `NomEtud` IS NULL) OR (`Nom"& _ 
-                "Etud` = ?)) AND ((? = 1 AND `Prenoms` IS NULL) OR (`Prenoms` = ?)) AND ((? = 1 A"& _ 
-                "ND `NomEtudA` IS NULL) OR (`NomEtudA` = ?)) AND ((? = 1 AND `PrenomsA` IS NULL) "& _ 
-                "OR (`PrenomsA` = ?)) AND ((? = 1 AND `MATRIC_INS` IS NULL) OR (`MATRIC_INS` = ?)"& _ 
-                ") AND (`MATRIN` = ?) AND ((? = 1 AND `DateNais` IS NULL) OR (`DateNais` = ?)) AN"& _ 
-                "D ((? = 1 AND `LieuNaisA` IS NULL) OR (`LieuNaisA` = ?)) AND ((? = 1 AND `Wilaya"& _ 
-                "NaisA` IS NULL) OR (`WilayaNaisA` = ?)) AND ((? = 1 AND `LieuNais` IS NULL) OR ("& _ 
-                "`LieuNais` = ?)) AND ((? = 1 AND `WILNAIS` IS NULL) OR (`WILNAIS` = ?)) AND ((? "& _ 
-                "= 1 AND `ADRESSE` IS NULL) OR (`ADRESSE` = ?)) AND ((? = 1 AND `VILLE` IS NULL) "& _ 
-                "OR (`VILLE` = ?)) AND ((? = 1 AND `WILAYA` IS NULL) OR (`WILAYA` = ?)) AND ((? ="& _ 
-                " 1 AND `CODEPOS` IS NULL) OR (`CODEPOS` = ?)) AND ((? = 1 AND `WILBAC` IS NULL) "& _ 
-                "OR (`WILBAC` = ?)) AND ((? = 1 AND `SEXE` IS NULL) OR (`SEXE` = ?)) AND ((? = 1 "& _ 
-                "AND `SERIEBAC` IS NULL) OR (`SERIEBAC` = ?)) AND ((? = 1 AND `MOYBAC` IS NULL) O"& _ 
-                "R (`MOYBAC` = ?)) AND ((? = 1 AND `ANNEEBAC` IS NULL) OR (`ANNEEBAC` = ?)) AND ("& _ 
-                "(? = 1 AND `FILS_DE` IS NULL) OR (`FILS_DE` = ?)) AND ((? = 1 AND `ET_DE` IS NUL"& _ 
-                "L) OR (`ET_DE` = ?)))"
+                "` = ?, `FILS_DE` = ?, `ET_DE` = ?, `NBR_RNG` = ? WHERE (((? = 1 AND `NomEtud` IS"& _ 
+                " NULL) OR (`NomEtud` = ?)) AND ((? = 1 AND `Prenoms` IS NULL) OR (`Prenoms` = ?)"& _ 
+                ") AND ((? = 1 AND `NomEtudA` IS NULL) OR (`NomEtudA` = ?)) AND ((? = 1 AND `Pren"& _ 
+                "omsA` IS NULL) OR (`PrenomsA` = ?)) AND ((? = 1 AND `MATRIC_INS` IS NULL) OR (`M"& _ 
+                "ATRIC_INS` = ?)) AND (`MATRIN` = ?) AND ((? = 1 AND `DateNais` IS NULL) OR (`Dat"& _ 
+                "eNais` = ?)) AND ((? = 1 AND `LieuNaisA` IS NULL) OR (`LieuNaisA` = ?)) AND ((? "& _ 
+                "= 1 AND `WilayaNaisA` IS NULL) OR (`WilayaNaisA` = ?)) AND ((? = 1 AND `LieuNais"& _ 
+                "` IS NULL) OR (`LieuNais` = ?)) AND ((? = 1 AND `WILNAIS` IS NULL) OR (`WILNAIS`"& _ 
+                " = ?)) AND ((? = 1 AND `ADRESSE` IS NULL) OR (`ADRESSE` = ?)) AND ((? = 1 AND `V"& _ 
+                "ILLE` IS NULL) OR (`VILLE` = ?)) AND ((? = 1 AND `WILAYA` IS NULL) OR (`WILAYA` "& _ 
+                "= ?)) AND ((? = 1 AND `CODEPOS` IS NULL) OR (`CODEPOS` = ?)) AND ((? = 1 AND `WI"& _ 
+                "LBAC` IS NULL) OR (`WILBAC` = ?)) AND ((? = 1 AND `SEXE` IS NULL) OR (`SEXE` = ?"& _ 
+                ")) AND ((? = 1 AND `SERIEBAC` IS NULL) OR (`SERIEBAC` = ?)) AND ((? = 1 AND `MOY"& _ 
+                "BAC` IS NULL) OR (`MOYBAC` = ?)) AND ((? = 1 AND `ANNEEBAC` IS NULL) OR (`ANNEEB"& _ 
+                "AC` = ?)) AND ((? = 1 AND `FILS_DE` IS NULL) OR (`FILS_DE` = ?)) AND ((? = 1 AND"& _ 
+                " `ET_DE` IS NULL) OR (`ET_DE` = ?)) AND ((? = 1 AND `NBR_RNG` IS NULL) OR (`NBR_"& _ 
+                "RNG` = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("NomEtud", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NomEtud", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Prenoms", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Prenoms", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -6452,6 +6587,7 @@ Namespace BDD_TESTEDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ANNEEBAC", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ANNEEBAC", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("FILS_DE", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "FILS_DE", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ET_DE", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ET_DE", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("NBR_RNG", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NBR_RNG", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_NomEtud", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NomEtud", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_NomEtud", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NomEtud", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Prenoms", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Prenoms", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -6495,13 +6631,15 @@ Namespace BDD_TESTEDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_FILS_DE", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "FILS_DE", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ET_DE", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ET_DE", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ET_DE", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ET_DE", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_NBR_RNG", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NBR_RNG", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_NBR_RNG", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NBR_RNG", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.OleDb.OleDbConnection()
-            Me._connection.ConnectionString = Global.EsistHistoryManagement_v1.My.MySettings.Default.BDD_TESTEConnectionString
+            Me._connection.ConnectionString = Global.EsistHistoryManagement_v1.My.MySettings.Default.BDD_APPLICATIONConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6512,7 +6650,7 @@ Namespace BDD_TESTEDataSetTableAdapters
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT NomEtud, Prenoms, NomEtudA, PrenomsA, MATRIC_INS, MATRIN, DateNais, LieuNa"& _ 
                 "isA, WilayaNaisA, LieuNais, WILNAIS, ADRESSE, VILLE, WILAYA, CODEPOS, WILBAC, SE"& _ 
-                "XE, SERIEBAC, MOYBAC, ANNEEBAC, FILS_DE, ET_DE FROM ETUDIANT"
+                "XE, SERIEBAC, MOYBAC, ANNEEBAC, FILS_DE, ET_DE, NBR_RNG FROM ETUDIANT"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -6520,7 +6658,7 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As BDD_TESTEDataSet.ETUDIANTDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As BDD_APPLICATIONDataSet.ETUDIANTDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -6533,9 +6671,9 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As BDD_TESTEDataSet.ETUDIANTDataTable
+        Public Overloads Overridable Function GetData() As BDD_APPLICATIONDataSet.ETUDIANTDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As BDD_TESTEDataSet.ETUDIANTDataTable = New BDD_TESTEDataSet.ETUDIANTDataTable()
+            Dim dataTable As BDD_APPLICATIONDataSet.ETUDIANTDataTable = New BDD_APPLICATIONDataSet.ETUDIANTDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -6543,14 +6681,14 @@ Namespace BDD_TESTEDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As BDD_TESTEDataSet.ETUDIANTDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As BDD_APPLICATIONDataSet.ETUDIANTDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As BDD_TESTEDataSet) As Integer
+        Public Overloads Overridable Function Update(ByVal dataSet As BDD_APPLICATIONDataSet) As Integer
             Return Me.Adapter.Update(dataSet, "ETUDIANT")
         End Function
         
@@ -6594,7 +6732,8 @@ Namespace BDD_TESTEDataSetTableAdapters
                     ByVal Original_MOYBAC As String,  _
                     ByVal Original_ANNEEBAC As String,  _
                     ByVal Original_FILS_DE As String,  _
-                    ByVal Original_ET_DE As String) As Integer
+                    ByVal Original_ET_DE As String,  _
+                    ByVal Original_NBR_RNG As Global.System.Nullable(Of Integer)) As Integer
             If (Original_NomEtud Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(0).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(1).Value = Global.System.DBNull.Value
@@ -6747,6 +6886,13 @@ Namespace BDD_TESTEDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(41).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(42).Value = CType(Original_ET_DE,String)
             End If
+            If (Original_NBR_RNG.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(43).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(44).Value = CType(Original_NBR_RNG.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(43).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(44).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -6788,7 +6934,8 @@ Namespace BDD_TESTEDataSetTableAdapters
                     ByVal MOYBAC As String,  _
                     ByVal ANNEEBAC As String,  _
                     ByVal FILS_DE As String,  _
-                    ByVal ET_DE As String) As Integer
+                    ByVal ET_DE As String,  _
+                    ByVal NBR_RNG As Global.System.Nullable(Of Integer)) As Integer
             If (NomEtud Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -6899,6 +7046,11 @@ Namespace BDD_TESTEDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(21).Value = CType(ET_DE,String)
             End If
+            If (NBR_RNG.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(22).Value = CType(NBR_RNG.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(22).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -6941,6 +7093,7 @@ Namespace BDD_TESTEDataSetTableAdapters
                     ByVal ANNEEBAC As String,  _
                     ByVal FILS_DE As String,  _
                     ByVal ET_DE As String,  _
+                    ByVal NBR_RNG As Global.System.Nullable(Of Integer),  _
                     ByVal Original_NomEtud As String,  _
                     ByVal Original_Prenoms As String,  _
                     ByVal Original_NomEtudA As String,  _
@@ -6962,7 +7115,8 @@ Namespace BDD_TESTEDataSetTableAdapters
                     ByVal Original_MOYBAC As String,  _
                     ByVal Original_ANNEEBAC As String,  _
                     ByVal Original_FILS_DE As String,  _
-                    ByVal Original_ET_DE As String) As Integer
+                    ByVal Original_ET_DE As String,  _
+                    ByVal Original_NBR_RNG As Global.System.Nullable(Of Integer)) As Integer
             If (NomEtud Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -7073,157 +7227,169 @@ Namespace BDD_TESTEDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(21).Value = CType(ET_DE,String)
             End If
-            If (Original_NomEtud Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(23).Value = Global.System.DBNull.Value
+            If (NBR_RNG.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(NBR_RNG.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(Original_NomEtud,String)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
+            End If
+            If (Original_NomEtud Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_NomEtud,String)
             End If
             If (Original_Prenoms Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(25).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(26).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(Original_Prenoms,String)
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(Original_Prenoms,String)
             End If
             If (Original_NomEtudA Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(27).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(28).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(Original_NomEtudA,String)
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(Original_NomEtudA,String)
             End If
             If (Original_PrenomsA Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(29).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(30).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(Original_PrenomsA,String)
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(Original_PrenomsA,String)
             End If
             If (Original_MATRIC_INS Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(31).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(32).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(Original_MATRIC_INS,String)
+                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(Original_MATRIC_INS,String)
             End If
             If (Original_MATRIN Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_MATRIN")
             Else
-                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(Original_MATRIN,String)
+                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(Original_MATRIN,String)
             End If
             If (Original_DateNais Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(34).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(35).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(Original_DateNais,String)
+                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(Original_DateNais,String)
             End If
             If (Original_LieuNaisA Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(36).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(37).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(Original_LieuNaisA,String)
+                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(Original_LieuNaisA,String)
             End If
             If (Original_WilayaNaisA Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(38).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(39).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(Original_WilayaNaisA,String)
+                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(Original_WilayaNaisA,String)
             End If
             If (Original_LieuNais Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(40).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(40).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(41).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(40).Value = CType(Original_LieuNais,String)
+                Me.Adapter.UpdateCommand.Parameters(40).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(41).Value = CType(Original_LieuNais,String)
             End If
             If (Original_WILNAIS Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(41).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(42).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(42).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(43).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(41).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(42).Value = CType(Original_WILNAIS,String)
+                Me.Adapter.UpdateCommand.Parameters(42).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(43).Value = CType(Original_WILNAIS,String)
             End If
             If (Original_ADRESSE Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(43).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(44).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(44).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(45).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(43).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(44).Value = CType(Original_ADRESSE,String)
+                Me.Adapter.UpdateCommand.Parameters(44).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(45).Value = CType(Original_ADRESSE,String)
             End If
             If (Original_VILLE Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(45).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(46).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(46).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(47).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(45).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(46).Value = CType(Original_VILLE,String)
+                Me.Adapter.UpdateCommand.Parameters(46).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(47).Value = CType(Original_VILLE,String)
             End If
             If (Original_WILAYA Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(47).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(48).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(48).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(49).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(47).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(48).Value = CType(Original_WILAYA,String)
+                Me.Adapter.UpdateCommand.Parameters(48).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(49).Value = CType(Original_WILAYA,String)
             End If
             If (Original_CODEPOS Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(49).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(50).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(50).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(51).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(49).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(50).Value = CType(Original_CODEPOS,String)
+                Me.Adapter.UpdateCommand.Parameters(50).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(51).Value = CType(Original_CODEPOS,String)
             End If
             If (Original_WILBAC Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(51).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(52).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(52).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(53).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(51).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(52).Value = CType(Original_WILBAC,String)
+                Me.Adapter.UpdateCommand.Parameters(52).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(53).Value = CType(Original_WILBAC,String)
             End If
             If (Original_SEXE Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(53).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(54).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(54).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(55).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(53).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(54).Value = CType(Original_SEXE,String)
+                Me.Adapter.UpdateCommand.Parameters(54).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(55).Value = CType(Original_SEXE,String)
             End If
             If (Original_SERIEBAC Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(55).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(56).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(56).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(57).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(55).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(56).Value = CType(Original_SERIEBAC,String)
+                Me.Adapter.UpdateCommand.Parameters(56).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(57).Value = CType(Original_SERIEBAC,String)
             End If
             If (Original_MOYBAC Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(57).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(58).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(58).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(59).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(57).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(58).Value = CType(Original_MOYBAC,String)
+                Me.Adapter.UpdateCommand.Parameters(58).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(59).Value = CType(Original_MOYBAC,String)
             End If
             If (Original_ANNEEBAC Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(59).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(60).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(60).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(61).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(59).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(60).Value = CType(Original_ANNEEBAC,String)
+                Me.Adapter.UpdateCommand.Parameters(60).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(61).Value = CType(Original_ANNEEBAC,String)
             End If
             If (Original_FILS_DE Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(61).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(62).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(62).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(63).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(61).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(62).Value = CType(Original_FILS_DE,String)
+                Me.Adapter.UpdateCommand.Parameters(62).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(63).Value = CType(Original_FILS_DE,String)
             End If
             If (Original_ET_DE Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(63).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(64).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(64).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(65).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(63).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(64).Value = CType(Original_ET_DE,String)
+                Me.Adapter.UpdateCommand.Parameters(64).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(65).Value = CType(Original_ET_DE,String)
+            End If
+            If (Original_NBR_RNG.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(66).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(67).Value = CType(Original_NBR_RNG.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(66).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(67).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -7266,6 +7432,7 @@ Namespace BDD_TESTEDataSetTableAdapters
                     ByVal ANNEEBAC As String,  _
                     ByVal FILS_DE As String,  _
                     ByVal ET_DE As String,  _
+                    ByVal NBR_RNG As Global.System.Nullable(Of Integer),  _
                     ByVal Original_NomEtud As String,  _
                     ByVal Original_Prenoms As String,  _
                     ByVal Original_NomEtudA As String,  _
@@ -7287,8 +7454,9 @@ Namespace BDD_TESTEDataSetTableAdapters
                     ByVal Original_MOYBAC As String,  _
                     ByVal Original_ANNEEBAC As String,  _
                     ByVal Original_FILS_DE As String,  _
-                    ByVal Original_ET_DE As String) As Integer
-            Return Me.Update(NomEtud, Prenoms, NomEtudA, PrenomsA, MATRIC_INS, Original_MATRIN, DateNais, LieuNaisA, WilayaNaisA, LieuNais, WILNAIS, ADRESSE, VILLE, WILAYA, CODEPOS, WILBAC, SEXE, SERIEBAC, MOYBAC, ANNEEBAC, FILS_DE, ET_DE, Original_NomEtud, Original_Prenoms, Original_NomEtudA, Original_PrenomsA, Original_MATRIC_INS, Original_MATRIN, Original_DateNais, Original_LieuNaisA, Original_WilayaNaisA, Original_LieuNais, Original_WILNAIS, Original_ADRESSE, Original_VILLE, Original_WILAYA, Original_CODEPOS, Original_WILBAC, Original_SEXE, Original_SERIEBAC, Original_MOYBAC, Original_ANNEEBAC, Original_FILS_DE, Original_ET_DE)
+                    ByVal Original_ET_DE As String,  _
+                    ByVal Original_NBR_RNG As Global.System.Nullable(Of Integer)) As Integer
+            Return Me.Update(NomEtud, Prenoms, NomEtudA, PrenomsA, MATRIC_INS, Original_MATRIN, DateNais, LieuNaisA, WilayaNaisA, LieuNais, WILNAIS, ADRESSE, VILLE, WILAYA, CODEPOS, WILBAC, SEXE, SERIEBAC, MOYBAC, ANNEEBAC, FILS_DE, ET_DE, NBR_RNG, Original_NomEtud, Original_Prenoms, Original_NomEtudA, Original_PrenomsA, Original_MATRIC_INS, Original_MATRIN, Original_DateNais, Original_LieuNaisA, Original_WilayaNaisA, Original_LieuNais, Original_WILNAIS, Original_ADRESSE, Original_VILLE, Original_WILAYA, Original_CODEPOS, Original_WILBAC, Original_SEXE, Original_SERIEBAC, Original_MOYBAC, Original_ANNEEBAC, Original_FILS_DE, Original_ET_DE, Original_NBR_RNG)
         End Function
     End Class
     
@@ -7428,14 +7596,14 @@ Namespace BDD_TESTEDataSetTableAdapters
             Me._adapter.DeleteCommand.CommandText = "DELETE FROM `GROUPE` WHERE ((`codeGroupe` = ?) AND (`CodeSection` = ?) AND (`Code"& _ 
                 "Promo` = ?))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_codeGroupe", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "codeGroupe", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_codeGroupe", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "codeGroupe", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_CodeSection", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodeSection", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_CodePromo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodePromo", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO `GROUPE` (`codeGroupe`, `CodeSection`, `CodePromo`) VALUES (?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("codeGroupe", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "codeGroupe", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("codeGroupe", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "codeGroupe", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("CodeSection", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodeSection", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("CodePromo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodePromo", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
@@ -7443,10 +7611,10 @@ Namespace BDD_TESTEDataSetTableAdapters
             Me._adapter.UpdateCommand.CommandText = "UPDATE `GROUPE` SET `codeGroupe` = ?, `CodeSection` = ?, `CodePromo` = ? WHERE (("& _ 
                 "`codeGroupe` = ?) AND (`CodeSection` = ?) AND (`CodePromo` = ?))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("codeGroupe", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "codeGroupe", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("codeGroupe", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "codeGroupe", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("CodeSection", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodeSection", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("CodePromo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodePromo", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_codeGroupe", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "codeGroupe", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_codeGroupe", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "codeGroupe", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_CodeSection", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodeSection", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_CodePromo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodePromo", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
@@ -7455,7 +7623,7 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.OleDb.OleDbConnection()
-            Me._connection.ConnectionString = Global.EsistHistoryManagement_v1.My.MySettings.Default.BDD_TESTEConnectionString
+            Me._connection.ConnectionString = Global.EsistHistoryManagement_v1.My.MySettings.Default.BDD_APPLICATIONConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -7472,7 +7640,7 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As BDD_TESTEDataSet.GROUPEDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As BDD_APPLICATIONDataSet.GROUPEDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -7485,9 +7653,9 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As BDD_TESTEDataSet.GROUPEDataTable
+        Public Overloads Overridable Function GetData() As BDD_APPLICATIONDataSet.GROUPEDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As BDD_TESTEDataSet.GROUPEDataTable = New BDD_TESTEDataSet.GROUPEDataTable()
+            Dim dataTable As BDD_APPLICATIONDataSet.GROUPEDataTable = New BDD_APPLICATIONDataSet.GROUPEDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -7495,14 +7663,14 @@ Namespace BDD_TESTEDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As BDD_TESTEDataSet.GROUPEDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As BDD_APPLICATIONDataSet.GROUPEDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As BDD_TESTEDataSet) As Integer
+        Public Overloads Overridable Function Update(ByVal dataSet As BDD_APPLICATIONDataSet) As Integer
             Return Me.Adapter.Update(dataSet, "GROUPE")
         End Function
         
@@ -7524,12 +7692,8 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_codeGroupe As String, ByVal Original_CodeSection As String, ByVal Original_CodePromo As String) As Integer
-            If (Original_codeGroupe Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_codeGroupe")
-            Else
-                Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_codeGroupe,String)
-            End If
+        Public Overloads Overridable Function Delete(ByVal Original_codeGroupe As Integer, ByVal Original_CodeSection As String, ByVal Original_CodePromo As String) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_codeGroupe,Integer)
             If (Original_CodeSection Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_CodeSection")
             Else
@@ -7559,12 +7723,8 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal codeGroupe As String, ByVal CodeSection As String, ByVal CodePromo As String) As Integer
-            If (codeGroupe Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("codeGroupe")
-            Else
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(codeGroupe,String)
-            End If
+        Public Overloads Overridable Function Insert(ByVal codeGroupe As Integer, ByVal CodeSection As String, ByVal CodePromo As String) As Integer
+            Me.Adapter.InsertCommand.Parameters(0).Value = CType(codeGroupe,Integer)
             If (CodeSection Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("CodeSection")
             Else
@@ -7594,12 +7754,8 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal codeGroupe As String, ByVal CodeSection As String, ByVal CodePromo As String, ByVal Original_codeGroupe As String, ByVal Original_CodeSection As String, ByVal Original_CodePromo As String) As Integer
-            If (codeGroupe Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("codeGroupe")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(codeGroupe,String)
-            End If
+        Public Overloads Overridable Function Update(ByVal codeGroupe As Integer, ByVal CodeSection As String, ByVal CodePromo As String, ByVal Original_codeGroupe As Integer, ByVal Original_CodeSection As String, ByVal Original_CodePromo As String) As Integer
+            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(codeGroupe,Integer)
             If (CodeSection Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("CodeSection")
             Else
@@ -7610,11 +7766,7 @@ Namespace BDD_TESTEDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(2).Value = CType(CodePromo,String)
             End If
-            If (Original_codeGroupe Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_codeGroupe")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Original_codeGroupe,String)
-            End If
+            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Original_codeGroupe,Integer)
             If (Original_CodeSection Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_CodeSection")
             Else
@@ -7644,7 +7796,7 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Original_codeGroupe As String, ByVal Original_CodeSection As String, ByVal Original_CodePromo As String) As Integer
+        Public Overloads Overridable Function Update(ByVal Original_codeGroupe As Integer, ByVal Original_CodeSection As String, ByVal Original_CodePromo As String) As Integer
             Return Me.Update(Original_codeGroupe, Original_CodeSection, Original_CodePromo, Original_codeGroupe, Original_CodeSection, Original_CodePromo)
         End Function
     End Class
@@ -7788,12 +7940,50 @@ Namespace BDD_TESTEDataSetTableAdapters
             tableMapping.ColumnMappings.Add("DECIIN", "DECIIN")
             tableMapping.ColumnMappings.Add("DECI", "DECI")
             tableMapping.ColumnMappings.Add("ADM", "ADM")
+            tableMapping.ColumnMappings.Add("NBR_RN", "NBR_RN")
+            tableMapping.ColumnMappings.Add("RATRAPAGE", "RATRAPAGE")
             Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
+            Me._adapter.DeleteCommand.Connection = Me.Connection
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `INSCRIPTION` WHERE ((`MATRIN` = ?) AND (`CodePromo` = ?) AND (`CodeS"& _ 
+                "ection` = ?) AND (`CodeGroupe` = ?) AND ((? = 1 AND `MOYEIN` IS NULL) OR (`MOYEI"& _ 
+                "N` = ?)) AND ((? = 1 AND `RANGIN` IS NULL) OR (`RANGIN` = ?)) AND ((? = 1 AND `M"& _ 
+                "ENTIN` IS NULL) OR (`MENTIN` = ?)) AND ((? = 1 AND `ELIMININ` IS NULL) OR (`ELIM"& _ 
+                "ININ` = ?)) AND ((? = 1 AND `RATRIN` IS NULL) OR (`RATRIN` = ?)) AND ((? = 1 AND"& _ 
+                " `DECIIN` IS NULL) OR (`DECIIN` = ?)) AND ((? = 1 AND `DECI` IS NULL) OR (`DECI`"& _ 
+                " = ?)) AND ((? = 1 AND `ADM` IS NULL) OR (`ADM` = ?)) AND ((? = 1 AND `NBR_RN` I"& _ 
+                "S NULL) OR (`NBR_RN` = ?)) AND ((? = 1 AND `RATRAPAGE` IS NULL) OR (`RATRAPAGE` "& _ 
+                "= ?)))"
+            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_MATRIN", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MATRIN", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_CodePromo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodePromo", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_CodeSection", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodeSection", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_CodeGroupe", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodeGroupe", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_MOYEIN", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MOYEIN", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_MOYEIN", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MOYEIN", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_RANGIN", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RANGIN", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_RANGIN", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RANGIN", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_MENTIN", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MENTIN", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_MENTIN", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MENTIN", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ELIMININ", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ELIMININ", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ELIMININ", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ELIMININ", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_RATRIN", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RATRIN", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_RATRIN", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RATRIN", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_DECIIN", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DECIIN", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_DECIIN", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DECIIN", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_DECI", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DECI", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_DECI", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DECI", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ADM", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ADM", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ADM", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ADM", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_NBR_RN", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NBR_RN", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_NBR_RN", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NBR_RN", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_RATRAPAGE", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RATRAPAGE", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_RATRAPAGE", Global.System.Data.OleDb.OleDbType.[Boolean], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RATRAPAGE", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO `INSCRIPTION` (`MATRIN`, `CodePromo`, `CodeSection`, `CodeGroupe`, `M"& _ 
-                "OYEIN`, `RANGIN`, `MENTIN`, `ELIMININ`, `RATRIN`, `DECIIN`, `DECI`, `ADM`) VALUE"& _ 
-                "S (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+                "OYEIN`, `RANGIN`, `MENTIN`, `ELIMININ`, `RATRIN`, `DECIIN`, `DECI`, `ADM`, `NBR_"& _ 
+                "RN`, `RATRAPAGE`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("MATRIN", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MATRIN", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("CodePromo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodePromo", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -7807,13 +7997,67 @@ Namespace BDD_TESTEDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("DECIIN", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DECIIN", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("DECI", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DECI", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ADM", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ADM", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("NBR_RN", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NBR_RN", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("RATRAPAGE", Global.System.Data.OleDb.OleDbType.[Boolean], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RATRAPAGE", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
+            Me._adapter.UpdateCommand.Connection = Me.Connection
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `INSCRIPTION` SET `MATRIN` = ?, `CodePromo` = ?, `CodeSection` = ?, `CodeG"& _ 
+                "roupe` = ?, `MOYEIN` = ?, `RANGIN` = ?, `MENTIN` = ?, `ELIMININ` = ?, `RATRIN` ="& _ 
+                " ?, `DECIIN` = ?, `DECI` = ?, `ADM` = ?, `NBR_RN` = ?, `RATRAPAGE` = ? WHERE ((`"& _ 
+                "MATRIN` = ?) AND (`CodePromo` = ?) AND (`CodeSection` = ?) AND (`CodeGroupe` = ?"& _ 
+                ") AND ((? = 1 AND `MOYEIN` IS NULL) OR (`MOYEIN` = ?)) AND ((? = 1 AND `RANGIN` "& _ 
+                "IS NULL) OR (`RANGIN` = ?)) AND ((? = 1 AND `MENTIN` IS NULL) OR (`MENTIN` = ?))"& _ 
+                " AND ((? = 1 AND `ELIMININ` IS NULL) OR (`ELIMININ` = ?)) AND ((? = 1 AND `RATRI"& _ 
+                "N` IS NULL) OR (`RATRIN` = ?)) AND ((? = 1 AND `DECIIN` IS NULL) OR (`DECIIN` = "& _ 
+                "?)) AND ((? = 1 AND `DECI` IS NULL) OR (`DECI` = ?)) AND ((? = 1 AND `ADM` IS NU"& _ 
+                "LL) OR (`ADM` = ?)) AND ((? = 1 AND `NBR_RN` IS NULL) OR (`NBR_RN` = ?)) AND ((?"& _ 
+                " = 1 AND `RATRAPAGE` IS NULL) OR (`RATRAPAGE` = ?)))"
+            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("MATRIN", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MATRIN", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("CodePromo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodePromo", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("CodeSection", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodeSection", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("CodeGroupe", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodeGroupe", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("MOYEIN", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MOYEIN", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("RANGIN", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RANGIN", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("MENTIN", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MENTIN", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ELIMININ", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ELIMININ", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("RATRIN", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RATRIN", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("DECIIN", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DECIIN", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("DECI", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DECI", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ADM", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ADM", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("NBR_RN", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NBR_RN", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("RATRAPAGE", Global.System.Data.OleDb.OleDbType.[Boolean], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RATRAPAGE", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_MATRIN", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MATRIN", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_CodePromo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodePromo", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_CodeSection", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodeSection", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_CodeGroupe", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodeGroupe", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_MOYEIN", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MOYEIN", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_MOYEIN", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MOYEIN", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_RANGIN", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RANGIN", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_RANGIN", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RANGIN", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_MENTIN", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MENTIN", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_MENTIN", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MENTIN", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ELIMININ", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ELIMININ", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ELIMININ", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ELIMININ", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_RATRIN", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RATRIN", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_RATRIN", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RATRIN", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_DECIIN", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DECIIN", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_DECIIN", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DECIIN", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_DECI", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DECI", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_DECI", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "DECI", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ADM", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ADM", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ADM", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ADM", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_NBR_RN", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NBR_RN", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_NBR_RN", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NBR_RN", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_RATRAPAGE", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RATRAPAGE", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_RATRAPAGE", Global.System.Data.OleDb.OleDbType.[Boolean], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RATRAPAGE", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.OleDb.OleDbConnection()
-            Me._connection.ConnectionString = Global.EsistHistoryManagement_v1.My.MySettings.Default.BDD_TESTEConnectionString
+            Me._connection.ConnectionString = Global.EsistHistoryManagement_v1.My.MySettings.Default.BDD_APPLICATIONConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -7823,7 +8067,7 @@ Namespace BDD_TESTEDataSetTableAdapters
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT MATRIN, CodePromo, CodeSection, CodeGroupe, MOYEIN, RANGIN, MENTIN, ELIMIN"& _ 
-                "IN, RATRIN, DECIIN, DECI, ADM FROM INSCRIPTION"
+                "IN, RATRIN, DECIIN, DECI, ADM, NBR_RN, RATRAPAGE FROM INSCRIPTION"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -7831,7 +8075,7 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As BDD_TESTEDataSet.INSCRIPTIONDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As BDD_APPLICATIONDataSet.INSCRIPTIONDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -7844,9 +8088,9 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As BDD_TESTEDataSet.INSCRIPTIONDataTable
+        Public Overloads Overridable Function GetData() As BDD_APPLICATIONDataSet.INSCRIPTIONDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As BDD_TESTEDataSet.INSCRIPTIONDataTable = New BDD_TESTEDataSet.INSCRIPTIONDataTable()
+            Dim dataTable As BDD_APPLICATIONDataSet.INSCRIPTIONDataTable = New BDD_APPLICATIONDataSet.INSCRIPTIONDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -7854,14 +8098,14 @@ Namespace BDD_TESTEDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As BDD_TESTEDataSet.INSCRIPTIONDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As BDD_APPLICATIONDataSet.INSCRIPTIONDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As BDD_TESTEDataSet) As Integer
+        Public Overloads Overridable Function Update(ByVal dataSet As BDD_APPLICATIONDataSet) As Integer
             Return Me.Adapter.Update(dataSet, "INSCRIPTION")
         End Function
         
@@ -7882,8 +8126,109 @@ Namespace BDD_TESTEDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
+        Public Overloads Overridable Function Delete(ByVal Original_MATRIN As String, ByVal Original_CodePromo As String, ByVal Original_CodeSection As String, ByVal Original_CodeGroupe As Integer, ByVal Original_MOYEIN As Global.System.Nullable(Of Double), ByVal Original_RANGIN As Global.System.Nullable(Of Integer), ByVal Original_MENTIN As Global.System.Nullable(Of Integer), ByVal Original_ELIMININ As Global.System.Nullable(Of Integer), ByVal Original_RATRIN As Global.System.Nullable(Of Integer), ByVal Original_DECIIN As String, ByVal Original_DECI As String, ByVal Original_ADM As String, ByVal Original_NBR_RN As Global.System.Nullable(Of Integer), ByVal Original_RATRAPAGE As Boolean) As Integer
+            If (Original_MATRIN Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_MATRIN")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_MATRIN,String)
+            End If
+            If (Original_CodePromo Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_CodePromo")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_CodePromo,String)
+            End If
+            If (Original_CodeSection Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_CodeSection")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_CodeSection,String)
+            End If
+            Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_CodeGroupe,Integer)
+            If (Original_MOYEIN.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(Original_MOYEIN.Value,Double)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(5).Value = Global.System.DBNull.Value
+            End If
+            If (Original_RANGIN.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(Original_RANGIN.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(7).Value = Global.System.DBNull.Value
+            End If
+            If (Original_MENTIN.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(Original_MENTIN.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(9).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ELIMININ.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(Original_ELIMININ.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(11).Value = Global.System.DBNull.Value
+            End If
+            If (Original_RATRIN.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(Original_RATRIN.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(13).Value = Global.System.DBNull.Value
+            End If
+            If (Original_DECIIN Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(15).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(Original_DECIIN,String)
+            End If
+            If (Original_DECI Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(17).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(Original_DECI,String)
+            End If
+            If (Original_ADM Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(18).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(19).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(18).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(Original_ADM,String)
+            End If
+            If (Original_NBR_RN.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(20).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(Original_NBR_RN.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(20).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(21).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.DeleteCommand.Parameters(22).Value = CType(0,Object)
+            Me.Adapter.DeleteCommand.Parameters(23).Value = CType(Original_RATRAPAGE,Boolean)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
+            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.DeleteCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.DeleteCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal MATRIN As String, ByVal CodePromo As String, ByVal CodeSection As String, ByVal CodeGroupe As Integer, ByVal MOYEIN As Global.System.Nullable(Of Double), ByVal RANGIN As Global.System.Nullable(Of Integer), ByVal MENTIN As Global.System.Nullable(Of Integer), ByVal ELIMININ As Global.System.Nullable(Of Integer), ByVal RATRIN As Global.System.Nullable(Of Integer), ByVal DECIIN As String, ByVal DECI As String, ByVal ADM As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal MATRIN As String, ByVal CodePromo As String, ByVal CodeSection As String, ByVal CodeGroupe As Integer, ByVal MOYEIN As Global.System.Nullable(Of Double), ByVal RANGIN As Global.System.Nullable(Of Integer), ByVal MENTIN As Global.System.Nullable(Of Integer), ByVal ELIMININ As Global.System.Nullable(Of Integer), ByVal RATRIN As Global.System.Nullable(Of Integer), ByVal DECIIN As String, ByVal DECI As String, ByVal ADM As String, ByVal NBR_RN As Global.System.Nullable(Of Integer), ByVal RATRAPAGE As Boolean) As Integer
             If (MATRIN Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("MATRIN")
             Else
@@ -7940,6 +8285,12 @@ Namespace BDD_TESTEDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(11).Value = CType(ADM,String)
             End If
+            If (NBR_RN.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(12).Value = CType(NBR_RN.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(12).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.InsertCommand.Parameters(13).Value = CType(RATRAPAGE,Boolean)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -7953,6 +8304,229 @@ Namespace BDD_TESTEDataSetTableAdapters
                     Me.Adapter.InsertCommand.Connection.Close
                 End If
             End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update( _
+                    ByVal MATRIN As String,  _
+                    ByVal CodePromo As String,  _
+                    ByVal CodeSection As String,  _
+                    ByVal CodeGroupe As Integer,  _
+                    ByVal MOYEIN As Global.System.Nullable(Of Double),  _
+                    ByVal RANGIN As Global.System.Nullable(Of Integer),  _
+                    ByVal MENTIN As Global.System.Nullable(Of Integer),  _
+                    ByVal ELIMININ As Global.System.Nullable(Of Integer),  _
+                    ByVal RATRIN As Global.System.Nullable(Of Integer),  _
+                    ByVal DECIIN As String,  _
+                    ByVal DECI As String,  _
+                    ByVal ADM As String,  _
+                    ByVal NBR_RN As Global.System.Nullable(Of Integer),  _
+                    ByVal RATRAPAGE As Boolean,  _
+                    ByVal Original_MATRIN As String,  _
+                    ByVal Original_CodePromo As String,  _
+                    ByVal Original_CodeSection As String,  _
+                    ByVal Original_CodeGroupe As Integer,  _
+                    ByVal Original_MOYEIN As Global.System.Nullable(Of Double),  _
+                    ByVal Original_RANGIN As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_MENTIN As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_ELIMININ As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_RATRIN As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_DECIIN As String,  _
+                    ByVal Original_DECI As String,  _
+                    ByVal Original_ADM As String,  _
+                    ByVal Original_NBR_RN As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_RATRAPAGE As Boolean) As Integer
+            If (MATRIN Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("MATRIN")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(MATRIN,String)
+            End If
+            If (CodePromo Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("CodePromo")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(CodePromo,String)
+            End If
+            If (CodeSection Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("CodeSection")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(CodeSection,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(CodeGroupe,Integer)
+            If (MOYEIN.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(MOYEIN.Value,Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            If (RANGIN.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(RANGIN.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+            End If
+            If (MENTIN.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(MENTIN.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+            End If
+            If (ELIMININ.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(ELIMININ.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+            End If
+            If (RATRIN.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(RATRIN.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+            End If
+            If (DECIIN Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(DECIIN,String)
+            End If
+            If (DECI Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(DECI,String)
+            End If
+            If (ADM Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(ADM,String)
+            End If
+            If (NBR_RN.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(NBR_RN.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(13).Value = CType(RATRAPAGE,Boolean)
+            If (Original_MATRIN Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_MATRIN")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_MATRIN,String)
+            End If
+            If (Original_CodePromo Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_CodePromo")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_CodePromo,String)
+            End If
+            If (Original_CodeSection Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_CodeSection")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_CodeSection,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_CodeGroupe,Integer)
+            If (Original_MOYEIN.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_MOYEIN.Value,Double)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
+            End If
+            If (Original_RANGIN.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_RANGIN.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
+            End If
+            If (Original_MENTIN.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(Original_MENTIN.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(23).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ELIMININ.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(Original_ELIMININ.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(25).Value = Global.System.DBNull.Value
+            End If
+            If (Original_RATRIN.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(Original_RATRIN.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(27).Value = Global.System.DBNull.Value
+            End If
+            If (Original_DECIIN Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(29).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(Original_DECIIN,String)
+            End If
+            If (Original_DECI Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(31).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(Original_DECI,String)
+            End If
+            If (Original_ADM Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(33).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(Original_ADM,String)
+            End If
+            If (Original_NBR_RN.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(Original_NBR_RN.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(35).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(36).Value = CType(0,Object)
+            Me.Adapter.UpdateCommand.Parameters(37).Value = CType(Original_RATRAPAGE,Boolean)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
+            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.UpdateCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.UpdateCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update( _
+                    ByVal MOYEIN As Global.System.Nullable(Of Double),  _
+                    ByVal RANGIN As Global.System.Nullable(Of Integer),  _
+                    ByVal MENTIN As Global.System.Nullable(Of Integer),  _
+                    ByVal ELIMININ As Global.System.Nullable(Of Integer),  _
+                    ByVal RATRIN As Global.System.Nullable(Of Integer),  _
+                    ByVal DECIIN As String,  _
+                    ByVal DECI As String,  _
+                    ByVal ADM As String,  _
+                    ByVal NBR_RN As Global.System.Nullable(Of Integer),  _
+                    ByVal RATRAPAGE As Boolean,  _
+                    ByVal Original_MATRIN As String,  _
+                    ByVal Original_CodePromo As String,  _
+                    ByVal Original_CodeSection As String,  _
+                    ByVal Original_CodeGroupe As Integer,  _
+                    ByVal Original_MOYEIN As Global.System.Nullable(Of Double),  _
+                    ByVal Original_RANGIN As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_MENTIN As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_ELIMININ As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_RATRIN As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_DECIIN As String,  _
+                    ByVal Original_DECI As String,  _
+                    ByVal Original_ADM As String,  _
+                    ByVal Original_NBR_RN As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_RATRAPAGE As Boolean) As Integer
+            Return Me.Update(Original_MATRIN, Original_CodePromo, Original_CodeSection, Original_CodeGroupe, MOYEIN, RANGIN, MENTIN, ELIMININ, RATRIN, DECIIN, DECI, ADM, NBR_RN, RATRAPAGE, Original_MATRIN, Original_CodePromo, Original_CodeSection, Original_CodeGroupe, Original_MOYEIN, Original_RANGIN, Original_MENTIN, Original_ELIMININ, Original_RATRIN, Original_DECIIN, Original_DECI, Original_ADM, Original_NBR_RN, Original_RATRAPAGE)
         End Function
     End Class
     
@@ -8084,9 +8658,8 @@ Namespace BDD_TESTEDataSetTableAdapters
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "MATIERE"
             tableMapping.ColumnMappings.Add("CodeMat", "CodeMat")
-            tableMapping.ColumnMappings.Add("ANSCMA", "ANSCMA")
-            tableMapping.ColumnMappings.Add("ANETMA", "ANETMA")
-            tableMapping.ColumnMappings.Add("OPTIMA", "OPTIMA")
+            tableMapping.ColumnMappings.Add("CodePromo", "CodePromo")
+            tableMapping.ColumnMappings.Add("COMAMA", "COMAMA")
             tableMapping.ColumnMappings.Add("CYCLMA", "CYCLMA")
             tableMapping.ColumnMappings.Add("LIBEMA", "LIBEMA")
             tableMapping.ColumnMappings.Add("TYPEMA", "TYPEMA")
@@ -8095,16 +8668,18 @@ Namespace BDD_TESTEDataSetTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `MATIERE` WHERE ((`CodeMat` = ?) AND (`ANSCMA` = ?) AND (`ANETMA` = ?"& _ 
-                ") AND (`OPTIMA` = ?) AND ((? = 1 AND `CYCLMA` IS NULL) OR (`CYCLMA` = ?)) AND (("& _ 
-                "? = 1 AND `LIBEMA` IS NULL) OR (`LIBEMA` = ?)) AND ((? = 1 AND `TYPEMA` IS NULL)"& _ 
-                " OR (`TYPEMA` = ?)) AND ((? = 1 AND `COEFMA` IS NULL) OR (`COEFMA` = ?)) AND ((?"& _ 
-                " = 1 AND `MOYMAT` IS NULL) OR (`MOYMAT` = ?)))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `MATIERE` WHERE ((`CodeMat` = ?) AND ((? = 1 AND `CodePromo` IS NULL)"& _ 
+                " OR (`CodePromo` = ?)) AND ((? = 1 AND `COMAMA` IS NULL) OR (`COMAMA` = ?)) AND "& _ 
+                "((? = 1 AND `CYCLMA` IS NULL) OR (`CYCLMA` = ?)) AND ((? = 1 AND `LIBEMA` IS NUL"& _ 
+                "L) OR (`LIBEMA` = ?)) AND ((? = 1 AND `TYPEMA` IS NULL) OR (`TYPEMA` = ?)) AND ("& _ 
+                "(? = 1 AND `COEFMA` IS NULL) OR (`COEFMA` = ?)) AND ((? = 1 AND `MOYMAT` IS NULL"& _ 
+                ") OR (`MOYMAT` = ?)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_CodeMat", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodeMat", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ANSCMA", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ANSCMA", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ANETMA", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ANETMA", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_OPTIMA", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "OPTIMA", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_CodePromo", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodePromo", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_CodePromo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodePromo", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_COMAMA", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "COMAMA", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_COMAMA", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "COMAMA", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_CYCLMA", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CYCLMA", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_CYCLMA", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CYCLMA", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_LIBEMA", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "LIBEMA", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -8117,13 +8692,12 @@ Namespace BDD_TESTEDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_MOYMAT", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MOYMAT", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `MATIERE` (`CodeMat`, `ANSCMA`, `ANETMA`, `OPTIMA`, `CYCLMA`, `LIBEMA"& _ 
-                "`, `TYPEMA`, `COEFMA`, `MOYMAT`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `MATIERE` (`CodeMat`, `CodePromo`, `COMAMA`, `CYCLMA`, `LIBEMA`, `TYP"& _ 
+                "EMA`, `COEFMA`, `MOYMAT`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("CodeMat", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodeMat", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ANSCMA", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ANSCMA", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ANETMA", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ANETMA", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("OPTIMA", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "OPTIMA", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("CodePromo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodePromo", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("COMAMA", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "COMAMA", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("CYCLMA", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CYCLMA", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("LIBEMA", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "LIBEMA", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("TYPEMA", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TYPEMA", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -8131,27 +8705,27 @@ Namespace BDD_TESTEDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("MOYMAT", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MOYMAT", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `MATIERE` SET `CodeMat` = ?, `ANSCMA` = ?, `ANETMA` = ?, `OPTIMA` = ?, `CY"& _ 
-                "CLMA` = ?, `LIBEMA` = ?, `TYPEMA` = ?, `COEFMA` = ?, `MOYMAT` = ? WHERE ((`CodeM"& _ 
-                "at` = ?) AND (`ANSCMA` = ?) AND (`ANETMA` = ?) AND (`OPTIMA` = ?) AND ((? = 1 AN"& _ 
-                "D `CYCLMA` IS NULL) OR (`CYCLMA` = ?)) AND ((? = 1 AND `LIBEMA` IS NULL) OR (`LI"& _ 
-                "BEMA` = ?)) AND ((? = 1 AND `TYPEMA` IS NULL) OR (`TYPEMA` = ?)) AND ((? = 1 AND"& _ 
-                " `COEFMA` IS NULL) OR (`COEFMA` = ?)) AND ((? = 1 AND `MOYMAT` IS NULL) OR (`MOY"& _ 
-                "MAT` = ?)))"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `MATIERE` SET `CodeMat` = ?, `CodePromo` = ?, `COMAMA` = ?, `CYCLMA` = ?, "& _ 
+                "`LIBEMA` = ?, `TYPEMA` = ?, `COEFMA` = ?, `MOYMAT` = ? WHERE ((`CodeMat` = ?) AN"& _ 
+                "D ((? = 1 AND `CodePromo` IS NULL) OR (`CodePromo` = ?)) AND ((? = 1 AND `COMAMA"& _ 
+                "` IS NULL) OR (`COMAMA` = ?)) AND ((? = 1 AND `CYCLMA` IS NULL) OR (`CYCLMA` = ?"& _ 
+                ")) AND ((? = 1 AND `LIBEMA` IS NULL) OR (`LIBEMA` = ?)) AND ((? = 1 AND `TYPEMA`"& _ 
+                " IS NULL) OR (`TYPEMA` = ?)) AND ((? = 1 AND `COEFMA` IS NULL) OR (`COEFMA` = ?)"& _ 
+                ") AND ((? = 1 AND `MOYMAT` IS NULL) OR (`MOYMAT` = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("CodeMat", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodeMat", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ANSCMA", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ANSCMA", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ANETMA", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ANETMA", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("OPTIMA", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "OPTIMA", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("CodePromo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodePromo", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("COMAMA", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "COMAMA", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("CYCLMA", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CYCLMA", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("LIBEMA", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "LIBEMA", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("TYPEMA", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TYPEMA", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("COEFMA", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "COEFMA", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("MOYMAT", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MOYMAT", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_CodeMat", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodeMat", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ANSCMA", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ANSCMA", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ANETMA", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ANETMA", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_OPTIMA", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "OPTIMA", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_CodePromo", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodePromo", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_CodePromo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodePromo", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_COMAMA", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "COMAMA", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_COMAMA", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "COMAMA", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_CYCLMA", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CYCLMA", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_CYCLMA", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CYCLMA", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_LIBEMA", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "LIBEMA", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -8168,7 +8742,7 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.OleDb.OleDbConnection()
-            Me._connection.ConnectionString = Global.EsistHistoryManagement_v1.My.MySettings.Default.BDD_TESTEConnectionString
+            Me._connection.ConnectionString = Global.EsistHistoryManagement_v1.My.MySettings.Default.BDD_APPLICATIONConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8177,8 +8751,8 @@ Namespace BDD_TESTEDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT CodeMat, ANSCMA, ANETMA, OPTIMA, CYCLMA, LIBEMA, TYPEMA, COEFMA, MOYMAT FR"& _ 
-                "OM MATIERE"
+            Me._commandCollection(0).CommandText = "SELECT CodeMat, CodePromo, COMAMA, CYCLMA, LIBEMA, TYPEMA, COEFMA, MOYMAT FROM MA"& _ 
+                "TIERE"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -8186,7 +8760,7 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As BDD_TESTEDataSet.MATIEREDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As BDD_APPLICATIONDataSet.MATIEREDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -8199,9 +8773,9 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As BDD_TESTEDataSet.MATIEREDataTable
+        Public Overloads Overridable Function GetData() As BDD_APPLICATIONDataSet.MATIEREDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As BDD_TESTEDataSet.MATIEREDataTable = New BDD_TESTEDataSet.MATIEREDataTable()
+            Dim dataTable As BDD_APPLICATIONDataSet.MATIEREDataTable = New BDD_APPLICATIONDataSet.MATIEREDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -8209,14 +8783,14 @@ Namespace BDD_TESTEDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As BDD_TESTEDataSet.MATIEREDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As BDD_APPLICATIONDataSet.MATIEREDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As BDD_TESTEDataSet) As Integer
+        Public Overloads Overridable Function Update(ByVal dataSet As BDD_APPLICATIONDataSet) As Integer
             Return Me.Adapter.Update(dataSet, "MATIERE")
         End Function
         
@@ -8238,52 +8812,59 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_CodeMat As String, ByVal Original_ANSCMA As Integer, ByVal Original_ANETMA As Integer, ByVal Original_OPTIMA As String, ByVal Original_CYCLMA As String, ByVal Original_LIBEMA As String, ByVal Original_TYPEMA As String, ByVal Original_COEFMA As Global.System.Nullable(Of Integer), ByVal Original_MOYMAT As Global.System.Nullable(Of Double)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_CodeMat As String, ByVal Original_CodePromo As String, ByVal Original_COMAMA As String, ByVal Original_CYCLMA As String, ByVal Original_LIBEMA As String, ByVal Original_TYPEMA As String, ByVal Original_COEFMA As Global.System.Nullable(Of Integer), ByVal Original_MOYMAT As Global.System.Nullable(Of Double)) As Integer
             If (Original_CodeMat Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_CodeMat")
             Else
                 Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_CodeMat,String)
             End If
-            Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_ANSCMA,Integer)
-            Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_ANETMA,Integer)
-            If (Original_OPTIMA Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_OPTIMA")
+            If (Original_CodePromo Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_OPTIMA,String)
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_CodePromo,String)
+            End If
+            If (Original_COMAMA Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_COMAMA,String)
             End If
             If (Original_CYCLMA Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_CYCLMA")
             Else
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(Original_CYCLMA,String)
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_CYCLMA,String)
             End If
             If (Original_LIBEMA Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(7).Value = Global.System.DBNull.Value
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(Original_LIBEMA,String)
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_LIBEMA,String)
             End If
             If (Original_TYPEMA Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(9).Value = Global.System.DBNull.Value
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(Original_TYPEMA,String)
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_TYPEMA,String)
             End If
             If (Original_COEFMA.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(Original_COEFMA.Value,Integer)
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_COEFMA.Value,Integer)
             Else
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(11).Value = Global.System.DBNull.Value
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
             End If
             If (Original_MOYMAT.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(Original_MOYMAT.Value,Double)
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_MOYMAT.Value,Double)
             Else
-                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(13).Value = Global.System.DBNull.Value
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -8304,43 +8885,46 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal CodeMat As String, ByVal ANSCMA As Integer, ByVal ANETMA As Integer, ByVal OPTIMA As String, ByVal CYCLMA As String, ByVal LIBEMA As String, ByVal TYPEMA As String, ByVal COEFMA As Global.System.Nullable(Of Integer), ByVal MOYMAT As Global.System.Nullable(Of Double)) As Integer
+        Public Overloads Overridable Function Insert(ByVal CodeMat As String, ByVal CodePromo As String, ByVal COMAMA As String, ByVal CYCLMA As String, ByVal LIBEMA As String, ByVal TYPEMA As String, ByVal COEFMA As Global.System.Nullable(Of Integer), ByVal MOYMAT As Global.System.Nullable(Of Double)) As Integer
             If (CodeMat Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("CodeMat")
             Else
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(CodeMat,String)
             End If
-            Me.Adapter.InsertCommand.Parameters(1).Value = CType(ANSCMA,Integer)
-            Me.Adapter.InsertCommand.Parameters(2).Value = CType(ANETMA,Integer)
-            If (OPTIMA Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("OPTIMA")
+            If (CodePromo Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(OPTIMA,String)
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(CodePromo,String)
+            End If
+            If (COMAMA Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(COMAMA,String)
             End If
             If (CYCLMA Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("CYCLMA")
             Else
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(CYCLMA,String)
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(CYCLMA,String)
             End If
             If (LIBEMA Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(5).Value = CType(LIBEMA,String)
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(LIBEMA,String)
             End If
             If (TYPEMA Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(6).Value = CType(TYPEMA,String)
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(TYPEMA,String)
             End If
             If (COEFMA.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(7).Value = CType(COEFMA.Value,Integer)
+                Me.Adapter.InsertCommand.Parameters(6).Value = CType(COEFMA.Value,Integer)
             Else
-                Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
             End If
             If (MOYMAT.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(8).Value = CType(MOYMAT.Value,Double)
+                Me.Adapter.InsertCommand.Parameters(7).Value = CType(MOYMAT.Value,Double)
             Else
-                Me.Adapter.InsertCommand.Parameters(8).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -8363,18 +8947,16 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
         Public Overloads Overridable Function Update( _
                     ByVal CodeMat As String,  _
-                    ByVal ANSCMA As Integer,  _
-                    ByVal ANETMA As Integer,  _
-                    ByVal OPTIMA As String,  _
+                    ByVal CodePromo As String,  _
+                    ByVal COMAMA As String,  _
                     ByVal CYCLMA As String,  _
                     ByVal LIBEMA As String,  _
                     ByVal TYPEMA As String,  _
                     ByVal COEFMA As Global.System.Nullable(Of Integer),  _
                     ByVal MOYMAT As Global.System.Nullable(Of Double),  _
                     ByVal Original_CodeMat As String,  _
-                    ByVal Original_ANSCMA As Integer,  _
-                    ByVal Original_ANETMA As Integer,  _
-                    ByVal Original_OPTIMA As String,  _
+                    ByVal Original_CodePromo As String,  _
+                    ByVal Original_COMAMA As String,  _
                     ByVal Original_CYCLMA As String,  _
                     ByVal Original_LIBEMA As String,  _
                     ByVal Original_TYPEMA As String,  _
@@ -8385,49 +8967,59 @@ Namespace BDD_TESTEDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(0).Value = CType(CodeMat,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(1).Value = CType(ANSCMA,Integer)
-            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(ANETMA,Integer)
-            If (OPTIMA Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("OPTIMA")
+            If (CodePromo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(OPTIMA,String)
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(CodePromo,String)
+            End If
+            If (COMAMA Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(COMAMA,String)
             End If
             If (CYCLMA Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("CYCLMA")
             Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(CYCLMA,String)
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(CYCLMA,String)
             End If
             If (LIBEMA Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(LIBEMA,String)
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(LIBEMA,String)
             End If
             If (TYPEMA Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(TYPEMA,String)
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(TYPEMA,String)
             End If
             If (COEFMA.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(COEFMA.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(COEFMA.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
             End If
             If (MOYMAT.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(MOYMAT.Value,Double)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(MOYMAT.Value,Double)
             Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
             End If
             If (Original_CodeMat Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_CodeMat")
             Else
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_CodeMat,String)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_CodeMat,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_ANSCMA,Integer)
-            Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_ANETMA,Integer)
-            If (Original_OPTIMA Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_OPTIMA")
+            If (Original_CodePromo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_OPTIMA,String)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_CodePromo,String)
+            End If
+            If (Original_COMAMA Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_COMAMA,String)
             End If
             If (Original_CYCLMA Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_CYCLMA")
@@ -8482,8 +9074,8 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal CYCLMA As String, ByVal LIBEMA As String, ByVal TYPEMA As String, ByVal COEFMA As Global.System.Nullable(Of Integer), ByVal MOYMAT As Global.System.Nullable(Of Double), ByVal Original_CodeMat As String, ByVal Original_ANSCMA As Integer, ByVal Original_ANETMA As Integer, ByVal Original_OPTIMA As String, ByVal Original_CYCLMA As String, ByVal Original_LIBEMA As String, ByVal Original_TYPEMA As String, ByVal Original_COEFMA As Global.System.Nullable(Of Integer), ByVal Original_MOYMAT As Global.System.Nullable(Of Double)) As Integer
-            Return Me.Update(Original_CodeMat, Original_ANSCMA, Original_ANETMA, Original_OPTIMA, CYCLMA, LIBEMA, TYPEMA, COEFMA, MOYMAT, Original_CodeMat, Original_ANSCMA, Original_ANETMA, Original_OPTIMA, Original_CYCLMA, Original_LIBEMA, Original_TYPEMA, Original_COEFMA, Original_MOYMAT)
+        Public Overloads Overridable Function Update(ByVal CodePromo As String, ByVal COMAMA As String, ByVal CYCLMA As String, ByVal LIBEMA As String, ByVal TYPEMA As String, ByVal COEFMA As Global.System.Nullable(Of Integer), ByVal MOYMAT As Global.System.Nullable(Of Double), ByVal Original_CodeMat As String, ByVal Original_CodePromo As String, ByVal Original_COMAMA As String, ByVal Original_CYCLMA As String, ByVal Original_LIBEMA As String, ByVal Original_TYPEMA As String, ByVal Original_COEFMA As Global.System.Nullable(Of Integer), ByVal Original_MOYMAT As Global.System.Nullable(Of Double)) As Integer
+            Return Me.Update(Original_CodeMat, CodePromo, COMAMA, CYCLMA, LIBEMA, TYPEMA, COEFMA, MOYMAT, Original_CodeMat, Original_CodePromo, Original_COMAMA, Original_CYCLMA, Original_LIBEMA, Original_TYPEMA, Original_COEFMA, Original_MOYMAT)
         End Function
     End Class
     
@@ -8670,7 +9262,7 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.OleDb.OleDbConnection()
-            Me._connection.ConnectionString = Global.EsistHistoryManagement_v1.My.MySettings.Default.BDD_TESTEConnectionString
+            Me._connection.ConnectionString = Global.EsistHistoryManagement_v1.My.MySettings.Default.BDD_APPLICATIONConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8687,7 +9279,7 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As BDD_TESTEDataSet.NoteRATRAPDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As BDD_APPLICATIONDataSet.NoteRATRAPDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -8700,9 +9292,9 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As BDD_TESTEDataSet.NoteRATRAPDataTable
+        Public Overloads Overridable Function GetData() As BDD_APPLICATIONDataSet.NoteRATRAPDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As BDD_TESTEDataSet.NoteRATRAPDataTable = New BDD_TESTEDataSet.NoteRATRAPDataTable()
+            Dim dataTable As BDD_APPLICATIONDataSet.NoteRATRAPDataTable = New BDD_APPLICATIONDataSet.NoteRATRAPDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -8710,14 +9302,14 @@ Namespace BDD_TESTEDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As BDD_TESTEDataSet.NoteRATRAPDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As BDD_APPLICATIONDataSet.NoteRATRAPDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As BDD_TESTEDataSet) As Integer
+        Public Overloads Overridable Function Update(ByVal dataSet As BDD_APPLICATIONDataSet) As Integer
             Return Me.Adapter.Update(dataSet, "NoteRATRAP")
         End Function
         
@@ -9046,6 +9638,7 @@ Namespace BDD_TESTEDataSetTableAdapters
             tableMapping.ColumnMappings.Add("CodeMat", "CodeMat")
             tableMapping.ColumnMappings.Add("MATRIN", "MATRIN")
             tableMapping.ColumnMappings.Add("CodePromo", "CodePromo")
+            tableMapping.ColumnMappings.Add("COMANO", "COMANO")
             tableMapping.ColumnMappings.Add("NOJUNO", "NOJUNO")
             tableMapping.ColumnMappings.Add("NOSYNO", "NOSYNO")
             tableMapping.ColumnMappings.Add("NORANO", "NORANO")
@@ -9054,15 +9647,19 @@ Namespace BDD_TESTEDataSetTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `NOTES` WHERE ((`CodeMat` = ?) AND (`MATRIN` = ?) AND (`CodePromo` = "& _ 
-                "?) AND ((? = 1 AND `NOJUNO` IS NULL) OR (`NOJUNO` = ?)) AND ((? = 1 AND `NOSYNO`"& _ 
-                " IS NULL) OR (`NOSYNO` = ?)) AND ((? = 1 AND `NORANO` IS NULL) OR (`NORANO` = ?)"& _ 
-                ") AND ((? = 1 AND `ELIMNO` IS NULL) OR (`ELIMNO` = ?)) AND ((? = 1 AND `RATRNO` "& _ 
-                "IS NULL) OR (`RATRNO` = ?)))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `NOTES` WHERE ((`CodeMat` = ?) AND (`MATRIN` = ?) AND ((? = 1 AND `Co"& _ 
+                "dePromo` IS NULL) OR (`CodePromo` = ?)) AND ((? = 1 AND `COMANO` IS NULL) OR (`C"& _ 
+                "OMANO` = ?)) AND ((? = 1 AND `NOJUNO` IS NULL) OR (`NOJUNO` = ?)) AND ((? = 1 AN"& _ 
+                "D `NOSYNO` IS NULL) OR (`NOSYNO` = ?)) AND ((? = 1 AND `NORANO` IS NULL) OR (`NO"& _ 
+                "RANO` = ?)) AND ((? = 1 AND `ELIMNO` IS NULL) OR (`ELIMNO` = ?)) AND ((? = 1 AND"& _ 
+                " `RATRNO` IS NULL) OR (`RATRNO` = ?)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_CodeMat", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodeMat", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_MATRIN", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MATRIN", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_CodePromo", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodePromo", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_CodePromo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodePromo", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_COMANO", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "COMANO", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_COMANO", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "COMANO", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_NOJUNO", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NOJUNO", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_NOJUNO", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NOJUNO", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_NOSYNO", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NOSYNO", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -9070,42 +9667,49 @@ Namespace BDD_TESTEDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_NORANO", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NORANO", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_NORANO", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NORANO", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ELIMNO", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ELIMNO", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ELIMNO", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ELIMNO", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ELIMNO", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ELIMNO", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_RATRNO", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RATRNO", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_RATRNO", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RATRNO", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `NOTES` (`CodeMat`, `MATRIN`, `CodePromo`, `NOJUNO`, `NOSYNO`, `NORAN"& _ 
-                "O`, `ELIMNO`, `RATRNO`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `NOTES` (`CodeMat`, `MATRIN`, `CodePromo`, `COMANO`, `NOJUNO`, `NOSYN"& _ 
+                "O`, `NORANO`, `ELIMNO`, `RATRNO`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("CodeMat", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodeMat", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("MATRIN", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MATRIN", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("CodePromo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodePromo", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("COMANO", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "COMANO", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("NOJUNO", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NOJUNO", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("NOSYNO", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NOSYNO", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("NORANO", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NORANO", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ELIMNO", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ELIMNO", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ELIMNO", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ELIMNO", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("RATRNO", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RATRNO", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `NOTES` SET `CodeMat` = ?, `MATRIN` = ?, `CodePromo` = ?, `NOJUNO` = ?, `N"& _ 
-                "OSYNO` = ?, `NORANO` = ?, `ELIMNO` = ?, `RATRNO` = ? WHERE ((`CodeMat` = ?) AND "& _ 
-                "(`MATRIN` = ?) AND (`CodePromo` = ?) AND ((? = 1 AND `NOJUNO` IS NULL) OR (`NOJU"& _ 
-                "NO` = ?)) AND ((? = 1 AND `NOSYNO` IS NULL) OR (`NOSYNO` = ?)) AND ((? = 1 AND `"& _ 
-                "NORANO` IS NULL) OR (`NORANO` = ?)) AND ((? = 1 AND `ELIMNO` IS NULL) OR (`ELIMN"& _ 
-                "O` = ?)) AND ((? = 1 AND `RATRNO` IS NULL) OR (`RATRNO` = ?)))"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `NOTES` SET `CodeMat` = ?, `MATRIN` = ?, `CodePromo` = ?, `COMANO` = ?, `N"& _ 
+                "OJUNO` = ?, `NOSYNO` = ?, `NORANO` = ?, `ELIMNO` = ?, `RATRNO` = ? WHERE ((`Code"& _ 
+                "Mat` = ?) AND (`MATRIN` = ?) AND ((? = 1 AND `CodePromo` IS NULL) OR (`CodePromo"& _ 
+                "` = ?)) AND ((? = 1 AND `COMANO` IS NULL) OR (`COMANO` = ?)) AND ((? = 1 AND `NO"& _ 
+                "JUNO` IS NULL) OR (`NOJUNO` = ?)) AND ((? = 1 AND `NOSYNO` IS NULL) OR (`NOSYNO`"& _ 
+                " = ?)) AND ((? = 1 AND `NORANO` IS NULL) OR (`NORANO` = ?)) AND ((? = 1 AND `ELI"& _ 
+                "MNO` IS NULL) OR (`ELIMNO` = ?)) AND ((? = 1 AND `RATRNO` IS NULL) OR (`RATRNO` "& _ 
+                "= ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("CodeMat", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodeMat", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("MATRIN", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MATRIN", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("CodePromo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodePromo", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("COMANO", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "COMANO", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("NOJUNO", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NOJUNO", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("NOSYNO", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NOSYNO", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("NORANO", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NORANO", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ELIMNO", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ELIMNO", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ELIMNO", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ELIMNO", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("RATRNO", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RATRNO", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_CodeMat", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodeMat", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_MATRIN", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "MATRIN", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_CodePromo", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodePromo", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_CodePromo", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "CodePromo", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_COMANO", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "COMANO", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_COMANO", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "COMANO", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_NOJUNO", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NOJUNO", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_NOJUNO", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NOJUNO", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_NOSYNO", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NOSYNO", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -9113,7 +9717,7 @@ Namespace BDD_TESTEDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_NORANO", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NORANO", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_NORANO", Global.System.Data.OleDb.OleDbType.[Double], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NORANO", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ELIMNO", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ELIMNO", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ELIMNO", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ELIMNO", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ELIMNO", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ELIMNO", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_RATRNO", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RATRNO", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_RATRNO", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RATRNO", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
@@ -9122,7 +9726,7 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.OleDb.OleDbConnection()
-            Me._connection.ConnectionString = Global.EsistHistoryManagement_v1.My.MySettings.Default.BDD_TESTEConnectionString
+            Me._connection.ConnectionString = Global.EsistHistoryManagement_v1.My.MySettings.Default.BDD_APPLICATIONConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -9131,8 +9735,8 @@ Namespace BDD_TESTEDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT CodeMat, MATRIN, CodePromo, NOJUNO, NOSYNO, NORANO, ELIMNO, RATRNO FROM NO"& _ 
-                "TES"
+            Me._commandCollection(0).CommandText = "SELECT CodeMat, MATRIN, CodePromo, COMANO, NOJUNO, NOSYNO, NORANO, ELIMNO, RATRNO"& _ 
+                " FROM NOTES"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -9140,7 +9744,7 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As BDD_TESTEDataSet.NOTESDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As BDD_APPLICATIONDataSet.NOTESDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -9153,9 +9757,9 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As BDD_TESTEDataSet.NOTESDataTable
+        Public Overloads Overridable Function GetData() As BDD_APPLICATIONDataSet.NOTESDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As BDD_TESTEDataSet.NOTESDataTable = New BDD_TESTEDataSet.NOTESDataTable()
+            Dim dataTable As BDD_APPLICATIONDataSet.NOTESDataTable = New BDD_APPLICATIONDataSet.NOTESDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -9163,14 +9767,14 @@ Namespace BDD_TESTEDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As BDD_TESTEDataSet.NOTESDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As BDD_APPLICATIONDataSet.NOTESDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As BDD_TESTEDataSet) As Integer
+        Public Overloads Overridable Function Update(ByVal dataSet As BDD_APPLICATIONDataSet) As Integer
             Return Me.Adapter.Update(dataSet, "NOTES")
         End Function
         
@@ -9192,7 +9796,7 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_CodeMat As String, ByVal Original_MATRIN As String, ByVal Original_CodePromo As String, ByVal Original_NOJUNO As Global.System.Nullable(Of Double), ByVal Original_NOSYNO As Global.System.Nullable(Of Double), ByVal Original_NORANO As Global.System.Nullable(Of Double), ByVal Original_ELIMNO As String, ByVal Original_RATRNO As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_CodeMat As String, ByVal Original_MATRIN As String, ByVal Original_CodePromo As String, ByVal Original_COMANO As String, ByVal Original_NOJUNO As Global.System.Nullable(Of Double), ByVal Original_NOSYNO As Global.System.Nullable(Of Double), ByVal Original_NORANO As Global.System.Nullable(Of Double), ByVal Original_ELIMNO As Global.System.Nullable(Of Integer), ByVal Original_RATRNO As Global.System.Nullable(Of Integer)) As Integer
             If (Original_CodeMat Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_CodeMat")
             Else
@@ -9206,42 +9810,50 @@ Namespace BDD_TESTEDataSetTableAdapters
             If (Original_CodePromo Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_CodePromo")
             Else
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_CodePromo,String)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_CodePromo,String)
+            End If
+            If (Original_COMANO Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(Original_COMANO,String)
             End If
             If (Original_NOJUNO.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_NOJUNO.Value,Double)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(Original_NOJUNO.Value,Double)
             Else
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(7).Value = Global.System.DBNull.Value
             End If
             If (Original_NOSYNO.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_NOSYNO.Value,Double)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(Original_NOSYNO.Value,Double)
             Else
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(9).Value = Global.System.DBNull.Value
             End If
             If (Original_NORANO.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_NORANO.Value,Double)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(Original_NORANO.Value,Double)
             Else
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(11).Value = Global.System.DBNull.Value
             End If
-            If (Original_ELIMNO Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
+            If (Original_ELIMNO.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(Original_ELIMNO.Value,Integer)
             Else
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_ELIMNO,String)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(13).Value = Global.System.DBNull.Value
             End If
             If (Original_RATRNO.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_RATRNO.Value,Integer)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(Original_RATRNO.Value,Integer)
             Else
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
+                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(15).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -9262,7 +9874,7 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal CodeMat As String, ByVal MATRIN As String, ByVal CodePromo As String, ByVal NOJUNO As Global.System.Nullable(Of Double), ByVal NOSYNO As Global.System.Nullable(Of Double), ByVal NORANO As Global.System.Nullable(Of Double), ByVal ELIMNO As String, ByVal RATRNO As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Insert(ByVal CodeMat As String, ByVal MATRIN As String, ByVal CodePromo As String, ByVal COMANO As String, ByVal NOJUNO As Global.System.Nullable(Of Double), ByVal NOSYNO As Global.System.Nullable(Of Double), ByVal NORANO As Global.System.Nullable(Of Double), ByVal ELIMNO As Global.System.Nullable(Of Integer), ByVal RATRNO As Global.System.Nullable(Of Integer)) As Integer
             If (CodeMat Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("CodeMat")
             Else
@@ -9278,30 +9890,35 @@ Namespace BDD_TESTEDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(2).Value = CType(CodePromo,String)
             End If
-            If (NOJUNO.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(NOJUNO.Value,Double)
-            Else
+            If (COMANO Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(COMANO,String)
             End If
-            If (NOSYNO.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(NOSYNO.Value,Double)
+            If (NOJUNO.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(NOJUNO.Value,Double)
             Else
                 Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
-            If (NORANO.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(5).Value = CType(NORANO.Value,Double)
+            If (NOSYNO.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(NOSYNO.Value,Double)
             Else
                 Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
             End If
-            If (ELIMNO Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
+            If (NORANO.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(6).Value = CType(NORANO.Value,Double)
             Else
-                Me.Adapter.InsertCommand.Parameters(6).Value = CType(ELIMNO,String)
+                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
             End If
-            If (RATRNO.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(7).Value = CType(RATRNO.Value,Integer)
+            If (ELIMNO.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(7).Value = CType(ELIMNO.Value,Integer)
             Else
                 Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
+            End If
+            If (RATRNO.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(8).Value = CType(RATRNO.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(8).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -9326,18 +9943,20 @@ Namespace BDD_TESTEDataSetTableAdapters
                     ByVal CodeMat As String,  _
                     ByVal MATRIN As String,  _
                     ByVal CodePromo As String,  _
+                    ByVal COMANO As String,  _
                     ByVal NOJUNO As Global.System.Nullable(Of Double),  _
                     ByVal NOSYNO As Global.System.Nullable(Of Double),  _
                     ByVal NORANO As Global.System.Nullable(Of Double),  _
-                    ByVal ELIMNO As String,  _
+                    ByVal ELIMNO As Global.System.Nullable(Of Integer),  _
                     ByVal RATRNO As Global.System.Nullable(Of Integer),  _
                     ByVal Original_CodeMat As String,  _
                     ByVal Original_MATRIN As String,  _
                     ByVal Original_CodePromo As String,  _
+                    ByVal Original_COMANO As String,  _
                     ByVal Original_NOJUNO As Global.System.Nullable(Of Double),  _
                     ByVal Original_NOSYNO As Global.System.Nullable(Of Double),  _
                     ByVal Original_NORANO As Global.System.Nullable(Of Double),  _
-                    ByVal Original_ELIMNO As String,  _
+                    ByVal Original_ELIMNO As Global.System.Nullable(Of Integer),  _
                     ByVal Original_RATRNO As Global.System.Nullable(Of Integer)) As Integer
             If (CodeMat Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("CodeMat")
@@ -9354,80 +9973,93 @@ Namespace BDD_TESTEDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(2).Value = CType(CodePromo,String)
             End If
-            If (NOJUNO.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(NOJUNO.Value,Double)
-            Else
+            If (COMANO Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(COMANO,String)
             End If
-            If (NOSYNO.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(NOSYNO.Value,Double)
+            If (NOJUNO.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(NOJUNO.Value,Double)
             Else
                 Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
-            If (NORANO.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(NORANO.Value,Double)
+            If (NOSYNO.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(NOSYNO.Value,Double)
             Else
                 Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
             End If
-            If (ELIMNO Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+            If (NORANO.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(NORANO.Value,Double)
             Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(ELIMNO,String)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
             End If
-            If (RATRNO.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(RATRNO.Value,Integer)
+            If (ELIMNO.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(ELIMNO.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+            End If
+            If (RATRNO.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(RATRNO.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
             End If
             If (Original_CodeMat Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_CodeMat")
             Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_CodeMat,String)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_CodeMat,String)
             End If
             If (Original_MATRIN Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_MATRIN")
             Else
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_MATRIN,String)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_MATRIN,String)
             End If
             If (Original_CodePromo Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_CodePromo")
             Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_CodePromo,String)
-            End If
-            If (Original_NOJUNO.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_NOJUNO.Value,Double)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_CodePromo,String)
             End If
-            If (Original_NOSYNO.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_NOSYNO.Value,Double)
-            Else
+            If (Original_COMANO Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_COMANO,String)
             End If
-            If (Original_NORANO.HasValue = true) Then
+            If (Original_NOJUNO.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_NORANO.Value,Double)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_NOJUNO.Value,Double)
             Else
                 Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
             End If
-            If (Original_ELIMNO Is Nothing) Then
+            If (Original_NOSYNO.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_NOSYNO.Value,Double)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_ELIMNO,String)
             End If
-            If (Original_RATRNO.HasValue = true) Then
+            If (Original_NORANO.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_RATRNO.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_NORANO.Value,Double)
             Else
                 Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ELIMNO.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_ELIMNO.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
+            End If
+            If (Original_RATRNO.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_RATRNO.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -9448,8 +10080,24 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal NOJUNO As Global.System.Nullable(Of Double), ByVal NOSYNO As Global.System.Nullable(Of Double), ByVal NORANO As Global.System.Nullable(Of Double), ByVal ELIMNO As String, ByVal RATRNO As Global.System.Nullable(Of Integer), ByVal Original_CodeMat As String, ByVal Original_MATRIN As String, ByVal Original_CodePromo As String, ByVal Original_NOJUNO As Global.System.Nullable(Of Double), ByVal Original_NOSYNO As Global.System.Nullable(Of Double), ByVal Original_NORANO As Global.System.Nullable(Of Double), ByVal Original_ELIMNO As String, ByVal Original_RATRNO As Global.System.Nullable(Of Integer)) As Integer
-            Return Me.Update(Original_CodeMat, Original_MATRIN, Original_CodePromo, NOJUNO, NOSYNO, NORANO, ELIMNO, RATRNO, Original_CodeMat, Original_MATRIN, Original_CodePromo, Original_NOJUNO, Original_NOSYNO, Original_NORANO, Original_ELIMNO, Original_RATRNO)
+        Public Overloads Overridable Function Update( _
+                    ByVal CodePromo As String,  _
+                    ByVal COMANO As String,  _
+                    ByVal NOJUNO As Global.System.Nullable(Of Double),  _
+                    ByVal NOSYNO As Global.System.Nullable(Of Double),  _
+                    ByVal NORANO As Global.System.Nullable(Of Double),  _
+                    ByVal ELIMNO As Global.System.Nullable(Of Integer),  _
+                    ByVal RATRNO As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_CodeMat As String,  _
+                    ByVal Original_MATRIN As String,  _
+                    ByVal Original_CodePromo As String,  _
+                    ByVal Original_COMANO As String,  _
+                    ByVal Original_NOJUNO As Global.System.Nullable(Of Double),  _
+                    ByVal Original_NOSYNO As Global.System.Nullable(Of Double),  _
+                    ByVal Original_NORANO As Global.System.Nullable(Of Double),  _
+                    ByVal Original_ELIMNO As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_RATRNO As Global.System.Nullable(Of Integer)) As Integer
+            Return Me.Update(Original_CodeMat, Original_MATRIN, CodePromo, COMANO, NOJUNO, NOSYNO, NORANO, ELIMNO, RATRNO, Original_CodeMat, Original_MATRIN, Original_CodePromo, Original_COMANO, Original_NOJUNO, Original_NOSYNO, Original_NORANO, Original_ELIMNO, Original_RATRNO)
         End Function
     End Class
     
@@ -9648,7 +10296,7 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.OleDb.OleDbConnection()
-            Me._connection.ConnectionString = Global.EsistHistoryManagement_v1.My.MySettings.Default.BDD_TESTEConnectionString
+            Me._connection.ConnectionString = Global.EsistHistoryManagement_v1.My.MySettings.Default.BDD_APPLICATIONConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -9665,7 +10313,7 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As BDD_TESTEDataSet.PROMODataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As BDD_APPLICATIONDataSet.PROMODataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -9678,9 +10326,9 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As BDD_TESTEDataSet.PROMODataTable
+        Public Overloads Overridable Function GetData() As BDD_APPLICATIONDataSet.PROMODataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As BDD_TESTEDataSet.PROMODataTable = New BDD_TESTEDataSet.PROMODataTable()
+            Dim dataTable As BDD_APPLICATIONDataSet.PROMODataTable = New BDD_APPLICATIONDataSet.PROMODataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -9688,14 +10336,14 @@ Namespace BDD_TESTEDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As BDD_TESTEDataSet.PROMODataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As BDD_APPLICATIONDataSet.PROMODataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As BDD_TESTEDataSet) As Integer
+        Public Overloads Overridable Function Update(ByVal dataSet As BDD_APPLICATIONDataSet) As Integer
             Return Me.Adapter.Update(dataSet, "PROMO")
         End Function
         
@@ -10109,7 +10757,7 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.OleDb.OleDbConnection()
-            Me._connection.ConnectionString = Global.EsistHistoryManagement_v1.My.MySettings.Default.BDD_TESTEConnectionString
+            Me._connection.ConnectionString = Global.EsistHistoryManagement_v1.My.MySettings.Default.BDD_APPLICATIONConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -10126,7 +10774,7 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As BDD_TESTEDataSet.RATRAPDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As BDD_APPLICATIONDataSet.RATRAPDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -10139,9 +10787,9 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As BDD_TESTEDataSet.RATRAPDataTable
+        Public Overloads Overridable Function GetData() As BDD_APPLICATIONDataSet.RATRAPDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As BDD_TESTEDataSet.RATRAPDataTable = New BDD_TESTEDataSet.RATRAPDataTable()
+            Dim dataTable As BDD_APPLICATIONDataSet.RATRAPDataTable = New BDD_APPLICATIONDataSet.RATRAPDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -10149,14 +10797,14 @@ Namespace BDD_TESTEDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As BDD_TESTEDataSet.RATRAPDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As BDD_APPLICATIONDataSet.RATRAPDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As BDD_TESTEDataSet) As Integer
+        Public Overloads Overridable Function Update(ByVal dataSet As BDD_APPLICATIONDataSet) As Integer
             Return Me.Adapter.Update(dataSet, "RATRAP")
         End Function
         
@@ -10516,7 +11164,7 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.OleDb.OleDbConnection()
-            Me._connection.ConnectionString = Global.EsistHistoryManagement_v1.My.MySettings.Default.BDD_TESTEConnectionString
+            Me._connection.ConnectionString = Global.EsistHistoryManagement_v1.My.MySettings.Default.BDD_APPLICATIONConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -10533,7 +11181,7 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As BDD_TESTEDataSet.SECTIONSDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As BDD_APPLICATIONDataSet.SECTIONSDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -10546,9 +11194,9 @@ Namespace BDD_TESTEDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As BDD_TESTEDataSet.SECTIONSDataTable
+        Public Overloads Overridable Function GetData() As BDD_APPLICATIONDataSet.SECTIONSDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As BDD_TESTEDataSet.SECTIONSDataTable = New BDD_TESTEDataSet.SECTIONSDataTable()
+            Dim dataTable As BDD_APPLICATIONDataSet.SECTIONSDataTable = New BDD_APPLICATIONDataSet.SECTIONSDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -10556,14 +11204,14 @@ Namespace BDD_TESTEDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As BDD_TESTEDataSet.SECTIONSDataTable) As Integer
+        Public Overloads Overridable Function Update(ByVal dataTable As BDD_APPLICATIONDataSet.SECTIONSDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As BDD_TESTEDataSet) As Integer
+        Public Overloads Overridable Function Update(ByVal dataSet As BDD_APPLICATIONDataSet) As Integer
             Return Me.Adapter.Update(dataSet, "SECTIONS")
         End Function
         
@@ -10966,14 +11614,23 @@ Namespace BDD_TESTEDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateUpdatedRows(ByVal dataSet As BDD_TESTEDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateUpdatedRows(ByVal dataSet As BDD_APPLICATIONDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._mATIERETableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.MATIERE.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._eTUDIANTTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.ETUDIANT.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._mATIERETableAdapter.Update(updatedRows))
+                    result = (result + Me._eTUDIANTTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._iNSCRIPTIONTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.INSCRIPTION.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._iNSCRIPTIONTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -10995,15 +11652,6 @@ Namespace BDD_TESTEDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._eTUDIANTTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.ETUDIANT.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._eTUDIANTTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
             If (Not (Me._gROUPETableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.GROUPE.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
@@ -11013,21 +11661,21 @@ Namespace BDD_TESTEDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
+            If (Not (Me._mATIERETableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.MATIERE.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._mATIERETableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
             If (Not (Me._sECTIONSTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.SECTIONS.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
                     result = (result + Me._sECTIONSTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._iNSCRIPTIONTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.INSCRIPTION.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._iNSCRIPTIONTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -11057,13 +11705,21 @@ Namespace BDD_TESTEDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateInsertedRows(ByVal dataSet As BDD_TESTEDataSet, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateInsertedRows(ByVal dataSet As BDD_APPLICATIONDataSet, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._mATIERETableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.MATIERE.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._eTUDIANTTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.ETUDIANT.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._mATIERETableAdapter.Update(addedRows))
+                    result = (result + Me._eTUDIANTTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._iNSCRIPTIONTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.INSCRIPTION.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._iNSCRIPTIONTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -11083,14 +11739,6 @@ Namespace BDD_TESTEDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._eTUDIANTTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.ETUDIANT.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._eTUDIANTTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
             If (Not (Me._gROUPETableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.GROUPE.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
@@ -11099,19 +11747,19 @@ Namespace BDD_TESTEDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
+            If (Not (Me._mATIERETableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.MATIERE.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._mATIERETableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
             If (Not (Me._sECTIONSTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.SECTIONS.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
                     result = (result + Me._sECTIONSTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._iNSCRIPTIONTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.INSCRIPTION.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._iNSCRIPTIONTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -11139,7 +11787,7 @@ Namespace BDD_TESTEDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Private Function UpdateDeletedRows(ByVal dataSet As BDD_TESTEDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateDeletedRows(ByVal dataSet As BDD_APPLICATIONDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             If (Not (Me._nOTESTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.NOTES.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
@@ -11157,14 +11805,6 @@ Namespace BDD_TESTEDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._iNSCRIPTIONTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.INSCRIPTION.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._iNSCRIPTIONTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
             If (Not (Me._sECTIONSTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.SECTIONS.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
@@ -11173,19 +11813,19 @@ Namespace BDD_TESTEDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
+            If (Not (Me._mATIERETableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.MATIERE.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._mATIERETableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
             If (Not (Me._gROUPETableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.GROUPE.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._gROUPETableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._eTUDIANTTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.ETUDIANT.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._eTUDIANTTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -11205,11 +11845,19 @@ Namespace BDD_TESTEDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._mATIERETableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.MATIERE.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._iNSCRIPTIONTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.INSCRIPTION.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._mATIERETableAdapter.Update(deletedRows))
+                    result = (result + Me._iNSCRIPTIONTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._eTUDIANTTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.ETUDIANT.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._eTUDIANTTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -11247,7 +11895,7 @@ Namespace BDD_TESTEDataSetTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overridable Function UpdateAll(ByVal dataSet As BDD_TESTEDataSet) As Integer
+        Public Overridable Function UpdateAll(ByVal dataSet As BDD_APPLICATIONDataSet) As Integer
             If (dataSet Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("dataSet")
             End If

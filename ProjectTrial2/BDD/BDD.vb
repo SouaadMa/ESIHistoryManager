@@ -218,7 +218,7 @@ Public Class BDD
         'retourner un dataTable contenant les étudiants qui vérifient la requête
 
 
-        Dim cnx As OleDbConnection = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\BDD_TESTE.accdb")  'la connexion à la BDD
+        Dim cnx As OleDbConnection = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\BDD_APPLICATION.accdb")  'la connexion à la BDD
 
 
         Dim cmd As OleDbCommand                     ' la commande

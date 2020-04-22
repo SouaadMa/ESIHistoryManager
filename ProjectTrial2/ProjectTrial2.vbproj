@@ -117,10 +117,10 @@
     <Compile Include="BDD\SortiePV.vb" />
     <Compile Include="BDD\SortieRN.vb" />
     <Compile Include="BDD\SortieRNG.vb" />
-    <Compile Include="BDD_TESTEDataSet.Designer.vb">
+    <Compile Include="BDD_APPLICATIONDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BDD_TESTEDataSet.xsd</DependentUpon>
+      <DependentUpon>BDD_APPLICATIONDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Graphique\affichResearchResult.Designer.vb">
       <DependentUpon>affichResearchResult.vb</DependentUpon>
@@ -134,6 +134,12 @@
       <DependentUpon>Attestation.vb</DependentUpon>
     </Compile>
     <Compile Include="Graphique\Attestation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Graphique\Chargement.Designer.vb">
+      <DependentUpon>Chargement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Graphique\Chargement.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Graphique\PvDataSet.Designer.vb">
@@ -187,6 +193,12 @@
     </Compile>
     <Compile Include="Graphique\PVPage.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Graphique\RngReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RngReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Graphique\StatistiquePage.Designer.vb">
       <DependentUpon>StatistiquePage.vb</DependentUpon>
@@ -263,6 +275,9 @@
     <EmbeddedResource Include="Graphique\Attestation.resx">
       <DependentUpon>Attestation.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Graphique\Chargement.resx">
+      <DependentUpon>Chargement.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Graphique\ClassementPage.resx">
       <DependentUpon>ClassementPage.vb</DependentUpon>
     </EmbeddedResource>
@@ -303,6 +318,10 @@
     <EmbeddedResource Include="Graphique\login.resx">
       <DependentUpon>login.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Graphique\RngReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RngReport.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Graphique\StatistiquePage.resx">
       <DependentUpon>StatistiquePage.vb</DependentUpon>
     </EmbeddedResource>
@@ -315,16 +334,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="BDD_TESTEDataSet.xsc">
-      <DependentUpon>BDD_TESTEDataSet.xsd</DependentUpon>
+    <None Include="BDD_APPLICATIONDataSet.xsc">
+      <DependentUpon>BDD_APPLICATIONDataSet.xsd</DependentUpon>
     </None>
-    <None Include="BDD_TESTEDataSet.xsd">
+    <None Include="BDD_APPLICATIONDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BDD_TESTEDataSet.Designer.vb</LastGenOutput>
+      <LastGenOutput>BDD_APPLICATIONDataSet.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="BDD_TESTEDataSet.xss">
-      <DependentUpon>BDD_TESTEDataSet.xsd</DependentUpon>
+    <None Include="BDD_APPLICATIONDataSet.xss">
+      <DependentUpon>BDD_APPLICATIONDataSet.xsd</DependentUpon>
     </None>
     <None Include="Graphique\PvDataSet.xsc">
       <DependentUpon>PvDataSet.xsd</DependentUpon>
@@ -364,7 +383,7 @@
     <None Include="Resources\015-document2.png" />
     <None Include="Resources\015-document3.png" />
     <None Include="Resources\certaficat.png" />
-    <Content Include="BDD_TESTE.accdb">
+    <Content Include="BDD_APPLICATION.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\page_num_current.png" />

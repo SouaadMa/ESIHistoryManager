@@ -62,7 +62,6 @@ Public Class BDD
     Public Const champsANSCRA = "ANSCRA", champsANETRA = "ANETRA"
     Public Const champsCYCLRA = "CYCLRA", champsOPTIRA = "OPTIRA"
 
-    'Public Shared stringETUDIANT() As String = {"NomEtud", "Prenoms", "NomEtudA", "PrenomsA", "MATRIC_INS", "MATRIN", "DateNais", "LieuNaisA", "WilayaNaisA", "LieuNais", "ADRESSE", "VILLE", "WILAYA", "CODEPOS", "WILBAC", "SERIEBAC", "FILS_DE", "ET_DE"}
 
     ' les tableaux qui contiennet les champs des tables de base de données :
     Public Shared stringETUDIANT() As String = {BDD.champsNomEtud, BDD.champsPrenoms, BDD.champsNomEtudA, BDD.champsPrenomsA, BDD.champsMATRIC_INS, BDD.champsMATRIN, BDD.champsDateNais, BDD.champsLieuNaisA, BDD.champsLieuNais, BDD.champsADRESSE, BDD.champsVILLE, BDD.champsWILAYA, BDD.champsWILBAC, BDD.champsSERIEBAC, BDD.champsFILS_DE, BDD.champsET_DE, BDD.champsCODEPOS, BDD.champsWilayaNaisA, BDD.champsANNEEBAC, BDD.champsSEXE, BDD.champsWILNAIS, BDD.champsMOYBAC}
@@ -73,18 +72,17 @@ Public Class BDD
     Public Shared stringNOTE() As String = {BDD.champsCodeMat, BDD.champsMATRIN, BDD.champsCodePromo, BDD.champsCOMANO}
     Public Shared stringMATIERE() As String = {BDD.champsCodeMat, BDD.champsCodePromo, BDD.champsCOMAMA, BDD.champsCYCLMA, BDD.champsLIBEMA, BDD.champsTYPEMA}
     Public Shared stringNOTERATRAP() As String = {BDD.champsMATRIN, BDD.champsCodeRat}
-    Public Shared stringRATRAP() As String = {"CYCLRA", "OPTIRA", BDD.champsCodeRat, BDD.champsANSCRA}
+    Public Shared stringRATRAP() As String = {BDD.champsCYCLRA, BDD.champsOPTIRA, BDD.champsCodeRat, BDD.champsANSCRA}
 
-    'Public Shared numETUDIANT() As String = {"WILNAIS", "SEXE", "MOYBAC", "ANNEEBAC"}
     Public Shared numETUDIANT() As String = {}
     Public Shared numINSCRIPTION() As String = {BDD.champsCodeGroupe, BDD.champsMOYEIN, BDD.champsRANGIN, BDD.champsMENTIN, BDD.champsELIMININ, BDD.champsRATRIN}
     Public Shared numGROUP() As String = {BDD.champsCodeGroupe}
     Public Shared numSection() As String = {}
     Public Shared numPROMO() As String = {BDD.champsNiveau, BDD.champsNbreEtudiant, BDD.champsMoyenne}
     Public Shared numNOTE() As String = {BDD.champsNOJUNO, BDD.champsNOSYNO, BDD.champsNORANO, BDD.champsELIMNO, BDD.champsRATRNO}
-    Public Shared numMATIERE() As String = {"COEFMA", "MOYMAT"}
-    Public Shared numNOTERATRAP() As String = {"MOYERA", "MENTRA", "ELIMRA"}
-    Public Shared numRATRAP() As String = {"ANETRA"}
+    Public Shared numMATIERE() As String = {BDD.champsCOEFMA, BDD.champsMOYMAT}
+    Public Shared numNOTERATRAP() As String = {BDD.champsMOYERA, BDD.champsMENTRA, BDD.champsELIMRA}
+    Public Shared numRATRAP() As String = {BDD.champsANETRA}
 
     Public Shared boolETUDIANT() As String = {}
     Public Shared boolINSCRIPTION() As String = {}

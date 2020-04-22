@@ -236,17 +236,20 @@ Public Class BDD
             'Console.WriteLine("problem here2")
             ta = New OleDbDataAdapter(cmd)       ' creer un nouveau DataAdapter
             'Console.WriteLine("problem here3")
-            ta.Fill(dts)                         ' remplir le data set par le résultat de l'éxécution de la requête ( de data adapter ) 
+            'ta.Fill(dts)                         ' remplir le data set par le résultat de l'éxécution de la requête ( de data adapter ) 
+            ta.Fill(dt)
             'Console.WriteLine("problem here4")
-            dt = dts.Tables("table")              'mettre dans le data table le résultat de l'éxécution de requête ( le data set )
+            'dt = dts.Tables("table")              'mettre dans le data table le résultat de l'éxécution de requête ( le data set )
             'Console.WriteLine("problem here5")
 
         Catch ex As Exception
             MsgBox("excecute recherche problem" + ex.Message())
+            Console.WriteLine(ex.Message + " " + requete)
         Finally
             cnx.Close()                              'fermer la connexion
         End Try
 
+        'Console.WriteLine(requete)
         Return dt
 
     End Function

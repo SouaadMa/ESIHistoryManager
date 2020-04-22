@@ -146,7 +146,7 @@
 
                     If found Then                       ' Si le champ donnée exite
                         If (Not first) Then                  ' -> Si cette critère n'est pas le premier à ajouté
-                            requete = requete + " , "               '--> ajouter un vergule
+                            requete = requete + " AND "               '--> ajouter un vergule
                         Else                                 '-> Sinon ( on a pas encore ajouté aucun condition )
                             first = False                           '--> mettre first à faux ( la premier critere est ajoutée )
                         End If
@@ -158,6 +158,8 @@
             End If
 
         End If
+
+        'Console.WriteLine(requete)
 
         Return requete
     End Function

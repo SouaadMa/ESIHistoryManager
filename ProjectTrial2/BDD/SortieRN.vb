@@ -5,6 +5,8 @@
 
     Public Sub New(ByVal etud As Etudiant, ByVal annee As String)
 
+
+
         'Récupération des informations stockées dans la collection dans l'objet Etudiant
         Dim dtEtud As New DataTable(BDD.nomTableEtudiant)
         Dim lignecomplete As DataRow = etud.InfosETUDIANT
@@ -12,6 +14,7 @@
         dtEtud.Columns.Add(lignecomplete.Item(BDD.champsNomEtud))
         dtEtud.Columns.Add(lignecomplete.Item(BDD.champsPrenoms))
         dtEtud.Columns.Add(lignecomplete.Item(BDD.champsMATRIN))
+
 
 
         'Création de la collection des champs pour générer la requête
@@ -29,6 +32,8 @@
         '************Récupération des notes*************
         Dim tableNotesMat As New DataTable
         tableNotesMat = etud.GetNotesMat(listeChamps, listeConditions)
+
+
 
 
         ' Récuperation du nombre de Relevés de notes que cet étudiant a imprimé (pas encore ajouté à la BDD)
@@ -72,7 +77,7 @@
     End Sub
 
     'Cette méthode passe par la dataTable et remplace les champs de rattrapage -si nécessaire-
-    ' et leur remplace par car_remplacement
+    '  par car_remplacement
 
     Public Sub ArrangeRATTRA(ByVal dt As DataTable, ByVal car_remplacement As String)
 

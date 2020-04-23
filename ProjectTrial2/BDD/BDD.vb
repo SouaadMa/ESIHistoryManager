@@ -2,6 +2,9 @@
 
 Public Class BDD
 
+    ' nom de fichier access
+    Public Const stringConnection = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\BDD_APPLICATION.accdb"
+
     'Les noms des tables de la BDD
     Public Const nomTableEtudiant = "ETUDIANT", nomTableINSCRIPTION = "INSCRIPTION"
     Public Const nomTableNOTE = "NOTES", nomTableNoteRATRAP = "NoteRATRAP"
@@ -218,7 +221,7 @@ Public Class BDD
         'retourner un dataTable contenant les étudiants qui vérifient la requête
 
 
-        Dim cnx As OleDbConnection = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\BDD_APPLICATION.accdb")  'la connexion à la BDD
+        Dim cnx As OleDbConnection = New OleDbConnection(stringConnection)  'la connexion à la BDD
 
 
         Dim cmd As OleDbCommand                     ' la commande
@@ -263,7 +266,7 @@ Public Class BDD
         'MsgBox("INSIDE GETINFO")
 
         Dim da As New OleDb.OleDbDataAdapter        'le data adapter
-        Dim con As OleDb.OleDbConnection = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;data source=..\..\VISUAL.accdb")       'la connexion à la BDD
+        Dim con As OleDb.OleDbConnection = New OleDbConnection(stringConnection) '"Provider=Microsoft.ACE.OLEDB.12.0;data source=..\..\VISUAL.accdb")       'la connexion à la BDD
         Dim dt As New DataTable                     'le datatable
         Dim cmd As OleDbCommand                     'la commande
         Dim dts As New DataSet                      'le Data Set
@@ -620,8 +623,8 @@ Public Class BDD
     '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     ''' '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-    Private Shared tableCorespondante() As Paire = {New Paire(nomTableEtudiant, nomTableINSCRIPTION), New Paire(nomTableEtudiant, nomTableNOTE), New Paire(nomTableNOTE, nomTableMATIERE)}
-    Private Shared champCorespondante() As Paire = {New Paire(champsMATRIN, champsMATRIN), New Paire(champsMATRIN, champsMATRIN), New Paire(champsCodeMat, champsCodeMat)}
+    Private Shared tableCorespondante() As Paire = {New Paire(nomTableEtudiant, nomTableINSCRIPTION), New Paire(nomTableEtudiant, nomTableNOTE), New Paire(nomTableNOTE, nomTableMATIERE), New Paire(nomTableEtudiant, nomTableRATRAP), New Paire(nomTableRATRAP, nomTableNoteRATRAP), New Paire(nomTableINSCRIPTION, nomTablePROMO)}
+    Private Shared champCorespondante() As Paire = {New Paire(champsMATRIN, champsMATRIN), New Paire(champsMATRIN, champsMATRIN), New Paire(champsCodeMat, champsCodeMat), New Paire(champsMATRIN, champsMATRIN), New Paire(champsCodeRat, champsCodeRat), New Paire(champsCodePromo, champsCodePromo)}
 
     Public Shared Function getCorrespondance(ByVal tabs As Paire) As Paire
         Dim ind As Integer = IndexOf(tableCorespondante, tabs)

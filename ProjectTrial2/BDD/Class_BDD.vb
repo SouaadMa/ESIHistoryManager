@@ -163,11 +163,11 @@
 
         Return requete
     End Function
-    Public Function AjouterOrdre_Requete(ByVal requete As String, ByVal Champ As String) As String
+    Public Shared Function AjouterOrdre_Requete(ByVal requete As String, ByVal Champ As String) As String
         requete = requete & " order  by " & Champ & " "
         Return requete
     End Function
-    Public Function AjouterLimit_Requete(ByVal requete As String, ByVal LIMIT As Integer) As String
+    Public Shared Function AjouterLimit_Requete(ByVal requete As String, ByVal LIMIT As Integer) As String
 
         requete = requete & "LIMIT " & LIMIT & "  "
         Return requete

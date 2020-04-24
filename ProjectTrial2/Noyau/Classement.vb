@@ -1,8 +1,53 @@
 ﻿Public Class Classement
     'Classe pour la fonctionnalité du classement et du tri des étudiants
 
+
+    Public Shared Function TraitClassement(ByVal Annee As String) As DataTable
+        ' Méthode qui retourne une DataTable des étudiants ayant le même cursus, 
+        ' commençant leurs études à l'année en entrée
+        ' Cette DataTable est triée selon leurs moyennes de classement
+
+        Dim tableEtudiants As New DataTable
+        Dim tableMoyennesEtudiants As New DataTable
+        Dim requeteSQL As New String("")
+
+        ' ************** GETTING THE INFO FROM THE DATABASE *************** '
+        ' La génération de la requête SQL pour obtenir la table des étudiants qu'on va classer
+        ' Class_BDD.genereRechRequete
+        ' tableEtudiants = BDD.executeRequete(requeteSQL)
+
+        ' Obtention de leurs moyennes
+        ' 
+        ' tableMoyennesEtudiants = BDD.executeRequete(requeteSQL)
+
+
+        ' ************** ADDING THE NEW COLUMN "MoyClassement" ************* '
+        tableEtudiants.Columns.Add(New DataColumn("MoyClassement", System.Type.GetType("System.Double")))
+        Dim moyClassement As Double
+        moyClassement = 0
+
+
+        ' ************** ADDING THE AVERAGE FOR EACH STUDENT IN THE DATATABLE *************** '
+        For Each ligneEtudiant As DataRow In tableEtudiants.Rows
+
+            'moyClassement = CalculMoyenneClassement(tableMoyennesEtudiants, ligneEtudiant.Item(BDD.champsMATRIN))
+            ligneEtudiant("MoyClassement") = moyClassement
+
+        Next
+
+
+        ' ************** SORTING THE STUDENTS OF THE DATATABLE IN ASCENDING ORDER 
+        '                                     ACCORDING TO THEIR CALCULATED AVERAGES **************** '
+
+        ' ************** AND RETURNING THE RESULT *************** '
+
+        Return SortASCCollection(tableEtudiants, "MoyClassement")
+
+    End Function
+
+
     ' Ancienne Méthode qui retourne une collection limitée d'étudiants, triée selon leurs moyennes
-    Public Shared Function TraitClassement(ByVal criteres As List(Of Critere), ByVal limite As Integer) As DataTable
+    Public Shared Function TraitClassementA(ByVal criteres As List(Of Critere), ByVal limite As Integer) As DataTable
 
         Dim req = ""
 
@@ -41,9 +86,9 @@
 
         Dim champsDemandes As New List(Of String)({BDD.champsNomEtud, BDD.champsPrenoms, BDD.champsRANGIN, BDD.champsMATRIN, BDD.champsMOYEIN})
 
-        'req = Rech_BDD.genereRechMultipleRequetes(champsDemandes, BDD.nomTableINSCRIPTION, BDD.nomTableEtudiant, conditions)
-        'BDD.AjouteLimite(req, limite)
-        'BDD.AjouteOrdre(req, BDD.champsMOYEIN)
+        req = Class_BDD.genereRechRequete(champsDemandes, BDD.nomTableINSCRIPTION, BDD.nomTableEtudiant, conditions)
+        Class_BDD.AjouterLimit_Requete(req, limite)
+        Class_BDD.AjouterOrdre_Requete(req, BDD.champsMOYEIN)
 
         Return BDD.executeRequete(req)
 

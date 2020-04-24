@@ -1,6 +1,55 @@
 ﻿Public Class Classement
     'Classe pour la fonctionnalité du classement et du tri des étudiants
 
+    ' Ancienne Méthode qui retourne une collection limitée d'étudiants, triée selon leurs moyennes
+    Public Shared Function TraitClassement(ByVal criteres As List(Of Critere), ByVal limite As Integer) As DataTable
+
+        Dim req = ""
+
+        Dim year As New String("")
+        Dim optio As New String("")
+        Dim niv As New String("")
+        Dim conditions As New List(Of Critere)
+
+        ' This for each loop serves to create CodePromo and add it with the rest of the conditions..
+
+        For Each criterea As Critere In criteres
+
+            If criterea.getChamps.Equals(BDD.champsAnnee) Then
+                year = criterea.getValeur
+            Else
+                If criterea.getChamps.Equals(BDD.champsOption) Then
+                    optio = criterea.getValeur
+                Else
+                    If criterea.getChamps.Equals(BDD.champsNiveau) Then
+                        niv = criterea.getValeur
+                    Else
+                        ' Other fields can be CodeSection and CodeGroupe
+                        conditions.Add(criterea)
+
+                    End If
+                End If
+            End If
+
+        Next
+
+        Try
+            Dim codePromo As New Critere(BDD.champsCodePromo, New String(niv + "/" + optio + "/" + year))
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+        Dim champsDemandes As New List(Of String)({BDD.champsNomEtud, BDD.champsPrenoms, BDD.champsRANGIN, BDD.champsMATRIN, BDD.champsMOYEIN})
+
+        'req = Rech_BDD.genereRechMultipleRequetes(champsDemandes, BDD.nomTableINSCRIPTION, BDD.nomTableEtudiant, conditions)
+        'BDD.AjouteLimite(req, limite)
+        'BDD.AjouteOrdre(req, BDD.champsMOYEIN)
+
+        Return BDD.executeRequete(req)
+
+
+    End Function
+
 
     ' Méthode pour le tri ascendant d'une datatable 
     Public Shared Function SortASCCollection(ByVal table As DataTable, ByVal champs As String) As DataTable

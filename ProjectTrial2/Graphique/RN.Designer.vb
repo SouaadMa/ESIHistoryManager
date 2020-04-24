@@ -65,7 +65,7 @@ Partial Class RN
         Me.Label4.Font = New System.Drawing.Font("Cambria", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(23, 81)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(129, 20)
+        Me.Label4.Size = New System.Drawing.Size(104, 16)
         Me.Label4.TabIndex = 50
         Me.Label4.Text = "Annee d'etude :"
         '
@@ -100,7 +100,7 @@ Partial Class RN
         Me.CB_ANNEE.FormattingEnabled = True
         Me.CB_ANNEE.Location = New System.Drawing.Point(167, 81)
         Me.CB_ANNEE.Name = "CB_ANNEE"
-        Me.CB_ANNEE.Size = New System.Drawing.Size(160, 24)
+        Me.CB_ANNEE.Size = New System.Drawing.Size(160, 21)
         Me.CB_ANNEE.TabIndex = 48
         '
         'TitlePanel
@@ -140,7 +140,7 @@ Partial Class RN
         Me.Label2.Location = New System.Drawing.Point(217, 269)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(0, 38)
+        Me.Label2.Size = New System.Drawing.Size(0, 31)
         Me.Label2.TabIndex = 13
         '
         'Label1
@@ -152,7 +152,7 @@ Partial Class RN
         Me.Label1.Location = New System.Drawing.Point(232, 16)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(215, 38)
+        Me.Label1.Size = New System.Drawing.Size(177, 31)
         Me.Label1.TabIndex = 12
         Me.Label1.Text = "Relevé de note"
         '

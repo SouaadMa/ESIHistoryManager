@@ -56,7 +56,6 @@ D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\
 D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.RN.resources
 D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.Historique.resources
 C:\Users\SIRINE\Documents\Visual Studio 2010\Projects\ProjectTrial2\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.ClassementPage.resources
-C:\Users\SIRINE\Documents\Visual Studio 2010\Projects\ProjectTrial2\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.Imprimer.resources
 C:\Users\SIRINE\Documents\Visual Studio 2010\Projects\ProjectTrial2\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.RNG.resources
 C:\Users\SIRINE\Documents\Visual Studio 2010\Projects\ProjectTrial2\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.RN.resources
 C:\Users\SIRINE\Documents\Visual Studio 2010\Projects\ProjectTrial2\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.Historique.resources
@@ -125,7 +124,6 @@ C:\Users\hadia\Documents\GitHub\ESIHistoryManager\ProjectTrial2\bin\Debug\Graphi
 C:\Users\hadia\Documents\GitHub\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.Attestation.resources
 D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.Attestation.resources
 C:\Users\SIRINE\Documents\Visual Studio 2010\Projects\ProjectTrial2\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.Attestation.resources
-C:\Users\SIRINE\Documents\Visual Studio 2010\Projects\ProjectTrial2\ProjectTrial2\bin\Debug\BDD_TABLES_ECLATES.accdb
 C:\Users\SIRINE\Documents\Visual Studio 2010\Projects\ProjectTrial2\ProjectTrial2\bin\Debug\BDD_TESTE.accdb
 C:\Users\ASUS\Desktop\ESIHistoryManager\ProjectTrial2\bin\Debug\EsistHistoryManagement.exe.config
 C:\Users\ASUS\Desktop\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement.exe

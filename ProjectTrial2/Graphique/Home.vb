@@ -92,7 +92,7 @@ Public Class Home
         End If
     End Sub
 
-    Private Sub MenuButton_Click(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MenuButton.MouseClick
+    Public Sub MenuButton_Click(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MenuButton.MouseClick
         ' handle the meunubutton click ( slide the side bar)
 
         logo_bleu.Visible = Not logo_bleu.Visible

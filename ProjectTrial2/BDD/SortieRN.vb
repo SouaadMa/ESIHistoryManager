@@ -1,6 +1,6 @@
 ﻿Public Class SortieRN
 
-    Private dataSet As New DataSet
+    Public dataSet As New DataSet
     Private nbreRN As Integer
 
     Public Sub New(ByVal etud As Etudiant, ByVal annee As String)
@@ -11,9 +11,17 @@
         Dim dtEtud As New DataTable(BDD.nomTableEtudiant)
         Dim lignecomplete As DataRow = etud.InfosETUDIANT
 
-        dtEtud.Columns.Add(lignecomplete.Item(BDD.champsNomEtud))
-        dtEtud.Columns.Add(lignecomplete.Item(BDD.champsPrenoms))
-        dtEtud.Columns.Add(lignecomplete.Item(BDD.champsMATRIN))
+        dtEtud.Columns.Add(BDD.champsNomEtud)
+        dtEtud.Columns.Add(BDD.champsPrenoms)
+        dtEtud.Columns.Add(BDD.champsMATRIN)
+
+
+        dtEtud.Rows.Add({lignecomplete.Item(BDD.champsNomEtud), lignecomplete.Item(BDD.champsPrenoms), lignecomplete.Item(BDD.champsMATRIN)})
+
+        'lignecomplete = etud.get
+        'dtEtud.Columns.Add(lignecomplete.Item(BDD.champsNomEtud))
+        'dtEtud.Columns.Add(lignecomplete.Item(BDD.champsPrenoms))
+        'dtEtud.Columns.Add(lignecomplete.Item(BDD.champsMATRIN))
 
 
 
@@ -22,6 +30,8 @@
         listeChamps.Add(BDD.champsLIBEMA)
         listeChamps.Add(BDD.champsNOJUNO)
         listeChamps.Add(BDD.champsNORANO)
+        listeChamps.Add(BDD.champsCOEFMA)
+
         'A ajouter dans la Base
         'listeChamps.Add(BDD.champsRNPossible)
 

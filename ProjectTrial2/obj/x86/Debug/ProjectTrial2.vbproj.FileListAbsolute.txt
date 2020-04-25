@@ -18,7 +18,6 @@ D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\
 D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.PVPage.resources
 D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.RechercherPage.resources
 D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.StatistiquePage.resources
-C:\Users\SIRINE\Documents\Visual Studio 2010\Projects\ProjectTrial2\ProjectTrial2\bin\Debug\EsistHistoryManagement.exe.config
 D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.details.resources
 D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.modifier.resources
 C:\Users\hadia\Documents\GitHub\New folder\ESIHistoryManager\ProjectTrial2\bin\Debug\EsistHistoryManagement.exe.config
@@ -144,3 +143,4 @@ D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\
 D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\bin\Debug\BDD_APPLICATION.accdb
 D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.Chargement.resources
 >>>>>>> parent of 8ddc9fe... some changes
+C:\Users\SIRINE\Documents\Visual Studio 2010\Projects\ProjectTrial2\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement.xml

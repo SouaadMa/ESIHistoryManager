@@ -181,10 +181,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RNDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Graphique\RNG.Designer.vb">
-      <DependentUpon>RNG.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Graphique\RNG.vb" />
+    
+    
 
     <Compile Include="Graphique\RNG.Designer.vb">
       <DependentUpon>RNG.vb</DependentUpon>
@@ -252,7 +250,7 @@
       <SubType>Form</SubType>
 
     </Compile>
-    <Compile Include="Graphique\Form1.vb" />
+    
     <Compile Include="Graphique\modifpassword.Designer.vb">
       <DependentUpon>modifpassword.vb</DependentUpon>
     </Compile>

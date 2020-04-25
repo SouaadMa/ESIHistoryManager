@@ -24,13 +24,14 @@ Public Class BDD
     Public Const champsSEXE = "SEXE", champsSERIEBAC = "SERIEBAC"
     Public Const champsMOYBAC = "MOYBAC", champsANNEEBAC = "ANNEEBAC"
     Public Const champsFILS_DE = "FILS_DE", champsET_DE = "ET_DE"
+    Public Const champsNBR_RNG = "NBR_RNG"
 
     'Les noms des champs de la table INSCRIPTION
     Public Const champsCodeGroupe = "CodeGroupe", champsMOYEIN = "MOYEIN"
     Public Const champsRANGIN = "RANGIN", champsMENTIN = "MENTIN"
     Public Const champsELIMININ = "ELIMININ", champsRATRIN = "RATRIN"
     Public Const champsDECIIN = "DECIIN", champsDECI = "DECI"
-    Public Const champsADM = "ADM"
+    Public Const champsADM = "ADM", champsNBR_RN = "NBR_RN"
 
     'Les noms des champs de la table NOTES
     Public Const champsCodeMat = "CodeMat", champsNOJUNO = "NOJUNO"
@@ -77,8 +78,8 @@ Public Class BDD
     Public Shared stringNOTERATRAP() As String = {BDD.champsMATRIN, BDD.champsCodeRat}
     Public Shared stringRATRAP() As String = {BDD.champsCYCLRA, BDD.champsOPTIRA, BDD.champsCodeRat, BDD.champsANSCRA}
 
-    Public Shared numETUDIANT() As String = {}
-    Public Shared numINSCRIPTION() As String = {BDD.champsCodeGroupe, BDD.champsMOYEIN, BDD.champsRANGIN, BDD.champsMENTIN, BDD.champsELIMININ, BDD.champsRATRIN}
+    Public Shared numETUDIANT() As String = {BDD.champsNBR_RNG}
+    Public Shared numINSCRIPTION() As String = {BDD.champsCodeGroupe, BDD.champsMOYEIN, BDD.champsRANGIN, BDD.champsMENTIN, BDD.champsELIMININ, BDD.champsRATRIN, BDD.champsNBR_RN}
     Public Shared numGROUP() As String = {BDD.champsCodeGroupe}
     Public Shared numSection() As String = {}
     Public Shared numPROMO() As String = {BDD.champsNiveau, BDD.champsNbreEtudiant, BDD.champsMoyenne}
@@ -334,7 +335,7 @@ Public Class BDD
         'de matricule matrin, + un critère avec lequel on détermine l'année
 
         'Création de la requête
-        Dim SqlQuery As String = "SELECT * FROM " + nomTable + " WHERE " + champsMATRIN + " = '" + matrin + "' AND " + CompareToCodeTable(nomTable, critere) + ";"
+        Dim SqlQuery As String = "SELECT * FROM " + nomTable + " WHERE " + champsMATRIN + " = '" + matrin + "' AND " + critere.getChamps + " = " + critere.getValeur + ";"
 
         'Exécution de la requête
         Dim table As DataTable = executeRequete(SqlQuery)

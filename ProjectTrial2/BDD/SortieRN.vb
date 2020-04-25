@@ -1,54 +1,69 @@
 ﻿Public Class SortieRN
 
-    Private dataSet As New DataSet
+    Public dataSet As New DataSet
     Private nbreRN As Integer
 
-    Public Sub New(ByVal etud As Etudiant, ByVal annee As String)
-
-
+    Public Sub New(ByVal etud As Etudiant, ByVal promo As String)
 
         'Récupération des informations stockées dans la collection dans l'objet Etudiant
         Dim dtEtud As New DataTable(BDD.nomTableEtudiant)
         Dim lignecomplete As DataRow = etud.InfosETUDIANT
 
-        dtEtud.Columns.Add(lignecomplete.Item(BDD.champsNomEtud))
-        dtEtud.Columns.Add(lignecomplete.Item(BDD.champsPrenoms))
-        dtEtud.Columns.Add(lignecomplete.Item(BDD.champsMATRIN))
+        dtEtud.Columns.Add(BDD.champsNomEtud)
+        dtEtud.Columns.Add(BDD.champsPrenoms)
+        dtEtud.Columns.Add(BDD.champsMATRIN)
+
+        dtEtud.Rows.Add({lignecomplete.Item(BDD.champsNomEtud), lignecomplete.Item(BDD.champsPrenoms), lignecomplete.Item(BDD.champsMATRIN)})
+        '///////////////////////////////////////////////
 
 
-
-        'Création de la collection des champs pour générer la requête
+        'Création de la collection des champs pour générer la requête01
         Dim listeChamps As New List(Of String)
         listeChamps.Add(BDD.champsLIBEMA)
         listeChamps.Add(BDD.champsNOJUNO)
         listeChamps.Add(BDD.champsNORANO)
-        'A ajouter dans la Base
-        'listeChamps.Add(BDD.champsRNPossible)
+        listeChamps.Add(BDD.champsCOEFMA)
+
 
         Dim listeConditions As New List(Of Critere)
         listeConditions.Add(New Critere(BDD.champsMATRIN, etud.GetInfoChamps(BDD.champsMATRIN)))
-        listeConditions.Add(New Critere(BDD.champsCodePromo, annee))
+        listeConditions.Add(New Critere(BDD.champsCodePromo, promo))
 
-        '************Récupération des notes*************
+        '************Récupération des notes*************'
         Dim tableNotesMat As New DataTable
         tableNotesMat = etud.GetNotesMat(listeChamps, listeConditions)
+        '
 
 
+        '***********************************************'
+        'Création de la collection des champs pour générer la requête2
+        listeChamps.Clear()
+        listeChamps.Add(BDD.champsMOYEIN)
+        listeChamps.Add(BDD.champsRANGIN)
+        listeChamps.Add(BDD.champsADM)
+        listeChamps.Add(BDD.champsNbreEtudiant)
+        listeChamps.Add(BDD.champsNBR_RN)
+
+        '************Récupération des informations de l'inscription*************'
+        Dim reqSQL As String = Class_BDD.genereRechRequete(listeChamps, BDD.nomTableINSCRIPTION, BDD.nomTablePROMO, listeConditions)
+        Dim tableINSCRIPTION As DataTable = BDD.executeRequete(reqSQL)
+        '
 
 
-        ' Récuperation du nombre de Relevés de notes que cet étudiant a imprimé (pas encore ajouté à la BDD)
-        'nbreRN = CType(tableNotesMat.Rows.Item(0).Item("NbreRN"), Integer)
+        nbreRN = CType(tableINSCRIPTION.Rows.Item(0).Item(BDD.champsNBR_RN), Integer)
 
 
         'Ajout du caractère spécial à la place des notes qu'on ne veut pas afficher
-        'ArrangeRATTRA(tableNotesMat, "$")
+        ArrangeRATTRA(tableNotesMat, "$")
 
 
         'Ajout des deux tables dans une DataSet
         'Etudiant
         dataSet.Tables.Add(dtEtud)
-        'NotesMat
+        'Notes + Matiere
         dataSet.Tables.Add(tableNotesMat)
+        'INSCRIPTION + PROMO
+        dataSet.Tables.Add(tableINSCRIPTION)
 
 
     End Sub
@@ -61,14 +76,16 @@
         Return nbreRN
     End Function
 
-    Public Sub SetNbreRN(ByVal etud As Etudiant, ByVal int As Integer)
+    Public Sub SetNbreRN(ByVal etud As Etudiant, ByVal int As Integer, ByVal promo As String)
 
-        Dim modification As New Critere("NbreRN", int)
+        Dim modification As New Critere(BDD.champsNBR_RN, int)
         Dim listeModif As New List(Of Critere)
         listeModif.Add(modification)
 
         Dim req As String
-        req = Modif_BDD.genereModifRequete(etud.GetInfoChamps(BDD.champsMATRIN), listeModif)
+        req = Modif_BDD.genereModifRequete(etud.GetInfoChamps(BDD.champsMATRIN), listeModif, BDD.nomTableINSCRIPTION)
+        req = Modif_BDD.AddCondition(req, New Critere(BDD.champsCodePromo, promo, BDD.nomTableINSCRIPTION))
+
 
         BDD.executeRequete(req)
         nbreRN = int

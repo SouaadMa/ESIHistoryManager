@@ -25,6 +25,8 @@ Partial Class Home
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Home))
         Me.SideBar = New System.Windows.Forms.TableLayoutPanel()
+        Me.BT_charg = New System.Windows.Forms.Button()
+        Me.PVIconsList = New System.Windows.Forms.ImageList(Me.components)
         Me.BT_CLASS = New System.Windows.Forms.Button()
         Me.ClassIconsList = New System.Windows.Forms.ImageList(Me.components)
         Me.BT_STAT = New System.Windows.Forms.Button()
@@ -32,8 +34,6 @@ Partial Class Home
         Me.BT_RECH = New System.Windows.Forms.Button()
         Me.SearchIconsList = New System.Windows.Forms.ImageList(Me.components)
         Me.BT_PV = New System.Windows.Forms.Button()
-        Me.PVIconsList = New System.Windows.Forms.ImageList(Me.components)
-        Me.LogoPicture = New System.Windows.Forms.PictureBox()
         Me.MenuButton = New System.Windows.Forms.Button()
         Me.ProfilePane = New System.Windows.Forms.Panel()
         Me.BT_modif_mdp = New System.Windows.Forms.Button()
@@ -63,7 +63,6 @@ Partial Class Home
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.CancelBackgroundButton = New System.Windows.Forms.Button()
         Me.SideBar.SuspendLayout()
-        CType(Me.LogoPicture, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ProfilePane.SuspendLayout()
         CType(Me.mode_photo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.NavBar.SuspendLayout()
@@ -79,6 +78,7 @@ Partial Class Home
         Me.SideBar.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
         Me.SideBar.ColumnCount = 1
         Me.SideBar.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
+        Me.SideBar.Controls.Add(Me.BT_charg, 0, 5)
         Me.SideBar.Controls.Add(Me.BT_CLASS, 0, 1)
         Me.SideBar.Controls.Add(Me.BT_STAT, 0, 2)
         Me.SideBar.Controls.Add(Me.BT_RECH, 0, 3)
@@ -86,18 +86,47 @@ Partial Class Home
         Me.SideBar.Location = New System.Drawing.Point(0, 117)
         Me.SideBar.Margin = New System.Windows.Forms.Padding(0)
         Me.SideBar.Name = "SideBar"
-        Me.SideBar.RowCount = 8
+        Me.SideBar.RowCount = 7
         Me.SideBar.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80.0!))
         Me.SideBar.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.SideBar.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.SideBar.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.SideBar.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.SideBar.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120.0!))
-        Me.SideBar.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100.0!))
+        Me.SideBar.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65.0!))
         Me.SideBar.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.SideBar.Size = New System.Drawing.Size(185, 621)
         Me.SideBar.TabIndex = 8
         Me.SideBar.TabStop = True
+        '
+        'BT_charg
+        '
+        Me.BT_charg.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.BT_charg.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BT_charg.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight
+        Me.BT_charg.FlatAppearance.BorderSize = 0
+        Me.BT_charg.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.BT_charg.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.BT_charg.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BT_charg.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BT_charg.ForeColor = System.Drawing.SystemColors.Window
+        Me.BT_charg.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BT_charg.ImageKey = "gantt_chart_bj.png"
+        Me.BT_charg.ImageList = Me.PVIconsList
+        Me.BT_charg.Location = New System.Drawing.Point(2, 363)
+        Me.BT_charg.Margin = New System.Windows.Forms.Padding(2)
+        Me.BT_charg.MinimumSize = New System.Drawing.Size(45, 49)
+        Me.BT_charg.Name = "BT_charg"
+        Me.BT_charg.Size = New System.Drawing.Size(183, 61)
+        Me.BT_charg.TabIndex = 6
+        Me.BT_charg.Text = "           Chargement"
+        Me.BT_charg.UseVisualStyleBackColor = False
+        '
+        'PVIconsList
+        '
+        Me.PVIconsList.ImageStream = CType(resources.GetObject("PVIconsList.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.PVIconsList.TransparentColor = System.Drawing.Color.Transparent
+        Me.PVIconsList.Images.SetKeyName(0, "gantt_chart_bj.png")
+        Me.PVIconsList.Images.SetKeyName(1, "chart_blue.png")
         '
         'BT_CLASS
         '
@@ -216,27 +245,6 @@ Partial Class Home
         Me.BT_PV.Text = "           PV"
         Me.BT_PV.UseVisualStyleBackColor = False
         '
-        'PVIconsList
-        '
-        Me.PVIconsList.ImageStream = CType(resources.GetObject("PVIconsList.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.PVIconsList.TransparentColor = System.Drawing.Color.Transparent
-        Me.PVIconsList.Images.SetKeyName(0, "gantt_chart_bj.png")
-        Me.PVIconsList.Images.SetKeyName(1, "chart_blue.png")
-        '
-        'LogoPicture
-        '
-        Me.LogoPicture.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.LogoPicture.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.logo_white
-        Me.LogoPicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.LogoPicture.Location = New System.Drawing.Point(0, 607)
-        Me.LogoPicture.Margin = New System.Windows.Forms.Padding(0, 0, 0, 10)
-        Me.LogoPicture.Name = "LogoPicture"
-        Me.LogoPicture.Size = New System.Drawing.Size(185, 90)
-        Me.LogoPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.LogoPicture.TabIndex = 51
-        Me.LogoPicture.TabStop = False
-        Me.LogoPicture.Visible = False
-        '
         'MenuButton
         '
         Me.MenuButton.AutoSize = True
@@ -270,7 +278,7 @@ Partial Class Home
         Me.ProfilePane.Controls.Add(Me.LBL_MODE)
         Me.ProfilePane.Dock = System.Windows.Forms.DockStyle.Right
         Me.ProfilePane.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ProfilePane.Location = New System.Drawing.Point(867, 0)
+        Me.ProfilePane.Location = New System.Drawing.Point(866, 0)
         Me.ProfilePane.Margin = New System.Windows.Forms.Padding(0)
         Me.ProfilePane.Name = "ProfilePane"
         Me.ProfilePane.Size = New System.Drawing.Size(151, 699)
@@ -363,9 +371,9 @@ Partial Class Home
         Me.NavBar.Controls.Add(Me.ModifButton, 4, 0)
         Me.NavBar.Controls.Add(Me.RNButton, 0, 0)
         Me.NavBar.Controls.Add(Me.Help_Button, 6, 0)
-        Me.NavBar.Location = New System.Drawing.Point(186, 642)
+        Me.NavBar.Location = New System.Drawing.Point(185, 642)
         Me.NavBar.Margin = New System.Windows.Forms.Padding(15)
-        Me.NavBar.MaximumSize = New System.Drawing.Size(1000, 60)
+        Me.NavBar.MaximumSize = New System.Drawing.Size(900, 60)
         Me.NavBar.Name = "NavBar"
         Me.NavBar.RowCount = 1
         Me.NavBar.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
@@ -622,7 +630,7 @@ Partial Class Home
         Me.ProgressPanel.Controls.Add(Me.CancelBackgroundButton)
         Me.ProgressPanel.Location = New System.Drawing.Point(187, 0)
         Me.ProgressPanel.Name = "ProgressPanel"
-        Me.ProgressPanel.Size = New System.Drawing.Size(680, 640)
+        Me.ProgressPanel.Size = New System.Drawing.Size(678, 640)
         Me.ProgressPanel.TabIndex = 50
         Me.ProgressPanel.Visible = False
         '
@@ -644,7 +652,7 @@ Partial Class Home
         Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox2.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.logo_coloree
         Me.PictureBox2.InitialImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.Spinner
-        Me.PictureBox2.Location = New System.Drawing.Point(225, 215)
+        Me.PictureBox2.Location = New System.Drawing.Point(224, 215)
         Me.PictureBox2.MaximumSize = New System.Drawing.Size(226, 206)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(226, 206)
@@ -687,8 +695,7 @@ Partial Class Home
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.CancelButton = Me.BT_LOGOUT
         Me.CausesValidation = False
-        Me.ClientSize = New System.Drawing.Size(1018, 699)
-        Me.Controls.Add(Me.LogoPicture)
+        Me.ClientSize = New System.Drawing.Size(1017, 699)
         Me.Controls.Add(Me.ProgressPanel)
         Me.Controls.Add(Me.MenuButton)
         Me.Controls.Add(Me.SideBar)
@@ -702,13 +709,12 @@ Partial Class Home
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(2)
-        Me.MaximumSize = New System.Drawing.Size(1103, 948)
+        Me.MaximumSize = New System.Drawing.Size(1023, 948)
         Me.MinimumSize = New System.Drawing.Size(1023, 594)
         Me.Name = "Home"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Home"
         Me.SideBar.ResumeLayout(False)
-        CType(Me.LogoPicture, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ProfilePane.ResumeLayout(False)
         Me.ProfilePane.PerformLayout()
         CType(Me.mode_photo, System.ComponentModel.ISupportInitialize).EndInit()
@@ -761,6 +767,6 @@ Partial Class Home
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents CancelBackgroundButton As System.Windows.Forms.Button
-    Friend WithEvents LogoPicture As System.Windows.Forms.PictureBox
+    Friend WithEvents BT_charg As System.Windows.Forms.Button
 
 End Class

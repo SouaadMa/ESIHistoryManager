@@ -50,7 +50,6 @@ Partial Class PVPage
         '
         Me.PVIntroPanel.Controls.Add(Me.Label1)
         Me.PVIntroPanel.Location = New System.Drawing.Point(0, 0)
-        Me.PVIntroPanel.Margin = New System.Windows.Forms.Padding(0)
         Me.PVIntroPanel.Name = "PVIntroPanel"
         Me.PVIntroPanel.Size = New System.Drawing.Size(675, 50)
         Me.PVIntroPanel.TabIndex = 46
@@ -71,13 +70,14 @@ Partial Class PVPage
         'PN_FORUMRECH
         '
         Me.PN_FORUMRECH.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PN_FORUMRECH.AutoScroll = True
         Me.PN_FORUMRECH.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.PN_FORUMRECH.BackColor = System.Drawing.Color.Transparent
         Me.PN_FORUMRECH.Controls.Add(Me.Panel2)
         Me.PN_FORUMRECH.Controls.Add(Me.Panel1)
         Me.PN_FORUMRECH.Controls.Add(Me.PVIntroPanel)
         Me.PN_FORUMRECH.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PN_FORUMRECH.Location = New System.Drawing.Point(2, 0)
+        Me.PN_FORUMRECH.Location = New System.Drawing.Point(1, 0)
         Me.PN_FORUMRECH.Margin = New System.Windows.Forms.Padding(0)
         Me.PN_FORUMRECH.Name = "PN_FORUMRECH"
         Me.PN_FORUMRECH.Size = New System.Drawing.Size(675, 638)
@@ -231,7 +231,7 @@ Partial Class PVPage
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(680, 640)
+        Me.ClientSize = New System.Drawing.Size(678, 640)
         Me.Controls.Add(Me.PN_FORUMRECH)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False

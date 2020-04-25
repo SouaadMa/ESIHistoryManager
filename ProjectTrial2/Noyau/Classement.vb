@@ -96,6 +96,15 @@
     End Function
 
 
+    ' Méthode pour filtrer une DataTable selon le critère en entrée
+    Public Shared Function FilterDataTableBy(ByVal dataTable As DataTable, ByVal critere As Critere) As DataTable
+
+        Dim filter As String = critere.getChamps + " = '" + critere.getValeur + "'"
+
+        Return dataTable.Select(filter).CopyToDataTable
+
+    End Function
+
     ' Méthode pour le tri ascendant d'une datatable 
     Public Shared Function SortASCCollection(ByVal table As DataTable, ByVal champs As String) As DataTable
 

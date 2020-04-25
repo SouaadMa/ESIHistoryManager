@@ -1,3 +1,4 @@
+*.laccdb
 BDD_APPLICATION.accdb
 *.accdb
 *.manifest

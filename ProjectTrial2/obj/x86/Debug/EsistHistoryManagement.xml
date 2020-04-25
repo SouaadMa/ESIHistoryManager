@@ -1,0 +1,753 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+EsistHistoryManagement
+</name>
+</assembly>
+<members>
+
+<member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSet.ETUDIANTDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSet.GROUPEDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSet.INSCRIPTIONDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSet.MATIEREDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSet.NoteRATRAPDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSet.NOTESDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSet.PROMODataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSet.RATRAPDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSet.SECTIONSDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSet.ETUDIANTRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSet.GROUPERow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSet.INSCRIPTIONRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSet.MATIERERow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSet.NoteRATRAPRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSet.NOTESRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSet.PROMORow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSet.RATRAPRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSet.SECTIONSRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSet.ETUDIANTRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSet.GROUPERowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSet.INSCRIPTIONRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSet.MATIERERowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSet.NoteRATRAPRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSet.NOTESRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSet.PROMORowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSet.RATRAPRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSet.SECTIONSRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSetTableAdapters.ETUDIANTTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSetTableAdapters.GROUPETableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSetTableAdapters.INSCRIPTIONTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSetTableAdapters.MATIERETableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSetTableAdapters.NoteRATRAPTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSetTableAdapters.NOTESTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSetTableAdapters.PROMOTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSetTableAdapters.RATRAPTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSetTableAdapters.SECTIONSTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:EsistHistoryManagement_v1.BDD_APPLICATIONDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(EsistHistoryManagement_v1.BDD_APPLICATIONDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:EsistHistoryManagement_v1.BDD_APPLICATIONDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(EsistHistoryManagement_v1.BDD_APPLICATIONDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:EsistHistoryManagement_v1.BDD_APPLICATIONDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(EsistHistoryManagement_v1.BDD_APPLICATIONDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:EsistHistoryManagement_v1.BDD_APPLICATIONDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:EsistHistoryManagement_v1.BDD_APPLICATIONDataSetTableAdapters.TableAdapterManager.UpdateAll(EsistHistoryManagement_v1.BDD_APPLICATIONDataSet)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_APPLICATIONDataSetTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.PvDataSet.DataTable1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.PvDataSet.DataTable1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.PvDataSet.DataTable1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.PvDataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.ResourceManager">
+
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources._015_document">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources._015_document1">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources._015_document2">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources._015_document3">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources._next">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.admin_mode">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.administrator_profile">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.agent_mode">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.alert">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.alert1">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.Asset_2">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.backBTcheked">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.backBTchekedNone">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.background">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.background_bleu">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.background_modif_bac_scroll">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.background_modif_generalite">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.background_modif_generalite_scroll">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.background_modif_generalite_scroll1">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.background_modif_groupe_scroll">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.background_modif_groupe_scroll1">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.background_modif_inscription_scroll">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.background_modif_note_scroll">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.background_modif_noterat_scroll">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.background_modif_noterat_scroll1">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.background_modif_promo_scroll">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.certaficat">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.chart">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.chart_bl">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.content">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.details">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.details_general_back">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.detailsBACBack">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.diagram">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.diagram_bl">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.Ellipse_11">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.Ellipse4">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.Ellipse5">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.exit_picture">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.form">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.gear">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.hamburger">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.histoback">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.histoback1">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.historique">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.imagespoints">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.imagespoints1">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.info">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.layeredAsset">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.layeredAssetWhite">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.line_chart">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.line_chart_bl">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.logo">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.logo_coloree">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.logo_white">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.logo_white1">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.modifier">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.next1">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.page_num">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.page_num_current">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.page_num_desactivate">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.page_num_hover">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.Path">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.prev">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.prev1">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.prev2">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.prev3">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.prev4">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.printer">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.Rectangle_38">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.Rectangle_blanc">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.Rectangle_rose">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.RN">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.RNG">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.search">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.search_bl">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.sortiropp">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.sortiropp1">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.Spinner">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.table_blanc">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.table_blanc1">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.table_bleu">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.user_profile">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.ETUDIANTDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.GROUPEDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.INSCRIPTIONDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.MATIEREDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.NoteRATRAPDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.NOTESDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.PROMODataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.RATRAPDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.SECTIONSDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.ETUDIANTRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.GROUPERow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.INSCRIPTIONRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.MATIERERow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.NoteRATRAPRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.NOTESRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.PROMORow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.RATRAPRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.SECTIONSRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.ETUDIANTRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.GROUPERowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.INSCRIPTIONRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.MATIERERowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.NoteRATRAPRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.NOTESRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.PROMORowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.RATRAPRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet.SECTIONSRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSetTableAdapters.ETUDIANTTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSetTableAdapters.GROUPETableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSetTableAdapters.INSCRIPTIONTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSetTableAdapters.MATIERETableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSetTableAdapters.NoteRATRAPTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSetTableAdapters.NOTESTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSetTableAdapters.PROMOTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSetTableAdapters.RATRAPTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSetTableAdapters.SECTIONSTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:EsistHistoryManagement_v1.BDD_TESTEDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(EsistHistoryManagement_v1.BDD_TESTEDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:EsistHistoryManagement_v1.BDD_TESTEDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(EsistHistoryManagement_v1.BDD_TESTEDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:EsistHistoryManagement_v1.BDD_TESTEDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(EsistHistoryManagement_v1.BDD_TESTEDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:EsistHistoryManagement_v1.BDD_TESTEDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:EsistHistoryManagement_v1.BDD_TESTEDataSetTableAdapters.TableAdapterManager.UpdateAll(EsistHistoryManagement_v1.BDD_TESTEDataSet)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.BDD_TESTEDataSetTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="F:EsistHistoryManagement_v1.BDD.tableCorespondante">
+ '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+</member><member name="T:EsistHistoryManagement_v1.PvDataSet.DataTable1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.PvDataSet.DataTable1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.PvDataSet.DataTable1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.PvDataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+</members>
+</doc>

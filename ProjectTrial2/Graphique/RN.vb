@@ -25,6 +25,7 @@
         'For Each cr As String In InfosGenerales.promo
         'CB_ANNEE.Items.Add(cr)
         'Next
+        
 
         Console.WriteLine("RN_Load")
 
@@ -55,16 +56,18 @@
     Private Sub BT_LOAD_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_LOAD.Click
 
         'Console.WriteLine("Click load " + CType(CB_ANNEE.SelectedItem, String) + "jjj")
-        Dim rn As New SortieRN(esistselect, CType(CB_ANNEE.SelectedItem, String))
+        'Dim rn As New SortieRN(esistselect, CType(CB_ANNEE.SelectedItem, String))
         'Console.WriteLine("Done")
 
         Dim dts As DataSet
-        dts = rn.GetDataSet
+        'dts = rn.GetDataSet
 
         'Pour afficher le nombre de RN que cet étudiant a imprimé
         'Dim nbRN = rn.GetNbreRN() 
 
-
+        Dim r As SortieRN = New SortieRN(esistselect, "1/TRC/04")
+        Form2.DataGridView1.DataSource = r.dataSet.Tables(0)
+        Form2.Show()
     End Sub
 
 End Class

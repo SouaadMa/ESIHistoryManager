@@ -122,6 +122,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BDD_APPLICATIONDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ECLATEMMENT_TRAFFIC.vb" />
     <Compile Include="Graphique\affichResearchResult.Designer.vb">
       <DependentUpon>affichResearchResult.vb</DependentUpon>
     </Compile>
@@ -158,12 +159,6 @@
       <DependentUpon>PvReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Graphique\RNG.Designer.vb">
-      <DependentUpon>RNG.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Graphique\RNG.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Graphique\RN.Designer.vb">
       <DependentUpon>RN.vb</DependentUpon>
     </Compile>
@@ -194,6 +189,17 @@
     <Compile Include="Graphique\PVPage.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Graphique\RNGDataSet1.Designer.vb">
+      <DependentUpon>RNGDataSet.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Graphique\RNGPage.Designer.vb">
+      <DependentUpon>RNGPage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Graphique\RNGPage.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Graphique\RngReport.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -217,10 +223,10 @@
     <Compile Include="Graphique\ClassementPage.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Graphique\Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Graphique\Form2.Designer.vb">
+      <DependentUpon>Form2.vb</DependentUpon>
     </Compile>
-    <Compile Include="Graphique\Form1.vb">
+    <Compile Include="Graphique\Form2.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Graphique\modifpassword.Designer.vb">
@@ -285,9 +291,6 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>PvReport.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Graphique\RNG.resx">
-      <DependentUpon>RNG.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Graphique\RN.resx">
       <DependentUpon>RN.vb</DependentUpon>
     </EmbeddedResource>
@@ -297,8 +300,8 @@
     <EmbeddedResource Include="Graphique\details.resx">
       <DependentUpon>details.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Graphique\Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="Graphique\Form2.resx">
+      <DependentUpon>Form2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Graphique\modifier.resx">
       <DependentUpon>modifier.vb</DependentUpon>
@@ -317,6 +320,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Graphique\login.resx">
       <DependentUpon>login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Graphique\RNGPage.resx">
+      <DependentUpon>RNGPage.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Graphique\RngReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -355,6 +361,17 @@
     </None>
     <None Include="Graphique\PvDataSet.xss">
       <DependentUpon>PvDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Graphique\RNGDataSet.xsc">
+      <DependentUpon>RNGDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Graphique\RNGDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RNGDataSet1.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Graphique\RNGDataSet.xss">
+      <DependentUpon>RNGDataSet.xsd</DependentUpon>
     </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">

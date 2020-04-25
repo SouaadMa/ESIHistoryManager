@@ -10,7 +10,7 @@
         Dim instEtudiant As String = ""             'instruction SQL pour accéder à la table Etudiant et mettre à jour les champs modifiés  
 
         'générer la requête SQL 
-        instEtudiant = Modif_BDD.genereModifRequete(etud.getId, criteres)
+        instEtudiant = Modif_BDD.genereModifRequete(etud.getId, criteres, BDD.nomTableEtudiant)
 
         'MsgBox(" TRAIT MODIFIER < ")
         'executer la requête

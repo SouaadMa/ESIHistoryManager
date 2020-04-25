@@ -5,32 +5,23 @@ Imports CrystalDecisions.Shared
 Imports System.Data
 Imports System.Data.SqlClient
 
-Public Class PVPage
+Public Class RNGPage
 
-    Private Sub PVPage_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        'initialize the graphic componants values
+    Dim esistselect As Etudiant ' letudiant selection f affichresult
 
-        CrystalReportViewer1.Enabled = False
-        Me.AffichButton.Enabled = Not Me.AffichButton.Enabled
+    Public Sub New(ByVal e As Etudiant)
 
-        AllCheckBox.Checked = True
-        LimitUpDown.Enabled = False
-
-        For Each Critere As String In InfosGenerales.promo
-            Me.NiveauBox.Items.Add(Critere)
-        Next
-
-        For Each Critere As String In InfosGenerales.specialite
-            Me.SpecialiteBox.Items.Add(Critere)
-        Next
-
-        For i = InfosGenerales.firstYear To InfosGenerales.lastYear
-            Me.PromoBox.Items.Add(i)
-        Next
+        ' This call is required by the designer.
+        InitializeComponent()
+        esistselect = e
+        ' Add any initialization after the InitializeComponent() call.
 
     End Sub
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AffichButton.Click
+
+
+    Private Sub RNGPage_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        'initialize the graphic componants values
 
         CrystalReportViewer1.Enabled = True
         Dim ds As New DataSet   'the dataset which will be assigned to the report
@@ -38,16 +29,12 @@ Public Class PVPage
 
         'call the pv function to get the dataset
 
-        ds = SortiePV.PV_DELIBERATION(NiveauBox.Text.Remove(0, 1), SpecialiteBox.Text, PromoBox.Text.Remove(0, 2))
-        ' if there is a limit to viewed students , then remove the rest from the datatable
-        If Not AllCheckBox.Checked Then
-            'FormulaField = FormulaFields.Item("limit")
-            'FormulaField.Text = LimitUpDown.Value.ToString + " ;"
-            While ds.Tables(0).Rows.Count > LimitUpDown.Value
-                ds.Tables(0).Rows.RemoveAt(LimitUpDown.Value)
-            End While
-        End If
+        ds = SortieRNG.RNG(esistselect)
 
+        Form2.DataGridView1.DataSource = ds.Tables(0)
+        Form2.Show()
+
+        GoTo en
         'initilize the textboxes of promotion and annee
         Dim TextObj As CrystalDecisions.CrystalReports.Engine.TextObject
 
@@ -56,9 +43,9 @@ Public Class PVPage
                 TextObj = CryObj
                 Select Case TextObj.Name
                     Case "PromoString"
-                        TextObj.Text = NiveauBox.Text + IIf(NiveauBox.SelectedIndex > 0, " er", " ème") + " ANNEE INGENIEUR - " + SpecialiteBox.Text
+                        'TextObj.Text = NiveauBox.Text + IIf(NiveauBox.SelectedIndex > 0, " er", " ème") + " ANNEE INGENIEUR - " + SpecialiteBox.Text
                     Case "AnneeString"
-                        TextObj.Text = PromoBox.Text + " - " + (PromoBox.SelectedIndex + 1990).ToString
+                        'TextObj.Text = PromoBox.Text + " - " + (PromoBox.SelectedIndex + 1990).ToString
                 End Select
             End If
         Next
@@ -138,90 +125,28 @@ Public Class PVPage
         ' refresh the report to view the changes
         CrystalReportViewer1.RefreshReport()
         'Set the report viewer report objet 
-            CrystalReportViewer1.ReportSource = cryrpt
+        CrystalReportViewer1.ReportSource = cryrpt
         'set the zoom factor the width of the page
         CrystalReportViewer1.Zoom(1)
         ' if the bule side bar is opened , then close it by simulating a mouse click on the menu button to make the view more big
-            If (Home.MainContainer1.Width <= 700) Then
+        If (Home.MainContainer1.Width <= 700) Then
             Home.MenuButton_Click(Home.MenuButton, New MouseEventArgs(MouseButtons.Middle, 1, 15, 15, 0))
         End If
         ' make the report viewer visible
         CrystalReportViewer1.Visible = True
         'disbale the affich button until any combobox values has been changed
-        AffichButton.Enabled = False
         ' and that's it !
+en:
     End Sub
 
-    Private Sub PromoBox_TextUpdate(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SpecialiteBox.TextUpdate, PromoBox.TextUpdate, NiveauBox.TextUpdate
-        Dim Box As ComboBox = CType(sender, ComboBox)
-        If Box.Text = "" Then
-            Me.AffichButton.Enabled = False
-        End If
+    Private Sub BT_SORTIR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        Me.Close()
+        'Home.f.Show()
+        Home.MainContainer2.Visible = False
+        Home.MainContainer1.Visible = True
     End Sub
 
-    Private Sub NiveauBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NiveauBox.SelectedIndexChanged, PromoBox.SelectedIndexChanged, SpecialiteBox.SelectedIndexChanged
-        If (CType(sender, Control).Name.Equals(NiveauBox.Name)) Then
-            If CType(sender, ComboBox).SelectedIndex < 2 Then
-                If (Me.SpecialiteBox.Items.Count < 3) Then
-                    Me.SpecialiteBox.Items.Insert(0, "TRC")
-                End If
-                Me.SpecialiteBox.SelectedIndex = 0
-                Me.SpecialiteBox.Enabled = False
-            Else
-                If SpecialiteBox.Items.Item(0).ToString.Equals("TRC") Then
-                    Me.SpecialiteBox.Items.Remove(Me.SpecialiteBox.Items(0))
-                    Me.SpecialiteBox.Enabled = True
-                End If
-            End If
-        End If
+    Private Sub CrystalReportViewer1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CrystalReportViewer1.Load
 
-        If Not SpecialiteBox.Text.Equals("") And Not NiveauBox.Text.Equals("") And Not PromoBox.Text.Equals("") Then
-            Me.AffichButton.Enabled = True
-        Else
-            Me.AffichButton.Enabled = False
-        End If
-    End Sub
-
-    Private Sub LimitUpDown_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LimitUpDown.ValueChanged
-        AllCheckBox.Checked = False
-        NiveauBox_SelectedIndexChanged(PromoBox, New EventArgs())
-    End Sub
-
-    Private Sub AllCheckBox_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AllCheckBox.CheckedChanged
-        LimitUpDown.Enabled = Not AllCheckBox.Checked
-        NiveauBox_SelectedIndexChanged(PromoBox, New EventArgs())
-    End Sub
-
-    Private Sub AffichButton_EnabledChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AffichButton.EnabledChanged
-        AffichButton.BackColor = IIf(AffichButton.Enabled, Color.FromArgb(0, 64, 104), Color.FromArgb(169, 119, 113))
     End Sub
 End Class
-
-'Public Function getAllOrders() As DataTable
-'    Dim sqlCon As String = "User ID=sa;PWD=sa; server=databaseservername;INITIAL CATALOG=SampleDB;" + "PERSISTSECURITY INFO=FALSE;Connect Timeout=0"
-'    Dim ds As DataSet = Nothing
-'    Return ds.Tables.Item(0)
-'End Function
-
-'Dim sqlString As String = "SELECT MATRIN, NomEtud, Prenoms FROM ETUDIANT"
-'New OleDbDataAdapter(sqlString, adoOleDbConnection)
-'Dim adp As OleDbDataAdapter = New OleDbDataAdapter(sqlString, New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\BDD_TESTE.accdb"))
-'adp.Fill(ds.DataTable1)
-'dt = ds.Tables("DataTable1")
-'ds.Tables.Item(0).Merge(dt)
-
-'CrystalReportViewer1.ShowGroupTreeButton = False
-'CrystalReportViewer1.ShowPageNavigateButtons = False
-'CrystalReportViewer1.ShowParameterPanelButton = False
-
-'For Each FieldObj As CrystalDecisions.CrystalReports.Engine.FieldObject In cryrpt.Section3.ReportObjects
-'    Dim c As Char = FieldObj.Name.Chars(FieldObj.Name.Count - 1)
-'    If FieldObj.Name.StartsWith("MAT") And Val(c) = i - 8 Then 'it is a field of subjects
-'               ''''''Could be a database field (table.field)
-'        Exit For
-'    End If
-'Next
-
-
-'EvaluateAfter ({@UnboundNumber8}) ;
-'DefaultAttribute + (975*3*2 \ 2)

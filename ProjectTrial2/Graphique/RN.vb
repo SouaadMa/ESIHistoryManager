@@ -28,8 +28,8 @@ Public Class RN
         Next
 
         'initialiser generale
-        CB_ANNEE.SelectedIndex = 0
         cb_anee = False
+        BT_LOAD.Enabled = False
         CrystalReportViewer1.Visible = False
 
     End Sub
@@ -44,36 +44,15 @@ Public Class RN
 
     Private Sub BT_LOAD_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_LOAD.Click
         If cb_anee = True Then
+
             RN = New SortieRN(esistselect, CB_ANNEE.Text)
 
-            'upload le raport crystal
-            CrystalReportViewer1.Visible = True
+            CrystalReportViewer1.Enabled = True
+            Dim ds As New DataSet   'the dataset which will be assigned to the report
+            Dim report As New RNCrystalReport
 
-            CrystalReportViewer1.Zoom(1)
-            CrystalReportViewer1.RefreshReport()
-            CrystalReportViewer1.Zoom(1)
-            CrystalReportViewer1.Visible = False
-
-            'Dim sqlString As String = "SELECT MATRIN, NomEtud, Prenoms FROM ETUDIANT"
-            'New OleDbDataAdapter(sqlString, adoOleDbConnection)
-            Dim ds As New RNDataSetxsd
-            Dim dt As New DataTable()
-            'Dim adp As OleDbDataAdapter = New OleDbDataAdapter(sqlString, New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\BDD_TESTE.accdb"))
-            'adp.Fill(ds.DataTable1)
-            'dt = ds.Tables("DataTable1")
-            'ds.Tables.Item(0).Merge(dt)
-
-            ds = RN.GetDataSet()
-            CrystalReportViewer1.RefreshReport()
-            Dim cryrpt As New RNCrystalReport
-
-            cryrpt.SetDataSource(ds.Tables(0))
-            cryrpt.Database.Tables(0).SetDataSource(ds)
-            CrystalReportViewer1.ReportSource = cryrpt
-
-            'CrystalReportViewer1.ShowGroupTreeButton = False
-            'CrystalReportViewer1.ShowPageNavigateButtons = False
-            'CrystalReportViewer1.ShowParameterPanelButton = False
+            Form1.DataGridView1.DataSource = RN.GetDataSet().Tables(0)
+            Form1.Show()
 
         End If
         cb_anee = False
@@ -81,5 +60,6 @@ Public Class RN
 
     Private Sub CB_ANNEE_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CB_ANNEE.SelectedIndexChanged
         cb_anee = True
+        BT_LOAD.Enabled = True
     End Sub
 End Class

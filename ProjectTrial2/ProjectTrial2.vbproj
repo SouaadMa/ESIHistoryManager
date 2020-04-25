@@ -136,6 +136,17 @@
     <Compile Include="Graphique\Attestation.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Graphique\AttestationCrystalReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AttestationCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Graphique\AttestationDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AttestationDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Graphique\Chargement.Designer.vb">
       <DependentUpon>Chargement.vb</DependentUpon>
     </Compile>
@@ -286,6 +297,10 @@
     <EmbeddedResource Include="Graphique\Attestation.resx">
       <DependentUpon>Attestation.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Graphique\AttestationCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AttestationCrystalReport.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Graphique\Chargement.resx">
       <DependentUpon>Chargement.vb</DependentUpon>
     </EmbeddedResource>
@@ -359,6 +374,17 @@
     </None>
     <None Include="BDD_APPLICATIONDataSet.xss">
       <DependentUpon>BDD_APPLICATIONDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Graphique\AttestationDataSet.xsc">
+      <DependentUpon>AttestationDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Graphique\AttestationDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AttestationDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Graphique\AttestationDataSet.xss">
+      <DependentUpon>AttestationDataSet.xsd</DependentUpon>
     </None>
     <None Include="Graphique\PvDataSet.xsc">
       <DependentUpon>PvDataSet.xsd</DependentUpon>

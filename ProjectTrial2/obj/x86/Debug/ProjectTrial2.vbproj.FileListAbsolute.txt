@@ -35,7 +35,6 @@ C:\Users\hadia\Documents\GitHub\New folder\ESIHistoryManager\ProjectTrial2\bin\D
 C:\Users\hadia\Documents\GitHub\New folder\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement.exe
 C:\Users\hadia\Documents\GitHub\New folder\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement.xml
 C:\Users\hadia\Documents\GitHub\New folder\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement.pdb
-C:\Users\hadia\Documents\GitHub\New folder\ESIHistoryManager\ProjectTrial2\bin\Debug\VISUAL.accdb
 C:\Users\hadia\Documents\GitHub\New folder\ESIHistoryManager\ProjectTrial2\bin\Debug\EsistHistoryManagement.exe
 C:\Users\hadia\Documents\GitHub\New folder\ESIHistoryManager\ProjectTrial2\bin\Debug\EsistHistoryManagement.pdb
 C:\Users\hadia\Documents\GitHub\New folder\ESIHistoryManager\ProjectTrial2\bin\Debug\EsistHistoryManagement.xml
@@ -153,3 +152,11 @@ D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\
 D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.SortieAttestation.resources
 D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\bin\Debug\BDD_APPLICATION.accdb
 D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.Chargement.resources
+C:\Users\hadia\Documents\Github\New folder\ESIHistoryManager\ProjectTrial2\bin\Debug\BDD_APPLICATION.accdb
+C:\Users\hadia\Documents\Github\New folder\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\ProjectTrial2.vbprojResolveAssemblyReference.cache
+C:\Users\hadia\Documents\Github\New folder\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.SortieAttestation.resources
+C:\Users\hadia\Documents\Github\New folder\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.Attestation.resources
+C:\Users\hadia\Documents\Github\New folder\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.Chargement.resources
+C:\Users\hadia\Documents\Github\New folder\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.RNG.resources
+C:\Users\hadia\Documents\Github\New folder\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.RN.resources
+C:\Users\hadia\Documents\Github\New folder\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.Historique.resources

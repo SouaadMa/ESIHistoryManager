@@ -22,34 +22,37 @@ Partial Class PVPage
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.RechIntroPanel = New System.Windows.Forms.Panel()
+        Me.PVIntroPanel = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PN_FORUMRECH = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.LimitUpDown = New System.Windows.Forms.NumericUpDown()
+        Me.AllCheckBox = New System.Windows.Forms.CheckBox()
         Me.AffichButton = New System.Windows.Forms.Button()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PromoBox = New System.Windows.Forms.ComboBox()
         Me.NiveauBox = New System.Windows.Forms.ComboBox()
         Me.SpecialiteBox = New System.Windows.Forms.ComboBox()
-        Me.RechIntroPanel.SuspendLayout()
+        Me.PVIntroPanel.SuspendLayout()
         Me.PN_FORUMRECH.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        CType(Me.LimitUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'RechIntroPanel
+        'PVIntroPanel
         '
-        Me.RechIntroPanel.Controls.Add(Me.Label1)
-        Me.RechIntroPanel.Location = New System.Drawing.Point(0, 0)
-        Me.RechIntroPanel.Name = "RechIntroPanel"
-        Me.RechIntroPanel.Size = New System.Drawing.Size(675, 50)
-        Me.RechIntroPanel.TabIndex = 46
+        Me.PVIntroPanel.Controls.Add(Me.Label1)
+        Me.PVIntroPanel.Location = New System.Drawing.Point(0, 0)
+        Me.PVIntroPanel.Name = "PVIntroPanel"
+        Me.PVIntroPanel.Size = New System.Drawing.Size(675, 50)
+        Me.PVIntroPanel.TabIndex = 46
         '
         'Label1
         '
@@ -72,7 +75,7 @@ Partial Class PVPage
         Me.PN_FORUMRECH.BackColor = System.Drawing.Color.Transparent
         Me.PN_FORUMRECH.Controls.Add(Me.Panel2)
         Me.PN_FORUMRECH.Controls.Add(Me.Panel1)
-        Me.PN_FORUMRECH.Controls.Add(Me.RechIntroPanel)
+        Me.PN_FORUMRECH.Controls.Add(Me.PVIntroPanel)
         Me.PN_FORUMRECH.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PN_FORUMRECH.Location = New System.Drawing.Point(1, 0)
         Me.PN_FORUMRECH.Margin = New System.Windows.Forms.Padding(0)
@@ -93,17 +96,16 @@ Partial Class PVPage
         Me.CrystalReportViewer1.ActiveViewIndex = -1
         Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, 0)
+        Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, -2)
         Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-        Me.CrystalReportViewer1.Size = New System.Drawing.Size(675, 531)
+        Me.CrystalReportViewer1.Size = New System.Drawing.Size(675, 533)
         Me.CrystalReportViewer1.TabIndex = 1
         Me.CrystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.GroupBox1)
         Me.Panel1.Controls.Add(Me.AffichButton)
-        Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Controls.Add(Me.ComboBox4)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Label2)
@@ -115,44 +117,60 @@ Partial Class PVPage
         Me.Panel1.Size = New System.Drawing.Size(675, 57)
         Me.Panel1.TabIndex = 47
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.LimitUpDown)
+        Me.GroupBox1.Controls.Add(Me.AllCheckBox)
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Location = New System.Drawing.Point(330, 2)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(171, 52)
+        Me.GroupBox1.TabIndex = 10
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Limite D'affichage"
+        '
+        'LimitUpDown
+        '
+        Me.LimitUpDown.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LimitUpDown.Increment = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.LimitUpDown.Location = New System.Drawing.Point(6, 24)
+        Me.LimitUpDown.Maximum = New Decimal(New Integer() {2000, 0, 0, 0})
+        Me.LimitUpDown.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.LimitUpDown.Name = "LimitUpDown"
+        Me.LimitUpDown.Size = New System.Drawing.Size(61, 24)
+        Me.LimitUpDown.TabIndex = 8
+        Me.LimitUpDown.ThousandsSeparator = True
+        Me.LimitUpDown.Value = New Decimal(New Integer() {10, 0, 0, 0})
+        '
+        'AllCheckBox
+        '
+        Me.AllCheckBox.AutoSize = True
+        Me.AllCheckBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AllCheckBox.Location = New System.Drawing.Point(98, 24)
+        Me.AllCheckBox.Name = "AllCheckBox"
+        Me.AllCheckBox.Size = New System.Drawing.Size(56, 24)
+        Me.AllCheckBox.TabIndex = 9
+        Me.AllCheckBox.Text = "tout"
+        Me.AllCheckBox.UseVisualStyleBackColor = True
+        '
         'AffichButton
         '
         Me.AffichButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
         Me.AffichButton.FlatAppearance.BorderSize = 0
         Me.AffichButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.AffichButton.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.AffichButton.Location = New System.Drawing.Point(529, 17)
+        Me.AffichButton.Location = New System.Drawing.Point(526, 21)
         Me.AffichButton.Name = "AffichButton"
         Me.AffichButton.Size = New System.Drawing.Size(91, 28)
         Me.AffichButton.TabIndex = 0
         Me.AffichButton.Text = "Afficher"
         Me.AffichButton.UseVisualStyleBackColor = False
         '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(369, 3)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(124, 18)
-        Me.Label5.TabIndex = 7
-        Me.Label5.Text = "Limite D'affichage"
-        '
-        'ComboBox4
-        '
-        Me.ComboBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Location = New System.Drawing.Point(373, 29)
-        Me.ComboBox4.Margin = New System.Windows.Forms.Padding(30, 0, 50, 0)
-        Me.ComboBox4.Name = "ComboBox4"
-        Me.ComboBox4.Size = New System.Drawing.Size(119, 26)
-        Me.ComboBox4.TabIndex = 6
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(275, 3)
+        Me.Label4.Location = New System.Drawing.Point(235, 2)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(71, 18)
         Me.Label4.TabIndex = 5
@@ -162,7 +180,7 @@ Partial Class PVPage
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(199, 3)
+        Me.Label3.Location = New System.Drawing.Point(159, 1)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(53, 18)
         Me.Label3.TabIndex = 4
@@ -172,7 +190,7 @@ Partial Class PVPage
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(98, 3)
+        Me.Label2.Location = New System.Drawing.Point(58, 1)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(78, 18)
         Me.Label2.TabIndex = 3
@@ -182,7 +200,7 @@ Partial Class PVPage
         '
         Me.PromoBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PromoBox.FormattingEnabled = True
-        Me.PromoBox.Location = New System.Drawing.Point(99, 29)
+        Me.PromoBox.Location = New System.Drawing.Point(59, 24)
         Me.PromoBox.Margin = New System.Windows.Forms.Padding(30, 0, 50, 0)
         Me.PromoBox.Name = "PromoBox"
         Me.PromoBox.Size = New System.Drawing.Size(75, 26)
@@ -193,7 +211,7 @@ Partial Class PVPage
         '
         Me.NiveauBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.NiveauBox.FormattingEnabled = True
-        Me.NiveauBox.Location = New System.Drawing.Point(201, 29)
+        Me.NiveauBox.Location = New System.Drawing.Point(161, 24)
         Me.NiveauBox.Margin = New System.Windows.Forms.Padding(30, 0, 50, 0)
         Me.NiveauBox.Name = "NiveauBox"
         Me.NiveauBox.Size = New System.Drawing.Size(50, 26)
@@ -203,7 +221,7 @@ Partial Class PVPage
         '
         Me.SpecialiteBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SpecialiteBox.FormattingEnabled = True
-        Me.SpecialiteBox.Location = New System.Drawing.Point(278, 29)
+        Me.SpecialiteBox.Location = New System.Drawing.Point(238, 24)
         Me.SpecialiteBox.Margin = New System.Windows.Forms.Padding(30, 0, 50, 0)
         Me.SpecialiteBox.Name = "SpecialiteBox"
         Me.SpecialiteBox.Size = New System.Drawing.Size(68, 26)
@@ -222,16 +240,19 @@ Partial Class PVPage
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.TopMost = True
         Me.WindowState = System.Windows.Forms.FormWindowState.Minimized
-        Me.RechIntroPanel.ResumeLayout(False)
-        Me.RechIntroPanel.PerformLayout()
+        Me.PVIntroPanel.ResumeLayout(False)
+        Me.PVIntroPanel.PerformLayout()
         Me.PN_FORUMRECH.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        CType(Me.LimitUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents RechIntroPanel As System.Windows.Forms.Panel
+    Friend WithEvents PVIntroPanel As System.Windows.Forms.Panel
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents PN_FORUMRECH As System.Windows.Forms.Panel
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
@@ -241,11 +262,12 @@ Partial Class PVPage
     Friend WithEvents PromoBox As System.Windows.Forms.ComboBox
     Friend WithEvents NiveauBox As System.Windows.Forms.ComboBox
     Friend WithEvents SpecialiteBox As System.Windows.Forms.ComboBox
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox4 As System.Windows.Forms.ComboBox
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents AffichButton As System.Windows.Forms.Button
     Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
+    Friend WithEvents LimitUpDown As System.Windows.Forms.NumericUpDown
+    Friend WithEvents AllCheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     'Friend WithEvents Cryst12 As EsistHistoryManagement_v1.PvReport1
 
 End Class

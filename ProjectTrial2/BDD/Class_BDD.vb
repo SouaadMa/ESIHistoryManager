@@ -11,6 +11,8 @@
         Dim cle2 As String          ' Le champ qui est égale entre tab1 et tab2 pour tab2
         Dim t1 As String()
         Dim t2 As String()
+        Dim foundInTab1 As Boolean = False
+        Dim foundInTab2 As Boolean = False
 
         requete = ""                                        ' Initialiser la requete sql 
         cle1 = BDD.getCorrespondance(tab1, tab2, 1)         ' Trouver le nom de champ qui est égale entre tab1 et tab2 pour tab1
@@ -99,6 +101,8 @@
                     valeur = "'" + cond.getValeur.ToString + "'"
                     ind = 0
                     found = False
+                    foundInTab1 = False
+                    foundInTab2 = False
 
                     Try
 
@@ -128,6 +132,7 @@
                         While Not found And ind < t1.Length                ' Chercher si le champ donnée existe dans le tableau tab1 de la base de donnée  
                             If champ.Equals(t1(ind)) Then
                                 found = True
+                                foundInTab1 = True
                             Else
                                 ind += 1
                             End If
@@ -136,6 +141,7 @@
                         While Not found And ind < t2.Length                ' Chercher si le champ donnée existe dans le tableau tab2 de la base de donnée  
                             If champ.Equals(t2(ind)) Then
                                 found = True
+                                foundInTab2 = True
                             Else
                                 ind += 1
                             End If
@@ -150,7 +156,16 @@
                         Else                                 '-> Sinon ( on a pas encore ajouté aucun condition )
                             first = False                           '--> mettre first à faux ( la premier critere est ajoutée )
                         End If
-                        requete = requete + champ + " = " + valeur      ' Ajouter le critère ' champ = valeur'
+                        If (foundInTab1) Then
+                            requete = requete + tab1 + "." + champ + " = " + valeur      ' Ajouter le critère ' Tab1.champ = valeur'
+                            Console.WriteLine("after" + champ)
+                            Console.WriteLine(requete)
+                        ElseIf (foundInTab2) Then
+                            requete = requete + tab2 + "." + champ + " = " + valeur      ' Ajouter le critère ' Tab2.champ = valeur'
+                            Console.WriteLine("after" + champ)
+                            Console.WriteLine(requete)
+                        End If
+
                     End If
 
                 Next

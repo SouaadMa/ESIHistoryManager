@@ -54,7 +54,7 @@
 
 
         'Ajout du caractère spécial à la place des notes qu'on ne veut pas afficher
-        ArrangeRATTRA(tableNotesMat, "$")
+        ArrangeRATTRA(tableNotesMat, 99.99)
 
 
         'Ajout des deux tables dans une DataSet
@@ -96,7 +96,7 @@
     'Cette méthode passe par la dataTable et remplace les champs de rattrapage -si nécessaire-
     '  par car_remplacement
 
-    Public Sub ArrangeRATTRA(ByVal dt As DataTable, ByVal car_remplacement As String)
+    Public Sub ArrangeRATTRA(ByVal dt As DataTable, ByVal car_remplacement As Double)
 
 
         For Each note As DataRow In dt.Rows

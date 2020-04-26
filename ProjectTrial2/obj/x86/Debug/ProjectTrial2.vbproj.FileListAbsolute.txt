@@ -1,0 +1,4 @@
+C:\Users\SIRINE\Documents\Visual Studio 2010\Projects\ProjectTrial2\ProjectTrial2\bin\Debug\EsistHistoryManagement.exe.config
+C:\Users\SIRINE\Documents\Visual Studio 2010\Projects\ProjectTrial2\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement.exe
+C:\Users\SIRINE\Documents\Visual Studio 2010\Projects\ProjectTrial2\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement.xml
+C:\Users\SIRINE\Documents\Visual Studio 2010\Projects\ProjectTrial2\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement.pdb

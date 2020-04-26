@@ -422,7 +422,8 @@ Partial Class Home
         Me.RNGButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(96, Byte), Integer), CType(CType(184, Byte), Integer))
         Me.RNGButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(96, Byte), Integer), CType(CType(184, Byte), Integer))
         Me.RNGButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.RNGButton.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.RNG
+        Me.RNGButton.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.rng
+        Me.RNGButton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.RNGButton.Location = New System.Drawing.Point(104, 2)
         Me.RNGButton.Margin = New System.Windows.Forms.Padding(2)
         Me.RNGButton.MinimumSize = New System.Drawing.Size(45, 49)
@@ -497,7 +498,6 @@ Partial Class Home
         'logo_bleu
         '
         Me.logo_bleu.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.logo_bleu.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.logo_white
         Me.logo_bleu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.logo_bleu.Location = New System.Drawing.Point(54, 0)
         Me.logo_bleu.Name = "logo_bleu"

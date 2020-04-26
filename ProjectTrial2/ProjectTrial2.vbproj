@@ -117,9 +117,10 @@
     <Compile Include="BDD\SortiePV.vb" />
     <Compile Include="BDD\SortieRN.vb" />
     <Compile Include="BDD\SortieRNG.vb" />
-    <Compile Include="BDD\ECLATEMMENT_TRAFFIC.vb">
-      <SubType>Form</SubType>
-    </Compile>
+
+
+    <Compile Include="BDD\ECLATEMMENT_TRAFFIC.vb" />
+
     <Compile Include="Graphique\affichResearchResult.Designer.vb">
       <DependentUpon>affichResearchResult.vb</DependentUpon>
     </Compile>

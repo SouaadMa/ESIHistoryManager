@@ -323,7 +323,7 @@ Represents a strongly typed in-memory cache of data.
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
-</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.RNG">
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.rng">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

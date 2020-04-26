@@ -1,7 +1,7 @@
 ﻿Imports System.Data.OleDb
 Imports Microsoft.VisualBasic.ApplicationServices
 
-Public Class Form1
+Public Class ECLATEMMENT_TRAFFIC
 
     Dim cnx2, cn As OleDbConnection           ' la connection 
     Dim cmd2, cmd3 As OleDbCommand              ' la commande
@@ -178,9 +178,13 @@ Public Class Form1
     End Sub
     'Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
-    '   ECLATEMENT("C:\Users\DELL\Documents\BDD TRAFFIc", "C:\Users\DELL\Documents\INSCRIT_00_04", "C:\Users\DELL\Documents\NOTE_00_04", "C:\Users\DELL\Documents\MATIERE_00_04", "C:\Users\DELL\Documents\RATRAP_00_04")
+    'ECLATEMENT("\..\..\BDD_APPLICATION.accdb", "C:\Users\DELL\Documents\INSCRIT_00_04", "C:\Users\DELL\Documents\NOTE_00_04", "C:\Users\DELL\Documents\MATIERE_00_04", "C:\Users\DELL\Documents\RATRAP_00_04")
 
     'End Sub
+
+    Public Sub New()
+        ECLATEMENT("..\..\BDD_APPLICATION", "..\..\INSCRIT_00_04", "..\..\NOTE_00_04", "..\..\MATIERE_00_04", "..\..\RATRAP_00_04")
+    End Sub
 End Class
 
 

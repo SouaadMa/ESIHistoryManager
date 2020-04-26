@@ -21,6 +21,7 @@ Public Class Login
         If AdminButton.Checked Then
             If mdp = password_._admin_mdp Then
                 correct = True
+                'Dim r As New ECLATEMMENT_TRAFFIC()
             End If
         End If
         Return correct

@@ -31,8 +31,8 @@ Public Class RNGPage
 
         ds = SortieRNG.RNG(esistselect)
 
-        Form2.DataGridView1.DataSource = ds.Tables(0)
-        Form2.Show()
+        Form1.DataGridView1.DataSource = ds.Tables(0)
+        Form1.Show()
 
         GoTo en
         'initilize the textboxes of promotion and annee

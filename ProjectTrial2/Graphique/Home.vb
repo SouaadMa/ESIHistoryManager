@@ -493,7 +493,6 @@ Public Class Home
                 'f.Hide()
                 MainContainer1.Visible = False
             End If
-
             h = New RNGPage(CType(f, affichResearchResult).StudentList.Item(0))         ' assign the search form to  the f form
             h.TopLevel = False
             h.TopMost = True

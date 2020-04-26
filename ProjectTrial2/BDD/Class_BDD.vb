@@ -11,6 +11,9 @@
         Dim cle2 As String          ' Le champ qui est égale entre tab1 et tab2 pour tab2
         Dim t1 As String()
         Dim t2 As String()
+      Dim foundInTab1 As Boolean = False
+      Dim foundInTab2 As Boolean = False
+
 
         requete = ""                                        ' Initialiser la requete sql 
         cle1 = BDD.getCorrespondance(tab1, tab2, 1)         ' Trouver le nom de champ qui est égale entre tab1 et tab2 pour tab1
@@ -155,6 +158,16 @@
                         Else                                 '-> Sinon ( on a pas encore ajouté aucun condition )
                             first = False                           '--> mettre first à faux ( la premier critere est ajoutée )
                         End If
+                        If (foundInTab1) Then
+                            requete = requete + tab1 + "." + champ + " = " + valeur      ' Ajouter le critère ' Tab1.champ = valeur'
+                            Console.WriteLine("after" + champ)
+                            Console.WriteLine(requete)
+                        ElseIf (foundInTab2) Then
+                            requete = requete + tab2 + "." + champ + " = " + valeur      ' Ajouter le critère ' Tab2.champ = valeur'
+                            Console.WriteLine("after" + champ)
+                            Console.WriteLine(requete)
+                        End If
+            
                         requete = requete + champ + " = " + valeur      ' Ajouter le critère ' champ = valeur'
                     End If
 

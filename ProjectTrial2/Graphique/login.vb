@@ -96,7 +96,8 @@ Public Class Login
         Console.WriteLine("After")
         For Each ligne In dt.Rows
             Console.WriteLine(i)
-            Console.WriteLine(ligne(BDD.champsMATRIN))
+            Console.WriteLine(ligne(BDD.champsMATRIN) + " " + ligne("MoyClassement").ToString)
+            i = i + 1
         Next
 
     End Sub

@@ -11,8 +11,8 @@
         Dim cle2 As String          ' Le champ qui est égale entre tab1 et tab2 pour tab2
         Dim t1 As String()
         Dim t2 As String()
-      Dim foundInTab1 As Boolean = False
-      Dim foundInTab2 As Boolean = False
+        Dim foundInTab1 As Boolean = False
+        Dim foundInTab2 As Boolean = False
 
 
         requete = ""                                        ' Initialiser la requete sql 
@@ -102,6 +102,9 @@
                     valeur = "'" + cond.getValeur.ToString + "'"
                     ind = 0
                     found = False
+                    foundInTab1 = False
+                    foundInTab2 = False
+         
 
                     Try
 
@@ -131,6 +134,7 @@
                         While Not found And ind < t1.Length                ' Chercher si le champ donnée existe dans le tableau tab1 de la base de donnée  
                             If champ.Equals(t1(ind)) Then
                                 found = True
+                                foundInTab1 = True
                             Else
                                 ind += 1
                             End If
@@ -139,6 +143,7 @@
                         While Not found And ind < t2.Length                ' Chercher si le champ donnée existe dans le tableau tab2 de la base de donnée  
                             If champ.Equals(t2(ind)) Then
                                 found = True
+                                foundInTab2 = True
                             Else
                                 ind += 1
                             End If

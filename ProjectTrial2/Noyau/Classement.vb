@@ -7,14 +7,15 @@
         ' commençant leurs études à l'année en entrée
         ' Cette DataTable est triée selon leurs moyennes de classement
 
-        
-        'Rang nom prenom matricule moyenne Codepromo
-
         Dim tableEtudiants As New DataTable
         Dim tableMoyennesEtudiants As New DataTable
         Dim requeteSQL As New String("")
-        Dim listeChamps As New List(Of String)
-        Dim listeConditions As New List(Of Critere)
+        Dim collectionMat As List(Of String) = New List(Of String)
+        Dim listeConditions As List(Of Critere) = New List(Of Critere)
+        Dim listeChamps As List(Of String) = New List(Of String)
+        Dim dt As DataTable
+
+
 
         ' ************** GETTING THE INFO FROM THE DATABASE *************** '
         ' Préparation de la liste des champs
@@ -25,9 +26,11 @@
         listeChamps.Add(BDD.champsCodePromo)
         ' Préparation de la liste des conditions
         listeConditions.Add(New Critere(BDD.champsDECIIN, 1))
+        listeConditions.Add(New Critere(BDD.champsDECIIN, 2))
+        
 
         ' La génération de la requête SQL pour obtenir la table des étudiants qu'on va classer
-        requeteSQL = Class_BDD.genereRechRequete(listeChamps, BDD.nomTableINSCRIPTION, BDD.nomTableEtudiant, listeConditions)
+        requeteSQL = Class_BDD.genereRechRequete(listeChamps, BDD.nomTableINSCRIPTION, BDD.nomTableEtudiant, listeConditions, False)
         'requeteSQL == SELECT RANGIN, NomEtud, Prenoms, CodePromo
         'FROM INSCRIPTION INNER JOIN ETUDIANT ON INSCRIPTION.MATRIN = ETUDIANT.MATRIN
         ' WHERE (CodePromo LIKE '5/%/Annee+5') AND (DECIIN = )
@@ -40,43 +43,65 @@
 
         tableEtudiants = BDD.executeRequete(requeteSQL)
 
-        ' *********************Obtention de leurs moyennes
-        Dim tableMatricules As New DataTable
-        tableMatricules = tableEtudiants.Copy
-        tableMatricules.Columns.Remove(BDD.champsRANGIN)
-        tableMatricules.Columns.Remove(BDD.champsNomEtud)
-        tableMatricules.Columns.Remove(BDD.champsPrenoms)
-        tableMatricules.Columns.Remove(BDD.champsCodePromo)
-
-        'requeteSQL = GetMoyennesEtudiants(tableMatricules)
-
-        ' tableMoyennesEtudiants = BDD.executeRequete(requeteSQL)
-
-
-        ' ************** ADDING THE NEW COLUMN "MoyClassement" ************* '
-        tableEtudiants.Columns.Add(New DataColumn("MoyClassement", System.Type.GetType("System.Double")))
-        Dim moyClassement As Double
-        moyClassement = 0
-
-
-        ' ************** ADDING THE AVERAGE FOR EACH STUDENT IN THE DATATABLE *************** '
-        For Each ligneEtudiant As DataRow In tableEtudiants.Rows
-
-            'moyClassement = CalculMoyenneClassement(tableMoyennesEtudiants, ligneEtudiant.Item(BDD.champsMATRIN))
-            ligneEtudiant("MoyClassement") = moyClassement
-
+        For Each row As DataRow In tableEtudiants.Rows
+            collectionMat.Add(CType(row(BDD.champsMATRIN), String))
         Next
 
 
-        ' ************** SORTING THE STUDENTS OF THE DATATABLE IN ASCENDING ORDER 
-        '                                     ACCORDING TO THEIR CALCULATED AVERAGES **************** '
+        requeteSQL = ""
+        listeChamps.Clear()
 
-        ' ************** AND RETURNING THE RESULT *************** '
+        listeChamps.Add(BDD.champsMATRIN)
+        listeChamps.Add(BDD.champsMOYEIN)
+        listeChamps.Add(BDD.champsMOYERA)
+
+        listeConditions.Clear()
+
+        For Each mat In collectionMat
+            listeConditions.Add(New Critere(BDD.champsMATRIN, mat))
+        Next
+
+        requeteSQL = Class_BDD.genereRechRequete(listeChamps, BDD.nomTableINSCRIPTION, BDD.nomTableNoteRATRAP, listeConditions, False)
+        dt = BDD.executeRequete(requeteSQL)
+        calculMoyClassement(dt, tableEtudiants)
 
         Return SortASCCollection(tableEtudiants, "MoyClassement")
 
     End Function
 
+    Public Shared Sub calculMoyClassement(ByVal dt As DataTable, ByRef dtEtud As DataTable)
+
+        Dim moyennes() As DataRow
+        Dim moyClassement As DataColumn = New DataColumn
+        Dim moy As Double
+
+
+
+        dtEtud.Columns.Add("MoyClassement", GetType(Double))
+
+        For Each etud As DataRow In dtEtud.Rows
+
+            moyennes = dt.Select(BDD.champsMATRIN & "=" & "'" & etud(BDD.champsMATRIN) & "'")
+            For Each row As DataRow In moyennes
+                moy += max(row(BDD.champsMOYEIN), row(BDD.champsMOYERA))
+            Next
+            moy /= 5
+
+            etud("MoyClassement") = moy
+            moy = 0
+
+        Next
+
+    End Sub
+
+    Public Shared Function max(ByVal d1 As Double, ByVal d2 As Double) As Double
+
+        If (d1.CompareTo(d2) > 0) Then
+            Return d1
+        Else
+            Return d2
+        End If
+    End Function
 
     ' Ancienne Méthode qui retourne une collection limitée d'étudiants, triée selon leurs moyennes
     Public Shared Function TraitClassementA(ByVal criteres As List(Of Critere), ByVal limite As Integer) As DataTable
@@ -118,7 +143,7 @@
 
         Dim champsDemandes As New List(Of String)({BDD.champsNomEtud, BDD.champsPrenoms, BDD.champsRANGIN, BDD.champsMATRIN, BDD.champsMOYEIN})
 
-        req = Class_BDD.genereRechRequete(champsDemandes, BDD.nomTableINSCRIPTION, BDD.nomTableEtudiant, conditions)
+        req = Class_BDD.genereRechRequete(champsDemandes, BDD.nomTableINSCRIPTION, BDD.nomTableEtudiant, conditions, True)
         Class_BDD.AjouterLimit_Requete(req, limite)
         Class_BDD.AjouterOrdre_Requete(req, BDD.champsMOYEIN)
 

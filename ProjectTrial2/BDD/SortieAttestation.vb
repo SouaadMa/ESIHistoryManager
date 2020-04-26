@@ -25,7 +25,7 @@ Public Class SortieAttestation
         tab1 = BDD.nomTableINSCRIPTION                                      ' Ajouter les noms des deux tableaux
         tab2 = BDD.nomTablePROMO
 
-        requete = Class_BDD.genereRechRequete(champ, tab1, tab2, cond)      ' Générer le requète sql de recherche dans deux tableaux
+        requete = Class_BDD.genereRechRequete(champ, tab1, tab2, cond, True)      ' Générer le requète sql de recherche dans deux tableaux
 
         dt1 = (BDD.executeRequete(requete)).Copy()                          ' Mettre le résultat de recherche dans dt1
         ChangeVides(dt1)                                                    ' Effacer les vides dans dt1

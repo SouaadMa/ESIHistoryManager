@@ -26,9 +26,11 @@
         listeChamps.Add(BDD.champsCodePromo)
         ' Préparation de la liste des conditions
         listeConditions.Add(New Critere(BDD.champsDECIIN, 1))
+        listeConditions.Add(New Critere(BDD.champsDECIIN, 2))
+        
 
         ' La génération de la requête SQL pour obtenir la table des étudiants qu'on va classer
-        requeteSQL = Class_BDD.genereRechRequete(listeChamps, BDD.nomTableINSCRIPTION, BDD.nomTableEtudiant, listeConditions, True)
+        requeteSQL = Class_BDD.genereRechRequete(listeChamps, BDD.nomTableINSCRIPTION, BDD.nomTableEtudiant, listeConditions, False)
         'requeteSQL == SELECT RANGIN, NomEtud, Prenoms, CodePromo
         'FROM INSCRIPTION INNER JOIN ETUDIANT ON INSCRIPTION.MATRIN = ETUDIANT.MATRIN
         ' WHERE (CodePromo LIKE '5/%/Annee+5') AND (DECIIN = )

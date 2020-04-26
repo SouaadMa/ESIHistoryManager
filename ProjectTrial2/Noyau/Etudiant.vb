@@ -12,18 +12,13 @@
     'Private InfosMATIERE As Dictionary(Of String, String) = New Dictionary(Of String, String)
     'Private InfosNOTERATRAP As Dictionary(Of String, String) = New Dictionary(Of String, String)
     'Private InfosRATRAP As Dictionary(Of String, String) = New Dictionary(Of String, String)
-    Public Anneedetude As New List(Of String)
+    'Public Anneedetude As New List(Of String)
 
-
-    Private Id As String 'L'identité de l'étudiant (son matricule)
 
     Public Function getId() As String 'Getter pour l'Id
-        Return Me.Id
+        Return Me.GetInfoChamps(BDD.champsMATRIN)
     End Function
 
-    Public Sub New(ByVal i As String)
-        Id = i
-    End Sub
 
     Public Sub New(ByVal ligne As DataRow)
 
@@ -66,8 +61,6 @@
     End Sub
 
 
-
-
     'Méthode qui charge les informations de la table INSCRIPTION de l'étudiant selon le critère donné (l'année)
     'We don't need to use it as long as we have ChargementInfos, the method above
     'But don't delete it
@@ -78,7 +71,6 @@
 
         Return ligne
 
-        
 
     End Function
 

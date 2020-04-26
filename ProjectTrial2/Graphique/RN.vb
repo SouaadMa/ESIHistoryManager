@@ -1,6 +1,14 @@
-﻿Public Class RN
+﻿Imports System.Data.OleDb
+Imports CrystalDecisions.CrystalReports.Engine
+Imports CrystalDecisions.Shared
+Imports System.Data
+Imports System.Data.SqlClient
 
+Public Class RN
+
+    Dim cb_anee As Boolean
     Dim esistselect As Etudiant ' letudiant selection f affichresult
+    Dim RN As SortieRN = Nothing
 
     Public Sub New(ByVal e As Etudiant)
 
@@ -15,21 +23,14 @@
 
         'inisializer les panels
         'initialiser de promo
-
-
-        For Each promo In esistselect.GetALL(BDD.champsCodePromo)
-            CB_ANNEE.Items.Add(promo)
+        For Each cr As String In InfosGenerales.promo
+            CB_ANNEE.Items.Add(cr)
         Next
 
-
-        'For Each cr As String In InfosGenerales.promo
-        'CB_ANNEE.Items.Add(cr)
-        'Next
-
-        Console.WriteLine("RN_Load")
-
         'initialiser generale
-        'CB_ANNEE.SelectedIndex = 0
+        cb_anee = False
+        BT_LOAD.Enabled = False
+        CrystalReportViewer1.Visible = False
 
     End Sub
 
@@ -37,34 +38,28 @@
 
     Private Sub BT_SORTIR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Me.Close()
-        'Home.f.Show()
         Home.MainContainer2.Visible = False
         Home.MainContainer1.Visible = True
     End Sub
 
-
-
-
-    Private Sub CrystalReportViewer1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
-        Console.WriteLine("CRV_LOAD")
-
-    End Sub
-
-    
     Private Sub BT_LOAD_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_LOAD.Click
+        If cb_anee = True Then
 
-        'Console.WriteLine("Click load " + CType(CB_ANNEE.SelectedItem, String) + "jjj")
-        Dim rn As New SortieRN(esistselect, CType(CB_ANNEE.SelectedItem, String))
-        'Console.WriteLine("Done")
+            RN = New SortieRN(esistselect, CB_ANNEE.Text)
 
-        Dim dts As DataSet
-        dts = rn.GetDataSet
+            CrystalReportViewer1.Enabled = True
+            Dim ds As New DataSet   'the dataset which will be assigned to the report
+            Dim report As New RNCrystalReport
 
-        'Pour afficher le nombre de RN que cet étudiant a imprimé
-        'Dim nbRN = rn.GetNbreRN() 
+            Form1.DataGridView1.DataSource = RN.GetDataSet().Tables(0)
+            Form1.Show()
 
-
+        End If
+        cb_anee = False
     End Sub
 
+    Private Sub CB_ANNEE_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CB_ANNEE.SelectedIndexChanged
+        cb_anee = True
+        BT_LOAD.Enabled = True
+    End Sub
 End Class

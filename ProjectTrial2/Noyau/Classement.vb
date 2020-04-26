@@ -34,12 +34,14 @@
         'requeteSQL == SELECT RANGIN, NomEtud, Prenoms, CodePromo
         'FROM INSCRIPTION INNER JOIN ETUDIANT ON INSCRIPTION.MATRIN = ETUDIANT.MATRIN
         ' WHERE (CodePromo LIKE '5/%/Annee+5') AND (DECIIN = )
-        requeteSQL = Class_BDD.AddLIKECondition(requeteSQL, BDD.champsMATRIN, New Critere(BDD.champsAnnee, Annee))
+        requeteSQL = Class_BDD.AddLIKECondition(requeteSQL, BDD.champsMATRIN, New Critere(BDD.champsAnnee, Annee, BDD.nomTableEtudiant))
         ' requeteSQL == requeteSQL + " AND (MATRIN LIKE 'Annee/%')"
-        requeteSQL = Class_BDD.AddLIKECondition(requeteSQL, BDD.champsCodePromo, New Critere(BDD.champsNiveau, "5"))
+        requeteSQL = Class_BDD.AddLIKECondition(requeteSQL, BDD.champsCodePromo, New Critere(BDD.champsNiveau, "5", BDD.nomTableINSCRIPTION))
         ' requeteSQL == requeteSQL + " AND (CodePromo LIKE '5/%')"
-        requeteSQL = Class_BDD.AddLIKECondition(requeteSQL, BDD.champsCodePromo, New Critere(BDD.champsAnnee, (Integer.Parse(Annee) + 5).ToString))
+        requeteSQL = Class_BDD.AddLIKECondition(requeteSQL, BDD.champsCodePromo, New Critere(BDD.champsAnnee, (Integer.Parse(Annee) + 5).ToString, BDD.nomTableINSCRIPTION))
         ' requeteSQL == requeteSQL + " AND (CodePromo LIKE '%/Annee+5')"
+
+        Console.WriteLine(requeteSQL)
 
         tableEtudiants = BDD.executeRequete(requeteSQL)
 
@@ -63,7 +65,11 @@
 
         requeteSQL = Class_BDD.genereRechRequete(listeChamps, BDD.nomTableINSCRIPTION, BDD.nomTableNoteRATRAP, listeConditions, False)
         dt = BDD.executeRequete(requeteSQL)
+
+        Console.WriteLine(dt.Equals(Nothing))
+
         calculMoyClassement(dt, tableEtudiants)
+
 
         Return SortASCCollection(tableEtudiants, "MoyClassement")
 
@@ -76,12 +82,12 @@
         Dim moy As Double
 
 
-
         dtEtud.Columns.Add("MoyClassement", GetType(Double))
 
         For Each etud As DataRow In dtEtud.Rows
 
-            moyennes = dt.Select(BDD.champsMATRIN & "=" & "'" & etud(BDD.champsMATRIN) & "'")
+
+            moyennes = dt.Select(BDD.champsMATRIN & "=" & "'" & etud(2) & "'")
             For Each row As DataRow In moyennes
                 moy += max(row(BDD.champsMOYEIN), row(BDD.champsMOYERA))
             Next

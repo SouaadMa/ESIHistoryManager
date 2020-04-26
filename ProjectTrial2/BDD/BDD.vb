@@ -357,7 +357,7 @@ Public Class BDD
             Case champsCodeMat
                 Return CompareToCodeMat(critere)
             Case Else
-                Return (critere.getChamps + " = " + critere.getValeur)
+                Return (critere.getTable + "." + critere.getChamps + " = " + critere.getValeur)
         End Select
 
     End Function
@@ -373,7 +373,7 @@ Public Class BDD
             Case champsCodeMat
                 Return CompareToCodeMat(critere)
             Case Else
-                Return (critere.getChamps + " = " + critere.getValeur)
+                Return (critere.getTable + "." + critere.getChamps + " = " + critere.getValeur)
         End Select
 
     End Function
@@ -390,11 +390,11 @@ Public Class BDD
         Select Case champs
 
             Case BDD.champsAnnee
-                chaine = "MATRIN LIKE '" + critere.getValeur + "/*'"
+                chaine = critere.getTable + "." + "MATRIN LIKE '" + critere.getValeur + "/*'"
             Case BDD.champsOption
-                chaine = "MATRIN LIKE '*/" + critere.getValeur + "'"
+                chaine = critere.getTable + "." + "MATRIN LIKE '*/" + critere.getValeur + "'"
             Case BDD.champsMATRIN
-                chaine = "MATRIN = " + critere.getValeur + "'"
+                chaine = critere.getTable + "." + "MATRIN = " + critere.getValeur + "'"
             Case Else
                 chaine = ""
 
@@ -421,13 +421,13 @@ Public Class BDD
         Select Case champs
 
             Case BDD.champsNiveau
-                chaine = "CodePROMO LIKE '" + critere.getValeur + "/*'"
+                chaine = critere.getTable + "." + "CodePROMO LIKE '" + critere.getValeur + "/*'"
             Case BDD.champsOption
-                chaine = "CodePROMO LIKE '*/" + critere.getValeur + "/*'"
+                chaine = critere.getTable + "." + "CodePROMO LIKE '*/" + critere.getValeur + "/*'"
             Case BDD.champsAnnee
-                chaine = "CodePROMO LIKE '*/" + critere.getValeur + "'"
+                chaine = critere.getTable + "." + "CodePROMO LIKE '*/" + critere.getValeur + "'"
             Case BDD.champsCodePromo
-                chaine = "CodePROMO = '" + critere.getValeur + "'"
+                chaine = critere.getTable + "." + "CodePROMO = '" + critere.getValeur + "'"
             Case Else
                 chaine = ""
 
@@ -449,15 +449,15 @@ Public Class BDD
         Select Case champs
 
             Case BDD.champsLIBEMA
-                Return "CodeMat LIKE '" + critere.getValeur + "/*'"
+                Return critere.getTable + "." + "CodeMat LIKE '" + critere.getValeur + "/*'"
             Case BDD.champsAnnee
-                Return "CodeMat LIKE '*/" + critere.getValeur + "/*'"
+                Return critere.getTable + "." + "CodeMat LIKE '*/" + critere.getValeur + "/*'"
             Case BDD.champsOption
-                Return "CodeMat LIKE '*/" + critere.getValeur + "*'"
+                Return critere.getTable + "." + "CodeMat LIKE '*/" + critere.getValeur + "*'"
             Case BDD.champsNiveau
-                Return "CodeMat LIKE '*/*" + critere.getValeur + "'"
+                Return critere.getTable + "." + "CodeMat LIKE '*/*" + critere.getValeur + "'"
             Case BDD.champsCodeMat
-                Return "CodeMat = '" + critere.getValeur + "'"
+                Return critere.getTable + "." + "CodeMat = '" + critere.getValeur + "'"
             Case Else
                 Return ""
 
@@ -601,8 +601,8 @@ Public Class BDD
     '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     ''' '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-    Private Shared tableCorespondante() As Paire = {New Paire(nomTableEtudiant, nomTableINSCRIPTION), New Paire(nomTableEtudiant, nomTableNOTE), New Paire(nomTableNOTE, nomTableMATIERE), New Paire(nomTableEtudiant, nomTableRATRAP), New Paire(nomTableRATRAP, nomTableNoteRATRAP), New Paire(nomTableINSCRIPTION, nomTablePROMO)}
-    Private Shared champCorespondante() As Paire = {New Paire(champsMATRIN, champsMATRIN), New Paire(champsMATRIN, champsMATRIN), New Paire(champsCodeMat, champsCodeMat), New Paire(champsMATRIN, champsMATRIN), New Paire(champsCodeRat, champsCodeRat), New Paire(champsCodePromo, champsCodePromo)}
+    Private Shared tableCorespondante() As Paire = {New Paire(nomTableEtudiant, nomTableINSCRIPTION), New Paire(nomTableEtudiant, nomTableNOTE), New Paire(nomTableNOTE, nomTableMATIERE), New Paire(nomTableEtudiant, nomTableRATRAP), New Paire(nomTableRATRAP, nomTableNoteRATRAP), New Paire(nomTableINSCRIPTION, nomTablePROMO), New Paire(nomTableINSCRIPTION, nomTableNoteRATRAP)}
+    Private Shared champCorespondante() As Paire = {New Paire(champsMATRIN, champsMATRIN), New Paire(champsMATRIN, champsMATRIN), New Paire(champsCodeMat, champsCodeMat), New Paire(champsMATRIN, champsMATRIN), New Paire(champsCodeRat, champsCodeRat), New Paire(champsCodePromo, champsCodePromo), New Paire(champsMATRIN, champsMATRIN)}
 
     Public Shared Function getCorrespondance(ByVal tabs As Paire) As Paire
         Dim ind As Integer = IndexOf(tableCorespondante, tabs)

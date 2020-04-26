@@ -95,17 +95,22 @@
         Dim moyennes() As DataRow
         Dim moyClassement As DataColumn = New DataColumn
         Dim moy As Double = 0
-
+        Dim i As Integer = 0
 
         dtEtud.Columns.Add("MoyClassement", GetType(Double))
 
         For Each etud As DataRow In dtEtud.Rows
 
-            moyennes = dt.Select(BDD.champsMATRIN & "=" & "'" & etud(2) & "'")
+            i = 0
+
+            moyennes = dt.Select(BDD.champsMATRIN & "=" & "'" & etud(BDD.champsMATRIN) & "'")
             For Each row As DataRow In moyennes
+                i = i + 1
                 moy += max(row(BDD.champsMOYEIN), row(BDD.champsMOYERA))
             Next
             moy /= 5
+
+            Console.WriteLine(i.ToString + " " + etud(BDD.champsMATRIN))
 
             etud("MoyClassement") = moy
 

@@ -79,5 +79,19 @@
 
     End Function
 
+    Public Shared Function CreateEtudiants(ByVal dt As DataTable) As List(Of Etudiant)
+
+        Dim collection As New List(Of Etudiant)
+
+        For Each ligne As DataRow In dt.Rows
+            collection.Add(New Etudiant(ligne))
+        Next
+
+
+        Return collection
+
+    End Function
+
+
 
 End Class

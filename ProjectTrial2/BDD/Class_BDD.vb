@@ -101,7 +101,7 @@
             ' Ajouner les noms des champs correspondantes des tables de jointeur à l'instruction sql
             If (conditions.Count > 0) Then 'Si La liste des conditions(n) 'est pas vide
                 first = True
-                requete = requete + " WHERE "
+                requete = requete + " WHERE ( "
                 For Each cond As Critere In conditions ' Pour chaque critere dans la liste des critères
                     champ = cond.getChamps
                     finalChamp = ""
@@ -179,7 +179,15 @@
                 Next
             End If
         End If
-        Return requete
+
+        If (conditions.Count > 0) Then
+            Return requete + " )"
+        Else
+            Return requete
+        End If
+
+
+
     End Function
 
     Public Shared Function AjouterOrdre_Requete(ByVal requete As String, ByVal Champ As String) As String

@@ -6,19 +6,47 @@ EsistHistoryManagement
 </name>
 </assembly>
 <members>
-<member name="T:EsistHistoryManagement_v1.RNDataSetxsd.RNDataTableDataTable">
+<member name="T:EsistHistoryManagement_v1.PvDataSet.DataTable1DataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:EsistHistoryManagement_v1.RNDataSetxsd.RNDataTableRow">
+</member><member name="T:EsistHistoryManagement_v1.PvDataSet.DataTable1Row">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:EsistHistoryManagement_v1.RNDataSetxsd.RNDataTableRowChangeEvent">
+</member><member name="T:EsistHistoryManagement_v1.PvDataSet.DataTable1RowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:EsistHistoryManagement_v1.RNDataSetxsd">
+</member><member name="T:EsistHistoryManagement_v1.PvDataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.DataTable1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.DataTable2DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.DataTable1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.DataTable2Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.DataTable1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.DataTable2RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNGDataSet">
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
@@ -323,7 +351,7 @@ Represents a strongly typed in-memory cache of data.
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
-</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.RNG">
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.rng">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -386,47 +414,19 @@ Row event argument class
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
-</member><member name="T:EsistHistoryManagement_v1.PvDataSet.DataTable1DataTable">
+</member><member name="T:EsistHistoryManagement_v1.RNDataSetxsd.RNDataTableDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:EsistHistoryManagement_v1.PvDataSet.DataTable1Row">
+</member><member name="T:EsistHistoryManagement_v1.RNDataSetxsd.RNDataTableRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:EsistHistoryManagement_v1.PvDataSet.DataTable1RowChangeEvent">
+</member><member name="T:EsistHistoryManagement_v1.RNDataSetxsd.RNDataTableRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:EsistHistoryManagement_v1.PvDataSet">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.DataTable1DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.DataTable2DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.DataTable1Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.DataTable2Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.DataTable1RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.DataTable2RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNGDataSet">
+</member><member name="T:EsistHistoryManagement_v1.RNDataSetxsd">
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>

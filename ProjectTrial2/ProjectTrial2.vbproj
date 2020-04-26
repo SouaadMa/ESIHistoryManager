@@ -117,8 +117,9 @@
     <Compile Include="BDD\SortiePV.vb" />
     <Compile Include="BDD\SortieRN.vb" />
     <Compile Include="BDD\SortieRNG.vb" />
-    <Compile Include="BDD\ECLATEMMENT_TRAFFIC.vb" />
-    <Compile Include="ECLATEMMENT_TRAFFIC.vb" />
+    <Compile Include="BDD\ECLATEMMENT_TRAFFIC.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Graphique\affichResearchResult.Designer.vb">
       <DependentUpon>affichResearchResult.vb</DependentUpon>
     </Compile>
@@ -137,9 +138,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AttestationCrystalReport.rpt</DependentUpon>
-
       <SubType>Component</SubType>
-
     </Compile>
     <Compile Include="Graphique\AttestationDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -152,10 +151,12 @@
     <Compile Include="Graphique\Chargement.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Graphique\Form2.Designer.vb">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <Compile Include="Graphique\Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
     </Compile>
-    <Compile Include="Graphique\Form2.vb" />
+    <Compile Include="Graphique\Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Graphique\PvDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -313,8 +314,8 @@
     <EmbeddedResource Include="Graphique\ClassementPage.resx">
       <DependentUpon>ClassementPage.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Graphique\Form2.resx">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <EmbeddedResource Include="Graphique\Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Graphique\PvReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -370,17 +371,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Graphique\AttestationDataSet.xsc">
-      <DependentUpon>AttestationDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Graphique\AttestationDataSet.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>AttestationDataSet.Designer.vb</LastGenOutput>
-    </None>
-    <None Include="Graphique\AttestationDataSet.xss">
-      <DependentUpon>AttestationDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Graphique\AttestationDataSet.xsc">
       <DependentUpon>AttestationDataSet.xsd</DependentUpon>
     </None>

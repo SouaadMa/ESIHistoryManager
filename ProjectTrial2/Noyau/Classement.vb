@@ -140,7 +140,8 @@
     ' Méthode qui limite le nombre de lignes d'une DataTable ... à faire
     Public Shared Function LimitRows(ByVal table As DataTable, ByVal int As Integer) As DataTable
 
-        Return table
+
+        Return table.AsEnumerable().Take(int).CopyToDataTable
 
     End Function
 

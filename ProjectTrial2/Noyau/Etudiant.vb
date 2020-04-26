@@ -160,7 +160,7 @@
 
     Public Function GetNotesMat(ByVal listeChamps As List(Of String), ByVal listeConditions As List(Of Critere)) As DataTable
 
-        Dim req As String = Class_BDD.genereRechRequete(listeChamps, BDD.nomTableNOTE, BDD.nomTableMATIERE, listeConditions)
+        Dim req As String = Class_BDD.genereRechRequete(listeChamps, BDD.nomTableNOTE, BDD.nomTableMATIERE, listeConditions, True)
         'req = req.Insert(req.IndexOf(BDD.champsCodePromo), BDD.nomTableMATIERE + ".")
         Return BDD.executeRequete(req)
 

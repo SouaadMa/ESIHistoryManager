@@ -45,7 +45,7 @@
         listeChamps.Add(BDD.champsNBR_RN)
 
         '************Récupération des informations de l'inscription*************'
-        Dim reqSQL As String = Class_BDD.genereRechRequete(listeChamps, BDD.nomTableINSCRIPTION, BDD.nomTablePROMO, listeConditions)
+        Dim reqSQL As String = Class_BDD.genereRechRequete(listeChamps, BDD.nomTableINSCRIPTION, BDD.nomTablePROMO, listeConditions, True)
         Dim tableINSCRIPTION As DataTable = BDD.executeRequete(reqSQL)
         '
 

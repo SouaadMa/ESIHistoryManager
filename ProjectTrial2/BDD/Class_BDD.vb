@@ -173,6 +173,14 @@
         Return requete
     End Function
 
+    Public Shared Function AddLIKECondition(ByVal SQLquery As String, ByVal champs As String, ByVal condition As Critere) As String
+
+        Dim addition As String
+        addition = " AND " + BDD.CompareToCode(champs, condition)
+        Return (SQLquery + addition)
+
+    End Function
+
 End Class
 
 

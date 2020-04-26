@@ -7,17 +7,49 @@
         ' commençant leurs études à l'année en entrée
         ' Cette DataTable est triée selon leurs moyennes de classement
 
+        
+        'Rang nom prenom matricule moyenne Codepromo
+
         Dim tableEtudiants As New DataTable
         Dim tableMoyennesEtudiants As New DataTable
         Dim requeteSQL As New String("")
+        Dim listeChamps As New List(Of String)
+        Dim listeConditions As New List(Of Critere)
 
         ' ************** GETTING THE INFO FROM THE DATABASE *************** '
-        ' La génération de la requête SQL pour obtenir la table des étudiants qu'on va classer
-        ' Class_BDD.genereRechRequete
-        ' tableEtudiants = BDD.executeRequete(requeteSQL)
+        ' Préparation de la liste des champs
+        listeChamps.Add(BDD.champsRANGIN)
+        listeChamps.Add(BDD.champsMATRIN)
+        listeChamps.Add(BDD.champsNomEtud)
+        listeChamps.Add(BDD.champsPrenoms)
+        listeChamps.Add(BDD.champsCodePromo)
+        ' Préparation de la liste des conditions
+        listeConditions.Add(New Critere(BDD.champsDECIIN, 1))
 
-        ' Obtention de leurs moyennes
-        ' 
+        ' La génération de la requête SQL pour obtenir la table des étudiants qu'on va classer
+        requeteSQL = Class_BDD.genereRechRequete(listeChamps, BDD.nomTableINSCRIPTION, BDD.nomTableEtudiant, listeConditions)
+        'requeteSQL == SELECT RANGIN, NomEtud, Prenoms, CodePromo
+        'FROM INSCRIPTION INNER JOIN ETUDIANT ON INSCRIPTION.MATRIN = ETUDIANT.MATRIN
+        ' WHERE (CodePromo LIKE '5/%/Annee+5') AND (DECIIN = )
+        requeteSQL = Class_BDD.AddLIKECondition(requeteSQL, BDD.champsMATRIN, New Critere(BDD.champsAnnee, Annee))
+        ' requeteSQL == requeteSQL + " AND (MATRIN LIKE 'Annee/%')"
+        requeteSQL = Class_BDD.AddLIKECondition(requeteSQL, BDD.champsCodePromo, New Critere(BDD.champsNiveau, "5"))
+        ' requeteSQL == requeteSQL + " AND (CodePromo LIKE '5/%')"
+        requeteSQL = Class_BDD.AddLIKECondition(requeteSQL, BDD.champsCodePromo, New Critere(BDD.champsAnnee, (Integer.Parse(Annee) + 5).ToString))
+        ' requeteSQL == requeteSQL + " AND (CodePromo LIKE '%/Annee+5')"
+
+        tableEtudiants = BDD.executeRequete(requeteSQL)
+
+        ' *********************Obtention de leurs moyennes
+        Dim tableMatricules As New DataTable
+        tableMatricules = tableEtudiants.Copy
+        tableMatricules.Columns.Remove(BDD.champsRANGIN)
+        tableMatricules.Columns.Remove(BDD.champsNomEtud)
+        tableMatricules.Columns.Remove(BDD.champsPrenoms)
+        tableMatricules.Columns.Remove(BDD.champsCodePromo)
+
+        'requeteSQL = GetMoyennesEtudiants(tableMatricules)
+
         ' tableMoyennesEtudiants = BDD.executeRequete(requeteSQL)
 
 
@@ -104,6 +136,14 @@
         Return dataTable.Select(filter).CopyToDataTable
 
     End Function
+
+    ' Méthode qui limite le nombre de lignes d'une DataTable ... à faire
+    Public Shared Function LimitRows(ByVal table As DataTable, ByVal int As Integer) As DataTable
+
+        Return table
+
+    End Function
+
 
     ' Méthode pour le tri ascendant d'une datatable 
     Public Shared Function SortASCCollection(ByVal table As DataTable, ByVal champs As String) As DataTable

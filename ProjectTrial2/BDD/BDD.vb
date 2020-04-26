@@ -390,11 +390,11 @@ Public Class BDD
         Select Case champs
 
             Case BDD.champsAnnee
-                chaine = "MATRIN LIKE '" + champs + "/%'"
+                chaine = "MATRIN LIKE '" + critere.getValeur + "/*'"
             Case BDD.champsOption
-                chaine = "MATRIN LIKE '%/" + champs + "'"
+                chaine = "MATRIN LIKE '*/" + critere.getValeur + "'"
             Case BDD.champsMATRIN
-                chaine = "MATRIN = " + champs + "'"
+                chaine = "MATRIN = " + critere.getValeur + "'"
             Case Else
                 chaine = ""
 
@@ -421,13 +421,13 @@ Public Class BDD
         Select Case champs
 
             Case BDD.champsNiveau
-                chaine = "CodePROMO LIKE '" + champs + "/%'"
+                chaine = "CodePROMO LIKE '" + critere.getValeur + "/*'"
             Case BDD.champsOption
-                chaine = "CodePROMO LIKE '%/" + champs + "/%'"
+                chaine = "CodePROMO LIKE '*/" + critere.getValeur + "/*'"
             Case BDD.champsAnnee
-                chaine = "CodePROMO LIKE '%/" + champs + "'"
+                chaine = "CodePROMO LIKE '*/" + critere.getValeur + "'"
             Case BDD.champsCodePromo
-                chaine = "CodePROMO = '" + champs + "'"
+                chaine = "CodePROMO = '" + critere.getValeur + "'"
             Case Else
                 chaine = ""
 
@@ -449,15 +449,15 @@ Public Class BDD
         Select Case champs
 
             Case BDD.champsLIBEMA
-                Return "CodeMat LIKE '" + champs + "/%'"
+                Return "CodeMat LIKE '" + critere.getValeur + "/*'"
             Case BDD.champsAnnee
-                Return "CodeMat LIKE '%/" + champs + "/%'"
+                Return "CodeMat LIKE '*/" + critere.getValeur + "/*'"
             Case BDD.champsOption
-                Return "CodeMat LIKE '%/" + champs + "%'"
+                Return "CodeMat LIKE '*/" + critere.getValeur + "*'"
             Case BDD.champsNiveau
-                Return "CodeMat LIKE '%/%" + champs + "'"
+                Return "CodeMat LIKE '*/*" + critere.getValeur + "'"
             Case BDD.champsCodeMat
-                Return "CodeMat = '" + champs + "'"
+                Return "CodeMat = '" + critere.getValeur + "'"
             Case Else
                 Return ""
 
@@ -610,7 +610,7 @@ Public Class BDD
         If (ind > -1) Then
             Return champCorespondante(ind)
         Else
-            MsgBox("Ces deux tables n'ont pas de correspandance")
+            MsgBox("Ces deux tables n'ont pas de correspandance" + tabs.elem1 + tabs.elem2)
             Return New Paire("", "")
         End If
     End Function

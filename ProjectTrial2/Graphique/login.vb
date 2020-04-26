@@ -89,6 +89,16 @@ Public Class Login
         Dim formatter As New BinaryFormatter
         Login.password_ = formatter.Deserialize(stream)
         stream.Close()
+
+        Console.WriteLine("Before")
+        Dim dt As DataTable = Classement.TraitClassement("2000")
+        Dim i As Integer = 0
+        Console.WriteLine("After")
+        For Each ligne In dt.Rows
+            Console.WriteLine(i)
+            Console.WriteLine(ligne(BDD.champsMATRIN))
+        Next
+
     End Sub
 
 End Class

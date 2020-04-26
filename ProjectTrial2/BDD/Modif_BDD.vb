@@ -3,7 +3,7 @@
     Private Sub New()
     End Sub
 
-    Public Shared Function genereModifRequete(ByVal matrin As String, ByVal criteres As List(Of Critere)) As String
+    Public Shared Function genereModifRequete(ByVal matrin As String, ByVal criteres As List(Of Critere), ByVal table As String) As String
         'Générer un requete sql qui modifier les champs contenu dans critères avec leur novelles valeurs quand le matricule
         ' de l'étudiant = matrin
 
@@ -17,7 +17,7 @@
         Dim found As Boolean    ' Booleén pour vérifier que le champ donnée existe dans la base ( dans tab )
         Dim first As Boolean    ' Booleén pour vérifier s'il y a au moins une critere ( champ = valeur ) ajouté à l'instruction sql
 
-        requete = " UPDATE ETUDIANT SET " ' Initialiser la requete sql
+        requete = " UPDATE " + table + " SET " ' Initialiser la requete sql
         'length = criteres.Count - 2       ' Mettre dans length l'indice de dernière élément de la liste
         'i = 0
         first = True                    ' Initialiser first a true ( l'élément qu'on va ajouter va etre le premier )
@@ -34,15 +34,15 @@
             Select Case (crit.getValeur.GetType).ToString       ' Savoir le type de la valeur :
                 Case "System.String"                                      ' valeur Text
                     'Console.WriteLine("string")
-                    tab = BDD.stringETUDIANT                                            ' Chercher dans le tableau des champs Text
+                    tab = BDD.getStringTable(table)                                           ' Chercher dans le tableau des champs Text
                     'valeur = "'" + crit.getValeur + "'"
                 Case GetType(Integer).ToString, GetType(Double).ToString  ' valeur Numérique
                     'Console.WriteLine("num")
-                    tab = BDD.numETUDIANT                                               ' Chercher dans le tableau des champs Numerique                    
+                    tab = BDD.getNumTable(table)                                               ' Chercher dans le tableau des champs Numerique                    
                     'valeur = crit.getValeur.ToString
                 Case "System.Boolean"                                     ' valeur Booleen
                     'Console.WriteLine("bool")
-                    tab = BDD.boolETUDIANT                                            ' Chercher dans le tableau des champs Booleen
+                    tab = BDD.getBoolTable(table)                                           ' Chercher dans le tableau des champs Booleen
                     'valeur = crit.getValeur
                     'Case Else     tab = {}
             End Select
@@ -74,5 +74,57 @@
         Return requete                                              ' Retourner l'instruction sql de modification
 
     End Function
+
+    Public Shared Function AddCondition(ByVal SQLQuery As String, ByVal critere As Critere) As String
+
+        Dim TAB As String()
+        Dim found As Boolean = False
+        Dim champ As String = critere.getChamps
+
+        Dim ind As Integer = 0
+        found = False
+        TAB = {}
+
+        Select Case (critere.getValeur.GetType).ToString
+            Case "System.String"
+
+                TAB = BDD.getStringTable(critere.getTable)
+            Case GetType(Integer).ToString, GetType(Double).ToString
+
+                TAB = BDD.getNumTable(critere.getTable)
+
+            Case "System.Boolean"
+                TAB = BDD.getBoolTable(critere.getTable)
+
+        End Select
+
+        Dim valeur As String = "'" + critere.getValeur.ToString.Replace("'", "`") + "'"
+
+        Try
+            While Not found And ind < TAB.Length                ' Chercher si le champ donnée existe dans les tableaux de la base de donnée  
+                If champ.Equals(TAB(ind)) Then
+                    found = True
+                Else
+                    ind += 1
+                End If
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+        If found Then               ' Si le champ donnée exite
+
+            SQLQuery = SQLQuery + " , "       '--> ajouter un vergule
+
+            
+            SQLQuery = SQLQuery + champ + " = " + valeur  ' Ajouter le critère ' champ = valeur'
+        End If
+
+        Return SQLQuery
+
+
+    End Function
+
+    
 
 End Class

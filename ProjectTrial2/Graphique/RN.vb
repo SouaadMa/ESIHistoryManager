@@ -1,14 +1,6 @@
-﻿Imports System.Data.OleDb
-Imports CrystalDecisions.CrystalReports.Engine
-Imports CrystalDecisions.Shared
-Imports System.Data
-Imports System.Data.SqlClient
+﻿Public Class RN
 
-Public Class RN
-
-    Dim cb_anee As Boolean
     Dim esistselect As Etudiant ' letudiant selection f affichresult
-    Dim RN As SortieRN = Nothing
 
     Public Sub New(ByVal e As Etudiant)
 
@@ -23,14 +15,21 @@ Public Class RN
 
         'inisializer les panels
         'initialiser de promo
-        For Each cr As String In InfosGenerales.promo
-            CB_ANNEE.Items.Add(cr)
+
+
+        For Each promo In esistselect.GetALL(BDD.champsCodePromo)
+            CB_ANNEE.Items.Add(promo)
         Next
 
+
+        'For Each cr As String In InfosGenerales.promo
+        'CB_ANNEE.Items.Add(cr)
+        'Next
+
+        Console.WriteLine("RN_Load")
+
         'initialiser generale
-        CB_ANNEE.SelectedIndex = 0
-        cb_anee = False
-        CrystalReportViewer1.Visible = False
+        'CB_ANNEE.SelectedIndex = 0
 
     End Sub
 
@@ -38,48 +37,34 @@ Public Class RN
 
     Private Sub BT_SORTIR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Me.Close()
+        'Home.f.Show()
         Home.MainContainer2.Visible = False
         Home.MainContainer1.Visible = True
     End Sub
 
+
+
+
+    Private Sub CrystalReportViewer1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+        Console.WriteLine("CRV_LOAD")
+
+    End Sub
+
+    
     Private Sub BT_LOAD_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_LOAD.Click
-        If cb_anee = True Then
-            RN = New SortieRN(esistselect, CB_ANNEE.Text)
 
-            'upload le raport crystal
-            CrystalReportViewer1.Visible = True
+        'Console.WriteLine("Click load " + CType(CB_ANNEE.SelectedItem, String) + "jjj")
+        Dim rn As New SortieRN(esistselect, CType(CB_ANNEE.SelectedItem, String))
+        'Console.WriteLine("Done")
 
-            CrystalReportViewer1.Zoom(1)
-            CrystalReportViewer1.RefreshReport()
-            CrystalReportViewer1.Zoom(1)
-            CrystalReportViewer1.Visible = False
+        Dim dts As DataSet
+        dts = rn.GetDataSet
 
-            'Dim sqlString As String = "SELECT MATRIN, NomEtud, Prenoms FROM ETUDIANT"
-            'New OleDbDataAdapter(sqlString, adoOleDbConnection)
-            Dim ds As New RNDataSetxsd
-            Dim dt As New DataTable()
-            'Dim adp As OleDbDataAdapter = New OleDbDataAdapter(sqlString, New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\BDD_TESTE.accdb"))
-            'adp.Fill(ds.DataTable1)
-            'dt = ds.Tables("DataTable1")
-            'ds.Tables.Item(0).Merge(dt)
+        'Pour afficher le nombre de RN que cet étudiant a imprimé
+        'Dim nbRN = rn.GetNbreRN() 
 
-            ds = RN.GetDataSet()
-            CrystalReportViewer1.RefreshReport()
-            Dim cryrpt As New RNCrystalReport
 
-            cryrpt.SetDataSource(ds.Tables(0))
-            cryrpt.Database.Tables(0).SetDataSource(ds)
-            CrystalReportViewer1.ReportSource = cryrpt
-
-            'CrystalReportViewer1.ShowGroupTreeButton = False
-            'CrystalReportViewer1.ShowPageNavigateButtons = False
-            'CrystalReportViewer1.ShowParameterPanelButton = False
-
-        End If
-        cb_anee = False
     End Sub
 
-    Private Sub CB_ANNEE_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CB_ANNEE.SelectedIndexChanged
-        cb_anee = True
-    End Sub
 End Class

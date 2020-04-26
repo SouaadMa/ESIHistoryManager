@@ -149,7 +149,7 @@ Public Class PVPage
         CrystalReportViewer1.Visible = True
         'disbale the affich button until any combobox values has been changed
         AffichButton.Enabled = False
-        ' and that's it
+        ' and that's it !
     End Sub
 
     Private Sub PromoBox_TextUpdate(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SpecialiteBox.TextUpdate, PromoBox.TextUpdate, NiveauBox.TextUpdate

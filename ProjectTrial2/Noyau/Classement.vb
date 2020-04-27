@@ -13,7 +13,7 @@
         Dim collectionMat As List(Of String) = New List(Of String)
         Dim listeConditions As List(Of Critere) = New List(Of Critere)
         Dim listeChamps As List(Of String) = New List(Of String)
-        Dim dt As DataTable
+        Dim dt As New DataTable
 
 
 
@@ -59,14 +59,29 @@
 
         listeConditions.Clear()
 
+        Dim i As Integer = 0
+
         For Each mat In collectionMat
-            listeConditions.Add(New Critere(BDD.champsMATRIN, mat))
+
+            If (i < 10) Then
+                listeConditions.Add(New Critere(BDD.champsMATRIN, mat))
+                i = i + 1
+            Else
+                requeteSQL = ""
+                requeteSQL = Class_BDD.genereRechRequete(listeChamps, BDD.nomTableINSCRIPTION, BDD.nomTableNoteRATRAP, listeConditions, False)
+
+                dt.Merge(BDD.executeRequete(requeteSQL))
+
+                listeConditions.Clear()
+                i = 0
+            End If
+
         Next
 
-        requeteSQL = Class_BDD.genereRechRequete(listeChamps, BDD.nomTableINSCRIPTION, BDD.nomTableNoteRATRAP, listeConditions, False)
-        dt = BDD.executeRequete(requeteSQL)
+        'requeteSQL = Class_BDD.genereRechRequete(listeChamps, BDD.nomTableINSCRIPTION, BDD.nomTableNoteRATRAP, listeConditions, False)
+        'dt = BDD.executeRequete(requeteSQL)
 
-        Console.WriteLine(dt.Equals(Nothing))
+        'Console.WriteLine(dt.Equals(Nothing))
 
         calculMoyClassement(dt, tableEtudiants)
 
@@ -79,21 +94,26 @@
 
         Dim moyennes() As DataRow
         Dim moyClassement As DataColumn = New DataColumn
-        Dim moy As Double
-
+        Dim moy As Double = 0
+        Dim i As Integer = 0
 
         dtEtud.Columns.Add("MoyClassement", GetType(Double))
 
         For Each etud As DataRow In dtEtud.Rows
 
+            i = 0
 
-            moyennes = dt.Select(BDD.champsMATRIN & "=" & "'" & etud(2) & "'")
+            moyennes = dt.Select(BDD.champsMATRIN & "=" & "'" & etud(BDD.champsMATRIN) & "'")
             For Each row As DataRow In moyennes
+                i = i + 1
                 moy += max(row(BDD.champsMOYEIN), row(BDD.champsMOYERA))
             Next
             moy /= 5
 
+            Console.WriteLine(i.ToString + " " + etud(BDD.champsMATRIN))
+
             etud("MoyClassement") = moy
+
             moy = 0
 
         Next

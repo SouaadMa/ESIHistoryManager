@@ -90,7 +90,6 @@ Public Class Login
         Login.password_ = formatter.Deserialize(stream)
         stream.Close()
 
-        
 
     End Sub
 

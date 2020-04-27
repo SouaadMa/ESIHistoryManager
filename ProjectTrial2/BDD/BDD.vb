@@ -390,7 +390,7 @@ Public Class BDD
         Select Case champs
 
             Case BDD.champsAnnee
-                chaine = critere.getTable + "." + "MATRIN LIKE '" + critere.getValeur + "/*'"
+                chaine = critere.getTable + "." + "MATRIN LIKE '" + critere.getValeur.ToString.Substring(2, 2) + "/*'"
             Case BDD.champsOption
                 chaine = critere.getTable + "." + "MATRIN LIKE '*/" + critere.getValeur + "'"
             Case BDD.champsMATRIN
@@ -425,7 +425,7 @@ Public Class BDD
             Case BDD.champsOption
                 chaine = critere.getTable + "." + "CodePROMO LIKE '*/" + critere.getValeur + "/*'"
             Case BDD.champsAnnee
-                chaine = critere.getTable + "." + "CodePROMO LIKE '*/" + critere.getValeur + "'"
+                chaine = critere.getTable + "." + "CodePROMO LIKE '*/" + critere.getValeur.ToString.Substring(2, 2) + "'"
             Case BDD.champsCodePromo
                 chaine = critere.getTable + "." + "CodePROMO = '" + critere.getValeur + "'"
             Case Else

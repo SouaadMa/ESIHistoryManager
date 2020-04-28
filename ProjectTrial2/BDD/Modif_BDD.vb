@@ -114,7 +114,7 @@
 
         If found Then               ' Si le champ donnée exite
 
-            SQLQuery = SQLQuery + " , "       '--> ajouter un vergule
+            SQLQuery = SQLQuery + " AND "       '--> ajouter AND
 
             
             SQLQuery = SQLQuery + champ + " = " + valeur  ' Ajouter le critère ' champ = valeur'

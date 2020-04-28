@@ -45,6 +45,7 @@
 
         tableEtudiants = BDD.executeRequete(requeteSQL)
 
+
         For Each row As DataRow In tableEtudiants.Rows
             collectionMat.Add(CType(row(BDD.champsMATRIN), String))
         Next
@@ -69,6 +70,8 @@
             Else
                 requeteSQL = ""
                 requeteSQL = Class_BDD.genereRechRequete(listeChamps, BDD.nomTableINSCRIPTION, BDD.nomTableNoteRATRAP, listeConditions, False)
+                requeteSQL = Class_BDD.AddONCondition(requeteSQL, BDD.nomTableINSCRIPTION, BDD.nomTableNoteRATRAP, BDD.champsCodePromo, BDD.champsCodeRat)
+                'Console.WriteLine(requeteSQL)
 
                 dt.Merge(BDD.executeRequete(requeteSQL))
 
@@ -78,6 +81,10 @@
 
         Next
 
+        
+
+
+
         'requeteSQL = Class_BDD.genereRechRequete(listeChamps, BDD.nomTableINSCRIPTION, BDD.nomTableNoteRATRAP, listeConditions, False)
         'dt = BDD.executeRequete(requeteSQL)
 
@@ -86,7 +93,7 @@
         calculMoyClassement(dt, tableEtudiants)
 
 
-        Return SortASCCollection(tableEtudiants, "MoyClassement")
+        Return SortDESCollection(tableEtudiants, "MoyClassement")
 
     End Function
 
@@ -110,7 +117,7 @@
             Next
             moy /= 5
 
-            Console.WriteLine(i.ToString + " " + etud(BDD.champsMATRIN))
+            'Console.WriteLine(i.ToString + " " + etud(BDD.champsMATRIN))
 
             etud("MoyClassement") = moy
 
@@ -188,7 +195,7 @@
 
     End Function
 
-    ' Méthode qui limite le nombre de lignes d'une DataTable ... à faire
+    ' Méthode qui limite le nombre de lignes d'une DataTable ... 
     Public Shared Function LimitRows(ByVal table As DataTable, ByVal int As Integer) As DataTable
 
 

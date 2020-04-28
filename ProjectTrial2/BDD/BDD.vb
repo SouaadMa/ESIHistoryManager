@@ -390,9 +390,9 @@ Public Class BDD
         Select Case champs
 
             Case BDD.champsAnnee
-                chaine = critere.getTable + "." + "MATRIN LIKE '" + critere.getValeur.ToString.Substring(2, 2) + "/*'"
+                chaine = critere.getTable + "." + "MATRIN LIKE '" + critere.getValeur.ToString.Substring(2, 2) + "/%'"
             Case BDD.champsOption
-                chaine = critere.getTable + "." + "MATRIN LIKE '*/" + critere.getValeur + "'"
+                chaine = critere.getTable + "." + "MATRIN LIKE '%/" + critere.getValeur + "'"
             Case BDD.champsMATRIN
                 chaine = critere.getTable + "." + "MATRIN = " + critere.getValeur + "'"
             Case Else
@@ -421,11 +421,11 @@ Public Class BDD
         Select Case champs
 
             Case BDD.champsNiveau
-                chaine = critere.getTable + "." + "CodePROMO LIKE '" + critere.getValeur + "/*'"
+                chaine = critere.getTable + "." + "CodePROMO LIKE '" + critere.getValeur + "/%'"
             Case BDD.champsOption
-                chaine = critere.getTable + "." + "CodePROMO LIKE '*/" + critere.getValeur + "/*'"
+                chaine = critere.getTable + "." + "CodePROMO LIKE '%/" + critere.getValeur + "/%'"
             Case BDD.champsAnnee
-                chaine = critere.getTable + "." + "CodePROMO LIKE '*/" + critere.getValeur.ToString.Substring(2, 2) + "'"
+                chaine = critere.getTable + "." + "CodePROMO LIKE '%/" + critere.getValeur.ToString.Substring(2, 2) + "'"
             Case BDD.champsCodePromo
                 chaine = critere.getTable + "." + "CodePROMO = '" + critere.getValeur + "'"
             Case Else
@@ -449,13 +449,13 @@ Public Class BDD
         Select Case champs
 
             Case BDD.champsLIBEMA
-                Return critere.getTable + "." + "CodeMat LIKE '" + critere.getValeur + "/*'"
+                Return critere.getTable + "." + "CodeMat LIKE '" + critere.getValeur + "/%'"
             Case BDD.champsAnnee
-                Return critere.getTable + "." + "CodeMat LIKE '*/" + critere.getValeur + "/*'"
+                Return critere.getTable + "." + "CodeMat LIKE '%/" + critere.getValeur + "/%'"
             Case BDD.champsOption
-                Return critere.getTable + "." + "CodeMat LIKE '*/" + critere.getValeur + "*'"
+                Return critere.getTable + "." + "CodeMat LIKE '%/" + critere.getValeur + "%'"
             Case BDD.champsNiveau
-                Return critere.getTable + "." + "CodeMat LIKE '*/*" + critere.getValeur + "'"
+                Return critere.getTable + "." + "CodeMat LIKE '%/%" + critere.getValeur + "'"
             Case BDD.champsCodeMat
                 Return critere.getTable + "." + "CodeMat = '" + critere.getValeur + "'"
             Case Else

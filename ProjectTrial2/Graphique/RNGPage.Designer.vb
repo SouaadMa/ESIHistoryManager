@@ -23,11 +23,11 @@ Partial Class RNGPage
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.DetailPanel = New System.Windows.Forms.Panel()
+        Me.BT_SORTIR = New System.Windows.Forms.Button()
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.TitlePanel = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.BT_SORTIR = New System.Windows.Forms.Button()
         Me.DetailPanel.SuspendLayout()
         Me.TitlePanel.SuspendLayout()
         Me.SuspendLayout()
@@ -43,9 +43,25 @@ Partial Class RNGPage
         Me.DetailPanel.Size = New System.Drawing.Size(678, 640)
         Me.DetailPanel.TabIndex = 88
         '
+        'BT_SORTIR
+        '
+        Me.BT_SORTIR.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.BT_SORTIR.FlatAppearance.BorderSize = 0
+        Me.BT_SORTIR.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BT_SORTIR.Font = New System.Drawing.Font("Cambria", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BT_SORTIR.ForeColor = System.Drawing.Color.White
+        Me.BT_SORTIR.Location = New System.Drawing.Point(265, 593)
+        Me.BT_SORTIR.Margin = New System.Windows.Forms.Padding(2, 2, 2, 100)
+        Me.BT_SORTIR.Name = "BT_SORTIR"
+        Me.BT_SORTIR.Size = New System.Drawing.Size(150, 37)
+        Me.BT_SORTIR.TabIndex = 52
+        Me.BT_SORTIR.Text = "Sortir"
+        Me.BT_SORTIR.UseVisualStyleBackColor = False
+        '
         'CrystalReportViewer1
         '
         Me.CrystalReportViewer1.ActiveViewIndex = -1
+        Me.CrystalReportViewer1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
         Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, 36)
@@ -91,21 +107,6 @@ Partial Class RNGPage
         Me.Label1.Size = New System.Drawing.Size(268, 31)
         Me.Label1.TabIndex = 12
         Me.Label1.Text = "Relevé de note globale"
-        '
-        'BT_SORTIR
-        '
-        Me.BT_SORTIR.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.BT_SORTIR.FlatAppearance.BorderSize = 0
-        Me.BT_SORTIR.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BT_SORTIR.Font = New System.Drawing.Font("Cambria", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BT_SORTIR.ForeColor = System.Drawing.Color.White
-        Me.BT_SORTIR.Location = New System.Drawing.Point(265, 593)
-        Me.BT_SORTIR.Margin = New System.Windows.Forms.Padding(2, 2, 2, 100)
-        Me.BT_SORTIR.Name = "BT_SORTIR"
-        Me.BT_SORTIR.Size = New System.Drawing.Size(150, 37)
-        Me.BT_SORTIR.TabIndex = 52
-        Me.BT_SORTIR.Text = "Sortir"
-        Me.BT_SORTIR.UseVisualStyleBackColor = False
         '
         'RNGPage
         '

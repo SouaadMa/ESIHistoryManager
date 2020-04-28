@@ -96,39 +96,6 @@
         affich_pageResult()
     End Sub
 
-    Private Sub ClassemntModeBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) 'Handles ClassementModeBox.SelectedIndexChanged  ', SortModeBox.TextUpdate, SortModeBox.TextChanged, SortModeBox.SelectionChangeCommitted, SortModeBox.SelectedValueChanged, SortModeBox.Leave, SortModeBox.DropDownClosed
-        Dim l As DataTable = New DataTable()
-
-        Select Case ClassementModeBox.SelectedIndex
-            Case 0
-                If SortDirectionAscendant Then
-                    l = Classement.SortASCCollection(StudentTable, "MATRIN")
-                Else
-                    l = Classement.SortDESCollection(StudentTable, "MATRIN")
-                End If
-            Case 1
-                If SortDirectionAscendant Then
-                    l = Classement.SortASCCollection(StudentTable, "NomEtud")
-                Else
-                    l = Classement.SortDESCollection(StudentTable, "NomEtud")
-                End If
-            Case 2
-                If SortDirectionAscendant Then
-                    l = Classement.SortASCCollection(StudentTable, "Prenoms")
-                Else
-                    l = Classement.SortDESCollection(StudentTable, "Prenoms")
-                End If
-            Case 3
-                If SortDirectionAscendant Then
-                    l = Classement.SortASCCollection(StudentTable, "ANNEEBAC")
-                Else
-                    l = Classement.SortDESCollection(StudentTable, "ANNEEBAC")
-                End If
-        End Select
-        StudentTable = l
-        GetClassemntResult()
-    End Sub
-
     Public Sub affich_pageResult()
         Dim i As Integer = 0
         Dim cpt As Integer = (CURRENT_PAGE - 1) * 7
@@ -332,8 +299,11 @@
 
     Private Sub GetClassemntResult()
         Dim crit As New List(Of Critere)
-        crit.Add(New Critere(BDD.champsANNEEBAC, ValueTextBox.Text))
-        StudentTable = Recherche.traitRechercher(crit, RechercherPage.BackgroundWorker1, New System.ComponentModel.DoWorkEventArgs(Nothing))
+        'crit.Add(New Critere(BDD.champsANNEEBAC, ValueTextBox.Text))
+        StudentTable = Classement.TraitClassement("1999")
+        Form1.ds.Tables.Add(StudentTable)
+        Form1.Show()
+        'StudentTable = Recherche.traitRechercher(crit, RechercherPage.BackgroundWorker1, New System.ComponentModel.DoWorkEventArgs(Nothing))
         Me.RechLabel.Text = "Classement (" + StudentTable.Rows.Count.ToString + ")"
         Console.WriteLine("results number is : " + StudentTable.Rows.Count.ToString)
         If (StudentTable.Rows.Count = 0) Then
@@ -387,7 +357,7 @@
         NoResultLabel.Visible = Not EtudiantPanel.Visible
         PagesButtons.Visible = EtudiantPanel.Visible
         ClassmentCritPanel.Visible = EtudiantPanel.Visible
-        LimitDomain.Visible = EtudiantPanel.Visible
+        'LimitDomain.Visible = EtudiantPanel.Visible
     End Sub
 
     'Private Sub ValueTextBox_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ValueTextBox.Leave, ValueTextBox.Validated, ValueTextBox.LostFocus, ValueTextBox.KeyPress

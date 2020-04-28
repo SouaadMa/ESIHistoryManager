@@ -98,17 +98,12 @@ Partial Class ClassementPage
         Me.ClassmentCritPanel = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.ComboBox4 = New System.Windows.Forms.ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.ClassementTypeLabel = New System.Windows.Forms.Label()
         Me.ClssemntTypeBox = New System.Windows.Forms.ComboBox()
         Me.SortDirectionButton = New System.Windows.Forms.Button()
         Me.FlecheList = New System.Windows.Forms.ImageList(Me.components)
         Me.ClassmentModeLabel = New System.Windows.Forms.Label()
         Me.ClassementModeBox = New System.Windows.Forms.ComboBox()
-        Me.LimitDomain = New System.Windows.Forms.DomainUpDown()
         Me.RechLabel = New System.Windows.Forms.Label()
         Me.NoResultLabel = New System.Windows.Forms.Label()
         Me.AffPanel.SuspendLayout()
@@ -1136,7 +1131,6 @@ Partial Class ClassementPage
         'IntroPanel
         '
         Me.IntroPanel.Controls.Add(Me.ClassmentCritPanel)
-        Me.IntroPanel.Controls.Add(Me.LimitDomain)
         Me.IntroPanel.Controls.Add(Me.RechLabel)
         Me.IntroPanel.Dock = System.Windows.Forms.DockStyle.Top
         Me.IntroPanel.Location = New System.Drawing.Point(10, 0)
@@ -1148,10 +1142,6 @@ Partial Class ClassementPage
         '
         Me.ClassmentCritPanel.Controls.Add(Me.Label4)
         Me.ClassmentCritPanel.Controls.Add(Me.ComboBox4)
-        Me.ClassmentCritPanel.Controls.Add(Me.Label2)
-        Me.ClassmentCritPanel.Controls.Add(Me.ComboBox2)
-        Me.ClassmentCritPanel.Controls.Add(Me.Label1)
-        Me.ClassmentCritPanel.Controls.Add(Me.ComboBox1)
         Me.ClassmentCritPanel.Controls.Add(Me.ClassementTypeLabel)
         Me.ClassmentCritPanel.Controls.Add(Me.ClssemntTypeBox)
         Me.ClassmentCritPanel.Controls.Add(Me.SortDirectionButton)
@@ -1180,44 +1170,6 @@ Partial Class ClassementPage
         Me.ComboBox4.Name = "ComboBox4"
         Me.ComboBox4.Size = New System.Drawing.Size(65, 23)
         Me.ComboBox4.TabIndex = 51
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(490, 20)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(48, 15)
-        Me.Label2.TabIndex = 50
-        Me.Label2.Text = "Section"
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(542, 16)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(48, 23)
-        Me.ComboBox2.TabIndex = 49
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(382, 20)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(48, 15)
-        Me.Label1.TabIndex = 48
-        Me.Label1.Text = "Groupe"
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(435, 16)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(48, 23)
-        Me.ComboBox1.TabIndex = 47
         '
         'ClassementTypeLabel
         '
@@ -1276,26 +1228,6 @@ Partial Class ClassementPage
         Me.ClassementModeBox.Name = "ClassementModeBox"
         Me.ClassementModeBox.Size = New System.Drawing.Size(65, 23)
         Me.ClassementModeBox.TabIndex = 42
-        '
-        'LimitDomain
-        '
-        Me.LimitDomain.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LimitDomain.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.LimitDomain.Items.Add("10")
-        Me.LimitDomain.Items.Add("20")
-        Me.LimitDomain.Items.Add("30")
-        Me.LimitDomain.Items.Add("40")
-        Me.LimitDomain.Items.Add("50")
-        Me.LimitDomain.Items.Add("100")
-        Me.LimitDomain.Items.Add("200")
-        Me.LimitDomain.Items.Add("500")
-        Me.LimitDomain.Items.Add("1000")
-        Me.LimitDomain.Items.Add("tout")
-        Me.LimitDomain.Location = New System.Drawing.Point(40, 20)
-        Me.LimitDomain.Name = "LimitDomain"
-        Me.LimitDomain.Size = New System.Drawing.Size(105, 20)
-        Me.LimitDomain.TabIndex = 43
-        Me.LimitDomain.Text = "Limite D'affichage"
         '
         'RechLabel
         '
@@ -1438,14 +1370,9 @@ Partial Class ClassementPage
     Friend WithEvents NextButton As System.Windows.Forms.Button
     Friend WithEvents FlecheList As System.Windows.Forms.ImageList
     Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
-    Friend WithEvents LimitDomain As System.Windows.Forms.DomainUpDown
     Friend WithEvents ClassmentCritPanel As System.Windows.Forms.Panel
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents ComboBox4 As System.Windows.Forms.ComboBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
     Friend WithEvents ClassementTypeLabel As System.Windows.Forms.Label
     Friend WithEvents ClssemntTypeBox As System.Windows.Forms.ComboBox
     Friend WithEvents SortDirectionButton As System.Windows.Forms.Button

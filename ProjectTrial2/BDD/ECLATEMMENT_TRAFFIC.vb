@@ -164,17 +164,17 @@ Public Class ECLATEMMENT_TRAFFIC
     End Sub
 
     Public Sub ECLATEMENT(ByVal F_ACCESS As String, ByVal EXCEL_INSCRIT As String, ByVal EXCEL_NOTE As String, ByVal EXCEL_MATIERE As String, ByVal EXCEL_RATRAP As String)
-        'Call Eclatement_FROM_EXCEL("INSCRIPTION", F_ACCESS, EXCEL_INSCRIT)
+        Call Eclatement_FROM_EXCEL("INSCRIPTION", F_ACCESS, EXCEL_INSCRIT)
         Call Eclatement_FROM_EXCEL("ETUDIANT", F_ACCESS, EXCEL_INSCRIT)
-        'Call Eclatement_FROM_EXCEL("MATIERE", F_ACCESS, EXCEL_MATIERE)
-        'Call Eclatement_FROM_EXCEL("NOTES", F_ACCESS, EXCEL_NOTE)
-        'Call Eclatement_FROM_EXCEL("NOTERATRAP", F_ACCESS, EXCEL_RATRAP)
-        'Call Eclatement_FROM_EXCEL("RATRAP", F_ACCESS, EXCEL_RATRAP)
-        'Call Eclatement_FROM_ACCESS("GROUPE", F_ACCESS)
-        'Call Eclatement_FROM_ACCESS("SECTIONS", F_ACCESS)
-        'Call Eclatement_FROM_ACCESS("PROMO", F_ACCESS)
-        'Call Eclatement_FROM_ACCESS("ETUDIANT_UPDATE", F_ACCESS)
-        'Call Eclatement_FROM_ACCESS("INSCRIPTION_UPDATE", F_ACCESS)
+        Call Eclatement_FROM_EXCEL("MATIERE", F_ACCESS, EXCEL_MATIERE)
+        Call Eclatement_FROM_EXCEL("NOTES", F_ACCESS, EXCEL_NOTE)
+        Call Eclatement_FROM_EXCEL("NOTERATRAP", F_ACCESS, EXCEL_RATRAP)
+        Call Eclatement_FROM_EXCEL("RATRAP", F_ACCESS, EXCEL_RATRAP)
+        Call Eclatement_FROM_ACCESS("GROUPE", F_ACCESS)
+        Call Eclatement_FROM_ACCESS("SECTIONS", F_ACCESS)
+        Call Eclatement_FROM_ACCESS("PROMO", F_ACCESS)
+        Call Eclatement_FROM_ACCESS("ETUDIANT_UPDATE", F_ACCESS)
+        Call Eclatement_FROM_ACCESS("INSCRIPTION_UPDATE", F_ACCESS)
     End Sub
     'Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 

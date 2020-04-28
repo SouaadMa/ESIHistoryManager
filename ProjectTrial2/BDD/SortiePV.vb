@@ -41,8 +41,8 @@
 
 
         requete = Class_BDD.genereRechRequete(champ, tab2, tab1, cond, True)
-        requete = requete.Insert(8, BDD.nomTableEtudiant + ".")
-        requete = requete.Insert(requete.IndexOf("CodePromo"), BDD.nomTableINSCRIPTION + ".")
+        'requete = requete.Insert(8, BDD.nomTableEtudiant + ".")
+        'requete = requete.Insert(requete.IndexOf("CodePromo"), BDD.nomTableINSCRIPTION + ".")
         dt1 = (BDD.executeRequete(requete)) '.Copy()
 
 
@@ -76,7 +76,7 @@
 
 
         requete = Class_BDD.genereRechRequete(champ, tab2, tab1, cond, True)
-        requete = requete.Insert(requete.IndexOf("CodePromo"), BDD.nomTableNOTE + ".")
+        'requete = requete.Insert(requete.IndexOf("CodePromo"), BDD.nomTableNOTE + ".")
         dt3 = (BDD.executeRequete(requete))     '.Copy()
 
 

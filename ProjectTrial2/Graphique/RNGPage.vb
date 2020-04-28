@@ -25,103 +25,73 @@ Public Class RNGPage
 
         CrystalReportViewer1.Enabled = True
         Dim ds As New DataSet   'the dataset which will be assigned to the report
-        Dim cryrpt As New PvReport
+        Dim cryrpt As New rng2lReport
 
         'call the pv function to get the dataset
 
         ds = SortieRNG.RNG(esistselect)
 
-        Form1.DataGridView1.DataSource = ds.Tables(0)
-        Form1.Show()
-
-        GoTo en
-        'initilize the textboxes of promotion and annee
-        Dim TextObj As CrystalDecisions.CrystalReports.Engine.TextObject
-
-        For Each CryObj As CrystalDecisions.CrystalReports.Engine.ReportObject In cryrpt.Section2.ReportObjects
-            If CryObj.GetType().ToString.Equals("CrystalDecisions.CrystalReports.Engine.TextObject") Then
-                TextObj = CryObj
-                Select Case TextObj.Name
-                    Case "PromoString"
-                        'TextObj.Text = NiveauBox.Text + IIf(NiveauBox.SelectedIndex > 0, " er", " ème") + " ANNEE INGENIEUR - " + SpecialiteBox.Text
-                    Case "AnneeString"
-                        'TextObj.Text = PromoBox.Text + " - " + (PromoBox.SelectedIndex + 1990).ToString
-                End Select
-            End If
-        Next
+        'Form1.ds = ds
+        'Form1.Show()
 
         'assign the dataset first table to the report
 
-        cryrpt.SetDataSource(ds.Tables(0))
+        cryrpt.SetDataSource(ds)
         cryrpt.Database.Tables(0).SetDataSource(ds)
 
-        'get the collection of formulas fields in the report
+        ' the collection of formulas fields in the report
 
         Dim FormulaFields As FormulaFieldDefinitions    ' the collection 
         Dim FormulaField As FormulaFieldDefinition      ' an item of the collection
 
-        FormulaFields = cryrpt.DataDefinition.FormulaFields
+        Dim codprom As String
+        Dim codannee As String
+        For i As Integer = 0 To cryrpt.Subreports.Count - 1 Step 1
+            FormulaFields = cryrpt.Subreports.Item(i).DataDefinition.FormulaFields
+            codannee = "20" + ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.LastIndexOf("/") + 1)
+            codannee += "/" + (CInt(codannee) + 1).ToString
+            codprom = ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(0, 1) + IIf(ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(0, 1).Equals("1"), " er", " ème") + " Année "
+            codprom += IIf(ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(2, 3).Equals("TRC"), "Tronc Commun ", IIf(ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(2, 3).Equals("SIQ"), "Systeme d informatiques ", "Systeme d informations ")) + codannee
+            If i <> 4 Then
+                'get the corresponding formula item
+                FormulaField = FormulaFields.Item(0)
+                FormulaField.Text = "{" + cryrpt.Database.Tables.Item(i + 2).Name + "." + cryrpt.Database.Tables(i + 2).Fields.Item("LIBEMA").Name + "} ;"
 
-        For i As Integer = 9 To ds.Tables(0).Columns.Count - 1 Step 1   ' for each subject in the datatable
-            'get the corresponding formula item
-            FormulaField = FormulaFields.Item("UnboundNumber" + (i - 8).ToString)
-            'assign the corresponding subject colonnes to the formula
-            FormulaField.Text = "{" + cryrpt.Database.Tables.Item(0).Name + "." + cryrpt.Database.Tables(0).Fields.Item(i).Name + "} ;"
-            ' get the corresponding column header  
-            TextObj = CType(cryrpt.Section2.ReportObjects.Item("UnboundNumber" + (i - 8).ToString + "1Text"), CrystalDecisions.CrystalReports.Engine.TextObject)
-            ' assign it the subject name and coeff
-            TextObj.Text = ds.Tables.Item(1).Rows(i - 9)(BDD.champsCOMAMA).ToString + Environment.NewLine + ds.Tables.Item(1).Rows(i - 9)(BDD.champsCOEFMA).ToString
+                FormulaField = FormulaFields.Item(2)
+                FormulaField.Text = "{" + cryrpt.Database.Tables.Item(i + 2).Name + "." + cryrpt.Database.Tables(i + 2).Fields.Item("COEFMA").Name + "} ;"
+
+                FormulaField = FormulaFields.Item(1)
+                FormulaField.Text = "{" + cryrpt.Database.Tables.Item(i + 2).Name + "." + cryrpt.Database.Tables(i + 2).Fields.Item("NOJUNO").Name + "} ;"
+
+                FormulaField = FormulaFields.Item(3)
+                FormulaField.Text = "{" + cryrpt.Database.Tables.Item(i + 2).Name + "." + cryrpt.Database.Tables(i + 2).Fields.Item("NORANO").Name + "} ;"
+
+                FormulaField = FormulaFields.Item("codepromo")
+                FormulaField.Text = "'" + codprom + "'"
+                FormulaField = FormulaFields.Item("moyenne")
+                FormulaField.Text = "'" + ds.Tables(1).Rows(i)(BDD.champsMOYEIN).ToString + "' ;"    '.Replace(",", ".")
+                FormulaField = FormulaFields.Item("decision")
+                FormulaField.Text = "'Admis'" + " ;"
+                FormulaField = FormulaFields.Item("rang")
+                FormulaField.Text = ds.Tables(1).Rows(i)(BDD.champsRANGIN).ToString + " ;"
+                FormulaField = FormulaFields.Item("nbetud")
+                FormulaField.Text = ds.Tables(1).Rows(i)(BDD.champsNbreEtudiant).ToString + " ;"
+
+            Else
+
+                FormulaField = FormulaFields.Item("codepromo")
+                FormulaField.Text = "'" + codprom + "'"
+                FormulaField = FormulaFields.Item("memoire")
+                FormulaField.Text = "'" + ds.Tables(1).Rows(i)(BDD.champsMOYEIN).ToString + "' ;"    '.Replace(",", ".")
+                FormulaField = FormulaFields.Item("annee")
+                FormulaField.Text = "'" + codannee + "' ;"
+                FormulaField = FormulaFields.Item("mention")
+                FormulaField.Text = "'" + ds.Tables(1).Rows(i)(BDD.champsMENTIN).ToString + "' ;"    '.Replace(",", ".")
+            End If
+
         Next
 
-        ' calculate the blank space in the report (if the subjects counts is less than 8 )
-        Dim blankSpace As Integer = 8 - ds.Tables(1).Rows.Count
 
-        'if so
-        If 0 < blankSpace Then
-            'get the report fiels of en tete section and details section
-            Dim Fields2 As CrystalDecisions.CrystalReports.Engine.ReportObjects = cryrpt.Section2.ReportObjects
-            Dim Fields3 As CrystalDecisions.CrystalReports.Engine.ReportObjects = cryrpt.Section3.ReportObjects
-            Dim Fieldsnames As New List(Of String)
-
-            ' get the details fields names
-            For Each field As FieldObject In Fields3
-                Fieldsnames.Add(field.Name)
-            Next
-            'the blank space calculation
-            blankSpace *= Fields3.Item("UnboundNumber11Text").Width
-            ' assign its values to the blankspace field formula
-            FormulaField = FormulaFields.Item("blankSpace")
-            FormulaField.Text = blankSpace.ToString + ";"
-
-            'remove the names of the suppressed columns from the report
-            For i As Integer = 8 To ds.Tables(1).Rows.Count + 1 Step -1
-                TextObj = Fields2.Item("UnboundNumber" + i.ToString + "1Text")
-                Fieldsnames.Remove("UnboundNumber" + i.ToString + "1Text")
-                Fieldsnames.Remove("UnboundNumber" + i.ToString + "1")
-                TextObj.Text = ""
-                TextObj.Width = 0
-                TextObj.Height = 0
-            Next
-
-            While Fieldsnames.Count <> 0    'for each field in thed etails section
-                'if the field at the right of blank space , then shift it with its header to the right and suppress their names 
-                If (Fields3.Item(Fieldsnames.Item(0)).Left >= cryrpt.Section2.ReportObjects.Item("ELIMININ1").Left) Then
-                    Fields3.Item(Fieldsnames.Item(0)).Left -= blankSpace \ 2
-                    Fields2.Item(Fieldsnames.Item(0) + "Text").Left -= blankSpace \ 2
-                    Fieldsnames.Remove(Fieldsnames.Item(0))
-                Else    ' if it is on the right , then shift it to the right with its header , but if it is the column of a formula , them
-                    ' then shift just the header (crytal don't move formula fileds without a formula , the formula is in crytal
-                    ' it maniplate the blankspace formula filed that was sent earlier to the report 
-                    ' and then suppress their names
-                    If (Not Fieldsnames.Item(0).Contains("UnboundNumber")) Then
-                        Fields3.Item(Fieldsnames.Item(0)).Left += blankSpace \ 2
-                    End If
-                    Fields2.Item(Fieldsnames.Item(0) + "Text").Left += blankSpace \ 2
-                    Fieldsnames.Remove(Fieldsnames.Item(0))
-                End If
-            End While
-
-        End If
         ' refresh the report to view the changes
         CrystalReportViewer1.RefreshReport()
         'Set the report viewer report objet 
@@ -148,5 +118,12 @@ en:
 
     Private Sub CrystalReportViewer1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CrystalReportViewer1.Load
 
+    End Sub
+
+    Private Sub BT_SORTIR_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_SORTIR.Click
+        Me.Close()
+        'Home.f.Show()
+        Home.MainContainer2.Visible = False
+        Home.MainContainer1.Visible = True
     End Sub
 End Class

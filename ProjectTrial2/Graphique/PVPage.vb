@@ -162,24 +162,31 @@ Public Class PVPage
     Private Sub NiveauBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NiveauBox.SelectedIndexChanged, PromoBox.SelectedIndexChanged, SpecialiteBox.SelectedIndexChanged
         If (CType(sender, Control).Name.Equals(NiveauBox.Name)) Then
             If CType(sender, ComboBox).SelectedIndex < 2 Then
-                If (Me.SpecialiteBox.Items.Count < 3) Then
-                    Me.SpecialiteBox.Items.Insert(0, "TRC")
-                End If
-                Me.SpecialiteBox.SelectedIndex = 0
-                Me.SpecialiteBox.Enabled = False
+                'If (Me.SpecialiteBox.Items.Count < 3) Then
+                Me.SpecialiteBox.Items.Clear()
+                Me.SpecialiteBox.Items.Insert(0, "TRC")
+                Me.SpecialiteBox.Text = ""
+                'End If
+                'Me.SpecialiteBox.Text = "TRC"
+
+                'Me.SpecialiteBox.Enabled = False
             Else
-                If SpecialiteBox.Items.Item(0).ToString.Equals("TRC") Then
-                    Me.SpecialiteBox.Items.Remove(Me.SpecialiteBox.Items(0))
-                    Me.SpecialiteBox.Enabled = True
-                End If
+                Me.SpecialiteBox.Items.Clear()
+                Me.SpecialiteBox.Text = ""
+                Me.SpecialiteBox.Items.Add("SI")
+                Me.SpecialiteBox.Items.Add("SIQ")
+                'If SpecialiteBox.Items.Item(0).ToString.Equals("TRC") Then
+                '    Me.SpecialiteBox.Items.Remove(Me.SpecialiteBox.Items(0))
+                '    Me.SpecialiteBox.Enabled = True
+                'End If
             End If
         End If
 
-        If Not SpecialiteBox.Text.Equals("") And Not NiveauBox.Text.Equals("") And Not PromoBox.Text.Equals("") Then
-            Me.AffichButton.Enabled = True
-        Else
-            Me.AffichButton.Enabled = False
-        End If
+            If Not SpecialiteBox.Text.Equals("") And Not NiveauBox.Text.Equals("") And Not PromoBox.Text.Equals("") Then
+                Me.AffichButton.Enabled = True
+            Else
+                Me.AffichButton.Enabled = False
+            End If
     End Sub
 
     Private Sub LimitUpDown_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LimitUpDown.ValueChanged

@@ -177,17 +177,18 @@
 
         sql = Rech_BDD.genereRechRequetes(sql, New Critere(BDD.champsMATRIN, GetInfoChamps(BDD.champsMATRIN)), BDD.nomTableINSCRIPTION)
         dt = BDD.executeRequete(sql)
-
+        dt = Classement.SortASCCollection(dt, BDD.champsCodePromo)
         For Each ligne As DataRow In dt.Rows
 
             If ligne(BDD.champsCodePromo).Substring(0, 1) = "5" Then
                 bool = True
+                Exit For
             End If
 
         Next
         If bool Then
             For Each ligne As DataRow In dt.Rows
-                Annees_Decisions.Add(New Critere(ligne(BDD.champsCodePromo), ligne(BDD.champsDECIIN)))
+                Annees_Decisions.Add(New Critere(ligne(BDD.champsCodePromo), ligne(BDD.champsADM)))
             Next
         End If
 

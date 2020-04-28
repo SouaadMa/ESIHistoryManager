@@ -27,9 +27,9 @@ Public Class InfosGenerales
         'seribac = Recherche.GetALL(BDD.champsSERIEBAC, BDD.nomTableEtudiant)
         codewilaya = Recherche.GetALL(BDD.champsWILNAIS, BDD.nomTableEtudiant)
 
-        For Each item As String In seribac
-            Console.WriteLine(item)
-        Next
+        'For Each item As String In seribac
+        '    Console.WriteLine(item)
+        'Next
 
     End Sub
 

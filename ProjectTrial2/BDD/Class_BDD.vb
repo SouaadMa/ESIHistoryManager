@@ -209,6 +209,27 @@
 
     End Function
 
+    Public Shared Function AddONCondition(ByVal SQLQuery As String, ByVal tab1 As String, ByVal tab2 As String, ByVal champ1 As String, ByVal champ2 As String) As String
+
+        If (SQLQuery.Contains("WHERE")) Then
+
+            SQLQuery = SQLQuery.Insert(SQLQuery.IndexOf("WHERE"), "AND " + tab1 + "." + champ1 + " = " + tab2 + "." + champ2 + " ")
+
+        Else
+
+
+            SQLQuery = SQLQuery + "AND " + tab1 + "." + champ1 + " = " + tab2 + "." + champ2
+
+
+        End If
+
+
+        Return SQLQuery
+
+
+
+    End Function
+
 End Class
 
 

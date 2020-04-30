@@ -16,7 +16,7 @@ Public Class Home
         Me.Size = New System.Drawing.Size(1025, 728)
         Me.MinimumSize = New System.Drawing.Size(1023, 700)
         Me.MaximumSize = New System.Drawing.Size(1024, 1000)
-        PN_BIENVENUE.Location = New System.Drawing.Point(71, 3)
+        'PN_BIENVENUE.Location = New System.Drawing.Point(71, 3)
         LogoPicture.Visible = False
         MenuButton.Location = New System.Drawing.Point(0, 0) 'initialize the hamburger button to the top left corner
 
@@ -105,7 +105,7 @@ Public Class Home
             SideBar.Width = 185
             NavBar.Width = 677
             NavBar.Location = New System.Drawing.Point(188, 639)
-            Me.PN_BIENVENUE.Location = New System.Drawing.Point(160, 4)
+            'Me.PN_BIENVENUE.Location = New System.Drawing.Point(160, 4)
             LogoPicture.Visible = True
             With Me.MainContainer1
                 .Location = New System.Drawing.Point(185, 1)
@@ -133,7 +133,7 @@ Public Class Home
             SideBar.Width = 55
             NavBar.Width = 800
             NavBar.Location = New System.Drawing.Point(61, 639)
-            Me.PN_BIENVENUE.Location = New System.Drawing.Point(95, 4)
+            'Me.PN_BIENVENUE.Location = New System.Drawing.Point(95, 4)
             With Me.MainContainer1
                 .Location = New System.Drawing.Point(60, 1)
                 .Width += 125
@@ -273,7 +273,7 @@ Public Class Home
 
     Private Sub BT_RECH_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_RECH.Click
 
-        Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
+        'Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
         If Not f Is Nothing Then
             f.Close()
         End If
@@ -362,7 +362,7 @@ Public Class Home
     End Sub
 
     Private Sub BT_CLASS_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_CLASS.Click
-        Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
+        'Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
         If Not f Is Nothing Then
             f.Close()
         End If
@@ -377,7 +377,7 @@ Public Class Home
     End Sub
 
     Private Sub BT_STAT_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_STAT.Click
-        Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
+        'Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
         If Not f Is Nothing Then
             f.Close()
         End If
@@ -394,7 +394,7 @@ Public Class Home
     End Sub
 
     Private Sub BT_PV_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_PV.Click
-        Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
+        'Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
         If Not f Is Nothing Then
             f.Close()
         End If
@@ -409,7 +409,7 @@ Public Class Home
     End Sub
 
     Private Sub BT_charg_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
+        'Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
         If Not f Is Nothing Then
             f.Close()
         End If
@@ -425,7 +425,7 @@ Public Class Home
 
     Private Sub DetailButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DetailButton.Click
         If f.GetType.ToString.Equals("EsistHistoryManagement_v1.affichResearchResult") Or f.GetType.ToString.Equals("EsistHistoryManagement_v1.ClassementPage") Then
-            Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
+            'Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
             If Not f Is Nothing Then
                 'f.Hide()
                 MainContainer1.Visible = False
@@ -446,7 +446,7 @@ Public Class Home
 
     Private Sub ModifButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ModifButton.Click
         If f.GetType.ToString.Equals("EsistHistoryManagement_v1.affichResearchResult") Or f.GetType.ToString.Equals("EsistHistoryManagement_v1.ClassementPage") Then
-            Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
+            'Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
             If Not f Is Nothing Then
                 'f.Hide()
                 MainContainer1.Visible = False
@@ -467,7 +467,7 @@ Public Class Home
 
     Private Sub RNButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RNButton.Click
         If f.GetType.ToString.Equals("EsistHistoryManagement_v1.affichResearchResult") Or f.GetType.ToString.Equals("EsistHistoryManagement_v1.ClassementPage") Then
-            Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
+            'Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
             If Not f Is Nothing Then
                 'f.Hide()
                 MainContainer1.Visible = False
@@ -488,7 +488,7 @@ Public Class Home
 
     Private Sub RNGButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RNGButton.Click
         If f.GetType.ToString.Equals("EsistHistoryManagement_v1.affichResearchResult") Or f.GetType.ToString.Equals("EsistHistoryManagement_v1.ClassementPage") Then
-            Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
+            'Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
             If Not f Is Nothing Then
                 'f.Hide()
                 MainContainer1.Visible = False
@@ -529,7 +529,7 @@ Public Class Home
 
     Private Sub PrintButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PrintButton.Click
         If f.GetType.ToString.Equals("EsistHistoryManagement_v1.affichResearchResult") Or f.GetType.ToString.Equals("EsistHistoryManagement_v1.ClassementPage") Then
-            Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
+            'Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
             If Not f Is Nothing Then
                 'f.Hide()
                 MainContainer1.Visible = False
@@ -575,7 +575,7 @@ Public Class Home
 
     Private Sub BT_CERT_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         If f.GetType.ToString.Equals("EsistHistoryManagement_v1.affichResearchResult") Or f.GetType.ToString.Equals("EsistHistoryManagement_v1.ClassementPage") Then
-            Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
+            'Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
             If Not f Is Nothing Then
                 'f.Hide()
                 MainContainer1.Visible = False

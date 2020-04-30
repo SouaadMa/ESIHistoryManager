@@ -25,6 +25,9 @@ Partial Class Chargement
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TitlePanel = New System.Windows.Forms.Panel()
         Me.ChargementPanel = New System.Windows.Forms.Panel()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TitlePanel.SuspendLayout()
         Me.ChargementPanel.SuspendLayout()
         Me.SuspendLayout()
@@ -45,6 +48,7 @@ Partial Class Chargement
         'TitlePanel
         '
         Me.TitlePanel.BackColor = System.Drawing.Color.Transparent
+        Me.TitlePanel.Controls.Add(Me.Panel1)
         Me.TitlePanel.Controls.Add(Me.Label1)
         Me.TitlePanel.Dock = System.Windows.Forms.DockStyle.Top
         Me.TitlePanel.Location = New System.Drawing.Point(0, 0)
@@ -54,11 +58,32 @@ Partial Class Chargement
         '
         'ChargementPanel
         '
+        Me.ChargementPanel.Controls.Add(Me.Panel2)
         Me.ChargementPanel.Controls.Add(Me.TitlePanel)
         Me.ChargementPanel.Location = New System.Drawing.Point(0, 0)
         Me.ChargementPanel.Name = "ChargementPanel"
         Me.ChargementPanel.Size = New System.Drawing.Size(678, 640)
         Me.ChargementPanel.TabIndex = 87
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        Me.OpenFileDialog1.Filter = "excel file |*.xlsl"
+        '
+        'Panel1
+        '
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(200, 100)
+        Me.Panel1.TabIndex = 13
+        '
+        'Panel2
+        '
+        Me.Panel2.AllowDrop = True
+        Me.Panel2.Location = New System.Drawing.Point(206, 147)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(200, 100)
+        Me.Panel2.TabIndex = 1
         '
         'Chargement
         '
@@ -83,4 +108,7 @@ Partial Class Chargement
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents TitlePanel As System.Windows.Forms.Panel
     Friend WithEvents ChargementPanel As System.Windows.Forms.Panel
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
 End Class

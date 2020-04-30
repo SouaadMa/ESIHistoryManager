@@ -137,7 +137,7 @@
     End Function
 
     ' Ancienne Méthode qui retourne une collection limitée d'étudiants, triée selon leurs moyennes
-    Public Shared Function TraitClassementA(ByVal criteres As List(Of Critere), ByVal limite As Integer) As DataTable
+    Public Shared Function TraitClassementA(ByVal criteres As List(Of Critere), Optional ByVal limite As Integer = 0) As DataTable
 
         Dim req = ""
 
@@ -170,14 +170,17 @@
 
         Try
             Dim codePromo As New Critere(BDD.champsCodePromo, New String(niv + "/" + optio + "/" + year))
+            conditions.Add(New Critere(BDD.champsCodePromo, codePromo))
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
 
         Dim champsDemandes As New List(Of String)({BDD.champsNomEtud, BDD.champsPrenoms, BDD.champsRANGIN, BDD.champsMATRIN, BDD.champsMOYEIN})
 
-        req = Class_BDD.genereRechRequete(champsDemandes, BDD.nomTableINSCRIPTION, BDD.nomTableEtudiant, conditions, True)
-        Class_BDD.AjouterLimit_Requete(req, limite)
+        req = Class_BDD.genereRechRequete(champsDemandes, BDD.nomTableEtudiant, BDD.nomTableINSCRIPTION, conditions, True)
+        If limite > 0 Then
+            Class_BDD.AjouterLimit_Requete(req, limite)
+        End If
         Class_BDD.AjouterOrdre_Requete(req, BDD.champsMOYEIN)
 
         Return BDD.executeRequete(req)

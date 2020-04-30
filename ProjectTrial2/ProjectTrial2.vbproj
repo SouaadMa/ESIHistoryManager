@@ -149,6 +149,12 @@
     <Compile Include="Graphique\Chargement.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Graphique\PrincipalPage.Designer.vb">
+      <DependentUpon>PrincipalPage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Graphique\PrincipalPage.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Graphique\CrystalReport1.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -238,12 +244,6 @@
     <Compile Include="Graphique\RNGPage.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Graphique\RngReport.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RngReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Graphique\StatistiquePage.Designer.vb">
       <DependentUpon>StatistiquePage.vb</DependentUpon>
     </Compile>
@@ -330,6 +330,9 @@
     <EmbeddedResource Include="Graphique\ClassementPage.resx">
       <DependentUpon>ClassementPage.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Graphique\PrincipalPage.resx">
+      <DependentUpon>PrincipalPage.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Graphique\CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.vb</LastGenOutput>
@@ -378,10 +381,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Graphique\RNGPage.resx">
       <DependentUpon>RNGPage.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Graphique\RngReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>RngReport.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Graphique\StatistiquePage.resx">
       <DependentUpon>StatistiquePage.vb</DependentUpon>
@@ -458,6 +457,7 @@
     <None Include="Resources\user profile.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\signs.png" />
     <None Include="Resources\Asset 2.png" />
     <None Include="Resources\backBTchekedNone.png" />
     <None Include="Resources\backBTcheked.png" />

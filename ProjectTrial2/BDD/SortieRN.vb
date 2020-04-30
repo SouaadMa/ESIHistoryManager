@@ -49,11 +49,40 @@
         Dim tableINSCRIPTION As DataTable = BDD.executeRequete(reqSQL)
         '
 
+        '************Récuperation de la moyenne de Ratrappage*******************'
+        listeChamps.Clear()
+        listeChamps.Add(BDD.champsMOYERA)
+
+        reqSQL = Rech_BDD.genereRechRequetes("", New Critere(BDD.champsMATRIN, etud.GetInfoChamps(BDD.champsMATRIN)), BDD.nomTableNoteRATRAP)
+        reqSQL = Rech_BDD.genereRechRequetes(reqSQL, New Critere(BDD.champsCodeRat, promo), BDD.nomTableNoteRATRAP)
+
+        Console.WriteLine(reqSQL)
+        Dim tableRATTRAP As DataTable = BDD.executeRequete(reqSQL)
+
+        '***********Ajout de la moyenne de Rattrapage à la table INSCRIPTION**********
+
+        tableINSCRIPTION.Columns.Add(BDD.champsMOYERA)
+
+        Try
+            tableINSCRIPTION.Rows(0).Item(BDD.champsMOYERA) = tableRATTRAP.Rows(0).Item(BDD.champsMOYERA)
+
+        Catch ex As Exception
+
+            Console.WriteLine("Cet etudiant n'a pas d'informations dans la table NoteRATTRAP pour cette promo")
+
+            tableINSCRIPTION.Rows(0).Item(BDD.champsMOYERA) = -1
+
+            '***********'
+
+        End Try
+        
+
+
 
         nbreRN = CType(tableINSCRIPTION.Rows.Item(0).Item(BDD.champsNBR_RN), Integer)
 
 
-        'Ajout du caractère spécial à la place des notes qu'on ne veut pas afficher
+        'Ajout du caractère spécial 99.99 à la place des notes qu'on ne veut pas afficher
         ArrangeRATTRA(tableNotesMat, 99.99)
 
 

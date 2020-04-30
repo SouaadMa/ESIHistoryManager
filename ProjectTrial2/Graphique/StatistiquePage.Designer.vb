@@ -136,7 +136,7 @@ Partial Class StatistiquePage
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(30, 74)
+        Me.Label7.Location = New System.Drawing.Point(30, 68)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(113, 17)
         Me.Label7.TabIndex = 27
@@ -197,7 +197,7 @@ Partial Class StatistiquePage
         Me.CHB_ANNEE.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.CHB_ANNEE.Font = New System.Drawing.Font("Cambria", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CHB_ANNEE.FormattingEnabled = True
-        Me.CHB_ANNEE.Location = New System.Drawing.Point(34, 101)
+        Me.CHB_ANNEE.Location = New System.Drawing.Point(34, 90)
         Me.CHB_ANNEE.Name = "CHB_ANNEE"
         Me.CHB_ANNEE.Size = New System.Drawing.Size(161, 21)
         Me.CHB_ANNEE.Sorted = True

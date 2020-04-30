@@ -64,6 +64,7 @@
         tableINSCRIPTION.Columns.Add(BDD.champsMOYERA)
 
         Try
+            tableINSCRIPTION.Rows.Add()
             tableINSCRIPTION.Rows(0).Item(BDD.champsMOYERA) = tableRATTRAP.Rows(0).Item(BDD.champsMOYERA)
 
         Catch ex As Exception
@@ -79,7 +80,7 @@
 
 
 
-        nbreRN = CType(tableINSCRIPTION.Rows.Item(0).Item(BDD.champsNBR_RN), Integer)
+        'nbreRN = CType(tableINSCRIPTION.Rows.Item(0).Item(BDD.champsNBR_RN), Integer)
 
 
         'Ajout du caractère spécial 99.99 à la place des notes qu'on ne veut pas afficher
@@ -94,6 +95,8 @@
         'INSCRIPTION + PROMO
         dataSet.Tables.Add(tableINSCRIPTION)
 
+        'Form1.ds = dataSet
+        'Form1.Show()
 
     End Sub
 

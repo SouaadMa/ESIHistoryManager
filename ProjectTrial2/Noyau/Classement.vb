@@ -192,7 +192,9 @@
     ' Méthode pour filtrer une DataTable selon le critère en entrée
     Public Shared Function FilterDataTableBy(ByVal dataTable As DataTable, ByVal critere As Critere) As DataTable
 
-        Dim filter As String = critere.getChamps + " = '" + critere.getValeur + "'"
+        Dim filter As String = BDD.CompareToCode(BDD.champsCodePromo, critere)
+
+        Console.WriteLine(filter)
 
         Return dataTable.Select(filter).CopyToDataTable
 

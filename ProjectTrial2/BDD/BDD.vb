@@ -373,7 +373,12 @@ Public Class BDD
             Case champsCodeMat
                 Return CompareToCodeMat(critere)
             Case Else
-                Return (critere.getTable + "." + critere.getChamps + " = " + critere.getValeur)
+                If critere.getTable.Equals("") Then
+                    Return (critere.getChamps + " = " + critere.getValeur)
+                Else
+                    Return (critere.getTable + "." + critere.getChamps + " = " + critere.getValeur)
+                End If
+
         End Select
 
     End Function
@@ -385,16 +390,26 @@ Public Class BDD
         Dim chaine As String = ""
         Dim champs As String = critere.getChamps
 
+        Dim table As String
+        If critere.getTable = "" Then
+            table = ""
+        Else
+            table = critere.getTable + "."
+        End If
+
+
         ' MATRIN s'écrit de la forme AnneeInscription/NumSeq
 
         Select Case champs
 
             Case BDD.champsAnnee
-                chaine = critere.getTable + "." + "MATRIN LIKE '" + critere.getValeur.ToString.Substring(2, 2) + "/%'"
+
+
+                chaine = table + "MATRIN LIKE '" + critere.getValeur.ToString.Substring(2, 2) + "/%'"
             Case BDD.champsOption
-                chaine = critere.getTable + "." + "MATRIN LIKE '%/" + critere.getValeur + "'"
+                chaine = table + "MATRIN LIKE '%/" + critere.getValeur + "'"
             Case BDD.champsMATRIN
-                chaine = critere.getTable + "." + "MATRIN = " + critere.getValeur + "'"
+                chaine = table + "." + "MATRIN = " + critere.getValeur + "'"
             Case Else
                 chaine = ""
 
@@ -416,18 +431,25 @@ Public Class BDD
         Dim chaine As String = ""
         Dim champs As String = critere.getChamps
 
+        Dim table As String
+        If critere.getTable = "" Then
+            table = ""
+        Else
+            table = critere.getTable + "."
+        End If
+
         ' Le CodePROMO s'écrit de la forme Niv/Option/Annee
 
         Select Case champs
 
             Case BDD.champsNiveau
-                chaine = critere.getTable + "." + "CodePROMO LIKE '" + critere.getValeur + "/%'"
+                chaine = table + "CodePROMO LIKE '" + critere.getValeur + "/%'"
             Case BDD.champsOption
-                chaine = critere.getTable + "." + "CodePROMO LIKE '%/" + critere.getValeur + "/%'"
+                chaine = table + "CodePROMO LIKE '%/" + critere.getValeur + "/%'"
             Case BDD.champsAnnee
-                chaine = critere.getTable + "." + "CodePROMO LIKE '%/" + critere.getValeur.ToString.Substring(2, 2) + "'"
+                chaine = table + "CodePROMO LIKE '%/" + critere.getValeur.ToString.Substring(2, 2) + "'"
             Case BDD.champsCodePromo
-                chaine = critere.getTable + "." + "CodePROMO = '" + critere.getValeur + "'"
+                chaine = table + "CodePROMO = '" + critere.getValeur + "'"
             Case Else
                 chaine = ""
 
@@ -444,20 +466,27 @@ Public Class BDD
         Dim chaine As String = ""
         Dim champs As String = critere.getChamps
 
+        Dim table As String
+        If critere.getTable = "" Then
+            table = ""
+        Else
+            table = critere.getTable + "."
+        End If
+
         ' Le CodeMat s'écrit de la forme Nom/Annee/OptionNiveau
 
         Select Case champs
 
             Case BDD.champsLIBEMA
-                Return critere.getTable + "." + "CodeMat LIKE '" + critere.getValeur + "/%'"
+                Return table + "CodeMat LIKE '" + critere.getValeur + "/%'"
             Case BDD.champsAnnee
-                Return critere.getTable + "." + "CodeMat LIKE '%/" + critere.getValeur + "/%'"
+                Return table + "CodeMat LIKE '%/" + critere.getValeur + "/%'"
             Case BDD.champsOption
-                Return critere.getTable + "." + "CodeMat LIKE '%/" + critere.getValeur + "%'"
+                Return table + "CodeMat LIKE '%/" + critere.getValeur + "%'"
             Case BDD.champsNiveau
-                Return critere.getTable + "." + "CodeMat LIKE '%/%" + critere.getValeur + "'"
+                Return table + "CodeMat LIKE '%/%" + critere.getValeur + "'"
             Case BDD.champsCodeMat
-                Return critere.getTable + "." + "CodeMat = '" + critere.getValeur + "'"
+                Return table + "CodeMat = '" + critere.getValeur + "'"
             Case Else
                 Return ""
 

@@ -24,10 +24,11 @@ Partial Class Chargement
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TitlePanel = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.ChargementPanel = New System.Windows.Forms.Panel()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.TitlePanel.SuspendLayout()
         Me.ChargementPanel.SuspendLayout()
         Me.SuspendLayout()
@@ -56,10 +57,17 @@ Partial Class Chargement
         Me.TitlePanel.Size = New System.Drawing.Size(678, 37)
         Me.TitlePanel.TabIndex = 0
         '
+        'Panel1
+        '
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(200, 100)
+        Me.Panel1.TabIndex = 13
+        '
         'ChargementPanel
         '
-        Me.ChargementPanel.Controls.Add(Me.Panel2)
         Me.ChargementPanel.Controls.Add(Me.TitlePanel)
+        Me.ChargementPanel.Controls.Add(Me.ShapeContainer1)
         Me.ChargementPanel.Location = New System.Drawing.Point(0, 0)
         Me.ChargementPanel.Name = "ChargementPanel"
         Me.ChargementPanel.Size = New System.Drawing.Size(678, 640)
@@ -70,20 +78,25 @@ Partial Class Chargement
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         Me.OpenFileDialog1.Filter = "excel file |*.xlsl"
         '
-        'Panel1
+        'ShapeContainer1
         '
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(200, 100)
-        Me.Panel1.TabIndex = 13
+        Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
+        Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer1.Name = "ShapeContainer1"
+        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape1})
+        Me.ShapeContainer1.Size = New System.Drawing.Size(678, 640)
+        Me.ShapeContainer1.TabIndex = 1
+        Me.ShapeContainer1.TabStop = False
         '
-        'Panel2
+        'RectangleShape1
         '
-        Me.Panel2.AllowDrop = True
-        Me.Panel2.Location = New System.Drawing.Point(206, 147)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(200, 100)
-        Me.Panel2.TabIndex = 1
+        Me.RectangleShape1.FillColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.RectangleShape1.FillGradientColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.RectangleShape1.FillGradientStyle = Microsoft.VisualBasic.PowerPacks.FillGradientStyle.Horizontal
+        Me.RectangleShape1.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
+        Me.RectangleShape1.Location = New System.Drawing.Point(262, 209)
+        Me.RectangleShape1.Name = "RectangleShape1"
+        Me.RectangleShape1.Size = New System.Drawing.Size(75, 23)
         '
         'Chargement
         '
@@ -109,6 +122,7 @@ Partial Class Chargement
     Friend WithEvents TitlePanel As System.Windows.Forms.Panel
     Friend WithEvents ChargementPanel As System.Windows.Forms.Panel
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
+    Friend WithEvents RectangleShape1 As Microsoft.VisualBasic.PowerPacks.RectangleShape
 End Class

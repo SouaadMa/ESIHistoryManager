@@ -16,18 +16,10 @@
         NoResultLabel.Visible = False
         'ListBox.Size = ListBox.MinimumSize
 
-        CritSplitContainer.Panel2Collapsed = True
-
         AllCheckBox.Checked = True
         LimitUpDown.Enabled = False
 
-        For Each Critere As String In InfosGenerales.promo
-            Me.NiveauBox.Items.Add(Critere)
-        Next
-
-        For Each Critere As String In InfosGenerales.specialite
-            Me.SpecialiteBox.Items.Add(Critere)
-        Next
+        SpecialiteBox.Items.AddRange({"SIQ", "SI"})
 
         'make the nav bar desactivated
 
@@ -103,7 +95,7 @@
         Dim i As Integer = 0
         Dim cpt As Integer = (CURRENT_PAGE - 1) * 7
         ' inisializer le nombre des esist
-        'Me.RechLabel.Text = "Classement (" + StudentTable.Rows.Count.ToString + ")"
+        Me.RechLabel.Text = "Classement (" + StudentTable.Rows.Count.ToString + ")"
         For Each ctrl As Control In EtudiantPanel.Controls
             ctrl.Visible = True
         Next
@@ -262,7 +254,7 @@
 
     Private Sub affichResearchResult_Shown(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Shown
         'affich_pageResult()
-        GetClassemntResult()
+        UpdateClassemntResult()
         Home.MainContainer1.Visible = True
         Home.ProgressPanel.Visible = False
         If StudentTable.Rows.Count > 0 Then
@@ -299,26 +291,14 @@
         affich_pageResult()
     End Sub
 
-    Private Sub GetClassemntResult()
-        Dim crit As New List(Of Critere)
+    Private Sub UpdateClassemntResult()
 
-        crit.Add(New Critere(BDD.champsNiveau, (NiveauBox.SelectedIndex + 1).ToString))
-        crit.Add(New Critere(BDD.champsOption, SpecialiteBox.Text))
-        crit.Add(New Critere(BDD.champsAnnee, ValueTextBox.Text.Substring(2, 2)))
+        StudentTable = Classement.TraitClassement(ValueTextBox.Text)
 
-        If Not NiveauBox.Text.Equals("") And Not SpecialiteBox.Text.Equals("") Then
-            If AllCheckBox.Checked Then
-                StudentTable = Classement.TraitClassementA(crit)
-            Else
-                StudentTable = Classement.TraitClassementA(crit, LimitUpDown.Value)
-            End If
-        Else
-            StudentTable = Classement.TraitClassement(ValueTextBox.Text)
-        End If
-        'StudentTable = Classement.TraitClassement(ValueTextBox.Text)
         'Form1.ds.Tables.Add(StudentTable.Copy())
         'Form1.Show()
         'StudentTable = Recherche.traitRechercher(crit, RechercherPage.BackgroundWorker1, New System.ComponentModel.DoWorkEventArgs(Nothing))
+
         Me.RechLabel.Text = "Classement (" + StudentTable.Rows.Count.ToString + ")"
         Console.WriteLine("results number is : " + StudentTable.Rows.Count.ToString)
         If (StudentTable.Rows.Count = 0) Then
@@ -343,6 +323,7 @@
             End If
         End If
         Console.WriteLine("pages number is : " + nb_page.ToString)
+
     End Sub
 
     Private Sub BT_PREV_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_PREV.Click
@@ -396,7 +377,7 @@
             ValueTextBox.ForeColor = Color.White
             ValueTextBox.BackColor = Color.FromArgb(0, 64, 104)
             Console.WriteLine(e.ToString)
-            GetClassemntResult()
+            UpdateClassemntResult()
             Me.ActiveControl = Nothing
         End If
     End Sub
@@ -425,45 +406,19 @@
 
     End Sub
 
-    Private Sub MoreCritLabel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MoreCritLabel.Click
-        CritSplitContainer.Panel2Collapsed = False
-        MoreCritLabel.Visible = False
-    End Sub
-
-    Private Sub PromoBox_TextUpdate(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SpecialiteBox.TextUpdate, NiveauBox.TextUpdate
+    Private Sub PromoBox_TextUpdate(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SpecialiteBox.TextUpdate
         Dim Box As ComboBox = CType(sender, ComboBox)
         If Box.Text = "" Then
-            Me.AffichButton.Enabled = False
+            Me.FilterButton.Enabled = False
         End If
     End Sub
 
-    Private Sub NiveauBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NiveauBox.SelectedIndexChanged, SpecialiteBox.SelectedIndexChanged
-        If (CType(sender, Control).Name.Equals(NiveauBox.Name)) Then
-            If CType(sender, ComboBox).SelectedIndex < 2 Then
-                'If (Me.SpecialiteBox.Items.Count < 3) Then
-                Me.SpecialiteBox.Items.Clear()
-                Me.SpecialiteBox.Items.Insert(0, "TRC")
-                Me.SpecialiteBox.Text = ""
-                'End If
-                'Me.SpecialiteBox.Text = "TRC"
+    Private Sub NiveauBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SpecialiteBox.SelectedIndexChanged
 
-                'Me.SpecialiteBox.Enabled = False
-            Else
-                Me.SpecialiteBox.Items.Clear()
-                Me.SpecialiteBox.Text = ""
-                Me.SpecialiteBox.Items.Add("SI")
-                Me.SpecialiteBox.Items.Add("SIQ")
-                'If SpecialiteBox.Items.Item(0).ToString.Equals("TRC") Then
-                '    Me.SpecialiteBox.Items.Remove(Me.SpecialiteBox.Items(0))
-                '    Me.SpecialiteBox.Enabled = True
-                'End If
-            End If
-        End If
-
-        If Not SpecialiteBox.Text.Equals("") And Not NiveauBox.Text.Equals("") Then
-            Me.AffichButton.Enabled = True
+        If Not SpecialiteBox.Text.Equals("") Then
+            Me.FilterButton.Enabled = True
         Else
-            Me.AffichButton.Enabled = False
+            Me.FilterButton.Enabled = False
         End If
     End Sub
 
@@ -477,8 +432,24 @@
         NiveauBox_SelectedIndexChanged(SpecialiteBox, New EventArgs())
     End Sub
 
-    Private Sub AffichButton_EnabledChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AffichButton.EnabledChanged
-        AffichButton.BackColor = IIf(AffichButton.Enabled, Color.FromArgb(0, 64, 104), Color.FromArgb(169, 119, 113))
+    Private Sub FilterButton_EnabledChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FilterButton.EnabledChanged
+        FilterButton.BackColor = IIf(FilterButton.Enabled, Color.FromArgb(0, 64, 104), Color.FromArgb(169, 119, 113))
+    End Sub
+
+    Private Sub filterButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FilterButton.Click
+        Dim crit As New List(Of Critere)
+        crit.Add(New Critere(BDD.champsOption, SpecialiteBox.Text))
+        'crit.Add(New Critere(BDD.champsAnnee, ValueTextBox.Text.Substring(2, 2)))
+
+        If Not SpecialiteBox.Text.Equals("") Then
+            StudentTable = Classement.FilterDataTableBy(StudentTable, New Critere(BDD.champsOption, SpecialiteBox.Text))
+        End If
+
+        If Not AllCheckBox.Checked Then
+            StudentTable = Classement.LimitRows(StudentTable, LimitUpDown.Value)
+        End If
+
+        affich_pageResult()
     End Sub
 
 End Class

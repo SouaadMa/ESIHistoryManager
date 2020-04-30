@@ -27,9 +27,13 @@ Partial Class ClassementPage
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.FlecheList = New System.Windows.Forms.ImageList(Me.components)
         Me.AffPanel = New System.Windows.Forms.Panel()
-        Me.MoreCritLabel = New System.Windows.Forms.Label()
-        Me.ImageList2 = New System.Windows.Forms.ImageList(Me.components)
-        Me.CritSplitContainer = New System.Windows.Forms.SplitContainer()
+        Me.ClassmentCritPanel = New System.Windows.Forms.Panel()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.LimitUpDown = New System.Windows.Forms.NumericUpDown()
+        Me.AllCheckBox = New System.Windows.Forms.CheckBox()
+        Me.FilterButton = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.SpecialiteBox = New System.Windows.Forms.ComboBox()
         Me.PN_PAGES = New System.Windows.Forms.Panel()
         Me.PromoPanel = New System.Windows.Forms.Panel()
         Me.ValueTextBox = New System.Windows.Forms.TextBox()
@@ -37,15 +41,6 @@ Partial Class ClassementPage
         Me.BT_PREV = New System.Windows.Forms.Button()
         Me.PromoButton = New System.Windows.Forms.Button()
         Me.SortDirectionButton = New System.Windows.Forms.Button()
-        Me.ClassmentCritPanel = New System.Windows.Forms.Panel()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.LimitUpDown = New System.Windows.Forms.NumericUpDown()
-        Me.AllCheckBox = New System.Windows.Forms.CheckBox()
-        Me.AffichButton = New System.Windows.Forms.Button()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.NiveauBox = New System.Windows.Forms.ComboBox()
-        Me.SpecialiteBox = New System.Windows.Forms.ComboBox()
         Me.PagesButtons = New System.Windows.Forms.FlowLayoutPanel()
         Me.PrevButton = New System.Windows.Forms.Button()
         Me.MiddleButton = New System.Windows.Forms.Button()
@@ -110,16 +105,13 @@ Partial Class ClassementPage
         Me.IntroPanel = New System.Windows.Forms.Panel()
         Me.RechLabel = New System.Windows.Forms.Label()
         Me.NoResultLabel = New System.Windows.Forms.Label()
+        Me.ImageList2 = New System.Windows.Forms.ImageList(Me.components)
         Me.AffPanel.SuspendLayout()
-        CType(Me.CritSplitContainer, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.CritSplitContainer.Panel1.SuspendLayout()
-        Me.CritSplitContainer.Panel2.SuspendLayout()
-        Me.CritSplitContainer.SuspendLayout()
-        Me.PN_PAGES.SuspendLayout()
-        Me.PromoPanel.SuspendLayout()
         Me.ClassmentCritPanel.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.LimitUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PN_PAGES.SuspendLayout()
+        Me.PromoPanel.SuspendLayout()
         Me.PagesButtons.SuspendLayout()
         Me.EtudiantPanel.SuspendLayout()
         Me.TableLayoutPanel7.SuspendLayout()
@@ -150,8 +142,8 @@ Partial Class ClassementPage
         '
         Me.AffPanel.BackColor = System.Drawing.Color.Transparent
         Me.AffPanel.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.background
-        Me.AffPanel.Controls.Add(Me.MoreCritLabel)
-        Me.AffPanel.Controls.Add(Me.CritSplitContainer)
+        Me.AffPanel.Controls.Add(Me.ClassmentCritPanel)
+        Me.AffPanel.Controls.Add(Me.PN_PAGES)
         Me.AffPanel.Controls.Add(Me.PagesButtons)
         Me.AffPanel.Controls.Add(Me.EtudiantPanel)
         Me.AffPanel.Controls.Add(Me.IntroPanel)
@@ -163,59 +155,98 @@ Partial Class ClassementPage
         Me.AffPanel.Size = New System.Drawing.Size(678, 640)
         Me.AffPanel.TabIndex = 28
         '
-        'MoreCritLabel
+        'ClassmentCritPanel
         '
-        Me.MoreCritLabel.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.MoreCritLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MoreCritLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.MoreCritLabel.ImageKey = "signs.png"
-        Me.MoreCritLabel.ImageList = Me.ImageList2
-        Me.MoreCritLabel.Location = New System.Drawing.Point(19, 575)
-        Me.MoreCritLabel.Name = "MoreCritLabel"
-        Me.MoreCritLabel.Size = New System.Drawing.Size(275, 25)
-        Me.MoreCritLabel.TabIndex = 26
-        Me.MoreCritLabel.Text = "plus de criteres de classement"
-        Me.MoreCritLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ClassmentCritPanel.Controls.Add(Me.GroupBox1)
+        Me.ClassmentCritPanel.Controls.Add(Me.FilterButton)
+        Me.ClassmentCritPanel.Controls.Add(Me.Label4)
+        Me.ClassmentCritPanel.Controls.Add(Me.SpecialiteBox)
+        Me.ClassmentCritPanel.Location = New System.Drawing.Point(10, 43)
+        Me.ClassmentCritPanel.Name = "ClassmentCritPanel"
+        Me.ClassmentCritPanel.Size = New System.Drawing.Size(658, 64)
+        Me.ClassmentCritPanel.TabIndex = 45
         '
-        'ImageList2
+        'GroupBox1
         '
-        Me.ImageList2.ImageStream = CType(resources.GetObject("ImageList2.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.ImageList2.TransparentColor = System.Drawing.Color.Transparent
-        Me.ImageList2.Images.SetKeyName(0, "signs.png")
+        Me.GroupBox1.Controls.Add(Me.LimitUpDown)
+        Me.GroupBox1.Controls.Add(Me.AllCheckBox)
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Location = New System.Drawing.Point(228, 5)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(171, 52)
+        Me.GroupBox1.TabIndex = 52
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Limite D'affichage"
         '
-        'CritSplitContainer
+        'LimitUpDown
         '
-        Me.CritSplitContainer.IsSplitterFixed = True
-        Me.CritSplitContainer.Location = New System.Drawing.Point(10, 530)
-        Me.CritSplitContainer.Name = "CritSplitContainer"
-        Me.CritSplitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal
+        Me.LimitUpDown.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LimitUpDown.Increment = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.LimitUpDown.Location = New System.Drawing.Point(6, 24)
+        Me.LimitUpDown.Maximum = New Decimal(New Integer() {2000, 0, 0, 0})
+        Me.LimitUpDown.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.LimitUpDown.Name = "LimitUpDown"
+        Me.LimitUpDown.Size = New System.Drawing.Size(61, 24)
+        Me.LimitUpDown.TabIndex = 8
+        Me.LimitUpDown.ThousandsSeparator = True
+        Me.LimitUpDown.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
-        'CritSplitContainer.Panel1
+        'AllCheckBox
         '
-        Me.CritSplitContainer.Panel1.Controls.Add(Me.PN_PAGES)
-        Me.CritSplitContainer.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.AllCheckBox.AutoSize = True
+        Me.AllCheckBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AllCheckBox.Location = New System.Drawing.Point(98, 24)
+        Me.AllCheckBox.Name = "AllCheckBox"
+        Me.AllCheckBox.Size = New System.Drawing.Size(56, 24)
+        Me.AllCheckBox.TabIndex = 9
+        Me.AllCheckBox.Text = "tout"
+        Me.AllCheckBox.UseVisualStyleBackColor = True
         '
-        'CritSplitContainer.Panel2
+        'FilterButton
         '
-        Me.CritSplitContainer.Panel2.Controls.Add(Me.ClassmentCritPanel)
-        Me.CritSplitContainer.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.CritSplitContainer.Panel2MinSize = 0
-        Me.CritSplitContainer.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.CritSplitContainer.Size = New System.Drawing.Size(658, 110)
-        Me.CritSplitContainer.SplitterDistance = 43
-        Me.CritSplitContainer.SplitterWidth = 1
-        Me.CritSplitContainer.TabIndex = 25
+        Me.FilterButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.FilterButton.FlatAppearance.BorderSize = 0
+        Me.FilterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.FilterButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FilterButton.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.FilterButton.Location = New System.Drawing.Point(431, 22)
+        Me.FilterButton.Name = "FilterButton"
+        Me.FilterButton.Size = New System.Drawing.Size(91, 28)
+        Me.FilterButton.TabIndex = 46
+        Me.FilterButton.Text = "filter"
+        Me.FilterButton.UseVisualStyleBackColor = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(136, 6)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(71, 18)
+        Me.Label4.TabIndex = 51
+        Me.Label4.Text = "Specialite"
+        '
+        'SpecialiteBox
+        '
+        Me.SpecialiteBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SpecialiteBox.FormattingEnabled = True
+        Me.SpecialiteBox.Location = New System.Drawing.Point(136, 28)
+        Me.SpecialiteBox.Margin = New System.Windows.Forms.Padding(30, 0, 50, 0)
+        Me.SpecialiteBox.Name = "SpecialiteBox"
+        Me.SpecialiteBox.Size = New System.Drawing.Size(68, 26)
+        Me.SpecialiteBox.TabIndex = 48
         '
         'PN_PAGES
         '
         Me.PN_PAGES.BackColor = System.Drawing.Color.Transparent
         Me.PN_PAGES.Controls.Add(Me.PromoPanel)
         Me.PN_PAGES.Controls.Add(Me.SortDirectionButton)
-        Me.PN_PAGES.Location = New System.Drawing.Point(0, 0)
+        Me.PN_PAGES.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.PN_PAGES.Location = New System.Drawing.Point(10, 576)
         Me.PN_PAGES.Margin = New System.Windows.Forms.Padding(0)
         Me.PN_PAGES.Name = "PN_PAGES"
         Me.PN_PAGES.Padding = New System.Windows.Forms.Padding(15, 8, 15, 15)
-        Me.PN_PAGES.Size = New System.Drawing.Size(658, 54)
+        Me.PN_PAGES.Size = New System.Drawing.Size(658, 64)
         Me.PN_PAGES.TabIndex = 25
         '
         'PromoPanel
@@ -224,7 +255,7 @@ Partial Class ClassementPage
         Me.PromoPanel.Controls.Add(Me.BT_NEXT)
         Me.PromoPanel.Controls.Add(Me.BT_PREV)
         Me.PromoPanel.Controls.Add(Me.PromoButton)
-        Me.PromoPanel.Location = New System.Drawing.Point(249, 2)
+        Me.PromoPanel.Location = New System.Drawing.Point(249, 11)
         Me.PromoPanel.Name = "PromoPanel"
         Me.PromoPanel.Size = New System.Drawing.Size(160, 41)
         Me.PromoPanel.TabIndex = 9
@@ -310,116 +341,13 @@ Partial Class ClassementPage
         Me.SortDirectionButton.TabIndex = 44
         Me.SortDirectionButton.UseVisualStyleBackColor = True
         '
-        'ClassmentCritPanel
-        '
-        Me.ClassmentCritPanel.Controls.Add(Me.GroupBox1)
-        Me.ClassmentCritPanel.Controls.Add(Me.AffichButton)
-        Me.ClassmentCritPanel.Controls.Add(Me.Label4)
-        Me.ClassmentCritPanel.Controls.Add(Me.Label3)
-        Me.ClassmentCritPanel.Controls.Add(Me.NiveauBox)
-        Me.ClassmentCritPanel.Controls.Add(Me.SpecialiteBox)
-        Me.ClassmentCritPanel.Location = New System.Drawing.Point(0, 4)
-        Me.ClassmentCritPanel.Name = "ClassmentCritPanel"
-        Me.ClassmentCritPanel.Size = New System.Drawing.Size(658, 61)
-        Me.ClassmentCritPanel.TabIndex = 45
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.LimitUpDown)
-        Me.GroupBox1.Controls.Add(Me.AllCheckBox)
-        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(268, 4)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(171, 52)
-        Me.GroupBox1.TabIndex = 52
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Limite D'affichage"
-        '
-        'LimitUpDown
-        '
-        Me.LimitUpDown.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LimitUpDown.Increment = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.LimitUpDown.Location = New System.Drawing.Point(6, 24)
-        Me.LimitUpDown.Maximum = New Decimal(New Integer() {2000, 0, 0, 0})
-        Me.LimitUpDown.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.LimitUpDown.Name = "LimitUpDown"
-        Me.LimitUpDown.Size = New System.Drawing.Size(61, 24)
-        Me.LimitUpDown.TabIndex = 8
-        Me.LimitUpDown.ThousandsSeparator = True
-        Me.LimitUpDown.Value = New Decimal(New Integer() {10, 0, 0, 0})
-        '
-        'AllCheckBox
-        '
-        Me.AllCheckBox.AutoSize = True
-        Me.AllCheckBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.AllCheckBox.Location = New System.Drawing.Point(98, 24)
-        Me.AllCheckBox.Name = "AllCheckBox"
-        Me.AllCheckBox.Size = New System.Drawing.Size(56, 24)
-        Me.AllCheckBox.TabIndex = 9
-        Me.AllCheckBox.Text = "tout"
-        Me.AllCheckBox.UseVisualStyleBackColor = True
-        '
-        'AffichButton
-        '
-        Me.AffichButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.AffichButton.FlatAppearance.BorderSize = 0
-        Me.AffichButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.AffichButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.AffichButton.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.AffichButton.Location = New System.Drawing.Point(471, 25)
-        Me.AffichButton.Name = "AffichButton"
-        Me.AffichButton.Size = New System.Drawing.Size(91, 28)
-        Me.AffichButton.TabIndex = 46
-        Me.AffichButton.Text = "Afficher"
-        Me.AffichButton.UseVisualStyleBackColor = False
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(173, 4)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(71, 18)
-        Me.Label4.TabIndex = 51
-        Me.Label4.Text = "Specialite"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(97, 3)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(53, 18)
-        Me.Label3.TabIndex = 50
-        Me.Label3.Text = "Niveau"
-        '
-        'NiveauBox
-        '
-        Me.NiveauBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NiveauBox.FormattingEnabled = True
-        Me.NiveauBox.Location = New System.Drawing.Point(100, 26)
-        Me.NiveauBox.Margin = New System.Windows.Forms.Padding(30, 0, 50, 0)
-        Me.NiveauBox.Name = "NiveauBox"
-        Me.NiveauBox.Size = New System.Drawing.Size(50, 26)
-        Me.NiveauBox.TabIndex = 47
-        '
-        'SpecialiteBox
-        '
-        Me.SpecialiteBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SpecialiteBox.FormattingEnabled = True
-        Me.SpecialiteBox.Location = New System.Drawing.Point(176, 26)
-        Me.SpecialiteBox.Margin = New System.Windows.Forms.Padding(30, 0, 50, 0)
-        Me.SpecialiteBox.Name = "SpecialiteBox"
-        Me.SpecialiteBox.Size = New System.Drawing.Size(68, 26)
-        Me.SpecialiteBox.TabIndex = 48
-        '
         'PagesButtons
         '
         Me.PagesButtons.Controls.Add(Me.PrevButton)
         Me.PagesButtons.Controls.Add(Me.MiddleButton)
         Me.PagesButtons.Controls.Add(Me.NextButton)
         Me.PagesButtons.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.PagesButtons.Location = New System.Drawing.Point(640, 230)
+        Me.PagesButtons.Location = New System.Drawing.Point(640, 297)
         Me.PagesButtons.Name = "PagesButtons"
         Me.PagesButtons.Size = New System.Drawing.Size(27, 88)
         Me.PagesButtons.TabIndex = 27
@@ -489,7 +417,7 @@ Partial Class ClassementPage
         Me.EtudiantPanel.Controls.Add(Me.TableLayoutPanel3)
         Me.EtudiantPanel.Controls.Add(Me.TableLayoutPanel2)
         Me.EtudiantPanel.Controls.Add(Me.TableLayoutPanel1)
-        Me.EtudiantPanel.Location = New System.Drawing.Point(10, 58)
+        Me.EtudiantPanel.Location = New System.Drawing.Point(10, 106)
         Me.EtudiantPanel.Margin = New System.Windows.Forms.Padding(0)
         Me.EtudiantPanel.Name = "EtudiantPanel"
         Me.EtudiantPanel.Size = New System.Drawing.Size(658, 470)
@@ -1301,7 +1229,7 @@ Partial Class ClassementPage
         Me.IntroPanel.Dock = System.Windows.Forms.DockStyle.Top
         Me.IntroPanel.Location = New System.Drawing.Point(10, 0)
         Me.IntroPanel.Name = "IntroPanel"
-        Me.IntroPanel.Size = New System.Drawing.Size(658, 40)
+        Me.IntroPanel.Size = New System.Drawing.Size(658, 44)
         Me.IntroPanel.TabIndex = 27
         '
         'RechLabel
@@ -1323,12 +1251,18 @@ Partial Class ClassementPage
         Me.NoResultLabel.BackColor = System.Drawing.Color.White
         Me.NoResultLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.NoResultLabel.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.Asset_2
-        Me.NoResultLabel.Location = New System.Drawing.Point(12, 59)
+        Me.NoResultLabel.Location = New System.Drawing.Point(12, 112)
         Me.NoResultLabel.Name = "NoResultLabel"
         Me.NoResultLabel.Padding = New System.Windows.Forms.Padding(0, 0, 0, 30)
         Me.NoResultLabel.Size = New System.Drawing.Size(655, 468)
         Me.NoResultLabel.TabIndex = 28
         Me.NoResultLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'ImageList2
+        '
+        Me.ImageList2.ImageStream = CType(resources.GetObject("ImageList2.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList2.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList2.Images.SetKeyName(0, "signs.png")
         '
         'ClassementPage
         '
@@ -1344,18 +1278,14 @@ Partial Class ClassementPage
         Me.TopMost = True
         Me.WindowState = System.Windows.Forms.FormWindowState.Minimized
         Me.AffPanel.ResumeLayout(False)
-        Me.CritSplitContainer.Panel1.ResumeLayout(False)
-        Me.CritSplitContainer.Panel2.ResumeLayout(False)
-        CType(Me.CritSplitContainer, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.CritSplitContainer.ResumeLayout(False)
-        Me.PN_PAGES.ResumeLayout(False)
-        Me.PromoPanel.ResumeLayout(False)
-        Me.PromoPanel.PerformLayout()
         Me.ClassmentCritPanel.ResumeLayout(False)
         Me.ClassmentCritPanel.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.LimitUpDown, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PN_PAGES.ResumeLayout(False)
+        Me.PromoPanel.ResumeLayout(False)
+        Me.PromoPanel.PerformLayout()
         Me.PagesButtons.ResumeLayout(False)
         Me.PagesButtons.PerformLayout()
         Me.EtudiantPanel.ResumeLayout(False)
@@ -1456,13 +1386,9 @@ Partial Class ClassementPage
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents LimitUpDown As System.Windows.Forms.NumericUpDown
     Friend WithEvents AllCheckBox As System.Windows.Forms.CheckBox
-    Friend WithEvents AffichButton As System.Windows.Forms.Button
+    Friend WithEvents FilterButton As System.Windows.Forms.Button
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents NiveauBox As System.Windows.Forms.ComboBox
     Friend WithEvents SpecialiteBox As System.Windows.Forms.ComboBox
     Friend WithEvents SortDirectionButton As System.Windows.Forms.Button
-    Friend WithEvents CritSplitContainer As System.Windows.Forms.SplitContainer
-    Friend WithEvents MoreCritLabel As System.Windows.Forms.Label
     Friend WithEvents ImageList2 As System.Windows.Forms.ImageList
 End Class

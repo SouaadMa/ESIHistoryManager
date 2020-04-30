@@ -4,9 +4,9 @@ Imports System.IO
 <Serializable()>
 Public Class InfosGenerales
 
-    Public wilaya As New List(Of String)
+    Public wilaya As DataTable
     Public wilayaarabe As New List(Of String)
-    Public codewilaya As New List(Of String)
+    Public codewilaya As DataTable
     Public section As New List(Of String)
     Public groupe As New List(Of String)
     Public matiere As New List(Of String)

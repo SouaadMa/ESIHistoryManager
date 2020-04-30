@@ -119,7 +119,7 @@
     ' Méthode qui retourne toutes les valeurs possibles d'un champs dans la base de données,
     ' et qui correspondent à l'étudiant
 
-    Public Function GetALL(ByVal champs As String) As List(Of String)
+    Public Function GetALL(ByVal champs As String) As DataTable
 
         'Génération du critère MATRIN
         Dim condition As New Critere(BDD.champsMATRIN, Me.GetInfoChamps(BDD.champsMATRIN))
@@ -133,23 +133,7 @@
         dt = BDD.GetALL(champs, BDD.GetTable(champs), condition)
 
 
-        'Création de la liste à retourner
-        Dim liste As New List(Of String)
-
-        For Each ligne As DataRow In dt.Rows
-
-            Try
-                liste.Add(CType(ligne(champs), String))
-
-            Catch ex As Exception
-                MsgBox("GetALLEtudiant " + ex.Message)
-                liste.Add(" ")
-            End Try
-
-
-        Next
-
-        Return liste
+        Return dt
 
 
     End Function

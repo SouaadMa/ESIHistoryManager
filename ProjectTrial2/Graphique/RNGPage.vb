@@ -106,7 +106,6 @@ Public Class RNGPage
         CrystalReportViewer1.Visible = True
         'disbale the affich button until any combobox values has been changed
         ' and that's it !
-en:
     End Sub
 
     Private Sub BT_SORTIR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)

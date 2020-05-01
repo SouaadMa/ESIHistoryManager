@@ -49,13 +49,6 @@ Partial Class Home
         Me.Help_Button = New System.Windows.Forms.LinkLabel()
         Me.logo_bleu = New System.Windows.Forms.PictureBox()
         Me.MainContainer1 = New System.Windows.Forms.Panel()
-        Me.PN_BIENVENUE = New System.Windows.Forms.Panel()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.MainContainer2 = New System.Windows.Forms.Panel()
         Me.ProgressPanel = New System.Windows.Forms.Panel()
         Me.ProgressLabel = New System.Windows.Forms.Label()
@@ -68,7 +61,6 @@ Partial Class Home
         CType(Me.mode_photo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.NavBar.SuspendLayout()
         CType(Me.logo_bleu, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PN_BIENVENUE.SuspendLayout()
         Me.ProgressPanel.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -518,91 +510,6 @@ Partial Class Home
         Me.MainContainer1.TabIndex = 10
         Me.MainContainer1.Visible = False
         '
-        'PN_BIENVENUE
-        '
-        Me.PN_BIENVENUE.BackColor = System.Drawing.Color.Transparent
-        Me.PN_BIENVENUE.Controls.Add(Me.Label8)
-        Me.PN_BIENVENUE.Controls.Add(Me.Label7)
-        Me.PN_BIENVENUE.Controls.Add(Me.Label6)
-        Me.PN_BIENVENUE.Controls.Add(Me.Label5)
-        Me.PN_BIENVENUE.Controls.Add(Me.Label4)
-        Me.PN_BIENVENUE.Controls.Add(Me.Label3)
-        Me.PN_BIENVENUE.Location = New System.Drawing.Point(185, 0)
-        Me.PN_BIENVENUE.Margin = New System.Windows.Forms.Padding(2)
-        Me.PN_BIENVENUE.Name = "PN_BIENVENUE"
-        Me.PN_BIENVENUE.Size = New System.Drawing.Size(680, 640)
-        Me.PN_BIENVENUE.TabIndex = 11
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(84, 397)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(373, 18)
-        Me.Label8.TabIndex = 6
-        Me.Label8.Text = "il existe un guide en ligne, vous pouvez le consulter *__*"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.Maroon
-        Me.Label7.Location = New System.Drawing.Point(58, 363)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(283, 18)
-        Me.Label7.TabIndex = 5
-        Me.Label7.Text = "Nouveau en Esist History Manager ?"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(77, 293)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(502, 18)
-        Me.Label6.TabIndex = 4
-        Me.Label6.Text = "on sert a l’obtention de données sur l’historique individuel ou par promotion."
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Times New Roman", 24.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(56, 155)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(318, 36)
-        Me.Label5.TabIndex = 3
-        Me.Label5.Text = "Esist History Manager "
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(76, 251)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(443, 36)
-        Me.Label4.TabIndex = 2
-        Me.Label4.Text = "Un outil de gestion du cursus des anciens étudiants de l’ESI durant" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " leur parcou" & _
-            "rs universitaire,  "
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 24.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(67, 117)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(177, 36)
-        Me.Label3.TabIndex = 1
-        Me.Label3.Text = "Bienvenue a"
-        '
         'MainContainer2
         '
         Me.MainContainer2.BackColor = System.Drawing.Color.Transparent
@@ -695,7 +602,6 @@ Partial Class Home
         Me.Controls.Add(Me.NavBar)
         Me.Controls.Add(Me.logo_bleu)
         Me.Controls.Add(Me.ProfilePane)
-        Me.Controls.Add(Me.PN_BIENVENUE)
         Me.Controls.Add(Me.MainContainer1)
         Me.Controls.Add(Me.MainContainer2)
         Me.DoubleBuffered = True
@@ -715,8 +621,6 @@ Partial Class Home
         Me.NavBar.ResumeLayout(False)
         Me.NavBar.PerformLayout()
         CType(Me.logo_bleu, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PN_BIENVENUE.ResumeLayout(False)
-        Me.PN_BIENVENUE.PerformLayout()
         Me.ProgressPanel.ResumeLayout(False)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -748,13 +652,6 @@ Partial Class Home
     Friend WithEvents SearchIconsList As System.Windows.Forms.ImageList
     Friend WithEvents PVIconsList As System.Windows.Forms.ImageList
     Friend WithEvents MainContainer1 As System.Windows.Forms.Panel
-    Friend WithEvents PN_BIENVENUE As System.Windows.Forms.Panel
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents MainContainer2 As System.Windows.Forms.Panel
     Friend WithEvents ProgressPanel As System.Windows.Forms.Panel
     Friend WithEvents ProgressLabel As System.Windows.Forms.Label

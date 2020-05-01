@@ -45,19 +45,17 @@
         Next
 
         'initialiser de matiere
-        For Each cr As String In Login.Infosgenerale.matiere
-            CHB_MAT.Items.Add(cr)
-        Next
+
+        'CHB_MAT. = Login.Infosgenerale.matiere.DefaultView'AsEnumerable().Select(
+
 
         'initialiser de groupe
-        For Each cr As String In Login.Infosgenerale.groupe
-            CHB_GROUPE.Items.Add(cr)
-        Next
+        '   CHB_GROUPE.Items.AddRange(Login.Infosgenerale.groupe.AsEnumerable())
 
         'initialiser de section
-        For Each cr As String In Login.Infosgenerale.section
-            CHB_SECTION.Items.Add(cr)
-        Next
+        'For Each cr As String In Login.Infosgenerale.section
+        'CHB_SECTION.Items.Add(cr)
+        'Next
 
         'initialiser de promo
         For Each cr As String In InfosGenerales.promo

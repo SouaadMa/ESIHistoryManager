@@ -60,11 +60,6 @@
 
         Return dc
 
-        Dim liste As New List(Of String)
-
-        'MsgBox("GetALLRech")
-
-        
 
     End Function
 

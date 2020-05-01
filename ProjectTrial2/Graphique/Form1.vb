@@ -1,7 +1,7 @@
 ﻿Public Class Form1
 
     Public Shared i = 0
-    Public ds As DataSet
+    Public ds As New DataSet()
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         i = i Mod (ds.Tables.Count - 1) + 1

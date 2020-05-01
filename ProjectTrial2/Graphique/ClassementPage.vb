@@ -1,7 +1,7 @@
 ﻿Public Class ClassementPage
 
     Public StudentList As New List(Of Etudiant)
-    Public StudentTable As DataTable
+    Public StudentTable As New DataTable()
     Private nb_page As Integer = 0
     Public CURRENT_PAGE As Integer = 1
     Public SelectedStudent As Integer = -1
@@ -14,17 +14,12 @@
         EtudiantPanel.Visible = True
         PN_PAGES.Visible = True
         NoResultLabel.Visible = False
-        ListBox.Size = ListBox.MinimumSize
+        'ListBox.Size = ListBox.MinimumSize
 
-        ClassementModeBox.Items.Add("Promotion")
-        ClassementModeBox.Items.Add("Specialite")
-        ClassementModeBox.Items.Add("Niveau")
-        ClassementModeBox.Items.Add("Section")
-        ClassementModeBox.Items.Add("Groupe")
+        AllCheckBox.Checked = True
+        LimitUpDown.Enabled = False
 
-        For i = InfosGenerales.firstYear To InfosGenerales.lastYear
-            Me.collectionList.Add(i)
-        Next
+        SpecialiteBox.Items.AddRange({"SIQ", "SI"})
 
         'make the nav bar desactivated
 
@@ -100,7 +95,7 @@
         Dim i As Integer = 0
         Dim cpt As Integer = (CURRENT_PAGE - 1) * 7
         ' inisializer le nombre des esist
-        'Me.RechLabel.Text = "Classement (" + StudentTable.Rows.Count.ToString + ")"
+        Me.RechLabel.Text = "Classement (" + StudentTable.Rows.Count.ToString + ")"
         For Each ctrl As Control In EtudiantPanel.Controls
             ctrl.Visible = True
         Next
@@ -164,7 +159,7 @@
             If c IsNot Nothing Then
                 Try
                     CType(c, Label).ForeColor = Color.Black
-                    CType(c, Label).Text = StudentTable.Rows.Item(cpt)("MOYBAC")
+                    CType(c, Label).Text = StudentTable.Rows.Item(cpt)("MoyClassement")
                 Catch ex As InvalidCastException
                     With CType(c, Label)
                         .ForeColor = Color.Red
@@ -173,18 +168,18 @@
                 End Try
             End If
 
-            c = EtudiantPanel.Controls.Find("Label" + (i + 1).ToString + "_5", True)(0)
-            If c IsNot Nothing Then
-                Try
-                    CType(c, Label).ForeColor = Color.Black
-                    CType(c, Label).Text = StudentTable.Rows.Item(cpt)("ANNEEBAC")
-                Catch ex As InvalidCastException
-                    With CType(c, Label)
-                        .ForeColor = Color.Red
-                        .Text = "Unknown"
-                    End With
-                End Try
-            End If
+            'c = EtudiantPanel.Controls.Find("Label" + (i + 1).ToString + "_5", True)(0)
+            'If c IsNot Nothing Then
+            '    Try
+            '        CType(c, Label).ForeColor = Color.Black
+            '        'CType(c, Label).Text = StudentTable.Rows.Item(cpt)("ANNEEBAC")
+            '    Catch ex As InvalidCastException
+            '        With CType(c, Label)
+            '            .ForeColor = Color.Red
+            '            .Text = "Unknown"
+            '        End With
+            '    End Try
+            'End If
 
             'c = EtudiantPanel.Controls.Find("Label" + (i + 1).ToString + "_6", True)(0)
             'If c IsNot Nothing Then
@@ -259,11 +254,10 @@
 
     Private Sub affichResearchResult_Shown(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Shown
         'affich_pageResult()
-        GetClassemntResult()
+        UpdateClassemntResult()
         Home.MainContainer1.Visible = True
         Home.ProgressPanel.Visible = False
         If StudentTable.Rows.Count > 0 Then
-            ClassementModeBox.SelectedIndex = 0
             watch_focusLocation(Me)
         Else
         End If
@@ -286,24 +280,25 @@
         Next
     End Sub
 
-    Private Sub SortDirectionButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SortDirectionButton.Click
+    Private Sub SortDirectionButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         SortDirectionButton.ImageIndex = (SortDirectionButton.ImageIndex + 1) Mod 2
         SortDirectionAscendant = Not SortDirectionAscendant
         If SortDirectionAscendant Then
-            StudentTable = Classement.SortASCCollection(StudentTable, "MOYBAC")
+            StudentTable = Classement.SortASCCollection(StudentTable, "MoyClassement")
         Else
-            StudentTable = Classement.SortDESCollection(StudentTable, "MOYBAC")
+            StudentTable = Classement.SortDESCollection(StudentTable, "MoyClassement")
         End If
         affich_pageResult()
     End Sub
 
-    Private Sub GetClassemntResult()
-        Dim crit As New List(Of Critere)
-        'crit.Add(New Critere(BDD.champsANNEEBAC, ValueTextBox.Text))
-        StudentTable = Classement.TraitClassement("1999")
-        Form1.ds.Tables.Add(StudentTable)
-        Form1.Show()
+    Private Sub UpdateClassemntResult()
+
+        StudentTable = Classement.TraitClassement(ValueTextBox.Text)
+
+        'Form1.ds.Tables.Add(StudentTable.Copy())
+        'Form1.Show()
         'StudentTable = Recherche.traitRechercher(crit, RechercherPage.BackgroundWorker1, New System.ComponentModel.DoWorkEventArgs(Nothing))
+
         Me.RechLabel.Text = "Classement (" + StudentTable.Rows.Count.ToString + ")"
         Console.WriteLine("results number is : " + StudentTable.Rows.Count.ToString)
         If (StudentTable.Rows.Count = 0) Then
@@ -311,7 +306,6 @@
             Console.WriteLine("Liste des etudiants est vide")
         Else
             EtudiantPanel.Visible = True
-            StudentTable = Classement.SortASCCollection(StudentTable, "MOYBAC")
             'inisializer le bar des pages
             If (StudentTable.Rows.Count Mod 7) = 0 Then
                 nb_page = StudentTable.Rows.Count \ 7
@@ -329,6 +323,7 @@
             End If
         End If
         Console.WriteLine("pages number is : " + nb_page.ToString)
+
     End Sub
 
     Private Sub BT_PREV_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_PREV.Click
@@ -382,8 +377,79 @@
             ValueTextBox.ForeColor = Color.White
             ValueTextBox.BackColor = Color.FromArgb(0, 64, 104)
             Console.WriteLine(e.ToString)
-            GetClassemntResult()
+            UpdateClassemntResult()
             Me.ActiveControl = Nothing
         End If
     End Sub
+
+    Private Sub ClassementModeBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+    End Sub
+
+    Private Sub ClassmentModeLabel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+    End Sub
+
+    Private Sub ClssemntTypeBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+    End Sub
+
+    Private Sub ClassementTypeLabel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+    End Sub
+
+    Private Sub ComboBox4_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+    End Sub
+
+    Private Sub ValueTextBox_Click(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles ValueTextBox.MouseDoubleClick, ValueTextBox.Click
+
+    End Sub
+
+    Private Sub PromoBox_TextUpdate(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SpecialiteBox.TextUpdate
+        Dim Box As ComboBox = CType(sender, ComboBox)
+        If Box.Text = "" Then
+            Me.FilterButton.Enabled = False
+        End If
+    End Sub
+
+    Private Sub NiveauBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SpecialiteBox.SelectedIndexChanged
+
+        If Not SpecialiteBox.Text.Equals("") Then
+            Me.FilterButton.Enabled = True
+        Else
+            Me.FilterButton.Enabled = False
+        End If
+    End Sub
+
+    Private Sub LimitUpDown_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LimitUpDown.ValueChanged
+        AllCheckBox.Checked = False
+        NiveauBox_SelectedIndexChanged(SpecialiteBox, New EventArgs())
+    End Sub
+
+    Private Sub AllCheckBox_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AllCheckBox.CheckedChanged
+        LimitUpDown.Enabled = Not AllCheckBox.Checked
+        NiveauBox_SelectedIndexChanged(SpecialiteBox, New EventArgs())
+    End Sub
+
+    Private Sub FilterButton_EnabledChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FilterButton.EnabledChanged
+        FilterButton.BackColor = IIf(FilterButton.Enabled, Color.FromArgb(0, 64, 104), Color.FromArgb(169, 119, 113))
+    End Sub
+
+    Private Sub filterButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FilterButton.Click
+        Dim crit As New List(Of Critere)
+        crit.Add(New Critere(BDD.champsOption, SpecialiteBox.Text))
+        'crit.Add(New Critere(BDD.champsAnnee, ValueTextBox.Text.Substring(2, 2)))
+
+        If Not SpecialiteBox.Text.Equals("") Then
+            StudentTable = Classement.FilterDataTableBy(StudentTable, New Critere(BDD.champsOption, SpecialiteBox.Text))
+        End If
+
+        If Not AllCheckBox.Checked Then
+            StudentTable = Classement.LimitRows(StudentTable, LimitUpDown.Value)
+        End If
+
+        affich_pageResult()
+    End Sub
+
 End Class

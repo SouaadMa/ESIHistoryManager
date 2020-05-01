@@ -24,7 +24,23 @@ Partial Class ClassementPage
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ClassementPage))
+        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
+        Me.FlecheList = New System.Windows.Forms.ImageList(Me.components)
         Me.AffPanel = New System.Windows.Forms.Panel()
+        Me.ClassmentCritPanel = New System.Windows.Forms.Panel()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.LimitUpDown = New System.Windows.Forms.NumericUpDown()
+        Me.AllCheckBox = New System.Windows.Forms.CheckBox()
+        Me.FilterButton = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.SpecialiteBox = New System.Windows.Forms.ComboBox()
+        Me.PN_PAGES = New System.Windows.Forms.Panel()
+        Me.PromoPanel = New System.Windows.Forms.Panel()
+        Me.ValueTextBox = New System.Windows.Forms.TextBox()
+        Me.BT_NEXT = New System.Windows.Forms.Button()
+        Me.BT_PREV = New System.Windows.Forms.Button()
+        Me.PromoButton = New System.Windows.Forms.Button()
+        Me.SortDirectionButton = New System.Windows.Forms.Button()
         Me.PagesButtons = New System.Windows.Forms.FlowLayoutPanel()
         Me.PrevButton = New System.Windows.Forms.Button()
         Me.MiddleButton = New System.Windows.Forms.Button()
@@ -86,27 +102,16 @@ Partial Class ClassementPage
         Me.Label1_2 = New System.Windows.Forms.Label()
         Me.Label1_1 = New System.Windows.Forms.Label()
         Me.Label1_0 = New System.Windows.Forms.Label()
-        Me.PN_PAGES = New System.Windows.Forms.Panel()
-        Me.ListBox = New System.Windows.Forms.ListBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.ValueTextBox = New System.Windows.Forms.TextBox()
-        Me.BT_NEXT = New System.Windows.Forms.Button()
-        Me.BT_PREV = New System.Windows.Forms.Button()
-        Me.PromoButton = New System.Windows.Forms.Button()
-        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.IntroPanel = New System.Windows.Forms.Panel()
-        Me.ClassmentCritPanel = New System.Windows.Forms.Panel()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
-        Me.ClassementTypeLabel = New System.Windows.Forms.Label()
-        Me.ClssemntTypeBox = New System.Windows.Forms.ComboBox()
-        Me.SortDirectionButton = New System.Windows.Forms.Button()
-        Me.FlecheList = New System.Windows.Forms.ImageList(Me.components)
-        Me.ClassmentModeLabel = New System.Windows.Forms.Label()
-        Me.ClassementModeBox = New System.Windows.Forms.ComboBox()
         Me.RechLabel = New System.Windows.Forms.Label()
         Me.NoResultLabel = New System.Windows.Forms.Label()
+        Me.ImageList2 = New System.Windows.Forms.ImageList(Me.components)
         Me.AffPanel.SuspendLayout()
+        Me.ClassmentCritPanel.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        CType(Me.LimitUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PN_PAGES.SuspendLayout()
+        Me.PromoPanel.SuspendLayout()
         Me.PagesButtons.SuspendLayout()
         Me.EtudiantPanel.SuspendLayout()
         Me.TableLayoutPanel7.SuspendLayout()
@@ -116,19 +121,31 @@ Partial Class ClassementPage
         Me.TableLayoutPanel3.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
-        Me.PN_PAGES.SuspendLayout()
-        Me.Panel1.SuspendLayout()
         Me.IntroPanel.SuspendLayout()
-        Me.ClassmentCritPanel.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'ImageList1
+        '
+        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList1.Images.SetKeyName(0, "back.png")
+        Me.ImageList1.Images.SetKeyName(1, "down-arrow.png")
+        '
+        'FlecheList
+        '
+        Me.FlecheList.ImageStream = CType(resources.GetObject("FlecheList.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.FlecheList.TransparentColor = System.Drawing.Color.Transparent
+        Me.FlecheList.Images.SetKeyName(0, "sort-down (1).png")
+        Me.FlecheList.Images.SetKeyName(1, "sort-ascending.png")
         '
         'AffPanel
         '
         Me.AffPanel.BackColor = System.Drawing.Color.Transparent
         Me.AffPanel.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.background
+        Me.AffPanel.Controls.Add(Me.ClassmentCritPanel)
+        Me.AffPanel.Controls.Add(Me.PN_PAGES)
         Me.AffPanel.Controls.Add(Me.PagesButtons)
         Me.AffPanel.Controls.Add(Me.EtudiantPanel)
-        Me.AffPanel.Controls.Add(Me.PN_PAGES)
         Me.AffPanel.Controls.Add(Me.IntroPanel)
         Me.AffPanel.Controls.Add(Me.NoResultLabel)
         Me.AffPanel.Dock = System.Windows.Forms.DockStyle.Fill
@@ -137,6 +154,192 @@ Partial Class ClassementPage
         Me.AffPanel.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
         Me.AffPanel.Size = New System.Drawing.Size(678, 640)
         Me.AffPanel.TabIndex = 28
+        '
+        'ClassmentCritPanel
+        '
+        Me.ClassmentCritPanel.Controls.Add(Me.GroupBox1)
+        Me.ClassmentCritPanel.Controls.Add(Me.FilterButton)
+        Me.ClassmentCritPanel.Controls.Add(Me.Label4)
+        Me.ClassmentCritPanel.Controls.Add(Me.SpecialiteBox)
+        Me.ClassmentCritPanel.Location = New System.Drawing.Point(10, 43)
+        Me.ClassmentCritPanel.Name = "ClassmentCritPanel"
+        Me.ClassmentCritPanel.Size = New System.Drawing.Size(658, 64)
+        Me.ClassmentCritPanel.TabIndex = 45
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.LimitUpDown)
+        Me.GroupBox1.Controls.Add(Me.AllCheckBox)
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Location = New System.Drawing.Point(228, 5)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(171, 52)
+        Me.GroupBox1.TabIndex = 52
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Limite D'affichage"
+        '
+        'LimitUpDown
+        '
+        Me.LimitUpDown.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LimitUpDown.Increment = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.LimitUpDown.Location = New System.Drawing.Point(6, 24)
+        Me.LimitUpDown.Maximum = New Decimal(New Integer() {2000, 0, 0, 0})
+        Me.LimitUpDown.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.LimitUpDown.Name = "LimitUpDown"
+        Me.LimitUpDown.Size = New System.Drawing.Size(61, 24)
+        Me.LimitUpDown.TabIndex = 8
+        Me.LimitUpDown.ThousandsSeparator = True
+        Me.LimitUpDown.Value = New Decimal(New Integer() {10, 0, 0, 0})
+        '
+        'AllCheckBox
+        '
+        Me.AllCheckBox.AutoSize = True
+        Me.AllCheckBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AllCheckBox.Location = New System.Drawing.Point(98, 24)
+        Me.AllCheckBox.Name = "AllCheckBox"
+        Me.AllCheckBox.Size = New System.Drawing.Size(56, 24)
+        Me.AllCheckBox.TabIndex = 9
+        Me.AllCheckBox.Text = "tout"
+        Me.AllCheckBox.UseVisualStyleBackColor = True
+        '
+        'FilterButton
+        '
+        Me.FilterButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.FilterButton.FlatAppearance.BorderSize = 0
+        Me.FilterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.FilterButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FilterButton.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.FilterButton.Location = New System.Drawing.Point(431, 22)
+        Me.FilterButton.Name = "FilterButton"
+        Me.FilterButton.Size = New System.Drawing.Size(91, 28)
+        Me.FilterButton.TabIndex = 46
+        Me.FilterButton.Text = "filter"
+        Me.FilterButton.UseVisualStyleBackColor = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(136, 6)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(71, 18)
+        Me.Label4.TabIndex = 51
+        Me.Label4.Text = "Specialite"
+        '
+        'SpecialiteBox
+        '
+        Me.SpecialiteBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SpecialiteBox.FormattingEnabled = True
+        Me.SpecialiteBox.Location = New System.Drawing.Point(136, 28)
+        Me.SpecialiteBox.Margin = New System.Windows.Forms.Padding(30, 0, 50, 0)
+        Me.SpecialiteBox.Name = "SpecialiteBox"
+        Me.SpecialiteBox.Size = New System.Drawing.Size(68, 26)
+        Me.SpecialiteBox.TabIndex = 48
+        '
+        'PN_PAGES
+        '
+        Me.PN_PAGES.BackColor = System.Drawing.Color.Transparent
+        Me.PN_PAGES.Controls.Add(Me.PromoPanel)
+        Me.PN_PAGES.Controls.Add(Me.SortDirectionButton)
+        Me.PN_PAGES.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.PN_PAGES.Location = New System.Drawing.Point(10, 576)
+        Me.PN_PAGES.Margin = New System.Windows.Forms.Padding(0)
+        Me.PN_PAGES.Name = "PN_PAGES"
+        Me.PN_PAGES.Padding = New System.Windows.Forms.Padding(15, 8, 15, 15)
+        Me.PN_PAGES.Size = New System.Drawing.Size(658, 64)
+        Me.PN_PAGES.TabIndex = 25
+        '
+        'PromoPanel
+        '
+        Me.PromoPanel.Controls.Add(Me.ValueTextBox)
+        Me.PromoPanel.Controls.Add(Me.BT_NEXT)
+        Me.PromoPanel.Controls.Add(Me.BT_PREV)
+        Me.PromoPanel.Controls.Add(Me.PromoButton)
+        Me.PromoPanel.Location = New System.Drawing.Point(249, 11)
+        Me.PromoPanel.Name = "PromoPanel"
+        Me.PromoPanel.Size = New System.Drawing.Size(160, 41)
+        Me.PromoPanel.TabIndex = 9
+        '
+        'ValueTextBox
+        '
+        Me.ValueTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.ValueTextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.ValueTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.ValueTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ValueTextBox.ForeColor = System.Drawing.Color.White
+        Me.ValueTextBox.Location = New System.Drawing.Point(51, 12)
+        Me.ValueTextBox.Multiline = True
+        Me.ValueTextBox.Name = "ValueTextBox"
+        Me.ValueTextBox.Size = New System.Drawing.Size(50, 20)
+        Me.ValueTextBox.TabIndex = 0
+        Me.ValueTextBox.Text = "1999"
+        Me.ValueTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'BT_NEXT
+        '
+        Me.BT_NEXT.AutoSize = True
+        Me.BT_NEXT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.BT_NEXT.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BT_NEXT.FlatAppearance.BorderSize = 0
+        Me.BT_NEXT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BT_NEXT.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.next1
+        Me.BT_NEXT.Location = New System.Drawing.Point(122, 0)
+        Me.BT_NEXT.Margin = New System.Windows.Forms.Padding(0)
+        Me.BT_NEXT.Name = "BT_NEXT"
+        Me.BT_NEXT.Size = New System.Drawing.Size(36, 42)
+        Me.BT_NEXT.TabIndex = 5
+        Me.BT_NEXT.TabStop = False
+        Me.BT_NEXT.UseVisualStyleBackColor = True
+        '
+        'BT_PREV
+        '
+        Me.BT_PREV.AutoSize = True
+        Me.BT_PREV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.BT_PREV.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BT_PREV.FlatAppearance.BorderSize = 0
+        Me.BT_PREV.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BT_PREV.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.prev2
+        Me.BT_PREV.Location = New System.Drawing.Point(-4, 0)
+        Me.BT_PREV.Margin = New System.Windows.Forms.Padding(2)
+        Me.BT_PREV.Name = "BT_PREV"
+        Me.BT_PREV.Size = New System.Drawing.Size(36, 41)
+        Me.BT_PREV.TabIndex = 0
+        Me.BT_PREV.TabStop = False
+        Me.BT_PREV.UseVisualStyleBackColor = True
+        '
+        'PromoButton
+        '
+        Me.PromoButton.AutoSize = True
+        Me.PromoButton.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.Rectangle_38
+        Me.PromoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PromoButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PromoButton.FlatAppearance.BorderSize = 0
+        Me.PromoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.PromoButton.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PromoButton.ForeColor = System.Drawing.Color.White
+        Me.PromoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.PromoButton.ImageIndex = 0
+        Me.PromoButton.ImageList = Me.ImageList1
+        Me.PromoButton.Location = New System.Drawing.Point(36, 2)
+        Me.PromoButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.PromoButton.Name = "PromoButton"
+        Me.PromoButton.Padding = New System.Windows.Forms.Padding(0, 0, 2, 0)
+        Me.PromoButton.Size = New System.Drawing.Size(83, 37)
+        Me.PromoButton.TabIndex = 8
+        Me.PromoButton.UseVisualStyleBackColor = True
+        '
+        'SortDirectionButton
+        '
+        Me.SortDirectionButton.FlatAppearance.BorderSize = 0
+        Me.SortDirectionButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.SortDirectionButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.SortDirectionButton.ImageIndex = 0
+        Me.SortDirectionButton.ImageList = Me.FlecheList
+        Me.SortDirectionButton.Location = New System.Drawing.Point(18, 11)
+        Me.SortDirectionButton.Name = "SortDirectionButton"
+        Me.SortDirectionButton.Size = New System.Drawing.Size(30, 30)
+        Me.SortDirectionButton.TabIndex = 44
+        Me.SortDirectionButton.UseVisualStyleBackColor = True
         '
         'PagesButtons
         '
@@ -162,7 +365,7 @@ Partial Class ClassementPage
         Me.PrevButton.Location = New System.Drawing.Point(0, 5)
         Me.PrevButton.Margin = New System.Windows.Forms.Padding(0, 5, 0, 5)
         Me.PrevButton.Name = "PrevButton"
-        Me.PrevButton.Size = New System.Drawing.Size(23, 19)
+        Me.PrevButton.Size = New System.Drawing.Size(23, 20)
         Me.PrevButton.TabIndex = 8
         Me.PrevButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
         Me.PrevButton.UseVisualStyleBackColor = True
@@ -177,7 +380,7 @@ Partial Class ClassementPage
         Me.MiddleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.MiddleButton.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MiddleButton.ForeColor = System.Drawing.Color.White
-        Me.MiddleButton.Location = New System.Drawing.Point(0, 34)
+        Me.MiddleButton.Location = New System.Drawing.Point(0, 35)
         Me.MiddleButton.Margin = New System.Windows.Forms.Padding(0, 5, 0, 5)
         Me.MiddleButton.Name = "MiddleButton"
         Me.MiddleButton.Size = New System.Drawing.Size(23, 19)
@@ -195,7 +398,7 @@ Partial Class ClassementPage
         Me.NextButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.NextButton.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.NextButton.ForeColor = System.Drawing.Color.White
-        Me.NextButton.Location = New System.Drawing.Point(0, 63)
+        Me.NextButton.Location = New System.Drawing.Point(0, 64)
         Me.NextButton.Margin = New System.Windows.Forms.Padding(0, 5, 0, 0)
         Me.NextButton.Name = "NextButton"
         Me.NextButton.Size = New System.Drawing.Size(23, 19)
@@ -214,7 +417,7 @@ Partial Class ClassementPage
         Me.EtudiantPanel.Controls.Add(Me.TableLayoutPanel3)
         Me.EtudiantPanel.Controls.Add(Me.TableLayoutPanel2)
         Me.EtudiantPanel.Controls.Add(Me.TableLayoutPanel1)
-        Me.EtudiantPanel.Location = New System.Drawing.Point(10, 104)
+        Me.EtudiantPanel.Location = New System.Drawing.Point(10, 106)
         Me.EtudiantPanel.Margin = New System.Windows.Forms.Padding(0)
         Me.EtudiantPanel.Name = "EtudiantPanel"
         Me.EtudiantPanel.Size = New System.Drawing.Size(658, 470)
@@ -1020,214 +1223,14 @@ Partial Class ClassementPage
         Me.Label1_0.Text = "Rang"
         Me.Label1_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'PN_PAGES
-        '
-        Me.PN_PAGES.BackColor = System.Drawing.Color.Transparent
-        Me.PN_PAGES.Controls.Add(Me.ListBox)
-        Me.PN_PAGES.Controls.Add(Me.Panel1)
-        Me.PN_PAGES.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PN_PAGES.Location = New System.Drawing.Point(10, 574)
-        Me.PN_PAGES.Margin = New System.Windows.Forms.Padding(0)
-        Me.PN_PAGES.Name = "PN_PAGES"
-        Me.PN_PAGES.Padding = New System.Windows.Forms.Padding(15, 8, 15, 15)
-        Me.PN_PAGES.Size = New System.Drawing.Size(658, 66)
-        Me.PN_PAGES.TabIndex = 25
-        '
-        'ListBox
-        '
-        Me.ListBox.FormattingEnabled = True
-        Me.ListBox.Location = New System.Drawing.Point(289, 49)
-        Me.ListBox.MaximumSize = New System.Drawing.Size(75, 100)
-        Me.ListBox.Name = "ListBox"
-        Me.ListBox.Size = New System.Drawing.Size(75, 4)
-        Me.ListBox.TabIndex = 24
-        '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.ValueTextBox)
-        Me.Panel1.Controls.Add(Me.BT_NEXT)
-        Me.Panel1.Controls.Add(Me.BT_PREV)
-        Me.Panel1.Controls.Add(Me.PromoButton)
-        Me.Panel1.Location = New System.Drawing.Point(249, 9)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(160, 41)
-        Me.Panel1.TabIndex = 9
-        '
-        'ValueTextBox
-        '
-        Me.ValueTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.ValueTextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.ValueTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.ValueTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ValueTextBox.ForeColor = System.Drawing.Color.White
-        Me.ValueTextBox.Location = New System.Drawing.Point(51, 12)
-        Me.ValueTextBox.Multiline = True
-        Me.ValueTextBox.Name = "ValueTextBox"
-        Me.ValueTextBox.Size = New System.Drawing.Size(50, 20)
-        Me.ValueTextBox.TabIndex = 0
-        Me.ValueTextBox.Text = "2004"
-        Me.ValueTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'BT_NEXT
-        '
-        Me.BT_NEXT.AutoSize = True
-        Me.BT_NEXT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.BT_NEXT.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BT_NEXT.FlatAppearance.BorderSize = 0
-        Me.BT_NEXT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BT_NEXT.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.next1
-        Me.BT_NEXT.Location = New System.Drawing.Point(122, 0)
-        Me.BT_NEXT.Margin = New System.Windows.Forms.Padding(0)
-        Me.BT_NEXT.Name = "BT_NEXT"
-        Me.BT_NEXT.Size = New System.Drawing.Size(36, 42)
-        Me.BT_NEXT.TabIndex = 5
-        Me.BT_NEXT.TabStop = False
-        Me.BT_NEXT.UseVisualStyleBackColor = True
-        '
-        'BT_PREV
-        '
-        Me.BT_PREV.AutoSize = True
-        Me.BT_PREV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.BT_PREV.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BT_PREV.FlatAppearance.BorderSize = 0
-        Me.BT_PREV.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BT_PREV.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.prev2
-        Me.BT_PREV.Location = New System.Drawing.Point(-4, 0)
-        Me.BT_PREV.Margin = New System.Windows.Forms.Padding(2)
-        Me.BT_PREV.Name = "BT_PREV"
-        Me.BT_PREV.Size = New System.Drawing.Size(36, 41)
-        Me.BT_PREV.TabIndex = 0
-        Me.BT_PREV.TabStop = False
-        Me.BT_PREV.UseVisualStyleBackColor = True
-        '
-        'PromoButton
-        '
-        Me.PromoButton.AutoSize = True
-        Me.PromoButton.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.Rectangle_38
-        Me.PromoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PromoButton.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PromoButton.FlatAppearance.BorderSize = 0
-        Me.PromoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.PromoButton.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PromoButton.ForeColor = System.Drawing.Color.White
-        Me.PromoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.PromoButton.ImageIndex = 0
-        Me.PromoButton.ImageList = Me.ImageList1
-        Me.PromoButton.Location = New System.Drawing.Point(36, 2)
-        Me.PromoButton.Margin = New System.Windows.Forms.Padding(2)
-        Me.PromoButton.Name = "PromoButton"
-        Me.PromoButton.Padding = New System.Windows.Forms.Padding(0, 0, 2, 0)
-        Me.PromoButton.Size = New System.Drawing.Size(83, 37)
-        Me.PromoButton.TabIndex = 8
-        Me.PromoButton.UseVisualStyleBackColor = True
-        '
-        'ImageList1
-        '
-        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
-        Me.ImageList1.Images.SetKeyName(0, "back.png")
-        Me.ImageList1.Images.SetKeyName(1, "down-arrow.png")
-        '
         'IntroPanel
         '
-        Me.IntroPanel.Controls.Add(Me.ClassmentCritPanel)
         Me.IntroPanel.Controls.Add(Me.RechLabel)
         Me.IntroPanel.Dock = System.Windows.Forms.DockStyle.Top
         Me.IntroPanel.Location = New System.Drawing.Point(10, 0)
         Me.IntroPanel.Name = "IntroPanel"
-        Me.IntroPanel.Size = New System.Drawing.Size(658, 104)
+        Me.IntroPanel.Size = New System.Drawing.Size(658, 44)
         Me.IntroPanel.TabIndex = 27
-        '
-        'ClassmentCritPanel
-        '
-        Me.ClassmentCritPanel.Controls.Add(Me.Label4)
-        Me.ClassmentCritPanel.Controls.Add(Me.ComboBox4)
-        Me.ClassmentCritPanel.Controls.Add(Me.ClassementTypeLabel)
-        Me.ClassmentCritPanel.Controls.Add(Me.ClssemntTypeBox)
-        Me.ClassmentCritPanel.Controls.Add(Me.SortDirectionButton)
-        Me.ClassmentCritPanel.Controls.Add(Me.ClassmentModeLabel)
-        Me.ClassmentCritPanel.Controls.Add(Me.ClassementModeBox)
-        Me.ClassmentCritPanel.Location = New System.Drawing.Point(3, 49)
-        Me.ClassmentCritPanel.Name = "ClassmentCritPanel"
-        Me.ClassmentCritPanel.Size = New System.Drawing.Size(652, 52)
-        Me.ClassmentCritPanel.TabIndex = 44
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(125, 20)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(61, 15)
-        Me.Label4.TabIndex = 52
-        Me.Label4.Text = "Specialite"
-        '
-        'ComboBox4
-        '
-        Me.ComboBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Location = New System.Drawing.Point(190, 16)
-        Me.ComboBox4.Name = "ComboBox4"
-        Me.ComboBox4.Size = New System.Drawing.Size(65, 23)
-        Me.ComboBox4.TabIndex = 51
-        '
-        'ClassementTypeLabel
-        '
-        Me.ClassementTypeLabel.AutoSize = True
-        Me.ClassementTypeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ClassementTypeLabel.Location = New System.Drawing.Point(260, 20)
-        Me.ClassementTypeLabel.Name = "ClassementTypeLabel"
-        Me.ClassementTypeLabel.Size = New System.Drawing.Size(64, 15)
-        Me.ClassementTypeLabel.TabIndex = 46
-        Me.ClassementTypeLabel.Text = "Promotion"
-        '
-        'ClssemntTypeBox
-        '
-        Me.ClssemntTypeBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ClssemntTypeBox.FormattingEnabled = True
-        Me.ClssemntTypeBox.Location = New System.Drawing.Point(329, 16)
-        Me.ClssemntTypeBox.Name = "ClssemntTypeBox"
-        Me.ClssemntTypeBox.Size = New System.Drawing.Size(48, 23)
-        Me.ClssemntTypeBox.TabIndex = 45
-        '
-        'SortDirectionButton
-        '
-        Me.SortDirectionButton.FlatAppearance.BorderSize = 0
-        Me.SortDirectionButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.SortDirectionButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
-        Me.SortDirectionButton.ImageIndex = 0
-        Me.SortDirectionButton.ImageList = Me.FlecheList
-        Me.SortDirectionButton.Location = New System.Drawing.Point(616, 11)
-        Me.SortDirectionButton.Name = "SortDirectionButton"
-        Me.SortDirectionButton.Size = New System.Drawing.Size(30, 30)
-        Me.SortDirectionButton.TabIndex = 44
-        Me.SortDirectionButton.UseVisualStyleBackColor = True
-        '
-        'FlecheList
-        '
-        Me.FlecheList.ImageStream = CType(resources.GetObject("FlecheList.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.FlecheList.TransparentColor = System.Drawing.Color.Transparent
-        Me.FlecheList.Images.SetKeyName(0, "sort-down (1).png")
-        Me.FlecheList.Images.SetKeyName(1, "sort-ascending.png")
-        '
-        'ClassmentModeLabel
-        '
-        Me.ClassmentModeLabel.AutoSize = True
-        Me.ClassmentModeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ClassmentModeLabel.Location = New System.Drawing.Point(6, 20)
-        Me.ClassmentModeLabel.Name = "ClassmentModeLabel"
-        Me.ClassmentModeLabel.Size = New System.Drawing.Size(45, 15)
-        Me.ClassmentModeLabel.TabIndex = 43
-        Me.ClassmentModeLabel.Text = "Niveau"
-        '
-        'ClassementModeBox
-        '
-        Me.ClassementModeBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.ClassementModeBox.FormattingEnabled = True
-        Me.ClassementModeBox.Location = New System.Drawing.Point(54, 16)
-        Me.ClassementModeBox.Name = "ClassementModeBox"
-        Me.ClassementModeBox.Size = New System.Drawing.Size(65, 23)
-        Me.ClassementModeBox.TabIndex = 42
         '
         'RechLabel
         '
@@ -1248,12 +1251,18 @@ Partial Class ClassementPage
         Me.NoResultLabel.BackColor = System.Drawing.Color.White
         Me.NoResultLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.NoResultLabel.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.Asset_2
-        Me.NoResultLabel.Location = New System.Drawing.Point(12, 95)
+        Me.NoResultLabel.Location = New System.Drawing.Point(12, 112)
         Me.NoResultLabel.Name = "NoResultLabel"
         Me.NoResultLabel.Padding = New System.Windows.Forms.Padding(0, 0, 0, 30)
-        Me.NoResultLabel.Size = New System.Drawing.Size(655, 477)
+        Me.NoResultLabel.Size = New System.Drawing.Size(655, 468)
         Me.NoResultLabel.TabIndex = 28
         Me.NoResultLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'ImageList2
+        '
+        Me.ImageList2.ImageStream = CType(resources.GetObject("ImageList2.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList2.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList2.Images.SetKeyName(0, "signs.png")
         '
         'ClassementPage
         '
@@ -1269,6 +1278,14 @@ Partial Class ClassementPage
         Me.TopMost = True
         Me.WindowState = System.Windows.Forms.FormWindowState.Minimized
         Me.AffPanel.ResumeLayout(False)
+        Me.ClassmentCritPanel.ResumeLayout(False)
+        Me.ClassmentCritPanel.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        CType(Me.LimitUpDown, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PN_PAGES.ResumeLayout(False)
+        Me.PromoPanel.ResumeLayout(False)
+        Me.PromoPanel.PerformLayout()
         Me.PagesButtons.ResumeLayout(False)
         Me.PagesButtons.PerformLayout()
         Me.EtudiantPanel.ResumeLayout(False)
@@ -1286,13 +1303,8 @@ Partial Class ClassementPage
         Me.TableLayoutPanel2.PerformLayout()
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
-        Me.PN_PAGES.ResumeLayout(False)
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.IntroPanel.ResumeLayout(False)
         Me.IntroPanel.PerformLayout()
-        Me.ClassmentCritPanel.ResumeLayout(False)
-        Me.ClassmentCritPanel.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1341,7 +1353,7 @@ Partial Class ClassementPage
     Friend WithEvents Label1_2 As System.Windows.Forms.Label
     Friend WithEvents Label1_1 As System.Windows.Forms.Label
     Friend WithEvents PN_PAGES As System.Windows.Forms.Panel
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents PromoPanel As System.Windows.Forms.Panel
     Friend WithEvents BT_PREV As System.Windows.Forms.Button
     Friend WithEvents BT_NEXT As System.Windows.Forms.Button
     Friend WithEvents IntroPanel As System.Windows.Forms.Panel
@@ -1363,20 +1375,20 @@ Partial Class ClassementPage
     Friend WithEvents Label3_6 As System.Windows.Forms.Label
     Friend WithEvents Label2_6 As System.Windows.Forms.Label
     Friend WithEvents Label1_6 As System.Windows.Forms.Label
-    Friend WithEvents ListBox As System.Windows.Forms.ListBox
     Friend WithEvents PagesButtons As System.Windows.Forms.FlowLayoutPanel
     Friend WithEvents PrevButton As System.Windows.Forms.Button
     Friend WithEvents MiddleButton As System.Windows.Forms.Button
     Friend WithEvents NextButton As System.Windows.Forms.Button
     Friend WithEvents FlecheList As System.Windows.Forms.ImageList
     Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
-    Friend WithEvents ClassmentCritPanel As System.Windows.Forms.Panel
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox4 As System.Windows.Forms.ComboBox
-    Friend WithEvents ClassementTypeLabel As System.Windows.Forms.Label
-    Friend WithEvents ClssemntTypeBox As System.Windows.Forms.ComboBox
-    Friend WithEvents SortDirectionButton As System.Windows.Forms.Button
-    Friend WithEvents ClassmentModeLabel As System.Windows.Forms.Label
-    Friend WithEvents ClassementModeBox As System.Windows.Forms.ComboBox
     Friend WithEvents ValueTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents ClassmentCritPanel As System.Windows.Forms.Panel
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents LimitUpDown As System.Windows.Forms.NumericUpDown
+    Friend WithEvents AllCheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents FilterButton As System.Windows.Forms.Button
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents SpecialiteBox As System.Windows.Forms.ComboBox
+    Friend WithEvents SortDirectionButton As System.Windows.Forms.Button
+    Friend WithEvents ImageList2 As System.Windows.Forms.ImageList
 End Class

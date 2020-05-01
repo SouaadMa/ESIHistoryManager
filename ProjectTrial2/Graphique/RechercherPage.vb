@@ -38,18 +38,21 @@
         'initialiser :
 
         'inisialiser les wilayas combobox
-        For Each Critere As String In Login.Infosgenerale.wilaya
-            Me.CB_WILAYAB.Items.Add(Critere)
-            Me.CB_WILAYA.Items.Add(Critere)
-        Next
 
-        For Each Critere As String In Login.Infosgenerale.wilayaarabe
-            Me.CB_WILAYANA.Items.Add(Critere)
-        Next
+        Me.CB_WILAYAB.DisplayMember = Login.Infosgenerale.wilaya.Columns(0).ToString
+        Me.CB_WILAYA.DisplayMember = Login.Infosgenerale.wilaya.Columns(0).ToString
+        Me.CB_WILAYAN.DisplayMember = Login.Infosgenerale.codewilaya.Columns(0).ToString
+        Me.CB_WILAYANA.DisplayMember = Login.Infosgenerale.wilaya.Columns(0).ToString
 
-        For Each Critere As String In Login.Infosgenerale.codewilaya
-            Me.CB_WILAYAN.Items.Add(Critere)
-        Next
+        Me.CB_WILAYAB.ValueMember = Login.Infosgenerale.wilaya.Columns(0).ToString
+        Me.CB_WILAYA.ValueMember = Login.Infosgenerale.wilaya.Columns(0).ToString
+        Me.CB_WILAYAN.ValueMember = Login.Infosgenerale.codewilaya.Columns(0).ToString
+        Me.CB_WILAYANA.ValueMember = Login.Infosgenerale.wilaya.Columns(0).ToString
+
+        Me.CB_WILAYAB.DataSource = Login.Infosgenerale.wilaya
+        Me.CB_WILAYA.DataSource = Login.Infosgenerale.wilaya
+        Me.CB_WILAYAN.DataSource = Login.Infosgenerale.codewilaya
+        Me.CB_WILAYANA.DataSource = Login.Infosgenerale.wilaya
 
         'inisialize sexe combobox 
 
@@ -59,9 +62,9 @@
 
         'inisialize seri de bac combobox 
 
-        For Each Critere As String In Login.Infosgenerale.seribac
-            Me.CB_SERI.Items.Add(Critere)
-        Next
+        Me.CB_SERI.ValueMember = Login.Infosgenerale.seribac.Columns(0).ToString
+        Me.CB_SERI.DisplayMember = Login.Infosgenerale.seribac.Columns(0).ToString
+        Me.CB_SERI.DataSource = Login.Infosgenerale.seribac
 
         'inisialize annee de bac combobox 
 
@@ -71,7 +74,7 @@
         For i = InfosGenerales.firstYear To InfosGenerales.lastYear
             Me.CB_ANNEEB.Items.Add(i)
         Next
-       
+
         ' fin initilize recherche form
     End Sub
 

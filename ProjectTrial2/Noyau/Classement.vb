@@ -81,6 +81,12 @@
 
         Next
 
+        If ((i <= 10) And collectionMat.Count > 0) Then
+            Console.WriteLine(requeteSQL)
+
+            dt.Merge(BDD.executeRequete(requeteSQL))
+        End If
+
         
 
 

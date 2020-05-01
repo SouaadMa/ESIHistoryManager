@@ -27,4 +27,17 @@
         Return table
     End Function
 
+    Public Sub setChamps(ByVal c As String)  'Setter pour le champs
+        champs = c
+    End Sub
+
+    Public Sub setValeur(ByVal c As Object)  'Setter pour le champs
+        valeur = c
+    End Sub
+
+    Public Sub setTable(ByVal c As String)  'Setter pour le champs
+        table = c
+    End Sub
+
+
 End Class

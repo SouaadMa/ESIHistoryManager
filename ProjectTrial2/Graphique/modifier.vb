@@ -45,17 +45,18 @@
         'initialiser :
 
         'inisialiser les wilayas combobox
-        For Each Critere As String In Login.Infosgenerale.wilaya
-            Me.CB_WILAYA.Items.Add(Critere)
-        Next
+        Dim items = Login.Infosgenerale.wilaya.AsEnumerable().Select(Function(d) DirectCast(d(0).ToString(), Object)).ToArray()
+        CB_WILAYA.Items.AddRange(items)
+
+        
 
         For Each Critere As String In Login.Infosgenerale.wilayaarabe
             Me.CB_WILAYANA.Items.Add(Critere)
         Next
 
-        For Each Critere As String In Login.Infosgenerale.codewilaya
-            Me.CB_WILAYAN.Items.Add(Critere)
-        Next
+        items = Login.Infosgenerale.codewilaya.AsEnumerable().Select(Function(d) DirectCast(d(0).ToString(), Object)).ToArray()
+        CB_WILAYAN.Items.AddRange(items)
+
 
         'inisialize sexe combobox 
 
@@ -169,15 +170,15 @@
 
             If Me.CB_WILAYA.Text <> esistselect.GetInfoChamps(BDD.champsWILAYA) And Me.CB_WILAYA.Text <> "" Then
                 collection_critere.Add(New Critere(BDD.champsWILAYA, Me.CB_WILAYA.Text, BDD.nomTableEtudiant))
-                If (Login.Infosgenerale.wilaya.Contains(Me.CB_WILAYA.Text) = False) Then
-                    Login.Infosgenerale.wilaya.Add(Me.CB_WILAYA.Text)
+                If (Login.Infosgenerale.wilaya.Rows.Contains(Me.CB_WILAYA.Text) = False) Then
+                    Login.Infosgenerale.wilaya.Rows.Add(Me.CB_WILAYA.Text)
                 End If
             End If
 
             If Me.CB_WILAYAN.Text <> esistselect.GetInfoChamps(BDD.champsLieuNaisA) And Me.CB_WILAYAN.Text <> "" Then
                 collection_critere.Add(New Critere(BDD.champsLieuNaisA, Me.CB_WILAYAN.Text, BDD.nomTableEtudiant))
-                If (Login.Infosgenerale.codewilaya.Contains(Me.CB_WILAYAN.Text) = False) Then
-                    Login.Infosgenerale.codewilaya.Add(Me.CB_WILAYAN.Text)
+                If (Login.Infosgenerale.codewilaya.Rows.Contains(Me.CB_WILAYAN.Text) = False) Then
+                    Login.Infosgenerale.codewilaya.Rows.Add(Me.CB_WILAYAN.Text)
                 End If
             End If
 

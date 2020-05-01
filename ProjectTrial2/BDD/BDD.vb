@@ -391,8 +391,8 @@ Public Class BDD
 
             Case BDD.champsAnnee
                 chaine = critere.getTable + "." + "MATRIN LIKE '" + critere.getValeur.ToString.Substring(2, 2) + "/%'"
-            Case BDD.champsOption
-                chaine = critere.getTable + "." + "MATRIN LIKE '%/" + critere.getValeur + "'"
+                'Case BDD.champsOption
+                '   chaine = critere.getTable + "." + "MATRIN LIKE '%/" + critere.getValeur + "'"
             Case BDD.champsMATRIN
                 chaine = critere.getTable + "." + "MATRIN = " + critere.getValeur + "'"
             Case Else

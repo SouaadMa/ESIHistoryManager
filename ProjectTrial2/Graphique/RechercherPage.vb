@@ -38,18 +38,19 @@
         'initialiser :
 
         'inisialiser les wilayas combobox
-        For Each Critere As String In Login.Infosgenerale.wilaya
-            Me.CB_WILAYAB.Items.Add(Critere)
-            Me.CB_WILAYA.Items.Add(Critere)
-        Next
+
+        Dim items = Login.Infosgenerale.wilaya.AsEnumerable().Select(Function(d) DirectCast(d(0).ToString(), Object)).ToArray()
+        CB_WILAYAB.Items.AddRange(items)
+        CB_WILAYA.Items.AddRange(items)
+
+        
 
         For Each Critere As String In Login.Infosgenerale.wilayaarabe
             Me.CB_WILAYANA.Items.Add(Critere)
         Next
 
-        For Each Critere As String In Login.Infosgenerale.codewilaya
-            Me.CB_WILAYAN.Items.Add(Critere)
-        Next
+        items = Login.Infosgenerale.codewilaya.AsEnumerable().Select(Function(d) DirectCast(d(0).ToString(), Object)).ToArray()
+        CB_WILAYAN.Items.AddRange(items)
 
         'inisialize sexe combobox 
 

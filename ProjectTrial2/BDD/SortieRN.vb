@@ -87,7 +87,7 @@
         Console.WriteLine(nbreRN)
 
         'Ajout du caractère spécial 99.99 à la place des notes qu'on ne veut pas afficher
-        ArrangeRATTRA(tableNotesMat, 99.99)
+        ArrangeRATTRA(tableNotesMat, 0.0)
 
 
         'Ajout des deux tables dans une DataSet

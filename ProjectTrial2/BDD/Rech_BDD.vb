@@ -91,6 +91,54 @@ Public Class Rech_BDD
         Return valide
     End Function
 
+    Public Shared Function AddChamps(ByVal req As String, ByVal champs As List(Of String), ByVal tab As String) As String
+
+        Dim first As Boolean = True
+        Dim StrChamps As String = ""
+        Dim nomTable As String
+
+        If tab = "" Then
+            nomTable = ""
+        Else
+            nomTable = tab + "."
+        End If
+
+
+        For Each ch As String In champs
+
+            If first Then
+                first = False
+            Else
+                StrChamps = StrChamps + ", "
+            End If
+
+            StrChamps = StrChamps + nomTable + ch
+
+        Next
+
+        If requeteRechValide(req) Then
+
+            If req.Contains("*") Then
+
+                req = req.Replace("*", StrChamps)
+
+            Else
+
+                req = req.Insert(req.IndexOf("SELECT") + "SELECT".Length + 1, StrChamps + ", ")
+
+            End If
+
+
+        End If
+
+        Return req
+
+
+    End Function
+
+
+
+
 End Class
 
 

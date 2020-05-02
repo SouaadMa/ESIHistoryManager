@@ -19,14 +19,20 @@
 
 
         ' On ajoute le champ d'étude, et le champ de répartition aux champs de la requête
-        'Champs = prepareChampsEtTables(
+        ' Et on prépare les tables avec lesquelles on va faire la requête
+        Dim PaireTables As New Paire("", "") 'Objet dans lequel on récupère les tables
+
+        Champs = prepareChamps(ChampsDetude, RepartitionPar.getChamps, PaireTables)
 
 
+        '..............Champs, Check :DD
+        '..............Tables, Check :DDD
 
-        'Dim reqSQL As String = Class_BDD.genereRechRequete()
 
+        '**********************PARTIE 02 : PREPARATION DE LA REQUETE EN FONCTION DES ENTREES*************'
+        '************************************************************************************************'
 
-
+        Dim requeteSQL As String = prepareRequeteInitiale(Champs, PaireTables, domaineEtudiants)
 
 
 
@@ -81,6 +87,8 @@
             Case BDD.champsDECIIN, BDD.champsMOYEIN
                 champsRetour.Add(champE)
                 tables.elem1 = BDD.nomTableINSCRIPTION
+            Case BDD.champsNOJUNO
+                tables.elem1 = BDD.nomTableNOTE
 
 
         End Select
@@ -98,6 +106,24 @@
 
         End Select
 
+        Return champsRetour
+
+    End Function
+
+    Private Shared Function prepareRequeteInitiale(ByVal champs As List(Of String), ByVal paireTables As Paire, ByVal conditions As List(Of Critere)) As String
+
+        Dim tab1 As String = paireTables.elem1
+        Dim tab2 As String = paireTables.elem2
+        Dim req As String = ""
+
+        If (tab1 = "" And tab2 <> "") Then
+
+            ' On va rechercher seulement dans tab2
+            For Each cond As Critere In conditions
+
+                req = Rech_BDD.genereRechRequetes(req, cond, tab2)
+
+            Next
 
 
 
@@ -105,12 +131,31 @@
 
 
 
+
+
+
+
+
+
+
+        End If
+
+
+
+
+
+
+
+
+
+
+        Return ""
 
     End Function
 
 
 
-
+    'filtrer les colonnes datatable de résultat si on a recherché dans une seule table
 
 
 

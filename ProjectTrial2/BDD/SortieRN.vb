@@ -42,7 +42,9 @@
         listeChamps.Add(BDD.champsRANGIN)
         listeChamps.Add(BDD.champsADM)
         listeChamps.Add(BDD.champsNbreEtudiant)
+        listeChamps.Add(BDD.champsMENTIN)
         listeChamps.Add(BDD.champsNBR_RN)
+
 
         '************Récupération des informations de l'inscription*************'
         Dim reqSQL As String = Class_BDD.genereRechRequete(listeChamps, BDD.nomTableINSCRIPTION, BDD.nomTablePROMO, listeConditions, True)
@@ -80,8 +82,9 @@
 
 
 
-        'nbreRN = CType(tableINSCRIPTION.Rows.Item(0).Item(BDD.champsNBR_RN), Integer)
+        nbreRN = CType(tableINSCRIPTION.Rows.Item(0).Item(BDD.champsNBR_RN), Integer)
 
+        Console.WriteLine(nbreRN)
 
         'Ajout du caractère spécial 99.99 à la place des notes qu'on ne veut pas afficher
         ArrangeRATTRA(tableNotesMat, 0.0)
@@ -118,6 +121,7 @@
         req = Modif_BDD.genereModifRequete(etud.GetInfoChamps(BDD.champsMATRIN), listeModif, BDD.nomTableINSCRIPTION)
         req = Modif_BDD.AddCondition(req, New Critere(BDD.champsCodePromo, promo, BDD.nomTableINSCRIPTION))
 
+        Console.WriteLine(req)
 
         BDD.executeRequete(req)
         nbreRN = int

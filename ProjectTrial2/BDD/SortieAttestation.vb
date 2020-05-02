@@ -17,7 +17,7 @@ Public Class SortieAttestation
         champ.Add(BDD.champsAnnee)
         champ.Add(BDD.champsNiveau)
         champ.Add(BDD.champsOption)
-        champ.Add(BDD.champsADM)
+        champ.Add(BDD.champsDECIIN)
 
 
         cond.Add(New Critere(BDD.champsMATRIN, etud.getId()))               ' Ajouter le condition ( la valeur de matricule )

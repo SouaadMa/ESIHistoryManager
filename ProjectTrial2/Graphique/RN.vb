@@ -124,8 +124,8 @@ Public Class RN
                     'disbale the affich button until any combobox values has been changed
                     ' and that's it !
 
-                    Form1.ds = RN.dataSet
-                    Form1.Show()
+            'Form1.ds = RN.dataSet
+            'Form1.Show()
 
                 End If
                 cb_anee = False

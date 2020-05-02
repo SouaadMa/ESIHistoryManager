@@ -462,15 +462,27 @@ Represents a strongly typed in-memory cache of data.
 </member><member name="F:EsistHistoryManagement_v1.BDD.tableCorespondante">
  '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-</member><member name="T:EsistHistoryManagement_v1.AttestationDataSet.attestationDataTableDataTable">
+</member><member name="T:EsistHistoryManagement_v1.AttestationDataSet.Table2DataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:EsistHistoryManagement_v1.AttestationDataSet.attestationDataTableRow">
+</member><member name="T:EsistHistoryManagement_v1.AttestationDataSet.Table1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.AttestationDataSet.Table2Row">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:EsistHistoryManagement_v1.AttestationDataSet.attestationDataTableRowChangeEvent">
+</member><member name="T:EsistHistoryManagement_v1.AttestationDataSet.Table1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.AttestationDataSet.Table2RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.AttestationDataSet.Table1RowChangeEvent">
 	<summary>
 Row event argument class
 </summary>

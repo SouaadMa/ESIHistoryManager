@@ -91,16 +91,16 @@ Public Class Login
         stream.Close()
 
 
-        Dim domaine As New List(Of Critere)({New Critere(BDD.champsAnnee, "2000", BDD.nomTableINSCRIPTION), New Critere(BDD.champsOption, "TRC", ""), New Critere(BDD.champsNiveau, "4", BDD.nomTablePROMO)})
+        Dim domaine As New List(Of Critere) '({New Critere(BDD.champsAnnee, "2000", BDD.nomTableINSCRIPTION), New Critere(BDD.champsOption, "TRC", ""), New Critere(BDD.champsNiveau, "4", BDD.nomTablePROMO)})
         '({New Critere(BDD.champsCodePromo, "4/SI/00")})
         '({New Critere(BDD.champsNiveau, "4", BDD.nomTablePROMO)
         ' New Critere(BDD.champsCodeGroupe, 6)
 
+        Dim dt As New DataTable
 
 
-        Statistiques.TraitStatistiques(domaine, BDD.champsMOYEIN, New Critere(BDD.champsNiveau, 0))
 
-        Console.WriteLine(Rech_BDD.AddChamps("SELECT NOJUNO FROM NOTES", New List(Of String)({"NORANO"}), "TABLE"))
+        Statistiques.TraitStatistiques(domaine, BDD.champsNOJUNO, BDD.champsCOMAMA)
 
 
         Console.WriteLine()

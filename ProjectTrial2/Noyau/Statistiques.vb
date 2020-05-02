@@ -7,7 +7,7 @@
 
 
 
-    Public Shared Sub TraitStatistiques(ByVal domaineEtudiants As List(Of Critere), ByVal ChampsDetude As String, ByVal RepartitionPar As Critere)
+    Public Shared Sub TraitStatistiques(ByVal domaineEtudiants As List(Of Critere), ByVal ChampsDetude As String, ByVal RepartitionPar As String)
 
         Dim CodeConditions As New List(Of Critere)
         Dim Champs As New List(Of String)
@@ -18,9 +18,6 @@
         ' On obtient tout les codes et leurs parties dans CodeConditions 
         ' On laisse le reste (si il en reste quelques critères) dans domaineEtudiants
         'ExtractPartsOfCodeTable(domaineEtudiants, CodeConditions, BDD.nomTablePROMO)
-        'If (CodeConditions.Count > 0) Then
-        'tableDomaineEtudiants = BDD.nomTableINSCRIPTION
-        'End If
         'ExtractPartsOfCodeTable(domaineEtudiants, CodeConditions, BDD.nomTableEtudiant)
         'ExtractPartsOfCodeTable(domaineEtudiants, CodeConditions, BDD.nomTableMATIERE)
 
@@ -50,7 +47,7 @@
         ' Et on prépare les tables avec lesquelles on va faire la requête
         Dim PaireTables As New Paire("", "") 'Objet dans lequel on récupère les tables
 
-        Champs = prepareChamps(ChampsDetude, RepartitionPar.getChamps, PaireTables)
+        Champs = prepareChamps(ChampsDetude, RepartitionPar, PaireTables)
 
         Console.WriteLine("champsRetour")
         show(Champs)
@@ -75,6 +72,14 @@
 
         Console.WriteLine(requeteSQL)
 
+        ' A cette étape, notre requête sélectionne les colonnes champEtudes et champRepartition
+        ' de toutes les lignes de la BDD qui vérifient les critères du domaine en entrée.
+
+
+        ' Il nous reste d'ajouter la fonction d'agrégation 'COUNT'
+        ' et de les regouper selon le champ de répartition
+
+        ' Et ensuite on va ajouter des conditions si on en aura besoin
 
 
 
@@ -85,6 +90,70 @@
 
 
     End Sub
+
+    ' Méthode pour filtrer une DataTable selon le critère en entrée
+    Public Shared Function FilterDataTableBy(ByVal dataTable As DataTable, ByVal critere As Critere) As DataTable
+
+        Dim filter As String
+        Dim valeur As String
+
+        If (dataTable.Columns.Contains(critere.getChamps)) Then
+
+            Select Case (critere.getValeur.GetType).ToString       ' Savoir le type de la valeur :
+                Case "System.String"                                      ' valeur Text
+                    valeur = "'" + critere.getValeur + "'"
+                Case GetType(Integer).ToString, GetType(Double).ToString  ' valeur Numérique
+                    valeur = critere.getValeur.ToString
+                Case "System.Boolean"                                     ' valeur Booleen
+                    valeur = critere.getValeur
+            End Select
+
+            filter = critere.getChamps + " = " + valeur
+
+        Else
+
+            Console.WriteLine("La colonne avec laquelle vous voulez filtrer n'appartient pas à DataTable")
+            Return Nothing
+
+        End If
+
+        Console.WriteLine(filter)
+
+        Return dataTable.Select(filter).CopyToDataTable
+
+    End Function
+
+    ' Méthode pour filtrer une DataTable selon le critère en entrée
+    Public Shared Function FilterDataTableBy(ByVal dataTable As DataTable, ByVal critere As Critere, ByVal superior As Boolean) As DataTable
+
+        Dim filter As String
+
+        If (dataTable.Columns.Contains(critere.getChamps)) Then
+
+            If critere.getValeur.GetType.ToString.Equals(GetType(Integer).ToString) Or critere.getValeur.GetType.ToString.Equals(GetType(Double).ToString) Then
+                If superior Then
+                    filter = critere.getChamps + " > " + critere.getValeur.ToString
+                Else
+                    filter = critere.getChamps + " < " + critere.getValeur.ToString
+                End If
+            Else
+                Console.WriteLine("Vous êtes entrain de comparer avec un type non numérique")
+                Return Nothing
+            End If
+
+        Else
+
+            Console.WriteLine("La colonne avec laquelle vous voulez filtrer n'appartient pas à DataTable")
+            Return Nothing
+
+        End If
+
+        Console.WriteLine("filter: " + filter)
+
+        Return dataTable.Select(filter).CopyToDataTable
+
+    End Function
+
 
 
     ' Méthode qui extrait les parties du CodeTable donné, elle les retourne dans partsOfCodeTable,
@@ -152,7 +221,7 @@
     Private Shared Function prepareChamps(ByVal champE As String, ByVal champR As String, ByRef tables As Paire) As List(Of String)
 
         Dim champsRetour As New List(Of String)
-        
+
         Select Case champE
 
             Case "Nombre"
@@ -287,6 +356,17 @@
         Console.WriteLine()
     End Sub
 
+    Public Shared Function GetTaux(ByVal type As String, ByVal champE As String, ByVal dt As DataTable) As Integer
 
+
+
+
+
+
+
+
+
+        Return 0
+    End Function
 
 End Class

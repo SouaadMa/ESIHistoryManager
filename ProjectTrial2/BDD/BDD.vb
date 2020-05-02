@@ -373,11 +373,7 @@ Public Class BDD
             Case champsCodeMat
                 Return CompareToCodeMat(critere)
             Case Else
-                If critere.getTable.Equals("") Then
-                    Return (critere.getChamps + " = " + critere.getValeur)
-                Else
-                    Return (critere.getTable + "." + critere.getChamps + " = " + critere.getValeur)
-                End If
+                Return ""
 
         End Select
 

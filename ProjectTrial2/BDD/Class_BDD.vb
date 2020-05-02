@@ -16,7 +16,13 @@
         Dim t2 As String()
         requete = "" ' Initialiser la requete sql
         cle1 = BDD.getCorrespondance(tab1, tab2, 1) ' Trouver le nom de champ qui est égale entre tab1 et tab2 pour tab1
+        If (cle1 = "") Then
+            cle1 = BDD.getCorrespondance(tab2, tab1, 1)
+        End If
         cle2 = BDD.getCorrespondance(tab1, tab2, 2) ' Trouver le nom de champ qui est égale entre tab1 et tab2 pour tab2
+        If (cle2 = "") Then
+            cle2 = BDD.getCorrespondance(tab2, tab1, 2)
+        End If
         If Not (cle1 = "") And Not (cle2 = "") Then ' And Not (champs.Count > 0) Then ' Si les tables tab1 et tab2 ont un champ égale dans la tables correspondante ( et La liste des champs 0 retourner n'est pas vide )
             finalChamp = ""
             requete = " SELECT " ' Initialiser la requete sql de(Recherche)
@@ -143,6 +149,8 @@
                                 ind += 1
                             End If
                         End While
+
+
                         If (found) Then
                             finalChamp = tab1 + "." + champ
                         Else
@@ -172,7 +180,7 @@
                         Else                                 '-> Sinon ( on a pas encore ajouté aucun condition )
                             first = False                           '--> mettre first à faux ( la premier critere est ajoutée )
                         End If
-                      
+
                         requete = requete + finalChamp + " = " + valeur ' Ajouter le critère() ' champ = valeur'
 
                     End If
@@ -204,7 +212,17 @@
     Public Shared Function AddLIKECondition(ByVal SQLquery As String, ByVal champs As String, ByVal condition As Critere) As String
 
         Dim addition As String
-        addition = " AND " + BDD.CompareToCode(champs, condition)
+
+        If BDD.CompareToCode(champs, condition) <> "" Then
+            If (SQLquery.Contains("WHERE")) Then
+                addition = " AND " + BDD.CompareToCode(champs, condition)
+            Else
+                addition = " WHERE " + BDD.CompareToCode(champs, condition)
+            End If
+        Else
+            addition = ""
+        End If
+
         Return (SQLquery + addition)
 
     End Function

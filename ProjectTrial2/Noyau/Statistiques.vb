@@ -1,5 +1,11 @@
-﻿Public Class TraitStatistiques
+﻿Public Class Statistiques
     'Classe sépciale pour les méthodes de la fonctionnalité des statistiques
+
+    Private Shared tableDomaineEtudiants As String = "" ' BDD.nomTableINSCRIPTION
+    Private Shared tableCodes As String() = {BDD.champsCodePromo, BDD.champsMATRIN}
+
+
+
 
     Public Shared Sub TraitStatistiques(ByVal domaineEtudiants As List(Of Critere), ByVal ChampsDetude As String, ByVal RepartitionPar As Critere)
 
@@ -11,9 +17,31 @@
 
         ' On obtient tout les codes et leurs parties dans CodeConditions 
         ' On laisse le reste (si il en reste quelques critères) dans domaineEtudiants
-        ExtractPartsOfCodeTable(domaineEtudiants, CodeConditions, BDD.nomTablePROMO)
-        ExtractPartsOfCodeTable(domaineEtudiants, CodeConditions, BDD.nomTableEtudiant)
+        'ExtractPartsOfCodeTable(domaineEtudiants, CodeConditions, BDD.nomTablePROMO)
+        'If (CodeConditions.Count > 0) Then
+        'tableDomaineEtudiants = BDD.nomTableINSCRIPTION
+        'End If
+        'ExtractPartsOfCodeTable(domaineEtudiants, CodeConditions, BDD.nomTableEtudiant)
         'ExtractPartsOfCodeTable(domaineEtudiants, CodeConditions, BDD.nomTableMATIERE)
+
+        If (domaineEtudiants.Count > 0) Then
+            tableDomaineEtudiants = BDD.nomTableINSCRIPTION
+
+            If checkTableDomaine(domaineEtudiants, tableDomaineEtudiants) = True Then
+
+                ExtractPartsOfCodeTable(domaineEtudiants, CodeConditions, tableCodes(0))
+
+            Else
+                MsgBox("Les conditions sur le domaine doivent appartenir à tableDomaine")
+            End If
+
+        End If
+
+        Console.WriteLine("domaine")
+        show(domaineEtudiants)
+        Console.WriteLine("codeconditions")
+        show(CodeConditions)
+
 
         '..............Conditions, Check :D
 
@@ -24,6 +52,11 @@
 
         Champs = prepareChamps(ChampsDetude, RepartitionPar.getChamps, PaireTables)
 
+        Console.WriteLine("champsRetour")
+        show(Champs)
+
+        Console.WriteLine("Paire")
+        Console.WriteLine(PaireTables.elem1 + "." + PaireTables.elem2)
 
         '..............Champs, Check :DD
         '..............Tables, Check :DDD
@@ -34,6 +67,13 @@
 
         Dim requeteSQL As String = prepareRequeteInitiale(Champs, PaireTables, domaineEtudiants)
 
+        Console.WriteLine(requeteSQL)
+
+        For Each ch In CodeConditions
+            requeteSQL = Class_BDD.AddLIKECondition(requeteSQL, tableCodes(0), ch)
+        Next
+
+        Console.WriteLine(requeteSQL)
 
 
 
@@ -41,36 +81,68 @@
 
 
 
-
-
+        ' Voir si RepartitionPar a une valeur spécifique
 
 
     End Sub
 
 
-    ' Méthode qui extrait les parties du CodeTable de la table donnée, elle les retourne dans partsOfCodeTable,
+    ' Méthode qui extrait les parties du CodeTable donné, elle les retourne dans partsOfCodeTable,
     ' *************************** Le code lui même, fait partie des parties du code *****************
     ' Et retourne le reste des critères (les autres champs) dans conditions.
-    Private Shared Sub ExtractPartsOfCodeTable(ByRef conditions As List(Of Critere), ByRef partsOfCodeTable As List(Of Critere), ByVal nomTable As String)
+    Private Shared Sub ExtractPartsOfCodeTable(ByRef conditions As List(Of Critere), ByRef partsOfCodeTable As List(Of Critere), ByVal nomCode As String)
 
-        For Each cr In conditions
+        Dim copyconditions As New List(Of Critere)
+        copyconditions.AddRange(conditions)
 
-            If ((cr.getTable = nomTable Or cr.getTable = "") And BDD.CompareToCodeTable(nomTable, cr) <> "") Then
+        For Each cr In copyconditions
 
-                'Si le critère appartient à la table, soit il est son code, soit il en fait partie.
+            If (BDD.CompareToCode(nomCode, cr) <> "") Then
+
+                'Si le critère appartient au code, soit c'est lui même, soit il en fait partie.
                 'Donc on le supprime de conditions, et on le rajoute à partsOfCodeTable
-                cr.setTable(nomTable)
                 conditions.Remove(cr)
                 partsOfCodeTable.Add(cr)
 
             End If
 
-            'Si le critère n'appartient pas à la table, on le laisse dans conditions
+            'Si le critère n'appartient pas au code, on le laisse dans conditions
 
         Next
 
 
     End Sub
+
+    ' 
+
+    Private Shared Function checkTableDomaine(ByVal domaine As List(Of Critere), ByVal nomTable As String) As Boolean
+
+        Dim valide As Boolean = True
+
+        For Each cr In domaine
+
+            If (Not cr.getTable = nomTable) And cr.getTable <> "" Then
+                valide = False
+
+                For Each code In tableCodes
+
+                    If BDD.CompareToCode(code, cr) <> "" Then
+                        valide = True
+                    End If
+
+                Next
+
+                If Not valide Then
+                    Console.WriteLine(cr.getChamps)
+                End If
+
+            End If
+
+        Next
+
+        Return valide
+
+    End Function
 
 
 
@@ -80,7 +152,7 @@
     Private Shared Function prepareChamps(ByVal champE As String, ByVal champR As String, ByRef tables As Paire) As List(Of String)
 
         Dim champsRetour As New List(Of String)
-
+        
         Select Case champE
 
             Case "Nombre"
@@ -89,6 +161,7 @@
                 tables.elem1 = BDD.nomTableINSCRIPTION
             Case BDD.champsNOJUNO
                 tables.elem1 = BDD.nomTableNOTE
+                champsRetour.Add(champE)
 
 
         End Select
@@ -101,8 +174,10 @@
                 tables.elem2 = BDD.nomTableEtudiant
             Case BDD.champsOption, BDD.champsNiveau
                 tables.elem2 = BDD.nomTablePROMO
-            Case BDD.champsCodeGroupe
+            Case BDD.champsCodeGroupe, BDD.champsDECIIN
                 tables.elem2 = BDD.nomTableINSCRIPTION
+            Case BDD.champsCOMAMA
+                tables.elem2 = BDD.nomTableMATIERE
 
         End Select
 
@@ -116,46 +191,101 @@
         Dim tab2 As String = paireTables.elem2
         Dim req As String = ""
 
-        If (tab1 = "" And tab2 <> "") Then
+        '****************************PREMIER CAS: LES DEUX TABLES SONT VIDES*********************'
+        '**************************************ERREUR********************************************'
 
-            ' On va rechercher seulement dans tab2
-            For Each cond As Critere In conditions
+        If (tab1 = "" And tab2 = "") Then
 
-                req = Rech_BDD.genereRechRequetes(req, cond, tab2)
-
-            Next
-
-
-
-
-
-
-
-
-
-
-
-
-
+            MsgBox("Paire VIDE")
+            Return ""
 
         End If
 
 
+        '****************************DEUXIEME CAS: UNE DES DEUX TABLES EST VIDE*******************'
+        '*************On va le traiter avec le troisième cas***************************
+        '*********************************_______________________*********************************'
+
+        If ((tab1 = "" And tab2 <> "") Or tab1.Equals(tab2)) Then
+
+            If (tableDomaineEtudiants = "") Then
+                tab1 = tab2
+            Else
+                tab1 = tableDomaineEtudiants
+            End If
 
 
+        ElseIf (tab2 = "") Then
+            '******* tab2 VIDE *******'
 
 
+            If (tableDomaineEtudiants = "") Then
+                tab2 = tab1
+            Else
+                tab2 = tableDomaineEtudiants
+            End If
+
+        End If
+
+        '****************************TROISIEME CAS: tab1 = tab2*******************'
+        '****************************__________________________*******************'
+
+        If tab1 = tab2 Then
+
+            Console.WriteLine("tab1 = tab2")
+            Console.WriteLine(tab1 + "." + tab2)
+
+            req = Rech_BDD.genereRechRequetes(req, Nothing, tab1)
+
+            For Each cond In conditions
+                req = Rech_BDD.genereRechRequetes(req, cond, tab1)
+            Next
+
+            req = Rech_BDD.AddChamps(req, champs, tab1)
+
+        End If
 
 
+        '*******************QUATRIEME CAS: LES DEUX TABLES SONT NON VIDES ET DISTINCTES*******************'
+        '************************************RECHERCHE DANS DEUX TABLEs***********************************'
+
+        If (tab1 <> "" And tab2 <> "") And Not (tab1.Equals(tab2)) Then
+
+            req = Class_BDD.genereRechRequete(champs, tab1, tab2, conditions, True)
+
+            Console.WriteLine("DEUX TABS NON VIDES")
+            Console.WriteLine(tab1 + "." + tab2)
+
+            For Each cr In conditions
+                Console.WriteLine(cr.getChamps)
+            Next
+
+        End If
 
 
-        Return ""
+        Return req
 
     End Function
 
+    Public Shared Sub show(ByVal list As List(Of Critere))
 
+        For Each cr In list
+            Console.WriteLine(cr.getChamps + cr.getValeur.ToString + cr.getTable)
 
-    'filtrer les colonnes datatable de résultat si on a recherché dans une seule table
+        Next
+
+        Console.WriteLine()
+    End Sub
+
+    Public Shared Sub show(ByVal list As List(Of String))
+
+        For Each cr In list
+            Console.WriteLine(cr)
+
+        Next
+
+        Console.WriteLine()
+    End Sub
 
 
 

@@ -6,10 +6,28 @@ Public Class Rech_BDD
         'Générer un requete de recherche SQL apartir d'une requete existe déja 'instructionSQL' ou non ( si instructionSQL est vide )
         ' en ajoutant le champ et son valeur apartir de critere
 
+
         Dim valeur As String = ""
+
+        If (IsNothing(critere)) Then
+
+            If instructionSQL = "" Then
+                Return " SELECT * FROM " & nomTable
+            Else
+                If requeteRechValide(instructionSQL) Then
+                    Return instructionSQL
+                End If
+            End If
+
+        End If
+
+
         Dim champ As String = critere.getChamps
 
         If requeteRechValide(instructionSQL) Then      ' Si la instructionSQL donnee peut etre une requete de recherche
+
+
+
             Select Case (critere.getValeur.GetType).ToString       ' Savoir le type de la valeur :
                 Case "System.String"                                      ' valeur Text
                     valeur = "'" + critere.getValeur + "'"
@@ -20,7 +38,7 @@ Public Class Rech_BDD
             End Select
 
 
-            If Bdd.ExisteDansTable(critere.getChamps, nomTable) Then                                       ' Si le champ donnée existe dans la base de donnée
+            If BDD.ExisteDansTable(critere.getChamps, nomTable) Then                                       ' Si le champ donnée existe dans la base de donnée
                 If stringvide(instructionSQL) Then                     ' Si la requete donnée vide ou contient seulement des espaces
                     instructionSQL = " SELECT * FROM " & nomTable & " WHERE "  ' -> affecter la valeur d'une requete de rechercher retourne tout les champs de tableau ETUDIANT
                 ElseIf instructionSQL.Contains("WHERE") Then           ' Sinon, Si la instructionSQL contient WHERE
@@ -116,15 +134,19 @@ Public Class Rech_BDD
 
         Next
 
-        If requeteRechValide(req) Then
+        If requeteRechValide(req) And Not String.IsNullOrWhiteSpace(req) Then
 
             If req.Contains("*") Then
+
+                'Console.WriteLine(req)
 
                 req = req.Replace("*", StrChamps)
 
             Else
 
-                req = req.Insert(req.IndexOf("SELECT") + "SELECT".Length + 1, StrChamps + ", ")
+                'Console.WriteLine("u" + req + "u")
+
+                req = req.Insert(req.IndexOf("SELECT") + "SELECT".Length, " " + StrChamps + ", ")
 
             End If
 

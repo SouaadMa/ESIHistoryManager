@@ -26,6 +26,7 @@ Partial Class ClassementPage
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ClassementPage))
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.FlecheList = New System.Windows.Forms.ImageList(Me.components)
+        Me.ImageList2 = New System.Windows.Forms.ImageList(Me.components)
         Me.AffPanel = New System.Windows.Forms.Panel()
         Me.ClassmentCritPanel = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -105,7 +106,6 @@ Partial Class ClassementPage
         Me.IntroPanel = New System.Windows.Forms.Panel()
         Me.RechLabel = New System.Windows.Forms.Label()
         Me.NoResultLabel = New System.Windows.Forms.Label()
-        Me.ImageList2 = New System.Windows.Forms.ImageList(Me.components)
         Me.AffPanel.SuspendLayout()
         Me.ClassmentCritPanel.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -138,6 +138,12 @@ Partial Class ClassementPage
         Me.FlecheList.Images.SetKeyName(0, "sort-down (1).png")
         Me.FlecheList.Images.SetKeyName(1, "sort-ascending.png")
         '
+        'ImageList2
+        '
+        Me.ImageList2.ImageStream = CType(resources.GetObject("ImageList2.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList2.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList2.Images.SetKeyName(0, "signs.png")
+        '
         'AffPanel
         '
         Me.AffPanel.BackColor = System.Drawing.Color.Transparent
@@ -152,18 +158,19 @@ Partial Class ClassementPage
         Me.AffPanel.Location = New System.Drawing.Point(0, 0)
         Me.AffPanel.Name = "AffPanel"
         Me.AffPanel.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
-        Me.AffPanel.Size = New System.Drawing.Size(678, 640)
+        Me.AffPanel.Size = New System.Drawing.Size(683, 641)
         Me.AffPanel.TabIndex = 28
         '
         'ClassmentCritPanel
         '
         Me.ClassmentCritPanel.Controls.Add(Me.GroupBox1)
+        Me.ClassmentCritPanel.Controls.Add(Me.SortDirectionButton)
         Me.ClassmentCritPanel.Controls.Add(Me.FilterButton)
         Me.ClassmentCritPanel.Controls.Add(Me.Label4)
         Me.ClassmentCritPanel.Controls.Add(Me.SpecialiteBox)
         Me.ClassmentCritPanel.Location = New System.Drawing.Point(10, 43)
         Me.ClassmentCritPanel.Name = "ClassmentCritPanel"
-        Me.ClassmentCritPanel.Size = New System.Drawing.Size(658, 64)
+        Me.ClassmentCritPanel.Size = New System.Drawing.Size(663, 64)
         Me.ClassmentCritPanel.TabIndex = 45
         '
         'GroupBox1
@@ -240,13 +247,12 @@ Partial Class ClassementPage
         '
         Me.PN_PAGES.BackColor = System.Drawing.Color.Transparent
         Me.PN_PAGES.Controls.Add(Me.PromoPanel)
-        Me.PN_PAGES.Controls.Add(Me.SortDirectionButton)
         Me.PN_PAGES.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PN_PAGES.Location = New System.Drawing.Point(10, 576)
+        Me.PN_PAGES.Location = New System.Drawing.Point(10, 577)
         Me.PN_PAGES.Margin = New System.Windows.Forms.Padding(0)
         Me.PN_PAGES.Name = "PN_PAGES"
         Me.PN_PAGES.Padding = New System.Windows.Forms.Padding(15, 8, 15, 15)
-        Me.PN_PAGES.Size = New System.Drawing.Size(658, 64)
+        Me.PN_PAGES.Size = New System.Drawing.Size(663, 64)
         Me.PN_PAGES.TabIndex = 25
         '
         'PromoPanel
@@ -335,7 +341,7 @@ Partial Class ClassementPage
         Me.SortDirectionButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
         Me.SortDirectionButton.ImageIndex = 0
         Me.SortDirectionButton.ImageList = Me.FlecheList
-        Me.SortDirectionButton.Location = New System.Drawing.Point(18, 11)
+        Me.SortDirectionButton.Location = New System.Drawing.Point(19, 20)
         Me.SortDirectionButton.Name = "SortDirectionButton"
         Me.SortDirectionButton.Size = New System.Drawing.Size(30, 30)
         Me.SortDirectionButton.TabIndex = 44
@@ -347,7 +353,7 @@ Partial Class ClassementPage
         Me.PagesButtons.Controls.Add(Me.MiddleButton)
         Me.PagesButtons.Controls.Add(Me.NextButton)
         Me.PagesButtons.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.PagesButtons.Location = New System.Drawing.Point(640, 297)
+        Me.PagesButtons.Location = New System.Drawing.Point(644, 297)
         Me.PagesButtons.Name = "PagesButtons"
         Me.PagesButtons.Size = New System.Drawing.Size(27, 88)
         Me.PagesButtons.TabIndex = 27
@@ -420,7 +426,7 @@ Partial Class ClassementPage
         Me.EtudiantPanel.Location = New System.Drawing.Point(10, 106)
         Me.EtudiantPanel.Margin = New System.Windows.Forms.Padding(0)
         Me.EtudiantPanel.Name = "EtudiantPanel"
-        Me.EtudiantPanel.Size = New System.Drawing.Size(658, 470)
+        Me.EtudiantPanel.Size = New System.Drawing.Size(663, 470)
         Me.EtudiantPanel.TabIndex = 24
         '
         'TableLayoutPanel7
@@ -1229,7 +1235,7 @@ Partial Class ClassementPage
         Me.IntroPanel.Dock = System.Windows.Forms.DockStyle.Top
         Me.IntroPanel.Location = New System.Drawing.Point(10, 0)
         Me.IntroPanel.Name = "IntroPanel"
-        Me.IntroPanel.Size = New System.Drawing.Size(658, 44)
+        Me.IntroPanel.Size = New System.Drawing.Size(663, 44)
         Me.IntroPanel.TabIndex = 27
         '
         'RechLabel
@@ -1258,17 +1264,11 @@ Partial Class ClassementPage
         Me.NoResultLabel.TabIndex = 28
         Me.NoResultLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'ImageList2
-        '
-        Me.ImageList2.ImageStream = CType(resources.GetObject("ImageList2.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.ImageList2.TransparentColor = System.Drawing.Color.Transparent
-        Me.ImageList2.Images.SetKeyName(0, "signs.png")
-        '
         'ClassementPage
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(678, 640)
+        Me.ClientSize = New System.Drawing.Size(683, 641)
         Me.Controls.Add(Me.AffPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False

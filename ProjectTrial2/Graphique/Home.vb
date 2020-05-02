@@ -18,6 +18,7 @@ Public Class Home
         Me.MaximumSize = New System.Drawing.Size(1024, 1000)
         'PN_BIENVENUE.Location = New System.Drawing.Point(71, 3)
         LogoPicture.Visible = False
+        logo_bleu.Visible = False
         MenuButton.Location = New System.Drawing.Point(0, 0) 'initialize the hamburger button to the top left corner
 
         SideBar.Width = 55          'initialize the side bar
@@ -37,7 +38,7 @@ Public Class Home
         DetailTip.SetToolTip(DetailButton, "Détails")
 
         Dim CertificatTip As ToolTip = New ToolTip()
-        CertificatTip.SetToolTip(PrintButton, "Certificat")
+        CertificatTip.SetToolTip(PrintButton, "Attestation")
 
         Dim ModifTip As ToolTip = New ToolTip()
         ModifTip.SetToolTip(ModifButton, "Modifier")
@@ -56,8 +57,36 @@ Public Class Home
 
         End If
 
+        If Not f Is Nothing Then
+            f.Close()
+        End If
+        f = New PrincipalPage()         ' assign the search form to  the f form
+        f.TopLevel = False
+        f.TopMost = True
+        f.WindowState = FormWindowState.Normal
+        Me.MainContainer1.Controls.Add(f)        ' add the controlers of the searche page to the main form f 
+        f.Show()                                ' show the form f in the middle of the home page
+        Me.MainContainer1.Visible = True
+        'Me.MainContainer.Width = 680            ' adjust its appearance
+
         Login.Close()    ' close the login page 
 
+    End Sub
+
+    Private Sub HomeButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        If Not f Is Nothing Then
+            f.Close()
+        End If
+        f = New PrincipalPage()         ' assign the search form to  the f form
+        f.TopLevel = False
+        f.TopMost = True
+        f.WindowState = FormWindowState.Normal
+        Me.MainContainer1.Controls.Add(f)        ' add the controlers of the searche page to the main form f 
+        f.Show()                                ' show the form f in the middle of the home page
+        Me.MainContainer1.Visible = True
+        'Me.MainContainer.Width = 680            ' adjust its appearance
+
+        Login.Close()    ' close the login page 
     End Sub
 
     Private Sub BT_LOGOUT_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_LOGOUT.Click
@@ -160,7 +189,6 @@ Public Class Home
 
     End Sub
 
-
     Private Sub BT_CLASS_MouseClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles BT_CLASS.MouseClick
         ' handle the classemnt button appearance
 
@@ -258,16 +286,7 @@ Public Class Home
 
     End Sub
 
-    'handle the appearence of help button when hovering
-    Private Sub HelpButton_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles Help_Button.MouseHover
-        Help_Button.BackColor = Color.FromKnownColor(KnownColor.ActiveCaption)
-
-    End Sub
-
-    'handle the appearence of help button when leaving
-    Private Sub HelpButton_MouseLeave(ByVal sender As Object, ByVal e As System.EventArgs) Handles Help_Button.MouseLeave
-        Help_Button.BackColor = Color.Transparent
-    End Sub
+    
 
     'handling the appearnce of the search form
 
@@ -594,6 +613,7 @@ Public Class Home
         End If
     End Sub
 
+   
 End Class
 
 

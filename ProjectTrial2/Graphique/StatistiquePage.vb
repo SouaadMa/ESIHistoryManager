@@ -136,4 +136,38 @@
         BT_CHARTLOAD.Visible = True
         CB_CHARTKIND.Visible = False
     End Sub
+
+    Public Shared Sub stat()
+
+        Dim domaine As New List(Of Critere)({New Critere(BDD.champsOption, "TRC", "")}) ', New Critere(BDD.champsNiveau, "4", BDD.nomTablePROMO)})
+        '({New Critere(BDD.champsCodePromo, "4/SI/00", BDD.nomTableINSCRIPTION)})
+        '({New Critere(BDD.champsCodePromo, "4/SI/00")})
+        '({New Critere(BDD.champsNiveau, "4", BDD.nomTablePROMO)
+        ' New Critere(BDD.champsCodeGroupe, 6)
+
+        'Dim dt As New DataTable
+
+        Dim stat1_1 As New Statistiques(domaine, New Critere("Nombre", ""), BDD.champsDECIIN)
+
+        Dim stat1_2 As New Statistiques(domaine, New Critere("Nombre", ""), BDD.champsSEXE)
+
+        Dim stat1_3 As New Statistiques(domaine, New Critere("Nombre", ""), BDD.champsOption)
+
+
+        Dim stat2_1 As New Statistiques(domaine, New Critere(BDD.champsNOJUNO, 10), BDD.champsCOMAMA)
+        Console.WriteLine(stat2_1.GetTotal("ALGO"))
+
+        Dim stat2_2 As New Statistiques(domaine, New Critere(BDD.champsDECIIN, "REUSSITE"), BDD.champsCodeGroupe)
+
+        Dim stat2_3 As New Statistiques(domaine, New Critere(BDD.champsDECIIN, "REUSSITE"), BDD.champsNiveau)
+
+
+        Dim stat5_1 As New Statistiques(domaine, New Critere(BDD.champsMOYEIN, 10), BDD.champsNiveau)
+
+        Dim stat5_2 As New Statistiques(domaine, New Critere(BDD.champsMOYEIN, 10), BDD.champsCodeGroupe)
+
+        Dim stat5_3 As New Statistiques(domaine, New Critere(BDD.champsMOYEIN, 10), BDD.champsCodeSection)
+
+
+    End Sub
 End Class

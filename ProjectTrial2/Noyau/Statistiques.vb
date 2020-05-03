@@ -72,6 +72,7 @@
 
 
         For Each ch In CodeConditions
+            ch.setTable(paireTables.elem1)
             requeteSQL = Class_BDD.AddLIKECondition(requeteSQL, tableCodes(0), ch)
         Next
 
@@ -412,9 +413,23 @@
 
         Dim valeur As String
 
+        
+
         Select Case (condition.GetType).ToString       ' Savoir le type de la valeur :
             Case "System.String"                                      ' valeur Text
                 valeur = "'" + condition + "'"
+                Select Case valeur
+                    Case "'ADMIS'"
+                        valeur = "1"
+                    Case "'RACHAT'"
+                        valeur = "2"
+                    Case "'REDOUBLE'"
+                        valeur = "3"
+                    Case "'NONADMIS'"
+                        valeur = "4"
+                    Case "'ABANDON'"
+                        valeur = "0"
+                End Select
             Case GetType(Integer).ToString, GetType(Double).ToString, "System.Boolean"
                 valeur = condition.ToString
             Case Else

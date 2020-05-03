@@ -5,7 +5,7 @@
     Private Shared tableCodes As String() = {BDD.champsCodePromo, BDD.champsMATRIN}
     Private crEtudes As Critere
     Private champRepartition As String
-    Private dataTable As DataTable
+    Private dataTable As New DataTable
     Private paireTables As New Paire("", "")
 
 
@@ -95,6 +95,7 @@
 
 
 
+        dataTable = BDD.executeRequete(requeteSQL)
 
 
 
@@ -102,8 +103,6 @@
 
 
 
-
-        ' Voir si RepartitionPar a une valeur spécifique
 
 
     End Sub
@@ -403,38 +402,37 @@
                 nouvReq = Rech_BDD.AddWHEREComparaison(req, crEtudes, 1, True)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         End Select
 
         Return nouvReq
 
     End Function
 
-    Public Shared Function GetTotal(ByVal crEtudes As String, ByVal valeurCompar As Object, ByVal compar As Integer, ByVal dt As DataTable) As Integer
+    Public Function GetTotal(ByVal condition As Object) As Integer
 
-        Select Case crEtudes
+        Dim valeur As String
 
-            Case "Nombre"
-
-
-
-
+        Select Case (condition.GetType).ToString       ' Savoir le type de la valeur :
+            Case "System.String"                                      ' valeur Text
+                valeur = "'" + condition + "'"
+            Case GetType(Integer).ToString, GetType(Double).ToString, "System.Boolean"
+                valeur = condition.ToString
+            Case Else
+                MsgBox("Rakom Tela3bou ha ma tmedoulish objet khaser")
+                valeur = ""
         End Select
 
+        Dim rows() As DataRow = dataTable.Select(dataTable.Columns(1).ColumnName + " = " + valeur)
+        If rows.Count > 0 Then
+            Return rows(0).Item("Total")
+        Else
+            Return 0
+        End If
 
-        Return 0
+    End Function
+
+    Public Function GetDataTable() As DataTable
+        Return dataTable
     End Function
 
 End Class

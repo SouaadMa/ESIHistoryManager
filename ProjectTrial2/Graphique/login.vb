@@ -100,7 +100,7 @@ Public Class Login
 
     Public Shared Sub stat()
 
-        Dim domaine As New List(Of Critere)({New Critere(BDD.champsCodePromo, "4/SI/00", BDD.nomTableINSCRIPTION)}) '({New Critere(BDD.champsAnnee, "2000", BDD.nomTableINSCRIPTION), New Critere(BDD.champsOption, "TRC", ""), New Critere(BDD.champsNiveau, "4", BDD.nomTablePROMO)})
+        Dim domaine As New List(Of Critere) '({New Critere(BDD.champsCodePromo, "4/SI/00", BDD.nomTableINSCRIPTION)}) '({New Critere(BDD.champsAnnee, "2000", BDD.nomTableINSCRIPTION), New Critere(BDD.champsOption, "TRC", ""), New Critere(BDD.champsNiveau, "4", BDD.nomTablePROMO)})
         '({New Critere(BDD.champsCodePromo, "4/SI/00")})
         '({New Critere(BDD.champsNiveau, "4", BDD.nomTablePROMO)
         ' New Critere(BDD.champsCodeGroupe, 6)
@@ -108,6 +108,15 @@ Public Class Login
         'Dim dt As New DataTable
 
         Dim stat1_1 As New Statistiques(domaine, New Critere("Nombre", ""), BDD.champsDECIIN)
+
+        Dim ds As New DataSet()
+        
+        Dim dt As DataTable = stat1_1.GetDataTable
+        ds.Tables.Add(dt)
+        
+
+        Form1.ds = ds
+        Form1.Show()
 
         Dim stat1_2 As New Statistiques(domaine, New Critere("Nombre", ""), BDD.champsSEXE)
 

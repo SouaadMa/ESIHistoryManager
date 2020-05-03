@@ -401,13 +401,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="BDD_APPLICATIONDataSet.xsc">
-      <DependentUpon>BDD_APPLICATIONDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="BDD_APPLICATIONDataSet.xsd" />
-    <None Include="BDD_APPLICATIONDataSet.xss">
-      <DependentUpon>BDD_APPLICATIONDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Graphique\AttestationDataSet.xsc">
       <DependentUpon>AttestationDataSet.xsd</DependentUpon>
     </None>
@@ -484,6 +477,9 @@
     <None Include="Resources\attestation.png" />
     <None Include="Resources\chargement.png" />
     <None Include="Resources\dashboard.png" />
+    <None Include="Resources\commerce-and-shopping.png" />
+    <None Include="Resources\multimedia.png" />
+    <None Include="Resources\Color Fill 4 copy 2.png" />
     <Content Include="Resources\page_num_current.png" />
     <None Include="Resources\Spinner-1s-220px.gif" />
     <None Include="Resources\table_blanc.png" />
@@ -699,6 +695,46 @@
       <PublishState>Include</PublishState>
       <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Data.Schema">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Data.Schema.ScriptDom">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Data.Schema.UnitTesting">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Data.Schema.Utilities">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.ReportViewer.Common">
       <Visible>False</Visible>

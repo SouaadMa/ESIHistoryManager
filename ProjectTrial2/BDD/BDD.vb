@@ -390,7 +390,7 @@ Public Class BDD
         If critere.getTable = "" Then
             table = ""
         Else
-            table = critere.getTable + "."
+            table = critere.getTable
         End If
 
 
@@ -400,14 +400,12 @@ Public Class BDD
 
             Case BDD.champsAnnee
 
-
-
-                chaine = table + "MATRIN LIKE '" + critere.getValeur.ToString.Substring(2, 2) + "/%'"
+                chaine = table + ".MATRIN LIKE '" + critere.getValeur.ToString.Substring(2, 2) + "/%'"
             Case BDD.champsOption
-                chaine = table + "MATRIN LIKE '%/" + critere.getValeur + "'"
+                chaine = table + ".MATRIN LIKE '%/" + critere.getValeur + "'"
 
             Case BDD.champsMATRIN
-                chaine = table + "." + "MATRIN = " + critere.getValeur + "'"
+                chaine = table + "." + "MATRIN = '" + critere.getValeur + "'"
             Case Else
                 chaine = ""
 

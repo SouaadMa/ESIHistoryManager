@@ -57,23 +57,23 @@ Public Class Home
 
         End If
 
-        If Not f Is Nothing Then
-            f.Close()
-        End If
-        f = New PrincipalPage()         ' assign the search form to  the f form
-        f.TopLevel = False
-        f.TopMost = True
-        f.WindowState = FormWindowState.Normal
-        Me.MainContainer1.Controls.Add(f)        ' add the controlers of the searche page to the main form f 
-        f.Show()                                ' show the form f in the middle of the home page
-        Me.MainContainer1.Visible = True
-        'Me.MainContainer.Width = 680            ' adjust its appearance
+        'If Not f Is Nothing Then
+        '    f.Close()
+        'End If
+        'f = New PrincipalPage()         ' assign the search form to  the f form
+        'f.TopLevel = False
+        'f.TopMost = True
+        'f.WindowState = FormWindowState.Normal
+        'Me.MainContainer1.Controls.Add(f)        ' add the controlers of the searche page to the main form f 
+        'f.Show()                                ' show the form f in the middle of the home page
+        'Me.MainContainer1.Visible = True
+        ''Me.MainContainer.Width = 680            ' adjust its appearance
 
         Login.Close()    ' close the login page 
 
     End Sub
 
-    Private Sub HomeButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub HomeButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HomeButton.Click
         If Not f Is Nothing Then
             f.Close()
         End If
@@ -86,7 +86,7 @@ Public Class Home
         Me.MainContainer1.Visible = True
         'Me.MainContainer.Width = 680            ' adjust its appearance
 
-        Login.Close()    ' close the login page 
+        'Login.Close()    ' close the login page 
     End Sub
 
     Private Sub BT_LOGOUT_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_LOGOUT.Click
@@ -138,7 +138,7 @@ Public Class Home
             LogoPicture.Visible = True
             With Me.MainContainer1
                 .Location = New System.Drawing.Point(185, 1)
-                .Width = 680
+                .Width = 682
                 'If .Controls.Count > 0 Then
                 '    .Controls.Item(0).Scale(New System.Drawing.SizeF(1 / 1.2, 1))
                 '    .Controls.Item(0).Anchor = AnchorStyles.None
@@ -148,7 +148,7 @@ Public Class Home
             End With
             With Me.MainContainer2
                 .Location = New System.Drawing.Point(185, 1)
-                .Width = 680
+                .Width = 682
 
                 'If .Controls.Count > 0 Then
                 '    .Controls.Item(0).Scale(New System.Drawing.SizeF(1 / 1.2, 1))
@@ -312,7 +312,7 @@ Public Class Home
     End Sub
 
     Private Sub maincontainer_sizechanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MainContainer1.SizeChanged
-        If MainContainer1.Width = 680 Then
+        If MainContainer1.Width < 700 Then
             With MainContainer1
                 If .Controls.Count > 0 Then
                     .Controls.Item(0).Scale(New System.Drawing.SizeF(1 / 1.2, 1))
@@ -333,7 +333,7 @@ Public Class Home
         End If
     End Sub
     Private Sub maincontainer2_sizechanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MainContainer2.SizeChanged
-        If MainContainer2.Width = 680 Then
+        If MainContainer2.Width < 700 Then
             With MainContainer2
                 If .Controls.Count > 0 Then
                     .Controls.Item(0).Scale(New System.Drawing.SizeF(1 / 1.2, 1))
@@ -427,21 +427,6 @@ Public Class Home
         'Me.MainContainer.Width = 680            ' adjust its appearance
     End Sub
 
-    Private Sub BT_charg_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        'Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
-        If Not f Is Nothing Then
-            f.Close()
-        End If
-        f = New PVPage()         ' assign the search form to  the f form
-        f.TopLevel = False
-        f.TopMost = True
-        f.WindowState = FormWindowState.Normal
-        Me.MainContainer1.Controls.Add(f)        ' add the controlers of the searche page to the main form f 
-        f.Show()                                ' show the form f in the middle of the home page
-        Me.MainContainer1.Visible = True
-        'Me.MainContainer.Width = 680            ' adjust its appearance
-    End Sub
-
     Private Sub DetailButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DetailButton.Click
         If f.GetType.ToString.Equals("EsistHistoryManagement_v1.affichResearchResult") Or f.GetType.ToString.Equals("EsistHistoryManagement_v1.ClassementPage") Then
             'Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
@@ -450,7 +435,7 @@ Public Class Home
                 MainContainer1.Visible = False
             End If
 
-            h = New details(CType(f, affichResearchResult).StudentList.Item(0))        ' assign the search form to  the f form
+            h = New details(CTypeDynamic(f, f.GetType()).StudentList.Item(0))        ' assign the search form to  the f form
             h.TopLevel = False
             h.TopMost = True
             h.WindowState = FormWindowState.Normal
@@ -471,7 +456,7 @@ Public Class Home
                 MainContainer1.Visible = False
             End If
 
-            h = New modifier(CType(f, affichResearchResult).StudentList.Item(0))        ' assign the search form to  the f form
+            h = New modifier(CTypeDynamic(f, f.GetType()).StudentList.Item(0))        ' assign the search form to  the f form
             h.TopLevel = False
             h.TopMost = True
             h.WindowState = FormWindowState.Normal
@@ -492,7 +477,7 @@ Public Class Home
                 MainContainer1.Visible = False
             End If
 
-            h = New RN(CType(f, affichResearchResult).StudentList.Item(0))         ' assign the search form to  the f form
+            h = New RN(CTypeDynamic(f, f.GetType()).StudentList.Item(0))         ' assign the search form to  the f form
             h.TopLevel = False
             h.TopMost = True
             h.WindowState = FormWindowState.Normal
@@ -512,7 +497,7 @@ Public Class Home
                 'f.Hide()
                 MainContainer1.Visible = False
             End If
-            h = New RNGPage(CType(f, affichResearchResult).StudentList.Item(0))         ' assign the search form to  the f form
+            h = New RNGPage(CTypeDynamic(f, f.GetType()).StudentList.Item(0))         ' assign the search form to  the f form
             h.TopLevel = False
             h.TopMost = True
             h.WindowState = FormWindowState.Normal
@@ -525,27 +510,6 @@ Public Class Home
         End If
     End Sub
 
-    'Private Sub HistoryButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-    '    If f.GetType.ToString.Equals("EsistHistoryManagement_v1.affichResearchResult") Or f.GetType.ToString.Equals("EsistHistoryManagement_v1.ClassementPage") Then
-    '        Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
-    '        If Not f Is Nothing Then
-    '            'f.Hide()
-    '            MainContainer1.Visible = False
-    '        End If
-
-    '        h = New Historique(CType(f, affichResearchResult).StudentList.Item(0))        ' assign the search form to  the f form
-    '        h.TopLevel = False
-    '        h.TopMost = True
-    '        h.WindowState = FormWindowState.Normal
-    '        Me.MainContainer2.Controls.Add(h)        ' add the controlers of the searche page to the main form f 
-    '        h.Show()                                ' show the form f in the middle of the home page
-    '        Me.MainContainer2.Visible = True
-    '        Me.MainContainer1.Visible = False
-    '        'Me.MainContainer1.Width = 680            ' adjust its appearance
-
-    '    End If
-    'End Sub
-
     Private Sub PrintButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PrintButton.Click
         If f.GetType.ToString.Equals("EsistHistoryManagement_v1.affichResearchResult") Or f.GetType.ToString.Equals("EsistHistoryManagement_v1.ClassementPage") Then
             'Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
@@ -554,7 +518,7 @@ Public Class Home
                 MainContainer1.Visible = False
             End If
 
-            h = New Attestation(CType(f, affichResearchResult).StudentList.Item(0))         ' assign the search form to  the f form
+            h = New Attestation(CTypeDynamic(f, f.GetType()).StudentList.Item(0))         ' assign the search form to  the f form
             h.TopLevel = False
             h.TopMost = True
             h.WindowState = FormWindowState.Normal
@@ -613,10 +577,29 @@ Public Class Home
         End If
     End Sub
 
-   
 End Class
 
 
+'Private Sub HistoryButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+'    If f.GetType.ToString.Equals("EsistHistoryManagement_v1.affichResearchResult") Or f.GetType.ToString.Equals("EsistHistoryManagement_v1.ClassementPage") Then
+'        Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
+'        If Not f Is Nothing Then
+'            'f.Hide()
+'            MainContainer1.Visible = False
+'        End If
+
+'        h = New Historique(CType(f, affichResearchResult).StudentList.Item(0))        ' assign the search form to  the f form
+'        h.TopLevel = False
+'        h.TopMost = True
+'        h.WindowState = FormWindowState.Normal
+'        Me.MainContainer2.Controls.Add(h)        ' add the controlers of the searche page to the main form f 
+'        h.Show()                                ' show the form f in the middle of the home page
+'        Me.MainContainer2.Visible = True
+'        Me.MainContainer1.Visible = False
+'        'Me.MainContainer1.Width = 680            ' adjust its appearance
+
+'    End If
+'End Sub
 
 
 

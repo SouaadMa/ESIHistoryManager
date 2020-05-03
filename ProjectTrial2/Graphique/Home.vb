@@ -450,7 +450,7 @@ Public Class Home
                 MainContainer1.Visible = False
             End If
 
-            h = New details(CType(f, affichResearchResult).StudentList.Item(0))        ' assign the search form to  the f form
+            h = New details(CTypeDynamic(f, f.GetType()).StudentList.Item(0))        ' assign the search form to  the f form
             h.TopLevel = False
             h.TopMost = True
             h.WindowState = FormWindowState.Normal
@@ -471,7 +471,7 @@ Public Class Home
                 MainContainer1.Visible = False
             End If
 
-            h = New modifier(CType(f, affichResearchResult).StudentList.Item(0))        ' assign the search form to  the f form
+            h = New modifier(CTypeDynamic(f, f.GetType()).StudentList.Item(0))        ' assign the search form to  the f form
             h.TopLevel = False
             h.TopMost = True
             h.WindowState = FormWindowState.Normal
@@ -492,7 +492,7 @@ Public Class Home
                 MainContainer1.Visible = False
             End If
 
-            h = New RN(CType(f, affichResearchResult).StudentList.Item(0))         ' assign the search form to  the f form
+            h = New RN(CTypeDynamic(f, f.GetType()).StudentList.Item(0))         ' assign the search form to  the f form
             h.TopLevel = False
             h.TopMost = True
             h.WindowState = FormWindowState.Normal
@@ -512,7 +512,7 @@ Public Class Home
                 'f.Hide()
                 MainContainer1.Visible = False
             End If
-            h = New RNGPage(CType(f, affichResearchResult).StudentList.Item(0))         ' assign the search form to  the f form
+            h = New RNGPage(CTypeDynamic(f, f.GetType()).StudentList.Item(0))         ' assign the search form to  the f form
             h.TopLevel = False
             h.TopMost = True
             h.WindowState = FormWindowState.Normal
@@ -554,7 +554,7 @@ Public Class Home
                 MainContainer1.Visible = False
             End If
 
-            h = New Attestation(CType(f, affichResearchResult).StudentList.Item(0))         ' assign the search form to  the f form
+            h = New Attestation(CTypeDynamic(f, f.GetType()).StudentList.Item(0))         ' assign the search form to  the f form
             h.TopLevel = False
             h.TopMost = True
             h.WindowState = FormWindowState.Normal

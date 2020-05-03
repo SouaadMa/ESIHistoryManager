@@ -243,6 +243,10 @@ Represents a strongly typed in-memory cache of data.
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.commerce_and_shopping">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.content">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -356,6 +360,10 @@ Represents a strongly typed in-memory cache of data.
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.modifier">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.multimedia">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

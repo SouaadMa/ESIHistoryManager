@@ -32,6 +32,7 @@ Partial Class ClassementPage
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.LimitUpDown = New System.Windows.Forms.NumericUpDown()
         Me.AllCheckBox = New System.Windows.Forms.CheckBox()
+        Me.SortDirectionButton = New System.Windows.Forms.Button()
         Me.FilterButton = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.SpecialiteBox = New System.Windows.Forms.ComboBox()
@@ -41,7 +42,6 @@ Partial Class ClassementPage
         Me.BT_NEXT = New System.Windows.Forms.Button()
         Me.BT_PREV = New System.Windows.Forms.Button()
         Me.PromoButton = New System.Windows.Forms.Button()
-        Me.SortDirectionButton = New System.Windows.Forms.Button()
         Me.PagesButtons = New System.Windows.Forms.FlowLayoutPanel()
         Me.PrevButton = New System.Windows.Forms.Button()
         Me.MiddleButton = New System.Windows.Forms.Button()
@@ -178,7 +178,7 @@ Partial Class ClassementPage
         Me.GroupBox1.Controls.Add(Me.LimitUpDown)
         Me.GroupBox1.Controls.Add(Me.AllCheckBox)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(228, 5)
+        Me.GroupBox1.Location = New System.Drawing.Point(281, 5)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(171, 52)
         Me.GroupBox1.TabIndex = 52
@@ -209,6 +209,19 @@ Partial Class ClassementPage
         Me.AllCheckBox.Text = "tout"
         Me.AllCheckBox.UseVisualStyleBackColor = True
         '
+        'SortDirectionButton
+        '
+        Me.SortDirectionButton.FlatAppearance.BorderSize = 0
+        Me.SortDirectionButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.SortDirectionButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.SortDirectionButton.ImageIndex = 0
+        Me.SortDirectionButton.ImageList = Me.FlecheList
+        Me.SortDirectionButton.Location = New System.Drawing.Point(19, 20)
+        Me.SortDirectionButton.Name = "SortDirectionButton"
+        Me.SortDirectionButton.Size = New System.Drawing.Size(30, 30)
+        Me.SortDirectionButton.TabIndex = 44
+        Me.SortDirectionButton.UseVisualStyleBackColor = True
+        '
         'FilterButton
         '
         Me.FilterButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
@@ -216,7 +229,7 @@ Partial Class ClassementPage
         Me.FilterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.FilterButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FilterButton.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.FilterButton.Location = New System.Drawing.Point(431, 22)
+        Me.FilterButton.Location = New System.Drawing.Point(492, 22)
         Me.FilterButton.Name = "FilterButton"
         Me.FilterButton.Size = New System.Drawing.Size(91, 28)
         Me.FilterButton.TabIndex = 46
@@ -227,7 +240,7 @@ Partial Class ClassementPage
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(136, 6)
+        Me.Label4.Location = New System.Drawing.Point(189, 6)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(71, 18)
         Me.Label4.TabIndex = 51
@@ -237,7 +250,7 @@ Partial Class ClassementPage
         '
         Me.SpecialiteBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SpecialiteBox.FormattingEnabled = True
-        Me.SpecialiteBox.Location = New System.Drawing.Point(136, 28)
+        Me.SpecialiteBox.Location = New System.Drawing.Point(189, 28)
         Me.SpecialiteBox.Margin = New System.Windows.Forms.Padding(30, 0, 50, 0)
         Me.SpecialiteBox.Name = "SpecialiteBox"
         Me.SpecialiteBox.Size = New System.Drawing.Size(68, 26)
@@ -333,19 +346,6 @@ Partial Class ClassementPage
         Me.PromoButton.Size = New System.Drawing.Size(83, 37)
         Me.PromoButton.TabIndex = 8
         Me.PromoButton.UseVisualStyleBackColor = True
-        '
-        'SortDirectionButton
-        '
-        Me.SortDirectionButton.FlatAppearance.BorderSize = 0
-        Me.SortDirectionButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.SortDirectionButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
-        Me.SortDirectionButton.ImageIndex = 0
-        Me.SortDirectionButton.ImageList = Me.FlecheList
-        Me.SortDirectionButton.Location = New System.Drawing.Point(19, 20)
-        Me.SortDirectionButton.Name = "SortDirectionButton"
-        Me.SortDirectionButton.Size = New System.Drawing.Size(30, 30)
-        Me.SortDirectionButton.TabIndex = 44
-        Me.SortDirectionButton.UseVisualStyleBackColor = True
         '
         'PagesButtons
         '

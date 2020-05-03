@@ -23,6 +23,7 @@
         listeChamps.Add(BDD.champsMATRIN)
         listeChamps.Add(BDD.champsNomEtud)
         listeChamps.Add(BDD.champsPrenoms)
+        listeChamps.Add(BDD.champsANNEEBAC)
         listeChamps.Add(BDD.champsCodePromo)
         ' Préparation de la liste des conditions
         listeConditions.Add(New Critere(BDD.champsDECIIN, "1"))

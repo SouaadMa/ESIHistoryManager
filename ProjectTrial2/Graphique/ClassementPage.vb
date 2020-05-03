@@ -2,6 +2,7 @@
 
     Public StudentList As New List(Of Etudiant)
     Public StudentTable As New DataTable()
+    Public filtredTable As New DataTable()
     Private nb_page As Integer = 0
     Public CURRENT_PAGE As Integer = 1
     Public SelectedStudent As Integer = -1
@@ -44,7 +45,7 @@
             .BackgroundImage = My.Resources.table_bleu
             SelectedStudent = CType(sender.Name.ToString.Chars(sender.Name.ToString.Length - 1).ToString, Integer)
             StudentList.Clear()
-            StudentList.Add(New Etudiant(StudentTable.Rows.Item(SelectedStudent - 1 + (CURRENT_PAGE - 1) * 7)))
+            StudentList.Add(New Etudiant(BDD.GetFromTable(BDD.nomTableEtudiant, New Critere(BDD.champsMATRIN, filtredTable.Rows.Item(SelectedStudent - 1 + (CURRENT_PAGE - 1) * 7)(BDD.champsMATRIN), BDD.nomTableEtudiant))))
             Console.WriteLine(SelectedStudent - 1 + (CURRENT_PAGE - 1) * 7)
 
         End With
@@ -92,16 +93,33 @@
     End Sub
 
     Public Sub affich_pageResult()
+
+        EtudiantPanel.Visible = True
+        'inisializer le bar des pages
+        If (StudentTable.Rows.Count Mod 7) = 0 Then
+            nb_page = filtredTable.Rows.Count \ 7
+        Else
+            nb_page = (filtredTable.Rows.Count \ 7) + 1
+        End If
+
+        If nb_page <= 2 Then
+            NextButton.Enabled = False
+            If nb_page = 1 Then
+                MiddleButton.Enabled = False
+                PrevButton.Enabled = False
+            End If
+        End If
+
         Dim i As Integer = 0
         Dim cpt As Integer = (CURRENT_PAGE - 1) * 7
         ' inisializer le nombre des esist
-        Me.RechLabel.Text = "Classement (" + StudentTable.Rows.Count.ToString + ")"
+        Me.RechLabel.Text = "Classement (" + filtredTable.Rows.Count.ToString + ")"
         For Each ctrl As Control In EtudiantPanel.Controls
             ctrl.Visible = True
         Next
         StudentList.Clear()
         'Console.WriteLine("Called !")
-        While (cpt < StudentTable.Rows.Count And i < 7)
+        While (cpt < filtredTable.Rows.Count And i < 7)
             'StudentList.Add(New Etudiant(StudentTable.Rows.Item(cpt)))
             Dim c As Control = EtudiantPanel.Controls.Find("Label" + (i + 1).ToString + "_0", True)(0)
             If c IsNot Nothing Then
@@ -120,7 +138,7 @@
             If c IsNot Nothing Then
                 Try
                     CType(c, Label).ForeColor = Color.Black
-                    CType(c, Label).Text = StudentTable.Rows.Item(cpt)("NomEtud")
+                    CType(c, Label).Text = filtredTable.Rows.Item(cpt)("NomEtud")
                 Catch ex As InvalidCastException
                     With CType(c, Label)
                         .ForeColor = Color.Red
@@ -133,7 +151,7 @@
             If c IsNot Nothing Then
                 Try
                     CType(c, Label).ForeColor = Color.Black
-                    CType(c, Label).Text = StudentTable.Rows.Item(cpt)("Prenoms")
+                    CType(c, Label).Text = filtredTable.Rows.Item(cpt)("Prenoms")
                 Catch ex As InvalidCastException
                     With CType(c, Label)
                         .ForeColor = Color.Red
@@ -146,7 +164,7 @@
             If c IsNot Nothing Then
                 Try
                     CType(c, Label).ForeColor = Color.Black
-                    CType(c, Label).Text = StudentTable.Rows.Item(cpt)("MATRIN")
+                    CType(c, Label).Text = filtredTable.Rows.Item(cpt)("MATRIN")
                 Catch ex As InvalidCastException
                     With CType(c, Label)
                         .ForeColor = Color.Red
@@ -159,7 +177,7 @@
             If c IsNot Nothing Then
                 Try
                     CType(c, Label).ForeColor = Color.Black
-                    CType(c, Label).Text = StudentTable.Rows.Item(cpt)("MoyClassement")
+                    CType(c, Label).Text = filtredTable.Rows.Item(cpt)("MoyClassement")
                 Catch ex As InvalidCastException
                     With CType(c, Label)
                         .ForeColor = Color.Red
@@ -168,40 +186,40 @@
                 End Try
             End If
 
-            'c = EtudiantPanel.Controls.Find("Label" + (i + 1).ToString + "_5", True)(0)
-            'If c IsNot Nothing Then
-            '    Try
-            '        CType(c, Label).ForeColor = Color.Black
-            '        'CType(c, Label).Text = StudentTable.Rows.Item(cpt)("ANNEEBAC")
-            '    Catch ex As InvalidCastException
-            '        With CType(c, Label)
-            '            .ForeColor = Color.Red
-            '            .Text = "Unknown"
-            '        End With
-            '    End Try
-            'End If
+            c = EtudiantPanel.Controls.Find("Label" + (i + 1).ToString + "_5", True)(0)
+            If c IsNot Nothing Then
+                Try
+                    CType(c, Label).ForeColor = Color.Black
+                    CType(c, Label).Text = StudentTable.Rows.Item(cpt)(BDD.champsANNEEBAC)
+                Catch ex As InvalidCastException
+                    With CType(c, Label)
+                        .ForeColor = Color.Red
+                        .Text = "Unknown"
+                    End With
+                End Try
+            End If
 
-            'c = EtudiantPanel.Controls.Find("Label" + (i + 1).ToString + "_6", True)(0)
-            'If c IsNot Nothing Then
-            '    Try
-            '        CType(c, Label).ForeColor = Color.Black
-            '        CType(c, Label).Text = StudentTable.Rows.Item(cpt)("SPECIALITE")
-            '    Catch ex As InvalidCastException
-            '        With CType(c, Label)
-            '            .ForeColor = Color.Red
-            '            .Text = "Unknown"
-            '        End With
-            '    End Try
-            'End If
+            c = EtudiantPanel.Controls.Find("Label" + (i + 1).ToString + "_6", True)(0)
+            If c IsNot Nothing Then
+                Try
+                    CType(c, Label).ForeColor = Color.Black
+                    CType(c, Label).Text = filtredTable.Rows.Item(cpt)(BDD.champsCodePromo).ToString.Substring(filtredTable.Rows.Item(cpt)(BDD.champsCodePromo).ToString.IndexOf("/") + 1, filtredTable.Rows.Item(cpt)(BDD.champsCodePromo).ToString.LastIndexOf("/") - filtredTable.Rows.Item(cpt)(BDD.champsCodePromo).ToString.IndexOf("/") - 1)
+                Catch ex As InvalidCastException
+                    With CType(c, Label)
+                        .ForeColor = Color.Red
+                        .Text = "Unknown"
+                    End With
+                End Try
+            End If
 
             i += 1
             cpt += 1
         End While
 
-        If StudentTable.Rows.Count Mod 7 <> 0 And CURRENT_PAGE = nb_page Then
+        If filtredTable.Rows.Count Mod 7 <> 0 And CURRENT_PAGE = nb_page Then
             For Each ctrl As Control In EtudiantPanel.Controls
                 If ctrl.GetType.ToString.Equals("System.Windows.Forms.TableLayoutPanel") Then
-                    Dim endb As Integer = 8 - nb_page * 7 + StudentTable.Rows.Count
+                    Dim endb As Integer = 8 - nb_page * 7 + filtredTable.Rows.Count
                     For ind As Integer = 7 To endb Step -1
                         If ctrl.Name.Equals("TableLayoutPanel" + ind.ToString) Then
                             ctrl.Visible = False
@@ -280,13 +298,13 @@
         Next
     End Sub
 
-    Private Sub SortDirectionButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub SortDirectionButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SortDirectionButton.Click
         SortDirectionButton.ImageIndex = (SortDirectionButton.ImageIndex + 1) Mod 2
         SortDirectionAscendant = Not SortDirectionAscendant
         If SortDirectionAscendant Then
-            StudentTable = Classement.SortASCCollection(StudentTable, "MoyClassement")
+            filtredTable = Classement.SortASCCollection(StudentTable, "MoyClassement")
         Else
-            StudentTable = Classement.SortDESCollection(StudentTable, "MoyClassement")
+            filtredTable = Classement.SortDESCollection(StudentTable, "MoyClassement")
         End If
         affich_pageResult()
     End Sub
@@ -294,7 +312,7 @@
     Private Sub UpdateClassemntResult()
 
         StudentTable = Classement.TraitClassement(ValueTextBox.Text)
-
+        filtredTable = StudentTable.Copy()
         'Form1.ds.Tables.Add(StudentTable.Copy())
         'Form1.Show()
         'StudentTable = Recherche.traitRechercher(crit, RechercherPage.BackgroundWorker1, New System.ComponentModel.DoWorkEventArgs(Nothing))
@@ -305,23 +323,11 @@
             EtudiantPanel.Visible = False
             Console.WriteLine("Liste des etudiants est vide")
         Else
-            EtudiantPanel.Visible = True
-            'inisializer le bar des pages
-            If (StudentTable.Rows.Count Mod 7) = 0 Then
-                nb_page = StudentTable.Rows.Count \ 7
-            Else
-                nb_page = (StudentTable.Rows.Count \ 7) + 1
-            End If
-
+            affich_pageResult()
             BT_P1_Click(PrevButton, New EventArgs())
-            If nb_page <= 2 Then
-                NextButton.Enabled = False
-                If nb_page = 1 Then
-                    MiddleButton.Enabled = False
-                    PrevButton.Enabled = False
-                End If
-            End If
         End If
+        SpecialiteBox.Text = ""
+        AllCheckBox.Checked = True
         Console.WriteLine("pages number is : " + nb_page.ToString)
 
     End Sub
@@ -386,22 +392,6 @@
 
     End Sub
 
-    Private Sub ClassmentModeLabel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
-    End Sub
-
-    Private Sub ClssemntTypeBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
-    End Sub
-
-    Private Sub ClassementTypeLabel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
-    End Sub
-
-    Private Sub ComboBox4_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
-    End Sub
-
     Private Sub ValueTextBox_Click(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles ValueTextBox.MouseDoubleClick, ValueTextBox.Click
 
     End Sub
@@ -415,7 +405,7 @@
 
     Private Sub NiveauBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SpecialiteBox.SelectedIndexChanged
 
-        If Not SpecialiteBox.Text.Equals("") Then
+        If Not SpecialiteBox.Text.Equals("") Or Not AllCheckBox.Checked Then
             Me.FilterButton.Enabled = True
         Else
             Me.FilterButton.Enabled = False
@@ -442,14 +432,16 @@
         'crit.Add(New Critere(BDD.champsAnnee, ValueTextBox.Text.Substring(2, 2)))
 
         If Not SpecialiteBox.Text.Equals("") Then
-            StudentTable = Classement.FilterDataTableBy(StudentTable, New Critere(BDD.champsOption, SpecialiteBox.Text))
+            filtredTable = Classement.FilterDataTableBy(StudentTable, New Critere(BDD.champsOption, SpecialiteBox.Text))
         End If
 
         If Not AllCheckBox.Checked Then
-            StudentTable = Classement.LimitRows(StudentTable, LimitUpDown.Value)
+            filtredTable = Classement.LimitRows(filtredTable, LimitUpDown.Value)
         End If
 
-        affich_pageResult()
+        'affich_pageResult()
+        CURRENT_PAGE = 1
+        BT_P1_Click(PrevButton, New EventArgs())
     End Sub
 
 End Class

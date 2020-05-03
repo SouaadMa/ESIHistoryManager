@@ -25,64 +25,14 @@
                 ind = 0
                 found = False
                 Try
-                    While Not found And ind < (BDD.getStringTable(tab1)).Length
-                        ' Chercher si le champ donnée existe dans le tableau tab1 comme champ des stringde la base de(donnée)
-                        If champ.Equals((BDD.getStringTable(tab1))(ind)) Then
-                            found = True
-                        Else
-                            ind += 1
-                        End If
-                    End While
-                    ind = 0
-                    While Not found And ind < (BDD.getNumTable(tab1)).Length
-                        ' Chercher si le champ donnée existe dans le tableau tab1 comme champ numériquede la base de(donnée)
-                        If champ.Equals((BDD.getNumTable(tab1))(ind)) Then
-                            found = True
-                        Else
-                            ind += 1
-                        End If
-                    End While
-                    ind = 0
-                    While Not found And ind < (BDD.getBoolTable(tab1)).Length
-                        ' Chercher si le champ donnée existe dans le tableau tab1 comma champ boolean de la base de(donnée)
-                        If champ.Equals((BDD.getBoolTable(tab1))(ind)) Then
-                            found = True
-                        Else
-                            ind += 1
-                        End If
-                    End While
+                    found = lookInTab(tab1, champ, found)
                     If (found) Then
                         finalChamp = tab1 + "." + champ
                     Else
                         finalChamp = tab2 + "." + champ
                     End If
                     ind = 0
-                    While Not found And ind < (BDD.getStringTable(tab2)).Length
-                        ' Chercher si le champ donnée existe dans le tableau tab2 des champs string de la base dedonnée()
-                        If champ.Equals((BDD.getStringTable(tab2))(ind)) Then
-                            found = True
-                        Else
-                            ind += 1
-                        End If
-                    End While
-                    ind = 0
-                    While Not found And ind < (BDD.getNumTable(tab2)).Length
-                        ' Chercher si le champ donnée existe dans le tableau tab2 des champs numérique de la base de(donnée)
-                        If champ.Equals((BDD.getNumTable(tab2))(ind)) Then
-                            found = True
-                        Else
-                            ind += 1
-                        End If
-                    End While
-                    ind = 0
-                    While Not found And ind < (BDD.getBoolTable(tab2)).Length
-                        ' Chercher si le champ donnée existe dans le tableau tab2 des champs boolean de la base de donnée()
-                        If champ.Equals((BDD.getBoolTable(tab2))(ind)) Then
-                            found = True
-                        Else
-                            ind += 1
-                        End If
-                    End While
+                    found = lookInTab(tab2, champ, found)
                 Catch ex As Exception
                     MsgBox(ex.Message)
                 End Try
@@ -190,6 +140,44 @@
 
     End Function
 
+    Public Shared Function lookInTab(ByVal tab As String, ByVal champ As String, ByVal found As Boolean) As Boolean
+        ' Si found = false, found = le champ 'champ' existe dans la table 'tab' sinon found ne change pas
+        Try
+            Dim ind = 0
+
+            While Not found And ind < (BDD.getStringTable(tab)).Length
+                ' Chercher si le champ donnée existe dans le tableau tab comme champ des string de la base de donnée
+                If champ.Equals((BDD.getStringTable(tab))(ind)) Then
+                    found = True
+                Else
+                    ind += 1
+                End If
+            End While
+            ind = 0
+            While Not found And ind < (BDD.getNumTable(tab)).Length
+                ' Chercher si le champ donnée existe dans le tableau tab comme champ numérique de la base de donnée
+                If champ.Equals((BDD.getNumTable(tab))(ind)) Then
+                    found = True
+                Else
+                    ind += 1
+                End If
+            End While
+            ind = 0
+            While Not found And ind < (BDD.getBoolTable(tab)).Length
+                ' Chercher si le champ donnée existe dans le tableau tab comme champ boolean de la base de donnée
+                If champ.Equals((BDD.getBoolTable(tab))(ind)) Then
+                    found = True
+                Else
+                    ind += 1
+                End If
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+        Return found
+    End Function
+
     Public Shared Function AjouterOrdre_Requete(ByVal requete As String, ByVal Champ As String) As String
 
         requete = requete & " order  by " & Champ & " "
@@ -227,6 +215,80 @@
         Return SQLQuery
 
 
+
+    End Function
+
+    Public Shared Function addCount(ByVal requete As String, ByVal champ As String, ByVal table As String, ByVal name As String) As String
+        ' Ajouter un champ count a un instruction sql
+        Dim finalChamp = ""
+
+        finalChamp = table + "." + champ
+
+        If (lookInTab(table, champ, False)) Then
+            If (requete.Contains("SELECT")) Then
+
+                requete = requete.Insert(requete.IndexOf("SELECT") + 6, " Count ( " + finalChamp + " ) AS " + name + " , ")
+            Else
+                requete = " SELECT Count ( " + finalChamp + " ) As " + name + " FROM " + table
+            End If
+        End If
+
+        Return requete
+    End Function
+
+    Public Shared Function addGroupBy(ByVal requete As String, ByVal champ As String, ByVal table As String) As String
+        ' Ajouter un champ de GROUPBY a un instruction sql
+        If (lookInTab(table, champ, False)) Then
+            If (requete.Contains("GROUP BY")) Then
+                requete = requete.Insert(requete.IndexOf("GROUP BY") + 8, " " + table + "." + champ + " , ")
+            Else
+                requete = requete + " GROUP BY " + table + "." + champ
+            End If
+        End If
+
+        Return requete
+    End Function
+
+    Public Shared Function addHaving(ByVal requete As String, ByVal condition As Critere, ByVal table As String) As String
+        ' Ajouter un condition HAVNG a un instruction sql
+        Dim ind = 0
+        Dim champ As String = ""
+        Dim valeur As String = ""
+        Dim t1 As String() = {}
+        Dim found As Boolean = False
+
+        champ = condition.getChamps
+        valeur = "'" + condition.getValeur.ToString + "'"
+
+        Select Case (condition.getValeur.GetType).ToString ' Savoir le type de la valeur :
+            Case "System.String" '
+                t1 = BDD.getStringTable(table)               ' Chercher dans le tableau des champs Text
+            Case GetType(Integer).ToString, GetType(Double).ToString '
+                t1 = BDD.getNumTable(table)                   ' Chercher dans le tableau des champs Numerique
+            Case "System.Boolean"
+                t1 = BDD.getBoolTable(table)                  ' Chercher dans le tableau des champs Booleen
+                'Case Else tab = {}
+        End Select
+        Try
+            While Not found And ind < t1.Length ' Chercher si le champ donnée existe dans le tableau tab1 de la base de donnée
+                If champ.Equals(t1(ind)) Then
+                    found = True
+                Else
+                    ind += 1
+                End If
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        If found Then                       ' Si le champ donnée exite
+            If (requete.Contains("HAVING")) Then
+                requete = requete.Insert(requete.IndexOf("HAVING") + 6, " " + table + "." + champ + " = " + valeur + " AND ")
+            Else
+                requete = requete + " HAVING " + table + "." + champ + " = " + valeur
+            End If
+        End If
+
+        Return requete
 
     End Function
 

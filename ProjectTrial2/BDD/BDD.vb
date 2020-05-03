@@ -637,7 +637,7 @@ Public Class BDD
         If (ind > -1) Then
             Return champCorespondante(ind)
         Else
-            MsgBox("Ces deux tables n'ont pas de correspandance" + tabs.elem1 + tabs.elem2)
+            'MsgBox("Ces deux tables n'ont pas de correspandance" + tabs.elem1 + tabs.elem2)
             Return New Paire("", "")
         End If
     End Function

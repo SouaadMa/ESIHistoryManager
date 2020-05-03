@@ -3,14 +3,19 @@
 
     Private Shared tableDomaineEtudiants As String = "" ' BDD.nomTableINSCRIPTION
     Private Shared tableCodes As String() = {BDD.champsCodePromo, BDD.champsMATRIN}
+    Private crEtudes As Critere
+    Private champRepartition As String
+    Private dataTable As DataTable
+    Private paireTables As New Paire("", "")
 
 
+    Public Sub New(ByVal domaineEtudiants As List(Of Critere), ByVal ChampsDetude As Critere, ByVal RepartitionPar As String)
 
-
-    Public Shared Sub TraitStatistiques(ByVal domaineEtudiants As List(Of Critere), ByVal ChampsDetude As String, ByVal RepartitionPar As String)
-
+        Dim domaine As New List(Of Critere)(domaineEtudiants.AsEnumerable)
         Dim CodeConditions As New List(Of Critere)
         Dim Champs As New List(Of String)
+        crEtudes = ChampsDetude
+        champRepartition = RepartitionPar
 
         ' ***********************PARTIE 01: PREPARATION DES ARGUMENTS DE LA REQUETE*********************'
         ' **********************************************************************************************'
@@ -24,9 +29,9 @@
         If (domaineEtudiants.Count > 0) Then
             tableDomaineEtudiants = BDD.nomTableINSCRIPTION
 
-            If checkTableDomaine(domaineEtudiants, tableDomaineEtudiants) = True Then
+            If checkTableDomaine(domaine, tableDomaineEtudiants) = True Then
 
-                ExtractPartsOfCodeTable(domaineEtudiants, CodeConditions, tableCodes(0))
+                ExtractPartsOfCodeTable(domaine, CodeConditions, tableCodes(0))
 
             Else
                 MsgBox("Les conditions sur le domaine doivent appartenir à tableDomaine")
@@ -34,10 +39,10 @@
 
         End If
 
-        Console.WriteLine("domaine")
-        show(domaineEtudiants)
-        Console.WriteLine("codeconditions")
-        show(CodeConditions)
+        'Console.WriteLine("domaine")
+        'show(domaine)
+        'Console.WriteLine("codeconditions")
+        'show(CodeConditions)
 
 
         '..............Conditions, Check :D
@@ -45,14 +50,15 @@
 
         ' On ajoute le champ d'étude, et le champ de répartition aux champs de la requête
         ' Et on prépare les tables avec lesquelles on va faire la requête
-        Dim PaireTables As New Paire("", "") 'Objet dans lequel on récupère les tables
 
-        Champs = prepareChamps(ChampsDetude, RepartitionPar, PaireTables)
 
-        Console.WriteLine("champsRetour")
-        show(Champs)
+        Champs = prepareChamps()
 
-        Console.WriteLine("Paire")
+        'Console.WriteLine("champsRetour")
+        'show(Champs)
+
+        'Console.WriteLine("Paire")
+        'Console.WriteLine(PaireTables.elem1 + "." + PaireTables.elem2)
         Console.WriteLine(PaireTables.elem1 + "." + PaireTables.elem2)
 
         '..............Champs, Check :DD
@@ -62,24 +68,35 @@
         '**********************PARTIE 02 : PREPARATION DE LA REQUETE EN FONCTION DES ENTREES*************'
         '************************************************************************************************'
 
-        Dim requeteSQL As String = prepareRequeteInitiale(Champs, PaireTables, domaineEtudiants)
+        Dim requeteSQL As String = prepareRequeteInitiale(Champs, paireTables, domaine)
 
-        Console.WriteLine(requeteSQL)
 
         For Each ch In CodeConditions
             requeteSQL = Class_BDD.AddLIKECondition(requeteSQL, tableCodes(0), ch)
         Next
 
-        Console.WriteLine(requeteSQL)
-
-        ' A cette étape, notre requête sélectionne les colonnes champEtudes et champRepartition
+        
+        ' A cette étape, notre requête sélectionne les colonnes crEtudes et champRepartition
         ' de toutes les lignes de la BDD qui vérifient les critères du domaine en entrée.
 
 
         ' Il nous reste d'ajouter la fonction d'agrégation 'COUNT'
         ' et de les regouper selon le champ de répartition
 
-        ' Et ensuite on va ajouter des conditions si on en aura besoin
+        requeteSQL = Class_BDD.addCount(requeteSQL, champRepartition, paireTables.elem2, "Total")
+
+        requeteSQL = ajouteConditions(requeteSQL)
+
+        requeteSQL = Class_BDD.addGroupBy(requeteSQL, champRepartition, paireTables.elem2)
+
+        Console.WriteLine(requeteSQL)
+
+
+
+
+
+
+
 
 
 
@@ -218,35 +235,35 @@
     ' Méthode qui prépare les champs de la requête des statistiques à partir du champ d'études et le champ de
     ' répartition, elle retourne une collection des champs, et remplit le paire des tables qu'on va travailler avec
 
-    Private Shared Function prepareChamps(ByVal champE As String, ByVal champR As String, ByRef tables As Paire) As List(Of String)
+    Private Function prepareChamps() As List(Of String)
 
         Dim champsRetour As New List(Of String)
 
-        Select Case champE
+        Select Case crEtudes.getChamps
 
             Case "Nombre"
             Case BDD.champsDECIIN, BDD.champsMOYEIN
-                champsRetour.Add(champE)
-                tables.elem1 = BDD.nomTableINSCRIPTION
+                'champsRetour.Add(crEtudes.getChamps)
+                paireTables.elem1 = BDD.nomTableINSCRIPTION
             Case BDD.champsNOJUNO
-                tables.elem1 = BDD.nomTableNOTE
-                champsRetour.Add(champE)
+                paireTables.elem1 = BDD.nomTableNOTE
+                'champsRetour.Add(crEtudes.getChamps)
 
 
         End Select
 
-        champsRetour.Add(champR)
+        champsRetour.Add(champRepartition)
 
-        Select Case champR
+        Select Case champRepartition
 
             Case BDD.champsSEXE
-                tables.elem2 = BDD.nomTableEtudiant
+                paireTables.elem2 = BDD.nomTableEtudiant
             Case BDD.champsOption, BDD.champsNiveau
-                tables.elem2 = BDD.nomTablePROMO
+                paireTables.elem2 = BDD.nomTablePROMO
             Case BDD.champsCodeGroupe, BDD.champsDECIIN
-                tables.elem2 = BDD.nomTableINSCRIPTION
+                paireTables.elem2 = BDD.nomTableINSCRIPTION
             Case BDD.champsCOMAMA
-                tables.elem2 = BDD.nomTableMATIERE
+                paireTables.elem2 = BDD.nomTableMATIERE
 
         End Select
 
@@ -301,8 +318,8 @@
 
         If tab1 = tab2 Then
 
-            Console.WriteLine("tab1 = tab2")
-            Console.WriteLine(tab1 + "." + tab2)
+            'Console.WriteLine("tab1 = tab2")
+            'Console.WriteLine(tab1 + "." + tab2)
 
             req = Rech_BDD.genereRechRequetes(req, Nothing, tab1)
 
@@ -322,14 +339,17 @@
 
             req = Class_BDD.genereRechRequete(champs, tab1, tab2, conditions, True)
 
-            Console.WriteLine("DEUX TABS NON VIDES")
-            Console.WriteLine(tab1 + "." + tab2)
+            'Console.WriteLine("DEUX TABS NON VIDES")
+            'Console.WriteLine(tab1 + "." + tab2)
 
-            For Each cr In conditions
-                Console.WriteLine(cr.getChamps)
-            Next
+            'For Each cr In conditions
+            'Console.WriteLine(cr.getChamps)
+            'Next
 
         End If
+
+        paireTables.elem1 = tab1
+        paireTables.elem2 = tab2
 
 
         Return req
@@ -356,7 +376,31 @@
         Console.WriteLine()
     End Sub
 
-    Public Shared Function GetTaux(ByVal type As String, ByVal champE As String, ByVal dt As DataTable) As Integer
+    Public Function ajouteConditions(ByVal req As String) As String
+
+        Dim nouvReq As String = req
+
+        Select Case crEtudes.getChamps
+
+            Case BDD.champsNOJUNO
+                nouvReq = Rech_BDD.AddWHEREComparaison(req, crEtudes, 1, True)
+            Case BDD.champsDECIIN
+                Select Case crEtudes.getValeur.ToString
+
+                    Case "REUSSITE"
+                        nouvReq = Rech_BDD.AddWHEREComparaison(req, New Critere("(" + BDD.champsDECIIN, "'1'"), 0, True)
+                        nouvReq = Rech_BDD.AddWHEREComparaison(nouvReq, New Critere(BDD.champsDECIIN, "'2')"), 0, False)
+                    Case "ECHEC"
+                        nouvReq = Rech_BDD.AddWHEREComparaison(req, New Critere(BDD.champsDECIIN, "'3'"), 0, True)
+                        nouvReq = Rech_BDD.AddWHEREComparaison(nouvReq, New Critere(BDD.champsDECIIN, "'4'"), 0, False)
+                    Case Else
+                        'Abandon / Maladie
+                        nouvReq = Rech_BDD.AddWHEREComparaison(req, New Critere(BDD.champsDECIIN, "'0'"), 0, True)
+
+
+                End Select
+            Case BDD.champsMOYEIN
+                nouvReq = Rech_BDD.AddWHEREComparaison(req, crEtudes, 1, True)
 
 
 
@@ -364,6 +408,30 @@
 
 
 
+
+
+
+
+
+
+
+
+        End Select
+
+        Return nouvReq
+
+    End Function
+
+    Public Shared Function GetTotal(ByVal crEtudes As String, ByVal valeurCompar As Object, ByVal compar As Integer, ByVal dt As DataTable) As Integer
+
+        Select Case crEtudes
+
+            Case "Nombre"
+
+
+
+
+        End Select
 
 
         Return 0

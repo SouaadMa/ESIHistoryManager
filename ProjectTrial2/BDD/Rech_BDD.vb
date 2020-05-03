@@ -158,6 +158,37 @@ Public Class Rech_BDD
 
     End Function
 
+    Public Shared Function AddWHEREComparaison(ByVal req As String, ByVal critere As Critere, ByVal valComparaison As Integer, ByVal CONJUNCTION As Boolean) As String
+
+        Dim comp As String
+
+        If (valComparaison = 0) Then
+            comp = " = "
+        Else
+            If valComparaison > 0 Then
+                comp = " > "
+            Else
+                comp = " < "
+            End If
+        End If
+
+        If (req.Contains("WHERE")) Then
+
+            If CONJUNCTION Then
+                Return req + " AND " + critere.getChamps + comp + critere.getValeur.ToString
+            Else
+                Return req + " OR " + critere.getChamps + comp + critere.getValeur.ToString
+            End If
+
+
+        Else
+            Return req + " WHERE " + critere.getChamps + comp + critere.getValeur.ToString
+        End If
+
+
+    End Function
+
+
 
 
 

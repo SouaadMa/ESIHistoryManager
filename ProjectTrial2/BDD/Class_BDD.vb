@@ -150,6 +150,9 @@
 
     Public Shared Function lookInTab(ByVal tab As String, ByVal champ As String, ByVal found As Boolean) As Boolean
         ' Si found = false, found = le champ 'champ' existe dans la table 'tab' sinon found ne change pas
+
+
+
         Try
             Dim ind = 0
 

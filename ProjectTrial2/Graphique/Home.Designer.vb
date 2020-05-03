@@ -55,7 +55,7 @@ Partial Class Home
         Me.CancelBackgroundButton = New System.Windows.Forms.Button()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.logo_bleu = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.HomeButton = New System.Windows.Forms.Button()
         Me.SideBar.SuspendLayout()
         CType(Me.LogoPicture, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ProfilePane.SuspendLayout()
@@ -355,13 +355,13 @@ Partial Class Home
         Me.NavBar.Controls.Add(Me.RNGButton, 1, 0)
         Me.NavBar.Controls.Add(Me.ModifButton, 4, 0)
         Me.NavBar.Controls.Add(Me.RNButton, 0, 0)
-        Me.NavBar.Location = New System.Drawing.Point(186, 642)
-        Me.NavBar.Margin = New System.Windows.Forms.Padding(15)
+        Me.NavBar.Location = New System.Drawing.Point(186, 643)
+        Me.NavBar.Margin = New System.Windows.Forms.Padding(0)
         Me.NavBar.MaximumSize = New System.Drawing.Size(1000, 60)
         Me.NavBar.Name = "NavBar"
         Me.NavBar.RowCount = 1
         Me.NavBar.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.NavBar.Size = New System.Drawing.Size(680, 54)
+        Me.NavBar.Size = New System.Drawing.Size(680, 55)
         Me.NavBar.TabIndex = 2
         '
         'PrintButton
@@ -379,7 +379,7 @@ Partial Class Home
         Me.PrintButton.Margin = New System.Windows.Forms.Padding(2)
         Me.PrintButton.MinimumSize = New System.Drawing.Size(45, 49)
         Me.PrintButton.Name = "PrintButton"
-        Me.PrintButton.Size = New System.Drawing.Size(77, 50)
+        Me.PrintButton.Size = New System.Drawing.Size(77, 51)
         Me.PrintButton.TabIndex = 10
         Me.PrintButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.PrintButton.UseVisualStyleBackColor = True
@@ -399,7 +399,7 @@ Partial Class Home
         Me.DetailButton.Margin = New System.Windows.Forms.Padding(2)
         Me.DetailButton.MinimumSize = New System.Drawing.Size(45, 49)
         Me.DetailButton.Name = "DetailButton"
-        Me.DetailButton.Size = New System.Drawing.Size(77, 50)
+        Me.DetailButton.Size = New System.Drawing.Size(77, 51)
         Me.DetailButton.TabIndex = 6
         Me.DetailButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.DetailButton.UseVisualStyleBackColor = True
@@ -420,7 +420,7 @@ Partial Class Home
         Me.RNGButton.Margin = New System.Windows.Forms.Padding(2)
         Me.RNGButton.MinimumSize = New System.Drawing.Size(45, 49)
         Me.RNGButton.Name = "RNGButton"
-        Me.RNGButton.Size = New System.Drawing.Size(77, 50)
+        Me.RNGButton.Size = New System.Drawing.Size(77, 51)
         Me.RNGButton.TabIndex = 5
         Me.RNGButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.RNGButton.UseVisualStyleBackColor = True
@@ -440,7 +440,7 @@ Partial Class Home
         Me.ModifButton.Margin = New System.Windows.Forms.Padding(2)
         Me.ModifButton.MinimumSize = New System.Drawing.Size(45, 49)
         Me.ModifButton.Name = "ModifButton"
-        Me.ModifButton.Size = New System.Drawing.Size(77, 50)
+        Me.ModifButton.Size = New System.Drawing.Size(77, 51)
         Me.ModifButton.TabIndex = 8
         Me.ModifButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.ModifButton.UseVisualStyleBackColor = True
@@ -462,7 +462,7 @@ Partial Class Home
         Me.RNButton.Margin = New System.Windows.Forms.Padding(2)
         Me.RNButton.MinimumSize = New System.Drawing.Size(45, 49)
         Me.RNButton.Name = "RNButton"
-        Me.RNButton.Size = New System.Drawing.Size(63, 50)
+        Me.RNButton.Size = New System.Drawing.Size(63, 51)
         Me.RNButton.TabIndex = 3
         Me.RNButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.RNButton.UseVisualStyleBackColor = True
@@ -474,7 +474,7 @@ Partial Class Home
         Me.MainContainer1.Location = New System.Drawing.Point(185, 0)
         Me.MainContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.MainContainer1.Name = "MainContainer1"
-        Me.MainContainer1.Size = New System.Drawing.Size(683, 640)
+        Me.MainContainer1.Size = New System.Drawing.Size(682, 640)
         Me.MainContainer1.TabIndex = 10
         Me.MainContainer1.Visible = False
         '
@@ -485,7 +485,7 @@ Partial Class Home
         Me.MainContainer2.Location = New System.Drawing.Point(185, 0)
         Me.MainContainer2.Margin = New System.Windows.Forms.Padding(0)
         Me.MainContainer2.Name = "MainContainer2"
-        Me.MainContainer2.Size = New System.Drawing.Size(683, 641)
+        Me.MainContainer2.Size = New System.Drawing.Size(682, 640)
         Me.MainContainer2.TabIndex = 30
         '
         'ProgressPanel
@@ -495,10 +495,10 @@ Partial Class Home
         Me.ProgressPanel.Controls.Add(Me.PictureBox2)
         Me.ProgressPanel.Controls.Add(Me.PictureBox1)
         Me.ProgressPanel.Controls.Add(Me.CancelBackgroundButton)
-        Me.ProgressPanel.Location = New System.Drawing.Point(186, 0)
+        Me.ProgressPanel.Location = New System.Drawing.Point(185, 0)
         Me.ProgressPanel.Margin = New System.Windows.Forms.Padding(0)
         Me.ProgressPanel.Name = "ProgressPanel"
-        Me.ProgressPanel.Size = New System.Drawing.Size(680, 641)
+        Me.ProgressPanel.Size = New System.Drawing.Size(682, 640)
         Me.ProgressPanel.TabIndex = 50
         Me.ProgressPanel.Visible = False
         '
@@ -520,7 +520,7 @@ Partial Class Home
         Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox2.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.logo_coloree
         Me.PictureBox2.InitialImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.Spinner
-        Me.PictureBox2.Location = New System.Drawing.Point(225, 216)
+        Me.PictureBox2.Location = New System.Drawing.Point(226, 215)
         Me.PictureBox2.MaximumSize = New System.Drawing.Size(226, 206)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(226, 206)
@@ -558,39 +558,45 @@ Partial Class Home
         Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
         Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
         Me.ImageList1.Images.SetKeyName(0, "dashboard.png")
+        Me.ImageList1.Images.SetKeyName(1, "shapes-and-symbols.png")
         '
         'logo_bleu
         '
         Me.logo_bleu.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.logo_bleu.Controls.Add(Me.Button1)
+        Me.logo_bleu.Controls.Add(Me.HomeButton)
         Me.logo_bleu.Location = New System.Drawing.Point(54, 0)
         Me.logo_bleu.Name = "logo_bleu"
         Me.logo_bleu.Size = New System.Drawing.Size(131, 118)
         Me.logo_bleu.TabIndex = 0
         Me.logo_bleu.Visible = False
         '
-        'Button1
+        'HomeButton
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.Button1.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.shapes_and_symbols
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button1.CausesValidation = False
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.Transparent
-        Me.Button1.Location = New System.Drawing.Point(74, 42)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(0)
-        Me.Button1.MinimumSize = New System.Drawing.Size(25, 25)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(35, 35)
-        Me.Button1.TabIndex = 2
-        Me.Button1.TabStop = False
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.HomeButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.HomeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.HomeButton.CausesValidation = False
+        Me.HomeButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.HomeButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.HomeButton.FlatAppearance.BorderSize = 0
+        Me.HomeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.HomeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.HomeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.HomeButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HomeButton.ForeColor = System.Drawing.Color.Transparent
+        Me.HomeButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.HomeButton.ImageKey = "shapes-and-symbols.png"
+        Me.HomeButton.ImageList = Me.ImageList1
+        Me.HomeButton.Location = New System.Drawing.Point(36, 32)
+        Me.HomeButton.Margin = New System.Windows.Forms.Padding(0)
+        Me.HomeButton.MinimumSize = New System.Drawing.Size(25, 25)
+        Me.HomeButton.Name = "HomeButton"
+        Me.HomeButton.Size = New System.Drawing.Size(92, 84)
+        Me.HomeButton.TabIndex = 2
+        Me.HomeButton.TabStop = False
+        Me.HomeButton.Text = "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "page principale"
+        Me.HomeButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.HomeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.HomeButton.UseVisualStyleBackColor = False
         '
         'Home
         '
@@ -605,13 +611,13 @@ Partial Class Home
         Me.ClientSize = New System.Drawing.Size(1018, 699)
         Me.Controls.Add(Me.logo_bleu)
         Me.Controls.Add(Me.LogoPicture)
+        Me.Controls.Add(Me.NavBar)
+        Me.Controls.Add(Me.SideBar)
+        Me.Controls.Add(Me.ProfilePane)
         Me.Controls.Add(Me.MainContainer1)
         Me.Controls.Add(Me.MainContainer2)
         Me.Controls.Add(Me.ProgressPanel)
         Me.Controls.Add(Me.MenuButton)
-        Me.Controls.Add(Me.SideBar)
-        Me.Controls.Add(Me.NavBar)
-        Me.Controls.Add(Me.ProfilePane)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -667,6 +673,6 @@ Partial Class Home
     Friend WithEvents LogoPicture As System.Windows.Forms.PictureBox
     Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
     Friend WithEvents logo_bleu As System.Windows.Forms.Panel
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents HomeButton As System.Windows.Forms.Button
 
 End Class

@@ -23,16 +23,20 @@ Partial Class PrincipalPage
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.PN_BIENVENUE = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Help_Button = New System.Windows.Forms.Button()
         Me.PN_BIENVENUE.SuspendLayout()
         Me.SuspendLayout()
         '
         'PN_BIENVENUE
         '
         Me.PN_BIENVENUE.BackColor = System.Drawing.Color.Transparent
+        Me.PN_BIENVENUE.Controls.Add(Me.Help_Button)
+        Me.PN_BIENVENUE.Controls.Add(Me.Button1)
         Me.PN_BIENVENUE.Controls.Add(Me.Label8)
         Me.PN_BIENVENUE.Controls.Add(Me.Label7)
         Me.PN_BIENVENUE.Controls.Add(Me.Label4)
@@ -42,6 +46,19 @@ Partial Class PrincipalPage
         Me.PN_BIENVENUE.Name = "PN_BIENVENUE"
         Me.PN_BIENVENUE.Size = New System.Drawing.Size(680, 640)
         Me.PN_BIENVENUE.TabIndex = 12
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.Button1.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.chargement
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Location = New System.Drawing.Point(200, 457)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 62)
+        Me.Button1.TabIndex = 8
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Label8
         '
@@ -90,6 +107,18 @@ Partial Class PrincipalPage
         Me.Label3.TabIndex = 1
         Me.Label3.Text = "Bienvenue à" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Esist History Manager"
         '
+        'Help_Button
+        '
+        Me.Help_Button.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.info
+        Me.Help_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Help_Button.FlatAppearance.BorderSize = 0
+        Me.Help_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Help_Button.Location = New System.Drawing.Point(338, 468)
+        Me.Help_Button.Name = "Help_Button"
+        Me.Help_Button.Size = New System.Drawing.Size(51, 41)
+        Me.Help_Button.TabIndex = 9
+        Me.Help_Button.UseVisualStyleBackColor = True
+        '
         'PrincipalPage
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
@@ -114,4 +143,6 @@ Partial Class PrincipalPage
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Help_Button As System.Windows.Forms.Button
 End Class

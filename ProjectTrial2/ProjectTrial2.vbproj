@@ -401,6 +401,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="BDD_APPLICATIONDataSet.xsc">
+      <DependentUpon>BDD_APPLICATIONDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BDD_APPLICATIONDataSet.xsd" />
+    <None Include="BDD_APPLICATIONDataSet.xss">
+      <DependentUpon>BDD_APPLICATIONDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Graphique\AttestationDataSet.xsc">
       <DependentUpon>AttestationDataSet.xsd</DependentUpon>
     </None>
@@ -460,6 +467,7 @@
     <None Include="Resources\user profile.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\shapes-and-symbols.png" />
     <None Include="Resources\signs.png" />
     <None Include="Resources\Asset 2.png" />
     <None Include="Resources\backBTchekedNone.png" />
@@ -473,6 +481,9 @@
     <None Include="Resources\015-document2.png" />
     <None Include="Resources\015-document3.png" />
     <None Include="Resources\certaficat.png" />
+    <None Include="Resources\attestation.png" />
+    <None Include="Resources\chargement.png" />
+    <None Include="Resources\dashboard.png" />
     <Content Include="Resources\page_num_current.png" />
     <None Include="Resources\Spinner-1s-220px.gif" />
     <None Include="Resources\table_blanc.png" />

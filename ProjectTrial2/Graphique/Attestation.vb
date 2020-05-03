@@ -25,54 +25,6 @@
         cryrpt.SetDataSource(ds)
         cryrpt.Database.Tables(0).SetDataSource(ds.Tables(0))
         cryrpt.Database.Tables(1).SetDataSource(ds.Tables(1))
-        'cryrpt.Database.Tables(2).SetDataSource(ds.Tables(2))
-
-
-        'Dim codoptin As String
-        'Dim codniveau As String
-        'Dim codannee As String
-
-        'codannee = "20" + CB_ANNEE.Text.Substring(CB_ANNEE.Text.LastIndexOf("/") + 1)
-        'codannee += "/" + (CInt(codannee) + 1).ToString
-        'codniveau = CB_ANNEE.Text.Substring(0, 1) + IIf(CB_ANNEE.Text.Substring(0, 1).Equals("1"), " er", " ème") + " Année INGENIEUR"
-        'codoptin = IIf(CB_ANNEE.Text.Substring(2, 3).Equals("TRC"), "Tronc Commun ", IIf(CB_ANNEE.Text.Substring(2, 3).Equals("SIQ"), "Systeme d informatiques ", "Systeme d informations "))
-
-        ''initilize the textboxes of promotion and annee
-        'Dim TextObj As CrystalDecisions.CrystalReports.Engine.TextObject
-
-        'For Each CryObj As CrystalDecisions.CrystalReports.Engine.ReportObject In cryrpt.Section2.ReportObjects
-        '    If CryObj.GetType().ToString.Equals("CrystalDecisions.CrystalReports.Engine.TextObject") Then
-        '        TextObj = CryObj
-        '        Select Case TextObj.Name
-        '            Case "OptinString"
-        '                TextObj.Text = codoptin
-        '            Case "AnneeString"
-        '                TextObj.Text = codannee
-        '            Case "NiveauString"
-        '                TextObj.Text = codniveau
-        '        End Select
-        '    End If
-        'Next
-
-
-        'Dim FormulaFields As FormulaFieldDefinitions    ' the collection 
-        'Dim FormulaField As FormulaFieldDefinition      ' an item of the collection
-
-        'FormulaFields = cryrpt.DataDefinition.FormulaFields
-
-        '' the corresponding formula item
-        'FormulaField = FormulaFields.Item(0)
-        'FormulaField.Text = "'" + ds.Tables(2).Rows(0)("ADM") + "' ;"
-
-        'FormulaField = FormulaFields.Item(1)
-        'FormulaField.Text = "" + ds.Tables(2).Rows(0)("RANGIN").ToString + " ;"
-
-        'FormulaField = FormulaFields.Item(2)
-        'FormulaField.Text = "" + ds.Tables(2).Rows(0)("NbreEtudiant").ToString + " ;"
-
-        'FormulaField = FormulaFields.Item(3)
-        'FormulaField.Text = "" + ds.Tables(2).Rows(0)("MOYEIN").ToString.Replace(",", ".") + " ;"
-
 
         ' refresh the report to view the changes
         CrystalReportViewer1.RefreshReport()
@@ -89,15 +41,15 @@
         'disbale the affich button until any combobox values has been changed
         ' and that's it !
 
-        Form1.ds = ds
-        Form1.Show()
+        'Form1.ds = ds
+        'Form1.Show()
 
 
     End Sub
 
 
 
-    Private Sub BT_SORTIR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub BT_SORTIR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_SORTIR.Click
         Me.Close()
         'Home.f.Show()
         Home.MainContainer2.Visible = False

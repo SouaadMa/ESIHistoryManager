@@ -757,7 +757,7 @@ Partial Public Class AttestationDataSet
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Overloads Function AddTable1Row(ByVal MATRIN As String, ByVal Annee As Integer, ByVal Niveau As Integer, ByVal Optin As String, ByVal DECIIN As Integer) As Table1Row
+        Public Overloads Function AddTable1Row(ByVal MATRIN As String, ByVal Annee As String, ByVal Niveau As Integer, ByVal Optin As String, ByVal DECIIN As String) As Table1Row
             Dim rowTable1Row As Table1Row = CType(Me.NewRow, Table1Row)
             Dim columnValuesArray() As Object = New Object() {MATRIN, Annee, Niveau, Optin, DECIIN}
             rowTable1Row.ItemArray = columnValuesArray
@@ -794,13 +794,13 @@ Partial Public Class AttestationDataSet
         Private Sub InitClass()
             Me.columnMATRIN = New Global.System.Data.DataColumn("MATRIN", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnMATRIN)
-            Me.columnAnnee = New Global.System.Data.DataColumn("Annee", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnAnnee = New Global.System.Data.DataColumn("Annee", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnAnnee)
             Me.columnNiveau = New Global.System.Data.DataColumn("Niveau", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnNiveau)
             Me.columnOptin = New Global.System.Data.DataColumn("Optin", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnOptin)
-            Me.columnDECIIN = New Global.System.Data.DataColumn("DECIIN", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnDECIIN = New Global.System.Data.DataColumn("DECIIN", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnDECIIN)
         End Sub
 
@@ -1141,15 +1141,15 @@ Partial Public Class AttestationDataSet
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Property Annee() As Integer
+        Public Property Annee() As String
             Get
                 Try
-                    Return CType(Me(Me.tableTable1.AnneeColumn), Integer)
+                    Return CType(Me(Me.tableTable1.AnneeColumn), String)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'Annee' in table 'Table1' is DBNull.", e)
                 End Try
             End Get
-            Set(ByVal value As Integer)
+            Set(ByVal value As String)
                 Me(Me.tableTable1.AnneeColumn) = value
             End Set
         End Property
@@ -1186,15 +1186,15 @@ Partial Public Class AttestationDataSet
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Property DECIIN() As Integer
+        Public Property DECIIN() As String
             Get
                 Try
-                    Return CType(Me(Me.tableTable1.DECIINColumn), Integer)
+                    Return CType(Me(Me.tableTable1.DECIINColumn), String)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'DECIIN' in table 'Table1' is DBNull.", e)
                 End Try
             End Get
-            Set(ByVal value As Integer)
+            Set(ByVal value As String)
                 Me(Me.tableTable1.DECIINColumn) = value
             End Set
         End Property

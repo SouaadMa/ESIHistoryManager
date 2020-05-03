@@ -163,6 +163,10 @@ Represents a strongly typed in-memory cache of data.
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.attestation">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.backBTcheked">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -227,6 +231,10 @@ Represents a strongly typed in-memory cache of data.
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.chargement">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.chart">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -236,6 +244,10 @@ Represents a strongly typed in-memory cache of data.
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.content">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.dashboard">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -420,6 +432,10 @@ Represents a strongly typed in-memory cache of data.
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.search_bl">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.shapes_and_symbols">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

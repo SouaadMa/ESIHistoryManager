@@ -28,10 +28,10 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MATRIN" msprop:Generator_ColumnVarNameInTable="columnMATRIN" msprop:Generator_ColumnPropNameInRow="MATRIN" msprop:Generator_ColumnPropNameInTable="MATRINColumn" msprop:Generator_UserColumnName="MATRIN" type="xs:string" minOccurs="0" />
-              <xs:element name="Annee" msprop:Generator_ColumnVarNameInTable="columnAnnee" msprop:Generator_ColumnPropNameInRow="Annee" msprop:Generator_ColumnPropNameInTable="AnneeColumn" msprop:Generator_UserColumnName="Annee" type="xs:int" minOccurs="0" />
+              <xs:element name="Annee" msprop:Generator_ColumnVarNameInTable="columnAnnee" msprop:Generator_ColumnPropNameInRow="Annee" msprop:Generator_ColumnPropNameInTable="AnneeColumn" msprop:Generator_UserColumnName="Annee" type="xs:string" minOccurs="0" />
               <xs:element name="Niveau" msprop:Generator_ColumnVarNameInTable="columnNiveau" msprop:Generator_ColumnPropNameInRow="Niveau" msprop:Generator_ColumnPropNameInTable="NiveauColumn" msprop:Generator_UserColumnName="Niveau" type="xs:int" minOccurs="0" />
               <xs:element name="Optin" msprop:Generator_ColumnVarNameInTable="columnOptin" msprop:Generator_ColumnPropNameInRow="Optin" msprop:Generator_ColumnPropNameInTable="OptinColumn" msprop:Generator_UserColumnName="Optin" type="xs:string" minOccurs="0" />
-              <xs:element name="DECIIN" msprop:Generator_ColumnVarNameInTable="columnDECIIN" msprop:Generator_ColumnPropNameInRow="DECIIN" msprop:Generator_ColumnPropNameInTable="DECIINColumn" msprop:Generator_UserColumnName="DECIIN" type="xs:int" minOccurs="0" />
+              <xs:element name="DECIIN" msprop:Generator_ColumnVarNameInTable="columnDECIIN" msprop:Generator_ColumnPropNameInRow="DECIIN" msprop:Generator_ColumnPropNameInTable="DECIINColumn" msprop:Generator_UserColumnName="DECIIN" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -311,6 +311,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="BDD\Rech_BDD.vb" />
+    <Compile Include="Noyau\Statistiques.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="BDD\SortieAttestation.resx">

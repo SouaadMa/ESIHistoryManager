@@ -177,7 +177,7 @@
             If c IsNot Nothing Then
                 Try
                     CType(c, Label).ForeColor = Color.Black
-                    CType(c, Label).Text = filtredTable.Rows.Item(cpt)("MoyClassement")
+                    CType(c, Label).Text = Math.Round(filtredTable.Rows.Item(cpt)("MoyClassement"), 2)
                 Catch ex As InvalidCastException
                     With CType(c, Label)
                         .ForeColor = Color.Red
@@ -313,6 +313,7 @@
 
         StudentTable = Classement.TraitClassement(ValueTextBox.Text)
         filtredTable = StudentTable.Copy()
+        CURRENT_PAGE = 1
         'Form1.ds.Tables.Add(StudentTable.Copy())
         'Form1.Show()
         'StudentTable = Recherche.traitRechercher(crit, RechercherPage.BackgroundWorker1, New System.ComponentModel.DoWorkEventArgs(Nothing))

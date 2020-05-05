@@ -31,9 +31,10 @@ Public Class PrincipalPage
     '    'Me.MainContainer.Width = 680            ' adjust its appearance
     'End Sub
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+    Private Sub ChargementButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChargementButton.Click
         Chargement.Show()
-        Chargement.TopLevel = False
-        'Chargement.TopMost = True
+        Chargement.TopLevel = True
+        Chargement.TopMost = True
     End Sub
+
 End Class

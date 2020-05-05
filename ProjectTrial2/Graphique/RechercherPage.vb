@@ -32,6 +32,7 @@
         End With
         ' make the arabic flanuge checked at the beggining
         RechButtons.Location = New System.Drawing.Point(25, 605)
+        BT_LANCERRECH.Location = New Point(380, 0)
 
         Me.PN_FORUMRECH.Dock = DockStyle.Fill   ' dock the seach form in the parent container
 
@@ -56,6 +57,15 @@
         Me.CB_WILAYAN.DataSource = Login.Infosgenerale.codewilaya
         Me.CB_WILAYANA.DataSource = Login.Infosgenerale.wilaya
 
+        Me.CB_SERI.ValueMember = Login.Infosgenerale.seribac.Columns(0).ToString
+        Me.CB_SERI.DisplayMember = Login.Infosgenerale.seribac.Columns(0).ToString
+        Me.CB_SERI.DataSource = Login.Infosgenerale.seribac
+
+        Me.CB_WILAYAB.Text = ""
+        Me.CB_WILAYA.Text = ""
+        Me.CB_WILAYAN.Text = ""
+        Me.CB_WILAYANA.Text = ""
+        Me.CB_SERI.Text = ""
 
         'inisialize sexe combobox 
 
@@ -65,9 +75,7 @@
 
         'inisialize seri de bac combobox 
 
-        Me.CB_SERI.ValueMember = Login.Infosgenerale.seribac.Columns(0).ToString
-        Me.CB_SERI.DisplayMember = Login.Infosgenerale.seribac.Columns(0).ToString
-        Me.CB_SERI.DataSource = Login.Infosgenerale.seribac
+        
 
         'inisialize annee de bac combobox 
 

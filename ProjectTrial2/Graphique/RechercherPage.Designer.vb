@@ -123,10 +123,10 @@ Partial Class RechercherPage
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RechButtons.Controls.Add(Me.worningrech)
         Me.RechButtons.Controls.Add(Me.BT_LANCERRECH)
-        Me.RechButtons.Location = New System.Drawing.Point(24, 975)
+        Me.RechButtons.Location = New System.Drawing.Point(24, 972)
         Me.RechButtons.MinimumSize = New System.Drawing.Size(610, 0)
         Me.RechButtons.Name = "RechButtons"
-        Me.RechButtons.Size = New System.Drawing.Size(610, 87)
+        Me.RechButtons.Size = New System.Drawing.Size(611, 91)
         Me.RechButtons.TabIndex = 44
         '
         'worningrech
@@ -135,7 +135,7 @@ Partial Class RechercherPage
         Me.worningrech.BackColor = System.Drawing.Color.Transparent
         Me.worningrech.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.worningrech.ForeColor = System.Drawing.Color.Maroon
-        Me.worningrech.Location = New System.Drawing.Point(4, 32)
+        Me.worningrech.Location = New System.Drawing.Point(13, 10)
         Me.worningrech.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.worningrech.Name = "worningrech"
         Me.worningrech.Size = New System.Drawing.Size(322, 18)
@@ -149,7 +149,7 @@ Partial Class RechercherPage
         Me.BT_LANCERRECH.FlatAppearance.BorderSize = 0
         Me.BT_LANCERRECH.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BT_LANCERRECH.ForeColor = System.Drawing.Color.LightGray
-        Me.BT_LANCERRECH.Location = New System.Drawing.Point(380, 23)
+        Me.BT_LANCERRECH.Location = New System.Drawing.Point(380, 0)
         Me.BT_LANCERRECH.Margin = New System.Windows.Forms.Padding(2, 2, 2, 100)
         Me.BT_LANCERRECH.Name = "BT_LANCERRECH"
         Me.BT_LANCERRECH.Size = New System.Drawing.Size(150, 37)
@@ -690,7 +690,7 @@ Partial Class RechercherPage
         Me.PN_FORUMRECH.Location = New System.Drawing.Point(0, 0)
         Me.PN_FORUMRECH.Margin = New System.Windows.Forms.Padding(0)
         Me.PN_FORUMRECH.Name = "PN_FORUMRECH"
-        Me.PN_FORUMRECH.Size = New System.Drawing.Size(678, 640)
+        Me.PN_FORUMRECH.Size = New System.Drawing.Size(679, 640)
         Me.PN_FORUMRECH.TabIndex = 11
         '
         'BackgroundWorker1
@@ -702,7 +702,7 @@ Partial Class RechercherPage
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(678, 640)
+        Me.ClientSize = New System.Drawing.Size(679, 640)
         Me.Controls.Add(Me.PN_FORUMRECH)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False

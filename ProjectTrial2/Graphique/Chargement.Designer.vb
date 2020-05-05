@@ -33,8 +33,6 @@ Partial Class Chargement
         Me.RadioButton16 = New System.Windows.Forms.RadioButton()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.ShapeContainer4 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.RectangleShape4 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
         Me.RadioButton5 = New System.Windows.Forms.RadioButton()
         Me.RadioButton6 = New System.Windows.Forms.RadioButton()
@@ -42,8 +40,6 @@ Partial Class Chargement
         Me.RadioButton8 = New System.Windows.Forms.RadioButton()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.ShapeContainer3 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.RectangleShape3 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.FlowLayoutPanel3 = New System.Windows.Forms.FlowLayoutPanel()
         Me.RadioButton9 = New System.Windows.Forms.RadioButton()
         Me.RadioButton10 = New System.Windows.Forms.RadioButton()
@@ -51,11 +47,7 @@ Partial Class Chargement
         Me.RadioButton12 = New System.Windows.Forms.RadioButton()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.ShapeContainer2 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.RadioButton4 = New System.Windows.Forms.RadioButton()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
@@ -63,14 +55,12 @@ Partial Class Chargement
         Me.RadioButton3 = New System.Windows.Forms.RadioButton()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.TitlePanel.SuspendLayout()
         Me.ChargementPanel.SuspendLayout()
         Me.FlowLayoutPanel4.SuspendLayout()
-        Me.Panel5.SuspendLayout()
         Me.FlowLayoutPanel2.SuspendLayout()
-        Me.Panel4.SuspendLayout()
         Me.FlowLayoutPanel3.SuspendLayout()
-        Me.Panel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.FlowLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
@@ -107,6 +97,7 @@ Partial Class Chargement
         '
         'ChargementPanel
         '
+        Me.ChargementPanel.BackColor = System.Drawing.Color.Transparent
         Me.ChargementPanel.Controls.Add(Me.FlowLayoutPanel4)
         Me.ChargementPanel.Controls.Add(Me.Label5)
         Me.ChargementPanel.Controls.Add(Me.Panel5)
@@ -121,8 +112,9 @@ Partial Class Chargement
         Me.ChargementPanel.Controls.Add(Me.Label2)
         Me.ChargementPanel.Controls.Add(Me.TitlePanel)
         Me.ChargementPanel.Location = New System.Drawing.Point(0, 0)
+        Me.ChargementPanel.Margin = New System.Windows.Forms.Padding(0)
         Me.ChargementPanel.Name = "ChargementPanel"
-        Me.ChargementPanel.Size = New System.Drawing.Size(683, 640)
+        Me.ChargementPanel.Size = New System.Drawing.Size(683, 650)
         Me.ChargementPanel.TabIndex = 87
         '
         'FlowLayoutPanel4
@@ -222,34 +214,12 @@ Partial Class Chargement
         'Panel5
         '
         Me.Panel5.AllowDrop = True
-        Me.Panel5.Controls.Add(Me.ShapeContainer4)
+        Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Panel5.Location = New System.Drawing.Point(17, 475)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(391, 62)
         Me.Panel5.TabIndex = 12
-        '
-        'ShapeContainer4
-        '
-        Me.ShapeContainer4.Location = New System.Drawing.Point(0, 0)
-        Me.ShapeContainer4.Margin = New System.Windows.Forms.Padding(0)
-        Me.ShapeContainer4.Name = "ShapeContainer4"
-        Me.ShapeContainer4.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape4})
-        Me.ShapeContainer4.Size = New System.Drawing.Size(391, 62)
-        Me.ShapeContainer4.TabIndex = 0
-        Me.ShapeContainer4.TabStop = False
-        '
-        'RectangleShape4
-        '
-        Me.RectangleShape4.BorderColor = System.Drawing.Color.Transparent
-        Me.RectangleShape4.CornerRadius = 25
-        Me.RectangleShape4.FillColor = System.Drawing.Color.FromArgb(CType(CType(130, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.RectangleShape4.FillGradientColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.RectangleShape4.FillGradientStyle = Microsoft.VisualBasic.PowerPacks.FillGradientStyle.Horizontal
-        Me.RectangleShape4.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
-        Me.RectangleShape4.Location = New System.Drawing.Point(2, 1)
-        Me.RectangleShape4.Name = "RectangleShape1"
-        Me.RectangleShape4.SelectionColor = System.Drawing.SystemColors.HotTrack
-        Me.RectangleShape4.Size = New System.Drawing.Size(386, 59)
         '
         'FlowLayoutPanel2
         '
@@ -348,34 +318,12 @@ Partial Class Chargement
         'Panel4
         '
         Me.Panel4.AllowDrop = True
-        Me.Panel4.Controls.Add(Me.ShapeContainer3)
+        Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Panel4.Location = New System.Drawing.Point(15, 360)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(391, 62)
         Me.Panel4.TabIndex = 11
-        '
-        'ShapeContainer3
-        '
-        Me.ShapeContainer3.Location = New System.Drawing.Point(0, 0)
-        Me.ShapeContainer3.Margin = New System.Windows.Forms.Padding(0)
-        Me.ShapeContainer3.Name = "ShapeContainer3"
-        Me.ShapeContainer3.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape3})
-        Me.ShapeContainer3.Size = New System.Drawing.Size(391, 62)
-        Me.ShapeContainer3.TabIndex = 0
-        Me.ShapeContainer3.TabStop = False
-        '
-        'RectangleShape3
-        '
-        Me.RectangleShape3.BorderColor = System.Drawing.Color.Transparent
-        Me.RectangleShape3.CornerRadius = 25
-        Me.RectangleShape3.FillColor = System.Drawing.Color.FromArgb(CType(CType(130, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.RectangleShape3.FillGradientColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.RectangleShape3.FillGradientStyle = Microsoft.VisualBasic.PowerPacks.FillGradientStyle.Horizontal
-        Me.RectangleShape3.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
-        Me.RectangleShape3.Location = New System.Drawing.Point(2, 1)
-        Me.RectangleShape3.Name = "RectangleShape1"
-        Me.RectangleShape3.SelectionColor = System.Drawing.SystemColors.HotTrack
-        Me.RectangleShape3.Size = New System.Drawing.Size(386, 59)
         '
         'FlowLayoutPanel3
         '
@@ -474,66 +422,23 @@ Partial Class Chargement
         'Panel3
         '
         Me.Panel3.AllowDrop = True
-        Me.Panel3.Controls.Add(Me.ShapeContainer1)
+        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Panel3.Location = New System.Drawing.Point(12, 248)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(391, 62)
         Me.Panel3.TabIndex = 11
         '
-        'ShapeContainer1
-        '
-        Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
-        Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
-        Me.ShapeContainer1.Name = "ShapeContainer1"
-        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape2})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(391, 62)
-        Me.ShapeContainer1.TabIndex = 0
-        Me.ShapeContainer1.TabStop = False
-        '
-        'RectangleShape2
-        '
-        Me.RectangleShape2.BorderColor = System.Drawing.Color.Transparent
-        Me.RectangleShape2.CornerRadius = 25
-        Me.RectangleShape2.FillColor = System.Drawing.Color.FromArgb(CType(CType(130, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.RectangleShape2.FillGradientColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.RectangleShape2.FillGradientStyle = Microsoft.VisualBasic.PowerPacks.FillGradientStyle.Horizontal
-        Me.RectangleShape2.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
-        Me.RectangleShape2.Location = New System.Drawing.Point(2, 1)
-        Me.RectangleShape2.Name = "RectangleShape1"
-        Me.RectangleShape2.SelectionColor = System.Drawing.SystemColors.HotTrack
-        Me.RectangleShape2.Size = New System.Drawing.Size(386, 59)
-        '
         'Panel2
         '
         Me.Panel2.AllowDrop = True
-        Me.Panel2.Controls.Add(Me.ShapeContainer2)
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.Label6)
+        Me.Panel2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Panel2.Location = New System.Drawing.Point(12, 127)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(391, 62)
         Me.Panel2.TabIndex = 10
-        '
-        'ShapeContainer2
-        '
-        Me.ShapeContainer2.Location = New System.Drawing.Point(0, 0)
-        Me.ShapeContainer2.Margin = New System.Windows.Forms.Padding(0)
-        Me.ShapeContainer2.Name = "ShapeContainer2"
-        Me.ShapeContainer2.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape1})
-        Me.ShapeContainer2.Size = New System.Drawing.Size(391, 62)
-        Me.ShapeContainer2.TabIndex = 0
-        Me.ShapeContainer2.TabStop = False
-        '
-        'RectangleShape1
-        '
-        Me.RectangleShape1.BorderColor = System.Drawing.Color.Transparent
-        Me.RectangleShape1.CornerRadius = 25
-        Me.RectangleShape1.FillColor = System.Drawing.Color.FromArgb(CType(CType(130, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.RectangleShape1.FillGradientColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.RectangleShape1.FillGradientStyle = Microsoft.VisualBasic.PowerPacks.FillGradientStyle.Horizontal
-        Me.RectangleShape1.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid
-        Me.RectangleShape1.Location = New System.Drawing.Point(2, 1)
-        Me.RectangleShape1.Name = "RectangleShape1"
-        Me.RectangleShape1.SelectionColor = System.Drawing.SystemColors.HotTrack
-        Me.RectangleShape1.Size = New System.Drawing.Size(386, 59)
         '
         'FlowLayoutPanel1
         '
@@ -634,12 +539,21 @@ Partial Class Chargement
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         Me.OpenFileDialog1.Filter = "excel file |*.xlsl"
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(167, 27)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(39, 13)
+        Me.Label6.TabIndex = 0
+        Me.Label6.Text = "Label6"
+        '
         'Chargement
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
         Me.AutoSize = True
         Me.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.background
-        Me.ClientSize = New System.Drawing.Size(683, 640)
+        Me.ClientSize = New System.Drawing.Size(684, 651)
         Me.Controls.Add(Me.ChargementPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
@@ -647,17 +561,14 @@ Partial Class Chargement
         Me.Name = "Chargement"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.TopMost = True
-        Me.WindowState = System.Windows.Forms.FormWindowState.Minimized
         Me.TitlePanel.ResumeLayout(False)
         Me.TitlePanel.PerformLayout()
         Me.ChargementPanel.ResumeLayout(False)
         Me.FlowLayoutPanel4.ResumeLayout(False)
-        Me.Panel5.ResumeLayout(False)
         Me.FlowLayoutPanel2.ResumeLayout(False)
-        Me.Panel4.ResumeLayout(False)
         Me.FlowLayoutPanel3.ResumeLayout(False)
-        Me.Panel3.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.FlowLayoutPanel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
@@ -667,7 +578,6 @@ Partial Class Chargement
     Friend WithEvents ChargementPanel As System.Windows.Forms.Panel
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
-    Friend WithEvents RectangleShape1 As Microsoft.VisualBasic.PowerPacks.RectangleShape
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
     Friend WithEvents RadioButton4 As System.Windows.Forms.RadioButton
@@ -675,7 +585,6 @@ Partial Class Chargement
     Friend WithEvents RadioButton2 As System.Windows.Forms.RadioButton
     Friend WithEvents FlowLayoutPanel1 As System.Windows.Forms.FlowLayoutPanel
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
-    Friend WithEvents ShapeContainer2 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
     Friend WithEvents FlowLayoutPanel4 As System.Windows.Forms.FlowLayoutPanel
     Friend WithEvents RadioButton13 As System.Windows.Forms.RadioButton
     Friend WithEvents RadioButton14 As System.Windows.Forms.RadioButton
@@ -683,8 +592,6 @@ Partial Class Chargement
     Friend WithEvents RadioButton16 As System.Windows.Forms.RadioButton
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Panel5 As System.Windows.Forms.Panel
-    Friend WithEvents ShapeContainer4 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
-    Friend WithEvents RectangleShape4 As Microsoft.VisualBasic.PowerPacks.RectangleShape
     Friend WithEvents FlowLayoutPanel2 As System.Windows.Forms.FlowLayoutPanel
     Friend WithEvents RadioButton5 As System.Windows.Forms.RadioButton
     Friend WithEvents RadioButton6 As System.Windows.Forms.RadioButton
@@ -692,8 +599,6 @@ Partial Class Chargement
     Friend WithEvents RadioButton8 As System.Windows.Forms.RadioButton
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Panel4 As System.Windows.Forms.Panel
-    Friend WithEvents ShapeContainer3 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
-    Friend WithEvents RectangleShape3 As Microsoft.VisualBasic.PowerPacks.RectangleShape
     Friend WithEvents FlowLayoutPanel3 As System.Windows.Forms.FlowLayoutPanel
     Friend WithEvents RadioButton9 As System.Windows.Forms.RadioButton
     Friend WithEvents RadioButton10 As System.Windows.Forms.RadioButton
@@ -701,6 +606,5 @@ Partial Class Chargement
     Friend WithEvents RadioButton12 As System.Windows.Forms.RadioButton
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
-    Friend WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
-    Friend WithEvents RectangleShape2 As Microsoft.VisualBasic.PowerPacks.RectangleShape
+    Friend WithEvents Label6 As System.Windows.Forms.Label
 End Class

@@ -57,17 +57,11 @@ Public Class Home
 
         End If
 
-        'If Not f Is Nothing Then
-        '    f.Close()
-        'End If
-        'f = New PrincipalPage()         ' assign the search form to  the f form
-        'f.TopLevel = False
-        'f.TopMost = True
-        'f.WindowState = FormWindowState.Normal
-        'Me.MainContainer1.Controls.Add(f)        ' add the controlers of the searche page to the main form f 
-        'f.Show()                                ' show the form f in the middle of the home page
-        'Me.MainContainer1.Visible = True
-        ''Me.MainContainer.Width = 680            ' adjust its appearance
+        With Me.MainContainer1
+            .Location = New System.Drawing.Point(60, 0)
+            .Width += 125
+        End With
+        HomeButton_Click(HomeButton, New System.EventArgs())
 
         Login.Close()    ' close the login page 
 
@@ -84,6 +78,11 @@ Public Class Home
         Me.MainContainer1.Controls.Add(f)        ' add the controlers of the searche page to the main form f 
         f.Show()                                ' show the form f in the middle of the home page
         Me.MainContainer1.Visible = True
+        MainContainer1.Controls.Item(0).Anchor = AnchorStyles.Left
+        'If MainContainer1.Width > 700 Then
+        '    maincontainer_sizechanged(MainContainer1, New EventArgs())
+        'End If
+
         'Me.MainContainer.Width = 680            ' adjust its appearance
 
         'Login.Close()    ' close the login page 
@@ -355,7 +354,7 @@ Public Class Home
     End Sub
 
     Private Sub MainContainer_ControlAdded(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ControlEventArgs) Handles MainContainer1.ControlAdded
-        If MainContainer1.Width = 805 Then
+        If MainContainer1.Width > 800 Then
             With MainContainer1
                 If .Controls.Count > 0 Then
                     .Controls.Item(0).Scale(New System.Drawing.SizeF(1.2, 1))
@@ -368,7 +367,7 @@ Public Class Home
     End Sub
 
     Private Sub MainContainer2_ControlAdded(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ControlEventArgs) Handles MainContainer2.ControlAdded
-        If MainContainer2.Width = 805 Then
+        If MainContainer2.Width > 800 Then
             With MainContainer2
                 If .Controls.Count > 0 Then
                     .Controls.Item(0).Scale(New System.Drawing.SizeF(1.2, 1))
@@ -392,6 +391,10 @@ Public Class Home
         Me.MainContainer1.Controls.Add(f)        ' add the controlers of the searche page to the main form f 
         f.Show()                                ' show the form f in the middle of the home page
         Me.MainContainer1.Visible = True
+        'If MainContainer1.Width > 700 Then
+        '    maincontainer_sizechanged(MainContainer1, New EventArgs())
+        'End If
+
         'Me.MainContainer.Width = 680            ' adjust its appearance
     End Sub
 
@@ -409,6 +412,9 @@ Public Class Home
         Me.MainContainer1.Controls.Add(f)        ' add the controlers of the searche page to the main form f 
         f.Show()                                ' show the form f in the middle of the home page
         Me.MainContainer1.Visible = True
+        'If MainContainer1.Width > 700 Then
+        '    maincontainer_sizechanged(MainContainer1, New EventArgs())
+        'End If
         'Me.MainContainer.Width = 680            ' adjust its appearance
     End Sub
 
@@ -424,6 +430,9 @@ Public Class Home
         Me.MainContainer1.Controls.Add(f)        ' add the controlers of the searche page to the main form f 
         f.Show()                                ' show the form f in the middle of the home page
         Me.MainContainer1.Visible = True
+        'If MainContainer1.Width > 700 Then
+        '    maincontainer_sizechanged(MainContainer1, New EventArgs())
+        'End If
         'Me.MainContainer.Width = 680            ' adjust its appearance
     End Sub
 

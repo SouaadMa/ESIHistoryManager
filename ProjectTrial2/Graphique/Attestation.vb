@@ -14,6 +14,14 @@
     Private Sub attestation_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         'inisializer les panels
+        
+        ' make the report viewer visible
+        CrystalReportViewer1.Visible = True
+        
+
+    End Sub
+
+    Private Sub attestation_shown(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Shown
         Dim ds As DataSet
 
         ds = SortieAttestation.attestation(esistselect)
@@ -36,18 +44,12 @@
         If (Home.MainContainer1.Width <= 690) Then
             Home.MenuButton_Click(Home.MenuButton, New MouseEventArgs(MouseButtons.Middle, 1, 15, 15, 0))
         End If
-        ' make the report viewer visible
-        CrystalReportViewer1.Visible = True
-        'disbale the affich button until any combobox values has been changed
         ' and that's it !
 
         'Form1.ds = ds
         'Form1.Show()
 
-
     End Sub
-
-
 
     Private Sub BT_SORTIR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_SORTIR.Click
         Me.Close()

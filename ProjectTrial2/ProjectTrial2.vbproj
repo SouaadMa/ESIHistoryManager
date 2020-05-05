@@ -241,6 +241,7 @@
     <Compile Include="Graphique\RNGDataSet.vb">
       <DependentUpon>RNGDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Graphique\RngImpossibleException.vb" />
     <Compile Include="Graphique\RNGPage.Designer.vb">
       <DependentUpon>RNGPage.vb</DependentUpon>
     </Compile>

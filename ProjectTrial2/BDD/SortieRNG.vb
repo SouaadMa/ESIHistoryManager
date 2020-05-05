@@ -68,7 +68,7 @@
 
             For Each a As Critere In Annees_Decisions
 
-                If a.getValeur = "adm" Then       ' Or a.getValeur = "2"
+                If a.getValeur = "J" Or a.getValeur = "S" Then       ' Or a.getValeur = "2"
 
                     listeConditions.Clear()
                     listeConditions.Add(New Critere(BDD.champsMATRIN, etud.GetInfoChamps(BDD.champsMATRIN)))
@@ -81,7 +81,8 @@
 
                 End If
             Next
-
+        Else
+            Throw New RngImpossibleException()
         End If
 
         Return ds

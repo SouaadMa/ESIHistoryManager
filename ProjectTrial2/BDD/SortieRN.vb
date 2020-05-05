@@ -81,9 +81,14 @@
         
 
 
+        Try
+            nbreRN = CType(tableINSCRIPTION.Rows.Item(0).Item(BDD.champsNBR_RN), Integer)
 
-        nbreRN = CType(tableINSCRIPTION.Rows.Item(0).Item(BDD.champsNBR_RN), Integer)
-
+        Catch ex As Exception
+            Console.WriteLine("NBRERN")
+            nbreRN = 0
+        End Try
+        
         Console.WriteLine(nbreRN)
 
         'Ajout du caractère spécial 99.99 à la place des notes qu'on ne veut pas afficher

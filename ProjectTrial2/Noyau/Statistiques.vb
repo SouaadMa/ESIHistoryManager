@@ -123,6 +123,9 @@
                     valeur = critere.getValeur.ToString
                 Case "System.Boolean"                                     ' valeur Booleen
                     valeur = critere.getValeur
+                Case Else
+                    Console.WriteLine("Erreur type FilterDataTableBy")
+                    valeur = ""
             End Select
 
             filter = critere.getChamps + " = " + valeur

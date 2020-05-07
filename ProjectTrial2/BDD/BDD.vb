@@ -352,9 +352,9 @@ Public Class BDD
         Select Case nomTable
             Case nomTableEtudiant
                 Return CompareToMATRIN(critere)
-            Case champsCodePromo
+            Case nomTablePROMO
                 Return CompareToCodePROMO(critere)
-            Case champsCodeMat
+            Case nomTableMATIERE
                 Return CompareToCodeMat(critere)
             Case Else
                 Return (critere.getTable + "." + critere.getChamps + " = " + critere.getValeur)
@@ -500,12 +500,16 @@ Public Class BDD
             Dim SqlQuery = "SELECT DISTINCT " & nomChamps & " FROM " & nomTable & " "
 
             For Each cond In conditions
-                SqlQuery = Class_BDD.AddLIKECondition(SqlQuery, cond)
+
+                SqlQuery = Class_BDD.AddLIKECondition(SqlQuery, cond, nomTable)
             Next
 
             'MsgBox("before execute")
 
+            'Console.WriteLine(SqlQuery)
+
             Return executeRequete(SqlQuery)
+
 
         Else
 

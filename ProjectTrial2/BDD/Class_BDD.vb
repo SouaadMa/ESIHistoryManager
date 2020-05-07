@@ -220,15 +220,22 @@
     End Function
 
     'Compare le critère donné au code de la table en entrée
-    Public Shared Function AddLIKECondition(ByVal SQLquery As String, ByVal condition As Critere) As String
+    Public Shared Function AddLIKECondition(ByVal SQLquery As String, ByVal condition As Critere, ByVal nomtable As String) As String
 
         Dim addition As String
+        Dim saTable As String
 
-        If BDD.CompareToCode(condition.getTable, condition) <> "" Then
+        If BDD.CompareToCodeTable(condition.getTable, condition) <> "" Then
             If (SQLquery.Contains("WHERE")) Then
-                addition = " AND " + BDD.CompareToCode(condition.getTable, condition)
+                saTable = condition.getTable
+                condition.setTable(nomtable)
+                addition = " AND " + BDD.CompareToCodeTable(saTable, condition)
+                condition.setTable(saTable)
             Else
-                addition = " WHERE " + BDD.CompareToCode(condition.getTable, condition)
+                saTable = condition.getTable
+                condition.setTable(nomtable)
+                addition = " WHERE " + BDD.CompareToCodeTable(saTable, condition)
+                condition.setTable(saTable)
             End If
         Else
             addition = ""

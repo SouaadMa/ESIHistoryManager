@@ -200,6 +200,7 @@
         Return requete
     End Function
 
+    'Compare le critere donné au champ en entrée
     Public Shared Function AddLIKECondition(ByVal SQLquery As String, ByVal champs As String, ByVal condition As Critere) As String
 
         Dim addition As String
@@ -209,6 +210,25 @@
                 addition = " AND " + BDD.CompareToCode(champs, condition)
             Else
                 addition = " WHERE " + BDD.CompareToCode(champs, condition)
+            End If
+        Else
+            addition = ""
+        End If
+
+        Return (SQLquery + addition)
+
+    End Function
+
+    'Compare le critère donné au code de la table en entrée
+    Public Shared Function AddLIKECondition(ByVal SQLquery As String, ByVal condition As Critere) As String
+
+        Dim addition As String
+
+        If BDD.CompareToCode(condition.getTable, condition) <> "" Then
+            If (SQLquery.Contains("WHERE")) Then
+                addition = " AND " + BDD.CompareToCode(condition.getTable, condition)
+            Else
+                addition = " WHERE " + BDD.CompareToCode(condition.getTable, condition)
             End If
         Else
             addition = ""

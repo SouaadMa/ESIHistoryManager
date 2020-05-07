@@ -493,11 +493,15 @@ Public Class BDD
 
     'Une fonction qui ramène toutes les valeurs possibles (distinctes) d'un certain champs de la BDD
 
-    Public Shared Function GetALL(ByVal nomChamps As String, ByVal nomTable As String) As DataTable
+    Public Shared Function GetALL(ByVal nomChamps As String, ByVal nomTable As String, ByVal conditions As List(Of Critere)) As DataTable
 
         If ExisteDansTable(nomChamps, nomTable) Then
 
-            Dim SqlQuery = "SELECT DISTINCT " & nomChamps & " FROM " & nomTable & ";"
+            Dim SqlQuery = "SELECT DISTINCT " & nomChamps & " FROM " & nomTable & " "
+
+            For Each cond In conditions
+                SqlQuery = Class_BDD.AddLIKECondition(SqlQuery, cond)
+            Next
 
             'MsgBox("before execute")
 

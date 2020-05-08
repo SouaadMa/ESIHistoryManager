@@ -352,9 +352,9 @@ Public Class BDD
         Select Case nomTable
             Case nomTableEtudiant
                 Return CompareToMATRIN(critere)
-            Case champsCodePromo
+            Case nomTablePROMO
                 Return CompareToCodePROMO(critere)
-            Case champsCodeMat
+            Case nomTableMATIERE
                 Return CompareToCodeMat(critere)
             Case Else
                 Return (critere.getTable + "." + critere.getChamps + " = " + critere.getValeur)
@@ -493,15 +493,23 @@ Public Class BDD
 
     'Une fonction qui ramène toutes les valeurs possibles (distinctes) d'un certain champs de la BDD
 
-    Public Shared Function GetALL(ByVal nomChamps As String, ByVal nomTable As String) As DataTable
+    Public Shared Function GetALL(ByVal nomChamps As String, ByVal nomTable As String, ByVal conditions As List(Of Critere)) As DataTable
 
         If ExisteDansTable(nomChamps, nomTable) Then
 
-            Dim SqlQuery = "SELECT DISTINCT " & nomChamps & " FROM " & nomTable & ";"
+            Dim SqlQuery = "SELECT DISTINCT " & nomChamps & " FROM " & nomTable & " "
+
+            For Each cond In conditions
+
+                SqlQuery = Class_BDD.AddLIKECondition(SqlQuery, cond, nomTable)
+            Next
 
             'MsgBox("before execute")
 
+            'Console.WriteLine(SqlQuery)
+
             Return executeRequete(SqlQuery)
+
 
         Else
 

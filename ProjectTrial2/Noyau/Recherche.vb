@@ -56,12 +56,20 @@
 
     Public Shared Function GetALL(ByVal champs As String, ByVal table As String) As DataTable
 
-        Dim dc As DataTable = BDD.GetALL(champs, table)
+        Dim dc As DataTable = BDD.GetALL(champs, table, New List(Of Critere))
 
         Return dc
 
+    End Function
+
+    Public Shared Function GetALLConditioned(ByVal champ As String, ByVal table As String, ByVal conditions As List(Of Critere)) As DataTable
+
+        Dim dc As DataTable = BDD.GetALL(champ, table, conditions)
+
+        Return dc
 
     End Function
+
 
     Public Shared Function CreateEtudiants(ByVal dt As DataTable) As List(Of Etudiant)
 

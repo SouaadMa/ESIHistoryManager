@@ -15,7 +15,9 @@
     End Sub
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Me.DataGridView1.DataSource = ds.Tables(0)
+        If ds.Tables.Count > 0 Then
+            Me.DataGridView1.DataSource = ds.Tables(0)
+        End If
         Label1.Text = "0"
     End Sub
 End Class

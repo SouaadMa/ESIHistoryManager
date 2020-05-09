@@ -24,16 +24,22 @@ Partial Class StatistiquePage
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(StatistiquePage))
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
         Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim ChartArea4 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim Series4 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series9 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Series10 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Series11 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Series12 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Title3 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
         Me.StatistiquesPanel = New System.Windows.Forms.Panel()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.MatiereAlert = New System.Windows.Forms.PictureBox()
+        Me.GroupeAlert = New System.Windows.Forms.PictureBox()
+        Me.SectionAlert = New System.Windows.Forms.PictureBox()
+        Me.AnneeAlert = New System.Windows.Forms.PictureBox()
+        Me.SpecialiteAlert = New System.Windows.Forms.PictureBox()
+        Me.SexeAlert = New System.Windows.Forms.PictureBox()
+        Me.NiveauAlert = New System.Windows.Forms.PictureBox()
         Me.SexeSpliter = New System.Windows.Forms.SplitContainer()
         Me.SexeLabel = New System.Windows.Forms.Label()
         Me.arrowsList = New System.Windows.Forms.ImageList(Me.components)
@@ -145,7 +151,17 @@ Partial Class StatistiquePage
         Me.SearchToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.toolStripSeparator11 = New System.Windows.Forms.ToolStripSeparator()
         Me.AboutToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.AvertTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.StatistiquesPanel.SuspendLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MatiereAlert, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GroupeAlert, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SectionAlert, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AnneeAlert, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SpecialiteAlert, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SexeAlert, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NiveauAlert, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SexeSpliter, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SexeSpliter.Panel1.SuspendLayout()
         Me.SexeSpliter.Panel2.SuspendLayout()
@@ -178,6 +194,7 @@ Partial Class StatistiquePage
         Me.ChartPanel.SuspendLayout()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TitlePanel.SuspendLayout()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'StatistiquesPanel
@@ -186,6 +203,14 @@ Partial Class StatistiquePage
         Me.StatistiquesPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.StatistiquesPanel.BackColor = System.Drawing.Color.Transparent
         Me.StatistiquesPanel.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.background
+        Me.StatistiquesPanel.Controls.Add(Me.PictureBox3)
+        Me.StatistiquesPanel.Controls.Add(Me.MatiereAlert)
+        Me.StatistiquesPanel.Controls.Add(Me.GroupeAlert)
+        Me.StatistiquesPanel.Controls.Add(Me.SectionAlert)
+        Me.StatistiquesPanel.Controls.Add(Me.AnneeAlert)
+        Me.StatistiquesPanel.Controls.Add(Me.SpecialiteAlert)
+        Me.StatistiquesPanel.Controls.Add(Me.SexeAlert)
+        Me.StatistiquesPanel.Controls.Add(Me.NiveauAlert)
         Me.StatistiquesPanel.Controls.Add(Me.SexeSpliter)
         Me.StatistiquesPanel.Controls.Add(Me.MatiereSpliter)
         Me.StatistiquesPanel.Controls.Add(Me.TXT_MOYSEUIL)
@@ -205,6 +230,86 @@ Partial Class StatistiquePage
         Me.StatistiquesPanel.Name = "StatistiquesPanel"
         Me.StatistiquesPanel.Size = New System.Drawing.Size(678, 640)
         Me.StatistiquesPanel.TabIndex = 12
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
+        Me.PictureBox3.Location = New System.Drawing.Point(405, 94)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(30, 30)
+        Me.PictureBox3.TabIndex = 68
+        Me.PictureBox3.TabStop = False
+        Me.PictureBox3.Visible = False
+        '
+        'MatiereAlert
+        '
+        Me.MatiereAlert.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
+        Me.MatiereAlert.Location = New System.Drawing.Point(249, 82)
+        Me.MatiereAlert.Name = "MatiereAlert"
+        Me.MatiereAlert.Size = New System.Drawing.Size(30, 30)
+        Me.MatiereAlert.TabIndex = 67
+        Me.MatiereAlert.TabStop = False
+        Me.MatiereAlert.Visible = False
+        '
+        'GroupeAlert
+        '
+        Me.GroupeAlert.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
+        Me.GroupeAlert.Location = New System.Drawing.Point(547, 137)
+        Me.GroupeAlert.Name = "GroupeAlert"
+        Me.GroupeAlert.Size = New System.Drawing.Size(30, 30)
+        Me.GroupeAlert.TabIndex = 66
+        Me.GroupeAlert.TabStop = False
+        Me.GroupeAlert.Visible = False
+        '
+        'SectionAlert
+        '
+        Me.SectionAlert.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
+        Me.SectionAlert.Location = New System.Drawing.Point(412, 138)
+        Me.SectionAlert.Name = "SectionAlert"
+        Me.SectionAlert.Size = New System.Drawing.Size(30, 30)
+        Me.SectionAlert.TabIndex = 65
+        Me.SectionAlert.TabStop = False
+        Me.SectionAlert.Visible = False
+        '
+        'AnneeAlert
+        '
+        Me.AnneeAlert.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
+        Me.AnneeAlert.Location = New System.Drawing.Point(277, 137)
+        Me.AnneeAlert.Name = "AnneeAlert"
+        Me.AnneeAlert.Size = New System.Drawing.Size(30, 30)
+        Me.AnneeAlert.TabIndex = 64
+        Me.AnneeAlert.TabStop = False
+        Me.AnneeAlert.Visible = False
+        '
+        'SpecialiteAlert
+        '
+        Me.SpecialiteAlert.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
+        Me.SpecialiteAlert.Location = New System.Drawing.Point(142, 137)
+        Me.SpecialiteAlert.Name = "SpecialiteAlert"
+        Me.SpecialiteAlert.Size = New System.Drawing.Size(30, 30)
+        Me.SpecialiteAlert.TabIndex = 63
+        Me.SpecialiteAlert.TabStop = False
+        Me.SpecialiteAlert.Visible = False
+        '
+        'SexeAlert
+        '
+        Me.SexeAlert.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
+        Me.SexeAlert.Location = New System.Drawing.Point(62, 83)
+        Me.SexeAlert.Name = "SexeAlert"
+        Me.SexeAlert.Size = New System.Drawing.Size(30, 30)
+        Me.SexeAlert.TabIndex = 62
+        Me.SexeAlert.TabStop = False
+        Me.SexeAlert.Visible = False
+        '
+        'NiveauAlert
+        '
+        Me.NiveauAlert.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
+        Me.NiveauAlert.Location = New System.Drawing.Point(5, 138)
+        Me.NiveauAlert.Name = "NiveauAlert"
+        Me.NiveauAlert.Size = New System.Drawing.Size(30, 30)
+        Me.NiveauAlert.TabIndex = 61
+        Me.NiveauAlert.TabStop = False
+        Me.NiveauAlert.Visible = False
         '
         'SexeSpliter
         '
@@ -323,7 +428,7 @@ Partial Class StatistiquePage
         '
         'GroupeSpliter
         '
-        Me.GroupeSpliter.Location = New System.Drawing.Point(568, 135)
+        Me.GroupeSpliter.Location = New System.Drawing.Point(578, 138)
         Me.GroupeSpliter.Name = "GroupeSpliter"
         Me.GroupeSpliter.Orientation = System.Windows.Forms.Orientation.Horizontal
         '
@@ -371,7 +476,7 @@ Partial Class StatistiquePage
         '
         'SectionSpliter
         '
-        Me.SectionSpliter.Location = New System.Drawing.Point(441, 135)
+        Me.SectionSpliter.Location = New System.Drawing.Point(443, 138)
         Me.SectionSpliter.Name = "SectionSpliter"
         Me.SectionSpliter.Orientation = System.Windows.Forms.Orientation.Horizontal
         '
@@ -419,7 +524,7 @@ Partial Class StatistiquePage
         '
         'AnneeSpliter
         '
-        Me.AnneeSpliter.Location = New System.Drawing.Point(290, 135)
+        Me.AnneeSpliter.Location = New System.Drawing.Point(308, 138)
         Me.AnneeSpliter.Name = "AnneeSpliter"
         Me.AnneeSpliter.Orientation = System.Windows.Forms.Orientation.Horizontal
         '
@@ -467,7 +572,7 @@ Partial Class StatistiquePage
         '
         'SpecialiteSpliter
         '
-        Me.SpecialiteSpliter.Location = New System.Drawing.Point(158, 135)
+        Me.SpecialiteSpliter.Location = New System.Drawing.Point(173, 138)
         Me.SpecialiteSpliter.Name = "SpecialiteSpliter"
         Me.SpecialiteSpliter.Orientation = System.Windows.Forms.Orientation.Horizontal
         '
@@ -515,7 +620,7 @@ Partial Class StatistiquePage
         '
         'NiveauSpliter
         '
-        Me.NiveauSpliter.Location = New System.Drawing.Point(26, 135)
+        Me.NiveauSpliter.Location = New System.Drawing.Point(38, 138)
         Me.NiveauSpliter.Name = "NiveauSpliter"
         Me.NiveauSpliter.Orientation = System.Windows.Forms.Orientation.Horizontal
         '
@@ -834,46 +939,46 @@ Partial Class StatistiquePage
         Me.ChartPanel.Controls.Add(Me.BT_PREV)
         Me.ChartPanel.Controls.Add(Me.BT_NEXT)
         Me.ChartPanel.Controls.Add(Me.CB_CHARTKIND)
-        Me.ChartPanel.Location = New System.Drawing.Point(0, 201)
+        Me.ChartPanel.Location = New System.Drawing.Point(0, 194)
         Me.ChartPanel.Name = "ChartPanel"
-        Me.ChartPanel.Size = New System.Drawing.Size(678, 439)
+        Me.ChartPanel.Size = New System.Drawing.Size(678, 446)
         Me.ChartPanel.TabIndex = 53
         '
         'Chart1
         '
-        ChartArea1.Name = "ChartArea1"
-        ChartArea2.Name = "ChartArea2"
-        ChartArea3.Name = "ChartArea3"
-        ChartArea4.Name = "ChartArea4"
-        Me.Chart1.ChartAreas.Add(ChartArea1)
-        Me.Chart1.ChartAreas.Add(ChartArea2)
+        ChartArea3.Name = "ChartArea4"
         Me.Chart1.ChartAreas.Add(ChartArea3)
-        Me.Chart1.ChartAreas.Add(ChartArea4)
-        Legend1.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend1)
-        Me.Chart1.Location = New System.Drawing.Point(63, 12)
+        Legend3.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend3)
+        Me.Chart1.Location = New System.Drawing.Point(59, 3)
         Me.Chart1.Name = "Chart1"
         Me.Chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None
         Me.Chart1.PaletteCustomColors = New System.Drawing.Color() {System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer)), System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer)), System.Drawing.Color.DodgerBlue, System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))}
-        Series1.ChartArea = "ChartArea1"
-        Series1.Legend = "Legend1"
-        Series1.Name = "Series1"
-        Series2.ChartArea = "ChartArea2"
-        Series2.Legend = "Legend1"
-        Series2.Name = "Series2"
-        Series3.ChartArea = "ChartArea3"
-        Series3.Legend = "Legend1"
-        Series3.Name = "Series3"
-        Series4.ChartArea = "ChartArea4"
-        Series4.Legend = "Legend1"
-        Series4.Name = "Series4"
-        Me.Chart1.Series.Add(Series1)
-        Me.Chart1.Series.Add(Series2)
-        Me.Chart1.Series.Add(Series3)
-        Me.Chart1.Series.Add(Series4)
-        Me.Chart1.Size = New System.Drawing.Size(550, 373)
+        Series9.ChartArea = "ChartArea4"
+        Series9.Legend = "Legend1"
+        Series9.Name = "Series1"
+        Series10.ChartArea = "ChartArea4"
+        Series10.Legend = "Legend1"
+        Series10.Name = "Series2"
+        Series11.ChartArea = "ChartArea4"
+        Series11.Legend = "Legend1"
+        Series11.Name = "Series3"
+        Series12.ChartArea = "ChartArea4"
+        Series12.Legend = "Legend1"
+        Series12.Name = "Series4"
+        Me.Chart1.Series.Add(Series9)
+        Me.Chart1.Series.Add(Series10)
+        Me.Chart1.Series.Add(Series11)
+        Me.Chart1.Series.Add(Series12)
+        Me.Chart1.Size = New System.Drawing.Size(560, 394)
+        Me.Chart1.SuppressExceptions = True
         Me.Chart1.TabIndex = 12
         Me.Chart1.Text = "Chart1"
+        Title3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom
+        Title3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold)
+        Title3.Name = "Title1"
+        Title3.Text = "chart1"
+        Me.Chart1.Titles.Add(Title3)
         '
         'BT_CHARTLOAD
         '
@@ -882,7 +987,7 @@ Partial Class StatistiquePage
         Me.BT_CHARTLOAD.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BT_CHARTLOAD.Font = New System.Drawing.Font("Cambria", 13.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BT_CHARTLOAD.ForeColor = System.Drawing.Color.White
-        Me.BT_CHARTLOAD.Location = New System.Drawing.Point(234, 397)
+        Me.BT_CHARTLOAD.Location = New System.Drawing.Point(234, 405)
         Me.BT_CHARTLOAD.Name = "BT_CHARTLOAD"
         Me.BT_CHARTLOAD.Size = New System.Drawing.Size(160, 33)
         Me.BT_CHARTLOAD.TabIndex = 7
@@ -897,7 +1002,7 @@ Partial Class StatistiquePage
         Me.BT_PREV.FlatAppearance.BorderSize = 0
         Me.BT_PREV.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BT_PREV.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BT_PREV.Location = New System.Drawing.Point(18, 175)
+        Me.BT_PREV.Location = New System.Drawing.Point(14, 183)
         Me.BT_PREV.Name = "BT_PREV"
         Me.BT_PREV.Size = New System.Drawing.Size(35, 35)
         Me.BT_PREV.TabIndex = 8
@@ -911,7 +1016,7 @@ Partial Class StatistiquePage
         Me.BT_NEXT.FlatAppearance.BorderSize = 0
         Me.BT_NEXT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BT_NEXT.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BT_NEXT.Location = New System.Drawing.Point(626, 175)
+        Me.BT_NEXT.Location = New System.Drawing.Point(629, 183)
         Me.BT_NEXT.Name = "BT_NEXT"
         Me.BT_NEXT.Size = New System.Drawing.Size(35, 35)
         Me.BT_NEXT.TabIndex = 9
@@ -921,7 +1026,7 @@ Partial Class StatistiquePage
         'CB_CHARTKIND
         '
         Me.CB_CHARTKIND.FormattingEnabled = True
-        Me.CB_CHARTKIND.Location = New System.Drawing.Point(444, 399)
+        Me.CB_CHARTKIND.Location = New System.Drawing.Point(444, 407)
         Me.CB_CHARTKIND.Name = "CB_CHARTKIND"
         Me.CB_CHARTKIND.Size = New System.Drawing.Size(121, 28)
         Me.CB_CHARTKIND.TabIndex = 13
@@ -1277,6 +1382,10 @@ Partial Class StatistiquePage
         Me.AboutToolStripMenuItem1.Size = New System.Drawing.Size(32, 19)
         Me.AboutToolStripMenuItem1.Text = "&About..."
         '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
+        '
         'StatistiquePage
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
@@ -1292,6 +1401,14 @@ Partial Class StatistiquePage
         Me.WindowState = System.Windows.Forms.FormWindowState.Minimized
         Me.StatistiquesPanel.ResumeLayout(False)
         Me.StatistiquesPanel.PerformLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MatiereAlert, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GroupeAlert, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SectionAlert, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AnneeAlert, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SpecialiteAlert, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SexeAlert, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NiveauAlert, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SexeSpliter.Panel1.ResumeLayout(False)
         Me.SexeSpliter.Panel2.ResumeLayout(False)
         CType(Me.SexeSpliter, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1326,6 +1443,7 @@ Partial Class StatistiquePage
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TitlePanel.ResumeLayout(False)
         Me.TitlePanel.PerformLayout()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1441,4 +1559,14 @@ Partial Class StatistiquePage
     Friend WithEvents GroupeSpliter As System.Windows.Forms.SplitContainer
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents CHB_GROUPE As System.Windows.Forms.CheckedListBox
+    Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
+    Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
+    Friend WithEvents MatiereAlert As System.Windows.Forms.PictureBox
+    Friend WithEvents GroupeAlert As System.Windows.Forms.PictureBox
+    Friend WithEvents SectionAlert As System.Windows.Forms.PictureBox
+    Friend WithEvents AnneeAlert As System.Windows.Forms.PictureBox
+    Friend WithEvents SpecialiteAlert As System.Windows.Forms.PictureBox
+    Friend WithEvents SexeAlert As System.Windows.Forms.PictureBox
+    Friend WithEvents NiveauAlert As System.Windows.Forms.PictureBox
+    Friend WithEvents AvertTip As System.Windows.Forms.ToolTip
 End Class

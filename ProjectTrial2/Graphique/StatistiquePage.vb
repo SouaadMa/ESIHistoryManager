@@ -8,6 +8,9 @@
     Private i As Integer '= chart_kind(chart_kind.IndexOf("Column"))
     Private RepartSpliter As New List(Of SplitContainer)
     Private DomainSpliter As New Dictionary(Of SplitContainer, String)
+    Private Domain2Spliter As New Dictionary(Of SplitContainer, String)
+    Private Obligatoryinput As New List(Of CheckedListBox)
+    Private AlertPicture As New Dictionary(Of PictureBox, String)
     Private stat As Statistiques
 
     Private Sub StatistiquePage_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -16,10 +19,28 @@
         DomainSpliter.Add(NiveauSpliter, BDD.champsNiveau) ', SpecialiteSpliter, AnneeSpliter, SectionSpliter, GroupeSpliter})
         DomainSpliter.Add(SpecialiteSpliter, BDD.champsOption)
         DomainSpliter.Add(AnneeSpliter, BDD.champsAnnee)
-        'DomainSpliter.Add(SectionSpliter, BDD.champsCodeSection)
-        'DomainSpliter.Add(GroupeSpliter, BDD.champsCodeGroupe)
+
+        Domain2Spliter.Add(SectionSpliter, BDD.champsCodeSection)
+        Domain2Spliter.Add(GroupeSpliter, BDD.champsCodeGroupe)
 
         RepartSpliter.AddRange({SexeSpliter, MatiereSpliter})
+
+        AlertPicture.Add(SexeAlert, "Vous devez remplir ce champs !")
+        AlertPicture.Add(MatiereAlert, "Vous devez remplir ce champs !")
+        AlertPicture.Add(PictureBox3, "Vous devez saisir La seuil du moyenne !")
+        AlertPicture.Add(NiveauAlert, "Vous devez remplir ce champs !")
+        AlertPicture.Add(SpecialiteAlert, "Vous devez remplir ce champs !")
+        AlertPicture.Add(AnneeAlert, "Vous devez remplir ce champs !")
+        AlertPicture.Add(SectionAlert, "Vous devez remplir ce champs !")
+        AlertPicture.Add(GroupeAlert, "Vous devez remplir ce champs !")
+
+        AvertTip.Active = False
+        AvertTip.ShowAlways = True
+
+        For Each picture As PictureBox In AlertPicture.Keys
+            picture.Visible = False
+        Next
+
         'initializer boutton chart kind 
         BT_CHARTLOAD.Visible = True
         BT_CHARTLOAD.Enabled = False
@@ -179,10 +200,7 @@
                 Else
                     CritCombList.Add(DomainCrit.ToList())
                     'stat = New Statistiques(DomainCrit, EtudCrit, RepartCrit)
-                    '    .XValueMember = ds.Tables(0).Columns.Item(1).ColumnName
-                    '    .YValueMembers = "Total0" 'ds.Tables(0).Columns.Item("Total" + (ds.Tables.Count - 1).ToString).ColumnName
-                    '    .ChartArea = Chart1.ChartAreas.Item(0).Name
-                    'End With
+
                 End If
                 DomainCrit.RemoveAt(0)
             Next
@@ -190,25 +208,39 @@
             CritCombList.Add(DomainCrit.ToList())
         End If
 
-        For Each comb As IList(Of Critere) In CritCombList
-            stat = New Statistiques(comb, EtudCrit, RepartCrit)
+        'initialize the chart properties
+        Chart1.ChartAreas.Clear()
+        Chart1.ChartAreas.Add("chart1")
+        Chart1.ChartAreas(0).AxisX.Title = RepartCrit
+        Select Case EtudCrit.getChamps
+            Case "Nombre", BDD.champsMOYEIN
+                Chart1.ChartAreas(0).AxisY.Title = "Nombre des étudiants"
+            Case BDD.champsNOJUNO, BDD.champsDECIIN
+                Chart1.ChartAreas(0).AxisY.Title = "Taux"
+        End Select
+
+        Chart1.Titles(0).Text = CB_CRITERE.Text + IIf(ds.Tables.Count > 1, " entre", " pour")
+        'Chart1.Series.Add("add")
+        For i As Integer = 0 To CritCombList.Count - 1 Step 1  'comb As IList(Of Critere) In CritCombList
+            stat = New Statistiques(CritCombList(i), EtudCrit, RepartCrit)
             ds.Tables.Add(stat.GetDataTable())
+            'add and rename the series
+            Chart1.Series.Add(i.ToString) '"chart 1")        'IIf(DomainCrit.Count > 0, DomainCrit.Item(0).getChamps + " " + DomainCrit.Item(0).getValeur, 
+            With Chart1.Series.Item(i)
+                .XValueMember = RepartCrit
+                .YValueMembers = "Total" 'ds.Tables(0).Columns.Item("Total" + (ds.Tables.Count - 1).ToString).ColumnName
+                .ChartArea = Chart1.ChartAreas.Item(0).Name
+                'affichons les valeurs au-dessus de chaque colonne
+                .IsValueShownAsLabel = True
+            End With
         Next
-        ''add and rename the series
-        'Chart1.Series.Add(DomainCrit.Item(0).getChamps + " " + DomainCrit.Item(0).getValeur)
-        'With Chart1.Series.Item(ds.Tables.Count - 1)
-        '    'ds.Tables(ds.Tables.Count - 1).TableName + "."
+
         'DataSource indique la source de données
         'Chart1.DataSource = ds
 
         'For i As Integer = 0 To ds.Tables.Count - 1 Step 1  'for each table in the dataset
-        '    'rename the series
-        '    Chart1.Series.Item(i).Name = DomainCrit.Item(0).getChamps + " " + DomainCrit.Item(0).getValeur
-        '    End If
-
         'Next
-        'Dans une series YValueMembers indique quelle colonne utiliser pour les valeurs Y
-        'Chart1.Series(0)
+
         'Bind() déclenche le Binding
         Chart1.DataBind()
         Form1.ds = ds
@@ -230,11 +262,11 @@
     Private Sub CB_CHARTKIND_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CB_CHARTKIND.SelectedIndexChanged
         'change the type of chart
         i = CB_CHARTKIND.SelectedIndex
-        Chart1.Series(0).ChartType = DirectCast([Enum].Parse(GetType(DataVisualization.Charting.SeriesChartType), chart_kind(i)), DataVisualization.Charting.SeriesChartType)
+        'Chart1.Series(0).ChartType = DirectCast([Enum].Parse(GetType(DataVisualization.Charting.SeriesChartType), chart_kind(i)), DataVisualization.Charting.SeriesChartType)
     End Sub
 
     Private Sub CHB_SEXE_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CHB_SEXE.SelectedIndexChanged
-        
+
     End Sub
 
     Private Sub CHB_MAT_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -267,9 +299,8 @@
         'CB_CHARTKIND.Visible = False
     End Sub
 
-    Private Sub TXT_MOYSEUIL_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        'BT_CHARTLOAD.Visible = True
-        'CB_CHARTKIND.Visible = False
+    Private Sub TXT_MOYSEUIL_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_MOYSEUIL.TextChanged
+        PictureBox3.Visible = Not (TXT_MOYSEUIL.Text.Equals(""))
     End Sub
 
     Private Sub Label_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SexeLabel.Click, MatiereLabel.Click, NiveauLabel.Click, Label1.Click, Label3.Click, Label4.Click, Label5.Click, Label6.Click
@@ -305,6 +336,7 @@
         Select Case CB_CRITERE.DropDownItems.IndexOf(tool.OwnerItem)
             Case 0
                 EtudCrit = New Critere("Nombre", "")
+                TXT_MOYSEUIL.Enabled = False
                 enableRepartSplit(False)
                 enableDomainSplit(True)
                 Select Case CType(tool.OwnerItem, ToolStripMenuItem).DropDownItems.IndexOf(tool)
@@ -317,15 +349,18 @@
                         SpecialiteSpliter.Enabled = False
                 End Select
             Case 3, 4, 5, 6
+                TXT_MOYSEUIL.Enabled = False
                 enableRepartSplit(False)
                 enableDomainSplit(True)
                 Select Case CType(tool.OwnerItem, ToolStripMenuItem).DropDownItems.IndexOf(tool.OwnerItem)
                     Case 0
                         EtudCrit = New Critere(BDD.champsNOJUNO, 10)
                         RepartCrit = BDD.champsCOMAMA
+                        requireFields({CHB_SPECIALITE, CHB_NIVEAU, CHB_ANNEE})
                     Case 1
                         EtudCrit = New Critere(BDD.champsDECIIN, "REUSSITE")
                         RepartCrit = BDD.champsCodeGroupe
+                        requireFields({CHB_SPECIALITE, CHB_NIVEAU, CHB_ANNEE})
                     Case 2
                         EtudCrit = New Critere(BDD.champsDECIIN, "REUSSITE")
                         RepartCrit = BDD.champsNiveau
@@ -339,8 +374,10 @@
                         NiveauSpliter.Enabled = False
                     Case 1
                         RepartCrit = BDD.champsCodeGroupe
+                        requireFields({CHB_SPECIALITE, CHB_NIVEAU, CHB_ANNEE})
                     Case 2
                         RepartCrit = BDD.champsCodeSection
+                        requireFields({CHB_SPECIALITE, CHB_NIVEAU, CHB_ANNEE})
                 End Select
                 'EtudCrit.Add(New Critere(BDD.champsMOYEIN, SEUIL))
         End Select
@@ -367,6 +404,50 @@
         Next
     End Sub
 
+    Private Sub PictureBox1_VisibleChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupeAlert.VisibleChanged, SectionAlert.VisibleChanged, AnneeAlert.VisibleChanged, SpecialiteAlert.VisibleChanged, NiveauAlert.VisibleChanged, PictureBox3.VisibleChanged, MatiereAlert.VisibleChanged, SexeAlert.VisibleChanged
+        'Dim AvertTip As ToolTip = New ToolTip()
+        AvertTip.IsBalloon = True
+        If CType(sender, PictureBox).Visible Then
+            If Not AvertTip.Active Then
+                AvertTip.SetToolTip(sender, AlertPicture(CType(sender, PictureBox)))
+                AvertTip.Active = False
+                AvertTip.ShowAlways = True
+            End If
+        Else
+            AvertTip.Active = False
+            AvertTip.ShowAlways = True
+        End If
+    End Sub
+
+    Private Sub CHB_SEXE_ItemCheck(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ItemCheckEventArgs) Handles CHB_SEXE.ItemCheck, CHB_MAT.ItemCheck, CHB_SPECIALITE.ItemCheck, CHB_SECTION.ItemCheck, CHB_NIVEAU.ItemCheck, CHB_GROUPE.ItemCheck, CHB_ANNEE.ItemCheck
+        Dim lst As CheckedListBox = CType(sender, CheckedListBox)
+        If Obligatoryinput.Contains(lst) Then
+            If lst.CheckedItems.Count = 0 And e.NewValue = CheckState.Checked Then
+                StatistiquesPanel.Controls.Item(lst.Name.Substring(4) + "Alert").Visible = False
+            ElseIf lst.CheckedItems.Count = 1 And e.NewValue = CheckState.Unchecked Then
+                StatistiquesPanel.Controls.Item(lst.Name.Substring(4) + "Alert").Visible = True
+            End If
+        End If
+    End Sub
+
+    Private Sub TXT_MOYSEUIL_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TXT_MOYSEUIL.KeyPress
+        Dim c As Char = e.KeyChar
+        If c.Equals(46)  and TXT_MOYSEUIL.Text.IndexOf(".") <> -1 Then
+            e.Handled = True
+            Return
+        End If
+        If Not Char.IsDigit(c) And Not c.Equals(8) And Not c.Equals(46) Then
+            e.Handled = True
+        End If
+
+    End Sub
+
+    Private Sub requireFields(ByVal lst As Array)
+        Obligatoryinput.AddRange(lst)
+        For Each elm As Control In lst
+            StatistiquesPanel.Controls.Item(elm.Name.Substring(4) + "Alert").Visible = True
+        Next
+    End Sub
 End Class
 
 

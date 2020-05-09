@@ -677,20 +677,8 @@
 
                 End If
 
-
-
-
-
             End If
-
-            
-
-            
-
         End While
-
-
-
         Return Result
 
     End Function

@@ -449,7 +449,7 @@
 
     Public Function GetTotalAvecKey(ByVal condition As String) As Integer
 
-        Dim valeur As String
+        Dim valeur As String = ""
 
         Dim rows() As DataRow = dataTable.Select(dataTable.Columns(1).ColumnName + " = " + valeur)
         If rows.Count > 0 Then

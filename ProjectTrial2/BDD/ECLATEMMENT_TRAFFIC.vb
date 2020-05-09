@@ -182,7 +182,7 @@ Public Class ECLATEMMENT_TRAFFIC
 
     'End Sub
 
-    Public Sub New()
+    Public Sub New(ByVal F_ACCESS As String, ByVal EXCEL_INSCRIT As String, ByVal EXCEL_NOTE As String, ByVal EXCEL_MATIERE As String, ByVal EXCEL_RATRAP As String)
         ECLATEMENT("..\..\BDD_APPLICATION", "..\..\INSCRIT_00_04", "..\..\NOTE_00_04", "..\..\MATIERE_00_04", "..\..\RATRAP_00_04")
     End Sub
 End Class

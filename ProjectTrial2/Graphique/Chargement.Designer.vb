@@ -26,43 +26,22 @@ Partial Class Chargement
         Me.TitlePanel = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.ChargementPanel = New System.Windows.Forms.Panel()
-        Me.FlowLayoutPanel4 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.RadioButton13 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton14 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton15 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton16 = New System.Windows.Forms.RadioButton()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.RadioButton5 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton6 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton7 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton8 = New System.Windows.Forms.RadioButton()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.FlowLayoutPanel3 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.RadioButton9 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton10 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton11 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton12 = New System.Windows.Forms.RadioButton()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.ChargementButton = New System.Windows.Forms.Button()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.RadioButton3 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.TitlePanel.SuspendLayout()
         Me.ChargementPanel.SuspendLayout()
-        Me.FlowLayoutPanel4.SuspendLayout()
-        Me.FlowLayoutPanel2.SuspendLayout()
-        Me.FlowLayoutPanel3.SuspendLayout()
-        Me.Panel2.SuspendLayout()
-        Me.FlowLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -98,17 +77,18 @@ Partial Class Chargement
         'ChargementPanel
         '
         Me.ChargementPanel.BackColor = System.Drawing.Color.Transparent
-        Me.ChargementPanel.Controls.Add(Me.FlowLayoutPanel4)
+        Me.ChargementPanel.Controls.Add(Me.ChargementButton)
+        Me.ChargementPanel.Controls.Add(Me.RadioButton2)
+        Me.ChargementPanel.Controls.Add(Me.RadioButton1)
+        Me.ChargementPanel.Controls.Add(Me.RadioButton3)
+        Me.ChargementPanel.Controls.Add(Me.RadioButton4)
+        Me.ChargementPanel.Controls.Add(Me.Button4)
+        Me.ChargementPanel.Controls.Add(Me.Button3)
+        Me.ChargementPanel.Controls.Add(Me.Button2)
+        Me.ChargementPanel.Controls.Add(Me.Button1)
         Me.ChargementPanel.Controls.Add(Me.Label5)
-        Me.ChargementPanel.Controls.Add(Me.Panel5)
-        Me.ChargementPanel.Controls.Add(Me.FlowLayoutPanel2)
         Me.ChargementPanel.Controls.Add(Me.Label3)
-        Me.ChargementPanel.Controls.Add(Me.Panel4)
-        Me.ChargementPanel.Controls.Add(Me.FlowLayoutPanel3)
         Me.ChargementPanel.Controls.Add(Me.Label4)
-        Me.ChargementPanel.Controls.Add(Me.Panel3)
-        Me.ChargementPanel.Controls.Add(Me.Panel2)
-        Me.ChargementPanel.Controls.Add(Me.FlowLayoutPanel1)
         Me.ChargementPanel.Controls.Add(Me.Label2)
         Me.ChargementPanel.Controls.Add(Me.TitlePanel)
         Me.ChargementPanel.Location = New System.Drawing.Point(0, 0)
@@ -117,377 +97,20 @@ Partial Class Chargement
         Me.ChargementPanel.Size = New System.Drawing.Size(683, 650)
         Me.ChargementPanel.TabIndex = 87
         '
-        'FlowLayoutPanel4
+        'ChargementButton
         '
-        Me.FlowLayoutPanel4.Controls.Add(Me.RadioButton13)
-        Me.FlowLayoutPanel4.Controls.Add(Me.RadioButton14)
-        Me.FlowLayoutPanel4.Controls.Add(Me.RadioButton15)
-        Me.FlowLayoutPanel4.Controls.Add(Me.RadioButton16)
-        Me.FlowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.FlowLayoutPanel4.Location = New System.Drawing.Point(523, 488)
-        Me.FlowLayoutPanel4.Margin = New System.Windows.Forms.Padding(0)
-        Me.FlowLayoutPanel4.Name = "FlowLayoutPanel4"
-        Me.FlowLayoutPanel4.Size = New System.Drawing.Size(105, 112)
-        Me.FlowLayoutPanel4.TabIndex = 17
-        '
-        'RadioButton13
-        '
-        Me.RadioButton13.Appearance = System.Windows.Forms.Appearance.Button
-        Me.RadioButton13.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.RadioButton13.FlatAppearance.BorderSize = 0
-        Me.RadioButton13.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.RadioButton13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.RadioButton13.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton13.ForeColor = System.Drawing.Color.White
-        Me.RadioButton13.Location = New System.Drawing.Point(0, 0)
-        Me.RadioButton13.Margin = New System.Windows.Forms.Padding(0)
-        Me.RadioButton13.Name = "RadioButton13"
-        Me.RadioButton13.Size = New System.Drawing.Size(104, 28)
-        Me.RadioButton13.TabIndex = 7
-        Me.RadioButton13.TabStop = True
-        Me.RadioButton13.Text = "Rattrapage"
-        Me.RadioButton13.UseVisualStyleBackColor = False
-        '
-        'RadioButton14
-        '
-        Me.RadioButton14.Appearance = System.Windows.Forms.Appearance.Button
-        Me.RadioButton14.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.RadioButton14.FlatAppearance.BorderSize = 0
-        Me.RadioButton14.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.RadioButton14.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.RadioButton14.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton14.ForeColor = System.Drawing.Color.White
-        Me.RadioButton14.Location = New System.Drawing.Point(0, 28)
-        Me.RadioButton14.Margin = New System.Windows.Forms.Padding(0)
-        Me.RadioButton14.Name = "RadioButton14"
-        Me.RadioButton14.Size = New System.Drawing.Size(104, 28)
-        Me.RadioButton14.TabIndex = 4
-        Me.RadioButton14.TabStop = True
-        Me.RadioButton14.Text = "Etudiant"
-        Me.RadioButton14.UseVisualStyleBackColor = False
-        '
-        'RadioButton15
-        '
-        Me.RadioButton15.Appearance = System.Windows.Forms.Appearance.Button
-        Me.RadioButton15.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.RadioButton15.FlatAppearance.BorderSize = 0
-        Me.RadioButton15.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.RadioButton15.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.RadioButton15.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton15.ForeColor = System.Drawing.Color.White
-        Me.RadioButton15.Location = New System.Drawing.Point(0, 56)
-        Me.RadioButton15.Margin = New System.Windows.Forms.Padding(0)
-        Me.RadioButton15.Name = "RadioButton15"
-        Me.RadioButton15.Size = New System.Drawing.Size(104, 28)
-        Me.RadioButton15.TabIndex = 5
-        Me.RadioButton15.TabStop = True
-        Me.RadioButton15.Text = "Inscription"
-        Me.RadioButton15.UseVisualStyleBackColor = False
-        '
-        'RadioButton16
-        '
-        Me.RadioButton16.Appearance = System.Windows.Forms.Appearance.Button
-        Me.RadioButton16.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.RadioButton16.FlatAppearance.BorderSize = 0
-        Me.RadioButton16.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.RadioButton16.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.RadioButton16.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton16.ForeColor = System.Drawing.Color.White
-        Me.RadioButton16.Location = New System.Drawing.Point(0, 84)
-        Me.RadioButton16.Margin = New System.Windows.Forms.Padding(0)
-        Me.RadioButton16.Name = "RadioButton16"
-        Me.RadioButton16.Size = New System.Drawing.Size(104, 28)
-        Me.RadioButton16.TabIndex = 6
-        Me.RadioButton16.TabStop = True
-        Me.RadioButton16.Text = "Note"
-        Me.RadioButton16.UseVisualStyleBackColor = False
-        '
-        'Label5
-        '
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(409, 494)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(116, 26)
-        Me.Label5.TabIndex = 16
-        Me.Label5.Text = "En tant que :"
-        '
-        'Panel5
-        '
-        Me.Panel5.AllowDrop = True
-        Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel5.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Panel5.Location = New System.Drawing.Point(17, 475)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(391, 62)
-        Me.Panel5.TabIndex = 12
-        '
-        'FlowLayoutPanel2
-        '
-        Me.FlowLayoutPanel2.Controls.Add(Me.RadioButton5)
-        Me.FlowLayoutPanel2.Controls.Add(Me.RadioButton6)
-        Me.FlowLayoutPanel2.Controls.Add(Me.RadioButton7)
-        Me.FlowLayoutPanel2.Controls.Add(Me.RadioButton8)
-        Me.FlowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.FlowLayoutPanel2.Location = New System.Drawing.Point(522, 230)
-        Me.FlowLayoutPanel2.Margin = New System.Windows.Forms.Padding(0)
-        Me.FlowLayoutPanel2.Name = "FlowLayoutPanel2"
-        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(105, 112)
-        Me.FlowLayoutPanel2.TabIndex = 13
-        '
-        'RadioButton5
-        '
-        Me.RadioButton5.Appearance = System.Windows.Forms.Appearance.Button
-        Me.RadioButton5.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.RadioButton5.FlatAppearance.BorderSize = 0
-        Me.RadioButton5.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.RadioButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.RadioButton5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton5.ForeColor = System.Drawing.Color.White
-        Me.RadioButton5.Location = New System.Drawing.Point(0, 0)
-        Me.RadioButton5.Margin = New System.Windows.Forms.Padding(0)
-        Me.RadioButton5.Name = "RadioButton5"
-        Me.RadioButton5.Size = New System.Drawing.Size(104, 28)
-        Me.RadioButton5.TabIndex = 7
-        Me.RadioButton5.TabStop = True
-        Me.RadioButton5.Text = "Rattrapage"
-        Me.RadioButton5.UseVisualStyleBackColor = False
-        '
-        'RadioButton6
-        '
-        Me.RadioButton6.Appearance = System.Windows.Forms.Appearance.Button
-        Me.RadioButton6.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.RadioButton6.FlatAppearance.BorderSize = 0
-        Me.RadioButton6.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.RadioButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.RadioButton6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton6.ForeColor = System.Drawing.Color.White
-        Me.RadioButton6.Location = New System.Drawing.Point(0, 28)
-        Me.RadioButton6.Margin = New System.Windows.Forms.Padding(0)
-        Me.RadioButton6.Name = "RadioButton6"
-        Me.RadioButton6.Size = New System.Drawing.Size(104, 28)
-        Me.RadioButton6.TabIndex = 4
-        Me.RadioButton6.TabStop = True
-        Me.RadioButton6.Text = "Etudiant"
-        Me.RadioButton6.UseVisualStyleBackColor = False
-        '
-        'RadioButton7
-        '
-        Me.RadioButton7.Appearance = System.Windows.Forms.Appearance.Button
-        Me.RadioButton7.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.RadioButton7.FlatAppearance.BorderSize = 0
-        Me.RadioButton7.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.RadioButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.RadioButton7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton7.ForeColor = System.Drawing.Color.White
-        Me.RadioButton7.Location = New System.Drawing.Point(0, 56)
-        Me.RadioButton7.Margin = New System.Windows.Forms.Padding(0)
-        Me.RadioButton7.Name = "RadioButton7"
-        Me.RadioButton7.Size = New System.Drawing.Size(104, 28)
-        Me.RadioButton7.TabIndex = 5
-        Me.RadioButton7.TabStop = True
-        Me.RadioButton7.Text = "Inscription"
-        Me.RadioButton7.UseVisualStyleBackColor = False
-        '
-        'RadioButton8
-        '
-        Me.RadioButton8.Appearance = System.Windows.Forms.Appearance.Button
-        Me.RadioButton8.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.RadioButton8.FlatAppearance.BorderSize = 0
-        Me.RadioButton8.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.RadioButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.RadioButton8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton8.ForeColor = System.Drawing.Color.White
-        Me.RadioButton8.Location = New System.Drawing.Point(0, 84)
-        Me.RadioButton8.Margin = New System.Windows.Forms.Padding(0)
-        Me.RadioButton8.Name = "RadioButton8"
-        Me.RadioButton8.Size = New System.Drawing.Size(104, 28)
-        Me.RadioButton8.TabIndex = 6
-        Me.RadioButton8.TabStop = True
-        Me.RadioButton8.Text = "Note"
-        Me.RadioButton8.UseVisualStyleBackColor = False
-        '
-        'Label3
-        '
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(405, 266)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(116, 26)
-        Me.Label3.TabIndex = 12
-        Me.Label3.Text = "En tant que :"
-        '
-        'Panel4
-        '
-        Me.Panel4.AllowDrop = True
-        Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Panel4.Location = New System.Drawing.Point(15, 360)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(391, 62)
-        Me.Panel4.TabIndex = 11
-        '
-        'FlowLayoutPanel3
-        '
-        Me.FlowLayoutPanel3.Controls.Add(Me.RadioButton9)
-        Me.FlowLayoutPanel3.Controls.Add(Me.RadioButton10)
-        Me.FlowLayoutPanel3.Controls.Add(Me.RadioButton11)
-        Me.FlowLayoutPanel3.Controls.Add(Me.RadioButton12)
-        Me.FlowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.FlowLayoutPanel3.Location = New System.Drawing.Point(523, 361)
-        Me.FlowLayoutPanel3.Margin = New System.Windows.Forms.Padding(0)
-        Me.FlowLayoutPanel3.Name = "FlowLayoutPanel3"
-        Me.FlowLayoutPanel3.Size = New System.Drawing.Size(105, 112)
-        Me.FlowLayoutPanel3.TabIndex = 15
-        '
-        'RadioButton9
-        '
-        Me.RadioButton9.Appearance = System.Windows.Forms.Appearance.Button
-        Me.RadioButton9.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.RadioButton9.FlatAppearance.BorderSize = 0
-        Me.RadioButton9.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.RadioButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.RadioButton9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton9.ForeColor = System.Drawing.Color.White
-        Me.RadioButton9.Location = New System.Drawing.Point(0, 0)
-        Me.RadioButton9.Margin = New System.Windows.Forms.Padding(0)
-        Me.RadioButton9.Name = "RadioButton9"
-        Me.RadioButton9.Size = New System.Drawing.Size(104, 28)
-        Me.RadioButton9.TabIndex = 7
-        Me.RadioButton9.TabStop = True
-        Me.RadioButton9.Text = "Rattrapage"
-        Me.RadioButton9.UseVisualStyleBackColor = False
-        '
-        'RadioButton10
-        '
-        Me.RadioButton10.Appearance = System.Windows.Forms.Appearance.Button
-        Me.RadioButton10.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.RadioButton10.FlatAppearance.BorderSize = 0
-        Me.RadioButton10.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.RadioButton10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.RadioButton10.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton10.ForeColor = System.Drawing.Color.White
-        Me.RadioButton10.Location = New System.Drawing.Point(0, 28)
-        Me.RadioButton10.Margin = New System.Windows.Forms.Padding(0)
-        Me.RadioButton10.Name = "RadioButton10"
-        Me.RadioButton10.Size = New System.Drawing.Size(104, 28)
-        Me.RadioButton10.TabIndex = 4
-        Me.RadioButton10.TabStop = True
-        Me.RadioButton10.Text = "Etudiant"
-        Me.RadioButton10.UseVisualStyleBackColor = False
-        '
-        'RadioButton11
-        '
-        Me.RadioButton11.Appearance = System.Windows.Forms.Appearance.Button
-        Me.RadioButton11.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.RadioButton11.FlatAppearance.BorderSize = 0
-        Me.RadioButton11.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.RadioButton11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.RadioButton11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton11.ForeColor = System.Drawing.Color.White
-        Me.RadioButton11.Location = New System.Drawing.Point(0, 56)
-        Me.RadioButton11.Margin = New System.Windows.Forms.Padding(0)
-        Me.RadioButton11.Name = "RadioButton11"
-        Me.RadioButton11.Size = New System.Drawing.Size(104, 28)
-        Me.RadioButton11.TabIndex = 5
-        Me.RadioButton11.TabStop = True
-        Me.RadioButton11.Text = "Inscription"
-        Me.RadioButton11.UseVisualStyleBackColor = False
-        '
-        'RadioButton12
-        '
-        Me.RadioButton12.Appearance = System.Windows.Forms.Appearance.Button
-        Me.RadioButton12.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.RadioButton12.FlatAppearance.BorderSize = 0
-        Me.RadioButton12.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.RadioButton12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.RadioButton12.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton12.ForeColor = System.Drawing.Color.White
-        Me.RadioButton12.Location = New System.Drawing.Point(0, 84)
-        Me.RadioButton12.Margin = New System.Windows.Forms.Padding(0)
-        Me.RadioButton12.Name = "RadioButton12"
-        Me.RadioButton12.Size = New System.Drawing.Size(104, 28)
-        Me.RadioButton12.TabIndex = 6
-        Me.RadioButton12.TabStop = True
-        Me.RadioButton12.Text = "Note"
-        Me.RadioButton12.UseVisualStyleBackColor = False
-        '
-        'Label4
-        '
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(409, 378)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(116, 26)
-        Me.Label4.TabIndex = 14
-        Me.Label4.Text = "En tant que :"
-        '
-        'Panel3
-        '
-        Me.Panel3.AllowDrop = True
-        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Panel3.Location = New System.Drawing.Point(12, 248)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(391, 62)
-        Me.Panel3.TabIndex = 11
-        '
-        'Panel2
-        '
-        Me.Panel2.AllowDrop = True
-        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel2.Controls.Add(Me.Label6)
-        Me.Panel2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Panel2.Location = New System.Drawing.Point(12, 127)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(391, 62)
-        Me.Panel2.TabIndex = 10
-        '
-        'FlowLayoutPanel1
-        '
-        Me.FlowLayoutPanel1.Controls.Add(Me.RadioButton4)
-        Me.FlowLayoutPanel1.Controls.Add(Me.RadioButton1)
-        Me.FlowLayoutPanel1.Controls.Add(Me.RadioButton2)
-        Me.FlowLayoutPanel1.Controls.Add(Me.RadioButton3)
-        Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(523, 101)
-        Me.FlowLayoutPanel1.Margin = New System.Windows.Forms.Padding(0)
-        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(105, 112)
-        Me.FlowLayoutPanel1.TabIndex = 9
-        '
-        'RadioButton4
-        '
-        Me.RadioButton4.Appearance = System.Windows.Forms.Appearance.Button
-        Me.RadioButton4.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.RadioButton4.FlatAppearance.BorderSize = 0
-        Me.RadioButton4.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.RadioButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.RadioButton4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton4.ForeColor = System.Drawing.Color.White
-        Me.RadioButton4.Location = New System.Drawing.Point(0, 0)
-        Me.RadioButton4.Margin = New System.Windows.Forms.Padding(0)
-        Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(104, 28)
-        Me.RadioButton4.TabIndex = 7
-        Me.RadioButton4.TabStop = True
-        Me.RadioButton4.Text = "Rattrapage"
-        Me.RadioButton4.UseVisualStyleBackColor = False
-        '
-        'RadioButton1
-        '
-        Me.RadioButton1.Appearance = System.Windows.Forms.Appearance.Button
-        Me.RadioButton1.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.RadioButton1.FlatAppearance.BorderSize = 0
-        Me.RadioButton1.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.RadioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.RadioButton1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton1.ForeColor = System.Drawing.Color.White
-        Me.RadioButton1.Location = New System.Drawing.Point(0, 28)
-        Me.RadioButton1.Margin = New System.Windows.Forms.Padding(0)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(104, 28)
-        Me.RadioButton1.TabIndex = 4
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Etudiant"
-        Me.RadioButton1.UseVisualStyleBackColor = False
+        Me.ChargementButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.ChargementButton.FlatAppearance.BorderSize = 0
+        Me.ChargementButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ChargementButton.Font = New System.Drawing.Font("Cambria", 13.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChargementButton.ForeColor = System.Drawing.Color.White
+        Me.ChargementButton.Location = New System.Drawing.Point(261, 584)
+        Me.ChargementButton.Name = "ChargementButton"
+        Me.ChargementButton.Size = New System.Drawing.Size(160, 33)
+        Me.ChargementButton.TabIndex = 22
+        Me.ChargementButton.Text = " Load "
+        Me.ChargementButton.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.ChargementButton.UseVisualStyleBackColor = False
         '
         'RadioButton2
         '
@@ -498,14 +121,32 @@ Partial Class Chargement
         Me.RadioButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.RadioButton2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadioButton2.ForeColor = System.Drawing.Color.White
-        Me.RadioButton2.Location = New System.Drawing.Point(0, 56)
+        Me.RadioButton2.Location = New System.Drawing.Point(543, 255)
         Me.RadioButton2.Margin = New System.Windows.Forms.Padding(0)
         Me.RadioButton2.Name = "RadioButton2"
         Me.RadioButton2.Size = New System.Drawing.Size(104, 28)
-        Me.RadioButton2.TabIndex = 5
+        Me.RadioButton2.TabIndex = 6
         Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "Inscription"
+        Me.RadioButton2.Text = "Note"
         Me.RadioButton2.UseVisualStyleBackColor = False
+        '
+        'RadioButton1
+        '
+        Me.RadioButton1.Appearance = System.Windows.Forms.Appearance.Button
+        Me.RadioButton1.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.RadioButton1.FlatAppearance.BorderSize = 0
+        Me.RadioButton1.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.RadioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.RadioButton1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioButton1.ForeColor = System.Drawing.Color.White
+        Me.RadioButton1.Location = New System.Drawing.Point(543, 136)
+        Me.RadioButton1.Margin = New System.Windows.Forms.Padding(0)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(104, 28)
+        Me.RadioButton1.TabIndex = 5
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "Inscrit"
+        Me.RadioButton1.UseVisualStyleBackColor = False
         '
         'RadioButton3
         '
@@ -516,19 +157,112 @@ Partial Class Chargement
         Me.RadioButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.RadioButton3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadioButton3.ForeColor = System.Drawing.Color.White
-        Me.RadioButton3.Location = New System.Drawing.Point(0, 84)
+        Me.RadioButton3.Location = New System.Drawing.Point(543, 367)
         Me.RadioButton3.Margin = New System.Windows.Forms.Padding(0)
         Me.RadioButton3.Name = "RadioButton3"
         Me.RadioButton3.Size = New System.Drawing.Size(104, 28)
-        Me.RadioButton3.TabIndex = 6
+        Me.RadioButton3.TabIndex = 4
         Me.RadioButton3.TabStop = True
-        Me.RadioButton3.Text = "Note"
+        Me.RadioButton3.Text = "Matière"
         Me.RadioButton3.UseVisualStyleBackColor = False
+        '
+        'RadioButton4
+        '
+        Me.RadioButton4.Appearance = System.Windows.Forms.Appearance.Button
+        Me.RadioButton4.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.RadioButton4.FlatAppearance.BorderSize = 0
+        Me.RadioButton4.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.RadioButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.RadioButton4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioButton4.ForeColor = System.Drawing.Color.White
+        Me.RadioButton4.Location = New System.Drawing.Point(542, 501)
+        Me.RadioButton4.Margin = New System.Windows.Forms.Padding(0)
+        Me.RadioButton4.Name = "RadioButton4"
+        Me.RadioButton4.Size = New System.Drawing.Size(104, 28)
+        Me.RadioButton4.TabIndex = 7
+        Me.RadioButton4.TabStop = True
+        Me.RadioButton4.Text = "Rattrapage"
+        Me.RadioButton4.UseVisualStyleBackColor = False
+        '
+        'Button4
+        '
+        Me.Button4.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Button4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button4.FlatAppearance.BorderColor = System.Drawing.Color.Gray
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.Location = New System.Drawing.Point(31, 482)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(385, 66)
+        Me.Button4.TabIndex = 21
+        Me.Button4.UseVisualStyleBackColor = False
+        '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button3.FlatAppearance.BorderColor = System.Drawing.Color.Gray
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Location = New System.Drawing.Point(31, 352)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(385, 66)
+        Me.Button3.TabIndex = 20
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.Gray
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Location = New System.Drawing.Point(31, 231)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(385, 66)
+        Me.Button2.TabIndex = 19
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Gray
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Location = New System.Drawing.Point(31, 103)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(385, 66)
+        Me.Button1.TabIndex = 18
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Label5
+        '
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(421, 502)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(116, 26)
+        Me.Label5.TabIndex = 16
+        Me.Label5.Text = "En tant que :"
+        '
+        'Label3
+        '
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(424, 255)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(116, 26)
+        Me.Label3.TabIndex = 12
+        Me.Label3.Text = "En tant que :"
+        '
+        'Label4
+        '
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(428, 367)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(116, 26)
+        Me.Label4.TabIndex = 14
+        Me.Label4.Text = "En tant que :"
         '
         'Label2
         '
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(403, 147)
+        Me.Label2.Location = New System.Drawing.Point(422, 136)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(117, 26)
         Me.Label2.TabIndex = 2
@@ -536,17 +270,7 @@ Partial Class Chargement
         '
         'OpenFileDialog1
         '
-        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        Me.OpenFileDialog1.Filter = "excel file |*.xlsl"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(167, 27)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(39, 13)
-        Me.Label6.TabIndex = 0
-        Me.Label6.Text = "Label6"
+        Me.OpenFileDialog1.Filter = "excel file |*.xlsx"
         '
         'Chargement
         '
@@ -556,7 +280,6 @@ Partial Class Chargement
         Me.ClientSize = New System.Drawing.Size(684, 651)
         Me.Controls.Add(Me.ChargementPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.MaximizeBox = False
         Me.MinimumSize = New System.Drawing.Size(650, 595)
         Me.Name = "Chargement"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -564,12 +287,6 @@ Partial Class Chargement
         Me.TitlePanel.ResumeLayout(False)
         Me.TitlePanel.PerformLayout()
         Me.ChargementPanel.ResumeLayout(False)
-        Me.FlowLayoutPanel4.ResumeLayout(False)
-        Me.FlowLayoutPanel2.ResumeLayout(False)
-        Me.FlowLayoutPanel3.ResumeLayout(False)
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
-        Me.FlowLayoutPanel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -579,32 +296,16 @@ Partial Class Chargement
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton4 As System.Windows.Forms.RadioButton
     Friend WithEvents RadioButton3 As System.Windows.Forms.RadioButton
+    Friend WithEvents RadioButton4 As System.Windows.Forms.RadioButton
     Friend WithEvents RadioButton2 As System.Windows.Forms.RadioButton
-    Friend WithEvents FlowLayoutPanel1 As System.Windows.Forms.FlowLayoutPanel
-    Friend WithEvents Panel2 As System.Windows.Forms.Panel
-    Friend WithEvents FlowLayoutPanel4 As System.Windows.Forms.FlowLayoutPanel
-    Friend WithEvents RadioButton13 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton14 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton15 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton16 As System.Windows.Forms.RadioButton
+    Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Panel5 As System.Windows.Forms.Panel
-    Friend WithEvents FlowLayoutPanel2 As System.Windows.Forms.FlowLayoutPanel
-    Friend WithEvents RadioButton5 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton6 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton7 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton8 As System.Windows.Forms.RadioButton
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Panel4 As System.Windows.Forms.Panel
-    Friend WithEvents FlowLayoutPanel3 As System.Windows.Forms.FlowLayoutPanel
-    Friend WithEvents RadioButton9 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton10 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton11 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton12 As System.Windows.Forms.RadioButton
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Panel3 As System.Windows.Forms.Panel
-    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents ChargementButton As System.Windows.Forms.Button
 End Class

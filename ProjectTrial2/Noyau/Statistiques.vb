@@ -416,8 +416,6 @@
 
         Dim valeur As String
 
-        
-
         Select Case (condition.GetType).ToString       ' Savoir le type de la valeur :
             Case "System.String"                                      ' valeur Text
                 valeur = "'" + condition + "'"
@@ -449,8 +447,256 @@
 
     End Function
 
+    Public Function GetTotalAvecKey(ByVal condition As String) As Integer
+
+        Dim valeur As String
+
+        Dim rows() As DataRow = dataTable.Select(dataTable.Columns(1).ColumnName + " = " + valeur)
+        If rows.Count > 0 Then
+            Return rows(0).Item("Total")
+        Else
+            Return 0
+        End If
+
+    End Function
+
     Public Function GetDataTable() As DataTable
         Return dataTable
     End Function
 
+    Public Shared Function MergeDataSet(ByVal ds As DataSet) As DataTable
+
+
+        Dim NewDt As New DataTable
+        Dim num As Integer = 1
+        Dim dt As DataTable
+
+        NewDt = ds.Tables(0)
+        prepareNomsColonnes(NewDt, num)
+
+        If ds.Tables.Count >= 2 Then
+
+            For i As Integer = 1 To ds.Tables.Count - 1
+
+                num += 1
+                dt = ds.Tables(i)
+                prepareNomsColonnes(dt, num)
+                NewDt = JoinTwoDataTables(NewDt, dt)
+
+
+            Next
+
+        End If
+
+        Return NewDt
+
+
+
+    End Function
+
+    Public Shared Sub AddColumns(ByVal dt As DataTable, ByVal NewDt As DataTable)
+
+        For Each dc As DataColumn In dt.Columns
+            Try
+                NewDt.Columns.Add(dc.ColumnName)
+            Catch ex As Exception
+
+            End Try
+
+        Next
+    End Sub
+
+    Public Shared Sub prepareNomsColonnes(ByVal dt As DataTable, ByVal num As Integer)
+
+        If dt.Columns.Count = 2 Then
+
+            For Each col As DataColumn In dt.Columns
+
+                If col.ColumnName.Equals("Total") Then
+                    col.ColumnName = "Total" + num.ToString
+
+                Else
+
+                    col.ColumnName = "Key"
+
+
+                End If
+
+            Next
+
+        End If
+
+    End Sub
+
+    Public Shared Function JoinTwoDataTables(ByVal dt1 As DataTable, ByVal dt2 As DataTable) As DataTable
+
+
+        Dim Result As New DataTable
+        Dim cle As String
+
+        AddColumns(dt1, Result)
+        AddColumns(dt2, Result)
+
+
+        Dim i As Integer = 0
+        Dim j As Integer = 0
+
+
+        While (i < dt1.Rows.Count Or j < dt2.Rows.Count)
+
+            Dim newline As DataRow = Result.Rows.Add
+
+            If i = dt1.Rows.Count Or j = dt2.Rows.Count Then
+
+                If i = dt1.Rows.Count Then
+
+                    cle = dt2.Rows(j)("Key")
+
+                    For Each col As DataColumn In dt1.Columns
+
+                        If (Not col.ColumnName.Equals("Key")) Then
+                            newline(col.ColumnName) = 0
+                        End If
+
+                    Next
+
+                    For Each col As DataColumn In dt2.Columns
+
+                        If (Not col.ColumnName.Equals("Key")) Then
+                            newline(col.ColumnName) = dt2.Rows(j)(col.ColumnName)
+                        End If
+
+
+                    Next
+
+                    j += 1
+
+                Else
+
+                    cle = dt1.Rows(i)("Key")
+
+                    For Each col As DataColumn In dt1.Columns
+
+                        If (Not col.ColumnName.Equals("Key")) Then
+                            newline(col.ColumnName) = dt1.Rows(i)(col.ColumnName)
+                        End If
+
+                    Next
+
+                    For Each col As DataColumn In dt2.Columns
+
+                        If (Not col.ColumnName.Equals("Key")) Then
+                            newline(col.ColumnName) = 0
+                        End If
+
+
+                    Next
+
+                    i += 1
+
+
+                End If
+
+                newline.Item("Key") = cle
+
+            Else
+
+                If (dt1.Rows(i)("Key").Equals(dt2.Rows(j)("Key"))) Then
+
+                    newline.Item("Key") = dt1.Rows(i)("Key")
+
+                    For Each col As DataColumn In dt1.Columns
+
+                        If (Not col.ColumnName.Equals("Key")) Then
+                            newline(col.ColumnName) = dt1.Rows(i)(col.ColumnName)
+                        End If
+
+                    Next
+
+                    For Each col As DataColumn In dt2.Columns
+
+                        If (Not col.ColumnName.Equals("Key")) Then
+                            newline(col.ColumnName) = dt2.Rows(j)(col.ColumnName)
+                        End If
+
+
+                    Next
+
+                    i += 1
+                    j += 1
+
+                Else
+
+                    If (Integer.Parse(dt1.Rows(i)("Key")) < Integer.Parse(dt2.Rows(j)("Key"))) Then
+                        cle = dt1.Rows(i)("Key")
+
+                        For Each col As DataColumn In dt1.Columns
+
+                            If (Not col.ColumnName.Equals("Key")) Then
+                                newline(col.ColumnName) = dt1.Rows(i)(col.ColumnName)
+                            End If
+
+                        Next
+
+                        For Each col As DataColumn In dt2.Columns
+
+                            If (Not col.ColumnName.Equals("Key")) Then
+                                newline(col.ColumnName) = 0
+                            End If
+
+
+                        Next
+
+                        i += 1
+                    Else
+                        cle = dt2.Rows(j)("Key")
+
+                        For Each col As DataColumn In dt1.Columns
+
+                            If (Not col.ColumnName.Equals("Key")) Then
+                                newline(col.ColumnName) = 0
+                            End If
+
+                        Next
+
+                        For Each col As DataColumn In dt2.Columns
+
+                            If (Not col.ColumnName.Equals("Key")) Then
+                                newline(col.ColumnName) = dt2.Rows(j)(col.ColumnName)
+                            End If
+
+
+                        Next
+
+                        j += 1
+                    End If
+
+
+                    newline.Item("Key") = cle
+
+
+                End If
+
+
+
+
+
+            End If
+
+            
+
+            
+
+        End While
+
+
+
+        Return Result
+
+    End Function
+
+
+
 End Class
+
+

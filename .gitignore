@@ -1,5 +1,4 @@
-*.laccdb
-BDD_APPLICATION.accdb
 *.accdb
+*.laccdb
 *.manifest
 ProjectTrial2.suo

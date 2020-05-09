@@ -1,7 +1,7 @@
 ﻿Public Class StatistiquePage
 
 
-    Private chart_kind As String() = System.Enum.GetNames(GetType(DataVisualization.Charting.SeriesChartType)) '{"Spline", "bar", "column", "pie doughnut"}
+    Private chart_kind As List(Of String) = System.Enum.GetNames(GetType(DataVisualization.Charting.SeriesChartType)).ToList '{"Spline", "bar", "column", "pie doughnut"}
     Private DomainCrit As New List(Of Critere)
     Private RepartCrit As String
     Private EtudCrit As Critere
@@ -11,10 +11,26 @@
     Private Domain2Spliter As New Dictionary(Of SplitContainer, String)
     Private Obligatoryinput As New List(Of CheckedListBox)
     Private AlertPicture As New Dictionary(Of PictureBox, String)
+    Private CritCombList As List(Of List(Of Critere))
     Private stat As Statistiques
 
     Private Sub StatistiquePage_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Me.Load
-        i = Array.IndexOf(chart_kind, "Column")
+        i = chart_kind.IndexOf("Column")
+        'DataVisualization.Charting.SeriesChartType.ThreeLineBreak()
+        chart_kind.Remove("PointAndFigure")
+        chart_kind.Remove("Stock")
+        chart_kind.Remove("Polar")
+        chart_kind.Remove("ErrorBar")
+        chart_kind.Remove("Renko")
+        chart_kind.Remove("FastLine")
+        chart_kind.Remove("Kagi")
+        chart_kind.Remove("ThreeLineBreak")
+        'chart_kind.Remove("Point And Figure")
+        'chart_kind.Remove("Point And Figure")
+        'chart_kind.Remove("Point And Figure")
+        'chart_kind.Remove("Point And Figure")
+
+
 
         DomainSpliter.Add(NiveauSpliter, BDD.champsNiveau) ', SpecialiteSpliter, AnneeSpliter, SectionSpliter, GroupeSpliter})
         DomainSpliter.Add(SpecialiteSpliter, BDD.champsOption)
@@ -87,13 +103,17 @@
         CHB_SPECIALITE.Items.AddRange(InfosGenerales.specialite)
         CHB_SPECIALITE.Height = 21 * CHB_SPECIALITE.Items.Count
         'initialiser lannee
-        CHB_ANNEE.Items.AddRange(InfosGenerales.Annee)
+        For i As Integer = InfosGenerales.firstYear To InfosGenerales.lastYear Step 1
+            CHB_ANNEE.Items.Add(i)
+        Next
         CHB_ANNEE.Height = 21 * CHB_ANNEE.Items.Count
         'initialiser de groupe
-        CHB_GROUPE.Items.AddRange(Login.Infosgenerale.groupe.AsEnumerable().Select(Function(dr) dr(0).ToString).ToArray)
+        'CHB_GROUPE.Items.AddRange(Login.Infosgenerale.groupe.AsEnumerable().Select(Function(dr) dr(0).ToString).ToArray)
+        CHB_GROUPE.Items.Clear()
         CHB_GROUPE.Height = 21 * CHB_GROUPE.Items.Count
         'initialiser de section
-        CHB_SECTION.Items.AddRange(Login.Infosgenerale.section.AsEnumerable().Select(Function(dr) dr(0).ToString).ToArray)
+        'CHB_SECTION.Items.AddRange(Login.Infosgenerale.section.AsEnumerable().Select(Function(dr) dr(0).ToString).ToArray)
+        CHB_SECTION.Items.Clear()
         CHB_SECTION.Height = 21 * CHB_SECTION.Items.Count
 
         BT_PREV.Enabled = False
@@ -112,6 +132,7 @@
 
         'clear the chart series
         Chart1.Series.Clear()
+        Chart1.Series.Add("add")
         'exchange betwen boutton and combobox
         CB_CHARTKIND.Visible = True
         CB_CHARTKIND.ValueMember = "Column"
@@ -120,93 +141,7 @@
         CB_CHARTKIND.SelectedIndex = i
         'get the collection of domain criteres
 
-        Dim dmncomb As New Dictionary(Of CheckedListBox, String)
-
-        For Each Domain As KeyValuePair(Of SplitContainer, String) In DomainSpliter
-            If CType(Domain.Key.Panel2.Controls.Item(0), CheckedListBox).CheckedItems.Count > 0 Then
-                dmncomb.Add(CType(Domain.Key.Panel2.Controls.Item(0), CheckedListBox), Domain.Value)
-            End If
-        Next
-
-        'If CType(Domain.Key.Panel2.Controls.Item(0), CheckedListBox).CheckedItems.Count > 0 Then
-        'If CHB_S.CheckedItems.Count > 0 Then
-        'For Each Domain As KeyValuePair(Of SplitContainer, String) In dmncomb
-        '    For Each crit In CType(Domain.Key.Panel2.Controls.Item(0), CheckedListBox).CheckedItems
-        '        DomainCrit.Add(New Critere(Domain.Value, crit.ToString))
-        '    Next
-        'Next
-
-        'While dmncomb.Count <> 0
-        'For i As Integer = 0 To dmncomb.Count - 1 Step 1
-        '    For Each itm In dmncomb.Item(i).CheckedItems
-        '        For Each dm As CheckedListBox In dmncomb.Keys.ToList.Take(i + 1)
-        '            DomainCrit.Add(New Critere(dmncomb.Item(dmn).ToString, itm.ToString))
-        '            If (dmncomb.Keys.ToList.IndexOf(dmn) = dmncomb.Count - 1) Then
-        '                DomainCrit.RemoveAt(DomainCrit.Count - 1)
-        '                dmn.SetItemCheckState(dmn.FindStringExact(dmn.CheckedItems.Item(0).ToString), CheckState.Unchecked)
-        '            Else
-
-        '            End If
-        '        Next
-        '    Next
-        'Next
-        'End While
-        Dim CritCombList As New List(Of List(Of Critere))
-        Dim cpt As Integer = 0
-
-        If dmncomb.Count > 0 And DomainCrit.Count < 1 Then
-            For Each niv In dmncomb.Keys(0).CheckedItems
-                DomainCrit.Add(New Critere(dmncomb.Item(dmncomb.Keys(0)), niv.ToString))
-                If dmncomb.Count > 1 And DomainCrit.Count < 2 Then
-                    For Each opt In dmncomb.Keys(1).CheckedItems
-                        DomainCrit.Add(New Critere(dmncomb.Item(dmncomb.Keys(1)), opt.ToString))
-                        If dmncomb.Count > 2 And DomainCrit.Count < 3 Then
-                            For Each an In dmncomb.Keys(2).CheckedItems
-                                DomainCrit.Add(New Critere(dmncomb.Item(dmncomb.Keys(2)), an.ToString))
-                                If dmncomb.Count > 3 And DomainCrit.Count < 4 Then
-                                    For Each sec In dmncomb.Keys(3).CheckedItems
-                                        DomainCrit.Add(New Critere(dmncomb.Item(dmncomb.Keys(3)), sec.ToString))
-                                        If dmncomb.Count > 4 And DomainCrit.Count < 5 Then
-                                            For Each grp In dmncomb.Keys(4).CheckedItems
-                                                DomainCrit.Add(New Critere(dmncomb.Item(dmncomb.Keys(4)), grp.ToString))
-                                                CritCombList.Add(DomainCrit.ToList())
-                                                'stat = New Statistiques(DomainCrit, EtudCrit, RepartCrit)
-                                                'ds.Tables.Add(stat.GetDataTable())
-                                                DomainCrit.RemoveAt(4)
-                                            Next
-                                        Else
-                                            CritCombList.Add(DomainCrit.ToList())
-                                            'stat = New Statistiques(DomainCrit, EtudCrit, RepartCrit)
-                                            'ds.Tables.Add(stat.GetDataTable())
-                                        End If
-                                        DomainCrit.RemoveAt(3)
-                                    Next
-
-                                Else
-                                    CritCombList.Add(DomainCrit.ToList())
-                                    'stat = New Statistiques(DomainCrit, EtudCrit, RepartCrit)
-                                    'ds.Tables.Add(stat.GetDataTable())
-                                End If
-                                DomainCrit.RemoveAt(2)
-                            Next
-
-                        Else
-                            CritCombList.Add(DomainCrit.ToList())
-                            'stat = New Statistiques(DomainCrit, EtudCrit, RepartCrit)
-                            'ds.Tables.Add(stat.GetDataTable())
-                        End If
-                        DomainCrit.RemoveAt(1)
-                    Next
-                Else
-                    CritCombList.Add(DomainCrit.ToList())
-                    'stat = New Statistiques(DomainCrit, EtudCrit, RepartCrit)
-
-                End If
-                DomainCrit.RemoveAt(0)
-            Next
-        Else
-            CritCombList.Add(DomainCrit.ToList())
-        End If
+        CritCombList = GenereCritCombin()
 
         'initialize the chart properties
         Chart1.ChartAreas.Clear()
@@ -219,84 +154,72 @@
                 Chart1.ChartAreas(0).AxisY.Title = "Taux"
         End Select
 
-        Chart1.Titles(0).Text = CB_CRITERE.Text + IIf(ds.Tables.Count > 1, " entre", " pour")
-        'Chart1.Series.Add("add")
+        Chart1.Titles(0).Text = CB_CRITERE.Text + IIf(ds.Tables.Count > 1, " entre", " ")
+        Chart1.Series.RemoveAt(0)
         For i As Integer = 0 To CritCombList.Count - 1 Step 1  'comb As IList(Of Critere) In CritCombList
             stat = New Statistiques(CritCombList(i), EtudCrit, RepartCrit)
-            ds.Tables.Add(stat.GetDataTable())
-            'add and rename the series
-            Chart1.Series.Add(i.ToString) '"chart 1")        'IIf(DomainCrit.Count > 0, DomainCrit.Item(0).getChamps + " " + DomainCrit.Item(0).getValeur, 
+            If stat.GetDataTable().Rows.Count > 0 Then
+                ds.Tables.Add(stat.GetDataTable())
+                'add and rename the series
+                Dim sername As String = SerieName(CritCombList(i))
+                'If i = 0 Then
+                'Chart1.Series.Item(0).Name = sername
+                'Else
+                Chart1.Series.Add(sername)
+                'End If
+            End If
+            'IIf(DomainCrit.Count > 0, DomainCrit.Item(0).getChamps + " " + DomainCrit.Item(0).getValeur, "graphe1"))
+
+        Next
+
+        Dim dt As DataTable = Statistiques.MergeDataSet(ds)
+        'DataSource indique la source de données
+        Chart1.DataSource = dt
+        Chart1.Titles(0).Text += IIf(CritCombList.Count = 1 And CritCombList.Item(0).Count = 0, "", "pour")
+        For i As Integer = 0 To ds.Tables.Count - 1 Step 1  'for each table in the dataset
             With Chart1.Series.Item(i)
-                .XValueMember = RepartCrit
-                .YValueMembers = "Total" 'ds.Tables(0).Columns.Item("Total" + (ds.Tables.Count - 1).ToString).ColumnName
+                .XValueMember = "Key"
+                .YValueMembers = dt.Columns.Item("Total" + (i + 1).ToString).ColumnName
                 .ChartArea = Chart1.ChartAreas.Item(0).Name
+                Chart1.Titles(0).Text += IIf(i = 0, " ", IIf(i = ds.Tables.Count - 1, " et ", ",")) + .Name
                 'affichons les valeurs au-dessus de chaque colonne
-                .IsValueShownAsLabel = True
+                If ds.Tables.Count <= 4 Then
+                    .IsValueShownAsLabel = True
+                End If
             End With
         Next
 
-        'DataSource indique la source de données
-        'Chart1.DataSource = ds
-
-        'For i As Integer = 0 To ds.Tables.Count - 1 Step 1  'for each table in the dataset
-        'Next
-
         'Bind() déclenche le Binding
+        'Chart1.DataBindTable(dt.DefaultView, dt.Columns.Item(1).ColumnName)
         Chart1.DataBind()
-        Form1.ds = ds
-        Form1.Show()
+        'Form1.DataGridView1.DataSource = dt
+        'Form1.Show()
+        BT_NEXT.Enabled = True
+        BT_PREV.Enabled = True
     End Sub
 
     Private Sub BT_NEXT_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_NEXT.Click
         i = (i + 1) Mod chart_kind.Count
         CB_CHARTKIND.SelectedIndex = i
-        Chart1.Series(0).ChartType = DirectCast([Enum].Parse(GetType(DataVisualization.Charting.SeriesChartType), chart_kind(i)), DataVisualization.Charting.SeriesChartType)
+        For Each ser In Chart1.Series
+            ser.ChartType = DirectCast([Enum].Parse(GetType(DataVisualization.Charting.SeriesChartType), chart_kind(i)), DataVisualization.Charting.SeriesChartType)
+        Next
     End Sub
 
     Private Sub BT_PREV_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_PREV.Click
-        i = IIf(i = 0, 34, (i - 1) Mod chart_kind.Count)
+        i = IIf(i = 0, chart_kind.Count - 1, (i - 1) Mod chart_kind.Count)
         CB_CHARTKIND.SelectedIndex = i
-        Chart1.Series(0).ChartType = DirectCast([Enum].Parse(GetType(DataVisualization.Charting.SeriesChartType), chart_kind(i)), DataVisualization.Charting.SeriesChartType)
+        For Each ser In Chart1.Series
+            ser.ChartType = DirectCast([Enum].Parse(GetType(DataVisualization.Charting.SeriesChartType), chart_kind(i)), DataVisualization.Charting.SeriesChartType)
+        Next
     End Sub
 
     Private Sub CB_CHARTKIND_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CB_CHARTKIND.SelectedIndexChanged
         'change the type of chart
         i = CB_CHARTKIND.SelectedIndex
-        'Chart1.Series(0).ChartType = DirectCast([Enum].Parse(GetType(DataVisualization.Charting.SeriesChartType), chart_kind(i)), DataVisualization.Charting.SeriesChartType)
-    End Sub
-
-    Private Sub CHB_SEXE_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CHB_SEXE.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub CHB_MAT_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        'BT_CHARTLOAD.Visible = True
-        'CB_CHARTKIND.Visible = False
-    End Sub
-
-    Private Sub CHB_NIVEAU_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CHB_NIVEAU.SelectedIndexChanged
-
-        'DomainCrit.Add(New Critere(BDD.champsNiveau, CHB_NIVEAU.t))
-    End Sub
-
-    Private Sub CHB_ANNEE_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        'BT_CHARTLOAD.Visible = True
-        'CB_CHARTKIND.Visible = False
-    End Sub
-
-    Private Sub CHB_SPECIALITE_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        'BT_CHARTLOAD.Visible = True
-        'CB_CHARTKIND.Visible = False
-    End Sub
-
-    Private Sub CHB_SECTION_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        'BT_CHARTLOAD.Visible = True
-        'CB_CHARTKIND.Visible = False
-    End Sub
-
-    Private Sub CHB_GROUPE_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        'BT_CHARTLOAD.Visible = True
-        'CB_CHARTKIND.Visible = False
+        For Each ser In Chart1.Series
+            ser.ChartType = DirectCast([Enum].Parse(GetType(DataVisualization.Charting.SeriesChartType), chart_kind(i)), DataVisualization.Charting.SeriesChartType)
+        Next
     End Sub
 
     Private Sub TXT_MOYSEUIL_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_MOYSEUIL.TextChanged
@@ -379,7 +302,7 @@
                         RepartCrit = BDD.champsCodeSection
                         requireFields({CHB_SPECIALITE, CHB_NIVEAU, CHB_ANNEE})
                 End Select
-                'EtudCrit.Add(New Critere(BDD.champsMOYEIN, SEUIL))
+                EtudCrit = New Critere(BDD.champsMOYEIN, "")
         End Select
 
         For Each tl As ToolStripItem In CB_CRITERE.DropDownItems
@@ -396,6 +319,24 @@
         For Each Split As SplitContainer In DomainSpliter.Keys
             Split.Enabled = enbl
         Next
+    End Sub
+
+    Private Sub enableDomain2Split(Optional ByVal enbl As Boolean = False)
+        enbl = CHB_NIVEAU.CheckedItems.Count > 0 And CHB_SPECIALITE.CheckedItems.Count > 0 And CHB_ANNEE.CheckedItems.Count > 0
+        For Each Split As SplitContainer In Domain2Spliter.Keys
+            Split.Enabled = enbl
+        Next
+        If enbl Then
+            CritCombList = GenereCritCombin()
+            For Each combin As List(Of Critere) In CritCombList
+                'initialiser de groupe
+                CHB_GROUPE.Items.AddRange(Recherche.GetALLConditioned(BDD.champsCodeGroupe, BDD.nomTableGROUP, generPromo(combin)).AsEnumerable().Select(Function(dr) dr(0).ToString).Union(CHB_GROUPE.Items).ToArray)
+                'initialiser de section
+                CHB_SECTION.Items.AddRange(Recherche.GetALLConditioned(BDD.champsCodeSection, BDD.nomTableSection, generPromo(combin)).AsEnumerable().Select(Function(dr) dr(0).ToString).Union(CHB_SECTION.Items).ToArray)
+            Next
+            CHB_GROUPE.Height = 21 * CHB_GROUPE.Items.Count
+            CHB_SECTION.Height = 21 * CHB_SECTION.Items.Count
+        End If
     End Sub
 
     Private Sub enableRepartSplit(ByVal enbl As Boolean)
@@ -428,6 +369,14 @@
                 StatistiquesPanel.Controls.Item(lst.Name.Substring(4) + "Alert").Visible = True
             End If
         End If
+
+        If lst.Equals(CHB_NIVEAU) Or lst.Equals(CHB_SPECIALITE) Or lst.Equals(CHB_ANNEE) Then
+            'Dim methodInvoker As MethodInvoker = AddressOf enableDomain2Split
+            Me.BeginInvoke(Sub() enableDomain2Split())
+        End If
+
+        'CType(sender, Control).BeginInvoke(CType(enableDomain2Split(CHB_NIVEAU.CheckedItems.Count > 0 And CHB_SPECIALITE.CheckedItems.Count > 0 And CHB_ANNEE.CheckedItems.Count > 0), [Delegate]))
+
     End Sub
 
     Private Sub TXT_MOYSEUIL_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TXT_MOYSEUIL.KeyPress
@@ -448,6 +397,102 @@
             StatistiquesPanel.Controls.Item(elm.Name.Substring(4) + "Alert").Visible = True
         Next
     End Sub
+
+    Private Function SerieName(ByVal lst As List(Of Critere)) As String
+        Dim n As String = ""
+        For Each elm As Critere In lst
+            Select Case elm.getChamps
+                Case BDD.champsNiveau
+                Case BDD.champsOption
+
+                Case BDD.champsAnnee
+                Case BDD.champsCodeSection
+                    n += "Sec:"
+                Case BDD.champsCodeGroupe
+                    n += "G "
+                Case BDD.champsSEXE
+            End Select
+            n += elm.getValeur + IIf(lst.IndexOf(elm) = lst.Count - 1, "", "/")
+        Next
+        Return n
+    End Function
+
+    Private Function GenereCritCombin() As List(Of List(Of Critere))
+        Dim dmncomb As New Dictionary(Of CheckedListBox, String)
+
+        For Each Domain As KeyValuePair(Of SplitContainer, String) In DomainSpliter
+            If CType(Domain.Key.Panel2.Controls.Item(0), CheckedListBox).CheckedItems.Count > 0 Then
+                dmncomb.Add(CType(Domain.Key.Panel2.Controls.Item(0), CheckedListBox), Domain.Value)
+            End If
+        Next
+
+        CritCombList = New List(Of List(Of Critere))
+        Dim cpt As Integer = 0
+
+        If dmncomb.Count > 0 And DomainCrit.Count < 1 Then
+            For Each niv In dmncomb.Keys(0).CheckedItems
+                DomainCrit.Add(New Critere(dmncomb.Item(dmncomb.Keys(0)), niv.ToString))
+                If dmncomb.Count > 1 And DomainCrit.Count < 2 Then
+                    For Each opt In dmncomb.Keys(1).CheckedItems
+                        DomainCrit.Add(New Critere(dmncomb.Item(dmncomb.Keys(1)), opt.ToString))
+                        If dmncomb.Count > 2 And DomainCrit.Count < 3 Then
+                            For Each an In dmncomb.Keys(2).CheckedItems
+                                DomainCrit.Add(New Critere(dmncomb.Item(dmncomb.Keys(2)), an.ToString))
+                                If dmncomb.Count > 3 And DomainCrit.Count < 4 Then
+                                    For Each sec In dmncomb.Keys(3).CheckedItems
+                                        DomainCrit.Add(New Critere(dmncomb.Item(dmncomb.Keys(3)), sec.ToString))
+                                        If dmncomb.Count > 4 And DomainCrit.Count < 5 Then
+                                            For Each grp In dmncomb.Keys(4).CheckedItems
+                                                DomainCrit.Add(New Critere(dmncomb.Item(dmncomb.Keys(4)), grp.ToString))
+                                                CritCombList.Add(DomainCrit.ToList())
+                                                'stat = New Statistiques(DomainCrit, EtudCrit, RepartCrit)
+                                                'ds.Tables.Add(stat.GetDataTable())
+                                                DomainCrit.RemoveAt(4)
+                                            Next
+                                        Else
+                                            CritCombList.Add(DomainCrit.ToList())
+                                            'stat = New Statistiques(DomainCrit, EtudCrit, RepartCrit)
+                                            'ds.Tables.Add(stat.GetDataTable())
+                                        End If
+                                        DomainCrit.RemoveAt(3)
+                                    Next
+
+                                Else
+                                    CritCombList.Add(DomainCrit.ToList())
+                                    'stat = New Statistiques(DomainCrit, EtudCrit, RepartCrit)
+                                    'ds.Tables.Add(stat.GetDataTable())
+                                End If
+                                DomainCrit.RemoveAt(2)
+                            Next
+
+                        Else
+                            CritCombList.Add(DomainCrit.ToList())
+                            'stat = New Statistiques(DomainCrit, EtudCrit, RepartCrit)
+                            'ds.Tables.Add(stat.GetDataTable())
+                        End If
+                        DomainCrit.RemoveAt(1)
+                    Next
+                Else
+                    CritCombList.Add(DomainCrit.ToList())
+                    'stat = New Statistiques(DomainCrit, EtudCrit, RepartCrit)
+
+                End If
+                DomainCrit.RemoveAt(0)
+            Next
+        Else
+            CritCombList.Add(DomainCrit.ToList())
+        End If
+
+        Return CritCombList
+
+    End Function
+
+    Public Function generPromo(ByVal lst As List(Of Critere)) As List(Of Critere)
+        lst.Insert(3, New Critere(BDD.champsCodePromo, lst.Item(0).getValeur + "/" + lst.Item(1).getValeur + "/" + lst.Item(2).getValeur.ToString.Substring(2, 2)))
+        lst.RemoveRange(0, 3)
+        Return lst
+    End Function
+
 End Class
 
 
@@ -542,3 +587,68 @@ End Class
 '    'ds.Tables(0).Columns.Add(ds.Tables.Item(ds.Tables.Count - 1).Columns.Item(0).ColumnName)
 '    'ds.Tables(0).Merge(ds.Tables.Item(ds.Tables.Count - 1), False, MissingSchemaAction.Ignore)
 'End If
+
+
+
+
+
+
+'Private Sub CHB_SEXE_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CHB_SEXE.SelectedIndexChanged
+
+'End Sub
+
+'Private Sub CHB_MAT_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+'    'BT_CHARTLOAD.Visible = True
+'    'CB_CHARTKIND.Visible = False
+'End Sub
+
+'Private Sub CHB_NIVEAU_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CHB_NIVEAU.SelectedIndexChanged
+
+'    'DomainCrit.Add(New Critere(BDD.champsNiveau, CHB_NIVEAU.t))
+'End Sub
+
+'Private Sub CHB_ANNEE_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+'    'BT_CHARTLOAD.Visible = True
+'    'CB_CHARTKIND.Visible = False
+'End Sub
+
+'Private Sub CHB_SPECIALITE_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+'    'BT_CHARTLOAD.Visible = True
+'    'CB_CHARTKIND.Visible = False
+'End Sub
+
+'Private Sub CHB_SECTION_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+'    'BT_CHARTLOAD.Visible = True
+'    'CB_CHARTKIND.Visible = False
+'End Sub
+
+'Private Sub CHB_GROUPE_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+'    'BT_CHARTLOAD.Visible = True
+'    'CB_CHARTKIND.Visible = False
+'End Sub
+
+
+
+'If CType(Domain.Key.Panel2.Controls.Item(0), CheckedListBox).CheckedItems.Count > 0 Then
+'If CHB_S.CheckedItems.Count > 0 Then
+'For Each Domain As KeyValuePair(Of SplitContainer, String) In dmncomb
+'    For Each crit In CType(Domain.Key.Panel2.Controls.Item(0), CheckedListBox).CheckedItems
+'        DomainCrit.Add(New Critere(Domain.Value, crit.ToString))
+'    Next
+'Next
+
+'While dmncomb.Count <> 0
+'For i As Integer = 0 To dmncomb.Count - 1 Step 1
+'    For Each itm In dmncomb.Item(i).CheckedItems
+'        For Each dm As CheckedListBox In dmncomb.Keys.ToList.Take(i + 1)
+'            DomainCrit.Add(New Critere(dmncomb.Item(dmn).ToString, itm.ToString))
+'            If (dmncomb.Keys.ToList.IndexOf(dmn) = dmncomb.Count - 1) Then
+'                DomainCrit.RemoveAt(DomainCrit.Count - 1)
+'                dmn.SetItemCheckState(dmn.FindStringExact(dmn.CheckedItems.Item(0).ToString), CheckState.Unchecked)
+'            Else
+
+'            End If
+'        Next
+'    Next
+'Next
+'End While

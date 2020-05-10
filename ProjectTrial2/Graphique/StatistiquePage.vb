@@ -1,4 +1,7 @@
-﻿Public Class StatistiquePage
+﻿'Imports DataVisualization.Charting.SeriesChartType
+
+
+Public Class StatistiquePage
 
 
     Private chart_kind As List(Of String) = System.Enum.GetNames(GetType(DataVisualization.Charting.SeriesChartType)).ToList '{"Spline", "bar", "column", "pie doughnut"}
@@ -12,11 +15,14 @@
     Private Obligatoryinput As New List(Of CheckedListBox)
     Private AlertPicture As New Dictionary(Of PictureBox, String)
     Private CritCombList As List(Of List(Of Critere))
+    Private NonCompareChart() = {"Pie", "Doughnut", "Funnel", "Pyramid"}
+    Private inclusive As Boolean = True
     Private stat As Statistiques
 
     Private Sub StatistiquePage_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Me.Load
+        'TODO: This line of code loads data into the 'BDD_APPLICATIONDataSet.NOTES' table. You can move, or remove it, as needed.
         i = chart_kind.IndexOf("Column")
-        'DataVisualization.Charting.SeriesChartType.ThreeLineBreak()
+        'DataVisualization.Charting.SeriesChartType.Pyramid()
         chart_kind.Remove("PointAndFigure")
         chart_kind.Remove("Stock")
         chart_kind.Remove("Polar")
@@ -25,10 +31,14 @@
         chart_kind.Remove("FastLine")
         chart_kind.Remove("Kagi")
         chart_kind.Remove("ThreeLineBreak")
-        'chart_kind.Remove("Point And Figure")
-        'chart_kind.Remove("Point And Figure")
-        'chart_kind.Remove("Point And Figure")
-        'chart_kind.Remove("Point And Figure")
+        chart_kind.Remove("FastPoint")
+        chart_kind.Remove("Rang")
+
+
+        chart_kind.Remove("Pie")
+        chart_kind.Remove("Doughnut")
+        chart_kind.Remove("Funnel")
+        chart_kind.Remove("Pyramid")
 
 
 
@@ -133,12 +143,7 @@
         'clear the chart series
         Chart1.Series.Clear()
         Chart1.Series.Add("add")
-        'exchange betwen boutton and combobox
-        CB_CHARTKIND.Visible = True
-        CB_CHARTKIND.ValueMember = "Column"
-        'CB_CHARTKIND_SelectedIndexChanged
-        CB_CHARTKIND.DataSource = chart_kind
-        CB_CHARTKIND.SelectedIndex = i
+
         'get the collection of domain criteres
 
         CritCombList = GenereCritCombin()
@@ -186,8 +191,36 @@
                 If ds.Tables.Count <= 4 Then
                     .IsValueShownAsLabel = True
                 End If
+                .BorderWidth = 8
+                .EmptyPointStyle.BorderWidth = 1
+                .EmptyPointStyle.BorderColor = Color.Black
+                .EmptyPointStyle.MarkerColor = Color.Red
+                .EmptyPointStyle.MarkerSize = 15
+                .EmptyPointStyle.MarkerStyle = DataVisualization.Charting.MarkerStyle.Cross
             End With
         Next
+
+
+        If ds.Tables.Count <= 1 Then
+            If Not chart_kind.Contains("Pie") Then
+                chart_kind.AddRange({"Pie", "Doughnut", "Funnel", "Pyramid"})
+            End If
+        Else
+            If chart_kind.Contains("Pie") Then
+                chart_kind.Remove("Pie")
+                chart_kind.Remove("Doughnut")
+                chart_kind.Remove("Funnel")
+                chart_kind.Remove("Pyramid")
+            End If
+
+        End If
+
+        'exchange betwen boutton and combobox
+        CB_CHARTKIND.Visible = True
+        CB_CHARTKIND.ValueMember = "Column"
+        'CB_CHARTKIND_SelectedIndexChanged
+        CB_CHARTKIND.DataSource = chart_kind
+        CB_CHARTKIND.SelectedIndex = chart_kind.IndexOf("Column")
 
         'Bind() déclenche le Binding
         'Chart1.DataBindTable(dt.DefaultView, dt.Columns.Item(1).ColumnName)
@@ -223,7 +256,7 @@
     End Sub
 
     Private Sub TXT_MOYSEUIL_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_MOYSEUIL.TextChanged
-        PictureBox3.Visible = Not (TXT_MOYSEUIL.Text.Equals(""))
+        PictureBox3.Visible = (TXT_MOYSEUIL.Text.Equals(""))
     End Sub
 
     Private Sub Label_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SexeLabel.Click, MatiereLabel.Click, NiveauLabel.Click, Label1.Click, Label3.Click, Label4.Click, Label5.Click, Label6.Click
@@ -254,7 +287,13 @@
         CB_CRITERE.Text = tool.OwnerItem.Text + " " + tool.Text.ToLower()
         BT_CHARTLOAD.Enabled = True
 
+        requireFields({}, False)
+
         DomainCrit.Clear()
+        For Each pct As PictureBox In AlertPicture.Keys
+            pct.Visible = False
+        Next
+        TXT_MOYSEUIL.Text = ""
 
         Select Case CB_CRITERE.DropDownItems.IndexOf(tool.OwnerItem)
             Case 0
@@ -271,37 +310,45 @@
                         RepartCrit = BDD.champsOption
                         SpecialiteSpliter.Enabled = False
                 End Select
-            Case 3, 4, 5, 6
+            Case 2, 3, 4, 5
                 TXT_MOYSEUIL.Enabled = False
                 enableRepartSplit(False)
                 enableDomainSplit(True)
-                Select Case CType(tool.OwnerItem, ToolStripMenuItem).DropDownItems.IndexOf(tool.OwnerItem)
+                Select Case CType(tool.OwnerItem, ToolStripMenuItem).DropDownItems.IndexOf(tool)
                     Case 0
                         EtudCrit = New Critere(BDD.champsNOJUNO, 10)
                         RepartCrit = BDD.champsCOMAMA
-                        requireFields({CHB_SPECIALITE, CHB_NIVEAU, CHB_ANNEE})
-                    Case 1
+                        inclusive = False
+                        requireFields({CHB_SPECIALITE, CHB_NIVEAU, CHB_ANNEE}, True)
+                    Case 2
                         EtudCrit = New Critere(BDD.champsDECIIN, "REUSSITE")
                         RepartCrit = BDD.champsCodeGroupe
+                        inclusive = True
                         requireFields({CHB_SPECIALITE, CHB_NIVEAU, CHB_ANNEE})
-                    Case 2
+                    Case 1
                         EtudCrit = New Critere(BDD.champsDECIIN, "REUSSITE")
                         RepartCrit = BDD.champsNiveau
                         NiveauSpliter.Enabled = False
                 End Select
             Case 7
                 TXT_MOYSEUIL.Enabled = True
-                Select Case CType(tool.OwnerItem, ToolStripMenuItem).DropDownItems.IndexOf(tool.OwnerItem)
+                PictureBox3.Visible = True
+                enableRepartSplit(False)
+                enableDomainSplit(True)
+                Select Case CType(tool.OwnerItem, ToolStripMenuItem).DropDownItems.IndexOf(tool)
                     Case 0
                         RepartCrit = BDD.champsNiveau
                         NiveauSpliter.Enabled = False
                     Case 1
                         RepartCrit = BDD.champsCodeGroupe
+                        inclusive = True
                         requireFields({CHB_SPECIALITE, CHB_NIVEAU, CHB_ANNEE})
                     Case 2
                         RepartCrit = BDD.champsCodeSection
+                        inclusive = True
                         requireFields({CHB_SPECIALITE, CHB_NIVEAU, CHB_ANNEE})
                 End Select
+
                 EtudCrit = New Critere(BDD.champsMOYEIN, "")
         End Select
 
@@ -323,20 +370,49 @@
 
     Private Sub enableDomain2Split(Optional ByVal enbl As Boolean = False)
         enbl = CHB_NIVEAU.CheckedItems.Count > 0 And CHB_SPECIALITE.CheckedItems.Count > 0 And CHB_ANNEE.CheckedItems.Count > 0
-        For Each Split As SplitContainer In Domain2Spliter.Keys
-            Split.Enabled = enbl
-        Next
-        If enbl Then
-            CritCombList = GenereCritCombin()
-            For Each combin As List(Of Critere) In CritCombList
-                'initialiser de groupe
-                CHB_GROUPE.Items.AddRange(Recherche.GetALLConditioned(BDD.champsCodeGroupe, BDD.nomTableGROUP, generPromo(combin)).AsEnumerable().Select(Function(dr) dr(0).ToString).Union(CHB_GROUPE.Items).ToArray)
-                'initialiser de section
-                CHB_SECTION.Items.AddRange(Recherche.GetALLConditioned(BDD.champsCodeSection, BDD.nomTableSection, generPromo(combin)).AsEnumerable().Select(Function(dr) dr(0).ToString).Union(CHB_SECTION.Items).ToArray)
-            Next
-            CHB_GROUPE.Height = 21 * CHB_GROUPE.Items.Count
-            CHB_SECTION.Height = 21 * CHB_SECTION.Items.Count
+        Dim rqrd As Boolean
+        If inclusive Then
+            rqrd = CHB_NIVEAU.CheckedItems.Count > 0 And CHB_SPECIALITE.CheckedItems.Count > 0 And CHB_ANNEE.CheckedItems.Count > 0
+        Else
+            rqrd = CHB_NIVEAU.CheckedItems.Count > 0 Or CHB_SPECIALITE.CheckedItems.Count > 0 Or CHB_ANNEE.CheckedItems.Count > 0
         End If
+
+        requireFields({}, Not rqrd)
+
+        'For Each Split As SplitContainer In Domain2Spliter.Keys
+        '    Split.Enabled = enbl
+        'Next
+        If Not RepartCrit.Equals(BDD.champsCodeSection) Then
+            SectionSpliter.Enabled = enbl
+            If enbl Then
+                CritCombList = GenereCritCombin()
+                Dim grp As New List(Of String)
+                Dim sct As New List(Of String)
+                For Each combin As List(Of Critere) In CritCombList
+                    Dim ls As List(Of Critere) = generPromo(combin)
+                    'initialiser de groupe
+                    ls.Item(0).setTable(BDD.nomTablePROMO)
+                    grp.AddRange(Recherche.GetALLConditioned(BDD.champsCodeGroupe, BDD.nomTableGROUP, ls).AsEnumerable().Select(Function(dr) dr(0).ToString).ToArray)
+                    'initialiser de section
+                    ls.Item(0).setTable(BDD.nomTablePROMO)
+                    sct.AddRange(Recherche.GetALLConditioned(BDD.champsCodeSection, BDD.nomTableSection, ls).AsEnumerable().Select(Function(dr) dr(0).ToString).ToArray)
+                Next
+                CHB_GROUPE.Items.Clear()
+                CHB_GROUPE.Items.AddRange(grp.Distinct().ToArray)
+                'initialiser de section
+                CHB_SECTION.Items.Clear()
+                CHB_SECTION.Items.AddRange(sct.Distinct().ToArray)
+                CHB_GROUPE.Height = 21 * CHB_GROUPE.Items.Count
+                CHB_SECTION.Height = 21 * CHB_SECTION.Items.Count
+            End If
+        End If
+        If RepartCrit.Equals(BDD.champsCodeGroupe) Then
+            CHB_GROUPE.Items.Clear()
+            GroupeSpliter.Enabled = False
+        Else
+            GroupeSpliter.Enabled = enbl
+        End If
+
     End Sub
 
     Private Sub enableRepartSplit(ByVal enbl As Boolean)
@@ -351,13 +427,21 @@
         If CType(sender, PictureBox).Visible Then
             If Not AvertTip.Active Then
                 AvertTip.SetToolTip(sender, AlertPicture(CType(sender, PictureBox)))
-                AvertTip.Active = False
+                AvertTip.Active = True
                 AvertTip.ShowAlways = True
             End If
         Else
             AvertTip.Active = False
             AvertTip.ShowAlways = True
         End If
+        For Each pct As PictureBox In AlertPicture.Keys
+            If pct.Visible Then
+                BT_CHARTLOAD.Enabled = False
+                Exit For
+            Else
+                BT_CHARTLOAD.Enabled = True
+            End If
+        Next
     End Sub
 
     Private Sub CHB_SEXE_ItemCheck(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ItemCheckEventArgs) Handles CHB_SEXE.ItemCheck, CHB_MAT.ItemCheck, CHB_SPECIALITE.ItemCheck, CHB_SECTION.ItemCheck, CHB_NIVEAU.ItemCheck, CHB_GROUPE.ItemCheck, CHB_ANNEE.ItemCheck
@@ -381,21 +465,38 @@
 
     Private Sub TXT_MOYSEUIL_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TXT_MOYSEUIL.KeyPress
         Dim c As Char = e.KeyChar
-        If c.Equals(46)  and TXT_MOYSEUIL.Text.IndexOf(".") <> -1 Then
+        PictureBox3.Visible = TXT_MOYSEUIL.Text.Equals("")
+        If TXT_MOYSEUIL.Text.Count = 5 And Not AscW(c) = 8 Then
             e.Handled = True
             Return
         End If
-        If Not Char.IsDigit(c) And Not c.Equals(8) And Not c.Equals(46) Then
+        If AscW(c) = 46 And TXT_MOYSEUIL.Text.IndexOf(".") <> -1 Then
+            e.Handled = True
+            Return
+        End If
+        If Not Char.IsDigit(c) And Not AscW(c) = 8 And Not AscW(c) = 46 Then
             e.Handled = True
         End If
 
     End Sub
 
-    Private Sub requireFields(ByVal lst As Array)
-        Obligatoryinput.AddRange(lst)
-        For Each elm As Control In lst
-            StatistiquesPanel.Controls.Item(elm.Name.Substring(4) + "Alert").Visible = True
-        Next
+    Private Sub requireFields(ByVal lst As Array, Optional ByVal rqrd As Boolean = True)
+        If inclusive Then
+            rqrd = CHB_NIVEAU.CheckedItems.Count > 0 And CHB_SPECIALITE.CheckedItems.Count > 0 And CHB_ANNEE.CheckedItems.Count > 0
+        Else
+            rqrd = CHB_NIVEAU.CheckedItems.Count > 0 Or CHB_SPECIALITE.CheckedItems.Count > 0 Or CHB_ANNEE.CheckedItems.Count > 0
+        End If
+        If rqrd And lst.Length <> 0 Then
+            Obligatoryinput.AddRange(lst)
+
+            For Each elm As Control In Obligatoryinput
+                StatistiquesPanel.Controls.Item(elm.Name.Substring(4) + "Alert").Visible = rqrd
+            Next
+        Else
+            For Each elm As Control In StatistiquesPanel.Controls.OfType(Of PictureBox)()
+                elm.Visible = rqrd
+            Next
+        End If
     End Sub
 
     Private Function SerieName(ByVal lst As List(Of Critere)) As String
@@ -420,7 +521,7 @@
     Private Function GenereCritCombin() As List(Of List(Of Critere))
         Dim dmncomb As New Dictionary(Of CheckedListBox, String)
 
-        For Each Domain As KeyValuePair(Of SplitContainer, String) In DomainSpliter
+        For Each Domain As KeyValuePair(Of SplitContainer, String) In DomainSpliter.Union(Domain2Spliter)
             If CType(Domain.Key.Panel2.Controls.Item(0), CheckedListBox).CheckedItems.Count > 0 Then
                 dmncomb.Add(CType(Domain.Key.Panel2.Controls.Item(0), CheckedListBox), Domain.Value)
             End If
@@ -489,6 +590,7 @@
 
     Public Function generPromo(ByVal lst As List(Of Critere)) As List(Of Critere)
         lst.Insert(3, New Critere(BDD.champsCodePromo, lst.Item(0).getValeur + "/" + lst.Item(1).getValeur + "/" + lst.Item(2).getValeur.ToString.Substring(2, 2)))
+
         lst.RemoveRange(0, 3)
         Return lst
     End Function

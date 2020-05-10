@@ -54,8 +54,8 @@
 
     Private Sub ChargementButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChargementButton.Click
         If System.IO.File.Exists("..\..\BDD_APPLICATION.accdb") Then
-            System.IO.File.Delete("..\..\BDD_APPLICATION.accdb")
-            System.IO.File.Copy("..\..\BDD_VIDE.accdb", "..\..\BDD_APPLICATION.accdb", True)
+                'System.IO.File.Delete("..\..\BDD_APPLICATION.accdb")
+                'System.IO.File.Copy("..\..\BDD_VIDE.accdb", "..\..\BDD_APPLICATION.accdb", True)
         End If
         Dim r As New ECLATEMMENT_TRAFFIC("..\..\BDD_APPLICATION", Button1.Text.Replace(".xlsx", ""), Button2.Text.Replace(".xlsx", ""), Button3.Text.Replace(".xlsx", ""), Button4.Text.Replace(".xlsx", ""))
     End Sub

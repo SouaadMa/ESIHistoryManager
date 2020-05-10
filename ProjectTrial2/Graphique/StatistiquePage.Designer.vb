@@ -712,7 +712,7 @@ Partial Class StatistiquePage
         Me.CB_CRITERE.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.CB_CRITERE.Name = "CB_CRITERE"
         Me.CB_CRITERE.Padding = New System.Windows.Forms.Padding(0)
-        Me.CB_CRITERE.Size = New System.Drawing.Size(254, 26)
+        Me.CB_CRITERE.Size = New System.Drawing.Size(255, 26)
         Me.CB_CRITERE.Text = "choisir un critère"
         Me.CB_CRITERE.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay
         '
@@ -943,6 +943,10 @@ Partial Class StatistiquePage
         '
         'Chart1
         '
+        ChartArea1.AxisX.TitleAlignment = System.Drawing.StringAlignment.Far
+        ChartArea1.AxisX.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea1.AxisY.TitleAlignment = System.Drawing.StringAlignment.Far
+        ChartArea1.AxisY.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Italic)
         ChartArea1.Name = "ChartArea4"
         Me.Chart1.ChartAreas.Add(ChartArea1)
         Legend1.Name = "Legend1"
@@ -950,9 +954,12 @@ Partial Class StatistiquePage
         Me.Chart1.Location = New System.Drawing.Point(59, 3)
         Me.Chart1.Name = "Chart1"
         Me.Chart1.PaletteCustomColors = New System.Drawing.Color() {System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer)), System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer)), System.Drawing.Color.DodgerBlue, System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))}
+        Series1.BorderWidth = 8
         Series1.ChartArea = "ChartArea4"
+        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
         Series1.Legend = "Legend1"
         Series1.Name = "Series1"
+        Series1.YValuesPerPoint = 4
         Me.Chart1.Series.Add(Series1)
         Me.Chart1.Size = New System.Drawing.Size(560, 394)
         Me.Chart1.SuppressExceptions = True

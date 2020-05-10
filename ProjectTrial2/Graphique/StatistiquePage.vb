@@ -177,7 +177,7 @@ Public Class StatistiquePage
 
         Next
 
-        Dim dt As DataTable = Statistiques.MergeDataSet(ds)
+        Dim dt As DataTable = Statistiques.SingleKeyMergeDataSet(ds)
         'DataSource indique la source de données
         Chart1.DataSource = dt
         Chart1.Titles(0).Text += IIf(CritCombList.Count = 1 And CritCombList.Item(0).Count = 0, "", "pour")

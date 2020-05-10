@@ -349,6 +349,21 @@ Public Class BDD
 
     Public Shared Function CompareToCodeTable(ByVal nomTable As String, ByVal critere As Critere) As String
 
+        Dim valeur As String
+
+        Select Case (critere.getValeur.GetType).ToString       ' Savoir le type de la valeur :
+            Case "System.String"                                      ' valeur Text
+                valeur = "'" + critere.getValeur + "'"
+            Case GetType(Integer).ToString, GetType(Double).ToString  ' valeur Numérique
+                valeur = critere.getValeur.ToString
+            Case "System.Boolean"                                     ' valeur Booleen
+                valeur = critere.getValeur
+            Case Else
+                Return ""
+        End Select
+
+
+
         Select Case nomTable
             Case nomTableEtudiant
                 Return CompareToMATRIN(critere)
@@ -357,7 +372,7 @@ Public Class BDD
             Case nomTableMATIERE
                 Return CompareToCodeMat(critere)
             Case Else
-                Return (critere.getTable + "." + critere.getChamps + " = " + critere.getValeur)
+                Return (critere.getTable + "." + critere.getChamps + " = " + critere.getValeur.ToString) '(critere.getTable + "." + critere.getChamps + " = " + valeur)
         End Select
 
     End Function
@@ -506,7 +521,7 @@ Public Class BDD
 
             'MsgBox("before execute")
 
-            'Console.WriteLine(SqlQuery)
+            Console.WriteLine(SqlQuery)
 
             Return executeRequete(SqlQuery)
 

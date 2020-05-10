@@ -464,7 +464,7 @@
         Return dataTable
     End Function
 
-    Public Shared Function MergeDataSet(ByVal ds As DataSet) As DataTable
+    Public Shared Function SingleKeyMergeDataSet(ByVal ds As DataSet) As DataTable
 
 
         Dim NewDt As New DataTable
@@ -518,6 +518,28 @@
                 Else
 
                     col.ColumnName = "Key"
+
+
+                End If
+
+            Next
+
+        End If
+
+    End Sub
+
+    Public Shared Sub prepareNomsColonnes(ByVal dt As DataTable, ByVal num As Integer, ByVal numk As Integer)
+
+        If dt.Columns.Count = 2 Then
+
+            For Each col As DataColumn In dt.Columns
+
+                If col.ColumnName.Equals("Total") Then
+                    col.ColumnName = "Total" + num.ToString
+
+                Else
+
+                    col.ColumnName = "Key" + num.ToString
 
 
                 End If
@@ -627,7 +649,10 @@
 
                 Else
 
-                    If (Integer.Parse(dt1.Rows(i)("Key")) < Integer.Parse(dt2.Rows(j)("Key"))) Then
+
+
+                    'Integer.Parse(dt1.Rows(i)("Key")) < Integer.Parse(dt2.Rows(j)("Key"))
+                    If (CType(dt1.Rows(i)("Key"), String).CompareTo(CType(dt2.Rows(j)("Key"), String)) < 0) Then
                         cle = dt1.Rows(i)("Key")
 
                         For Each col As DataColumn In dt1.Columns
@@ -683,6 +708,51 @@
 
     End Function
 
+    Public Shared Function CompleteMergeDataSet(ByVal ds As DataSet) As DataTable
+
+        Dim maxRows = 0
+        Dim NewDt As New DataTable
+        Dim num As Integer = 1
+
+        For Each dt As DataTable In ds.Tables
+
+            prepareNomsColonnes(dt, num, num)
+            num += 1
+            AddColumns(dt, NewDt)
+            If (maxRows < dt.Rows.Count) Then
+                maxRows = dt.Rows.Count
+            End If
+
+        Next
+        For i = 0 To maxRows - 1
+
+            Dim drToAdd = NewDt.NewRow()
+            NewDt.Rows.Add(drToAdd)
+
+        Next
+
+        Dim CurrentRow = 0
+        Dim parentcount = 0
+
+        For Each dt As DataTable In ds.Tables
+
+            For Each dr As DataRow In dt.Rows
+
+                Dim colcount = 0
+                For Each dc As DataColumn In dt.Columns
+
+                    NewDt.Rows(CurrentRow)(colcount + parentcount) = dr(dc)
+
+                    colcount += 1
+                Next
+                CurrentRow += 1
+            Next
+            CurrentRow = 0
+            parentcount += dt.Columns.Count
+        Next
+
+        Return NewDt
+    End Function
 
 
 End Class

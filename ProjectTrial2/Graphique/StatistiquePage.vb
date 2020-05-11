@@ -22,7 +22,7 @@ Public Class StatistiquePage
     Private CritCombList As New List(Of List(Of Critere))
 
     Private inclusive As Boolean = True
-    Private rqrd As Boolean = False
+    Private enablReqrd As Boolean = False
     Private xTitle As String = "x"
     Private yTitle As String = "y"
     Private Title As String = ""
@@ -30,6 +30,7 @@ Public Class StatistiquePage
 
     Private Sub StatistiquePage_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Me.Load
         'TODO: This line of code loads data into the 'BDD_APPLICATIONDataSet.NOTES' table. You can move, or remove it, as needed.
+        Obligatoryinput.AddRange({CHB_SPECIALITE, CHB_NIVEAU, CHB_ANNEE})
         i = chart_kind.IndexOf("Column")
         'DataVisualization.Charting.SeriesChartType.c
         chart_kind = chart_kind.Except({"PointAndFigure", "Stock", "Polar", "ErrorBar", "Renko", "FastLine", "Kagi", "ThreeLineBreak", "FastPoint", "Range", "RangeBar", "RangeColumn", "SplineRange"}).ToList
@@ -375,7 +376,7 @@ Public Class StatistiquePage
         BT_CHARTLOAD.Enabled = True
         'uncheckList({}, False)
 
-        requireFields({}, False)
+        requireFields(False)
 
         DomainCrit.Clear()
         For Each pct As PictureBox In AlertPicture.Keys
@@ -415,14 +416,14 @@ Public Class StatistiquePage
                         RepartCrit = BDD.champsCOMAMA
                         xTitle = "Matière"
                         inclusive = False
-                        requireFields({CHB_SPECIALITE, CHB_NIVEAU, CHB_ANNEE}, True)
+                        requireFields(True)
                     Case 2
                         EtudCrit = New Critere(BDD.champsDECIIN, dectype)
                         RepartCrit = BDD.champsCodeGroupe
                         xTitle = "Groupe"
                         GroupeSpliter.Enabled = False
                         inclusive = True
-                        requireFields({CHB_SPECIALITE, CHB_NIVEAU, CHB_ANNEE})
+                        requireFields(True)
                     Case 1
                         EtudCrit = New Critere(BDD.champsDECIIN, dectype)
                         RepartCrit = BDD.champsNiveau
@@ -445,14 +446,14 @@ Public Class StatistiquePage
                         xTitle = "Groupe"
                         GroupeSpliter.Enabled = False
                         inclusive = True
-                        requireFields({CHB_SPECIALITE, CHB_NIVEAU, CHB_ANNEE})
+                        requireFields(True)
                     Case 2
                         RepartCrit = BDD.champsCodeSection
                         xTitle = "Section"
                         SectionSpliter.Enabled = False
                         GroupeSpliter.Enabled = False
                         inclusive = True
-                        requireFields({CHB_SPECIALITE, CHB_NIVEAU, CHB_ANNEE})
+                        requireFields(True)
                 End Select
 
                 EtudCrit = New Critere(BDD.champsMOYEIN, "")
@@ -483,14 +484,9 @@ Public Class StatistiquePage
     End Sub
 
     Private Sub enableDomain2Split(Optional ByVal enbl As Boolean = False)
-        'enbl = CHB_NIVEAU.CheckedItems.Count > 0 And CHB_SPECIALITE.CheckedItems.Count > 0 And CHB_ANNEE.CheckedItems.Count > 0
+        enbl = CHB_NIVEAU.CheckedItems.Count > 0 And CHB_SPECIALITE.CheckedItems.Count > 0 And CHB_ANNEE.CheckedItems.Count > 0
         'Dim rqrd As Boolean
-        If inclusive Then
-            enbl = CHB_NIVEAU.CheckedItems.Count > 0 And CHB_SPECIALITE.CheckedItems.Count > 0 And CHB_ANNEE.CheckedItems.Count > 0
-        Else
-            enbl = CHB_NIVEAU.CheckedItems.Count > 0 Or CHB_SPECIALITE.CheckedItems.Count > 0 Or CHB_ANNEE.CheckedItems.Count > 0
-        End If
-
+        'enbl = getrqrd()
         'requireFields({}, Not rqrd)
 
         'For Each Split As SplitContainer In Domain2Spliter.Keys
@@ -555,9 +551,9 @@ Public Class StatistiquePage
             AvertTip.Active = False
             AvertTip.ShowAlways = True
         End If
-        If Obligatoryinput.Count > 0 Then
-            Obligatoryinput.Find(Function(x As CheckedListBox) CType(x, CheckedListBox).Name.Contains(CType(sender, PictureBox).Name.Replace("Alert", ""))).Enabled = Not CType(sender, PictureBox).Visible
-        End If
+        'If Obligatoryinput.Count > 0 Then
+        '    Obligatoryinput.Find(Function(x As CheckedListBox) CType(x, CheckedListBox).Name.Contains(CType(sender, PictureBox).Name.Replace("Alert", ""))).Enabled = Not CType(sender, PictureBox).Visible
+        'End If
         For Each pct As PictureBox In AlertPicture.Keys
             If pct.Visible Then
                 BT_CHARTLOAD.Enabled = False
@@ -569,6 +565,7 @@ Public Class StatistiquePage
     End Sub
 
     Private Function getrqrd()
+        Dim rqrd As Boolean
         If inclusive Then
             rqrd = CHB_NIVEAU.CheckedItems.Count > 0 And CHB_SPECIALITE.CheckedItems.Count > 0 And CHB_ANNEE.CheckedItems.Count > 0
         Else
@@ -577,19 +574,16 @@ Public Class StatistiquePage
         Return rqrd
     End Function
 
-    Private Sub requireFields(ByVal lst As Array, Optional ByVal rqrd As Boolean = True)
-        'rqrd = False
-        If lst.Length <> 0 Then
-            'Obligatoryinput.Clear()
-            Obligatoryinput.AddRange(lst)
-            Obligatoryinput = Obligatoryinput.Distinct().ToList
-
+    Private Sub requireFields(ByVal enbl As Boolean)
+        enablReqrd = enbl
+        If enbl Then    ' if the system of requerements is actived
+            Dim rqrd As Boolean = getrqrd()    ' test the requeirements        
             For Each elm As Control In Obligatoryinput
                 StatistiquesPanel.Controls.Item(elm.Name.Substring(4) + "Alert").Visible = rqrd
             Next
         Else
             For Each elm As Control In StatistiquesPanel.Controls.OfType(Of PictureBox)()
-                elm.Visible = rqrd
+                elm.Visible = False
             Next
         End If
     End Sub
@@ -613,25 +607,20 @@ Public Class StatistiquePage
 
     Private Sub CHB_SEXE_ItemCheck(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ItemCheckEventArgs) Handles CHB_SEXE.ItemCheck, CHB_MAT.ItemCheck, CHB_SPECIALITE.ItemCheck, CHB_SECTION.ItemCheck, CHB_NIVEAU.ItemCheck, CHB_GROUPE.ItemCheck, CHB_ANNEE.ItemCheck
         Dim lst As CheckedListBox = CType(sender, CheckedListBox)
-        Dim rqrd As Object = False
-        If Obligatoryinput.Contains(lst) Then
+        ' Dim rqrd As Object = False
+        If enablReqrd And Obligatoryinput.Contains(lst) Then ' if there ara requreing conditions    
             'If lst.CheckedItems.Count = 0 And e.NewValue = CheckState.Checked Then
             '    StatistiquesPanel.Controls.Item(lst.Name.Substring(4) + "Alert").Visible = False
             'ElseIf lst.CheckedItems.Count = 1 And e.NewValue = CheckState.Unchecked Then
             '    StatistiquesPanel.Controls.Item(lst.Name.Substring(4) + "Alert").Visible = True
             'End If
-            rqrd = Me.BeginInvoke(Function() getrqrd())
-            EndInvoke(rqrd)
-            If inclusive Then
-                requireFields({lst}, False)
-            Else
-                requireFields(Obligatoryinput.ToArray, False)
-            End If
-
+            'rqrd = Me.BeginInvoke(Function() getrqrd())
+            'EndInvoke(rqrd)
+            Me.BeginInvoke(Sub() requireFields(enablReqrd))
         End If
 
         If lst.Equals(CHB_NIVEAU) Or lst.Equals(CHB_SPECIALITE) Or lst.Equals(CHB_ANNEE) Then
-            Me.BeginInvoke(Sub() enableDomain2Split(rqrd))
+            Me.BeginInvoke(Sub() enableDomain2Split())
         End If
     End Sub
 

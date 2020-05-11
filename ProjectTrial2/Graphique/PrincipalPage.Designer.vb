@@ -103,7 +103,7 @@ Partial Class PrincipalPage
         Me.Help_Button.ForeColor = System.Drawing.Color.DeepSkyBlue
         Me.Help_Button.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.info
         Me.Help_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Help_Button.Location = New System.Drawing.Point(112, 395)
+        Me.Help_Button.Location = New System.Drawing.Point(116, 395)
         Me.Help_Button.Name = "Help_Button"
         Me.Help_Button.Size = New System.Drawing.Size(168, 38)
         Me.Help_Button.TabIndex = 9
@@ -121,7 +121,7 @@ Partial Class PrincipalPage
         Me.ChargementButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.ChargementButton.FlatAppearance.BorderSize = 0
         Me.ChargementButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ChargementButton.Location = New System.Drawing.Point(296, 484)
+        Me.ChargementButton.Location = New System.Drawing.Point(341, 484)
         Me.ChargementButton.Name = "ChargementButton"
         Me.ChargementButton.Size = New System.Drawing.Size(82, 71)
         Me.ChargementButton.TabIndex = 8

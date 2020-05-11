@@ -202,6 +202,7 @@
             Else
 
                 Modification.traitModifier(collection_critere, esistselect)
+
                 For Each Critere As Critere In collection_critere
                     CType(Home.f, affichResearchResult).StudentTable.Rows.Item(CType(Home.f, affichResearchResult).SelectedStudent - 1)(Critere.getChamps) = Critere.getValeur
                     Console.WriteLine(CType(Home.f, affichResearchResult).SelectedStudent.ToString)

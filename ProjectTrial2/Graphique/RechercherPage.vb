@@ -234,7 +234,7 @@
                 'End If
 
                 If Me.CB_SEXE.Text <> "" Then
-                    collection_critere.Add(New Critere("SEXE", (Me.CB_SEXE.SelectedIndex + 1).ToString))
+                    collection_critere.Add(New Critere("SEXE", (Me.CB_SEXE.SelectedIndex).ToString))
                 End If
 
                 If Me.CB_SERI.Text <> "" Then

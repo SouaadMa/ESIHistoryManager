@@ -3,7 +3,7 @@ Public Class PrincipalPage
 
     Private Sub PrincipalPage_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'initialize the graphic componants values
-
+        Help_Button.ForeColor = Color.SteelBlue
     End Sub
     'handle the appearence of help button when hovering
     Private Sub HelpButton_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs)
@@ -37,4 +37,15 @@ Public Class PrincipalPage
         Chargement.TopMost = True
     End Sub
 
+    Private Sub Help_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Help_Button.Click
+        'calling le guide en ligne 
+    End Sub
+
+    Private Sub Help_Button_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles Help_Button.MouseHover
+        Help_Button.ForeColor = Color.DeepSkyBlue
+    End Sub
+
+    Private Sub Help_Button_MouseLeave(ByVal sender As Object, ByVal e As System.EventArgs) Handles Help_Button.MouseLeave
+        Help_Button.ForeColor = Color.SteelBlue
+    End Sub
 End Class

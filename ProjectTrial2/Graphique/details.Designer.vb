@@ -39,18 +39,7 @@ Partial Class details
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.LB_ETDE = New System.Windows.Forms.Label()
-        Me.LB_FILSDE = New System.Windows.Forms.Label()
-        Me.LB_NOMA = New System.Windows.Forms.Label()
-        Me.LB_PRENOMA = New System.Windows.Forms.Label()
-        Me.LB_MATRICUL = New System.Windows.Forms.Label()
-        Me.LB_NOM = New System.Windows.Forms.Label()
-        Me.LB_PRENOM = New System.Windows.Forms.Label()
-        Me.LB_SEXE = New System.Windows.Forms.Label()
-        Me.LB_DATEN = New System.Windows.Forms.Label()
-        Me.LB_MATRICULB = New System.Windows.Forms.Label()
         Me.CategoriePanel = New System.Windows.Forms.Panel()
-        Me.BT_SORTIR = New System.Windows.Forms.Button()
         Me.PN_BAC = New System.Windows.Forms.Panel()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
@@ -78,6 +67,17 @@ Partial Class details
         Me.Label12 = New System.Windows.Forms.Label()
         Me.PN_RESIDENCE = New System.Windows.Forms.Panel()
         Me.DetailPanel = New System.Windows.Forms.Panel()
+        Me.BT_SORTIR = New System.Windows.Forms.Button()
+        Me.LB_NOMA = New System.Windows.Forms.Label()
+        Me.LB_PRENOMA = New System.Windows.Forms.Label()
+        Me.LB_MATRICUL = New System.Windows.Forms.Label()
+        Me.LB_MATRICULB = New System.Windows.Forms.Label()
+        Me.LB_NOM = New System.Windows.Forms.Label()
+        Me.LB_PRENOM = New System.Windows.Forms.Label()
+        Me.LB_DATEN = New System.Windows.Forms.Label()
+        Me.LB_SEXE = New System.Windows.Forms.Label()
+        Me.LB_ETDE = New System.Windows.Forms.Label()
+        Me.LB_FILSDE = New System.Windows.Forms.Label()
         Me.TitlePanel.SuspendLayout()
         Me.PN_INFOGENERAL.SuspendLayout()
         Me.CategoriePanel.SuspendLayout()
@@ -92,7 +92,7 @@ Partial Class details
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 19.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(150, 19)
+        Me.Label1.Location = New System.Drawing.Point(202, 15)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(275, 38)
@@ -102,6 +102,7 @@ Partial Class details
         'TitlePanel
         '
         Me.TitlePanel.BackColor = System.Drawing.Color.Transparent
+        Me.TitlePanel.Controls.Add(Me.BT_SORTIR)
         Me.TitlePanel.Controls.Add(Me.Label1)
         Me.TitlePanel.Dock = System.Windows.Forms.DockStyle.Top
         Me.TitlePanel.Location = New System.Drawing.Point(0, 0)
@@ -224,9 +225,9 @@ Partial Class details
         Me.Label3.Location = New System.Drawing.Point(42, 388)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(103, 19)
+        Me.Label3.Size = New System.Drawing.Size(127, 19)
         Me.Label3.TabIndex = 51
-        Me.Label3.Text = "Nom du pere"
+        Me.Label3.Text = "Prenom du pere"
         '
         'Label4
         '
@@ -328,120 +329,6 @@ Partial Class details
         Me.Label11.TabIndex = 44
         Me.Label11.Text = "Matricule de BAC"
         '
-        'LB_ETDE
-        '
-        Me.LB_ETDE.AutoSize = True
-        Me.LB_ETDE.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LB_ETDE.Location = New System.Drawing.Point(42, 477)
-        Me.LB_ETDE.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.LB_ETDE.Name = "LB_ETDE"
-        Me.LB_ETDE.Size = New System.Drawing.Size(125, 20)
-        Me.LB_ETDE.TabIndex = 42
-        Me.LB_ETDE.Text = "nom de la mere"
-        '
-        'LB_FILSDE
-        '
-        Me.LB_FILSDE.AutoSize = True
-        Me.LB_FILSDE.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LB_FILSDE.Location = New System.Drawing.Point(42, 416)
-        Me.LB_FILSDE.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.LB_FILSDE.Name = "LB_FILSDE"
-        Me.LB_FILSDE.Size = New System.Drawing.Size(102, 20)
-        Me.LB_FILSDE.TabIndex = 41
-        Me.LB_FILSDE.Text = "nom du pere"
-        '
-        'LB_NOMA
-        '
-        Me.LB_NOMA.AutoSize = True
-        Me.LB_NOMA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LB_NOMA.Location = New System.Drawing.Point(379, 172)
-        Me.LB_NOMA.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.LB_NOMA.Name = "LB_NOMA"
-        Me.LB_NOMA.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.LB_NOMA.Size = New System.Drawing.Size(37, 20)
-        Me.LB_NOMA.TabIndex = 40
-        Me.LB_NOMA.Text = "اللقب"
-        Me.LB_NOMA.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'LB_PRENOMA
-        '
-        Me.LB_PRENOMA.AutoSize = True
-        Me.LB_PRENOMA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LB_PRENOMA.Location = New System.Drawing.Point(379, 232)
-        Me.LB_PRENOMA.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.LB_PRENOMA.Name = "LB_PRENOMA"
-        Me.LB_PRENOMA.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.LB_PRENOMA.Size = New System.Drawing.Size(37, 20)
-        Me.LB_PRENOMA.TabIndex = 39
-        Me.LB_PRENOMA.Text = "الاسم"
-        Me.LB_PRENOMA.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'LB_MATRICUL
-        '
-        Me.LB_MATRICUL.AutoSize = True
-        Me.LB_MATRICUL.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LB_MATRICUL.Location = New System.Drawing.Point(42, 50)
-        Me.LB_MATRICUL.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.LB_MATRICUL.Name = "LB_MATRICUL"
-        Me.LB_MATRICUL.Size = New System.Drawing.Size(78, 20)
-        Me.LB_MATRICUL.TabIndex = 33
-        Me.LB_MATRICUL.Text = "Matricule"
-        '
-        'LB_NOM
-        '
-        Me.LB_NOM.AutoSize = True
-        Me.LB_NOM.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LB_NOM.Location = New System.Drawing.Point(42, 172)
-        Me.LB_NOM.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.LB_NOM.Name = "LB_NOM"
-        Me.LB_NOM.Size = New System.Drawing.Size(49, 20)
-        Me.LB_NOM.TabIndex = 38
-        Me.LB_NOM.Text = "Nom "
-        '
-        'LB_PRENOM
-        '
-        Me.LB_PRENOM.AutoSize = True
-        Me.LB_PRENOM.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LB_PRENOM.Location = New System.Drawing.Point(42, 232)
-        Me.LB_PRENOM.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.LB_PRENOM.Name = "LB_PRENOM"
-        Me.LB_PRENOM.Size = New System.Drawing.Size(72, 20)
-        Me.LB_PRENOM.TabIndex = 37
-        Me.LB_PRENOM.Text = "Prenom "
-        '
-        'LB_SEXE
-        '
-        Me.LB_SEXE.AutoSize = True
-        Me.LB_SEXE.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LB_SEXE.Location = New System.Drawing.Point(42, 354)
-        Me.LB_SEXE.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.LB_SEXE.Name = "LB_SEXE"
-        Me.LB_SEXE.Size = New System.Drawing.Size(46, 20)
-        Me.LB_SEXE.TabIndex = 36
-        Me.LB_SEXE.Text = "Sexe"
-        '
-        'LB_DATEN
-        '
-        Me.LB_DATEN.AutoSize = True
-        Me.LB_DATEN.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LB_DATEN.Location = New System.Drawing.Point(42, 294)
-        Me.LB_DATEN.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.LB_DATEN.Name = "LB_DATEN"
-        Me.LB_DATEN.Size = New System.Drawing.Size(149, 20)
-        Me.LB_DATEN.TabIndex = 35
-        Me.LB_DATEN.Text = "Date de naissance"
-        '
-        'LB_MATRICULB
-        '
-        Me.LB_MATRICULB.AutoSize = True
-        Me.LB_MATRICULB.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LB_MATRICULB.Location = New System.Drawing.Point(42, 111)
-        Me.LB_MATRICULB.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.LB_MATRICULB.Name = "LB_MATRICULB"
-        Me.LB_MATRICULB.Size = New System.Drawing.Size(141, 20)
-        Me.LB_MATRICULB.TabIndex = 34
-        Me.LB_MATRICULB.Text = "Matricule de BAC"
-        '
         'CategoriePanel
         '
         Me.CategoriePanel.BackColor = System.Drawing.Color.Transparent
@@ -452,21 +339,6 @@ Partial Class details
         Me.CategoriePanel.Name = "CategoriePanel"
         Me.CategoriePanel.Size = New System.Drawing.Size(221, 309)
         Me.CategoriePanel.TabIndex = 7
-        '
-        'BT_SORTIR
-        '
-        Me.BT_SORTIR.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.BT_SORTIR.FlatAppearance.BorderSize = 0
-        Me.BT_SORTIR.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BT_SORTIR.Font = New System.Drawing.Font("Cambria", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BT_SORTIR.ForeColor = System.Drawing.Color.White
-        Me.BT_SORTIR.Location = New System.Drawing.Point(27, 537)
-        Me.BT_SORTIR.Margin = New System.Windows.Forms.Padding(2, 2, 2, 100)
-        Me.BT_SORTIR.Name = "BT_SORTIR"
-        Me.BT_SORTIR.Size = New System.Drawing.Size(150, 37)
-        Me.BT_SORTIR.TabIndex = 41
-        Me.BT_SORTIR.Text = "Sortir"
-        Me.BT_SORTIR.UseVisualStyleBackColor = False
         '
         'PN_BAC
         '
@@ -795,14 +667,143 @@ Partial Class details
         Me.DetailPanel.BackColor = System.Drawing.Color.Transparent
         Me.DetailPanel.Controls.Add(Me.TitlePanel)
         Me.DetailPanel.Controls.Add(Me.CategoriePanel)
-        Me.DetailPanel.Controls.Add(Me.PN_BAC)
-        Me.DetailPanel.Controls.Add(Me.BT_SORTIR)
         Me.DetailPanel.Controls.Add(Me.PN_INFOGENERAL)
         Me.DetailPanel.Controls.Add(Me.PN_RESIDENCE)
+        Me.DetailPanel.Controls.Add(Me.PN_BAC)
         Me.DetailPanel.Location = New System.Drawing.Point(0, 0)
         Me.DetailPanel.Name = "DetailPanel"
         Me.DetailPanel.Size = New System.Drawing.Size(678, 640)
         Me.DetailPanel.TabIndex = 87
+        '
+        'BT_SORTIR
+        '
+        Me.BT_SORTIR.BackColor = System.Drawing.Color.Transparent
+        Me.BT_SORTIR.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.sortiropp1
+        Me.BT_SORTIR.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BT_SORTIR.FlatAppearance.BorderSize = 0
+        Me.BT_SORTIR.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BT_SORTIR.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BT_SORTIR.ForeColor = System.Drawing.Color.White
+        Me.BT_SORTIR.Location = New System.Drawing.Point(601, 11)
+        Me.BT_SORTIR.Margin = New System.Windows.Forms.Padding(2, 2, 2, 100)
+        Me.BT_SORTIR.Name = "BT_SORTIR"
+        Me.BT_SORTIR.Size = New System.Drawing.Size(45, 45)
+        Me.BT_SORTIR.TabIndex = 42
+        Me.BT_SORTIR.UseVisualStyleBackColor = False
+        '
+        'LB_NOMA
+        '
+        Me.LB_NOMA.AutoSize = True
+        Me.LB_NOMA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_NOMA.Location = New System.Drawing.Point(379, 172)
+        Me.LB_NOMA.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.LB_NOMA.Name = "LB_NOMA"
+        Me.LB_NOMA.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.LB_NOMA.Size = New System.Drawing.Size(37, 20)
+        Me.LB_NOMA.TabIndex = 40
+        Me.LB_NOMA.Text = "اللقب"
+        Me.LB_NOMA.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'LB_PRENOMA
+        '
+        Me.LB_PRENOMA.AutoSize = True
+        Me.LB_PRENOMA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_PRENOMA.Location = New System.Drawing.Point(379, 232)
+        Me.LB_PRENOMA.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.LB_PRENOMA.Name = "LB_PRENOMA"
+        Me.LB_PRENOMA.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.LB_PRENOMA.Size = New System.Drawing.Size(37, 20)
+        Me.LB_PRENOMA.TabIndex = 39
+        Me.LB_PRENOMA.Text = "الاسم"
+        Me.LB_PRENOMA.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'LB_MATRICUL
+        '
+        Me.LB_MATRICUL.AutoSize = True
+        Me.LB_MATRICUL.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_MATRICUL.Location = New System.Drawing.Point(42, 50)
+        Me.LB_MATRICUL.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.LB_MATRICUL.Name = "LB_MATRICUL"
+        Me.LB_MATRICUL.Size = New System.Drawing.Size(78, 20)
+        Me.LB_MATRICUL.TabIndex = 33
+        Me.LB_MATRICUL.Text = "Matricule"
+        '
+        'LB_MATRICULB
+        '
+        Me.LB_MATRICULB.AutoSize = True
+        Me.LB_MATRICULB.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_MATRICULB.Location = New System.Drawing.Point(42, 111)
+        Me.LB_MATRICULB.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.LB_MATRICULB.Name = "LB_MATRICULB"
+        Me.LB_MATRICULB.Size = New System.Drawing.Size(141, 20)
+        Me.LB_MATRICULB.TabIndex = 34
+        Me.LB_MATRICULB.Text = "Matricule de BAC"
+        '
+        'LB_NOM
+        '
+        Me.LB_NOM.AutoSize = True
+        Me.LB_NOM.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_NOM.Location = New System.Drawing.Point(42, 172)
+        Me.LB_NOM.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.LB_NOM.Name = "LB_NOM"
+        Me.LB_NOM.Size = New System.Drawing.Size(49, 20)
+        Me.LB_NOM.TabIndex = 38
+        Me.LB_NOM.Text = "Nom "
+        '
+        'LB_PRENOM
+        '
+        Me.LB_PRENOM.AutoSize = True
+        Me.LB_PRENOM.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_PRENOM.Location = New System.Drawing.Point(42, 232)
+        Me.LB_PRENOM.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.LB_PRENOM.Name = "LB_PRENOM"
+        Me.LB_PRENOM.Size = New System.Drawing.Size(72, 20)
+        Me.LB_PRENOM.TabIndex = 37
+        Me.LB_PRENOM.Text = "Prenom "
+        '
+        'LB_DATEN
+        '
+        Me.LB_DATEN.AutoSize = True
+        Me.LB_DATEN.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_DATEN.Location = New System.Drawing.Point(42, 294)
+        Me.LB_DATEN.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.LB_DATEN.Name = "LB_DATEN"
+        Me.LB_DATEN.Size = New System.Drawing.Size(149, 20)
+        Me.LB_DATEN.TabIndex = 35
+        Me.LB_DATEN.Text = "Date de naissance"
+        '
+        'LB_SEXE
+        '
+        Me.LB_SEXE.AutoSize = True
+        Me.LB_SEXE.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_SEXE.Location = New System.Drawing.Point(42, 354)
+        Me.LB_SEXE.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.LB_SEXE.Name = "LB_SEXE"
+        Me.LB_SEXE.Size = New System.Drawing.Size(46, 20)
+        Me.LB_SEXE.TabIndex = 36
+        Me.LB_SEXE.Text = "Sexe"
+        '
+        'LB_ETDE
+        '
+        Me.LB_ETDE.AutoSize = True
+        Me.LB_ETDE.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_ETDE.Location = New System.Drawing.Point(42, 477)
+        Me.LB_ETDE.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.LB_ETDE.Name = "LB_ETDE"
+        Me.LB_ETDE.Size = New System.Drawing.Size(125, 20)
+        Me.LB_ETDE.TabIndex = 42
+        Me.LB_ETDE.Text = "nom de la mere"
+        '
+        'LB_FILSDE
+        '
+        Me.LB_FILSDE.AutoSize = True
+        Me.LB_FILSDE.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_FILSDE.Location = New System.Drawing.Point(42, 416)
+        Me.LB_FILSDE.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.LB_FILSDE.Name = "LB_FILSDE"
+        Me.LB_FILSDE.Size = New System.Drawing.Size(102, 20)
+        Me.LB_FILSDE.TabIndex = 41
+        Me.LB_FILSDE.Text = "nom du pere"
         '
         'details
         '
@@ -838,13 +839,6 @@ Partial Class details
     Friend WithEvents BT_GENERALINFO As System.Windows.Forms.RadioButton
     Friend WithEvents PN_INFOGENERAL As System.Windows.Forms.Panel
     Friend WithEvents CategoriePanel As System.Windows.Forms.Panel
-    Friend WithEvents LB_MATRICUL As System.Windows.Forms.Label
-    Friend WithEvents LB_NOM As System.Windows.Forms.Label
-    Friend WithEvents LB_PRENOM As System.Windows.Forms.Label
-    Friend WithEvents LB_SEXE As System.Windows.Forms.Label
-    Friend WithEvents LB_DATEN As System.Windows.Forms.Label
-    Friend WithEvents LB_MATRICULB As System.Windows.Forms.Label
-    Friend WithEvents BT_SORTIR As System.Windows.Forms.Button
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
@@ -855,10 +849,6 @@ Partial Class details
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents LB_ETDE As System.Windows.Forms.Label
-    Friend WithEvents LB_FILSDE As System.Windows.Forms.Label
-    Friend WithEvents LB_NOMA As System.Windows.Forms.Label
-    Friend WithEvents LB_PRENOMA As System.Windows.Forms.Label
     Friend WithEvents PN_BAC As System.Windows.Forms.Panel
     Friend WithEvents Label20 As System.Windows.Forms.Label
     Friend WithEvents Label21 As System.Windows.Forms.Label
@@ -886,4 +876,15 @@ Partial Class details
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents PN_RESIDENCE As System.Windows.Forms.Panel
     Friend WithEvents DetailPanel As System.Windows.Forms.Panel
+    Friend WithEvents BT_SORTIR As System.Windows.Forms.Button
+    Friend WithEvents LB_ETDE As System.Windows.Forms.Label
+    Friend WithEvents LB_FILSDE As System.Windows.Forms.Label
+    Friend WithEvents LB_NOMA As System.Windows.Forms.Label
+    Friend WithEvents LB_PRENOMA As System.Windows.Forms.Label
+    Friend WithEvents LB_MATRICUL As System.Windows.Forms.Label
+    Friend WithEvents LB_NOM As System.Windows.Forms.Label
+    Friend WithEvents LB_PRENOM As System.Windows.Forms.Label
+    Friend WithEvents LB_SEXE As System.Windows.Forms.Label
+    Friend WithEvents LB_DATEN As System.Windows.Forms.Label
+    Friend WithEvents LB_MATRICULB As System.Windows.Forms.Label
 End Class

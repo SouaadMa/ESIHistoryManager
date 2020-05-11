@@ -24,43 +24,30 @@ Partial Class StatistiquePage
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(StatistiquePage))
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim Title1 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Title2 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
         Me.StatistiquesPanel = New System.Windows.Forms.Panel()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.MatiereAlert = New System.Windows.Forms.PictureBox()
-        Me.GroupeAlert = New System.Windows.Forms.PictureBox()
-        Me.SectionAlert = New System.Windows.Forms.PictureBox()
-        Me.AnneeAlert = New System.Windows.Forms.PictureBox()
-        Me.SpecialiteAlert = New System.Windows.Forms.PictureBox()
-        Me.SexeAlert = New System.Windows.Forms.PictureBox()
-        Me.NiveauAlert = New System.Windows.Forms.PictureBox()
-        Me.SexeSpliter = New System.Windows.Forms.SplitContainer()
-        Me.SexeLabel = New System.Windows.Forms.Label()
-        Me.arrowsList = New System.Windows.Forms.ImageList(Me.components)
-        Me.CHB_SEXE = New System.Windows.Forms.CheckedListBox()
-        Me.MatiereSpliter = New System.Windows.Forms.SplitContainer()
-        Me.MatiereLabel = New System.Windows.Forms.Label()
-        Me.CHB_MAT = New System.Windows.Forms.CheckedListBox()
-        Me.TXT_MOYSEUIL = New System.Windows.Forms.TextBox()
+        Me.ANNEEAlert = New System.Windows.Forms.PictureBox()
+        Me.SPECIALITEAlert = New System.Windows.Forms.PictureBox()
+        Me.NIVEAUAlert = New System.Windows.Forms.PictureBox()
         Me.GroupeSpliter = New System.Windows.Forms.SplitContainer()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.GROUPELabel = New System.Windows.Forms.Label()
+        Me.arrowsList = New System.Windows.Forms.ImageList(Me.components)
         Me.CHB_GROUPE = New System.Windows.Forms.CheckedListBox()
         Me.SectionSpliter = New System.Windows.Forms.SplitContainer()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.SECTIONLabel = New System.Windows.Forms.Label()
         Me.CHB_SECTION = New System.Windows.Forms.CheckedListBox()
         Me.AnneeSpliter = New System.Windows.Forms.SplitContainer()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.ANNEELabel = New System.Windows.Forms.Label()
         Me.CHB_ANNEE = New System.Windows.Forms.CheckedListBox()
         Me.SpecialiteSpliter = New System.Windows.Forms.SplitContainer()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.SPECIALITELabel = New System.Windows.Forms.Label()
         Me.CHB_SPECIALITE = New System.Windows.Forms.CheckedListBox()
         Me.NiveauSpliter = New System.Windows.Forms.SplitContainer()
-        Me.NiveauLabel = New System.Windows.Forms.Label()
+        Me.NIVEAULabel = New System.Windows.Forms.Label()
         Me.CHB_NIVEAU = New System.Windows.Forms.CheckedListBox()
-        Me.SeuilLabel = New System.Windows.Forms.Label()
         Me.CritLabel = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.CB_CRITERE = New System.Windows.Forms.ToolStripMenuItem()
@@ -81,10 +68,6 @@ Partial Class StatistiquePage
         Me.ToolStripMenuItem15 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem16 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem17 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripItem5 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem12 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem13 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem14 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator13 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripItem6 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
@@ -95,9 +78,19 @@ Partial Class StatistiquePage
         Me.BT_CHARTLOAD = New System.Windows.Forms.Button()
         Me.BT_PREV = New System.Windows.Forms.Button()
         Me.BT_NEXT = New System.Windows.Forms.Button()
-        Me.CB_CHARTKIND = New System.Windows.Forms.ComboBox()
         Me.TitlePanel = New System.Windows.Forms.Panel()
+        Me.MatiereSpliter = New System.Windows.Forms.SplitContainer()
+        Me.MatiereLabel = New System.Windows.Forms.Label()
+        Me.CHB_MAT = New System.Windows.Forms.CheckedListBox()
+        Me.SexeSpliter = New System.Windows.Forms.SplitContainer()
+        Me.SexeLabel = New System.Windows.Forms.Label()
+        Me.CHB_SEXE = New System.Windows.Forms.CheckedListBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.SeuilLabel = New System.Windows.Forms.Label()
+        Me.TXT_MOYSEUIL = New System.Windows.Forms.TextBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.CB_CHARTKIND = New System.Windows.Forms.ComboBox()
         Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.toolStripSeparator = New System.Windows.Forms.ToolStripSeparator()
@@ -151,22 +144,9 @@ Partial Class StatistiquePage
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.AvertTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.StatistiquesPanel.SuspendLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MatiereAlert, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GroupeAlert, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SectionAlert, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.AnneeAlert, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SpecialiteAlert, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SexeAlert, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NiveauAlert, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SexeSpliter, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SexeSpliter.Panel1.SuspendLayout()
-        Me.SexeSpliter.Panel2.SuspendLayout()
-        Me.SexeSpliter.SuspendLayout()
-        CType(Me.MatiereSpliter, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.MatiereSpliter.Panel1.SuspendLayout()
-        Me.MatiereSpliter.Panel2.SuspendLayout()
-        Me.MatiereSpliter.SuspendLayout()
+        CType(Me.ANNEEAlert, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SPECIALITEAlert, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NIVEAUAlert, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupeSpliter, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupeSpliter.Panel1.SuspendLayout()
         Me.GroupeSpliter.Panel2.SuspendLayout()
@@ -191,6 +171,15 @@ Partial Class StatistiquePage
         Me.ChartPanel.SuspendLayout()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TitlePanel.SuspendLayout()
+        CType(Me.MatiereSpliter, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MatiereSpliter.Panel1.SuspendLayout()
+        Me.MatiereSpliter.Panel2.SuspendLayout()
+        Me.MatiereSpliter.SuspendLayout()
+        CType(Me.SexeSpliter, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SexeSpliter.Panel1.SuspendLayout()
+        Me.SexeSpliter.Panel2.SuspendLayout()
+        Me.SexeSpliter.SuspendLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -200,27 +189,23 @@ Partial Class StatistiquePage
         Me.StatistiquesPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.StatistiquesPanel.BackColor = System.Drawing.Color.Transparent
         Me.StatistiquesPanel.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.background
-        Me.StatistiquesPanel.Controls.Add(Me.PictureBox3)
-        Me.StatistiquesPanel.Controls.Add(Me.MatiereAlert)
-        Me.StatistiquesPanel.Controls.Add(Me.GroupeAlert)
-        Me.StatistiquesPanel.Controls.Add(Me.SectionAlert)
-        Me.StatistiquesPanel.Controls.Add(Me.AnneeAlert)
-        Me.StatistiquesPanel.Controls.Add(Me.SpecialiteAlert)
-        Me.StatistiquesPanel.Controls.Add(Me.SexeAlert)
-        Me.StatistiquesPanel.Controls.Add(Me.NiveauAlert)
-        Me.StatistiquesPanel.Controls.Add(Me.SexeSpliter)
-        Me.StatistiquesPanel.Controls.Add(Me.MatiereSpliter)
-        Me.StatistiquesPanel.Controls.Add(Me.TXT_MOYSEUIL)
+        Me.StatistiquesPanel.Controls.Add(Me.ANNEEAlert)
+        Me.StatistiquesPanel.Controls.Add(Me.SPECIALITEAlert)
+        Me.StatistiquesPanel.Controls.Add(Me.NIVEAUAlert)
         Me.StatistiquesPanel.Controls.Add(Me.GroupeSpliter)
         Me.StatistiquesPanel.Controls.Add(Me.SectionSpliter)
         Me.StatistiquesPanel.Controls.Add(Me.AnneeSpliter)
         Me.StatistiquesPanel.Controls.Add(Me.SpecialiteSpliter)
         Me.StatistiquesPanel.Controls.Add(Me.NiveauSpliter)
-        Me.StatistiquesPanel.Controls.Add(Me.SeuilLabel)
         Me.StatistiquesPanel.Controls.Add(Me.CritLabel)
         Me.StatistiquesPanel.Controls.Add(Me.MenuStrip1)
         Me.StatistiquesPanel.Controls.Add(Me.ChartPanel)
         Me.StatistiquesPanel.Controls.Add(Me.TitlePanel)
+        Me.StatistiquesPanel.Controls.Add(Me.SeuilLabel)
+        Me.StatistiquesPanel.Controls.Add(Me.TXT_MOYSEUIL)
+        Me.StatistiquesPanel.Controls.Add(Me.PictureBox3)
+        Me.StatistiquesPanel.Controls.Add(Me.Label2)
+        Me.StatistiquesPanel.Controls.Add(Me.CB_CHARTKIND)
         Me.StatistiquesPanel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.StatistiquesPanel.Location = New System.Drawing.Point(0, 0)
         Me.StatistiquesPanel.Margin = New System.Windows.Forms.Padding(0)
@@ -228,210 +213,45 @@ Partial Class StatistiquePage
         Me.StatistiquesPanel.Size = New System.Drawing.Size(678, 640)
         Me.StatistiquesPanel.TabIndex = 12
         '
-        'PictureBox3
+        'ANNEEAlert
         '
-        Me.PictureBox3.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
-        Me.PictureBox3.Location = New System.Drawing.Point(405, 94)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(30, 30)
-        Me.PictureBox3.TabIndex = 68
-        Me.PictureBox3.TabStop = False
-        Me.PictureBox3.Visible = False
+        Me.ANNEEAlert.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
+        Me.ANNEEAlert.Location = New System.Drawing.Point(275, 90)
+        Me.ANNEEAlert.Name = "ANNEEAlert"
+        Me.ANNEEAlert.Size = New System.Drawing.Size(30, 30)
+        Me.ANNEEAlert.TabIndex = 64
+        Me.ANNEEAlert.TabStop = False
+        Me.ANNEEAlert.Visible = False
         '
-        'MatiereAlert
+        'SPECIALITEAlert
         '
-        Me.MatiereAlert.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
-        Me.MatiereAlert.Location = New System.Drawing.Point(249, 82)
-        Me.MatiereAlert.Name = "MatiereAlert"
-        Me.MatiereAlert.Size = New System.Drawing.Size(30, 30)
-        Me.MatiereAlert.TabIndex = 67
-        Me.MatiereAlert.TabStop = False
-        Me.MatiereAlert.Visible = False
+        Me.SPECIALITEAlert.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
+        Me.SPECIALITEAlert.Location = New System.Drawing.Point(140, 90)
+        Me.SPECIALITEAlert.Name = "SPECIALITEAlert"
+        Me.SPECIALITEAlert.Size = New System.Drawing.Size(30, 30)
+        Me.SPECIALITEAlert.TabIndex = 63
+        Me.SPECIALITEAlert.TabStop = False
+        Me.SPECIALITEAlert.Visible = False
         '
-        'GroupeAlert
+        'NIVEAUAlert
         '
-        Me.GroupeAlert.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
-        Me.GroupeAlert.Location = New System.Drawing.Point(547, 137)
-        Me.GroupeAlert.Name = "GroupeAlert"
-        Me.GroupeAlert.Size = New System.Drawing.Size(30, 30)
-        Me.GroupeAlert.TabIndex = 66
-        Me.GroupeAlert.TabStop = False
-        Me.GroupeAlert.Visible = False
-        '
-        'SectionAlert
-        '
-        Me.SectionAlert.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
-        Me.SectionAlert.Location = New System.Drawing.Point(412, 138)
-        Me.SectionAlert.Name = "SectionAlert"
-        Me.SectionAlert.Size = New System.Drawing.Size(30, 30)
-        Me.SectionAlert.TabIndex = 65
-        Me.SectionAlert.TabStop = False
-        Me.SectionAlert.Visible = False
-        '
-        'AnneeAlert
-        '
-        Me.AnneeAlert.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
-        Me.AnneeAlert.Location = New System.Drawing.Point(277, 137)
-        Me.AnneeAlert.Name = "AnneeAlert"
-        Me.AnneeAlert.Size = New System.Drawing.Size(30, 30)
-        Me.AnneeAlert.TabIndex = 64
-        Me.AnneeAlert.TabStop = False
-        Me.AnneeAlert.Visible = False
-        '
-        'SpecialiteAlert
-        '
-        Me.SpecialiteAlert.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
-        Me.SpecialiteAlert.Location = New System.Drawing.Point(142, 137)
-        Me.SpecialiteAlert.Name = "SpecialiteAlert"
-        Me.SpecialiteAlert.Size = New System.Drawing.Size(30, 30)
-        Me.SpecialiteAlert.TabIndex = 63
-        Me.SpecialiteAlert.TabStop = False
-        Me.SpecialiteAlert.Visible = False
-        '
-        'SexeAlert
-        '
-        Me.SexeAlert.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
-        Me.SexeAlert.Location = New System.Drawing.Point(62, 83)
-        Me.SexeAlert.Name = "SexeAlert"
-        Me.SexeAlert.Size = New System.Drawing.Size(30, 30)
-        Me.SexeAlert.TabIndex = 62
-        Me.SexeAlert.TabStop = False
-        Me.SexeAlert.Visible = False
-        '
-        'NiveauAlert
-        '
-        Me.NiveauAlert.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
-        Me.NiveauAlert.Location = New System.Drawing.Point(5, 138)
-        Me.NiveauAlert.Name = "NiveauAlert"
-        Me.NiveauAlert.Size = New System.Drawing.Size(30, 30)
-        Me.NiveauAlert.TabIndex = 61
-        Me.NiveauAlert.TabStop = False
-        Me.NiveauAlert.Visible = False
-        '
-        'SexeSpliter
-        '
-        Me.SexeSpliter.FixedPanel = System.Windows.Forms.FixedPanel.Panel1
-        Me.SexeSpliter.IsSplitterFixed = True
-        Me.SexeSpliter.Location = New System.Drawing.Point(95, 83)
-        Me.SexeSpliter.Name = "SexeSpliter"
-        Me.SexeSpliter.Orientation = System.Windows.Forms.Orientation.Horizontal
-        '
-        'SexeSpliter.Panel1
-        '
-        Me.SexeSpliter.Panel1.Controls.Add(Me.SexeLabel)
-        Me.SexeSpliter.Panel1MinSize = 21
-        '
-        'SexeSpliter.Panel2
-        '
-        Me.SexeSpliter.Panel2.Controls.Add(Me.CHB_SEXE)
-        Me.SexeSpliter.Panel2Collapsed = True
-        Me.SexeSpliter.Panel2MinSize = 0
-        Me.SexeSpliter.Size = New System.Drawing.Size(98, 50)
-        Me.SexeSpliter.SplitterDistance = 25
-        Me.SexeSpliter.SplitterWidth = 1
-        Me.SexeSpliter.TabIndex = 54
-        '
-        'SexeLabel
-        '
-        Me.SexeLabel.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.SexeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SexeLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.SexeLabel.ImageKey = "back.png"
-        Me.SexeLabel.ImageList = Me.arrowsList
-        Me.SexeLabel.Location = New System.Drawing.Point(3, 3)
-        Me.SexeLabel.Name = "SexeLabel"
-        Me.SexeLabel.Size = New System.Drawing.Size(69, 17)
-        Me.SexeLabel.TabIndex = 50
-        Me.SexeLabel.Text = "Sexe"
-        '
-        'arrowsList
-        '
-        Me.arrowsList.ImageStream = CType(resources.GetObject("arrowsList.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.arrowsList.TransparentColor = System.Drawing.Color.Transparent
-        Me.arrowsList.Images.SetKeyName(0, "back.png")
-        Me.arrowsList.Images.SetKeyName(1, "down-arrow.png")
-        '
-        'CHB_SEXE
-        '
-        Me.CHB_SEXE.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.CHB_SEXE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.CHB_SEXE.CheckOnClick = True
-        Me.CHB_SEXE.Font = New System.Drawing.Font("Cambria", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CHB_SEXE.FormattingEnabled = True
-        Me.CHB_SEXE.Location = New System.Drawing.Point(0, 0)
-        Me.CHB_SEXE.Margin = New System.Windows.Forms.Padding(0)
-        Me.CHB_SEXE.Name = "CHB_SEXE"
-        Me.CHB_SEXE.Size = New System.Drawing.Size(95, 2)
-        Me.CHB_SEXE.Sorted = True
-        Me.CHB_SEXE.TabIndex = 49
-        Me.CHB_SEXE.ThreeDCheckBoxes = True
-        '
-        'MatiereSpliter
-        '
-        Me.MatiereSpliter.Location = New System.Drawing.Point(285, 82)
-        Me.MatiereSpliter.Name = "MatiereSpliter"
-        Me.MatiereSpliter.Orientation = System.Windows.Forms.Orientation.Horizontal
-        '
-        'MatiereSpliter.Panel1
-        '
-        Me.MatiereSpliter.Panel1.Controls.Add(Me.MatiereLabel)
-        Me.MatiereSpliter.Panel1MinSize = 20
-        '
-        'MatiereSpliter.Panel2
-        '
-        Me.MatiereSpliter.Panel2.Controls.Add(Me.CHB_MAT)
-        Me.MatiereSpliter.Panel2MinSize = 0
-        Me.MatiereSpliter.Size = New System.Drawing.Size(98, 54)
-        Me.MatiereSpliter.SplitterDistance = 25
-        Me.MatiereSpliter.SplitterWidth = 1
-        Me.MatiereSpliter.TabIndex = 55
-        '
-        'MatiereLabel
-        '
-        Me.MatiereLabel.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.MatiereLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MatiereLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.MatiereLabel.ImageKey = "back.png"
-        Me.MatiereLabel.ImageList = Me.arrowsList
-        Me.MatiereLabel.Location = New System.Drawing.Point(3, 3)
-        Me.MatiereLabel.Name = "MatiereLabel"
-        Me.MatiereLabel.Size = New System.Drawing.Size(83, 17)
-        Me.MatiereLabel.TabIndex = 50
-        Me.MatiereLabel.Text = "Matiere"
-        '
-        'CHB_MAT
-        '
-        Me.CHB_MAT.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.CHB_MAT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.CHB_MAT.CheckOnClick = True
-        Me.CHB_MAT.Font = New System.Drawing.Font("Cambria", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CHB_MAT.FormattingEnabled = True
-        Me.CHB_MAT.Location = New System.Drawing.Point(0, 0)
-        Me.CHB_MAT.Margin = New System.Windows.Forms.Padding(0)
-        Me.CHB_MAT.Name = "CHB_MAT"
-        Me.CHB_MAT.Size = New System.Drawing.Size(95, 2)
-        Me.CHB_MAT.Sorted = True
-        Me.CHB_MAT.TabIndex = 49
-        Me.CHB_MAT.ThreeDCheckBoxes = True
-        '
-        'TXT_MOYSEUIL
-        '
-        Me.TXT_MOYSEUIL.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TXT_MOYSEUIL.Font = New System.Drawing.Font("Cambria", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TXT_MOYSEUIL.Location = New System.Drawing.Point(441, 105)
-        Me.TXT_MOYSEUIL.Name = "TXT_MOYSEUIL"
-        Me.TXT_MOYSEUIL.Size = New System.Drawing.Size(159, 19)
-        Me.TXT_MOYSEUIL.TabIndex = 39
+        Me.NIVEAUAlert.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
+        Me.NIVEAUAlert.Location = New System.Drawing.Point(5, 91)
+        Me.NIVEAUAlert.Name = "NIVEAUAlert"
+        Me.NIVEAUAlert.Size = New System.Drawing.Size(30, 30)
+        Me.NIVEAUAlert.TabIndex = 61
+        Me.NIVEAUAlert.TabStop = False
+        Me.NIVEAUAlert.Visible = False
         '
         'GroupeSpliter
         '
-        Me.GroupeSpliter.Location = New System.Drawing.Point(578, 138)
+        Me.GroupeSpliter.Location = New System.Drawing.Point(576, 91)
         Me.GroupeSpliter.Name = "GroupeSpliter"
         Me.GroupeSpliter.Orientation = System.Windows.Forms.Orientation.Horizontal
         '
         'GroupeSpliter.Panel1
         '
-        Me.GroupeSpliter.Panel1.Controls.Add(Me.Label3)
+        Me.GroupeSpliter.Panel1.Controls.Add(Me.GROUPELabel)
         Me.GroupeSpliter.Panel1MinSize = 20
         '
         'GroupeSpliter.Panel2
@@ -443,18 +263,25 @@ Partial Class StatistiquePage
         Me.GroupeSpliter.SplitterWidth = 1
         Me.GroupeSpliter.TabIndex = 60
         '
-        'Label3
+        'GROUPELabel
         '
-        Me.Label3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Label3.ImageKey = "back.png"
-        Me.Label3.ImageList = Me.arrowsList
-        Me.Label3.Location = New System.Drawing.Point(3, -1)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(95, 17)
-        Me.Label3.TabIndex = 50
-        Me.Label3.Text = "Groupe"
+        Me.GROUPELabel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.GROUPELabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GROUPELabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.GROUPELabel.ImageKey = "back.png"
+        Me.GROUPELabel.ImageList = Me.arrowsList
+        Me.GROUPELabel.Location = New System.Drawing.Point(3, -1)
+        Me.GROUPELabel.Name = "GROUPELabel"
+        Me.GROUPELabel.Size = New System.Drawing.Size(79, 17)
+        Me.GROUPELabel.TabIndex = 50
+        Me.GROUPELabel.Text = "Groupe"
+        '
+        'arrowsList
+        '
+        Me.arrowsList.ImageStream = CType(resources.GetObject("arrowsList.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.arrowsList.TransparentColor = System.Drawing.Color.Transparent
+        Me.arrowsList.Images.SetKeyName(0, "back.png")
+        Me.arrowsList.Images.SetKeyName(1, "down-arrow.png")
         '
         'CHB_GROUPE
         '
@@ -473,13 +300,13 @@ Partial Class StatistiquePage
         '
         'SectionSpliter
         '
-        Me.SectionSpliter.Location = New System.Drawing.Point(443, 138)
+        Me.SectionSpliter.Location = New System.Drawing.Point(441, 91)
         Me.SectionSpliter.Name = "SectionSpliter"
         Me.SectionSpliter.Orientation = System.Windows.Forms.Orientation.Horizontal
         '
         'SectionSpliter.Panel1
         '
-        Me.SectionSpliter.Panel1.Controls.Add(Me.Label6)
+        Me.SectionSpliter.Panel1.Controls.Add(Me.SECTIONLabel)
         Me.SectionSpliter.Panel1MinSize = 20
         '
         'SectionSpliter.Panel2
@@ -491,18 +318,18 @@ Partial Class StatistiquePage
         Me.SectionSpliter.SplitterWidth = 1
         Me.SectionSpliter.TabIndex = 59
         '
-        'Label6
+        'SECTIONLabel
         '
-        Me.Label6.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Label6.ImageKey = "back.png"
-        Me.Label6.ImageList = Me.arrowsList
-        Me.Label6.Location = New System.Drawing.Point(3, -1)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(95, 17)
-        Me.Label6.TabIndex = 50
-        Me.Label6.Text = "Section"
+        Me.SECTIONLabel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.SECTIONLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SECTIONLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.SECTIONLabel.ImageKey = "back.png"
+        Me.SECTIONLabel.ImageList = Me.arrowsList
+        Me.SECTIONLabel.Location = New System.Drawing.Point(3, -1)
+        Me.SECTIONLabel.Name = "SECTIONLabel"
+        Me.SECTIONLabel.Size = New System.Drawing.Size(82, 17)
+        Me.SECTIONLabel.TabIndex = 50
+        Me.SECTIONLabel.Text = "Section"
         '
         'CHB_SECTION
         '
@@ -521,13 +348,13 @@ Partial Class StatistiquePage
         '
         'AnneeSpliter
         '
-        Me.AnneeSpliter.Location = New System.Drawing.Point(308, 138)
+        Me.AnneeSpliter.Location = New System.Drawing.Point(306, 91)
         Me.AnneeSpliter.Name = "AnneeSpliter"
         Me.AnneeSpliter.Orientation = System.Windows.Forms.Orientation.Horizontal
         '
         'AnneeSpliter.Panel1
         '
-        Me.AnneeSpliter.Panel1.Controls.Add(Me.Label4)
+        Me.AnneeSpliter.Panel1.Controls.Add(Me.ANNEELabel)
         Me.AnneeSpliter.Panel1MinSize = 20
         '
         'AnneeSpliter.Panel2
@@ -539,18 +366,18 @@ Partial Class StatistiquePage
         Me.AnneeSpliter.SplitterWidth = 1
         Me.AnneeSpliter.TabIndex = 58
         '
-        'Label4
+        'ANNEELabel
         '
-        Me.Label4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Label4.ImageKey = "back.png"
-        Me.Label4.ImageList = Me.arrowsList
-        Me.Label4.Location = New System.Drawing.Point(3, -1)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(95, 17)
-        Me.Label4.TabIndex = 50
-        Me.Label4.Text = "Annee"
+        Me.ANNEELabel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ANNEELabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ANNEELabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ANNEELabel.ImageKey = "back.png"
+        Me.ANNEELabel.ImageList = Me.arrowsList
+        Me.ANNEELabel.Location = New System.Drawing.Point(3, -1)
+        Me.ANNEELabel.Name = "ANNEELabel"
+        Me.ANNEELabel.Size = New System.Drawing.Size(72, 17)
+        Me.ANNEELabel.TabIndex = 50
+        Me.ANNEELabel.Text = "Annee"
         '
         'CHB_ANNEE
         '
@@ -569,13 +396,13 @@ Partial Class StatistiquePage
         '
         'SpecialiteSpliter
         '
-        Me.SpecialiteSpliter.Location = New System.Drawing.Point(173, 138)
+        Me.SpecialiteSpliter.Location = New System.Drawing.Point(171, 91)
         Me.SpecialiteSpliter.Name = "SpecialiteSpliter"
         Me.SpecialiteSpliter.Orientation = System.Windows.Forms.Orientation.Horizontal
         '
         'SpecialiteSpliter.Panel1
         '
-        Me.SpecialiteSpliter.Panel1.Controls.Add(Me.Label5)
+        Me.SpecialiteSpliter.Panel1.Controls.Add(Me.SPECIALITELabel)
         Me.SpecialiteSpliter.Panel1MinSize = 20
         '
         'SpecialiteSpliter.Panel2
@@ -587,18 +414,18 @@ Partial Class StatistiquePage
         Me.SpecialiteSpliter.SplitterWidth = 1
         Me.SpecialiteSpliter.TabIndex = 57
         '
-        'Label5
+        'SPECIALITELabel
         '
-        Me.Label5.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Label5.ImageKey = "back.png"
-        Me.Label5.ImageList = Me.arrowsList
-        Me.Label5.Location = New System.Drawing.Point(3, -1)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(95, 17)
-        Me.Label5.TabIndex = 50
-        Me.Label5.Text = "Specialite"
+        Me.SPECIALITELabel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.SPECIALITELabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SPECIALITELabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.SPECIALITELabel.ImageKey = "back.png"
+        Me.SPECIALITELabel.ImageList = Me.arrowsList
+        Me.SPECIALITELabel.Location = New System.Drawing.Point(3, -1)
+        Me.SPECIALITELabel.Name = "SPECIALITELabel"
+        Me.SPECIALITELabel.Size = New System.Drawing.Size(95, 17)
+        Me.SPECIALITELabel.TabIndex = 50
+        Me.SPECIALITELabel.Text = "Specialite"
         '
         'CHB_SPECIALITE
         '
@@ -617,13 +444,13 @@ Partial Class StatistiquePage
         '
         'NiveauSpliter
         '
-        Me.NiveauSpliter.Location = New System.Drawing.Point(38, 138)
+        Me.NiveauSpliter.Location = New System.Drawing.Point(36, 91)
         Me.NiveauSpliter.Name = "NiveauSpliter"
         Me.NiveauSpliter.Orientation = System.Windows.Forms.Orientation.Horizontal
         '
         'NiveauSpliter.Panel1
         '
-        Me.NiveauSpliter.Panel1.Controls.Add(Me.NiveauLabel)
+        Me.NiveauSpliter.Panel1.Controls.Add(Me.NIVEAULabel)
         Me.NiveauSpliter.Panel1MinSize = 20
         '
         'NiveauSpliter.Panel2
@@ -635,18 +462,18 @@ Partial Class StatistiquePage
         Me.NiveauSpliter.SplitterWidth = 1
         Me.NiveauSpliter.TabIndex = 56
         '
-        'NiveauLabel
+        'NIVEAULabel
         '
-        Me.NiveauLabel.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.NiveauLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NiveauLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.NiveauLabel.ImageKey = "back.png"
-        Me.NiveauLabel.ImageList = Me.arrowsList
-        Me.NiveauLabel.Location = New System.Drawing.Point(3, 3)
-        Me.NiveauLabel.Name = "NiveauLabel"
-        Me.NiveauLabel.Size = New System.Drawing.Size(76, 17)
-        Me.NiveauLabel.TabIndex = 50
-        Me.NiveauLabel.Text = "Niveau"
+        Me.NIVEAULabel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.NIVEAULabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NIVEAULabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.NIVEAULabel.ImageKey = "back.png"
+        Me.NIVEAULabel.ImageList = Me.arrowsList
+        Me.NIVEAULabel.Location = New System.Drawing.Point(3, 3)
+        Me.NIVEAULabel.Name = "NIVEAULabel"
+        Me.NIVEAULabel.Size = New System.Drawing.Size(77, 17)
+        Me.NIVEAULabel.TabIndex = 50
+        Me.NIVEAULabel.Text = "Niveau"
         '
         'CHB_NIVEAU
         '
@@ -663,21 +490,11 @@ Partial Class StatistiquePage
         Me.CHB_NIVEAU.TabIndex = 49
         Me.CHB_NIVEAU.ThreeDCheckBoxes = True
         '
-        'SeuilLabel
-        '
-        Me.SeuilLabel.AutoSize = True
-        Me.SeuilLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SeuilLabel.Location = New System.Drawing.Point(446, 81)
-        Me.SeuilLabel.Name = "SeuilLabel"
-        Me.SeuilLabel.Size = New System.Drawing.Size(135, 17)
-        Me.SeuilLabel.TabIndex = 48
-        Me.SeuilLabel.Text = "Moyenne de seuil"
-        '
         'CritLabel
         '
         Me.CritLabel.AutoSize = True
         Me.CritLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CritLabel.Location = New System.Drawing.Point(119, 52)
+        Me.CritLabel.Location = New System.Drawing.Point(77, 52)
         Me.CritLabel.Name = "CritLabel"
         Me.CritLabel.Size = New System.Drawing.Size(176, 17)
         Me.CritLabel.TabIndex = 41
@@ -693,11 +510,11 @@ Partial Class StatistiquePage
         Me.MenuStrip1.GripMargin = New System.Windows.Forms.Padding(0)
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CB_CRITERE})
         Me.MenuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow
-        Me.MenuStrip1.Location = New System.Drawing.Point(307, 45)
+        Me.MenuStrip1.Location = New System.Drawing.Point(265, 45)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(0)
         Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.MenuStrip1.Size = New System.Drawing.Size(255, 26)
+        Me.MenuStrip1.Size = New System.Drawing.Size(305, 26)
         Me.MenuStrip1.TabIndex = 51
         Me.MenuStrip1.Text = "Criteres"
         '
@@ -707,12 +524,12 @@ Partial Class StatistiquePage
         Me.CB_CRITERE.Checked = True
         Me.CB_CRITERE.CheckState = System.Windows.Forms.CheckState.Indeterminate
         Me.CB_CRITERE.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.CB_CRITERE.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripItem1, Me.ToolStripSeparator12, Me.ToolStripItem2, Me.ToolStripItem3, Me.ToolStripItem4, Me.ToolStripItem5, Me.ToolStripSeparator13, Me.ToolStripItem6})
+        Me.CB_CRITERE.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripItem1, Me.ToolStripSeparator12, Me.ToolStripItem2, Me.ToolStripItem3, Me.ToolStripItem4, Me.ToolStripSeparator13, Me.ToolStripItem6})
         Me.CB_CRITERE.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Bold)
         Me.CB_CRITERE.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.CB_CRITERE.Name = "CB_CRITERE"
         Me.CB_CRITERE.Padding = New System.Windows.Forms.Padding(0)
-        Me.CB_CRITERE.Size = New System.Drawing.Size(255, 26)
+        Me.CB_CRITERE.Size = New System.Drawing.Size(305, 26)
         Me.CB_CRITERE.Text = "choisir un critère"
         Me.CB_CRITERE.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay
         '
@@ -724,7 +541,7 @@ Partial Class StatistiquePage
         Me.ToolStripItem1.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
         Me.ToolStripItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ToolStripItem1.Name = "ToolStripItem1"
-        Me.ToolStripItem1.Size = New System.Drawing.Size(253, 24)
+        Me.ToolStripItem1.Size = New System.Drawing.Size(304, 24)
         Me.ToolStripItem1.Text = "Nombre des étudiants par"
         '
         'ToolStripMenuItem1
@@ -751,7 +568,7 @@ Partial Class StatistiquePage
         'ToolStripSeparator12
         '
         Me.ToolStripSeparator12.Name = "ToolStripSeparator12"
-        Me.ToolStripSeparator12.Size = New System.Drawing.Size(250, 6)
+        Me.ToolStripSeparator12.Size = New System.Drawing.Size(301, 6)
         '
         'ToolStripItem2
         '
@@ -761,7 +578,7 @@ Partial Class StatistiquePage
         Me.ToolStripItem2.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
         Me.ToolStripItem2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ToolStripItem2.Name = "ToolStripItem2"
-        Me.ToolStripItem2.Size = New System.Drawing.Size(253, 24)
+        Me.ToolStripItem2.Size = New System.Drawing.Size(304, 24)
         Me.ToolStripItem2.Text = "Taux de Réussite par"
         Me.ToolStripItem2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -794,7 +611,7 @@ Partial Class StatistiquePage
         Me.ToolStripItem3.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
         Me.ToolStripItem3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ToolStripItem3.Name = "ToolStripItem3"
-        Me.ToolStripItem3.Size = New System.Drawing.Size(253, 24)
+        Me.ToolStripItem3.Size = New System.Drawing.Size(304, 24)
         Me.ToolStripItem3.Text = "Taux d'Echec par"
         Me.ToolStripItem3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -830,8 +647,8 @@ Partial Class StatistiquePage
         Me.ToolStripItem4.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
         Me.ToolStripItem4.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ToolStripItem4.Name = "ToolStripItem4"
-        Me.ToolStripItem4.Size = New System.Drawing.Size(253, 24)
-        Me.ToolStripItem4.Text = "Taux d'Abondance par"
+        Me.ToolStripItem4.Size = New System.Drawing.Size(304, 24)
+        Me.ToolStripItem4.Text = "Taux d'Abondance et Maladie par"
         Me.ToolStripItem4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'ToolStripMenuItem15
@@ -858,43 +675,10 @@ Partial Class StatistiquePage
         Me.ToolStripMenuItem17.Size = New System.Drawing.Size(130, 24)
         Me.ToolStripMenuItem17.Text = "Groupe"
         '
-        'ToolStripItem5
-        '
-        Me.ToolStripItem5.CheckOnClick = True
-        Me.ToolStripItem5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.ToolStripItem5.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem12, Me.ToolStripMenuItem13, Me.ToolStripMenuItem14})
-        Me.ToolStripItem5.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.ToolStripItem5.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.ToolStripItem5.Name = "ToolStripItem5"
-        Me.ToolStripItem5.Size = New System.Drawing.Size(253, 24)
-        Me.ToolStripItem5.Text = "Taux de Maladie par"
-        Me.ToolStripItem5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'ToolStripMenuItem12
-        '
-        Me.ToolStripMenuItem12.CheckOnClick = True
-        Me.ToolStripMenuItem12.Name = "ToolStripMenuItem12"
-        Me.ToolStripMenuItem12.Size = New System.Drawing.Size(130, 24)
-        Me.ToolStripMenuItem12.Text = "Matière"
-        '
-        'ToolStripMenuItem13
-        '
-        Me.ToolStripMenuItem13.CheckOnClick = True
-        Me.ToolStripMenuItem13.Name = "ToolStripMenuItem13"
-        Me.ToolStripMenuItem13.Size = New System.Drawing.Size(130, 24)
-        Me.ToolStripMenuItem13.Text = "Niveau"
-        '
-        'ToolStripMenuItem14
-        '
-        Me.ToolStripMenuItem14.CheckOnClick = True
-        Me.ToolStripMenuItem14.Name = "ToolStripMenuItem14"
-        Me.ToolStripMenuItem14.Size = New System.Drawing.Size(130, 24)
-        Me.ToolStripMenuItem14.Text = "Groupe"
-        '
         'ToolStripSeparator13
         '
         Me.ToolStripSeparator13.Name = "ToolStripSeparator13"
-        Me.ToolStripSeparator13.Size = New System.Drawing.Size(250, 6)
+        Me.ToolStripSeparator13.Size = New System.Drawing.Size(301, 6)
         '
         'ToolStripItem6
         '
@@ -904,7 +688,7 @@ Partial Class StatistiquePage
         Me.ToolStripItem6.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
         Me.ToolStripItem6.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ToolStripItem6.Name = "ToolStripItem6"
-        Me.ToolStripItem6.Size = New System.Drawing.Size(253, 24)
+        Me.ToolStripItem6.Size = New System.Drawing.Size(304, 24)
         Me.ToolStripItem6.Text = "Moyenne Seuil par"
         Me.ToolStripItem6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -935,41 +719,65 @@ Partial Class StatistiquePage
         Me.ChartPanel.Controls.Add(Me.BT_CHARTLOAD)
         Me.ChartPanel.Controls.Add(Me.BT_PREV)
         Me.ChartPanel.Controls.Add(Me.BT_NEXT)
-        Me.ChartPanel.Controls.Add(Me.CB_CHARTKIND)
-        Me.ChartPanel.Location = New System.Drawing.Point(0, 194)
+        Me.ChartPanel.Location = New System.Drawing.Point(0, 177)
         Me.ChartPanel.Name = "ChartPanel"
-        Me.ChartPanel.Size = New System.Drawing.Size(678, 446)
+        Me.ChartPanel.Size = New System.Drawing.Size(678, 463)
         Me.ChartPanel.TabIndex = 53
         '
         'Chart1
         '
-        ChartArea1.AxisX.TitleAlignment = System.Drawing.StringAlignment.Far
-        ChartArea1.AxisX.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ChartArea1.AxisY.TitleAlignment = System.Drawing.StringAlignment.Far
-        ChartArea1.AxisY.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Italic)
-        ChartArea1.Name = "ChartArea4"
-        Me.Chart1.ChartAreas.Add(ChartArea1)
-        Legend1.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend1)
-        Me.Chart1.Location = New System.Drawing.Point(59, 3)
+        Me.Chart1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Chart1.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center
+        Me.Chart1.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Scaled
+        ChartArea2.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver
+        ChartArea2.AxisX.MajorTickMark.LineColor = System.Drawing.Color.Silver
+        ChartArea2.AxisX.MinorGrid.LineColor = System.Drawing.Color.Silver
+        ChartArea2.AxisX.Title = "x"
+        ChartArea2.AxisX.TitleAlignment = System.Drawing.StringAlignment.Far
+        ChartArea2.AxisX.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea2.AxisX2.MajorGrid.LineColor = System.Drawing.Color.Silver
+        ChartArea2.AxisX2.MajorTickMark.LineColor = System.Drawing.Color.Silver
+        ChartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver
+        ChartArea2.AxisY.MajorTickMark.LineColor = System.Drawing.Color.Silver
+        ChartArea2.AxisY.Title = "y"
+        ChartArea2.AxisY.TitleAlignment = System.Drawing.StringAlignment.Far
+        ChartArea2.AxisY.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Italic)
+        ChartArea2.AxisY2.MajorGrid.LineColor = System.Drawing.Color.Silver
+        ChartArea2.AxisY2.MajorTickMark.LineColor = System.Drawing.Color.Silver
+        ChartArea2.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Scaled
+        ChartArea2.Name = "ChartArea4"
+        Me.Chart1.ChartAreas.Add(ChartArea2)
+        Legend2.BorderColor = System.Drawing.Color.Silver
+        Legend2.BorderWidth = 2
+        Legend2.IsEquallySpacedItems = True
+        Legend2.ItemColumnSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.Line
+        Legend2.Name = "Legend1"
+        Legend2.Title = "légende"
+        Legend2.TitleBackColor = System.Drawing.Color.Gainsboro
+        Legend2.TitleSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.ThickLine
+        Legend2.TitleSeparatorColor = System.Drawing.Color.DarkGray
+        Me.Chart1.Legends.Add(Legend2)
+        Me.Chart1.Location = New System.Drawing.Point(53, 1)
+        Me.Chart1.Margin = New System.Windows.Forms.Padding(0)
         Me.Chart1.Name = "Chart1"
         Me.Chart1.PaletteCustomColors = New System.Drawing.Color() {System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer)), System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer)), System.Drawing.Color.DodgerBlue, System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))}
-        Series1.BorderWidth = 8
-        Series1.ChartArea = "ChartArea4"
-        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series1.Legend = "Legend1"
-        Series1.Name = "Series1"
-        Series1.YValuesPerPoint = 4
-        Me.Chart1.Series.Add(Series1)
-        Me.Chart1.Size = New System.Drawing.Size(560, 394)
+        Series2.BorderWidth = 8
+        Series2.ChartArea = "ChartArea4"
+        Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series2.Legend = "Legend1"
+        Series2.Name = "Series1"
+        Series2.YValuesPerPoint = 4
+        Me.Chart1.Series.Add(Series2)
+        Me.Chart1.Size = New System.Drawing.Size(572, 411)
         Me.Chart1.SuppressExceptions = True
         Me.Chart1.TabIndex = 12
-        Me.Chart1.Text = "Chart1"
-        Title1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom
-        Title1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold)
-        Title1.Name = "Title1"
-        Title1.Text = "chart1"
-        Me.Chart1.Titles.Add(Title1)
+        Title2.DockedToChartArea = "ChartArea4"
+        Title2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom
+        Title2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold)
+        Title2.IsDockedInsideChartArea = False
+        Title2.Name = "Title1"
+        Title2.Text = "chart1"
+        Me.Chart1.Titles.Add(Title2)
         '
         'BT_CHARTLOAD
         '
@@ -978,11 +786,11 @@ Partial Class StatistiquePage
         Me.BT_CHARTLOAD.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BT_CHARTLOAD.Font = New System.Drawing.Font("Cambria", 13.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BT_CHARTLOAD.ForeColor = System.Drawing.Color.White
-        Me.BT_CHARTLOAD.Location = New System.Drawing.Point(234, 405)
+        Me.BT_CHARTLOAD.Location = New System.Drawing.Point(259, 421)
         Me.BT_CHARTLOAD.Name = "BT_CHARTLOAD"
         Me.BT_CHARTLOAD.Size = New System.Drawing.Size(160, 33)
         Me.BT_CHARTLOAD.TabIndex = 7
-        Me.BT_CHARTLOAD.Text = " Load "
+        Me.BT_CHARTLOAD.Text = "Afficher"
         Me.BT_CHARTLOAD.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.BT_CHARTLOAD.UseVisualStyleBackColor = False
         '
@@ -993,7 +801,7 @@ Partial Class StatistiquePage
         Me.BT_PREV.FlatAppearance.BorderSize = 0
         Me.BT_PREV.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BT_PREV.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BT_PREV.Location = New System.Drawing.Point(14, 183)
+        Me.BT_PREV.Location = New System.Drawing.Point(10, 183)
         Me.BT_PREV.Name = "BT_PREV"
         Me.BT_PREV.Size = New System.Drawing.Size(35, 35)
         Me.BT_PREV.TabIndex = 8
@@ -1007,29 +815,124 @@ Partial Class StatistiquePage
         Me.BT_NEXT.FlatAppearance.BorderSize = 0
         Me.BT_NEXT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BT_NEXT.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BT_NEXT.Location = New System.Drawing.Point(629, 183)
+        Me.BT_NEXT.Location = New System.Drawing.Point(633, 183)
         Me.BT_NEXT.Name = "BT_NEXT"
         Me.BT_NEXT.Size = New System.Drawing.Size(35, 35)
         Me.BT_NEXT.TabIndex = 9
         Me.BT_NEXT.Text = " "
         Me.BT_NEXT.UseVisualStyleBackColor = True
         '
-        'CB_CHARTKIND
-        '
-        Me.CB_CHARTKIND.FormattingEnabled = True
-        Me.CB_CHARTKIND.Location = New System.Drawing.Point(444, 407)
-        Me.CB_CHARTKIND.Name = "CB_CHARTKIND"
-        Me.CB_CHARTKIND.Size = New System.Drawing.Size(121, 28)
-        Me.CB_CHARTKIND.TabIndex = 13
-        '
         'TitlePanel
         '
+        Me.TitlePanel.Controls.Add(Me.MatiereSpliter)
+        Me.TitlePanel.Controls.Add(Me.SexeSpliter)
         Me.TitlePanel.Controls.Add(Me.Label1)
         Me.TitlePanel.Dock = System.Windows.Forms.DockStyle.Top
         Me.TitlePanel.Location = New System.Drawing.Point(0, 0)
         Me.TitlePanel.Name = "TitlePanel"
         Me.TitlePanel.Size = New System.Drawing.Size(678, 38)
         Me.TitlePanel.TabIndex = 1
+        '
+        'MatiereSpliter
+        '
+        Me.MatiereSpliter.Location = New System.Drawing.Point(103, 3)
+        Me.MatiereSpliter.Name = "MatiereSpliter"
+        Me.MatiereSpliter.Orientation = System.Windows.Forms.Orientation.Horizontal
+        '
+        'MatiereSpliter.Panel1
+        '
+        Me.MatiereSpliter.Panel1.Controls.Add(Me.MatiereLabel)
+        Me.MatiereSpliter.Panel1MinSize = 20
+        '
+        'MatiereSpliter.Panel2
+        '
+        Me.MatiereSpliter.Panel2.Controls.Add(Me.CHB_MAT)
+        Me.MatiereSpliter.Panel2MinSize = 0
+        Me.MatiereSpliter.Size = New System.Drawing.Size(12, 54)
+        Me.MatiereSpliter.SplitterDistance = 25
+        Me.MatiereSpliter.SplitterWidth = 1
+        Me.MatiereSpliter.TabIndex = 55
+        Me.MatiereSpliter.Visible = False
+        '
+        'MatiereLabel
+        '
+        Me.MatiereLabel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.MatiereLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MatiereLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.MatiereLabel.ImageKey = "back.png"
+        Me.MatiereLabel.ImageList = Me.arrowsList
+        Me.MatiereLabel.Location = New System.Drawing.Point(3, 3)
+        Me.MatiereLabel.Name = "MatiereLabel"
+        Me.MatiereLabel.Size = New System.Drawing.Size(83, 17)
+        Me.MatiereLabel.TabIndex = 50
+        Me.MatiereLabel.Text = "Matiere"
+        '
+        'CHB_MAT
+        '
+        Me.CHB_MAT.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.CHB_MAT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.CHB_MAT.CheckOnClick = True
+        Me.CHB_MAT.Font = New System.Drawing.Font("Cambria", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CHB_MAT.FormattingEnabled = True
+        Me.CHB_MAT.Location = New System.Drawing.Point(0, 0)
+        Me.CHB_MAT.Margin = New System.Windows.Forms.Padding(0)
+        Me.CHB_MAT.Name = "CHB_MAT"
+        Me.CHB_MAT.Size = New System.Drawing.Size(95, 2)
+        Me.CHB_MAT.Sorted = True
+        Me.CHB_MAT.TabIndex = 49
+        Me.CHB_MAT.ThreeDCheckBoxes = True
+        '
+        'SexeSpliter
+        '
+        Me.SexeSpliter.FixedPanel = System.Windows.Forms.FixedPanel.Panel1
+        Me.SexeSpliter.IsSplitterFixed = True
+        Me.SexeSpliter.Location = New System.Drawing.Point(103, 3)
+        Me.SexeSpliter.Name = "SexeSpliter"
+        Me.SexeSpliter.Orientation = System.Windows.Forms.Orientation.Horizontal
+        '
+        'SexeSpliter.Panel1
+        '
+        Me.SexeSpliter.Panel1.Controls.Add(Me.SexeLabel)
+        Me.SexeSpliter.Panel1MinSize = 21
+        '
+        'SexeSpliter.Panel2
+        '
+        Me.SexeSpliter.Panel2.Controls.Add(Me.CHB_SEXE)
+        Me.SexeSpliter.Panel2Collapsed = True
+        Me.SexeSpliter.Panel2MinSize = 0
+        Me.SexeSpliter.Size = New System.Drawing.Size(12, 50)
+        Me.SexeSpliter.SplitterDistance = 25
+        Me.SexeSpliter.SplitterWidth = 1
+        Me.SexeSpliter.TabIndex = 54
+        Me.SexeSpliter.Visible = False
+        '
+        'SexeLabel
+        '
+        Me.SexeLabel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.SexeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SexeLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.SexeLabel.ImageKey = "back.png"
+        Me.SexeLabel.ImageList = Me.arrowsList
+        Me.SexeLabel.Location = New System.Drawing.Point(3, 3)
+        Me.SexeLabel.Name = "SexeLabel"
+        Me.SexeLabel.Size = New System.Drawing.Size(69, 17)
+        Me.SexeLabel.TabIndex = 50
+        Me.SexeLabel.Text = "Sexe"
+        '
+        'CHB_SEXE
+        '
+        Me.CHB_SEXE.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.CHB_SEXE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.CHB_SEXE.CheckOnClick = True
+        Me.CHB_SEXE.Font = New System.Drawing.Font("Cambria", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CHB_SEXE.FormattingEnabled = True
+        Me.CHB_SEXE.Location = New System.Drawing.Point(0, 0)
+        Me.CHB_SEXE.Margin = New System.Windows.Forms.Padding(0)
+        Me.CHB_SEXE.Name = "CHB_SEXE"
+        Me.CHB_SEXE.Size = New System.Drawing.Size(95, 2)
+        Me.CHB_SEXE.Sorted = True
+        Me.CHB_SEXE.TabIndex = 49
+        Me.CHB_SEXE.ThreeDCheckBoxes = True
         '
         'Label1
         '
@@ -1043,6 +946,55 @@ Partial Class StatistiquePage
         Me.Label1.Size = New System.Drawing.Size(146, 31)
         Me.Label1.TabIndex = 13
         Me.Label1.Text = "Statistiques"
+        '
+        'SeuilLabel
+        '
+        Me.SeuilLabel.AutoSize = True
+        Me.SeuilLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SeuilLabel.Location = New System.Drawing.Point(371, 125)
+        Me.SeuilLabel.Name = "SeuilLabel"
+        Me.SeuilLabel.Size = New System.Drawing.Size(135, 17)
+        Me.SeuilLabel.TabIndex = 48
+        Me.SeuilLabel.Text = "Moyenne de seuil"
+        '
+        'TXT_MOYSEUIL
+        '
+        Me.TXT_MOYSEUIL.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TXT_MOYSEUIL.Font = New System.Drawing.Font("Cambria", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TXT_MOYSEUIL.Location = New System.Drawing.Point(366, 146)
+        Me.TXT_MOYSEUIL.Name = "TXT_MOYSEUIL"
+        Me.TXT_MOYSEUIL.Size = New System.Drawing.Size(159, 19)
+        Me.TXT_MOYSEUIL.TabIndex = 39
+        Me.TXT_MOYSEUIL.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
+        Me.PictureBox3.Location = New System.Drawing.Point(330, 133)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(30, 30)
+        Me.PictureBox3.TabIndex = 68
+        Me.PictureBox3.TabStop = False
+        Me.PictureBox3.Visible = False
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(118, 125)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(123, 17)
+        Me.Label2.TabIndex = 69
+        Me.Label2.Text = "Type du graphe"
+        '
+        'CB_CHARTKIND
+        '
+        Me.CB_CHARTKIND.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CB_CHARTKIND.FormattingEnabled = True
+        Me.CB_CHARTKIND.Location = New System.Drawing.Point(112, 145)
+        Me.CB_CHARTKIND.Name = "CB_CHARTKIND"
+        Me.CB_CHARTKIND.Size = New System.Drawing.Size(157, 26)
+        Me.CB_CHARTKIND.TabIndex = 13
         '
         'NewToolStripMenuItem
         '
@@ -1377,6 +1329,9 @@ Partial Class StatistiquePage
         '
         Me.ErrorProvider1.ContainerControl = Me
         '
+        'AvertTip
+        '
+        '
         'StatistiquePage
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
@@ -1392,22 +1347,9 @@ Partial Class StatistiquePage
         Me.WindowState = System.Windows.Forms.FormWindowState.Minimized
         Me.StatistiquesPanel.ResumeLayout(False)
         Me.StatistiquesPanel.PerformLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MatiereAlert, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GroupeAlert, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SectionAlert, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AnneeAlert, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SpecialiteAlert, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SexeAlert, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NiveauAlert, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.SexeSpliter.Panel1.ResumeLayout(False)
-        Me.SexeSpliter.Panel2.ResumeLayout(False)
-        CType(Me.SexeSpliter, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.SexeSpliter.ResumeLayout(False)
-        Me.MatiereSpliter.Panel1.ResumeLayout(False)
-        Me.MatiereSpliter.Panel2.ResumeLayout(False)
-        CType(Me.MatiereSpliter, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.MatiereSpliter.ResumeLayout(False)
+        CType(Me.ANNEEAlert, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SPECIALITEAlert, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NIVEAUAlert, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupeSpliter.Panel1.ResumeLayout(False)
         Me.GroupeSpliter.Panel2.ResumeLayout(False)
         CType(Me.GroupeSpliter, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1434,6 +1376,15 @@ Partial Class StatistiquePage
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TitlePanel.ResumeLayout(False)
         Me.TitlePanel.PerformLayout()
+        Me.MatiereSpliter.Panel1.ResumeLayout(False)
+        Me.MatiereSpliter.Panel2.ResumeLayout(False)
+        CType(Me.MatiereSpliter, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MatiereSpliter.ResumeLayout(False)
+        Me.SexeSpliter.Panel1.ResumeLayout(False)
+        Me.SexeSpliter.Panel2.ResumeLayout(False)
+        CType(Me.SexeSpliter, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SexeSpliter.ResumeLayout(False)
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -1519,10 +1470,6 @@ Partial Class StatistiquePage
     Friend WithEvents ToolStripMenuItem15 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem16 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem17 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripItem5 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem12 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem13 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem14 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripSeparator13 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents ToolStripItem6 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem3 As System.Windows.Forms.ToolStripMenuItem
@@ -1534,30 +1481,27 @@ Partial Class StatistiquePage
     Friend WithEvents MatiereLabel As System.Windows.Forms.Label
     Friend WithEvents CHB_MAT As System.Windows.Forms.CheckedListBox
     Friend WithEvents NiveauSpliter As System.Windows.Forms.SplitContainer
-    Friend WithEvents NiveauLabel As System.Windows.Forms.Label
+    Friend WithEvents NIVEAULabel As System.Windows.Forms.Label
     Friend WithEvents CHB_NIVEAU As System.Windows.Forms.CheckedListBox
     Friend WithEvents ChartPanel As System.Windows.Forms.Panel
     Friend WithEvents TitlePanel As System.Windows.Forms.Panel
     Friend WithEvents SpecialiteSpliter As System.Windows.Forms.SplitContainer
-    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents SPECIALITELabel As System.Windows.Forms.Label
     Friend WithEvents CHB_SPECIALITE As System.Windows.Forms.CheckedListBox
     Friend WithEvents AnneeSpliter As System.Windows.Forms.SplitContainer
-    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents ANNEELabel As System.Windows.Forms.Label
     Friend WithEvents CHB_ANNEE As System.Windows.Forms.CheckedListBox
     Friend WithEvents SectionSpliter As System.Windows.Forms.SplitContainer
-    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents SECTIONLabel As System.Windows.Forms.Label
     Friend WithEvents CHB_SECTION As System.Windows.Forms.CheckedListBox
     Friend WithEvents GroupeSpliter As System.Windows.Forms.SplitContainer
-    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents GROUPELabel As System.Windows.Forms.Label
     Friend WithEvents CHB_GROUPE As System.Windows.Forms.CheckedListBox
     Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
     Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
-    Friend WithEvents MatiereAlert As System.Windows.Forms.PictureBox
-    Friend WithEvents GroupeAlert As System.Windows.Forms.PictureBox
-    Friend WithEvents SectionAlert As System.Windows.Forms.PictureBox
-    Friend WithEvents AnneeAlert As System.Windows.Forms.PictureBox
-    Friend WithEvents SpecialiteAlert As System.Windows.Forms.PictureBox
-    Friend WithEvents SexeAlert As System.Windows.Forms.PictureBox
-    Friend WithEvents NiveauAlert As System.Windows.Forms.PictureBox
+    Friend WithEvents ANNEEAlert As System.Windows.Forms.PictureBox
+    Friend WithEvents SPECIALITEAlert As System.Windows.Forms.PictureBox
+    Friend WithEvents NIVEAUAlert As System.Windows.Forms.PictureBox
     Friend WithEvents AvertTip As System.Windows.Forms.ToolTip
+    Friend WithEvents Label2 As System.Windows.Forms.Label
 End Class

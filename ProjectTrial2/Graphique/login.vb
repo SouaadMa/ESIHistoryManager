@@ -23,6 +23,25 @@ Public Class Login
                 correct = True
             End If
         End If
+
+        Return correct
+    End Function
+
+    Function Connexion(ByVal mdp As String, ByVal mode As Boolean) As Boolean ' fnction that return the responce to the password according to the mode of connexion
+        'true == admin 'false == agent
+
+        Dim correct As Boolean = False
+
+        If Not mode Then
+            If mdp = password_._agent_mdp Then
+                correct = True
+            End If
+        Else
+            If mdp = password_._admin_mdp Then
+                correct = True
+            End If
+        End If
+
         Return correct
     End Function
 
@@ -89,6 +108,7 @@ Public Class Login
         Login.password_ = formatter.Deserialize(stream)
         stream.Close()
 
+        
 
     End Sub
 

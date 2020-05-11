@@ -38,14 +38,6 @@ Public Class RN
 
     End Sub
 
-
-
-    Private Sub BT_SORTIR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        Me.Close()
-        Home.MainContainer2.Visible = False
-        Home.MainContainer1.Visible = True
-    End Sub
-
     Private Sub BT_LOAD_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_LOAD.Click
         If cb_anee = True Then
 
@@ -166,5 +158,11 @@ Public Class RN
     Private Sub CB_ANNEE_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CB_ANNEE.SelectedIndexChanged
         cb_anee = True
         BT_LOAD.Enabled = True
+    End Sub
+
+    Private Sub BT_SORTIR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_SORTIR.Click
+        Me.Close()
+        Home.MainContainer2.Visible = False
+        Home.MainContainer1.Visible = True
     End Sub
 End Class

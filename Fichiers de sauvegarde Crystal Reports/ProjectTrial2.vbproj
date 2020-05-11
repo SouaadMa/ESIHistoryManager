@@ -139,9 +139,13 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Graphique\AttestationDataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>AttestationDataSet.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Graphique\AttestationDataSet.vb">
+      <DependentUpon>AttestationDataSet.xsd</DependentUpon>
+      <SubType>code</SubType>
     </Compile>
     <Compile Include="Graphique\Chargement.Designer.vb">
       <DependentUpon>Chargement.vb</DependentUpon>
@@ -149,11 +153,20 @@
     <Compile Include="Graphique\Chargement.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Graphique\PrincipalPage.Designer.vb">
+      <DependentUpon>PrincipalPage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Graphique\PrincipalPage.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Graphique\CrystalReport1.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Graphique\RNDataSet.vb">
+      <DependentUpon>RNDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Graphique\rng2lReport.vb">
       <AutoGen>True</AutoGen>
@@ -232,17 +245,12 @@
     <Compile Include="Graphique\RNGDataSet.vb">
       <DependentUpon>RNGDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Graphique\RngImpossibleException.vb" />
     <Compile Include="Graphique\RNGPage.Designer.vb">
       <DependentUpon>RNGPage.vb</DependentUpon>
     </Compile>
     <Compile Include="Graphique\RNGPage.vb">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Graphique\RngReport.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RngReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Graphique\StatistiquePage.Designer.vb">
       <DependentUpon>StatistiquePage.vb</DependentUpon>
@@ -308,6 +316,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="BDD\Rech_BDD.vb" />
+    <Compile Include="Noyau\Statistiques.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="BDD\SortieAttestation.resx">
@@ -329,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Graphique\ClassementPage.resx">
       <DependentUpon>ClassementPage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Graphique\PrincipalPage.resx">
+      <DependentUpon>PrincipalPage.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Graphique\CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -378,10 +390,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Graphique\RNGPage.resx">
       <DependentUpon>RNGPage.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Graphique\RngReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>RngReport.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Graphique\StatistiquePage.resx">
       <DependentUpon>StatistiquePage.vb</DependentUpon>
@@ -458,6 +466,8 @@
     <None Include="Resources\user profile.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\shapes-and-symbols.png" />
+    <None Include="Resources\signs.png" />
     <None Include="Resources\Asset 2.png" />
     <None Include="Resources\backBTchekedNone.png" />
     <None Include="Resources\backBTcheked.png" />
@@ -470,6 +480,12 @@
     <None Include="Resources\015-document2.png" />
     <None Include="Resources\015-document3.png" />
     <None Include="Resources\certaficat.png" />
+    <None Include="Resources\attestation.png" />
+    <None Include="Resources\chargement.png" />
+    <None Include="Resources\dashboard.png" />
+    <None Include="Resources\commerce-and-shopping.png" />
+    <None Include="Resources\multimedia.png" />
+    <None Include="Resources\Color Fill 4 copy 2.png" />
     <Content Include="Resources\page_num_current.png" />
     <None Include="Resources\Spinner-1s-220px.gif" />
     <None Include="Resources\table_blanc.png" />
@@ -685,6 +701,46 @@
       <PublishState>Include</PublishState>
       <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Data.Schema">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Data.Schema.ScriptDom">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Data.Schema.UnitTesting">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Data.Schema.Utilities">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.ReportViewer.Common">
       <Visible>False</Visible>

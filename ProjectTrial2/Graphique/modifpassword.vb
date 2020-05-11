@@ -5,18 +5,29 @@ Public Class modifpassword
 
     ' a function to show the responce to the connexion request ( launch the home page or the error message )
     Private Sub Changer_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles changer.Click
-        If Login.Connexion(Me.TXT_Password.Text) = False Or Me.TXT_PasswordN.Text <> Me.TXT_PasswordNC.Text Or TXT_PasswordN.Text = "" Then
 
-            If Login.Connexion(Me.TXT_Password.Text) = False Then
-                Me.avertissemnt.Text = "Mot de passe errone ! ressayez a nouveau "
-                Me.avertissemnt.Visible = True
+        Dim mode As Boolean = False
+
+        mode = AdminButton.Checked
+
+        If Login.Connexion(Me.TXT_Password.Text, mode) = False Or Me.TXT_PasswordN.Text <> Me.TXT_PasswordNC.Text Or TXT_PasswordN.Text = "" Then
+
+
+
+            If Login.Connexion(Me.TXT_Password.Text, mode) = False Then
+                Me.avertissement.Text = "Mot de passe érroné ! Réessayez à nouveau. "
+                Me.avertissement.Visible = True
+
 
             ElseIf (Me.TXT_PasswordN.Text <> Me.TXT_PasswordNC.Text Or TXT_PasswordN.Text = "") Then
-                Me.avertissemnt.Visible = True
-                Me.avertissemnt.Text = "Vous devez entrer le meme mot de passe deux fois pour que vous la confirmer "
+                Me.avertissement.Visible = True
+                Me.avertissement.Text = "Les deux mots de passe ne correspondent pas."
+
             End If
 
         Else
+
+
 
             If AgentButton.Checked Then
                 Login.password_._agent_mdp = TXT_PasswordN.Text
@@ -34,6 +45,9 @@ Public Class modifpassword
             'create the binary formatter
             Dim formatter As New BinaryFormatter
             formatter.Serialize(stream, Login.password_)
+
+
+
             stream.Close()
 
             Me.Close()

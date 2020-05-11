@@ -139,9 +139,13 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Graphique\AttestationDataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>AttestationDataSet.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Graphique\AttestationDataSet.vb">
+      <DependentUpon>AttestationDataSet.xsd</DependentUpon>
+      <SubType>code</SubType>
     </Compile>
     <Compile Include="Graphique\Chargement.Designer.vb">
       <DependentUpon>Chargement.vb</DependentUpon>

@@ -35,6 +35,7 @@ Partial Class modifpassword
         Me.AgentButton = New System.Windows.Forms.RadioButton()
         Me.AdminButton = New System.Windows.Forms.RadioButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.avertissement = New System.Windows.Forms.Label()
         Me.changer = New System.Windows.Forms.Button()
         Me.TXT_PasswordNC = New System.Windows.Forms.TextBox()
         Me.TXT_PasswordN = New System.Windows.Forms.TextBox()
@@ -211,6 +212,7 @@ Partial Class modifpassword
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.avertissement)
         Me.Panel1.Controls.Add(Me.changer)
         Me.Panel1.Controls.Add(Me.TXT_PasswordNC)
         Me.Panel1.Controls.Add(Me.TXT_PasswordN)
@@ -225,6 +227,18 @@ Partial Class modifpassword
         Me.Panel1.Size = New System.Drawing.Size(525, 440)
         Me.Panel1.TabIndex = 11
         '
+        'avertissement
+        '
+        Me.avertissement.AutoSize = True
+        Me.avertissement.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.avertissement.ForeColor = System.Drawing.Color.LightCoral
+        Me.avertissement.Location = New System.Drawing.Point(69, 352)
+        Me.avertissement.Name = "avertissement"
+        Me.avertissement.Size = New System.Drawing.Size(388, 20)
+        Me.avertissement.TabIndex = 10
+        Me.avertissement.Text = "Les deux mots de passe ne correspondent pas."
+        Me.avertissement.Visible = False
+        '
         'changer
         '
         Me.changer.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
@@ -232,7 +246,7 @@ Partial Class modifpassword
         Me.changer.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.changer.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.changer.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.changer.Location = New System.Drawing.Point(175, 356)
+        Me.changer.Location = New System.Drawing.Point(164, 391)
         Me.changer.Margin = New System.Windows.Forms.Padding(2)
         Me.changer.Name = "changer"
         Me.changer.Size = New System.Drawing.Size(175, 38)
@@ -365,4 +379,5 @@ Partial Class modifpassword
     Friend WithEvents TXT_PasswordNC As System.Windows.Forms.TextBox
     Friend WithEvents TXT_PasswordN As System.Windows.Forms.TextBox
     Friend WithEvents changer As System.Windows.Forms.Button
+    Friend WithEvents avertissement As System.Windows.Forms.Label
 End Class

@@ -126,7 +126,7 @@ Partial Class RechercherPage
         Me.RechButtons.Location = New System.Drawing.Point(24, 972)
         Me.RechButtons.MinimumSize = New System.Drawing.Size(610, 0)
         Me.RechButtons.Name = "RechButtons"
-        Me.RechButtons.Size = New System.Drawing.Size(611, 91)
+        Me.RechButtons.Size = New System.Drawing.Size(610, 91)
         Me.RechButtons.TabIndex = 44
         '
         'worningrech

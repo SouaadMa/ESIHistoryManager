@@ -101,13 +101,13 @@ Public Class RN
             Try
                 Select Case ds.Tables(2).Rows(0)("ADM")
                     Case "J"
-                        FormulaField.Text = "'Admis en " + CB_ANNEE.Text.Substring(0, 1) + IIf(CB_ANNEE.Text.Substring(0, 1).Equals("1"), " ère", " ème") + " Année' ;"
+                        FormulaField.Text = "'Admis en " + (CInt(CB_ANNEE.Text.Substring(0, 1)) + 1).ToString + IIf(CB_ANNEE.Text.Substring(0, 1).Equals("1"), " ère", " ème") + " Année' ;"
                     Case "R"
                         FormulaField.Text = "'" + "Redouble" + "' ;"
                     Case "M"
                         FormulaField.Text = "'" + "Maladie" + "' ;"
                     Case "S"
-                        FormulaField.Text = "'Admis en " + CB_ANNEE.Text.Substring(0, 1) + IIf(CB_ANNEE.Text.Substring(0, 1).Equals("1"), " ère", " ème") + " Année' ;"
+                        FormulaField.Text = "'Admis en " + (CInt(CB_ANNEE.Text.Substring(0, 1)) + 1).ToString + IIf(CB_ANNEE.Text.Substring(0, 1).Equals("1"), " ère", " ème") + " Année' ;"
                     Case "X"
                         FormulaField.Text = "'" + "Non admis" + "' ;"
                     Case Else

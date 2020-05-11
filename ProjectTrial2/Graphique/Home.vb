@@ -317,7 +317,7 @@ Public Class Home
                     .Controls.Item(0).Scale(New System.Drawing.SizeF(1 / 1.2, 1))
                     .Controls.Item(0).Anchor = AnchorStyles.None
                     .Controls.Item(0).Dock = DockStyle.Fill
-                    Console.Write(.Controls.Item(0).Name + " sized little")
+                    'Console.Write(.Controls.Item(0).Name + " sized little")
                 End If
             End With
         Else
@@ -326,7 +326,7 @@ Public Class Home
                     .Controls.Item(0).Scale(New System.Drawing.SizeF(1.2, 1))
                     .Controls.Item(0).Anchor = AnchorStyles.None
                     .Controls.Item(0).Dock = DockStyle.Fill
-                    Console.Write(.Controls.Item(0).Name + "sized big")
+                    'Console.Write(.Controls.Item(0).Name + "sized big")
                 End If
             End With
         End If
@@ -338,7 +338,7 @@ Public Class Home
                     .Controls.Item(0).Scale(New System.Drawing.SizeF(1 / 1.2, 1))
                     .Controls.Item(0).Anchor = AnchorStyles.None
                     .Controls.Item(0).Dock = DockStyle.Fill
-                    Console.Write(.Controls.Item(0).Name + " sized little")
+                    'Console.Write(.Controls.Item(0).Name + " sized little")
                 End If
             End With
         Else
@@ -347,7 +347,7 @@ Public Class Home
                     .Controls.Item(0).Scale(New System.Drawing.SizeF(1.2, 1))
                     .Controls.Item(0).Anchor = AnchorStyles.None
                     .Controls.Item(0).Dock = DockStyle.Fill
-                    Console.Write(.Controls.Item(0).Name + "sized big")
+                    'Console.Write(.Controls.Item(0).Name + "sized big")
                 End If
             End With
         End If
@@ -360,7 +360,7 @@ Public Class Home
                     .Controls.Item(0).Scale(New System.Drawing.SizeF(1.2, 1))
                     .Controls.Item(0).Anchor = AnchorStyles.None
                     .Controls.Item(0).Dock = DockStyle.Fill
-                    Console.Write(.Controls.Item(0).Name + "added ")
+                    'Console.Write(.Controls.Item(0).Name + "added ")
                 End If
             End With
         End If
@@ -373,7 +373,7 @@ Public Class Home
                     .Controls.Item(0).Scale(New System.Drawing.SizeF(1.2, 1))
                     .Controls.Item(0).Anchor = AnchorStyles.None
                     .Controls.Item(0).Dock = DockStyle.Fill
-                    Console.Write(.Controls.Item(0).Name + "added ")
+                    'Console.Write(.Controls.Item(0).Name + "added ")
                 End If
             End With
         End If

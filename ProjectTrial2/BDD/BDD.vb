@@ -514,6 +514,8 @@ Public Class BDD
 
             Dim SqlQuery = "SELECT DISTINCT " & nomChamps & " FROM " & nomTable & " "
 
+            SqlQuery += "WHERE " & nomChamps & " IS NOT NULL"
+
             For Each cond In conditions
 
                 SqlQuery = Class_BDD.AddLIKECondition(SqlQuery, cond, nomTable)

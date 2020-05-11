@@ -82,3 +82,7 @@ C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\Es
 C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.StatistiquePage.resources
 C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.Resources.resources
 C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\ProjectTrial2.vbproj.GenerateResource.Cache
+C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\bin\Debug\EsistHistoryManagement.exe
+C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\bin\Debug\EsistHistoryManagement.pdb
+C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\bin\Debug\EsistHistoryManagement.xml
+C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement.exe

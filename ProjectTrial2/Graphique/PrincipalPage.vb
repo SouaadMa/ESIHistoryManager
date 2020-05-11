@@ -3,7 +3,7 @@ Public Class PrincipalPage
 
     Private Sub PrincipalPage_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'initialize the graphic componants values
-
+        Help_Button.ForeColor = Color.SteelBlue
     End Sub
     'handle the appearence of help button when hovering
     Private Sub HelpButton_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs)

@@ -511,11 +511,11 @@ Public Class ECLATEMENT
 
 
 
-    Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        ECLATEMENT("C:\Users\DELL\Documents\BDD_APPLICATION", "C:\Users\DELL\Documents\INSCRIT_00_04", "C:\Users\DELL\Documents\NOTE_00_04", "C:\Users\DELL\Documents\MATIERE_00_04", "C:\Users\DELL\Documents\RATRAP_00_04")
-        RECHARGEMENT("C:\Users\DELL\Documents\BDD_APPLICATION")
-        MsgBox("olilililililolilooooliloilolilooooliloooliloliooilooi")
-    End Sub
+    'Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    '   ECLATEMENT("C:\Users\DELL\Documents\BDD_APPLICATION", "C:\Users\DELL\Documents\INSCRIT_00_04", "C:\Users\DELL\Documents\NOTE_00_04", "C:\Users\DELL\Documents\MATIERE_00_04", "C:\Users\DELL\Documents\RATRAP_00_04")
+    '  RECHARGEMENT("C:\Users\DELL\Documents\BDD_APPLICATION")
+    ' MsgBox("olilililililolilooooliloilolilooooliloooliloliooilooi")
+    'End Sub
 End Class
 
 

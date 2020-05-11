@@ -96,16 +96,16 @@ Partial Class PrincipalPage
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Help_Button.AutoSize = True
         Me.Help_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Help_Button.Cursor = System.Windows.Forms.Cursors.Help
+        Me.Help_Button.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Help_Button.FlatAppearance.BorderSize = 0
         Me.Help_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Help_Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Help_Button.ForeColor = System.Drawing.Color.DeepSkyBlue
         Me.Help_Button.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.info
         Me.Help_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Help_Button.Location = New System.Drawing.Point(134, 397)
+        Me.Help_Button.Location = New System.Drawing.Point(112, 395)
         Me.Help_Button.Name = "Help_Button"
-        Me.Help_Button.Size = New System.Drawing.Size(198, 38)
+        Me.Help_Button.Size = New System.Drawing.Size(168, 38)
         Me.Help_Button.TabIndex = 9
         Me.Help_Button.Text = " le guide en ligne"
         Me.Help_Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -121,7 +121,7 @@ Partial Class PrincipalPage
         Me.ChargementButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.ChargementButton.FlatAppearance.BorderSize = 0
         Me.ChargementButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ChargementButton.Location = New System.Drawing.Point(404, 479)
+        Me.ChargementButton.Location = New System.Drawing.Point(296, 484)
         Me.ChargementButton.Name = "ChargementButton"
         Me.ChargementButton.Size = New System.Drawing.Size(82, 71)
         Me.ChargementButton.TabIndex = 8

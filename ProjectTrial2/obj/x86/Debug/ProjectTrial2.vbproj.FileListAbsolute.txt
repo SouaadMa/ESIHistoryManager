@@ -58,3 +58,27 @@ D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\
 D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\ProjectTrial2.vbproj.GenerateResource.Cache
 D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.PrincipalPage.resources
 D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\ProjectTrial2.vbprojResolveAssemblyReference.cache
+C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\bin\Debug\EsistHistoryManagement.exe.config
+C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement.xml
+C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement.pdb
+C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\ProjectTrial2.vbprojResolveAssemblyReference.cache
+C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.SortieAttestation.resources
+C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.affichResearchResult.resources
+C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.Attestation.resources
+C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.Chargement.resources
+C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.ClassementPage.resources
+C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.PrincipalPage.resources
+C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.Form1.resources
+C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.RN.resources
+C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.Historique.resources
+C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.details.resources
+C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.modifier.resources
+C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.modifpassword.resources
+C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.PVPage.resources
+C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.RechercherPage.resources
+C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.Home.resources
+C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.Login.resources
+C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.RNGPage.resources
+C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.StatistiquePage.resources
+C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.Resources.resources
+C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\ProjectTrial2.vbproj.GenerateResource.Cache

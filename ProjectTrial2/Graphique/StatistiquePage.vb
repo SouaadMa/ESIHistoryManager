@@ -147,13 +147,13 @@ Public Class StatistiquePage
 
         CritCombList = GenereCritCombin()
 
+        Dim TitleFont As Font = Chart1.Titles(0).Font
         Chart1.ChartAreas.Clear()
         Chart1.Titles.Clear()
         Chart1.ChartAreas.Add("chart1")
         Chart1.Titles.Add("title")
 
 
-        Chart1.Titles(0).Text = CB_CRITERE.Text + IIf(ds.Tables.Count > 1, " entre", " ")
         Chart1.Series.RemoveAt(0)
         For i As Integer = 0 To CritCombList.Count - 1 Step 1  'comb As IList(Of Critere) In CritCombList
             stat = New Statistiques(CritCombList(i), EtudCrit, RepartCrit)
@@ -188,18 +188,21 @@ Public Class StatistiquePage
                             'Couleur de la grille secondaire
                             .AxisY.MajorGrid.LineColor = Color.LightGray
                             .AxisX.Title = xTitle
+                            .AxisX.TitleAlignment = StringAlignment.Far
                             .AxisY.Title = yTitle
+                            .AxisY.TitleAlignment = StringAlignment.Far
                         End With
                         Chart1.Titles.Add(.Name)
                         With Chart1.Titles.Item(i)
-                            .Text = .Name
+                            .Text = Title + " pour " + Chart1.Series.Item(i).Name
+                            .Font = TitleFont
                             .Docking = DataVisualization.Charting.Docking.Bottom
                             .Position.Auto = True
                             .DockedToChartArea = Chart1.ChartAreas.Item(i).Name
                             .IsDockedInsideChartArea = False
                         End With
                         'affichons les valeurs au-dessus de chaque colonne
-                        If ds.Tables.Count <= 4 Then
+                        If ds.Tables.Count <= 6 Then
                             .IsValueShownAsLabel = True
                         End If
                         .BorderWidth = 8
@@ -224,24 +227,28 @@ Public Class StatistiquePage
                     'Couleur de la grille secondaire
                     .AxisY.MajorGrid.LineColor = Color.LightGray
                     .AxisX.Title = xTitle
+                    .AxisX.TitleAlignment = StringAlignment.Far
                     .AxisY.Title = yTitle
+                    .AxisY.TitleAlignment = StringAlignment.Far
                 End With
                 With Chart1.Titles.Item(0)
                     .Docking = DataVisualization.Charting.Docking.Bottom
                     .Position.Auto = True
-                    .DockedToChartArea = Chart1.ChartAreas.Item(0).Name
+                    '.DockedToChartArea = Chart1.ChartAreas.Item(0).Name
                     .IsDockedInsideChartArea = False
+                    .Text = Title + IIf(ds.Tables.Count > 1, " entre", " ")
                 End With
                 dt = Statistiques.SingleKeyMergeDataSet(ds)
                 'DataSource indique la source de données
                 Chart1.DataSource = dt
-                Chart1.Titles(0).Text += IIf(CritCombList.Count = 1 And CritCombList.Item(0).Count = 0, "", "pour")
+                Chart1.Titles(0).Text += IIf(Chart1.Series.Count = 1 And CritCombList.Item(0).Count = 0, "", "pour")
                 For i As Integer = 0 To ds.Tables.Count - 1 Step 1  'for each table in the dataset
                     With Chart1.Series.Item(i)
                         .XValueMember = "Key"
                         .YValueMembers = dt.Columns.Item("Total" + (i + 1).ToString).ColumnName
                         .ChartArea = "chart1" 'Chart1.ChartAreas.Item(0).Name
-                        Chart1.Titles(0).Text += IIf(i = 0, " ", IIf(i = ds.Tables.Count - 1, " et ", ",")) + .Name
+                        Chart1.Titles(0).Text += IIf(i = 0, " ", IIf(i = ds.Tables.Count - 1, " et ", ",")) + IIf(Chart1.Series.Item(0).Name.Equals("Series1"), "", .Name)
+                        Chart1.Titles(0).Font = TitleFont
                         'affichons les valeurs au-dessus de chaque colonne
                         If ds.Tables.Count <= 4 Then
                             .IsValueShownAsLabel = True
@@ -292,8 +299,8 @@ Public Class StatistiquePage
             'Bind() déclenche le Binding
             'Chart1.DataBindTable(dt.DefaultView, dt.Columns.Item(1).ColumnName)
             Chart1.DataBind()
-            'Form1.DataGridView1.DataSource = dt
-            'Form1.Show()
+            Form1.DataGridView1.DataSource = dt
+            Form1.Show()
             BT_NEXT.Enabled = True
             BT_PREV.Enabled = True
             Chart1.Legends.Item(0).Enabled = True
@@ -344,7 +351,7 @@ Public Class StatistiquePage
             .Panel2Collapsed = Not .Panel2Collapsed
             Console.WriteLine(.Height.ToString + "   " + .Panel2.Controls.Item(0).Height.ToString + "    " + CType(.Panel2.Controls.Item(0), CheckedListBox).Items.Count.ToString)
             Dim h As Integer = IIf(CType(.Panel2.Controls.Item(0), CheckedListBox).Items.Count <= 17, (CType(.Panel2.Controls.Item(0), CheckedListBox).Items.Count) * 21, 17 * 21)
-            .Height += IIf(CType(sender, Label).ImageIndex = 0, h, -h)
+            .Height = 21 + IIf(CType(sender, Label).ImageIndex = 0, h, -h)
             CType(.Panel2.Controls.Item(0), CheckedListBox).BackColor = Color.White
             CType(.Panel2.Controls.Item(0), CheckedListBox).Height = h + 21
             Console.WriteLine(.Height.ToString)
@@ -433,7 +440,7 @@ Public Class StatistiquePage
             Case 6
                 yTitle = "Nombre des étudiants"
                 TXT_MOYSEUIL.Enabled = True
-                'PictureBox3.Visible = True
+                PictureBox3.Visible = True
                 enableRepartSplit(False)
                 enableDomainSplit(True)
                 Select Case CType(tool.OwnerItem, ToolStripMenuItem).DropDownItems.IndexOf(tool)
@@ -513,8 +520,8 @@ Public Class StatistiquePage
                 'initialiser de section
                 CHB_SECTION.Items.Clear()
                 CHB_SECTION.Items.AddRange(sct.Distinct().ToArray)
-                CHB_GROUPE.Height = 21 * CHB_GROUPE.Items.Count
-                CHB_SECTION.Height = 21 * CHB_SECTION.Items.Count
+                'CHB_GROUPE.Height = 21 * CHB_GROUPE.Items.Count
+                'CHB_SECTION.Height = 21 * CHB_SECTION.Items.Count
             End If
         Else
             CHB_GROUPE.Items.Clear()
@@ -523,11 +530,14 @@ Public Class StatistiquePage
             CHB_SECTION.Enabled = False
         End If
         If RepartCrit.Equals(BDD.champsCodeGroupe) Then
-            CHB_GROUPE.Items.Clear()
-            GroupeSpliter.Enabled = False
-        Else
-            GroupeSpliter.Enabled = enbl
+            If RepartCrit.Equals(BDD.champsCodeGroupe) Then
+                CHB_GROUPE.Items.Clear()
+                GroupeSpliter.Enabled = False
+            Else
+                GroupeSpliter.Enabled = enbl
+            End If
         End If
+        
         If GROUPELabel.ImageIndex = 1 Then
             Label_Click(GROUPELabel, New EventArgs())
         End If
@@ -567,9 +577,9 @@ Public Class StatistiquePage
     Private Function getrqrd()
         Dim rqrd As Boolean
         If inclusive Then
-            rqrd = CHB_NIVEAU.CheckedItems.Count > 0 And CHB_SPECIALITE.CheckedItems.Count > 0 And CHB_ANNEE.CheckedItems.Count > 0
+            rqrd = Not (CHB_NIVEAU.CheckedItems.Count > 0 And CHB_SPECIALITE.CheckedItems.Count > 0 And CHB_ANNEE.CheckedItems.Count > 0)
         Else
-            rqrd = CHB_NIVEAU.CheckedItems.Count > 0 Or CHB_SPECIALITE.CheckedItems.Count > 0 Or CHB_ANNEE.CheckedItems.Count > 0
+            rqrd = Not (CHB_NIVEAU.CheckedItems.Count > 0 Or CHB_SPECIALITE.CheckedItems.Count > 0 Or CHB_ANNEE.CheckedItems.Count > 0)
         End If
         Return rqrd
     End Function
@@ -578,13 +588,13 @@ Public Class StatistiquePage
         enablReqrd = enbl
         If enbl Then    ' if the system of requerements is actived
             Dim rqrd As Boolean = getrqrd()    ' test the requeirements        
-            For Each elm As Control In Obligatoryinput
-                StatistiquesPanel.Controls.Item(elm.Name.Substring(4) + "Alert").Visible = rqrd
+            For Each elm As CheckedListBox In Obligatoryinput
+                StatistiquesPanel.Controls.Item(elm.Name.Substring(4) + "Alert").Visible = rqrd And IIf(inclusive, elm.CheckedItems.Count = 0, True)
             Next
         Else
-            For Each elm As Control In StatistiquesPanel.Controls.OfType(Of PictureBox)()
-                elm.Visible = False
-            Next
+                For Each elm As Control In StatistiquesPanel.Controls.OfType(Of PictureBox)()
+                    elm.Visible = False
+                Next
         End If
     End Sub
 

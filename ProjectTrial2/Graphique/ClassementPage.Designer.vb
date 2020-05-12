@@ -106,6 +106,7 @@ Partial Class ClassementPage
         Me.IntroPanel = New System.Windows.Forms.Panel()
         Me.RechLabel = New System.Windows.Forms.Label()
         Me.NoResultLabel = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.AffPanel.SuspendLayout()
         Me.ClassmentCritPanel.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -163,6 +164,7 @@ Partial Class ClassementPage
         '
         'ClassmentCritPanel
         '
+        Me.ClassmentCritPanel.Controls.Add(Me.Label1)
         Me.ClassmentCritPanel.Controls.Add(Me.GroupBox1)
         Me.ClassmentCritPanel.Controls.Add(Me.SortDirectionButton)
         Me.ClassmentCritPanel.Controls.Add(Me.FilterButton)
@@ -178,7 +180,7 @@ Partial Class ClassementPage
         Me.GroupBox1.Controls.Add(Me.LimitUpDown)
         Me.GroupBox1.Controls.Add(Me.AllCheckBox)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(281, 5)
+        Me.GroupBox1.Location = New System.Drawing.Point(265, 5)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(171, 52)
         Me.GroupBox1.TabIndex = 52
@@ -216,7 +218,7 @@ Partial Class ClassementPage
         Me.SortDirectionButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
         Me.SortDirectionButton.ImageIndex = 0
         Me.SortDirectionButton.ImageList = Me.FlecheList
-        Me.SortDirectionButton.Location = New System.Drawing.Point(19, 20)
+        Me.SortDirectionButton.Location = New System.Drawing.Point(25, 28)
         Me.SortDirectionButton.Name = "SortDirectionButton"
         Me.SortDirectionButton.Size = New System.Drawing.Size(30, 30)
         Me.SortDirectionButton.TabIndex = 44
@@ -240,7 +242,7 @@ Partial Class ClassementPage
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(189, 6)
+        Me.Label4.Location = New System.Drawing.Point(164, 6)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(71, 18)
         Me.Label4.TabIndex = 51
@@ -250,7 +252,7 @@ Partial Class ClassementPage
         '
         Me.SpecialiteBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SpecialiteBox.FormattingEnabled = True
-        Me.SpecialiteBox.Location = New System.Drawing.Point(189, 28)
+        Me.SpecialiteBox.Location = New System.Drawing.Point(164, 28)
         Me.SpecialiteBox.Margin = New System.Windows.Forms.Padding(30, 0, 50, 0)
         Me.SpecialiteBox.Name = "SpecialiteBox"
         Me.SpecialiteBox.Size = New System.Drawing.Size(68, 26)
@@ -1264,6 +1266,16 @@ Partial Class ClassementPage
         Me.NoResultLabel.TabIndex = 28
         Me.NoResultLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(26, 6)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(25, 18)
+        Me.Label1.TabIndex = 53
+        Me.Label1.Text = "Tri"
+        '
         'ClassementPage
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
@@ -1391,4 +1403,5 @@ Partial Class ClassementPage
     Friend WithEvents SpecialiteBox As System.Windows.Forms.ComboBox
     Friend WithEvents SortDirectionButton As System.Windows.Forms.Button
     Friend WithEvents ImageList2 As System.Windows.Forms.ImageList
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class

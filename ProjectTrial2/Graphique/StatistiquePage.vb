@@ -28,6 +28,8 @@ Public Class StatistiquePage
     Private Title As String = ""
     Private stat As Statistiques
     Private TitleFont As Font
+    Private DecTable() As String = {"Vide", "Admis", "Admis avec rachat", "Redouble", "Non admis", "Abondan", "Maladie"}
+    Private SexeTable() As String = {"Masculin", "Féminin", "Autre"}
 
     Private Sub StatistiquePage_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Me.Load
         'TODO: This line of code loads data into the 'BDD_APPLICATIONDataSet.NOTES' table. You can move, or remove it, as needed.
@@ -241,6 +243,15 @@ Public Class StatistiquePage
                     .Text = Title + IIf(ds.Tables.Count > 1, " entre", " ")
                 End With
                 dt = Statistiques.SingleKeyMergeDataSet(ds)
+                If RepartCrit.Equals(BDD.champsSEXE) Then
+                    For Each row As DataRow In dt.Rows
+                        row("Key") = SexeTable(CInt(row("Key")))
+                    Next
+                ElseIf RepartCrit.Equals(BDD.champsDECIIN) Then
+                    For Each row As DataRow In dt.Rows
+                        row("Key") = DecTable(CInt(row("Key")))
+                    Next
+                End If
                 'DataSource indique la source de données
                 Chart1.DataSource = dt
                 Chart1.Titles(0).Text += IIf(Chart1.Series.Count = 1 And CritCombList.Item(0).Count = 0, "", "pour")
@@ -301,16 +312,22 @@ Public Class StatistiquePage
             'Bind() déclenche le Binding
             'Chart1.DataBindTable(dt.DefaultView, dt.Columns.Item(1).ColumnName)
             Chart1.DataBind()
-            Form1.DataGridView1.DataSource = dt
-            Form1.Show()
+            'Form1.DataGridView1.DataSource = dt
+            'Form1.Show()
             BT_NEXT.Enabled = True
             BT_PREV.Enabled = True
             Chart1.Legends.Item(0).Enabled = True
+            
         Else
             Chart1.Titles.Clear()
             Chart1.ChartAreas.Clear()
             Chart1.BackImage = "..\..\Resources\NoGraph.png"
         End If
+        For Each lbl As Label In {NIVEAULabel, SPECIALITELabel, ANNEELabel, SECTIONLabel, GROUPELabel}
+            If lbl.ImageIndex = 1 Then
+                Label_Click(lbl, New EventArgs())
+            End If
+        Next
     End Sub
 
     Private Sub BT_NEXT_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_NEXT.Click
@@ -338,7 +355,7 @@ Public Class StatistiquePage
     End Sub
 
     Private Sub TXT_MOYSEUIL_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_MOYSEUIL.TextChanged
-        PictureBox3.Visible = (TXT_MOYSEUIL.Text.Equals(""))
+        PictureBox3.Visible = (TXT_MOYSEUIL.Text.Equals("") And enablReqrd)
     End Sub
 
     Private Sub Label_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SexeLabel.Click, MatiereLabel.Click, NIVEAULabel.Click, Label1.Click, GROUPELabel.Click, ANNEELabel.Click, SPECIALITELabel.Click, SECTIONLabel.Click

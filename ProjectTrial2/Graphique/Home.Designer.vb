@@ -108,7 +108,7 @@ Partial Class Home
         Me.BT_CLASS.ImageIndex = 0
         Me.BT_CLASS.ImageList = Me.ClassIconsList
         Me.BT_CLASS.Location = New System.Drawing.Point(2, 82)
-        Me.BT_CLASS.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BT_CLASS.Margin = New System.Windows.Forms.Padding(2)
         Me.BT_CLASS.MinimumSize = New System.Drawing.Size(45, 49)
         Me.BT_CLASS.Name = "BT_CLASS"
         Me.BT_CLASS.Size = New System.Drawing.Size(179, 70)
@@ -139,7 +139,7 @@ Partial Class Home
         Me.BT_STAT.ImageKey = "diagram.png"
         Me.BT_STAT.ImageList = Me.StaticIconsList
         Me.BT_STAT.Location = New System.Drawing.Point(2, 156)
-        Me.BT_STAT.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BT_STAT.Margin = New System.Windows.Forms.Padding(2)
         Me.BT_STAT.MinimumSize = New System.Drawing.Size(45, 49)
         Me.BT_STAT.Name = "BT_STAT"
         Me.BT_STAT.Size = New System.Drawing.Size(179, 64)
@@ -170,7 +170,7 @@ Partial Class Home
         Me.BT_RECH.ImageKey = "search.png"
         Me.BT_RECH.ImageList = Me.SearchIconsList
         Me.BT_RECH.Location = New System.Drawing.Point(2, 224)
-        Me.BT_RECH.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BT_RECH.Margin = New System.Windows.Forms.Padding(2)
         Me.BT_RECH.MinimumSize = New System.Drawing.Size(45, 49)
         Me.BT_RECH.Name = "BT_RECH"
         Me.BT_RECH.Size = New System.Drawing.Size(179, 67)
@@ -201,7 +201,7 @@ Partial Class Home
         Me.BT_PV.ImageKey = "gantt_chart_bj.png"
         Me.BT_PV.ImageList = Me.PVIconsList
         Me.BT_PV.Location = New System.Drawing.Point(2, 295)
-        Me.BT_PV.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BT_PV.Margin = New System.Windows.Forms.Padding(2)
         Me.BT_PV.MinimumSize = New System.Drawing.Size(45, 49)
         Me.BT_PV.Name = "BT_PV"
         Me.BT_PV.Size = New System.Drawing.Size(179, 64)
@@ -221,7 +221,7 @@ Partial Class Home
         Me.LogoPicture.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
         Me.LogoPicture.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.logo_white
         Me.LogoPicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.LogoPicture.Location = New System.Drawing.Point(0, 569)
+        Me.LogoPicture.Location = New System.Drawing.Point(0, 604)
         Me.LogoPicture.Margin = New System.Windows.Forms.Padding(0, 0, 0, 10)
         Me.LogoPicture.Name = "LogoPicture"
         Me.LogoPicture.Size = New System.Drawing.Size(185, 90)
@@ -246,7 +246,7 @@ Partial Class Home
         Me.MenuButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MenuButton.ForeColor = System.Drawing.Color.Transparent
         Me.MenuButton.Location = New System.Drawing.Point(0, 0)
-        Me.MenuButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MenuButton.Margin = New System.Windows.Forms.Padding(2)
         Me.MenuButton.MinimumSize = New System.Drawing.Size(45, 49)
         Me.MenuButton.Name = "MenuButton"
         Me.MenuButton.Size = New System.Drawing.Size(55, 117)
@@ -281,8 +281,8 @@ Partial Class Home
         Me.BT_modif_mdp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(186, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(130, Byte), Integer))
         Me.BT_modif_mdp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BT_modif_mdp.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.gear
-        Me.BT_modif_mdp.Location = New System.Drawing.Point(118, 189)
-        Me.BT_modif_mdp.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BT_modif_mdp.Location = New System.Drawing.Point(118, 188)
+        Me.BT_modif_mdp.Margin = New System.Windows.Forms.Padding(2)
         Me.BT_modif_mdp.Name = "BT_modif_mdp"
         Me.BT_modif_mdp.Size = New System.Drawing.Size(30, 30)
         Me.BT_modif_mdp.TabIndex = 0
@@ -301,8 +301,8 @@ Partial Class Home
         Me.BT_LOGOUT.ForeColor = System.Drawing.Color.White
         Me.BT_LOGOUT.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.exit_picture
         Me.BT_LOGOUT.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BT_LOGOUT.Location = New System.Drawing.Point(14, 539)
-        Me.BT_LOGOUT.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BT_LOGOUT.Location = New System.Drawing.Point(14, 542)
+        Me.BT_LOGOUT.Margin = New System.Windows.Forms.Padding(2)
         Me.BT_LOGOUT.Name = "BT_LOGOUT"
         Me.BT_LOGOUT.Size = New System.Drawing.Size(122, 101)
         Me.BT_LOGOUT.TabIndex = 3
@@ -332,7 +332,7 @@ Partial Class Home
         Me.LBL_MODE.Name = "LBL_MODE"
         Me.LBL_MODE.Size = New System.Drawing.Size(149, 79)
         Me.LBL_MODE.TabIndex = 5
-        Me.LBL_MODE.Text = "Employée"
+        Me.LBL_MODE.Text = "Employé"
         Me.LBL_MODE.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'NavBar
@@ -376,7 +376,7 @@ Partial Class Home
         Me.PrintButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.PrintButton.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.attestation
         Me.PrintButton.Location = New System.Drawing.Point(266, 2)
-        Me.PrintButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PrintButton.Margin = New System.Windows.Forms.Padding(2)
         Me.PrintButton.MinimumSize = New System.Drawing.Size(45, 49)
         Me.PrintButton.Name = "PrintButton"
         Me.PrintButton.Size = New System.Drawing.Size(77, 51)
@@ -396,7 +396,7 @@ Partial Class Home
         Me.DetailButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.DetailButton.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.details
         Me.DetailButton.Location = New System.Drawing.Point(185, 2)
-        Me.DetailButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DetailButton.Margin = New System.Windows.Forms.Padding(2)
         Me.DetailButton.MinimumSize = New System.Drawing.Size(45, 49)
         Me.DetailButton.Name = "DetailButton"
         Me.DetailButton.Size = New System.Drawing.Size(77, 51)
@@ -417,7 +417,7 @@ Partial Class Home
         Me.RNGButton.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.rng
         Me.RNGButton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.RNGButton.Location = New System.Drawing.Point(104, 2)
-        Me.RNGButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RNGButton.Margin = New System.Windows.Forms.Padding(2)
         Me.RNGButton.MinimumSize = New System.Drawing.Size(45, 49)
         Me.RNGButton.Name = "RNGButton"
         Me.RNGButton.Size = New System.Drawing.Size(77, 51)
@@ -437,7 +437,7 @@ Partial Class Home
         Me.ModifButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ModifButton.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.modifier
         Me.ModifButton.Location = New System.Drawing.Point(347, 2)
-        Me.ModifButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ModifButton.Margin = New System.Windows.Forms.Padding(2)
         Me.ModifButton.MinimumSize = New System.Drawing.Size(45, 49)
         Me.ModifButton.Name = "ModifButton"
         Me.ModifButton.Size = New System.Drawing.Size(77, 51)
@@ -459,7 +459,7 @@ Partial Class Home
         Me.RNButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(96, Byte), Integer), CType(CType(184, Byte), Integer))
         Me.RNButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.RNButton.Location = New System.Drawing.Point(37, 2)
-        Me.RNButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RNButton.Margin = New System.Windows.Forms.Padding(2)
         Me.RNButton.MinimumSize = New System.Drawing.Size(45, 49)
         Me.RNButton.Name = "RNButton"
         Me.RNButton.Size = New System.Drawing.Size(63, 51)
@@ -621,7 +621,7 @@ Partial Class Home
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.MaximumSize = New System.Drawing.Size(1103, 947)
         Me.MinimumSize = New System.Drawing.Size(1023, 593)
         Me.Name = "Home"

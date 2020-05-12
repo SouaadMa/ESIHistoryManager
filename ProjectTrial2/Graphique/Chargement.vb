@@ -1,6 +1,10 @@
 ﻿Public Class Chargement
 
     Private ClickedButton As Button
+    Private file1 As String = ""
+    Private file2 As String = ""
+    Private file3 As String = ""
+    Private file4 As String = ""
 
     Private Sub Chargement_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
@@ -16,19 +20,30 @@
         Console.WriteLine(files(0))
     End Sub
 
-    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click, Button3.Click, Button2.Click, Button1.Click
+    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click, Button2.Click, Button3.Click, Button4.Click
         ClickedButton = sender
         OpenFileDialog1.ShowDialog()
     End Sub
 
     Private Sub OpenFileDialog1_FileOk(ByVal sender As System.Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles OpenFileDialog1.FileOk
         ClickedButton.Text = OpenFileDialog1.FileName
-        CType(ChargementPanel.Controls.Item("Label" + ClickedButton.Name.Last()), Label).BackColor = IIf(ClickedButton.Text.Equals(""), Color.FromArgb(0, 64, 104), Color.FromArgb(169, 119, 113))
+        Select Case ClickedButton.Name
+            Case "Button1"
+                file1 = OpenFileDialog1.FileName
+            Case "Button2"
+                file2 = OpenFileDialog1.FileName
+            Case "Button3"
+                file3 = OpenFileDialog1.FileName
+            Case "Button4"
+                file4 = OpenFileDialog1.FileName
+        End Select
+        ClickedButton.Text = IIf(ClickedButton.Text.Count > 30, ClickedButton.Text.Replace(ClickedButton.Text.Substring(0, ClickedButton.Text.LastIndexOf("\") - 5), "..."), ClickedButton.Text)
+        CType(ChargementPanel.Controls.Item("Label" + ClickedButton.Name.Last()), Label).BackColor = IIf(Not ClickedButton.Text.Equals("Cliquez pour choisir le fichier"), Color.FromArgb(0, 64, 104), Color.FromArgb(169, 119, 113))
     End Sub
 
-    Private Sub Button4_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.TextChanged, Button3.TextChanged, Button2.TextChanged, Button1.TextChanged
+    Private Sub Button4_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.TextChanged, Button2.TextChanged, Button3.TextChanged, Button4.TextChanged
         For Each btn As Button In {Button1, Button2, Button3, Button4}
-            If btn.Text = "" Then
+            If btn.Text.Equals("Cliquez pour choisir le fichier") Then
                 ChargementButton.Enabled = False
                 Exit For
             Else
@@ -37,24 +52,33 @@
         Next
     End Sub
 
-    Private Sub ChargementButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChargementButton.Click
-        If System.IO.File.Exists("..\..\BDD_APPLICATION.accdb") Then
-            'ECLATEMENT("C:\Users\DELL\Documents\BDD_APPLICATION", "C:\Users\DELL\Documents\INSCRIT_00_04", "C:\Users\DELL\Documents\NOTE_00_04", "C:\Users\DELL\Documents\MATIERE_00_04", "C:\Users\DELL\Documents\RATRAP_00_04")
-            'RECHARGEMENT("C:\Users\DELL\Documents\BDD_APPLICATION")
-            'Dim r As New ECLATEMENT("..\..\BDD_APPLICATION", Button1.Text.Replace(".xlsx", ""), Button2.Text.Replace(".xlsx", ""), Button3.Text.Replace(".xlsx", ""), Button4.Text.Replace(".xlsx", ""))
-            'System.IO.File.Delete("..\..\BDD_APPLICATION.accdb")
-            'System.IO.File.Copy("..\..\BDD_VIDE.accdb", "..\..\BDD_APPLICATION.accdb", True)
+    Private Sub ChargementButton_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChargementButton.EnabledChanged
+        If ChargementButton.Enabled Then
+            ChargementButton.BackColor = Color.FromArgb(0, 64, 104)
+        Else
+            ChargementButton.BackColor = Color.FromArgb(169, 119, 113)
         End If
-        'Dim r As New ECLATEMMENT_TRAFFIC("..\..\BDD_APPLICATION", Button1.Text.Replace(".xlsx", ""), Button2.Text.Replace(".xlsx", ""), Button3.Text.Replace(".xlsx", ""), Button4.Text.Replace(".xlsx", ""))
     End Sub
 
+    Private Sub ChargementButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChargementButton.Click
+        Dim eclat As New ECLATEMENT()
+            eclat.ECLATEMENT("..\..\BDD_APPLICATION", file1.Replace(".xlsx", ""), file2.Replace(".xlsx", ""), file3.Replace(".xlsx", ""), file4.Replace(".xlsx", ""))
+    End Sub
+
+    Private Sub RechargementButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RechargementButton.Click
+        Dim eclat As New ECLATEMENT()
+        eclat.RECHARGEMENT("..\..\BDD_APPLICATION")
+    End Sub
 End Class
 
 
-'Private Sub RadioButton4_CheckedChanged(ByVal lbl As Label, ByVal num As Integer)
-'    If num = 1 Then
-'        lbl.BackColor = Color.FromArgb(0, 64, 104)
-'    Else
-'        lbl.BackColor = Color.FromArgb(169, 119, 113)
-'    End If
-'End Sub
+
+
+
+'ECLATEMENT("C:\Users\DELL\Documents\BDD_APPLICATION", "C:\Users\DELL\Documents\INSCRIT_00_04", "C:\Users\DELL\Documents\NOTE_00_04", "C:\Users\DELL\Documents\MATIERE_00_04", "C:\Users\DELL\Documents\RATRAP_00_04")
+'RECHARGEMENT("C:\Users\DELL\Documents\BDD_APPLICATION")
+'Dim r As New ECLATEMENT("..\..\BDD_APPLICATION", Button1.Text.Replace(".xlsx", ""), Button2.Text.Replace(".xlsx", ""), Button3.Text.Replace(".xlsx", ""), Button4.Text.Replace(".xlsx", ""))
+'System.IO.File.Delete("..\..\BDD_APPLICATION.accdb")
+'System.IO.File.Copy("..\..\BDD_VIDE.accdb", "..\..\BDD_APPLICATION.accdb", True)
+
+'_TRAFFIC("..\..\BDD_APPLICATION", Button1.Text.Replace(".xlsx", ""), Button2.Text.Replace(".xlsx", ""), Button3.Text.Replace(".xlsx", ""), Button4.Text.Replace(".xlsx", ""))

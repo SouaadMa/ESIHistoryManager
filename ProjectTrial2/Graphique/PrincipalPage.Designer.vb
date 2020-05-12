@@ -23,6 +23,8 @@ Partial Class PrincipalPage
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.PN_BIENVENUE = New System.Windows.Forms.Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -32,8 +34,6 @@ Partial Class PrincipalPage
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.PN_BIENVENUE.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -57,6 +57,28 @@ Partial Class PrincipalPage
         Me.PN_BIENVENUE.Size = New System.Drawing.Size(680, 638)
         Me.PN_BIENVENUE.TabIndex = 12
         '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(48, 484)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(294, 20)
+        Me.Label9.TabIndex = 14
+        Me.Label9.Text = "vers un schéma d’une base de données "
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(104, 446)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(541, 20)
+        Me.Label6.TabIndex = 13
+        Me.Label6.Text = "Ainsi que vous pouvez reffectuer le mapping des fichiers des étudiants vers "
+        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -64,7 +86,7 @@ Partial Class PrincipalPage
         Me.Label5.Location = New System.Drawing.Point(48, 403)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(100, 25)
+        Me.Label5.Size = New System.Drawing.Size(81, 20)
         Me.Label5.TabIndex = 12
         Me.Label5.Text = "consultez "
         '
@@ -103,9 +125,9 @@ Partial Class PrincipalPage
         Me.Help_Button.ForeColor = System.Drawing.Color.DeepSkyBlue
         Me.Help_Button.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.info
         Me.Help_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Help_Button.Location = New System.Drawing.Point(116, 395)
+        Me.Help_Button.Location = New System.Drawing.Point(126, 395)
         Me.Help_Button.Name = "Help_Button"
-        Me.Help_Button.Size = New System.Drawing.Size(168, 38)
+        Me.Help_Button.Size = New System.Drawing.Size(175, 38)
         Me.Help_Button.TabIndex = 9
         Me.Help_Button.Text = " le guide en ligne"
         Me.Help_Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -134,7 +156,7 @@ Partial Class PrincipalPage
         Me.Label8.Location = New System.Drawing.Point(104, 369)
         Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(458, 25)
+        Me.Label8.Size = New System.Drawing.Size(371, 20)
         Me.Label8.TabIndex = 6
         Me.Label8.Text = "Vous ne comprenez pas bien comment ça marche !"
         '
@@ -146,7 +168,7 @@ Partial Class PrincipalPage
         Me.Label7.Location = New System.Drawing.Point(73, 323)
         Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(400, 26)
+        Me.Label7.Size = New System.Drawing.Size(336, 22)
         Me.Label7.TabIndex = 5
         Me.Label7.Text = "Nouveau en Esist History Manager ?"
         '
@@ -171,28 +193,6 @@ Partial Class PrincipalPage
         Me.Label3.Size = New System.Drawing.Size(367, 110)
         Me.Label3.TabIndex = 1
         Me.Label3.Text = "Bienvenue à" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Esist History Manager"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(104, 446)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(666, 25)
-        Me.Label6.TabIndex = 13
-        Me.Label6.Text = "Ainsi que vous pouvez reffectuer le mapping des fichiers des étudiants vers "
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(48, 484)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(364, 25)
-        Me.Label9.TabIndex = 14
-        Me.Label9.Text = "vers un schéma d’une base de données "
         '
         'PrincipalPage
         '

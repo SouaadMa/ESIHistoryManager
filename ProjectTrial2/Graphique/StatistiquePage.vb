@@ -27,11 +27,13 @@ Public Class StatistiquePage
     Private yTitle As String = "y"
     Private Title As String = ""
     Private stat As Statistiques
+    Private TitleFont As Font
 
     Private Sub StatistiquePage_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Me.Load
         'TODO: This line of code loads data into the 'BDD_APPLICATIONDataSet.NOTES' table. You can move, or remove it, as needed.
         Obligatoryinput.AddRange({CHB_SPECIALITE, CHB_NIVEAU, CHB_ANNEE})
         i = chart_kind.IndexOf("Column")
+        TitleFont = Chart1.Titles(0).Font
         'DataVisualization.Charting.SeriesChartType.c
         chart_kind = chart_kind.Except({"PointAndFigure", "Stock", "Polar", "ErrorBar", "Renko", "FastLine", "Kagi", "ThreeLineBreak", "FastPoint", "Range", "RangeBar", "RangeColumn", "SplineRange"}).ToList
 
@@ -147,7 +149,7 @@ Public Class StatistiquePage
 
         CritCombList = GenereCritCombin()
 
-        Dim TitleFont As Font = Chart1.Titles(0).Font
+
         Chart1.ChartAreas.Clear()
         Chart1.Titles.Clear()
         Chart1.ChartAreas.Add("chart1")
@@ -202,9 +204,9 @@ Public Class StatistiquePage
                             .IsDockedInsideChartArea = False
                         End With
                         'affichons les valeurs au-dessus de chaque colonne
-                        If ds.Tables.Count <= 6 Then
-                            .IsValueShownAsLabel = True
-                        End If
+
+                        .IsValueShownAsLabel = (ds.Tables.Count <= 6)
+
                         .BorderWidth = 8
                         .EmptyPointStyle.BorderWidth = 1
                         .EmptyPointStyle.BorderColor = Color.Black
@@ -367,7 +369,7 @@ Public Class StatistiquePage
         Next
     End Sub
 
-    Private Sub CHB_NIVEAU_EnabledChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CHB_NIVEAU.EnabledChanged, CHB_SPECIALITE.EnabledChanged, CHB_ANNEE.EnabledChanged, CHB_SECTION.EnabledChanged, CHB_SECTION.EnabledChanged
+    Private Sub CHB_NIVEAU_EnabledChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CHB_NIVEAU.EnabledChanged, CHB_SPECIALITE.EnabledChanged, CHB_ANNEE.EnabledChanged, CHB_SECTION.EnabledChanged, CHB_GROUPE.EnabledChanged
         Dim lbl As Label = CType(CType(sender.Parent.Parent, SplitContainer).Panel1.Controls.Item(0), Label) 'CType(sender, Control).Name.Substring(4) + "Label")
         If Not CType(sender, Control).Enabled Then
             uncheckList({sender}, False)
@@ -529,14 +531,13 @@ Public Class StatistiquePage
             CHB_SECTION.Items.Clear()
             CHB_SECTION.Enabled = False
         End If
-        If RepartCrit.Equals(BDD.champsCodeGroupe) Then
-            If RepartCrit.Equals(BDD.champsCodeGroupe) Then
+
+            If RepartCrit.Equals(BDD.champsCodeGroupe) Or RepartCrit.Equals(BDD.champsCodeSection) Then
                 CHB_GROUPE.Items.Clear()
                 GroupeSpliter.Enabled = False
             Else
                 GroupeSpliter.Enabled = enbl
             End If
-        End If
         
         If GROUPELabel.ImageIndex = 1 Then
             Label_Click(GROUPELabel, New EventArgs())

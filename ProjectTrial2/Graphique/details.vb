@@ -81,7 +81,7 @@
         End If
     End Sub
 
-    Private Sub BT_SORTIR_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_SORTIR.Click
+    Private Sub BT_SORTIR_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_SORTIR.Click, SortirButton.Click
         Me.Close()
         'Home.f.Show()
         Home.MainContainer2.Visible = False

@@ -134,12 +134,12 @@ Public Class RNGPage
             MsgBox("Impossible de generer le RNG de cet etudiant", , "Erreur")
         Catch ex As Exception
             MsgBox("Impossible de generer le releve de note general de cet etudiant", , "Erreur")
-            BT_SORTIR_Click(BT_SORTIR, New EventArgs())
+            BT_SORTIR_Click(SortirButton, New EventArgs())
         End Try
 
     End Sub
 
-    Private Sub BT_SORTIR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_SORTIR.Click
+    Private Sub BT_SORTIR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SortirButton.Click
         Me.Close()
         'Home.f.Show()
         Home.MainContainer2.Visible = False

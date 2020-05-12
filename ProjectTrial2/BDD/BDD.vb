@@ -253,7 +253,7 @@ Public Class BDD
             cnx.Close()                              'fermer la connexion
         End Try
 
-        'Console.WriteLine(requete)
+        Console.WriteLine(requete)
         Return dt
 
     End Function

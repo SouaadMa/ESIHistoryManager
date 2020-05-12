@@ -9,6 +9,7 @@
     Private Sub Chargement_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         ChargementButton.Enabled = False
+        CompletLabel.Visible = False
         'Panel2.AllowDrop = True
         'Panel3.AllowDrop = True
         'Panel4.AllowDrop = True
@@ -68,6 +69,7 @@
     Private Sub RechargementButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RechargementButton.Click
         Dim eclat As New ECLATEMENT()
         eclat.RECHARGEMENT("..\..\BDD_APPLICATION")
+        CompletLabel.Visible = True
     End Sub
 End Class
 

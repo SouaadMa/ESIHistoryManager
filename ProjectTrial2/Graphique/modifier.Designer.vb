@@ -27,7 +27,6 @@ Partial Class modifier
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.BT_SORTIR = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Worning = New System.Windows.Forms.Label()
         Me.BT_MODIFIER = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.BT_GENERALINFO = New System.Windows.Forms.RadioButton()
@@ -36,20 +35,29 @@ Partial Class modifier
         Me.P_GENERALITE = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.TXT_NomEtud = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.TXT_Prenoms = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.TXT_NomEtudA = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.TXT_PrenomsA = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.TXT_DATENAIS = New System.Windows.Forms.TextBox()
+        Me.DTP_DATENAIS = New System.Windows.Forms.DateTimePicker()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.CB_SEXE = New System.Windows.Forms.ComboBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.TXT_FILSDE = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.TXT_ETDE = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.P_RESIDENCE = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
@@ -77,15 +85,8 @@ Partial Class modifier
         Me.Panel22 = New System.Windows.Forms.Panel()
         Me.LB_CODEPOS = New System.Windows.Forms.Label()
         Me.TXT_CODEPOS = New System.Windows.Forms.TextBox()
-        Me.TXT_ETDE = New System.Windows.Forms.TextBox()
-        Me.TXT_FILSDE = New System.Windows.Forms.TextBox()
-        Me.CB_SEXE = New System.Windows.Forms.ComboBox()
-        Me.DTP_DATENAIS = New System.Windows.Forms.DateTimePicker()
-        Me.TXT_DATENAIS = New System.Windows.Forms.TextBox()
-        Me.TXT_PrenomsA = New System.Windows.Forms.TextBox()
-        Me.TXT_NomEtudA = New System.Windows.Forms.TextBox()
-        Me.TXT_Prenoms = New System.Windows.Forms.TextBox()
-        Me.TXT_NomEtud = New System.Windows.Forms.TextBox()
+        Me.SortirButton = New System.Windows.Forms.Button()
+        Me.Worning = New System.Windows.Forms.Label()
         Me.PN_MODIFIER.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -115,6 +116,7 @@ Partial Class modifier
         'PN_MODIFIER
         '
         Me.PN_MODIFIER.BackColor = System.Drawing.Color.Transparent
+        Me.PN_MODIFIER.Controls.Add(Me.SortirButton)
         Me.PN_MODIFIER.Controls.Add(Me.Panel1)
         Me.PN_MODIFIER.Controls.Add(Me.Worning)
         Me.PN_MODIFIER.Controls.Add(Me.BT_MODIFIER)
@@ -161,22 +163,9 @@ Partial Class modifier
         Me.Label1.Location = New System.Drawing.Point(109, 25)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(451, 32)
+        Me.Label1.Size = New System.Drawing.Size(355, 25)
         Me.Label1.TabIndex = 12
         Me.Label1.Text = "Modifer les informations de l'étudiant"
-        '
-        'Worning
-        '
-        Me.Worning.AutoSize = True
-        Me.Worning.BackColor = System.Drawing.Color.Transparent
-        Me.Worning.Font = New System.Drawing.Font("Cambria", 10.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Worning.ForeColor = System.Drawing.Color.Firebrick
-        Me.Worning.Location = New System.Drawing.Point(479, 593)
-        Me.Worning.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Worning.Name = "Worning"
-        Me.Worning.Size = New System.Drawing.Size(14, 22)
-        Me.Worning.TabIndex = 13
-        Me.Worning.Text = " "
         '
         'BT_MODIFIER
         '
@@ -185,7 +174,7 @@ Partial Class modifier
         Me.BT_MODIFIER.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BT_MODIFIER.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BT_MODIFIER.ForeColor = System.Drawing.Color.White
-        Me.BT_MODIFIER.Location = New System.Drawing.Point(497, 585)
+        Me.BT_MODIFIER.Location = New System.Drawing.Point(458, 585)
         Me.BT_MODIFIER.Margin = New System.Windows.Forms.Padding(2, 2, 2, 100)
         Me.BT_MODIFIER.Name = "BT_MODIFIER"
         Me.BT_MODIFIER.Size = New System.Drawing.Size(150, 37)
@@ -260,10 +249,10 @@ Partial Class modifier
         Me.P_GENERALITE.Controls.Add(Me.TableLayoutPanel1)
         Me.P_GENERALITE.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.P_GENERALITE.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.P_GENERALITE.Location = New System.Drawing.Point(4, 28)
+        Me.P_GENERALITE.Location = New System.Drawing.Point(4, 25)
         Me.P_GENERALITE.Name = "P_GENERALITE"
         Me.P_GENERALITE.Padding = New System.Windows.Forms.Padding(3)
-        Me.P_GENERALITE.Size = New System.Drawing.Size(429, 484)
+        Me.P_GENERALITE.Size = New System.Drawing.Size(429, 487)
         Me.P_GENERALITE.TabIndex = 0
         Me.P_GENERALITE.Text = "P_GENERALITE"
         '
@@ -307,6 +296,17 @@ Partial Class modifier
         Me.Panel5.Size = New System.Drawing.Size(370, 54)
         Me.Panel5.TabIndex = 1
         '
+        'TXT_NomEtud
+        '
+        Me.TXT_NomEtud.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TXT_NomEtud.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TXT_NomEtud.ForeColor = System.Drawing.Color.DarkGray
+        Me.TXT_NomEtud.Location = New System.Drawing.Point(193, 17)
+        Me.TXT_NomEtud.Name = "TXT_NomEtud"
+        Me.TXT_NomEtud.Size = New System.Drawing.Size(177, 16)
+        Me.TXT_NomEtud.TabIndex = 87
+        Me.TXT_NomEtud.Text = "Nom"
+        '
         'Label7
         '
         Me.Label7.AutoSize = True
@@ -315,7 +315,7 @@ Partial Class modifier
         Me.Label7.Location = New System.Drawing.Point(3, 16)
         Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(54, 22)
+        Me.Label7.Size = New System.Drawing.Size(43, 17)
         Me.Label7.TabIndex = 90
         Me.Label7.Text = "Nom "
         '
@@ -328,6 +328,17 @@ Partial Class modifier
         Me.Panel7.Size = New System.Drawing.Size(370, 53)
         Me.Panel7.TabIndex = 1
         '
+        'TXT_Prenoms
+        '
+        Me.TXT_Prenoms.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TXT_Prenoms.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TXT_Prenoms.ForeColor = System.Drawing.Color.DarkGray
+        Me.TXT_Prenoms.Location = New System.Drawing.Point(193, 16)
+        Me.TXT_Prenoms.Name = "TXT_Prenoms"
+        Me.TXT_Prenoms.Size = New System.Drawing.Size(177, 16)
+        Me.TXT_Prenoms.TabIndex = 91
+        Me.TXT_Prenoms.Text = "Prenom"
+        '
         'Label8
         '
         Me.Label8.AutoSize = True
@@ -336,7 +347,7 @@ Partial Class modifier
         Me.Label8.Location = New System.Drawing.Point(3, 15)
         Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(79, 22)
+        Me.Label8.Size = New System.Drawing.Size(63, 17)
         Me.Label8.TabIndex = 89
         Me.Label8.Text = "Prenom "
         '
@@ -349,6 +360,18 @@ Partial Class modifier
         Me.Panel8.Size = New System.Drawing.Size(370, 54)
         Me.Panel8.TabIndex = 1
         '
+        'TXT_NomEtudA
+        '
+        Me.TXT_NomEtudA.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TXT_NomEtudA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TXT_NomEtudA.ForeColor = System.Drawing.Color.DarkGray
+        Me.TXT_NomEtudA.Location = New System.Drawing.Point(0, 17)
+        Me.TXT_NomEtudA.Name = "TXT_NomEtudA"
+        Me.TXT_NomEtudA.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.TXT_NomEtudA.Size = New System.Drawing.Size(177, 16)
+        Me.TXT_NomEtudA.TabIndex = 93
+        Me.TXT_NomEtudA.Text = "اللقب"
+        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -357,7 +380,7 @@ Partial Class modifier
         Me.Label4.Location = New System.Drawing.Point(325, 16)
         Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(40, 22)
+        Me.Label4.Size = New System.Drawing.Size(35, 17)
         Me.Label4.TabIndex = 92
         Me.Label4.Text = "اللقب"
         '
@@ -370,6 +393,18 @@ Partial Class modifier
         Me.Panel6.Size = New System.Drawing.Size(370, 53)
         Me.Panel6.TabIndex = 1
         '
+        'TXT_PrenomsA
+        '
+        Me.TXT_PrenomsA.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TXT_PrenomsA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TXT_PrenomsA.ForeColor = System.Drawing.Color.DarkGray
+        Me.TXT_PrenomsA.Location = New System.Drawing.Point(0, 17)
+        Me.TXT_PrenomsA.Name = "TXT_PrenomsA"
+        Me.TXT_PrenomsA.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.TXT_PrenomsA.Size = New System.Drawing.Size(177, 16)
+        Me.TXT_PrenomsA.TabIndex = 94
+        Me.TXT_PrenomsA.Text = "الاسم"
+        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -378,7 +413,7 @@ Partial Class modifier
         Me.Label5.Location = New System.Drawing.Point(325, 16)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(42, 22)
+        Me.Label5.Size = New System.Drawing.Size(33, 17)
         Me.Label5.TabIndex = 91
         Me.Label5.Text = "الاسم"
         '
@@ -392,6 +427,28 @@ Partial Class modifier
         Me.Panel9.Size = New System.Drawing.Size(370, 54)
         Me.Panel9.TabIndex = 1
         '
+        'TXT_DATENAIS
+        '
+        Me.TXT_DATENAIS.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TXT_DATENAIS.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TXT_DATENAIS.ForeColor = System.Drawing.Color.DarkGray
+        Me.TXT_DATENAIS.Location = New System.Drawing.Point(193, 17)
+        Me.TXT_DATENAIS.Name = "TXT_DATENAIS"
+        Me.TXT_DATENAIS.Size = New System.Drawing.Size(177, 16)
+        Me.TXT_DATENAIS.TabIndex = 92
+        '
+        'DTP_DATENAIS
+        '
+        Me.DTP_DATENAIS.Checked = False
+        Me.DTP_DATENAIS.CustomFormat = "dd/mm/yyyy"
+        Me.DTP_DATENAIS.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DTP_DATENAIS.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DTP_DATENAIS.Location = New System.Drawing.Point(193, 13)
+        Me.DTP_DATENAIS.Margin = New System.Windows.Forms.Padding(2)
+        Me.DTP_DATENAIS.Name = "DTP_DATENAIS"
+        Me.DTP_DATENAIS.Size = New System.Drawing.Size(177, 26)
+        Me.DTP_DATENAIS.TabIndex = 88
+        '
         'Label10
         '
         Me.Label10.AutoSize = True
@@ -400,7 +457,7 @@ Partial Class modifier
         Me.Label10.Location = New System.Drawing.Point(3, 16)
         Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(157, 22)
+        Me.Label10.Size = New System.Drawing.Size(126, 17)
         Me.Label10.TabIndex = 87
         Me.Label10.Text = "Date de naissance"
         '
@@ -413,6 +470,20 @@ Partial Class modifier
         Me.Panel10.Size = New System.Drawing.Size(370, 53)
         Me.Panel10.TabIndex = 1
         '
+        'CB_SEXE
+        '
+        Me.CB_SEXE.BackColor = System.Drawing.Color.White
+        Me.CB_SEXE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CB_SEXE.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CB_SEXE.ForeColor = System.Drawing.Color.DarkGray
+        Me.CB_SEXE.FormattingEnabled = True
+        Me.CB_SEXE.Location = New System.Drawing.Point(193, 13)
+        Me.CB_SEXE.Margin = New System.Windows.Forms.Padding(2)
+        Me.CB_SEXE.Name = "CB_SEXE"
+        Me.CB_SEXE.Size = New System.Drawing.Size(177, 25)
+        Me.CB_SEXE.TabIndex = 89
+        Me.CB_SEXE.Text = "Sexe"
+        '
         'Label9
         '
         Me.Label9.AutoSize = True
@@ -421,7 +492,7 @@ Partial Class modifier
         Me.Label9.Location = New System.Drawing.Point(3, 15)
         Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(48, 22)
+        Me.Label9.Size = New System.Drawing.Size(40, 17)
         Me.Label9.TabIndex = 88
         Me.Label9.Text = "Sexe"
         '
@@ -434,6 +505,17 @@ Partial Class modifier
         Me.Panel11.Size = New System.Drawing.Size(370, 54)
         Me.Panel11.TabIndex = 1
         '
+        'TXT_FILSDE
+        '
+        Me.TXT_FILSDE.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TXT_FILSDE.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TXT_FILSDE.ForeColor = System.Drawing.Color.DarkGray
+        Me.TXT_FILSDE.Location = New System.Drawing.Point(193, 17)
+        Me.TXT_FILSDE.Name = "TXT_FILSDE"
+        Me.TXT_FILSDE.Size = New System.Drawing.Size(177, 16)
+        Me.TXT_FILSDE.TabIndex = 94
+        Me.TXT_FILSDE.Text = "nom du pere"
+        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -442,7 +524,7 @@ Partial Class modifier
         Me.Label3.Location = New System.Drawing.Point(3, 16)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(140, 22)
+        Me.Label3.Size = New System.Drawing.Size(113, 17)
         Me.Label3.TabIndex = 93
         Me.Label3.Text = "Prenom du pere"
         '
@@ -455,6 +537,17 @@ Partial Class modifier
         Me.Panel12.Size = New System.Drawing.Size(370, 53)
         Me.Panel12.TabIndex = 1
         '
+        'TXT_ETDE
+        '
+        Me.TXT_ETDE.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TXT_ETDE.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TXT_ETDE.ForeColor = System.Drawing.Color.DarkGray
+        Me.TXT_ETDE.Location = New System.Drawing.Point(193, 17)
+        Me.TXT_ETDE.Name = "TXT_ETDE"
+        Me.TXT_ETDE.Size = New System.Drawing.Size(177, 16)
+        Me.TXT_ETDE.TabIndex = 95
+        Me.TXT_ETDE.Text = "nom de la mere"
+        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -463,7 +556,7 @@ Partial Class modifier
         Me.Label2.Location = New System.Drawing.Point(3, 16)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(139, 22)
+        Me.Label2.Size = New System.Drawing.Size(112, 17)
         Me.Label2.TabIndex = 94
         Me.Label2.Text = "Nom de la mere"
         '
@@ -471,10 +564,10 @@ Partial Class modifier
         '
         Me.P_RESIDENCE.BackColor = System.Drawing.Color.White
         Me.P_RESIDENCE.Controls.Add(Me.TableLayoutPanel2)
-        Me.P_RESIDENCE.Location = New System.Drawing.Point(4, 28)
+        Me.P_RESIDENCE.Location = New System.Drawing.Point(4, 25)
         Me.P_RESIDENCE.Name = "P_RESIDENCE"
         Me.P_RESIDENCE.Padding = New System.Windows.Forms.Padding(3)
-        Me.P_RESIDENCE.Size = New System.Drawing.Size(429, 484)
+        Me.P_RESIDENCE.Size = New System.Drawing.Size(429, 487)
         Me.P_RESIDENCE.TabIndex = 1
         Me.P_RESIDENCE.Text = "P_RESIDENCE"
         '
@@ -526,7 +619,7 @@ Partial Class modifier
         Me.LB_LIEUN.Location = New System.Drawing.Point(3, 17)
         Me.LB_LIEUN.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_LIEUN.Name = "LB_LIEUN"
-        Me.LB_LIEUN.Size = New System.Drawing.Size(154, 22)
+        Me.LB_LIEUN.Size = New System.Drawing.Size(125, 17)
         Me.LB_LIEUN.TabIndex = 87
         Me.LB_LIEUN.Text = "Lieu de naissance"
         '
@@ -538,7 +631,7 @@ Partial Class modifier
         Me.TXT_LIEUN.Location = New System.Drawing.Point(190, 17)
         Me.TXT_LIEUN.Margin = New System.Windows.Forms.Padding(2)
         Me.TXT_LIEUN.Name = "TXT_LIEUN"
-        Me.TXT_LIEUN.Size = New System.Drawing.Size(210, 20)
+        Me.TXT_LIEUN.Size = New System.Drawing.Size(210, 16)
         Me.TXT_LIEUN.TabIndex = 86
         Me.TXT_LIEUN.Text = "Lieu de naissance"
         '
@@ -559,7 +652,7 @@ Partial Class modifier
         Me.LB_WILAYAN.Location = New System.Drawing.Point(3, 19)
         Me.LB_WILAYAN.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_WILAYAN.Name = "LB_WILAYAN"
-        Me.LB_WILAYAN.Size = New System.Drawing.Size(176, 22)
+        Me.LB_WILAYAN.Size = New System.Drawing.Size(138, 17)
         Me.LB_WILAYAN.TabIndex = 86
         Me.LB_WILAYAN.Text = "Wilaya de naissance"
         '
@@ -572,7 +665,7 @@ Partial Class modifier
         Me.CB_WILAYAN.Location = New System.Drawing.Point(189, 16)
         Me.CB_WILAYAN.Margin = New System.Windows.Forms.Padding(2)
         Me.CB_WILAYAN.Name = "CB_WILAYAN"
-        Me.CB_WILAYAN.Size = New System.Drawing.Size(210, 28)
+        Me.CB_WILAYAN.Size = New System.Drawing.Size(210, 25)
         Me.CB_WILAYAN.TabIndex = 85
         Me.CB_WILAYAN.Text = "Wilaya de naissance"
         Me.CB_WILAYAN.Visible = False
@@ -595,7 +688,7 @@ Partial Class modifier
         Me.LB_LIEUNA.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_LIEUNA.Name = "LB_LIEUNA"
         Me.LB_LIEUNA.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.LB_LIEUNA.Size = New System.Drawing.Size(82, 22)
+        Me.LB_LIEUNA.Size = New System.Drawing.Size(66, 17)
         Me.LB_LIEUNA.TabIndex = 83
         Me.LB_LIEUNA.Text = "مكان الميلاد"
         '
@@ -608,7 +701,7 @@ Partial Class modifier
         Me.TXT_LIEUNA.Margin = New System.Windows.Forms.Padding(2)
         Me.TXT_LIEUNA.Name = "TXT_LIEUNA"
         Me.TXT_LIEUNA.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.TXT_LIEUNA.Size = New System.Drawing.Size(209, 20)
+        Me.TXT_LIEUNA.Size = New System.Drawing.Size(209, 16)
         Me.TXT_LIEUNA.TabIndex = 82
         Me.TXT_LIEUNA.Text = "مكان الميلاد"
         Me.TXT_LIEUNA.Visible = False
@@ -631,7 +724,7 @@ Partial Class modifier
         Me.LB_WILAYANA.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_WILAYANA.Name = "LB_WILAYANA"
         Me.LB_WILAYANA.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.LB_WILAYANA.Size = New System.Drawing.Size(84, 22)
+        Me.LB_WILAYANA.Size = New System.Drawing.Size(67, 17)
         Me.LB_WILAYANA.TabIndex = 82
         Me.LB_WILAYANA.Text = "ولاية الميلاد"
         '
@@ -645,7 +738,7 @@ Partial Class modifier
         Me.CB_WILAYANA.Margin = New System.Windows.Forms.Padding(2)
         Me.CB_WILAYANA.Name = "CB_WILAYANA"
         Me.CB_WILAYANA.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.CB_WILAYANA.Size = New System.Drawing.Size(209, 28)
+        Me.CB_WILAYANA.Size = New System.Drawing.Size(209, 25)
         Me.CB_WILAYANA.TabIndex = 81
         Me.CB_WILAYANA.Text = "ولاية الميلاد"
         '
@@ -666,7 +759,7 @@ Partial Class modifier
         Me.TXT_ADR.Location = New System.Drawing.Point(189, 17)
         Me.TXT_ADR.Margin = New System.Windows.Forms.Padding(2)
         Me.TXT_ADR.Name = "TXT_ADR"
-        Me.TXT_ADR.Size = New System.Drawing.Size(210, 20)
+        Me.TXT_ADR.Size = New System.Drawing.Size(210, 16)
         Me.TXT_ADR.TabIndex = 79
         Me.TXT_ADR.Text = "Adresse actuel"
         '
@@ -678,7 +771,7 @@ Partial Class modifier
         Me.LB_ADR.Location = New System.Drawing.Point(2, 17)
         Me.LB_ADR.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_ADR.Name = "LB_ADR"
-        Me.LB_ADR.Size = New System.Drawing.Size(129, 22)
+        Me.LB_ADR.Size = New System.Drawing.Size(106, 17)
         Me.LB_ADR.TabIndex = 80
         Me.LB_ADR.Text = "Adresse actuel"
         '
@@ -699,7 +792,7 @@ Partial Class modifier
         Me.TXT_VILLE.Location = New System.Drawing.Point(189, 17)
         Me.TXT_VILLE.Margin = New System.Windows.Forms.Padding(2)
         Me.TXT_VILLE.Name = "TXT_VILLE"
-        Me.TXT_VILLE.Size = New System.Drawing.Size(210, 20)
+        Me.TXT_VILLE.Size = New System.Drawing.Size(210, 16)
         Me.TXT_VILLE.TabIndex = 80
         Me.TXT_VILLE.Text = "Ville actuelle"
         '
@@ -711,7 +804,7 @@ Partial Class modifier
         Me.LB_VILLE.Location = New System.Drawing.Point(3, 17)
         Me.LB_VILLE.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_VILLE.Name = "LB_VILLE"
-        Me.LB_VILLE.Size = New System.Drawing.Size(114, 22)
+        Me.LB_VILLE.Size = New System.Drawing.Size(92, 17)
         Me.LB_VILLE.TabIndex = 81
         Me.LB_VILLE.Text = "Ville actuelle"
         '
@@ -732,7 +825,7 @@ Partial Class modifier
         Me.LB_WILAYA.Location = New System.Drawing.Point(2, 16)
         Me.LB_WILAYA.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_WILAYA.Name = "LB_WILAYA"
-        Me.LB_WILAYA.Size = New System.Drawing.Size(136, 22)
+        Me.LB_WILAYA.Size = New System.Drawing.Size(106, 17)
         Me.LB_WILAYA.TabIndex = 84
         Me.LB_WILAYA.Text = "Wilaya actuelle"
         '
@@ -745,7 +838,7 @@ Partial Class modifier
         Me.CB_WILAYA.Location = New System.Drawing.Point(189, 13)
         Me.CB_WILAYA.Margin = New System.Windows.Forms.Padding(2)
         Me.CB_WILAYA.Name = "CB_WILAYA"
-        Me.CB_WILAYA.Size = New System.Drawing.Size(210, 28)
+        Me.CB_WILAYA.Size = New System.Drawing.Size(210, 25)
         Me.CB_WILAYA.TabIndex = 83
         Me.CB_WILAYA.Text = "Wilaya actuelle"
         '
@@ -766,7 +859,7 @@ Partial Class modifier
         Me.LB_CODEPOS.Location = New System.Drawing.Point(3, 16)
         Me.LB_CODEPOS.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LB_CODEPOS.Name = "LB_CODEPOS"
-        Me.LB_CODEPOS.Size = New System.Drawing.Size(111, 22)
+        Me.LB_CODEPOS.Size = New System.Drawing.Size(90, 17)
         Me.LB_CODEPOS.TabIndex = 85
         Me.LB_CODEPOS.Text = "code postale"
         '
@@ -778,113 +871,37 @@ Partial Class modifier
         Me.TXT_CODEPOS.Location = New System.Drawing.Point(189, 16)
         Me.TXT_CODEPOS.Margin = New System.Windows.Forms.Padding(2)
         Me.TXT_CODEPOS.Name = "TXT_CODEPOS"
-        Me.TXT_CODEPOS.Size = New System.Drawing.Size(210, 20)
+        Me.TXT_CODEPOS.Size = New System.Drawing.Size(210, 16)
         Me.TXT_CODEPOS.TabIndex = 84
         Me.TXT_CODEPOS.Text = "code postale"
         '
-        'TXT_ETDE
+        'SortirButton
         '
-        Me.TXT_ETDE.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TXT_ETDE.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TXT_ETDE.ForeColor = System.Drawing.Color.DarkGray
-        Me.TXT_ETDE.Location = New System.Drawing.Point(193, 17)
-        Me.TXT_ETDE.Name = "TXT_ETDE"
-        Me.TXT_ETDE.Size = New System.Drawing.Size(177, 20)
-        Me.TXT_ETDE.TabIndex = 95
-        Me.TXT_ETDE.Text = "nom de la mere"
+        Me.SortirButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.SortirButton.FlatAppearance.BorderSize = 0
+        Me.SortirButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SortirButton.Font = New System.Drawing.Font("Cambria", 13.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SortirButton.ForeColor = System.Drawing.Color.White
+        Me.SortirButton.Location = New System.Drawing.Point(31, 585)
+        Me.SortirButton.Name = "SortirButton"
+        Me.SortirButton.Size = New System.Drawing.Size(160, 34)
+        Me.SortirButton.TabIndex = 52
+        Me.SortirButton.Text = "Sortir"
+        Me.SortirButton.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.SortirButton.UseVisualStyleBackColor = False
         '
-        'TXT_FILSDE
+        'Worning
         '
-        Me.TXT_FILSDE.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TXT_FILSDE.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TXT_FILSDE.ForeColor = System.Drawing.Color.DarkGray
-        Me.TXT_FILSDE.Location = New System.Drawing.Point(193, 17)
-        Me.TXT_FILSDE.Name = "TXT_FILSDE"
-        Me.TXT_FILSDE.Size = New System.Drawing.Size(177, 20)
-        Me.TXT_FILSDE.TabIndex = 94
-        Me.TXT_FILSDE.Text = "nom du pere"
-        '
-        'CB_SEXE
-        '
-        Me.CB_SEXE.BackColor = System.Drawing.Color.White
-        Me.CB_SEXE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CB_SEXE.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CB_SEXE.ForeColor = System.Drawing.Color.DarkGray
-        Me.CB_SEXE.FormattingEnabled = True
-        Me.CB_SEXE.Location = New System.Drawing.Point(193, 13)
-        Me.CB_SEXE.Margin = New System.Windows.Forms.Padding(2)
-        Me.CB_SEXE.Name = "CB_SEXE"
-        Me.CB_SEXE.Size = New System.Drawing.Size(177, 28)
-        Me.CB_SEXE.TabIndex = 89
-        Me.CB_SEXE.Text = "Sexe"
-        '
-        'DTP_DATENAIS
-        '
-        Me.DTP_DATENAIS.Checked = False
-        Me.DTP_DATENAIS.CustomFormat = "dd/mm/yyyy"
-        Me.DTP_DATENAIS.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DTP_DATENAIS.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DTP_DATENAIS.Location = New System.Drawing.Point(193, 13)
-        Me.DTP_DATENAIS.Margin = New System.Windows.Forms.Padding(2)
-        Me.DTP_DATENAIS.Name = "DTP_DATENAIS"
-        Me.DTP_DATENAIS.Size = New System.Drawing.Size(177, 30)
-        Me.DTP_DATENAIS.TabIndex = 88
-        '
-        'TXT_DATENAIS
-        '
-        Me.TXT_DATENAIS.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TXT_DATENAIS.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TXT_DATENAIS.ForeColor = System.Drawing.Color.DarkGray
-        Me.TXT_DATENAIS.Location = New System.Drawing.Point(193, 17)
-        Me.TXT_DATENAIS.Name = "TXT_DATENAIS"
-        Me.TXT_DATENAIS.Size = New System.Drawing.Size(177, 20)
-        Me.TXT_DATENAIS.TabIndex = 92
-        '
-        'TXT_PrenomsA
-        '
-        Me.TXT_PrenomsA.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TXT_PrenomsA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TXT_PrenomsA.ForeColor = System.Drawing.Color.DarkGray
-        Me.TXT_PrenomsA.Location = New System.Drawing.Point(0, 17)
-        Me.TXT_PrenomsA.Name = "TXT_PrenomsA"
-        Me.TXT_PrenomsA.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.TXT_PrenomsA.Size = New System.Drawing.Size(177, 20)
-        Me.TXT_PrenomsA.TabIndex = 94
-        Me.TXT_PrenomsA.Text = "الاسم"
-        '
-        'TXT_NomEtudA
-        '
-        Me.TXT_NomEtudA.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TXT_NomEtudA.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TXT_NomEtudA.ForeColor = System.Drawing.Color.DarkGray
-        Me.TXT_NomEtudA.Location = New System.Drawing.Point(0, 17)
-        Me.TXT_NomEtudA.Name = "TXT_NomEtudA"
-        Me.TXT_NomEtudA.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.TXT_NomEtudA.Size = New System.Drawing.Size(177, 20)
-        Me.TXT_NomEtudA.TabIndex = 93
-        Me.TXT_NomEtudA.Text = "اللقب"
-        '
-        'TXT_Prenoms
-        '
-        Me.TXT_Prenoms.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TXT_Prenoms.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TXT_Prenoms.ForeColor = System.Drawing.Color.DarkGray
-        Me.TXT_Prenoms.Location = New System.Drawing.Point(193, 16)
-        Me.TXT_Prenoms.Name = "TXT_Prenoms"
-        Me.TXT_Prenoms.Size = New System.Drawing.Size(177, 20)
-        Me.TXT_Prenoms.TabIndex = 91
-        Me.TXT_Prenoms.Text = "Prenom"
-        '
-        'TXT_NomEtud
-        '
-        Me.TXT_NomEtud.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TXT_NomEtud.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TXT_NomEtud.ForeColor = System.Drawing.Color.DarkGray
-        Me.TXT_NomEtud.Location = New System.Drawing.Point(193, 17)
-        Me.TXT_NomEtud.Name = "TXT_NomEtud"
-        Me.TXT_NomEtud.Size = New System.Drawing.Size(177, 20)
-        Me.TXT_NomEtud.TabIndex = 87
-        Me.TXT_NomEtud.Text = "Nom"
+        Me.Worning.AutoSize = True
+        Me.Worning.BackColor = System.Drawing.Color.Transparent
+        Me.Worning.Font = New System.Drawing.Font("Cambria", 10.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Worning.ForeColor = System.Drawing.Color.Firebrick
+        Me.Worning.Location = New System.Drawing.Point(396, 593)
+        Me.Worning.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Worning.Name = "Worning"
+        Me.Worning.Size = New System.Drawing.Size(11, 17)
+        Me.Worning.TabIndex = 13
+        Me.Worning.Text = " "
         '
         'modifier
         '
@@ -997,7 +1014,6 @@ Partial Class modifier
     Friend WithEvents TXT_CODEPOS As System.Windows.Forms.TextBox
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Worning As System.Windows.Forms.Label
     Friend WithEvents BT_SORTIR As System.Windows.Forms.Button
     Friend WithEvents TXT_NomEtud As System.Windows.Forms.TextBox
     Friend WithEvents TXT_Prenoms As System.Windows.Forms.TextBox
@@ -1008,4 +1024,6 @@ Partial Class modifier
     Friend WithEvents CB_SEXE As System.Windows.Forms.ComboBox
     Friend WithEvents TXT_FILSDE As System.Windows.Forms.TextBox
     Friend WithEvents TXT_ETDE As System.Windows.Forms.TextBox
+    Friend WithEvents SortirButton As System.Windows.Forms.Button
+    Friend WithEvents Worning As System.Windows.Forms.Label
 End Class

@@ -29,9 +29,10 @@ Partial Class RN
         Me.BT_LOAD = New System.Windows.Forms.Button()
         Me.CB_ANNEE = New System.Windows.Forms.ComboBox()
         Me.TitlePanel = New System.Windows.Forms.Panel()
+        Me.BT_SORTIR = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.BT_SORTIR = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.DetailPanel.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.TitlePanel.SuspendLayout()
@@ -49,6 +50,7 @@ Partial Class RN
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Transparent
+        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.CrystalReportViewer1)
         Me.Panel1.Controls.Add(Me.BT_LOAD)
@@ -65,7 +67,7 @@ Partial Class RN
         Me.Label4.Font = New System.Drawing.Font("Cambria", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(175, 76)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(129, 20)
+        Me.Label4.Size = New System.Drawing.Size(104, 16)
         Me.Label4.TabIndex = 50
         Me.Label4.Text = "Annee d'etude :"
         '
@@ -88,11 +90,11 @@ Partial Class RN
         Me.BT_LOAD.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BT_LOAD.Font = New System.Drawing.Font("Cambria", 13.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BT_LOAD.ForeColor = System.Drawing.Color.White
-        Me.BT_LOAD.Location = New System.Drawing.Point(259, 600)
+        Me.BT_LOAD.Location = New System.Drawing.Point(387, 600)
         Me.BT_LOAD.Name = "BT_LOAD"
         Me.BT_LOAD.Size = New System.Drawing.Size(160, 33)
         Me.BT_LOAD.TabIndex = 47
-        Me.BT_LOAD.Text = "Load"
+        Me.BT_LOAD.Text = "Afficher"
         Me.BT_LOAD.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.BT_LOAD.UseVisualStyleBackColor = False
         '
@@ -102,7 +104,7 @@ Partial Class RN
         Me.CB_ANNEE.FormattingEnabled = True
         Me.CB_ANNEE.Location = New System.Drawing.Point(302, 75)
         Me.CB_ANNEE.Name = "CB_ANNEE"
-        Me.CB_ANNEE.Size = New System.Drawing.Size(160, 24)
+        Me.CB_ANNEE.Size = New System.Drawing.Size(160, 21)
         Me.CB_ANNEE.TabIndex = 48
         '
         'TitlePanel
@@ -116,31 +118,6 @@ Partial Class RN
         Me.TitlePanel.Name = "TitlePanel"
         Me.TitlePanel.Size = New System.Drawing.Size(678, 69)
         Me.TitlePanel.TabIndex = 0
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Times New Roman", 19.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(217, 269)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(0, 38)
-        Me.Label2.TabIndex = 13
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 19.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(232, 18)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(215, 38)
-        Me.Label1.TabIndex = 12
-        Me.Label1.Text = "Relevé de note"
         '
         'BT_SORTIR
         '
@@ -157,6 +134,46 @@ Partial Class RN
         Me.BT_SORTIR.Size = New System.Drawing.Size(45, 45)
         Me.BT_SORTIR.TabIndex = 43
         Me.BT_SORTIR.UseVisualStyleBackColor = False
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Times New Roman", 19.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.Label2.Location = New System.Drawing.Point(217, 269)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(0, 31)
+        Me.Label2.TabIndex = 13
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 19.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(232, 18)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(177, 31)
+        Me.Label1.TabIndex = 12
+        Me.Label1.Text = "Relevé de note"
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Cambria", 13.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(140, 600)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(160, 33)
+        Me.Button1.TabIndex = 51
+        Me.Button1.Text = "Sortir"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'RN
         '
@@ -190,4 +207,5 @@ Partial Class RN
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents BT_SORTIR As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

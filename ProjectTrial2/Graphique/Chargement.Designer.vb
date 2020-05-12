@@ -36,6 +36,7 @@ Partial Class Chargement
         Me.Button1 = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.RechargementButton = New System.Windows.Forms.Button()
+        Me.CompletLabel = New System.Windows.Forms.Label()
         Me.TitlePanel.SuspendLayout()
         Me.ChargementPanel.SuspendLayout()
         Me.SuspendLayout()
@@ -65,6 +66,7 @@ Partial Class Chargement
         'ChargementPanel
         '
         Me.ChargementPanel.BackColor = System.Drawing.Color.Transparent
+        Me.ChargementPanel.Controls.Add(Me.CompletLabel)
         Me.ChargementPanel.Controls.Add(Me.RechargementButton)
         Me.ChargementPanel.Controls.Add(Me.Button4)
         Me.ChargementPanel.Controls.Add(Me.Button3)
@@ -186,7 +188,7 @@ Partial Class Chargement
         Me.ChargementButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ChargementButton.Font = New System.Drawing.Font("Cambria", 13.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChargementButton.ForeColor = System.Drawing.Color.White
-        Me.ChargementButton.Location = New System.Drawing.Point(416, 567)
+        Me.ChargementButton.Location = New System.Drawing.Point(416, 577)
         Me.ChargementButton.Name = "ChargementButton"
         Me.ChargementButton.Size = New System.Drawing.Size(160, 36)
         Me.ChargementButton.TabIndex = 22
@@ -219,12 +221,26 @@ Partial Class Chargement
         Me.RechargementButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.RechargementButton.Font = New System.Drawing.Font("Cambria", 13.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RechargementButton.ForeColor = System.Drawing.Color.White
-        Me.RechargementButton.Location = New System.Drawing.Point(80, 567)
+        Me.RechargementButton.Location = New System.Drawing.Point(80, 577)
         Me.RechargementButton.Name = "RechargementButton"
         Me.RechargementButton.Size = New System.Drawing.Size(160, 36)
         Me.RechargementButton.TabIndex = 31
         Me.RechargementButton.Text = "Rechargement"
         Me.RechargementButton.UseVisualStyleBackColor = False
+        '
+        'CompletLabel
+        '
+        Me.CompletLabel.AutoSize = True
+        Me.CompletLabel.BackColor = System.Drawing.Color.Transparent
+        Me.CompletLabel.Font = New System.Drawing.Font("Times New Roman", 16.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CompletLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.CompletLabel.Location = New System.Drawing.Point(151, 528)
+        Me.CompletLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.CompletLabel.Name = "CompletLabel"
+        Me.CompletLabel.Size = New System.Drawing.Size(380, 25)
+        Me.CompletLabel.TabIndex = 13
+        Me.CompletLabel.Text = "Le chargement est completé avec succès"
+        Me.CompletLabel.Visible = False
         '
         'Chargement
         '
@@ -241,6 +257,7 @@ Partial Class Chargement
         Me.TitlePanel.ResumeLayout(False)
         Me.TitlePanel.PerformLayout()
         Me.ChargementPanel.ResumeLayout(False)
+        Me.ChargementPanel.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -258,4 +275,5 @@ Partial Class Chargement
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents RechargementButton As System.Windows.Forms.Button
+    Friend WithEvents CompletLabel As System.Windows.Forms.Label
 End Class

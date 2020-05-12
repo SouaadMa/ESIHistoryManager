@@ -38,7 +38,7 @@ Public Class PVPage
 
         'call the pv function to get the dataset
 
-        ds = SortiePV.PV_DELIBERATION(NiveauBox.Text.Remove(0, 1), SpecialiteBox.Text, PromoBox.Text.Remove(0, 2))
+        ds = SortiePV.PV_DELIBERATION(NiveauBox.Text, SpecialiteBox.Text, PromoBox.Text.Remove(0, 2))
         ' if there is a limit to viewed students , then remove the rest from the datatable
         If Not AllCheckBox.Checked Then
             'FormulaField = FormulaFields.Item("limit")

@@ -42,7 +42,7 @@
         requeteSQL = Class_BDD.AddLIKECondition(requeteSQL, BDD.champsCodePromo, New Critere(BDD.champsAnnee, (Integer.Parse(Annee) + 5).ToString, BDD.nomTableINSCRIPTION))
         ' requeteSQL == requeteSQL + " AND (CodePromo LIKE '%/Annee+5')"
 
-        Console.WriteLine(requeteSQL)
+        'Console.WriteLine(requeteSQL)
 
         tableEtudiants = BDD.executeRequete(requeteSQL)
 
@@ -65,7 +65,7 @@
 
         For Each mat In collectionMat
 
-            If (i < 10) Then
+            If (i < 20) Then
                 listeConditions.Add(New Critere(BDD.champsMATRIN, mat))
                 i = i + 1
             Else
@@ -82,8 +82,8 @@
 
         Next
 
-        If ((i <= 10) And collectionMat.Count > 0) Then
-            Console.WriteLine(requeteSQL)
+        If ((i <= 20) And collectionMat.Count > 0) Then
+            'Console.WriteLine(requeteSQL)
 
             dt.Merge(BDD.executeRequete(requeteSQL))
         End If
@@ -122,7 +122,11 @@
                 i = i + 1
                 moy += max(row(BDD.champsMOYEIN), row(BDD.champsMOYERA))
             Next
-            moy /= 5
+            If i > 0 Then
+                moy /= i
+                Console.WriteLine(i)
+            End If
+
 
             'Console.WriteLine(i.ToString + " " + etud(BDD.champsMATRIN))
 
@@ -201,7 +205,7 @@
 
         Dim filter As String = BDD.CompareToCode(BDD.champsCodePromo, critere)
 
-        Console.WriteLine(filter)
+        Console.WriteLine("filter:" + filter)
 
         Return dataTable.Select(filter).CopyToDataTable
 

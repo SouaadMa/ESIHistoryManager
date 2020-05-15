@@ -71,16 +71,13 @@ Public Class Login
     ' a function to show the responce to the connexion request ( launch the home page or the error message )
     Private Sub ConexionButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConexionButton.Click
         If Connexion(Me.MotDePasseTextField.Text) Then
-            Infosgenerale = New InfosGenerales()
-            'open our filestream
-            ' Dim stream As FileStream
-            'stream = File.OpenRead("InfosGenerale.txt")
 
-            'create the binary formatter
-            'Dim formatter As New BinaryFormatter
-            'Infosgenerale = formatter.Deserialize(stream)
+            Try
+                Infosgenerale = InfosGenerales.Recover()
+            Catch ex As Exception
+                Infosgenerale = New InfosGenerales()
+            End Try
 
-            'stream.Close()
             Home.Show()
         Else
             Me.avertissemnt.Visible = True

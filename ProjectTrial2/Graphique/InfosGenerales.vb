@@ -4,10 +4,12 @@ Imports System.IO
 <Serializable()>
 Public Class InfosGenerales
 
-    Public wilaya As DataTable
+    Public wilayaactuelle As DataTable
+    Public wilayaNaissanceArabe As DataTable
+    Public codewilayaN As DataTable
+    Public codesPostales As DataTable
+    Public wilayaBAC As DataTable
 
-    Public wilayaarabe As DataTable
-    Public codewilaya As DataTable
     Public section As DataTable
     Public groupe As DataTable
     Public matiere As DataTable
@@ -21,19 +23,52 @@ Public Class InfosGenerales
     Public Shared lastYear As Integer = 2011
 
     Public Sub New()
-        wilaya = Recherche.GetALL(BDD.champsWILAYA, BDD.nomTableEtudiant)
-        wilaya.PrimaryKey = {wilaya.Columns.Item(BDD.champsWILAYA)}
-        wilayaarabe = Recherche.GetALL(BDD.champsWilayaNaisA, BDD.nomTableEtudiant)
-        wilayaarabe.PrimaryKey = {wilayaarabe.Columns.Item(BDD.champsWilayaNaisA)}
+        'Wilayas Actuelles
+        wilayaactuelle = Recherche.GetALL(BDD.champsWILAYA, BDD.nomTableEtudiant)
+        wilayaactuelle.PrimaryKey = {wilayaactuelle.Columns.Item(BDD.champsWILAYA)}
+
+        wilayaNaissanceArabe = Recherche.GetALL(BDD.champsWilayaNaisA, BDD.nomTableEtudiant)
+        wilayaNaissanceArabe.PrimaryKey = {wilayaNaissanceArabe.Columns.Item(BDD.champsWilayaNaisA)}
+
+        codewilayaN = Recherche.GetALL(BDD.champsWILNAIS, BDD.nomTableEtudiant)
+        codewilayaN.PrimaryKey = {codewilayaN.Columns.Item(BDD.champsWILNAIS)}
+
+        wilayaBAC = Recherche.GetALL(BDD.champsWILBAC, BDD.nomTableEtudiant)
+        wilayaBAC.PrimaryKey = {wilayaBAC.Columns.Item(BDD.champsWILBAC)}
+
         seribac = Recherche.GetALL(BDD.champsSERIEBAC, BDD.nomTableEtudiant)
-        codewilaya = Recherche.GetALL(BDD.champsWILNAIS, BDD.nomTableEtudiant)
-        codewilaya.PrimaryKey = {codewilaya.Columns.Item(BDD.champsWILNAIS)}
+
         groupe = Recherche.GetALL(BDD.champsCodeGroupe, BDD.nomTableGROUP)
         section = Recherche.GetALL(BDD.champsCodeSection, BDD.nomTableSection)
         matiere = Recherche.GetALL(BDD.champsCOMAMA, BDD.nomTableMATIERE)
-        
+
         Console.WriteLine("Loading info generale DONE")
     End Sub
+
+    Public Shared Function Recover() As InfosGenerales
+        Dim stream As FileStream
+        stream = File.OpenRead("InfosGenerale.txt")
+
+        'create the binary formatter
+        Dim formatter As New BinaryFormatter
+        Dim obj As InfosGenerales = formatter.Deserialize(stream)
+
+        stream.Close()
+
+        Return obj
+    End Function
+
+    Public Sub Save()
+        'open our filestream
+        Dim stream As FileStream
+        stream = File.OpenWrite("InfosGenerale.txt")
+
+        'create the binary formatter
+        Dim formatter As New BinaryFormatter
+        formatter.Serialize(stream, Me)
+        stream.Close()
+    End Sub
+
 
 End Class
 

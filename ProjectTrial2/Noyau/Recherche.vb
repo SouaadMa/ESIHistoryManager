@@ -17,7 +17,7 @@
                 instructionSQL = Rech_BDD.genereRechRequetes(instructionSQL, crit, BDD.nomTableEtudiant)
                 'bw.ReportProgress(CInt(x))
             Next
-            Console.WriteLine(instructionSQL)
+            'Console.WriteLine(instructionSQL)
             'On passe la requête finale à ExécuteRequ et on sauvegarde son résultat
             If Not bw.CancellationPending Then
                 resultatRech = BDD.executeRequete(instructionSQL)

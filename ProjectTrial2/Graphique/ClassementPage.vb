@@ -58,39 +58,39 @@
 
     End Sub
 
-    Private Sub BT_P1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PrevButton.Click, NextButton.Click, MiddleButton.Click
-        For Each b As Button In PagesButtons.Controls
-            b.BackgroundImage = My.Resources.page_num
-        Next
+    'Private Sub P1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    '    For Each b As Button In PagesButtons.Controls
+    '        b.BackgroundImage = My.Resources.page_num
+    '    Next
 
-        If CURRENT_PAGE <> 1 Or Not CType(sender, Control).Name.Equals("PrevButton") Then
-            If CType(sender, Control).Name.Equals("PrevButton") Or CURRENT_PAGE = nb_page Then
-                CURRENT_PAGE -= 1
-            Else
-                CURRENT_PAGE += 1
-            End If
-        End If
+    '    If CURRENT_PAGE <> 1 Or Not CType(sender, Control).Name.Equals("PrevButton") Then
+    '        If CType(sender, Control).Name.Equals("PrevButton") Or CURRENT_PAGE = nb_page Then
+    '            CURRENT_PAGE -= 1
+    '        Else
+    '            CURRENT_PAGE += 1
+    '        End If
+    '    End If
 
-        If CURRENT_PAGE = 1 Then
-            PrevButton.Enabled = False
-            MiddleButton.Enabled = True
-            NextButton.Enabled = True
-            PrevButton.BackgroundImage = My.Resources.page_num_current
-        ElseIf CURRENT_PAGE = nb_page Then
-            NextButton.BackgroundImage = My.Resources.page_num_current
-            PrevButton.Enabled = True
-            MiddleButton.Enabled = True
-            NextButton.Enabled = False
-        Else
-            PrevButton.Enabled = True
-            MiddleButton.Enabled = False
-            NextButton.Enabled = True
-            MiddleButton.BackgroundImage = My.Resources.page_num_current
-        End If
+    '    If CURRENT_PAGE = 1 Then
+    '        PrevButton.Enabled = False
+    '        MiddleButton.Enabled = True
+    '        NextButton.Enabled = True
+    '        PrevButton.BackgroundImage = My.Resources.page_num_current
+    '    ElseIf CURRENT_PAGE = nb_page Then
+    '        NextButton.BackgroundImage = My.Resources.page_num_current
+    '        PrevButton.Enabled = True
+    '        MiddleButton.Enabled = True
+    '        NextButton.Enabled = False
+    '    Else
+    '        PrevButton.Enabled = True
+    '        MiddleButton.Enabled = False
+    '        NextButton.Enabled = True
+    '        MiddleButton.BackgroundImage = My.Resources.page_num_current
+    '    End If
 
-        Console.WriteLine("the page is :" + CURRENT_PAGE.ToString)
-        affich_pageResult()
-    End Sub
+    '    Console.WriteLine("the page is :" + CURRENT_PAGE.ToString)
+    '    affich_pageResult()
+    'End Sub
 
     Public Sub affich_pageResult()
 
@@ -102,13 +102,27 @@
             nb_page = (filtredTable.Rows.Count \ 7) + 1
         End If
 
-        If nb_page <= 2 Then
-            NextButton.Enabled = False
-            If nb_page = 1 Then
-                MiddleButton.Enabled = False
-                PrevButton.Enabled = False
+        If nb_page <= 4 Then
+            DownButton.Enabled = False
+            UpButton.Enabled = False
+            If nb_page <= 3 Then
+                BT_P4.Visible = False
+            End If
+            If nb_page <= 2 Then
+                BT_P3.Visible = False
+            End If
+            If nb_page <= 1 Then
+                BT_P2.Visible = False
             End If
         End If
+
+        'If nb_page <= 2 Then
+        '    NextButton.Enabled = False
+        '    If nb_page = 1 Then
+        '        MiddleButton.Enabled = False
+        '        PrevButton.Enabled = False
+        '    End If
+        'End If
 
         Dim i As Integer = 0
         Dim cpt As Integer = (CURRENT_PAGE - 1) * 7
@@ -324,8 +338,19 @@
             EtudiantPanel.Visible = False
             Console.WriteLine("Liste des etudiants est vide")
         Else
+            BT_P1.Visible = True
+            BT_P2.Visible = True
+            BT_P3.Visible = True
+            BT_P4.Visible = True
+            UpButton.Enabled = True
+            DownButton.Enabled = True
+
             affich_pageResult()
-            BT_P1_Click(PrevButton, New EventArgs())
+            Me.BT_P1.Text = "1"
+            Me.BT_P2.Text = "2"
+            Me.BT_P3.Text = "3"
+            Me.BT_P4.Text = "4"
+            BT_P1_Click(BT_P1, New EventArgs())
         End If
         SpecialiteBox.Text = ""
         AllCheckBox.Checked = True
@@ -333,7 +358,7 @@
 
     End Sub
 
-    Private Sub BT_PREV_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_PREV.Click
+    Private Sub PREV_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_PREV.Click
         BT_NEXT.Enabled = True
         Me.ValueTextBox.Text = (Me.ValueTextBox.Text - 1).ToString
         If Me.ValueTextBox.Text = "1989" Then
@@ -342,7 +367,7 @@
         ValueTextBox_PreviewKeyDown(ValueTextBox, New System.Windows.Forms.PreviewKeyDownEventArgs(Keys.Enter))
     End Sub
 
-    Private Sub BT_NEXT_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_NEXT.Click
+    Private Sub NEXT_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_NEXT.Click
         BT_PREV.Enabled = True
         Me.ValueTextBox.Text = (Me.ValueTextBox.Text + 1).ToString
         If Me.ValueTextBox.Text = "2011" Then
@@ -357,7 +382,8 @@
 
     Private Sub EtudiantPanel_VisibleChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EtudiantPanel.VisibleChanged
         NoResultLabel.Visible = Not EtudiantPanel.Visible
-        PagesButtons.Visible = EtudiantPanel.Visible
+        Panel1.Visible = EtudiantPanel.Visible
+        CritTableLayoutPanel.Visible = EtudiantPanel.Visible
         ClassmentCritPanel.Visible = EtudiantPanel.Visible
         'LimitDomain.Visible = EtudiantPanel.Visible
     End Sub
@@ -387,10 +413,6 @@
             UpdateClassemntResult()
             Me.ActiveControl = Nothing
         End If
-    End Sub
-
-    Private Sub ClassementModeBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
     End Sub
 
     Private Sub ValueTextBox_Click(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles ValueTextBox.MouseDoubleClick, ValueTextBox.Click
@@ -442,7 +464,66 @@
 
         'affich_pageResult()
         CURRENT_PAGE = 1
-        BT_P1_Click(PrevButton, New EventArgs())
+        BT_P1_Click(BT_P1, New EventArgs())
+    End Sub
+
+    Private Sub DownButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DownButton.Click
+
+        Me.UpButton.Enabled = True
+        'Me.BT_PREV.Enabled = True
+        Me.BT_P1.Text = (Me.BT_P1.Text + 4).ToString
+        Me.BT_P2.Text = (Me.BT_P2.Text + 4).ToString
+
+        If Me.BT_P2.Text > nb_page Then
+            BT_P2.Visible = False
+            BT_P3.Visible = False
+            BT_P4.Visible = False
+            DownButton.Enabled = False
+        Else
+            Me.BT_P3.Text = (Me.BT_P3.Text + 4).ToString
+            If Me.BT_P3.Text > nb_page Then
+                BT_P3.Visible = False
+                BT_P4.Visible = False
+                DownButton.Enabled = False
+            Else
+                Me.BT_P4.Text = (Me.BT_P4.Text + 4).ToString
+                If Me.BT_P4.Text > nb_page Then
+                    BT_P4.Visible = False
+                    DownButton.Enabled = False
+                ElseIf Me.BT_P4.Text = nb_page Then
+                    DownButton.Enabled = False
+                End If
+            End If
+        End If
+        BT_P1_Click(BT_P1, e)
+    End Sub
+
+    Private Sub UpButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UpButton.Click
+        BT_P1.Visible = True
+        BT_P2.Visible = True
+        BT_P3.Visible = True
+        BT_P4.Visible = True
+        DownButton.Enabled = True
+
+        If Me.BT_P1.Text = "1" Then
+            Me.UpButton.Enabled = False
+        Else
+            Me.BT_P1.Text = (Me.BT_P1.Text - 4).ToString
+            Me.BT_P2.Text = (Me.BT_P1.Text + 1).ToString
+            Me.BT_P3.Text = (Me.BT_P1.Text + 2).ToString
+            Me.BT_P4.Text = (Me.BT_P1.Text + 3).ToString
+        End If
+
+        BT_P1_Click(BT_P1, e)
+    End Sub
+
+    Private Sub BT_P1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_P1.Click, BT_P4.Click, BT_P3.Click, BT_P2.Click ', PrevButton.Click, NextButton.Click, MiddleButton.Click
+        For Each b As Button In PagesNumButtons.Controls
+            b.BackgroundImage = My.Resources.page_num
+        Next
+        sender.BackgroundImage = My.Resources.page_num_current
+        CURRENT_PAGE = CType(CType(sender, Button).Text, Integer)
+        affich_pageResult()
     End Sub
 
 End Class

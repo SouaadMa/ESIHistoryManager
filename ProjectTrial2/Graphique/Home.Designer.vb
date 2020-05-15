@@ -74,8 +74,8 @@ Partial Class Home
         Me.SideBar.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.SideBar.Controls.Add(Me.BT_CLASS, 0, 1)
         Me.SideBar.Controls.Add(Me.BT_STAT, 0, 2)
-        Me.SideBar.Controls.Add(Me.BT_RECH, 0, 3)
-        Me.SideBar.Controls.Add(Me.BT_PV, 0, 4)
+        Me.SideBar.Controls.Add(Me.BT_RECH, 0, 1)
+        Me.SideBar.Controls.Add(Me.BT_PV, 0, 2)
         Me.SideBar.Location = New System.Drawing.Point(0, 117)
         Me.SideBar.Margin = New System.Windows.Forms.Padding(0)
         Me.SideBar.Name = "SideBar"
@@ -107,7 +107,7 @@ Partial Class Home
         Me.BT_CLASS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BT_CLASS.ImageIndex = 0
         Me.BT_CLASS.ImageList = Me.ClassIconsList
-        Me.BT_CLASS.Location = New System.Drawing.Point(2, 82)
+        Me.BT_CLASS.Location = New System.Drawing.Point(2, 153)
         Me.BT_CLASS.Margin = New System.Windows.Forms.Padding(2)
         Me.BT_CLASS.MinimumSize = New System.Drawing.Size(45, 49)
         Me.BT_CLASS.Name = "BT_CLASS"
@@ -138,7 +138,7 @@ Partial Class Home
         Me.BT_STAT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BT_STAT.ImageKey = "diagram.png"
         Me.BT_STAT.ImageList = Me.StaticIconsList
-        Me.BT_STAT.Location = New System.Drawing.Point(2, 156)
+        Me.BT_STAT.Location = New System.Drawing.Point(2, 295)
         Me.BT_STAT.Margin = New System.Windows.Forms.Padding(2)
         Me.BT_STAT.MinimumSize = New System.Drawing.Size(45, 49)
         Me.BT_STAT.Name = "BT_STAT"
@@ -169,7 +169,7 @@ Partial Class Home
         Me.BT_RECH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BT_RECH.ImageKey = "search.png"
         Me.BT_RECH.ImageList = Me.SearchIconsList
-        Me.BT_RECH.Location = New System.Drawing.Point(2, 224)
+        Me.BT_RECH.Location = New System.Drawing.Point(2, 82)
         Me.BT_RECH.Margin = New System.Windows.Forms.Padding(2)
         Me.BT_RECH.MinimumSize = New System.Drawing.Size(45, 49)
         Me.BT_RECH.Name = "BT_RECH"
@@ -200,7 +200,7 @@ Partial Class Home
         Me.BT_PV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BT_PV.ImageKey = "gantt_chart_bj.png"
         Me.BT_PV.ImageList = Me.PVIconsList
-        Me.BT_PV.Location = New System.Drawing.Point(2, 295)
+        Me.BT_PV.Location = New System.Drawing.Point(2, 227)
         Me.BT_PV.Margin = New System.Windows.Forms.Padding(2)
         Me.BT_PV.MinimumSize = New System.Drawing.Size(45, 49)
         Me.BT_PV.Name = "BT_PV"

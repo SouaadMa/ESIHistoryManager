@@ -42,6 +42,7 @@
         'ClickedButton.Text = IIf(ClickedButton.Text.Count > 30, ClickedButton.Text.Replace(ClickedButton.Text.Substring(0, ClickedButton.Text.LastIndexOf("\") - 5), "..."), ClickedButton.Text)
         ClickedButton.Text = ClickedButton.Text.Substring(ClickedButton.Text.LastIndexOf("\") + 1)
         CType(Panel1.Controls.Item("Label" + ClickedButton.Name.Last()), Label).BackColor = IIf(Not ClickedButton.Text.Equals("Cliquez pour choisir le fichier"), Color.FromArgb(0, 64, 104), Color.FromArgb(169, 119, 113))
+        CType(Panel1.Controls.Item("Button" + (CInt((CType(sender, Control).Name.Last()).ToString) + 4).ToString), Button).ImageIndex = 1
     End Sub
 
     Private Sub Button4_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.TextChanged, Button2.TextChanged, Button3.TextChanged, Button4.TextChanged
@@ -98,6 +99,16 @@
 
     Private Sub Panel1_VisibleChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Panel1.VisibleChanged
         ProgressPanel.Visible = Not Panel1.Visible
+    End Sub
+
+    Private Sub Button1_MouseEnter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.MouseEnter, Button3.MouseEnter, Button2.MouseEnter, Button1.MouseEnter
+        Panel1.Controls.Item("Button" + (CInt((CType(sender, Control).Name.Last()).ToString) + 4).ToString).Visible = True
+    End Sub
+
+    Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button8.Click, Button7.Click, Button6.Click, Button5.Click
+        If CType(sender, Button).ImageIndex = 2 Then
+            Panel1.Controls.Item("Button" + (CInt((CType(sender, Control).Name.Last()).ToString) + 4).ToString).Text = "Cliquez pour choisir le fichier"
+        End If
     End Sub
 
 End Class

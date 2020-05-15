@@ -30,9 +30,11 @@ Public Class StatistiquePage
     Private TitleFont As Font
     Private DecTable() As String = {"Vide", "Admis", "Admis avec rachat", "Redouble", "Non admis", "Abondan", "Maladie"}
     Private SexeTable() As String = {"Masculin", "Féminin", "Autre"}
+    'Private tooltips As List(Of ToolTip)
 
     Private Sub StatistiquePage_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Me.Load
         'TODO: This line of code loads data into the 'BDD_APPLICATIONDataSet.NOTES' table. You can move, or remove it, as needed.
+        'tooltips.AddRange({NIVEAUAvertTip, SPECIALITEAvertTip, ANNEEAvertTip, MoyenneAvertTip})
         Obligatoryinput.AddRange({CHB_SPECIALITE, CHB_NIVEAU, CHB_ANNEE})
         i = chart_kind.IndexOf("Column")
         TitleFont = Chart1.Titles(0).Font
@@ -53,20 +55,17 @@ Public Class StatistiquePage
         RepartSpliter.AddRange({SexeSpliter, MatiereSpliter})
 
         'AlertPicture.Add(SexeAlert, "Vous devez remplir ce champs !")
-        'AlertPicture.Add(MatiereAlert, "Vous devez remplir ce champs !")
-        AlertPicture.Add(PictureBox3, "Vous devez saisir La seuil du moyenne !")
-        AlertPicture.Add(NIVEAUAlert, "Vous devez remplir ce champs !")
-        AlertPicture.Add(SPECIALITEAlert, "Vous devez remplir ce champs !")
-        AlertPicture.Add(ANNEEAlert, "Vous devez remplir ce champs !")
-        'AlertPicture.Add(SectionAlert, "Vous devez remplir ce champs !")
-        'AlertPicture.Add(GroupeAlert, "Vous devez remplir ce champs !")
+        AlertPicture.Add(NIVEAUAlert, "choisir au moins un niveau !")
+        AlertPicture.Add(SPECIALITEAlert, "choisir au moins une spécialité !")
+        AlertPicture.Add(ANNEEAlert, "choisir au moins un année !")
+        AlertPicture.Add(MoyenneAlert, "saisir La seuil du moyenne !")
 
-        AvertTip.Active = False
-        AvertTip.ShowAlways = True
+        NIVEAUAvertTip.Active = False
+        'AvertTip.ShowAlways = True
 
-        For Each picture As PictureBox In AlertPicture.Keys
-            picture.Visible = False
-        Next
+        'For Each picture As PictureBox In AlertPicture.Keys
+        'picture.Visible = False
+        'Next
 
         'initializer boutton chart kind 
         BT_CHARTLOAD.Visible = True
@@ -317,7 +316,7 @@ Public Class StatistiquePage
             BT_NEXT.Enabled = True
             BT_PREV.Enabled = True
             Chart1.Legends.Item(0).Enabled = True
-            
+
         Else
             Chart1.Titles.Clear()
             Chart1.ChartAreas.Clear()
@@ -355,7 +354,7 @@ Public Class StatistiquePage
     End Sub
 
     Private Sub TXT_MOYSEUIL_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_MOYSEUIL.TextChanged
-        PictureBox3.Visible = (TXT_MOYSEUIL.Text.Equals("") And enablReqrd)
+        MoyenneAlert.Visible = (TXT_MOYSEUIL.Text.Equals("") And enablReqrd)
     End Sub
 
     Private Sub Label_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SexeLabel.Click, MatiereLabel.Click, NIVEAULabel.Click, Label1.Click, GROUPELabel.Click, ANNEELabel.Click, SPECIALITELabel.Click, SECTIONLabel.Click
@@ -400,6 +399,7 @@ Public Class StatistiquePage
         Dim tool As ToolStripMenuItem = sender
         CB_CRITERE.Text = tool.OwnerItem.Text + " " + tool.Text.ToLower()
         BT_CHARTLOAD.Enabled = True
+        MoyenneAlert.Visible = False
         'uncheckList({}, False)
 
         requireFields(False)
@@ -429,7 +429,7 @@ Public Class StatistiquePage
                         xTitle = "Spécialité"
                         SpecialiteSpliter.Enabled = False
                 End Select
-            Case 2, 3, 4
+            Case 2, 3
                 yTitle = "Taux d"
                 TXT_MOYSEUIL.Enabled = False
                 enableRepartSplit(False)
@@ -456,10 +456,28 @@ Public Class StatistiquePage
                         xTitle = "Niveau"
                         NiveauSpliter.Enabled = False
                 End Select
+            Case 4
+                yTitle = "Taux d'abondance et maladie"
+                TXT_MOYSEUIL.Enabled = False
+                enableRepartSplit(False)
+                enableDomainSplit(True)
+                Select Case CType(tool.OwnerItem, ToolStripMenuItem).DropDownItems.IndexOf(tool)
+                    Case 1
+                        EtudCrit = New Critere(BDD.champsDECIIN, "ABONDON")
+                        RepartCrit = BDD.champsCodeGroupe
+                        xTitle = "Groupe"
+                        GroupeSpliter.Enabled = False
+                        inclusive = True
+                        requireFields(True)
+                    Case 0
+                        EtudCrit = New Critere(BDD.champsDECIIN, "ABONDON")
+                        RepartCrit = BDD.champsNiveau
+                        xTitle = "Niveau"
+                        NiveauSpliter.Enabled = False
+                End Select
             Case 6
                 yTitle = "Nombre des étudiants"
                 TXT_MOYSEUIL.Enabled = True
-                PictureBox3.Visible = True
                 enableRepartSplit(False)
                 enableDomainSplit(True)
                 Select Case CType(tool.OwnerItem, ToolStripMenuItem).DropDownItems.IndexOf(tool)
@@ -467,12 +485,14 @@ Public Class StatistiquePage
                         RepartCrit = BDD.champsNiveau
                         xTitle = "Niveau"
                         NiveauSpliter.Enabled = False
+                        MoyenneAlert.Visible = True
                     Case 1
                         RepartCrit = BDD.champsCodeGroupe
                         xTitle = "Groupe"
                         GroupeSpliter.Enabled = False
                         inclusive = True
                         requireFields(True)
+                        MoyenneAlert.Visible = True
                     Case 2
                         RepartCrit = BDD.champsCodeSection
                         xTitle = "Section"
@@ -480,6 +500,7 @@ Public Class StatistiquePage
                         GroupeSpliter.Enabled = False
                         inclusive = True
                         requireFields(True)
+                        MoyenneAlert.Visible = True
                 End Select
 
                 EtudCrit = New Critere(BDD.champsMOYEIN, "")
@@ -549,13 +570,13 @@ Public Class StatistiquePage
             CHB_SECTION.Enabled = False
         End If
 
-            If RepartCrit.Equals(BDD.champsCodeGroupe) Or RepartCrit.Equals(BDD.champsCodeSection) Then
-                CHB_GROUPE.Items.Clear()
-                GroupeSpliter.Enabled = False
-            Else
-                GroupeSpliter.Enabled = enbl
-            End If
-        
+        If RepartCrit.Equals(BDD.champsCodeGroupe) Or RepartCrit.Equals(BDD.champsCodeSection) Then
+            CHB_GROUPE.Items.Clear()
+            GroupeSpliter.Enabled = False
+        Else
+            GroupeSpliter.Enabled = enbl
+        End If
+
         If GROUPELabel.ImageIndex = 1 Then
             Label_Click(GROUPELabel, New EventArgs())
         End If
@@ -564,20 +585,58 @@ Public Class StatistiquePage
         End If
     End Sub
 
-    Private Sub PictureBox1_VisibleChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ANNEEAlert.VisibleChanged, SPECIALITEAlert.VisibleChanged, NIVEAUAlert.VisibleChanged, PictureBox3.VisibleChanged
-        'Dim AvertTip As ToolTip = New ToolTip()
+    Private Sub PictureBox1_VisibleChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ANNEEAlert.VisibleChanged, SPECIALITEAlert.VisibleChanged, NIVEAUAlert.VisibleChanged, MoyenneAlert.VisibleChanged
+        Dim AvertTip As ToolTip = New ToolTip
+        Select Case CType(sender, PictureBox).Name
+            Case "NIVEAUAlert"
+                AvertTip = NIVEAUAvertTip
+            Case "SPECIALITEAlert"
+                AvertTip = SPECIALITEAvertTip
+            Case "ANNEEAlert"
+                AvertTip = ANNEEAvertTip
+            Case "MoyenneAlert"
+                AvertTip = MoyenneAvertTip
+        End Select
+
         AvertTip.IsBalloon = True
+        'AvertTip.ShowAlways = True
         If CType(sender, PictureBox).Visible Then
-            If Not AvertTip.Active Then
-                AvertTip.SetToolTip(sender, AlertPicture(CType(sender, PictureBox)))
-                AvertTip.Active = True
-                AvertTip.ShowAlways = True
-                NiveauAlert_MouseHover(CType(sender, PictureBox), New EventArgs())
-                'OnMouseHover(New EventArgs()) 'CType(sender, PictureBox))
-            End If
+            With AvertTip '.First(Function(x As ToolTip) (CType(sender, PictureBox).Name.Replace("Alert", "") + "AvertTip"))
+
+                If RepartCrit.Equals(BDD.champsCOMAMA) Then
+                    If CType(sender, PictureBox).Name.Equals("SPECIALITEAlert") Then
+                        .Active = True
+                        .SetToolTip(CType(sender, PictureBox), "choisir au moins un niveau, une specialite ou une annee")
+                        .Show("choisir au moins un niveau, une specialite ou une annee", CType(sender, PictureBox)) ', CType(sender, PictureBox).Location.X, CType(sender, PictureBox).Location.Y)
+                    Else
+                        .Active = False
+                    End If
+                Else
+                    .Active = True
+                    .SetToolTip(CType(sender, PictureBox), AlertPicture(CType(sender, PictureBox)))
+                    .Show(AlertPicture(CType(sender, PictureBox)), CType(sender, PictureBox)) ', CType(sender, PictureBox).Location.X, CType(sender, PictureBox).Location.Y)
+                End If
+
+            End With
+            'If Not NIVEAUAvertTip.Active Then
+            'AvertTip.SetToolTip(sender, IIf(RepartCrit.Equals(BDD.champsCOMAMA), "Vous devez choisir au moins un niveau ou une specialite ou une annee", AlertPicture(CType(sender, PictureBox))))
+            'ErrorProvider1.SetError(CType(sender, Control), AlertPicture(CType(sender, PictureBox)))
+            'ErrorProvider1.Icon = Nothing
+
+            'AvertTip.ShowAlways = True
+
+            'NiveauAlert_MouseHover(CType(sender, PictureBox), New EventArgs())
+            'OnMouseHover(New EventArgs()) 'CType(sender, PictureBox))
+            'End If
         Else
-            AvertTip.Active = False
-            AvertTip.ShowAlways = True
+            With AvertTip 'tooltips.Item(AlertPicture.Keys.ToList.IndexOf(sender)) '(Function(x As ToolTip) (CType(sender, PictureBox).Name.Replace("Alert", "") + "AvertTip"))
+                .Active = False
+                '.Show(IIf(RepartCrit.Equals(BDD.champsCOMAMA), "Vous devez choisir au moins un niveau ou une specialite ou une annee", AlertPicture(CType(sender, PictureBox))), Me, CType(sender, PictureBox).Location.X, CType(sender, PictureBox).Location.Y - 35, 4000)
+            End With
+            'NIVEAUAvertTip.Active = False
+
+            'AvertTip.ShowAlways = False
+            'NIVEAUAvertTip.Hide(Me)
         End If
         'If Obligatoryinput.Count > 0 Then
         '    Obligatoryinput.Find(Function(x As CheckedListBox) CType(x, CheckedListBox).Name.Contains(CType(sender, PictureBox).Name.Replace("Alert", ""))).Enabled = Not CType(sender, PictureBox).Visible
@@ -610,15 +669,15 @@ Public Class StatistiquePage
                 StatistiquesPanel.Controls.Item(elm.Name.Substring(4) + "Alert").Visible = rqrd And IIf(inclusive, elm.CheckedItems.Count = 0, True)
             Next
         Else
-                For Each elm As Control In StatistiquesPanel.Controls.OfType(Of PictureBox)()
-                    elm.Visible = False
-                Next
+            For Each elm As Control In StatistiquesPanel.Controls.OfType(Of PictureBox)()
+                elm.Visible = False
+            Next
         End If
     End Sub
 
     Private Sub TXT_MOYSEUIL_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TXT_MOYSEUIL.KeyPress
         Dim c As Char = e.KeyChar
-        PictureBox3.Visible = TXT_MOYSEUIL.Text.Equals("")
+        MoyenneAlert.Visible = TXT_MOYSEUIL.Text.Equals("")
         If TXT_MOYSEUIL.Text.Count = 5 And Not AscW(c) = 8 Then
             e.Handled = True
             Return
@@ -657,6 +716,9 @@ Public Class StatistiquePage
         For Each elm As Critere In lst
             Select Case elm.getChamps
                 Case BDD.champsNiveau
+                    If lst.Count = 1 Then
+                        n += "Niveau "
+                    End If
                 Case BDD.champsOption
 
                 Case BDD.champsAnnee
@@ -668,6 +730,9 @@ Public Class StatistiquePage
             End Select
             n += elm.getValeur.ToString + IIf(lst.IndexOf(elm) = lst.Count - 1, "", "/")
         Next
+        If lst.Count = 0 Then
+            n = "Graphe 1"
+        End If
         Return n
     End Function
 
@@ -754,13 +819,13 @@ Public Class StatistiquePage
     End Sub
 
 
-    Private Sub NiveauAlert_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SPECIALITEAlert.MouseHover, PictureBox3.MouseHover, NIVEAUAlert.MouseHover, ANNEEAlert.MouseHover
-        AvertTip.IsBalloon = True
+    Private Sub NiveauAlert_MouseHover(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SPECIALITEAlert.MouseHover, MoyenneAlert.MouseHover, NIVEAUAlert.MouseHover, ANNEEAlert.MouseHover
+        NIVEAUAvertTip.IsBalloon = True
         'AvertTip_Popup(AvertTip, New PopupEventArgs(Me,sender,ture,)
     End Sub
 
-    Private Sub AvertTip_Popup(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PopupEventArgs) Handles AvertTip.Popup
-        AvertTip.IsBalloon = True
+    Private Sub AvertTip_Popup(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PopupEventArgs) Handles NIVEAUAvertTip.Popup
+        NIVEAUAvertTip.IsBalloon = True
     End Sub
 
 End Class

@@ -4,16 +4,16 @@ Imports System.IO
 <Serializable()>
 Public Class InfosGenerales
 
-    Public wilayaactuelle As DataTable
-    Public wilayaNaissanceArabe As DataTable
-    Public codewilayaN As DataTable
-    Public codesPostales As DataTable
-    Public wilayaBAC As DataTable
+    Public wilayaactuelle As DataTable = Nothing
+    Public wilayaNaissanceArabe As DataTable = Nothing
+    Public codewilayaN As DataTable = Nothing
+    Public codesPostales As DataTable = Nothing
+    Public wilayaBAC As DataTable = Nothing
 
-    Public section As DataTable
-    Public groupe As DataTable
-    Public matiere As DataTable
-    Public seribac As DataTable
+    Public section As DataTable = Nothing
+    Public groupe As DataTable = Nothing
+    Public matiere As DataTable = Nothing
+    Public seribac As DataTable = Nothing
 
     Public Shared sexe() As String = {"Autre", "Homme", "Femme"}
     Public Shared specialite() As String = {"TRC", "SI", "SIQ"}
@@ -67,6 +67,57 @@ Public Class InfosGenerales
         Dim formatter As New BinaryFormatter
         formatter.Serialize(stream, Me)
         stream.Close()
+    End Sub
+
+    Public Function isEmpty() As Boolean
+
+
+        Return (wilayaactuelle Is Nothing Or wilayaBAC Is Nothing Or wilayaNaissanceArabe Is Nothing Or codesPostales Is Nothing Or codewilayaN Is Nothing Or section Is Nothing Or groupe Is Nothing Or seribac Is Nothing Or promo Is Nothing)
+
+
+    End Function
+
+    Public Sub reFill()
+
+        If wilayaactuelle Is Nothing Then
+
+            wilayaactuelle = Recherche.GetALL(BDD.champsWILAYA, BDD.nomTableEtudiant)
+            wilayaactuelle.PrimaryKey = {wilayaactuelle.Columns.Item(BDD.champsWILAYA)}
+        End If
+
+        If wilayaNaissanceArabe Is Nothing Then
+
+            wilayaNaissanceArabe = Recherche.GetALL(BDD.champsWilayaNaisA, BDD.nomTableEtudiant)
+            wilayaNaissanceArabe.PrimaryKey = {wilayaNaissanceArabe.Columns.Item(BDD.champsWilayaNaisA)}
+        End If
+
+        If codewilayaN Is Nothing Then
+            codewilayaN = Recherche.GetALL(BDD.champsWILNAIS, BDD.nomTableEtudiant)
+            codewilayaN.PrimaryKey = {codewilayaN.Columns.Item(BDD.champsWILNAIS)}
+        End If
+
+        If wilayaBAC Is Nothing Then
+            wilayaBAC = Recherche.GetALL(BDD.champsWILBAC, BDD.nomTableEtudiant)
+            wilayaBAC.PrimaryKey = {wilayaBAC.Columns.Item(BDD.champsWILBAC)}
+        End If
+
+        If seribac Is Nothing Then
+            seribac = Recherche.GetALL(BDD.champsSERIEBAC, BDD.nomTableEtudiant)
+        End If
+
+        If groupe Is Nothing Then
+            groupe = Recherche.GetALL(BDD.champsCodeGroupe, BDD.nomTableGROUP)
+        End If
+        If section Is Nothing Then
+            section = Recherche.GetALL(BDD.champsCodeSection, BDD.nomTableSection)
+
+        End If
+        If matiere Is Nothing Then
+            matiere = Recherche.GetALL(BDD.champsCOMAMA, BDD.nomTableMATIERE)
+        End If
+
+
+
     End Sub
 
 

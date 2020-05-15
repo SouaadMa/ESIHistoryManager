@@ -19,6 +19,35 @@
         BT_GENERALINFO.Checked = True
         'initialiser les criteres de laffichage avant modification
 
+        'initialiser :
+
+        'inisialiser les wilayas combobox
+
+
+        Me.CB_WILAYA.DisplayMember = Login.Infosgenerale.wilayaactuelle.Columns(0).ToString
+        Me.CB_WILAYAN.DisplayMember = Login.Infosgenerale.codewilayaN.Columns(0).ToString
+        Me.CB_WILAYANA.DisplayMember = Login.Infosgenerale.wilayaNaissanceArabe.Columns(0).ToString
+
+
+        Me.CB_WILAYA.ValueMember = Login.Infosgenerale.wilayaactuelle.Columns(0).ToString
+        Me.CB_WILAYAN.ValueMember = Login.Infosgenerale.codewilayaN.Columns(0).ToString
+        Me.CB_WILAYANA.ValueMember = Login.Infosgenerale.wilayaNaissanceArabe.Columns(0).ToString
+
+
+        Me.CB_WILAYA.DataSource = Login.Infosgenerale.wilayaactuelle
+        Me.CB_WILAYAN.DataSource = Login.Infosgenerale.codewilayaN
+        Me.CB_WILAYANA.DataSource = Login.Infosgenerale.wilayaNaissanceArabe
+
+        'inisialize sexe combobox 
+
+        For Each Critere As String In InfosGenerales.sexe
+            Me.CB_SEXE.Items.Add(Critere)
+        Next
+
+
+
+
+
         'initialiser etudiant
 
 
@@ -36,37 +65,13 @@
         Me.CB_SEXE.Text = InfosGenerales.sexe(CInt(esistselect.GetInfoChamps(BDD.champsSEXE)))
         Me.TXT_VILLE.Text = esistselect.GetInfoChamps(BDD.champsVILLE)
         Me.CB_WILAYA.Text = esistselect.GetInfoChamps(BDD.champsWILAYA)
-        Me.CB_WILAYAN.Text = esistselect.GetInfoChamps(BDD.champsLieuNaisA)
+        Me.CB_WILAYAN.Text = esistselect.GetInfoChamps(BDD.champsWILNAIS)
         Me.CB_WILAYANA.Text = esistselect.GetInfoChamps(BDD.champsWilayaNaisA)
 
 
         Me.DTP_DATENAIS.Visible = False
 
-        'initialiser :
-
-        'inisialiser les wilayas combobox
-
-
-        Me.CB_WILAYA.DisplayMember = Login.Infosgenerale.wilaya.Columns(0).ToString
-        Me.CB_WILAYAN.DisplayMember = Login.Infosgenerale.codewilaya.Columns(0).ToString
-        Me.CB_WILAYANA.DisplayMember = Login.Infosgenerale.wilaya.Columns(0).ToString
-
-
-        Me.CB_WILAYA.ValueMember = Login.Infosgenerale.wilaya.Columns(0).ToString
-        Me.CB_WILAYAN.ValueMember = Login.Infosgenerale.codewilaya.Columns(0).ToString
-        Me.CB_WILAYANA.ValueMember = Login.Infosgenerale.wilaya.Columns(0).ToString
-
-
-        Me.CB_WILAYA.DataSource = Login.Infosgenerale.wilaya
-        Me.CB_WILAYAN.DataSource = Login.Infosgenerale.codewilaya
-        Me.CB_WILAYANA.DataSource = Login.Infosgenerale.wilaya
-
-            'inisialize sexe combobox 
-
-            For Each Critere As String In InfosGenerales.sexe
-                Me.CB_SEXE.Items.Add(Critere)
-            Next
-
+        
             'boutton modifier 
             BT_MODIFIER.Enabled = False
 
@@ -173,26 +178,26 @@
 
             If Me.CB_WILAYA.Text <> esistselect.GetInfoChamps(BDD.champsWILAYA) And Me.CB_WILAYA.Text <> "" Then
                 collection_critere.Add(New Critere(BDD.champsWILAYA, Me.CB_WILAYA.Text, BDD.nomTableEtudiant))
-                If (Login.Infosgenerale.wilaya.Rows.Contains(Me.CB_WILAYA.Text) = False) Then
+                If (Login.Infosgenerale.wilayaactuelle.Rows.Contains(Me.CB_WILAYA.Text) = False) Then
 
-                    Login.Infosgenerale.wilaya.LoadDataRow({Me.CB_WILAYA.Text}, LoadOption.Upsert)
+                    Login.Infosgenerale.wilayaactuelle.LoadDataRow({Me.CB_WILAYA.Text}, LoadOption.Upsert)
 
                 End If
             End If
 
-            If Me.CB_WILAYAN.Text <> esistselect.GetInfoChamps(BDD.champsLieuNaisA) And Me.CB_WILAYAN.Text <> "" Then
-                collection_critere.Add(New Critere(BDD.champsLieuNaisA, Me.CB_WILAYAN.Text, BDD.nomTableEtudiant))
-                If (Login.Infosgenerale.codewilaya.Rows.Contains(Me.CB_WILAYAN.Text) = False) Then
+            If Me.CB_WILAYAN.Text <> esistselect.GetInfoChamps(BDD.champsWILNAIS) And Me.CB_WILAYAN.Text <> "" Then
+                collection_critere.Add(New Critere(BDD.champsWILNAIS, Me.CB_WILAYAN.Text, BDD.nomTableEtudiant))
+                If (Login.Infosgenerale.codewilayaN.Rows.Contains(Me.CB_WILAYAN.Text) = False) Then
 
-                    Login.Infosgenerale.codewilaya.LoadDataRow({Me.CB_WILAYAN.Text}, LoadOption.Upsert)
+                    Login.Infosgenerale.codewilayaN.LoadDataRow({Me.CB_WILAYAN.Text}, LoadOption.Upsert)
 
                 End If
             End If
 
             If Me.CB_WILAYANA.Text <> esistselect.GetInfoChamps(BDD.champsWilayaNaisA) And Me.CB_WILAYANA.Text <> "" Then
                 collection_critere.Add(New Critere(BDD.champsWilayaNaisA, Me.CB_WILAYANA.Text, BDD.nomTableEtudiant))
-                If (Login.Infosgenerale.wilayaarabe.Rows.Contains(Me.CB_WILAYANA.Text) = False) Then
-                    Login.Infosgenerale.wilayaarabe.LoadDataRow({Me.CB_WILAYANA.Text}, LoadOption.Upsert)
+                If (Login.Infosgenerale.wilayaNaissanceArabe.Rows.Contains(Me.CB_WILAYANA.Text) = False) Then
+                    Login.Infosgenerale.wilayaNaissanceArabe.LoadDataRow({Me.CB_WILAYANA.Text}, LoadOption.Upsert)
                 End If
             End If
 
@@ -206,12 +211,14 @@
                 For Each Critere As Critere In collection_critere
                     CType(Home.f, affichResearchResult).StudentTable.Rows.Item(CType(Home.f, affichResearchResult).SelectedStudent - 1)(Critere.getChamps) = Critere.getValeur
                     Console.WriteLine(CType(Home.f, affichResearchResult).SelectedStudent.ToString)
+
                 Next
                 CType(Home.f, affichResearchResult).StudentList.Clear()
                 CType(Home.f, affichResearchResult).affich_pageResult()
                 CType(Home.f, affichResearchResult).TableLayoutPanel1_Leave(TableLayoutPanel1, New EventArgs())
             End If
         End If
+        modifier_Load(Me, e)
         BT_MODIFIER.Enabled = False
     End Sub
 

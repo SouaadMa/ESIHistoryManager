@@ -24,9 +24,11 @@ Partial Class modifier
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(modifier))
         Me.PN_MODIFIER = New System.Windows.Forms.Panel()
+        Me.SortirButton = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.BT_SORTIR = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Worning = New System.Windows.Forms.Label()
         Me.BT_MODIFIER = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.BT_GENERALINFO = New System.Windows.Forms.RadioButton()
@@ -85,8 +87,6 @@ Partial Class modifier
         Me.Panel22 = New System.Windows.Forms.Panel()
         Me.LB_CODEPOS = New System.Windows.Forms.Label()
         Me.TXT_CODEPOS = New System.Windows.Forms.TextBox()
-        Me.SortirButton = New System.Windows.Forms.Button()
-        Me.Worning = New System.Windows.Forms.Label()
         Me.PN_MODIFIER.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -117,15 +117,30 @@ Partial Class modifier
         '
         Me.PN_MODIFIER.BackColor = System.Drawing.Color.Transparent
         Me.PN_MODIFIER.Controls.Add(Me.SortirButton)
-        Me.PN_MODIFIER.Controls.Add(Me.Panel1)
         Me.PN_MODIFIER.Controls.Add(Me.Worning)
         Me.PN_MODIFIER.Controls.Add(Me.BT_MODIFIER)
         Me.PN_MODIFIER.Controls.Add(Me.Panel3)
         Me.PN_MODIFIER.Controls.Add(Me.TAB_PAGES)
+        Me.PN_MODIFIER.Controls.Add(Me.Panel1)
         Me.PN_MODIFIER.Location = New System.Drawing.Point(0, 0)
         Me.PN_MODIFIER.Name = "PN_MODIFIER"
         Me.PN_MODIFIER.Size = New System.Drawing.Size(678, 640)
         Me.PN_MODIFIER.TabIndex = 2
+        '
+        'SortirButton
+        '
+        Me.SortirButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.SortirButton.FlatAppearance.BorderSize = 0
+        Me.SortirButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SortirButton.Font = New System.Drawing.Font("Cambria", 13.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SortirButton.ForeColor = System.Drawing.Color.White
+        Me.SortirButton.Location = New System.Drawing.Point(31, 585)
+        Me.SortirButton.Name = "SortirButton"
+        Me.SortirButton.Size = New System.Drawing.Size(160, 34)
+        Me.SortirButton.TabIndex = 52
+        Me.SortirButton.Text = "Sortir"
+        Me.SortirButton.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.SortirButton.UseVisualStyleBackColor = False
         '
         'Panel1
         '
@@ -166,6 +181,19 @@ Partial Class modifier
         Me.Label1.Size = New System.Drawing.Size(355, 25)
         Me.Label1.TabIndex = 12
         Me.Label1.Text = "Modifer les informations de l'étudiant"
+        '
+        'Worning
+        '
+        Me.Worning.AutoSize = True
+        Me.Worning.BackColor = System.Drawing.Color.Transparent
+        Me.Worning.Font = New System.Drawing.Font("Cambria", 10.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Worning.ForeColor = System.Drawing.Color.Firebrick
+        Me.Worning.Location = New System.Drawing.Point(396, 593)
+        Me.Worning.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Worning.Name = "Worning"
+        Me.Worning.Size = New System.Drawing.Size(11, 17)
+        Me.Worning.TabIndex = 13
+        Me.Worning.Text = " "
         '
         'BT_MODIFIER
         '
@@ -668,7 +696,6 @@ Partial Class modifier
         Me.CB_WILAYAN.Size = New System.Drawing.Size(210, 25)
         Me.CB_WILAYAN.TabIndex = 85
         Me.CB_WILAYAN.Text = "Wilaya de naissance"
-        Me.CB_WILAYAN.Visible = False
         '
         'Panel17
         '
@@ -704,7 +731,6 @@ Partial Class modifier
         Me.TXT_LIEUNA.Size = New System.Drawing.Size(209, 16)
         Me.TXT_LIEUNA.TabIndex = 82
         Me.TXT_LIEUNA.Text = "مكان الميلاد"
-        Me.TXT_LIEUNA.Visible = False
         '
         'Panel18
         '
@@ -874,34 +900,6 @@ Partial Class modifier
         Me.TXT_CODEPOS.Size = New System.Drawing.Size(210, 16)
         Me.TXT_CODEPOS.TabIndex = 84
         Me.TXT_CODEPOS.Text = "code postale"
-        '
-        'SortirButton
-        '
-        Me.SortirButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.SortirButton.FlatAppearance.BorderSize = 0
-        Me.SortirButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SortirButton.Font = New System.Drawing.Font("Cambria", 13.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SortirButton.ForeColor = System.Drawing.Color.White
-        Me.SortirButton.Location = New System.Drawing.Point(31, 585)
-        Me.SortirButton.Name = "SortirButton"
-        Me.SortirButton.Size = New System.Drawing.Size(160, 34)
-        Me.SortirButton.TabIndex = 52
-        Me.SortirButton.Text = "Sortir"
-        Me.SortirButton.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.SortirButton.UseVisualStyleBackColor = False
-        '
-        'Worning
-        '
-        Me.Worning.AutoSize = True
-        Me.Worning.BackColor = System.Drawing.Color.Transparent
-        Me.Worning.Font = New System.Drawing.Font("Cambria", 10.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Worning.ForeColor = System.Drawing.Color.Firebrick
-        Me.Worning.Location = New System.Drawing.Point(396, 593)
-        Me.Worning.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Worning.Name = "Worning"
-        Me.Worning.Size = New System.Drawing.Size(11, 17)
-        Me.Worning.TabIndex = 13
-        Me.Worning.Text = " "
         '
         'modifier
         '

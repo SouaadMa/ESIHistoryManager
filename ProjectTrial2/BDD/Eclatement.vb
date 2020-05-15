@@ -10,6 +10,8 @@ Public Class ECLATEMENT
     Dim ST As String = "/"
     Dim REQUETE, CONDITION, SQL1, SQL2, Champs, CnxSource As String
     Dim strProvider As String, strSQL As String, intResult As Integer
+    Public worker As System.ComponentModel.BackgroundWorker
+    Public progress As Integer = 5
 
 
 
@@ -23,6 +25,7 @@ Public Class ECLATEMENT
 
 
     Public Sub ECLATEMENT_NORMAL(ByVal F_ACCESS As String, ByVal EXCEL_INSCRIT As String, ByVal EXCEL_NOTE As String, ByVal EXCEL_MATIERE As String, ByVal EXCEL_RATRAP As String)
+        worker.ReportProgress(CInt(progress))
         Call Eclatement_FROM_EXCEL("INSCRIPTION", F_ACCESS, EXCEL_INSCRIT)
         Call Eclatement_FROM_EXCEL("ETUDIANT", F_ACCESS, EXCEL_INSCRIT)
         Call Eclatement_FROM_EXCEL("MATIERE", F_ACCESS, EXCEL_MATIERE)
@@ -74,7 +77,9 @@ Public Class ECLATEMENT
                 ta = New OleDbDataAdapter(cmd)
 
                 ta.Fill(dts) ' fill le data set par le résultat de l'éxécution de requete ( de data adapter ) 
-                MsgBox(TABLE)
+                'MsgBox(TABLE)
+                progress += 5
+                worker.ReportProgress(CInt(progress))
 
             Catch ex As Exception
 
@@ -170,8 +175,9 @@ Public Class ECLATEMENT
                     intResult = myCmd.ExecuteNonQuery()
                 End Using '...myCmd
             End Using '...myCon
-            MessageBox.Show(TABLE)
-
+            'MessageBox.Show(TABLE)
+            progress += 5
+            worker.ReportProgress(CInt(progress))
 
         Catch ex As Exception
 
@@ -256,8 +262,9 @@ Public Class ECLATEMENT
                     intResult = myCmd.ExecuteNonQuery()
                 End Using '...myCmd
             End Using '...myCon
-            MessageBox.Show("finish")
-
+            'MessageBox.Show("finish")
+            progress += 5
+            worker.ReportProgress(CInt(progress))
 
         Catch ex As Exception
 
@@ -330,8 +337,9 @@ Public Class ECLATEMENT
                     intResult = myCmd.ExecuteNonQuery()
                 End Using '...myCmd
             End Using '...myCon
-            MessageBox.Show("finish")
-
+            'MessageBox.Show("finish")
+            progress += 5
+            worker.ReportProgress(CInt(progress))
 
         Catch ex As Exception
 
@@ -348,7 +356,8 @@ Public Class ECLATEMENT
 
 
     Public Sub RECHARGEMENT(ByVal F_ACCESS As String)
-
+        progress += 2
+        worker.ReportProgress(CInt(progress))
         Call RECHARGEMENT_FROM_ACV(F_ACCESS)
         Call FILTRE_ACV(F_ACCESS)
 
@@ -436,7 +445,8 @@ Public Class ECLATEMENT
                 ta = New OleDbDataAdapter(cmd)
 
                 ta.Fill(dts) ' fill le data set par le résultat de l'éxécution de requete ( de data adapter ) 
-
+                progress += 7
+                worker.ReportProgress(CInt(progress))
 
             Catch ex As Exception
 
@@ -495,6 +505,9 @@ Public Class ECLATEMENT
                 ta = New OleDbDataAdapter(cmd)
 
                 ta.Fill(dts) ' fill le data set par le résultat de l'éxécution de requete ( de data adapter ) 
+
+                progress += 7
+                worker.ReportProgress(CInt(progress))
 
             Catch ex As Exception
 

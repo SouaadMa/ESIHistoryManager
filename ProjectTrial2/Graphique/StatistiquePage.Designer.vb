@@ -24,10 +24,10 @@ Partial Class StatistiquePage
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(StatistiquePage))
-        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim Title2 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Title1 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
         Me.StatistiquesPanel = New System.Windows.Forms.Panel()
         Me.ANNEEAlert = New System.Windows.Forms.PictureBox()
         Me.SPECIALITEAlert = New System.Windows.Forms.PictureBox()
@@ -65,7 +65,6 @@ Partial Class StatistiquePage
         Me.ToolStripMenuItem10 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem11 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripItem4 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem15 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem16 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem17 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator13 = New System.Windows.Forms.ToolStripSeparator()
@@ -88,7 +87,7 @@ Partial Class StatistiquePage
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SeuilLabel = New System.Windows.Forms.Label()
         Me.TXT_MOYSEUIL = New System.Windows.Forms.TextBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.MoyenneAlert = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.CB_CHARTKIND = New System.Windows.Forms.ComboBox()
         Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -142,7 +141,10 @@ Partial Class StatistiquePage
         Me.toolStripSeparator11 = New System.Windows.Forms.ToolStripSeparator()
         Me.AboutToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.AvertTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.NIVEAUAvertTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.SPECIALITEAvertTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ANNEEAvertTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.MoyenneAvertTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.StatistiquesPanel.SuspendLayout()
         CType(Me.ANNEEAlert, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SPECIALITEAlert, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -179,7 +181,7 @@ Partial Class StatistiquePage
         Me.SexeSpliter.Panel1.SuspendLayout()
         Me.SexeSpliter.Panel2.SuspendLayout()
         Me.SexeSpliter.SuspendLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MoyenneAlert, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -203,7 +205,7 @@ Partial Class StatistiquePage
         Me.StatistiquesPanel.Controls.Add(Me.TitlePanel)
         Me.StatistiquesPanel.Controls.Add(Me.SeuilLabel)
         Me.StatistiquesPanel.Controls.Add(Me.TXT_MOYSEUIL)
-        Me.StatistiquesPanel.Controls.Add(Me.PictureBox3)
+        Me.StatistiquesPanel.Controls.Add(Me.MoyenneAlert)
         Me.StatistiquesPanel.Controls.Add(Me.Label2)
         Me.StatistiquesPanel.Controls.Add(Me.CB_CHARTKIND)
         Me.StatistiquesPanel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -643,7 +645,7 @@ Partial Class StatistiquePage
         '
         Me.ToolStripItem4.CheckOnClick = True
         Me.ToolStripItem4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.ToolStripItem4.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem15, Me.ToolStripMenuItem16, Me.ToolStripMenuItem17})
+        Me.ToolStripItem4.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem16, Me.ToolStripMenuItem17})
         Me.ToolStripItem4.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
         Me.ToolStripItem4.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ToolStripItem4.Name = "ToolStripItem4"
@@ -651,20 +653,12 @@ Partial Class StatistiquePage
         Me.ToolStripItem4.Text = "Taux d'Abondance et Maladie par"
         Me.ToolStripItem4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'ToolStripMenuItem15
-        '
-        Me.ToolStripMenuItem15.CheckOnClick = True
-        Me.ToolStripMenuItem15.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.ToolStripMenuItem15.Name = "ToolStripMenuItem15"
-        Me.ToolStripMenuItem15.Size = New System.Drawing.Size(130, 24)
-        Me.ToolStripMenuItem15.Text = "Matière"
-        '
         'ToolStripMenuItem16
         '
         Me.ToolStripMenuItem16.CheckOnClick = True
         Me.ToolStripMenuItem16.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.ToolStripMenuItem16.Name = "ToolStripMenuItem16"
-        Me.ToolStripMenuItem16.Size = New System.Drawing.Size(130, 24)
+        Me.ToolStripMenuItem16.Size = New System.Drawing.Size(128, 24)
         Me.ToolStripMenuItem16.Text = "Niveau"
         '
         'ToolStripMenuItem17
@@ -672,7 +666,7 @@ Partial Class StatistiquePage
         Me.ToolStripMenuItem17.CheckOnClick = True
         Me.ToolStripMenuItem17.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.ToolStripMenuItem17.Name = "ToolStripMenuItem17"
-        Me.ToolStripMenuItem17.Size = New System.Drawing.Size(130, 24)
+        Me.ToolStripMenuItem17.Size = New System.Drawing.Size(128, 24)
         Me.ToolStripMenuItem17.Text = "Groupe"
         '
         'ToolStripSeparator13
@@ -729,55 +723,55 @@ Partial Class StatistiquePage
         Me.Chart1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.Chart1.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center
         Me.Chart1.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Scaled
-        ChartArea2.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver
-        ChartArea2.AxisX.MajorTickMark.LineColor = System.Drawing.Color.Silver
-        ChartArea2.AxisX.MinorGrid.LineColor = System.Drawing.Color.Silver
-        ChartArea2.AxisX.Title = "x"
-        ChartArea2.AxisX.TitleAlignment = System.Drawing.StringAlignment.Far
-        ChartArea2.AxisX.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ChartArea2.AxisX2.MajorGrid.LineColor = System.Drawing.Color.Silver
-        ChartArea2.AxisX2.MajorTickMark.LineColor = System.Drawing.Color.Silver
-        ChartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver
-        ChartArea2.AxisY.MajorTickMark.LineColor = System.Drawing.Color.Silver
-        ChartArea2.AxisY.Title = "y"
-        ChartArea2.AxisY.TitleAlignment = System.Drawing.StringAlignment.Far
-        ChartArea2.AxisY.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Italic)
-        ChartArea2.AxisY2.MajorGrid.LineColor = System.Drawing.Color.Silver
-        ChartArea2.AxisY2.MajorTickMark.LineColor = System.Drawing.Color.Silver
-        ChartArea2.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Scaled
-        ChartArea2.Name = "ChartArea4"
-        Me.Chart1.ChartAreas.Add(ChartArea2)
-        Legend2.BorderColor = System.Drawing.Color.Silver
-        Legend2.BorderWidth = 2
-        Legend2.IsEquallySpacedItems = True
-        Legend2.ItemColumnSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.Line
-        Legend2.Name = "Legend1"
-        Legend2.Title = "légende"
-        Legend2.TitleBackColor = System.Drawing.Color.Gainsboro
-        Legend2.TitleSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.ThickLine
-        Legend2.TitleSeparatorColor = System.Drawing.Color.DarkGray
-        Me.Chart1.Legends.Add(Legend2)
+        ChartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver
+        ChartArea1.AxisX.MajorTickMark.LineColor = System.Drawing.Color.Silver
+        ChartArea1.AxisX.MinorGrid.LineColor = System.Drawing.Color.Silver
+        ChartArea1.AxisX.Title = "x"
+        ChartArea1.AxisX.TitleAlignment = System.Drawing.StringAlignment.Far
+        ChartArea1.AxisX.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea1.AxisX2.MajorGrid.LineColor = System.Drawing.Color.Silver
+        ChartArea1.AxisX2.MajorTickMark.LineColor = System.Drawing.Color.Silver
+        ChartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver
+        ChartArea1.AxisY.MajorTickMark.LineColor = System.Drawing.Color.Silver
+        ChartArea1.AxisY.Title = "y"
+        ChartArea1.AxisY.TitleAlignment = System.Drawing.StringAlignment.Far
+        ChartArea1.AxisY.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Italic)
+        ChartArea1.AxisY2.MajorGrid.LineColor = System.Drawing.Color.Silver
+        ChartArea1.AxisY2.MajorTickMark.LineColor = System.Drawing.Color.Silver
+        ChartArea1.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Scaled
+        ChartArea1.Name = "ChartArea4"
+        Me.Chart1.ChartAreas.Add(ChartArea1)
+        Legend1.BorderColor = System.Drawing.Color.Silver
+        Legend1.BorderWidth = 2
+        Legend1.IsEquallySpacedItems = True
+        Legend1.ItemColumnSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.Line
+        Legend1.Name = "Legend1"
+        Legend1.Title = "légende"
+        Legend1.TitleBackColor = System.Drawing.Color.Gainsboro
+        Legend1.TitleSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.ThickLine
+        Legend1.TitleSeparatorColor = System.Drawing.Color.DarkGray
+        Me.Chart1.Legends.Add(Legend1)
         Me.Chart1.Location = New System.Drawing.Point(53, 1)
         Me.Chart1.Margin = New System.Windows.Forms.Padding(0)
         Me.Chart1.Name = "Chart1"
         Me.Chart1.PaletteCustomColors = New System.Drawing.Color() {System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer)), System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer)), System.Drawing.Color.DodgerBlue, System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))}
-        Series2.BorderWidth = 8
-        Series2.ChartArea = "ChartArea4"
-        Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series2.Legend = "Legend1"
-        Series2.Name = "Series1"
-        Series2.YValuesPerPoint = 4
-        Me.Chart1.Series.Add(Series2)
+        Series1.BorderWidth = 8
+        Series1.ChartArea = "ChartArea4"
+        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series1.Legend = "Legend1"
+        Series1.Name = "Series1"
+        Series1.YValuesPerPoint = 4
+        Me.Chart1.Series.Add(Series1)
         Me.Chart1.Size = New System.Drawing.Size(572, 411)
         Me.Chart1.SuppressExceptions = True
         Me.Chart1.TabIndex = 12
-        Title2.DockedToChartArea = "ChartArea4"
-        Title2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom
-        Title2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold)
-        Title2.IsDockedInsideChartArea = False
-        Title2.Name = "Title1"
-        Title2.Text = "chart1"
-        Me.Chart1.Titles.Add(Title2)
+        Title1.DockedToChartArea = "ChartArea4"
+        Title1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom
+        Title1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold)
+        Title1.IsDockedInsideChartArea = False
+        Title1.Name = "Title1"
+        Title1.Text = "chart1"
+        Me.Chart1.Titles.Add(Title1)
         '
         'BT_CHARTLOAD
         '
@@ -967,15 +961,15 @@ Partial Class StatistiquePage
         Me.TXT_MOYSEUIL.TabIndex = 39
         Me.TXT_MOYSEUIL.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'PictureBox3
+        'MoyenneAlert
         '
-        Me.PictureBox3.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
-        Me.PictureBox3.Location = New System.Drawing.Point(330, 133)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(30, 30)
-        Me.PictureBox3.TabIndex = 68
-        Me.PictureBox3.TabStop = False
-        Me.PictureBox3.Visible = False
+        Me.MoyenneAlert.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
+        Me.MoyenneAlert.Location = New System.Drawing.Point(330, 133)
+        Me.MoyenneAlert.Name = "MoyenneAlert"
+        Me.MoyenneAlert.Size = New System.Drawing.Size(30, 30)
+        Me.MoyenneAlert.TabIndex = 68
+        Me.MoyenneAlert.TabStop = False
+        Me.MoyenneAlert.Visible = False
         '
         'Label2
         '
@@ -1329,7 +1323,7 @@ Partial Class StatistiquePage
         '
         Me.ErrorProvider1.ContainerControl = Me
         '
-        'AvertTip
+        'NIVEAUAvertTip
         '
         '
         'StatistiquePage
@@ -1384,7 +1378,7 @@ Partial Class StatistiquePage
         Me.SexeSpliter.Panel2.ResumeLayout(False)
         CType(Me.SexeSpliter, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SexeSpliter.ResumeLayout(False)
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MoyenneAlert, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -1467,7 +1461,6 @@ Partial Class StatistiquePage
     Friend WithEvents ToolStripMenuItem10 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem11 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripItem4 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem15 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem16 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem17 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripSeparator13 As System.Windows.Forms.ToolStripSeparator
@@ -1498,10 +1491,13 @@ Partial Class StatistiquePage
     Friend WithEvents GROUPELabel As System.Windows.Forms.Label
     Friend WithEvents CHB_GROUPE As System.Windows.Forms.CheckedListBox
     Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
-    Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
+    Friend WithEvents MoyenneAlert As System.Windows.Forms.PictureBox
     Friend WithEvents ANNEEAlert As System.Windows.Forms.PictureBox
     Friend WithEvents SPECIALITEAlert As System.Windows.Forms.PictureBox
     Friend WithEvents NIVEAUAlert As System.Windows.Forms.PictureBox
-    Friend WithEvents AvertTip As System.Windows.Forms.ToolTip
+    Friend WithEvents NIVEAUAvertTip As System.Windows.Forms.ToolTip
     Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents SPECIALITEAvertTip As System.Windows.Forms.ToolTip
+    Friend WithEvents ANNEEAvertTip As System.Windows.Forms.ToolTip
+    Friend WithEvents MoyenneAvertTip As System.Windows.Forms.ToolTip
 End Class

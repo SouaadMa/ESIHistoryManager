@@ -1,8 +1,30 @@
-﻿Public Class RechercherPage
+﻿Imports System.Text.RegularExpressions
+
+Public Class RechercherPage
 
     Private dtp_changed As Boolean
+    Private ArabicInput As InputLanguage
+    Private LatinInput As InputLanguage
 
     Private Sub recherche_load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+        ' Set the default as the current Inputlanguage
+        ArabicInput = InputLanguage.CurrentInputLanguage
+        LatinInput = InputLanguage.CurrentInputLanguage
+        'Iterate to find the available Arabic and latin Keyboards
+        Dim count As Integer = InputLanguage.InstalledInputLanguages.Count
+        For j As Integer = 0 To (count - 1)
+            If InputLanguage.InstalledInputLanguages(j).LayoutName.Contains("Arabic") = True Then
+                'Found an Arabic Keyboard
+                ArabicInput = InputLanguage.InstalledInputLanguages(j)
+            Else
+                If InputLanguage.InstalledInputLanguages(j).LayoutName.Contains("French") Or InputLanguage.InstalledInputLanguages(j).LayoutName.Contains("English") = True Then
+                    'Found an latin Keyboard
+                    LatinInput = InputLanguage.InstalledInputLanguages(j)
+                End If
+            End If
+        Next j
+
 
         Dim i As Integer
 
@@ -18,20 +40,20 @@
 
         ' initilize recherche form
 
-        splitermain.splitterdistance = 25
+        SpliterMain.SplitterDistance = 25
 
         ' make the two containers collapse at the beginning
-        With splitcontainer1
-            .panel1collapsed = False
-            .panel2collapsed = True
+        With SplitContainer1
+            .Panel1Collapsed = False
+            .Panel2Collapsed = True
         End With
 
-        With splitcontainer2
-            .panel1collapsed = False
-            .panel2collapsed = True
+        With SplitContainer2
+            .Panel1Collapsed = False
+            .Panel2Collapsed = True
         End With
         ' make the arabic flanuge checked at the beggining
-        RechButtons.Location = New System.Drawing.Point(25, 605)
+        RechButtons.Location = New System.Drawing.Point(25, 650)
         BT_LANCERRECH.Location = New Point(380, 0)
 
         Me.PN_FORUMRECH.Dock = DockStyle.Fill   ' dock the seach form in the parent container
@@ -75,7 +97,7 @@
 
         'inisialize seri de bac combobox 
 
-        
+
 
         'inisialize annee de bac combobox 
 
@@ -84,6 +106,7 @@
         'Next
         For i = InfosGenerales.firstYear To InfosGenerales.lastYear
             Me.CB_ANNEEB.Items.Add(i)
+            Me.CB_ANNEE.Items.Add(i)
         Next
 
         ' fin initilize recherche form
@@ -243,6 +266,10 @@
 
                 If Me.TXT_MOYBAC.Text <> "" Then
                     collection_critere.Add(New Critere("MOYBAC", Me.TXT_MOYBAC.Text))
+                End If
+
+                If Me.CB_ANNEE.Text <> "" Then
+                    collection_critere.Add(New Critere(BDD.champsAnnee, CB_ANNEE.Text))
                 End If
 
                 If Me.CB_ANNEEB.Text <> "" Then
@@ -411,7 +438,7 @@
         Home.f.WindowState = FormWindowState.Normal
         Home.MainContainer1.Controls.Add(Home.f)        ' add the controlers of the searche page to the main form f 
         Home.f.Show()                                ' show the form f in the middle of the home page
-        
+
     End Sub
 
     Private Sub BackgroundWorker1_ProgressChanged(ByVal sender As System.Object, ByVal e As System.ComponentModel.ProgressChangedEventArgs) Handles BackgroundWorker1.ProgressChanged
@@ -463,5 +490,70 @@
     '    End If
     'End Sub
 
-    
+
+    Private Sub TXT_MOYBAC_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TXT_MOYBAC.KeyPress
+        Dim c As Char = e.KeyChar
+        If TXT_MOYBAC.Text.Count = 5 And Not AscW(c) = 8 Then
+            e.Handled = True
+            Return
+        End If
+        If AscW(c) = 46 And TXT_MOYBAC.Text.IndexOf(".") <> -1 Then
+            e.Handled = True
+            Return
+        End If
+        If Not Char.IsDigit(c) And Not AscW(c) = 8 And Not AscW(c) = 46 Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub TXT_NOM_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_PRENOM.Enter, TXT_PERE.Enter, TXT_NOM.Enter, TXT_MERE.Enter
+        InputLanguage.CurrentInputLanguage = LatinInput
+    End Sub
+
+    Private Sub TXT_NOMA_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_PRENOMA.Enter, TXT_NOMA.Enter
+        InputLanguage.CurrentInputLanguage = ArabicInput
+    End Sub
+
+    Private Sub TXT_NOMA_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_PRENOMA.Leave, TXT_PRENOM.Leave, TXT_PERE.Leave, TXT_NOMA.Leave, TXT_NOM.Leave, TXT_MERE.Leave, TXT_MATRICULB.Leave, TXT_MATRICUL.Leave, TXT_MATRICULB.Enter, TXT_MATRICUL.Enter
+        InputLanguage.CurrentInputLanguage = InputLanguage.DefaultInputLanguage
+    End Sub
+
+    Private Sub TXT_NOM_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TXT_PRENOMA.KeyPress, TXT_PRENOM.KeyPress, TXT_PERE.KeyPress, TXT_NOMA.KeyPress, TXT_NOM.KeyPress, TXT_MERE.KeyPress
+        Dim c As Char = e.KeyChar
+
+
+        'If  Char.IsDigit(c) And Not AscW(c) = 8 And Not AscW(c) = 32 Then
+        '    e.Handled = True
+        'Else
+        If CType(sender, Control).Name.Equals("TXT_NOMA") Or CType(sender, Control).Name.Equals("TXT_PRENOMA") Then
+            If Not Regex.IsMatch(c.ToString, "\p{IsArabic}") And Not AscW(c) = 8 And Not AscW(c) = 32 Then
+                e.Handled = True
+            End If
+        Else
+            If Not Regex.IsMatch(c.ToString, "\p{L}") And Not AscW(c) = 8 And Not AscW(c) = 32 Then
+                e.Handled = True
+            End If
+        End If
+        'End If
+        'If Char.IsPunctuation(c) Then
+        'e.Handled = True
+        'End If
+
+    End Sub
+
+    Private Sub TXT_MATRICUL_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TXT_MATRICUL.KeyPress
+        Dim c As Char = e.KeyChar
+        If TXT_MATRICUL.Text.Count = 7 And Not AscW(c) = 8 Then
+            e.Handled = True
+            Return
+        End If
+        If AscW(c) = AscW("/") And TXT_MATRICUL.Text.IndexOf("/") <> -1 Then
+            e.Handled = True
+            Return
+        End If
+        If Not Char.IsDigit(c) And Not AscW(c) = 8 And Not AscW(c) = 47 Then
+            e.Handled = True
+        End If
+    End Sub
+
 End Class

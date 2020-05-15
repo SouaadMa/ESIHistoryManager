@@ -75,6 +75,8 @@ Partial Class RechercherPage
         Me.LB_ANNEEB = New System.Windows.Forms.Label()
         Me.PN_FORUMRECH = New System.Windows.Forms.Panel()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.CB_ANNEE = New System.Windows.Forms.ComboBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.RechIntroPanel.SuspendLayout()
         Me.RechButtons.SuspendLayout()
         Me.generalesGroupBox.SuspendLayout()
@@ -123,7 +125,7 @@ Partial Class RechercherPage
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RechButtons.Controls.Add(Me.worningrech)
         Me.RechButtons.Controls.Add(Me.BT_LANCERRECH)
-        Me.RechButtons.Location = New System.Drawing.Point(24, 972)
+        Me.RechButtons.Location = New System.Drawing.Point(24, 1005)
         Me.RechButtons.MinimumSize = New System.Drawing.Size(610, 0)
         Me.RechButtons.Name = "RechButtons"
         Me.RechButtons.Size = New System.Drawing.Size(610, 91)
@@ -159,6 +161,8 @@ Partial Class RechercherPage
         '
         'generalesGroupBox
         '
+        Me.generalesGroupBox.Controls.Add(Me.CB_ANNEE)
+        Me.generalesGroupBox.Controls.Add(Me.Label7)
         Me.generalesGroupBox.Controls.Add(Me.TXT_MERE)
         Me.generalesGroupBox.Controls.Add(Me.Label5)
         Me.generalesGroupBox.Controls.Add(Me.TXT_PERE)
@@ -183,7 +187,7 @@ Partial Class RechercherPage
         Me.generalesGroupBox.Controls.Add(Me.LB_MATRICULB)
         Me.generalesGroupBox.Location = New System.Drawing.Point(18, 56)
         Me.generalesGroupBox.Name = "generalesGroupBox"
-        Me.generalesGroupBox.Size = New System.Drawing.Size(620, 493)
+        Me.generalesGroupBox.Size = New System.Drawing.Size(620, 528)
         Me.generalesGroupBox.TabIndex = 45
         Me.generalesGroupBox.TabStop = False
         Me.generalesGroupBox.Text = "Generalites"
@@ -206,7 +210,7 @@ Partial Class RechercherPage
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(108, 17)
         Me.Label5.TabIndex = 44
-        Me.Label5.Text = "Nom de la mere"
+        Me.Label5.Text = "Nom de la mère"
         '
         'TXT_PERE
         '
@@ -226,7 +230,7 @@ Partial Class RechercherPage
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(91, 17)
         Me.Label4.TabIndex = 42
-        Me.Label4.Text = "Nom du Pere"
+        Me.Label4.Text = "Nom du Père"
         '
         'Label3
         '
@@ -423,7 +427,7 @@ Partial Class RechercherPage
         '
         Me.SpliterMain.AccessibleRole = System.Windows.Forms.AccessibleRole.SplitButton
         Me.SpliterMain.BackColor = System.Drawing.Color.Transparent
-        Me.SpliterMain.Location = New System.Drawing.Point(21, 552)
+        Me.SpliterMain.Location = New System.Drawing.Point(21, 587)
         Me.SpliterMain.Name = "SpliterMain"
         Me.SpliterMain.Orientation = System.Windows.Forms.Orientation.Horizontal
         '
@@ -674,7 +678,7 @@ Partial Class RechercherPage
         Me.LB_ANNEEB.Name = "LB_ANNEEB"
         Me.LB_ANNEEB.Size = New System.Drawing.Size(100, 17)
         Me.LB_ANNEEB.TabIndex = 44
-        Me.LB_ANNEEB.Text = "Annee de BAC"
+        Me.LB_ANNEEB.Text = "Année de BAC"
         '
         'PN_FORUMRECH
         '
@@ -697,6 +701,27 @@ Partial Class RechercherPage
         '
         Me.BackgroundWorker1.WorkerReportsProgress = True
         Me.BackgroundWorker1.WorkerSupportsCancellation = True
+        '
+        'CB_ANNEE
+        '
+        Me.CB_ANNEE.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CB_ANNEE.FormattingEnabled = True
+        Me.CB_ANNEE.Location = New System.Drawing.Point(249, 479)
+        Me.CB_ANNEE.Margin = New System.Windows.Forms.Padding(2)
+        Me.CB_ANNEE.Name = "CB_ANNEE"
+        Me.CB_ANNEE.Size = New System.Drawing.Size(264, 28)
+        Me.CB_ANNEE.TabIndex = 45
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(61, 484)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(49, 17)
+        Me.Label7.TabIndex = 46
+        Me.Label7.Text = "Année"
         '
         'RechercherPage
         '
@@ -789,4 +814,6 @@ Partial Class RechercherPage
     Friend WithEvents TXT_PERE As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents CB_ANNEE As System.Windows.Forms.ComboBox
+    Friend WithEvents Label7 As System.Windows.Forms.Label
 End Class

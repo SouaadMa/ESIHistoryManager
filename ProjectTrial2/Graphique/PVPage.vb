@@ -15,6 +15,7 @@ Public Class PVPage
 
         AllCheckBox.Checked = True
         LimitUpDown.Enabled = False
+        SpecialiteBox.Enabled = False
 
         For Each Critere As String In InfosGenerales.promo
             Me.NiveauBox.Items.Add(Critere)
@@ -165,16 +166,18 @@ Public Class PVPage
                 'If (Me.SpecialiteBox.Items.Count < 3) Then
                 Me.SpecialiteBox.Items.Clear()
                 Me.SpecialiteBox.Items.Insert(0, "TRC")
-                Me.SpecialiteBox.Text = ""
+                'Me.SpecialiteBox.Text = "TRC"
+                Me.SpecialiteBox.Enabled = False
                 'End If
                 'Me.SpecialiteBox.Text = "TRC"
 
                 'Me.SpecialiteBox.Enabled = False
             Else
                 Me.SpecialiteBox.Items.Clear()
-                Me.SpecialiteBox.Text = ""
-                Me.SpecialiteBox.Items.Add("SI")
-                Me.SpecialiteBox.Items.Add("SIQ")
+                Me.SpecialiteBox.Text = "SI"
+                Me.SpecialiteBox.Items.Insert(0, "SI")
+                Me.SpecialiteBox.Items.Insert(1, "SIQ")
+                Me.SpecialiteBox.Enabled = True
                 'If SpecialiteBox.Items.Item(0).ToString.Equals("TRC") Then
                 '    Me.SpecialiteBox.Items.Remove(Me.SpecialiteBox.Items(0))
                 '    Me.SpecialiteBox.Enabled = True
@@ -202,6 +205,16 @@ Public Class PVPage
     Private Sub AffichButton_EnabledChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AffichButton.EnabledChanged
         AffichButton.BackColor = IIf(AffichButton.Enabled, Color.FromArgb(0, 64, 104), Color.FromArgb(169, 119, 113))
     End Sub
+
+    Private Sub NiveauBox_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NiveauBox.TextChanged
+        SpecialiteBox.Enabled = Not NiveauBox.Text.Equals("TRC")
+        If NiveauBox.SelectedIndex < 2 Then
+            Me.SpecialiteBox.Text = "TRC"
+            'SpecialiteBox.SelectedIndex = 0
+            SpecialiteBox.Enabled = False
+        End If
+    End Sub
+
 End Class
 
 'Public Function getAllOrders() As DataTable

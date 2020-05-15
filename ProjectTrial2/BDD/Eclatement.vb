@@ -56,7 +56,7 @@ Public Class ECLATEMENT
                         REQUETE = "INSERT INTO GROUPE(CodeGroupe,CodeSection,CodePromo) SELECT DISTINCT CodeGroupe,CodeSection, CodePromo FROM INSCRIPTION WHERE NOT EXISTS(SELECT CodeGroupe FROM GROUPE WHERE  CodeGroupe=INSCRIPTION.CodeGroupe AND CodeSection= INSCRIPTION.CodeSection AND CodePromo= INSCRIPTION.CodePromo) "
 
                     Case "SECTIONS"
-                        REQUETE = "INSERT INTO SECTIONS SELECT   CodeSection AS CodeSection ,  CodePromo AS CodePromo  FROM GROUPE WHERE NOT EXISTS(SELECT CodeSection FROM SECTIONS WHERE   CodeSection= GROUPE.CodeSection AND CodePromo= GROUPE.CodePromo)  "
+                        REQUETE = "INSERT INTO SECTIONS SELECT DISTINCT  CodeSection AS CodeSection ,  CodePromo AS CodePromo  FROM GROUPE WHERE NOT EXISTS(SELECT CodeSection FROM SECTIONS WHERE   CodeSection= GROUPE.CodeSection AND CodePromo= GROUPE.CodePromo)  "
 
                     Case "PROMO"
                         REQUETE = "INSERT INTO PROMO(CodePromo,Niveau,Optin,Annee,NbreEtudiant) SELECT  CodePromo,Mid ([CodePromo],1,1),MID (CodePromo,3,3),Right(CodePromo,2),COUNT(CodePromo) FROM INSCRIPTION where NOT EXISTS(SELECT CodePromo from PROMO WHERE CodePromo=INSCRIPTION.CodePromo)  GROUP BY CodePromo "
@@ -401,10 +401,10 @@ Public Class ECLATEMENT
                         REQUETE = REQUETE & CONDITION
 
                     Case "GROUPE"
-                        REQUETE = "INSERT INTO GROUPE  SELECT  CodeGroupe AS CodeGroupe ,  CodeSection AS CodeSection ,  CodePromo AS CodePromo FROM INSCRIPTION WHERE NOT EXISTS(SELECT CodeGroupe FROM GROUPE WHERE  CodeGroupe=INSCRIPTION.CodeGroupe AND CodeSection= INSCRIPTION.CodeSection AND CodePromo= INSCRIPTION.CodePromo)  "
+                        REQUETE = "INSERT INTO GROUPE  SELECT DISTINCT  CodeGroupe AS CodeGroupe ,  CodeSection AS CodeSection ,  CodePromo AS CodePromo FROM INSCRIPTION WHERE NOT EXISTS(SELECT CodeGroupe FROM GROUPE WHERE  CodeGroupe=INSCRIPTION.CodeGroupe AND CodeSection= INSCRIPTION.CodeSection AND CodePromo= INSCRIPTION.CodePromo)  "
 
                     Case "SECTIONS"
-                        REQUETE = "INSERT INTO SECTIONS SELECT   CodeSection AS CodeSection ,  CodePromo AS CodePromo  FROM GROUPE WHERE NOT EXISTS(SELECT CodeSection FROM SECTIONS WHERE   CodeSection= GROUPE.CodeSection AND CodePromo= GROUPE.CodePromo)  "
+                        REQUETE = "INSERT INTO SECTIONS SELECT DISTINCT    CodeSection AS CodeSection ,  CodePromo AS CodePromo  FROM GROUPE WHERE NOT EXISTS(SELECT CodeSection FROM SECTIONS WHERE   CodeSection= GROUPE.CodeSection AND CodePromo= GROUPE.CodePromo)  "
 
                     Case "pre_PROMO"
                         REQUETE = "delete from PROMO "

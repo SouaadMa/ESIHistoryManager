@@ -154,7 +154,7 @@ Partial Class RechercherPage
         Me.BT_LANCERRECH.Name = "BT_LANCERRECH"
         Me.BT_LANCERRECH.Size = New System.Drawing.Size(150, 37)
         Me.BT_LANCERRECH.TabIndex = 40
-        Me.BT_LANCERRECH.Text = "rechercher"
+        Me.BT_LANCERRECH.Text = "Rechercher"
         Me.BT_LANCERRECH.UseVisualStyleBackColor = False
         '
         'generalesGroupBox
@@ -485,9 +485,9 @@ Partial Class RechercherPage
         Me.Label6.Location = New System.Drawing.Point(30, 21)
         Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(216, 17)
+        Me.Label6.Size = New System.Drawing.Size(210, 17)
         Me.Label6.TabIndex = 70
-        Me.Label6.Text = "Wilaya de naissance en Francais"
+        Me.Label6.Text = "Code de la Wilaya de naissance"
         '
         'LB_WILAYA
         '

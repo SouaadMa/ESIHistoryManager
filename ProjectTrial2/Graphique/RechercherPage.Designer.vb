@@ -309,8 +309,10 @@ Partial Class RechercherPage
         Me.TXT_PRENOMA.Location = New System.Drawing.Point(249, 251)
         Me.TXT_PRENOMA.Margin = New System.Windows.Forms.Padding(2)
         Me.TXT_PRENOMA.Name = "TXT_PRENOMA"
+        Me.TXT_PRENOMA.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.TXT_PRENOMA.Size = New System.Drawing.Size(264, 26)
         Me.TXT_PRENOMA.TabIndex = 8
+        Me.TXT_PRENOMA.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TXT_NOMA
         '
@@ -318,8 +320,10 @@ Partial Class RechercherPage
         Me.TXT_NOMA.Location = New System.Drawing.Point(249, 163)
         Me.TXT_NOMA.Margin = New System.Windows.Forms.Padding(2)
         Me.TXT_NOMA.Name = "TXT_NOMA"
+        Me.TXT_NOMA.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.TXT_NOMA.Size = New System.Drawing.Size(264, 26)
         Me.TXT_NOMA.TabIndex = 9
+        Me.TXT_NOMA.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'LB_NOMA
         '
@@ -604,6 +608,7 @@ Partial Class RechercherPage
         Me.CB_ANNEEB.Location = New System.Drawing.Point(254, 148)
         Me.CB_ANNEEB.Margin = New System.Windows.Forms.Padding(2)
         Me.CB_ANNEEB.Name = "CB_ANNEEB"
+        Me.CB_ANNEEB.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.CB_ANNEEB.Size = New System.Drawing.Size(264, 28)
         Me.CB_ANNEEB.TabIndex = 42
         '

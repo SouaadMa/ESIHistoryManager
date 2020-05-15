@@ -37,9 +37,9 @@
         ' WHERE (CodePromo LIKE '5/%/Annee+5') AND (DECIIN = )
         requeteSQL = Class_BDD.AddLIKECondition(requeteSQL, BDD.champsMATRIN, New Critere(BDD.champsAnnee, Annee, BDD.nomTableEtudiant))
         ' requeteSQL == requeteSQL + " AND (MATRIN LIKE 'Annee/%')"
-        requeteSQL = Class_BDD.AddLIKECondition(requeteSQL, BDD.champsCodePromo, New Critere(BDD.champsNiveau, "5", BDD.nomTableINSCRIPTION))
+        requeteSQL = Class_BDD.AddLIKECondition(requeteSQL, BDD.champsCodePromo, New Critere(BDD.champsNiveau, "4", BDD.nomTableINSCRIPTION))
         ' requeteSQL == requeteSQL + " AND (CodePromo LIKE '5/%')"
-        requeteSQL = Class_BDD.AddLIKECondition(requeteSQL, BDD.champsCodePromo, New Critere(BDD.champsAnnee, (Integer.Parse(Annee) + 5).ToString, BDD.nomTableINSCRIPTION))
+        'requeteSQL = Class_BDD.AddLIKECondition(requeteSQL, BDD.champsCodePromo, New Critere(BDD.champsAnnee, (Integer.Parse(Annee) + 5).ToString, BDD.nomTableINSCRIPTION))
         ' requeteSQL == requeteSQL + " AND (CodePromo LIKE '%/Annee+5')"
 
         'Console.WriteLine(requeteSQL)
@@ -72,7 +72,8 @@
                 requeteSQL = ""
                 requeteSQL = Class_BDD.genereRechRequete(listeChamps, BDD.nomTableINSCRIPTION, BDD.nomTableNoteRATRAP, listeConditions, False)
                 requeteSQL = Class_BDD.AddONCondition(requeteSQL, BDD.nomTableINSCRIPTION, BDD.nomTableNoteRATRAP, BDD.champsCodePromo, BDD.champsCodeRat)
-                'Console.WriteLine(requeteSQL)
+
+                Console.WriteLine(requeteSQL)
 
                 dt.Merge(BDD.executeRequete(requeteSQL))
 
@@ -83,13 +84,13 @@
         Next
 
         If ((i <= 20) And collectionMat.Count > 0) Then
-            'Console.WriteLine(requeteSQL)
-
+            Console.WriteLine("<20")
+            requeteSQL = ""
+            requeteSQL = Class_BDD.genereRechRequete(listeChamps, BDD.nomTableINSCRIPTION, BDD.nomTableNoteRATRAP, listeConditions, False)
+            requeteSQL = Class_BDD.AddONCondition(requeteSQL, BDD.nomTableINSCRIPTION, BDD.nomTableNoteRATRAP, BDD.champsCodePromo, BDD.champsCodeRat)
+            Console.WriteLine(requeteSQL)
             dt.Merge(BDD.executeRequete(requeteSQL))
         End If
-
-        
-
 
 
         'requeteSQL = Class_BDD.genereRechRequete(listeChamps, BDD.nomTableINSCRIPTION, BDD.nomTableNoteRATRAP, listeConditions, False)

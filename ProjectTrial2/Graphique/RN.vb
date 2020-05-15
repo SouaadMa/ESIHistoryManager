@@ -27,9 +27,11 @@ Public Class RN
         '    CB_ANNEE.Items.Add(cr)
         'Next
 
-        CB_ANNEE.DisplayMember = esistselect.GetALL(BDD.champsCodePromo).Columns(0).ToString
-        CB_ANNEE.ValueMember = esistselect.GetALL(BDD.champsCodePromo).Columns(0).ToString
-        CB_ANNEE.DataSource = esistselect.GetALL(BDD.champsCodePromo)
+        Dim allPromos As DataTable = esistselect.GetALL(BDD.champsCodePromo)
+
+        CB_ANNEE.DisplayMember = allPromos.Columns(0).ToString
+        CB_ANNEE.ValueMember = allPromos.Columns(0).ToString
+        CB_ANNEE.DataSource = allPromos
         CB_ANNEE.Text = ""
 
         'initialiser generale

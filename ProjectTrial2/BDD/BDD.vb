@@ -253,7 +253,7 @@ Public Class BDD
             cnx.Close()                              'fermer la connexion
         End Try
 
-        Console.WriteLine(requete)
+        Console.WriteLine("Execute: " + requete)
         Return dt
 
     End Function
@@ -523,7 +523,7 @@ Public Class BDD
 
             'MsgBox("before execute")
 
-            Console.WriteLine(SqlQuery)
+            'Console.WriteLine(SqlQuery)
 
             Return executeRequete(SqlQuery)
 

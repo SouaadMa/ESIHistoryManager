@@ -89,4 +89,21 @@
 
     End Function
 
+
+    Public Shared Sub SetNbreRNG(ByVal etud As Etudiant, ByVal i As Integer)
+        Dim modification As New Critere(BDD.champsNBR_RNG, i, BDD.nomTableEtudiant)
+        Dim listeModif As New List(Of Critere)
+        listeModif.Add(modification)
+
+        Dim req As String
+        req = Modif_BDD.genereModifRequete(etud.GetInfoChamps(BDD.champsMATRIN), listeModif, BDD.nomTableEtudiant)
+
+        'Console.WriteLine(req)
+
+        BDD.executeRequete(req)
+
+        etud.InfosETUDIANT.Item(BDD.champsNBR_RNG) = i
+
+    End Sub
+
 End Class

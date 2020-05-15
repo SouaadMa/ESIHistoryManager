@@ -84,6 +84,7 @@
         Else
             eclat.RECHARGEMENT(collection_files(0))
         End If
+        Login.Infosgenerale = New InfosGenerales()
     End Sub
 
     Private Sub ChargBackgroundWorker_ProgressChanged(ByVal sender As System.Object, ByVal e As System.ComponentModel.ProgressChangedEventArgs) Handles ChargBackgroundWorker.ProgressChanged

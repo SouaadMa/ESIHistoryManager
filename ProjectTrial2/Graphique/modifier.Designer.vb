@@ -24,9 +24,8 @@ Partial Class modifier
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(modifier))
         Me.PN_MODIFIER = New System.Windows.Forms.Panel()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.BT_SORTIR = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.SortirButton = New System.Windows.Forms.Button()
+        Me.Worning = New System.Windows.Forms.Label()
         Me.BT_MODIFIER = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.BT_GENERALINFO = New System.Windows.Forms.RadioButton()
@@ -85,10 +84,10 @@ Partial Class modifier
         Me.Panel22 = New System.Windows.Forms.Panel()
         Me.LB_CODEPOS = New System.Windows.Forms.Label()
         Me.TXT_CODEPOS = New System.Windows.Forms.TextBox()
-        Me.SortirButton = New System.Windows.Forms.Button()
-        Me.Worning = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.BT_SORTIR = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.PN_MODIFIER.SuspendLayout()
-        Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.TAB_PAGES.SuspendLayout()
         Me.P_GENERALITE.SuspendLayout()
@@ -111,61 +110,50 @@ Partial Class modifier
         Me.Panel20.SuspendLayout()
         Me.Panel21.SuspendLayout()
         Me.Panel22.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'PN_MODIFIER
         '
         Me.PN_MODIFIER.BackColor = System.Drawing.Color.Transparent
         Me.PN_MODIFIER.Controls.Add(Me.SortirButton)
-        Me.PN_MODIFIER.Controls.Add(Me.Panel1)
         Me.PN_MODIFIER.Controls.Add(Me.Worning)
         Me.PN_MODIFIER.Controls.Add(Me.BT_MODIFIER)
         Me.PN_MODIFIER.Controls.Add(Me.Panel3)
+        Me.PN_MODIFIER.Controls.Add(Me.Panel1)
         Me.PN_MODIFIER.Controls.Add(Me.TAB_PAGES)
         Me.PN_MODIFIER.Location = New System.Drawing.Point(0, 0)
         Me.PN_MODIFIER.Name = "PN_MODIFIER"
         Me.PN_MODIFIER.Size = New System.Drawing.Size(678, 640)
         Me.PN_MODIFIER.TabIndex = 2
         '
-        'Panel1
+        'SortirButton
         '
-        Me.Panel1.BackColor = System.Drawing.Color.Transparent
-        Me.Panel1.Controls.Add(Me.BT_SORTIR)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(678, 82)
-        Me.Panel1.TabIndex = 51
+        Me.SortirButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.SortirButton.FlatAppearance.BorderSize = 0
+        Me.SortirButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SortirButton.Font = New System.Drawing.Font("Cambria", 13.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SortirButton.ForeColor = System.Drawing.Color.White
+        Me.SortirButton.Location = New System.Drawing.Point(31, 585)
+        Me.SortirButton.Name = "SortirButton"
+        Me.SortirButton.Size = New System.Drawing.Size(160, 34)
+        Me.SortirButton.TabIndex = 52
+        Me.SortirButton.Text = "Sortir"
+        Me.SortirButton.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.SortirButton.UseVisualStyleBackColor = False
         '
-        'BT_SORTIR
+        'Worning
         '
-        Me.BT_SORTIR.BackColor = System.Drawing.Color.Transparent
-        Me.BT_SORTIR.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.sortiropp1
-        Me.BT_SORTIR.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BT_SORTIR.FlatAppearance.BorderSize = 0
-        Me.BT_SORTIR.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BT_SORTIR.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BT_SORTIR.ForeColor = System.Drawing.Color.White
-        Me.BT_SORTIR.Location = New System.Drawing.Point(622, 11)
-        Me.BT_SORTIR.Margin = New System.Windows.Forms.Padding(2, 2, 2, 100)
-        Me.BT_SORTIR.Name = "BT_SORTIR"
-        Me.BT_SORTIR.Size = New System.Drawing.Size(45, 45)
-        Me.BT_SORTIR.TabIndex = 45
-        Me.BT_SORTIR.UseVisualStyleBackColor = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 16.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(109, 25)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(355, 25)
-        Me.Label1.TabIndex = 12
-        Me.Label1.Text = "Modifer les informations de l'étudiant"
+        Me.Worning.AutoSize = True
+        Me.Worning.BackColor = System.Drawing.Color.Transparent
+        Me.Worning.Font = New System.Drawing.Font("Cambria", 10.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Worning.ForeColor = System.Drawing.Color.Firebrick
+        Me.Worning.Location = New System.Drawing.Point(396, 593)
+        Me.Worning.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Worning.Name = "Worning"
+        Me.Worning.Size = New System.Drawing.Size(11, 17)
+        Me.Worning.TabIndex = 13
+        Me.Worning.Text = " "
         '
         'BT_MODIFIER
         '
@@ -668,7 +656,6 @@ Partial Class modifier
         Me.CB_WILAYAN.Size = New System.Drawing.Size(210, 25)
         Me.CB_WILAYAN.TabIndex = 85
         Me.CB_WILAYAN.Text = "Wilaya de naissance"
-        Me.CB_WILAYAN.Visible = False
         '
         'Panel17
         '
@@ -704,7 +691,6 @@ Partial Class modifier
         Me.TXT_LIEUNA.Size = New System.Drawing.Size(209, 16)
         Me.TXT_LIEUNA.TabIndex = 82
         Me.TXT_LIEUNA.Text = "مكان الميلاد"
-        Me.TXT_LIEUNA.Visible = False
         '
         'Panel18
         '
@@ -875,33 +861,45 @@ Partial Class modifier
         Me.TXT_CODEPOS.TabIndex = 84
         Me.TXT_CODEPOS.Text = "code postale"
         '
-        'SortirButton
+        'Panel1
         '
-        Me.SortirButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.SortirButton.FlatAppearance.BorderSize = 0
-        Me.SortirButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SortirButton.Font = New System.Drawing.Font("Cambria", 13.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SortirButton.ForeColor = System.Drawing.Color.White
-        Me.SortirButton.Location = New System.Drawing.Point(31, 585)
-        Me.SortirButton.Name = "SortirButton"
-        Me.SortirButton.Size = New System.Drawing.Size(160, 34)
-        Me.SortirButton.TabIndex = 52
-        Me.SortirButton.Text = "Sortir"
-        Me.SortirButton.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.SortirButton.UseVisualStyleBackColor = False
+        Me.Panel1.BackColor = System.Drawing.Color.Transparent
+        Me.Panel1.Controls.Add(Me.BT_SORTIR)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(678, 82)
+        Me.Panel1.TabIndex = 51
         '
-        'Worning
+        'BT_SORTIR
         '
-        Me.Worning.AutoSize = True
-        Me.Worning.BackColor = System.Drawing.Color.Transparent
-        Me.Worning.Font = New System.Drawing.Font("Cambria", 10.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Worning.ForeColor = System.Drawing.Color.Firebrick
-        Me.Worning.Location = New System.Drawing.Point(396, 593)
-        Me.Worning.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Worning.Name = "Worning"
-        Me.Worning.Size = New System.Drawing.Size(11, 17)
-        Me.Worning.TabIndex = 13
-        Me.Worning.Text = " "
+        Me.BT_SORTIR.BackColor = System.Drawing.Color.Transparent
+        Me.BT_SORTIR.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.sortiropp1
+        Me.BT_SORTIR.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BT_SORTIR.FlatAppearance.BorderSize = 0
+        Me.BT_SORTIR.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BT_SORTIR.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BT_SORTIR.ForeColor = System.Drawing.Color.White
+        Me.BT_SORTIR.Location = New System.Drawing.Point(622, 11)
+        Me.BT_SORTIR.Margin = New System.Windows.Forms.Padding(2, 2, 2, 100)
+        Me.BT_SORTIR.Name = "BT_SORTIR"
+        Me.BT_SORTIR.Size = New System.Drawing.Size(45, 45)
+        Me.BT_SORTIR.TabIndex = 45
+        Me.BT_SORTIR.UseVisualStyleBackColor = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 16.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(109, 25)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(355, 25)
+        Me.Label1.TabIndex = 12
+        Me.Label1.Text = "Modifer les informations de l'étudiant"
         '
         'modifier
         '
@@ -919,8 +917,6 @@ Partial Class modifier
         Me.WindowState = System.Windows.Forms.FormWindowState.Minimized
         Me.PN_MODIFIER.ResumeLayout(False)
         Me.PN_MODIFIER.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.TAB_PAGES.ResumeLayout(False)
         Me.P_GENERALITE.ResumeLayout(False)
@@ -959,6 +955,8 @@ Partial Class modifier
         Me.Panel21.PerformLayout()
         Me.Panel22.ResumeLayout(False)
         Me.Panel22.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

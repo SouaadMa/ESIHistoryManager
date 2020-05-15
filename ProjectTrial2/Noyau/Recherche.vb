@@ -14,10 +14,17 @@
         If Not bw.CancellationPending Then
 
             For Each crit As Critere In criteres
-                instructionSQL = Rech_BDD.genereRechRequetes(instructionSQL, crit, BDD.nomTableEtudiant)
+
+                If crit.getChamps.Equals(BDD.champsAnnee) Then
+                    crit.setTable(BDD.nomTableEtudiant)
+                    instructionSQL = Class_BDD.AddLIKECondition(instructionSQL, crit, BDD.nomTableEtudiant)
+                Else
+                    instructionSQL = Rech_BDD.genereRechRequetes(instructionSQL, crit, BDD.nomTableEtudiant)
+                End If
+
                 'bw.ReportProgress(CInt(x))
             Next
-            Console.WriteLine(instructionSQL)
+            'Console.WriteLine(instructionSQL)
             'On passe la requête finale à ExécuteRequ et on sauvegarde son résultat
             If Not bw.CancellationPending Then
                 resultatRech = BDD.executeRequete(instructionSQL)

@@ -35,18 +35,20 @@
                 Case "System.String"                                      ' valeur Text
                     'Console.WriteLine("string")
                     tab = BDD.getStringTable(table)                                           ' Chercher dans le tableau des champs Text
-                    'valeur = "'" + crit.getValeur + "'"
+                    valeur = "'" + crit.getValeur + "'"
                 Case GetType(Integer).ToString, GetType(Double).ToString  ' valeur Numérique
                     'Console.WriteLine("num")
                     tab = BDD.getNumTable(table)                                               ' Chercher dans le tableau des champs Numerique                    
-                    'valeur = crit.getValeur.ToString
+                    valeur = crit.getValeur.ToString
                 Case "System.Boolean"                                     ' valeur Booleen
                     'Console.WriteLine("bool")
                     tab = BDD.getBoolTable(table)                                           ' Chercher dans le tableau des champs Booleen
-                    'valeur = crit.getValeur
+                    valeur = crit.getValeur
                     'Case Else     tab = {}
+                Case Else
+                    valeur = "'" + crit.getValeur.ToString.Replace("'", "`") + "'"
             End Select
-            valeur = "'" + crit.getValeur.ToString.Replace("'", "`") + "'"
+            '
 
             Try
                 While Not found And ind < tab.Length                ' Chercher si le champ donnée existe dans les tableaux de la base de donnée  

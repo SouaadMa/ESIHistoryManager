@@ -58,7 +58,7 @@
         reqSQL = Rech_BDD.genereRechRequetes("", New Critere(BDD.champsMATRIN, etud.GetInfoChamps(BDD.champsMATRIN)), BDD.nomTableNoteRATRAP)
         reqSQL = Rech_BDD.genereRechRequetes(reqSQL, New Critere(BDD.champsCodeRat, promo), BDD.nomTableNoteRATRAP)
 
-        Console.WriteLine(reqSQL)
+        'Console.WriteLine(reqSQL)
         Dim tableRATTRAP As DataTable = BDD.executeRequete(reqSQL)
 
         '***********Ajout de la moyenne de Rattrapage à la table INSCRIPTION**********
@@ -85,7 +85,7 @@
             nbreRN = CType(tableINSCRIPTION.Rows.Item(0).Item(BDD.champsNBR_RN), Integer)
 
         Catch ex As Exception
-            Console.WriteLine("NBRERN")
+            Console.WriteLine("NBRERN NON TROUVE")
             nbreRN = 0
         End Try
         
@@ -126,7 +126,7 @@
         req = Modif_BDD.genereModifRequete(etud.GetInfoChamps(BDD.champsMATRIN), listeModif, BDD.nomTableINSCRIPTION)
         req = Modif_BDD.AddCondition(req, New Critere(BDD.champsCodePromo, promo, BDD.nomTableINSCRIPTION))
 
-        Console.WriteLine(req)
+        'Console.WriteLine(req)
 
         BDD.executeRequete(req)
         nbreRN = int

@@ -88,16 +88,9 @@ Public Class Home
         'Login.Close()    ' close the login page 
     End Sub
 
+
+
     Private Sub BT_LOGOUT_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_LOGOUT.Click
-
-        'open our filestream
-        Dim stream As FileStream
-        stream = File.OpenWrite("InfosGenerale.txt")
-
-        'create the binary formatter
-        Dim formatter As New BinaryFormatter
-        formatter.Serialize(stream, Login.Infosgenerale)
-        stream.Close()
 
         Me.Close()
     End Sub
@@ -110,6 +103,7 @@ Public Class Home
         If (dialog = Windows.Forms.DialogResult.No) Then
             e.Cancel = True
         Else
+            Login.Infosgenerale.Save()
             If Not f Is Nothing Then
                 f.Close()
             End If
@@ -285,7 +279,7 @@ Public Class Home
 
     End Sub
 
-    
+
 
     'handling the appearnce of the search form
 

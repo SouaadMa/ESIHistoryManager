@@ -90,7 +90,7 @@
 
         requeteSQL = Class_BDD.addGroupBy(requeteSQL, champRepartition, paireTables.elem2)
 
-        Console.WriteLine(requeteSQL)
+        'Console.WriteLine(requeteSQL)
 
 
 
@@ -137,7 +137,7 @@
 
         End If
 
-        Console.WriteLine(filter)
+        Console.WriteLine("Stat filter" + filter)
 
         Return dataTable.Select(filter).CopyToDataTable
 
@@ -222,7 +222,7 @@
                 Next
 
                 If Not valide Then
-                    Console.WriteLine(cr.getChamps)
+                    Console.WriteLine("checktableDomaineStat" + cr.getChamps)
                 End If
 
             End If

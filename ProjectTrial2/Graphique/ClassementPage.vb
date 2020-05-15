@@ -8,6 +8,7 @@
     Public SelectedStudent As Integer = -1
     Public Shared SortDirectionAscendant As Boolean = True
     Public collectionList As New AutoCompleteStringCollection
+    Public saveText As String = "1999"
 
 
     Private Sub ClassementPage_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -325,7 +326,9 @@
 
     Private Sub UpdateClassemntResult()
 
-        StudentTable = Classement.TraitClassement(ValueTextBox.Text)
+        If (Integer.Parse(ValueTextBox.Text) >= 1989 And Integer.Parse(ValueTextBox.Text) <= 2011) Then
+            StudentTable = Classement.TraitClassement(ValueTextBox.Text)
+            saveText = ValueTextBox.Text
         filtredTable = StudentTable.Copy()
         CURRENT_PAGE = 1
         'Form1.ds.Tables.Add(StudentTable.Copy())
@@ -354,7 +357,13 @@
         End If
         SpecialiteBox.Text = ""
         AllCheckBox.Checked = True
-        Console.WriteLine("pages number is : " + nb_page.ToString)
+            Console.WriteLine("pages number is : " + nb_page.ToString)
+        Else
+            MsgBox("Veuillez entrer une année comprise entre 1989 et 2011")
+            ValueTextBox.Text = saveText
+
+        End If
+
 
     End Sub
 

@@ -501,7 +501,7 @@ Partial Class ClassementPage
         Me.FilterButton.Name = "FilterButton"
         Me.FilterButton.Size = New System.Drawing.Size(91, 28)
         Me.FilterButton.TabIndex = 46
-        Me.FilterButton.Text = "filter"
+        Me.FilterButton.Text = "Filtrer"
         Me.FilterButton.UseVisualStyleBackColor = False
         '
         'Label4
@@ -512,7 +512,7 @@ Partial Class ClassementPage
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(71, 18)
         Me.Label4.TabIndex = 51
-        Me.Label4.Text = "Specialite"
+        Me.Label4.Text = "Spécialité"
         '
         'SpecialiteBox
         '

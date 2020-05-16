@@ -593,7 +593,7 @@ Partial Class Home
         Me.HomeButton.Size = New System.Drawing.Size(92, 84)
         Me.HomeButton.TabIndex = 2
         Me.HomeButton.TabStop = False
-        Me.HomeButton.Text = "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "page principale"
+        Me.HomeButton.Text = "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Page Principale"
         Me.HomeButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.HomeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.HomeButton.UseVisualStyleBackColor = False

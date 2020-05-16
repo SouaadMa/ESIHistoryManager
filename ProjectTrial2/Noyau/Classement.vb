@@ -37,7 +37,7 @@
         ' WHERE (CodePromo LIKE '5/%/Annee+5') AND (DECIIN = )
         requeteSQL = Class_BDD.AddLIKECondition(requeteSQL, BDD.champsMATRIN, New Critere(BDD.champsAnnee, Annee, BDD.nomTableEtudiant))
         ' requeteSQL == requeteSQL + " AND (MATRIN LIKE 'Annee/%')"
-        requeteSQL = Class_BDD.AddLIKECondition(requeteSQL, BDD.champsCodePromo, New Critere(BDD.champsNiveau, "4", BDD.nomTableINSCRIPTION))
+        requeteSQL = Class_BDD.AddLIKECondition(requeteSQL, BDD.champsCodePromo, New Critere(BDD.champsNiveau, "5", BDD.nomTableINSCRIPTION))
         ' requeteSQL == requeteSQL + " AND (CodePromo LIKE '5/%')"
         'requeteSQL = Class_BDD.AddLIKECondition(requeteSQL, BDD.champsCodePromo, New Critere(BDD.champsAnnee, (Integer.Parse(Annee) + 5).ToString, BDD.nomTableINSCRIPTION))
         ' requeteSQL == requeteSQL + " AND (CodePromo LIKE '%/Annee+5')"

@@ -48,7 +48,7 @@ Public Class Home
             BT_modif_mdp.Visible = True
             BT_modif_mdp.Enabled = True
             With LBL_MODE
-                .Text = "administrateur"
+                .Text = "Administrateur"
             End With
 
             With ModifButton        ' initialize the modif button according to the mode

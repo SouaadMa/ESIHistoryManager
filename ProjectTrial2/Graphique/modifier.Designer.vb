@@ -24,14 +24,13 @@ Partial Class modifier
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(modifier))
         Me.PN_MODIFIER = New System.Windows.Forms.Panel()
-        Me.SortirButton = New System.Windows.Forms.Button()
         Me.Worning = New System.Windows.Forms.Label()
         Me.BT_MODIFIER = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.BT_GENERALINFO = New System.Windows.Forms.RadioButton()
         Me.BT_INFORESIDENCE = New System.Windows.Forms.RadioButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.BT_SORTIR = New System.Windows.Forms.Button()
+        Me.CompletLabel = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TAB_PAGES = New System.Windows.Forms.TabControl()
         Me.P_GENERALITE = New System.Windows.Forms.TabPage()
@@ -87,7 +86,7 @@ Partial Class modifier
         Me.Panel22 = New System.Windows.Forms.Panel()
         Me.LB_CODEPOS = New System.Windows.Forms.Label()
         Me.TXT_CODEPOS = New System.Windows.Forms.TextBox()
-        Me.CompletLabel = New System.Windows.Forms.Label()
+        Me.SortirButton = New System.Windows.Forms.Button()
         Me.PN_MODIFIER.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -117,7 +116,7 @@ Partial Class modifier
         'PN_MODIFIER
         '
         Me.PN_MODIFIER.BackColor = System.Drawing.Color.Transparent
-        Me.PN_MODIFIER.Controls.Add(Me.SortirButton)
+        Me.PN_MODIFIER.Controls.Add(Me.CompletLabel)
         Me.PN_MODIFIER.Controls.Add(Me.Worning)
         Me.PN_MODIFIER.Controls.Add(Me.BT_MODIFIER)
         Me.PN_MODIFIER.Controls.Add(Me.Panel3)
@@ -127,21 +126,6 @@ Partial Class modifier
         Me.PN_MODIFIER.Name = "PN_MODIFIER"
         Me.PN_MODIFIER.Size = New System.Drawing.Size(678, 640)
         Me.PN_MODIFIER.TabIndex = 2
-        '
-        'SortirButton
-        '
-        Me.SortirButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.SortirButton.FlatAppearance.BorderSize = 0
-        Me.SortirButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SortirButton.Font = New System.Drawing.Font("Cambria", 13.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SortirButton.ForeColor = System.Drawing.Color.White
-        Me.SortirButton.Location = New System.Drawing.Point(31, 585)
-        Me.SortirButton.Name = "SortirButton"
-        Me.SortirButton.Size = New System.Drawing.Size(160, 34)
-        Me.SortirButton.TabIndex = 52
-        Me.SortirButton.Text = "Sortir"
-        Me.SortirButton.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.SortirButton.UseVisualStyleBackColor = False
         '
         'Worning
         '
@@ -163,7 +147,7 @@ Partial Class modifier
         Me.BT_MODIFIER.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BT_MODIFIER.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BT_MODIFIER.ForeColor = System.Drawing.Color.White
-        Me.BT_MODIFIER.Location = New System.Drawing.Point(458, 585)
+        Me.BT_MODIFIER.Location = New System.Drawing.Point(482, 585)
         Me.BT_MODIFIER.Margin = New System.Windows.Forms.Padding(2, 2, 2, 100)
         Me.BT_MODIFIER.Name = "BT_MODIFIER"
         Me.BT_MODIFIER.Size = New System.Drawing.Size(150, 37)
@@ -176,7 +160,7 @@ Partial Class modifier
         Me.Panel3.BackColor = System.Drawing.Color.Transparent
         Me.Panel3.Controls.Add(Me.BT_GENERALINFO)
         Me.Panel3.Controls.Add(Me.BT_INFORESIDENCE)
-        Me.Panel3.Location = New System.Drawing.Point(0, 82)
+        Me.Panel3.Location = New System.Drawing.Point(0, 91)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(214, 373)
         Me.Panel3.TabIndex = 52
@@ -223,8 +207,7 @@ Partial Class modifier
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Transparent
-        Me.Panel1.Controls.Add(Me.CompletLabel)
-        Me.Panel1.Controls.Add(Me.BT_SORTIR)
+        Me.Panel1.Controls.Add(Me.SortirButton)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
@@ -232,21 +215,19 @@ Partial Class modifier
         Me.Panel1.Size = New System.Drawing.Size(678, 82)
         Me.Panel1.TabIndex = 51
         '
-        'BT_SORTIR
+        'CompletLabel
         '
-        Me.BT_SORTIR.BackColor = System.Drawing.Color.Transparent
-        Me.BT_SORTIR.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.sortiropp1
-        Me.BT_SORTIR.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BT_SORTIR.FlatAppearance.BorderSize = 0
-        Me.BT_SORTIR.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BT_SORTIR.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BT_SORTIR.ForeColor = System.Drawing.Color.White
-        Me.BT_SORTIR.Location = New System.Drawing.Point(622, 11)
-        Me.BT_SORTIR.Margin = New System.Windows.Forms.Padding(2, 2, 2, 100)
-        Me.BT_SORTIR.Name = "BT_SORTIR"
-        Me.BT_SORTIR.Size = New System.Drawing.Size(45, 45)
-        Me.BT_SORTIR.TabIndex = 45
-        Me.BT_SORTIR.UseVisualStyleBackColor = False
+        Me.CompletLabel.AutoSize = True
+        Me.CompletLabel.BackColor = System.Drawing.Color.Transparent
+        Me.CompletLabel.Font = New System.Drawing.Font("Times New Roman", 15.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CompletLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.CompletLabel.Location = New System.Drawing.Point(23, 592)
+        Me.CompletLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.CompletLabel.Name = "CompletLabel"
+        Me.CompletLabel.Size = New System.Drawing.Size(435, 23)
+        Me.CompletLabel.TabIndex = 46
+        Me.CompletLabel.Text = "Les modifications ont été sauvegardées avec succès"
+        Me.CompletLabel.Visible = False
         '
         'Label1
         '
@@ -254,7 +235,7 @@ Partial Class modifier
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 16.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(114, 19)
+        Me.Label1.Location = New System.Drawing.Point(162, 28)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(355, 25)
@@ -903,19 +884,22 @@ Partial Class modifier
         Me.TXT_CODEPOS.TabIndex = 84
         Me.TXT_CODEPOS.Text = "code postale"
         '
-        'CompletLabel
+        'SortirButton
         '
-        Me.CompletLabel.AutoSize = True
-        Me.CompletLabel.BackColor = System.Drawing.Color.Transparent
-        Me.CompletLabel.Font = New System.Drawing.Font("Times New Roman", 15.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CompletLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.CompletLabel.Location = New System.Drawing.Point(194, 53)
-        Me.CompletLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.CompletLabel.Name = "CompletLabel"
-        Me.CompletLabel.Size = New System.Drawing.Size(435, 23)
-        Me.CompletLabel.TabIndex = 46
-        Me.CompletLabel.Text = "Les modifications ont été sauvegardées avec succès"
-        Me.CompletLabel.Visible = False
+        Me.SortirButton.BackColor = System.Drawing.Color.Transparent
+        Me.SortirButton.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.arrows
+        Me.SortirButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.SortirButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.SortirButton.FlatAppearance.BorderSize = 0
+        Me.SortirButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SortirButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SortirButton.ForeColor = System.Drawing.Color.White
+        Me.SortirButton.Location = New System.Drawing.Point(38, 15)
+        Me.SortirButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 100)
+        Me.SortirButton.Name = "SortirButton"
+        Me.SortirButton.Size = New System.Drawing.Size(45, 46)
+        Me.SortirButton.TabIndex = 46
+        Me.SortirButton.UseVisualStyleBackColor = False
         '
         'modifier
         '
@@ -1028,7 +1012,6 @@ Partial Class modifier
     Friend WithEvents TXT_CODEPOS As System.Windows.Forms.TextBox
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents BT_SORTIR As System.Windows.Forms.Button
     Friend WithEvents TXT_NomEtud As System.Windows.Forms.TextBox
     Friend WithEvents TXT_Prenoms As System.Windows.Forms.TextBox
     Friend WithEvents TXT_NomEtudA As System.Windows.Forms.TextBox
@@ -1038,7 +1021,7 @@ Partial Class modifier
     Friend WithEvents CB_SEXE As System.Windows.Forms.ComboBox
     Friend WithEvents TXT_FILSDE As System.Windows.Forms.TextBox
     Friend WithEvents TXT_ETDE As System.Windows.Forms.TextBox
-    Friend WithEvents SortirButton As System.Windows.Forms.Button
     Friend WithEvents Worning As System.Windows.Forms.Label
     Friend WithEvents CompletLabel As System.Windows.Forms.Label
+    Friend WithEvents SortirButton As System.Windows.Forms.Button
 End Class

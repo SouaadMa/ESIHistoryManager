@@ -12,6 +12,11 @@
         ChargementButton.Enabled = False
         CompletLabel.Visible = False
         RechargComplLabel.Visible = False
+
+        Button5.Enabled = True
+        Button6.Enabled = True
+        Button7.Enabled = True
+        Button8.Enabled = True
         'Panel2.AllowDrop = True
         'Panel3.AllowDrop = True
         'Panel4.AllowDrop = True
@@ -43,7 +48,12 @@
         'ClickedButton.Text = IIf(ClickedButton.Text.Count > 30, ClickedButton.Text.Replace(ClickedButton.Text.Substring(0, ClickedButton.Text.LastIndexOf("\") - 5), "..."), ClickedButton.Text)
         ClickedButton.Text = ClickedButton.Text.Substring(ClickedButton.Text.LastIndexOf("\") + 1)
         CType(Panel1.Controls.Item("Label" + ClickedButton.Name.Last()), Label).BackColor = IIf(Not ClickedButton.Text.Equals("Cliquez pour choisir le fichier"), Color.FromArgb(0, 64, 104), Color.FromArgb(169, 119, 113))
-        CType(Panel1.Controls.Item("Button" + (CInt((CType(ClickedButton, Control).Name.Last()).ToString) + 4).ToString), Button).ImageIndex = 1
+
+        With CType(Panel1.Controls.Item("Button" + (CInt((CType(ClickedButton, Control).Name.Last()).ToString) + 4).ToString), Button)
+            .Visible = True
+            .Cursor = Cursors.Hand
+            .ImageIndex = 1
+        End With
     End Sub
 
     Private Sub Button4_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.TextChanged, Button2.TextChanged, Button3.TextChanged, Button4.TextChanged
@@ -115,7 +125,11 @@
     End Sub
 
     Private Sub Button1_MouseEnter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.MouseEnter, Button3.MouseEnter, Button2.MouseEnter, Button1.MouseEnter
-        Panel1.Controls.Item("Button" + (CInt((CType(sender, Control).Name.Last()).ToString) + 4).ToString).Visible = True
+        With Panel1.Controls.Item("Button" + (CInt((CType(sender, Control).Name.Last()).ToString) + 4).ToString)
+            .Visible = True
+            .Enabled = True
+        End With
+
     End Sub
 
     Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button8.Click, Button7.Click, Button6.Click, Button5.Click
@@ -123,12 +137,15 @@
             Panel1.Controls.Item("Button" + (CInt((CType(sender, Control).Name.Last()).ToString) - 4).ToString).Text = "Cliquez pour choisir le fichier"
             Button4_TextChanged(Panel1.Controls.Item("Button" + (CInt((CType(sender, Control).Name.Last()).ToString) - 4).ToString), New EventArgs())
             CType(sender, Button).ImageIndex = 0
+            CType(sender, Button).Enabled = True
         Else
             Button4_Click(Panel1.Controls.Item("Button" + (CInt((CType(sender, Control).Name.Last()).ToString) - 4).ToString), New EventArgs())
         End If
     End Sub
     Private Sub Button4_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.MouseLeave, Button2.MouseLeave, Button3.MouseLeave, Button4.MouseLeave
-        Button5_MouseLeave(Panel1.Controls.Item("Button" + (CInt((CType(sender, Control).Name.Last()).ToString) + 4).ToString), New System.EventArgs)
+        If CType(Panel1.Controls.Item("Button" + (CInt((CType(sender, Control).Name.Last()).ToString) + 4).ToString), Button).ImageIndex = 0 Then
+            Button5_MouseLeave(Panel1.Controls.Item("Button" + (CInt((CType(sender, Control).Name.Last()).ToString) + 4).ToString), New System.EventArgs)
+        End If
     End Sub
 
     Private Sub Button5_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button8.MouseLeave, Button7.MouseLeave, Button6.MouseLeave, Button5.MouseLeave

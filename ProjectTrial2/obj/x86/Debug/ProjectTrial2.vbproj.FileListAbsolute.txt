@@ -85,3 +85,4 @@ C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\bin\Debug\EsistH
 C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\bin\Debug\EsistHistoryManagement.pdb
 C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\bin\Debug\EsistHistoryManagement.xml
 C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement.exe
+D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.BilanPage.resources

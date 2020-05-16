@@ -55,6 +55,7 @@
             CrystalReportViewer1.Visible = False
             NoResultPanel.Visible = True
             NoResultLabel.Text = "Quelques informations manquent dans l'historique de cet étudiant , veuillez les remplir et recharger la base de données à nouveau."
+            BilanLinkLabel.Visible = True
         End Try
         
         ' and that's it !
@@ -69,5 +70,10 @@
         'Home.f.Show()
         Home.MainContainer2.Visible = False
         Home.MainContainer1.Visible = True
+    End Sub
+
+    Private Sub BilanLinkLabel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BilanLinkLabel.Click
+        BilanPage.RichTextBox1.Text = SortieAttestation.getBilan()
+        BilanPage.Show()
     End Sub
 End Class

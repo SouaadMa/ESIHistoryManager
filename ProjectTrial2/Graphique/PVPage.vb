@@ -166,6 +166,7 @@ Public Class PVPage
             CrystalReportViewer1.Visible = False
             NoResultPanel.Visible = True
             NoResultLabel.Text = "Quelques informations manquent dans l'historique de quelques étudiants de cette promotion, veuillez les remplir et recharger la base de données à nouveau."
+            BilanLinkLabel.Visible = True
         End Try
 
         
@@ -231,6 +232,11 @@ Public Class PVPage
             'SpecialiteBox.SelectedIndex = 0
             SpecialiteBox.Enabled = False
         End If
+    End Sub
+
+    Private Sub BilanLinkLabel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BilanLinkLabel.Click
+        BilanPage.RichTextBox1.Text = SortiePV.getBilan()
+        BilanPage.Show()
     End Sub
 
 End Class

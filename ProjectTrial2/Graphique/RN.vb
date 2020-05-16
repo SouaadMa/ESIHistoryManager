@@ -87,7 +87,7 @@ Public Class RN
             BT_LOAD.Enabled = False
             NoResultPanel.Visible = True
             NoResultLabel.Text = "Quelques informations manquent dans l'historique de cet étudiant dans cette année , veuillez les remplir et recharger la base de donnéez à nouveau."
-
+            BilanLinkLabel.Visible = True
         End Try
 
     End Sub
@@ -275,6 +275,11 @@ Public Class RN
         End If
 
         'MsgBox.Show("Printed")
+    End Sub
+
+    Private Sub BilanLinkLabel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BilanLinkLabel.Click
+        'BilanPage.RichTextBox1.Text = RN.getBilan()
+        BilanPage.Show()
     End Sub
 
 End Class

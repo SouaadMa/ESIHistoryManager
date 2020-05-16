@@ -472,9 +472,11 @@ Partial Class Chargement
         Me.ClientSize = New System.Drawing.Size(704, 671)
         Me.Controls.Add(Me.ChargementPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(650, 595)
         Me.Name = "Chargement"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Gestion de base de données"
         Me.TopMost = True
         Me.TitlePanel.ResumeLayout(False)
         Me.TitlePanel.PerformLayout()

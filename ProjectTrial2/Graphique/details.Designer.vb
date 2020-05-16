@@ -25,7 +25,6 @@ Partial Class details
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(details))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TitlePanel = New System.Windows.Forms.Panel()
-        Me.BT_SORTIR = New System.Windows.Forms.Button()
         Me.BT_INFORESIDENCE = New System.Windows.Forms.RadioButton()
         Me.BT_INFOBAC = New System.Windows.Forms.RadioButton()
         Me.BT_GENERALINFO = New System.Windows.Forms.RadioButton()
@@ -78,7 +77,7 @@ Partial Class details
         Me.Label12 = New System.Windows.Forms.Label()
         Me.PN_RESIDENCE = New System.Windows.Forms.Panel()
         Me.DetailPanel = New System.Windows.Forms.Panel()
-        Me.SortirButton = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.TitlePanel.SuspendLayout()
         Me.PN_INFOGENERAL.SuspendLayout()
         Me.CategoriePanel.SuspendLayout()
@@ -103,29 +102,13 @@ Partial Class details
         'TitlePanel
         '
         Me.TitlePanel.BackColor = System.Drawing.Color.Transparent
-        Me.TitlePanel.Controls.Add(Me.BT_SORTIR)
+        Me.TitlePanel.Controls.Add(Me.Button1)
         Me.TitlePanel.Controls.Add(Me.Label1)
         Me.TitlePanel.Dock = System.Windows.Forms.DockStyle.Top
         Me.TitlePanel.Location = New System.Drawing.Point(0, 0)
         Me.TitlePanel.Name = "TitlePanel"
         Me.TitlePanel.Size = New System.Drawing.Size(678, 69)
         Me.TitlePanel.TabIndex = 0
-        '
-        'BT_SORTIR
-        '
-        Me.BT_SORTIR.BackColor = System.Drawing.Color.Transparent
-        Me.BT_SORTIR.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.sortiropp1
-        Me.BT_SORTIR.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BT_SORTIR.FlatAppearance.BorderSize = 0
-        Me.BT_SORTIR.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BT_SORTIR.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BT_SORTIR.ForeColor = System.Drawing.Color.White
-        Me.BT_SORTIR.Location = New System.Drawing.Point(601, 11)
-        Me.BT_SORTIR.Margin = New System.Windows.Forms.Padding(2, 2, 2, 100)
-        Me.BT_SORTIR.Name = "BT_SORTIR"
-        Me.BT_SORTIR.Size = New System.Drawing.Size(45, 45)
-        Me.BT_SORTIR.TabIndex = 42
-        Me.BT_SORTIR.UseVisualStyleBackColor = False
         '
         'BT_INFORESIDENCE
         '
@@ -796,7 +779,6 @@ Partial Class details
         'DetailPanel
         '
         Me.DetailPanel.BackColor = System.Drawing.Color.Transparent
-        Me.DetailPanel.Controls.Add(Me.SortirButton)
         Me.DetailPanel.Controls.Add(Me.TitlePanel)
         Me.DetailPanel.Controls.Add(Me.CategoriePanel)
         Me.DetailPanel.Controls.Add(Me.PN_INFOGENERAL)
@@ -807,20 +789,22 @@ Partial Class details
         Me.DetailPanel.Size = New System.Drawing.Size(678, 640)
         Me.DetailPanel.TabIndex = 87
         '
-        'SortirButton
+        'Button1
         '
-        Me.SortirButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.SortirButton.FlatAppearance.BorderSize = 0
-        Me.SortirButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SortirButton.Font = New System.Drawing.Font("Cambria", 13.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SortirButton.ForeColor = System.Drawing.Color.White
-        Me.SortirButton.Location = New System.Drawing.Point(23, 551)
-        Me.SortirButton.Name = "SortirButton"
-        Me.SortirButton.Size = New System.Drawing.Size(160, 33)
-        Me.SortirButton.TabIndex = 88
-        Me.SortirButton.Text = "Sortir"
-        Me.SortirButton.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.SortirButton.UseVisualStyleBackColor = False
+        Me.Button1.BackColor = System.Drawing.Color.Transparent
+        Me.Button1.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.arrows
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(46, 10)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 100)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(45, 46)
+        Me.Button1.TabIndex = 88
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'details
         '
@@ -893,7 +877,6 @@ Partial Class details
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents PN_RESIDENCE As System.Windows.Forms.Panel
     Friend WithEvents DetailPanel As System.Windows.Forms.Panel
-    Friend WithEvents BT_SORTIR As System.Windows.Forms.Button
     Friend WithEvents LB_ETDE As System.Windows.Forms.Label
     Friend WithEvents LB_FILSDE As System.Windows.Forms.Label
     Friend WithEvents LB_NOMA As System.Windows.Forms.Label
@@ -904,5 +887,5 @@ Partial Class details
     Friend WithEvents LB_SEXE As System.Windows.Forms.Label
     Friend WithEvents LB_DATEN As System.Windows.Forms.Label
     Friend WithEvents LB_MATRICULB As System.Windows.Forms.Label
-    Friend WithEvents SortirButton As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

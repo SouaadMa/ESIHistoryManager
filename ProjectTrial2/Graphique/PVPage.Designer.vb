@@ -26,6 +26,10 @@ Partial Class PVPage
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PN_FORUMRECH = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.NoResultPanel = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.NoResultLabel = New System.Windows.Forms.Label()
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -38,18 +42,15 @@ Partial Class PVPage
         Me.PromoBox = New System.Windows.Forms.ComboBox()
         Me.NiveauBox = New System.Windows.Forms.ComboBox()
         Me.SpecialiteBox = New System.Windows.Forms.ComboBox()
-        Me.NoResultPanel = New System.Windows.Forms.Panel()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.NoResultLabel = New System.Windows.Forms.Label()
+        Me.BilanLinkLabel = New System.Windows.Forms.LinkLabel()
         Me.PVIntroPanel.SuspendLayout()
         Me.PN_FORUMRECH.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.NoResultPanel.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.LimitUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.NoResultPanel.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PVIntroPanel
@@ -97,6 +98,50 @@ Partial Class PVPage
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(675, 531)
         Me.Panel2.TabIndex = 48
+        '
+        'NoResultPanel
+        '
+        Me.NoResultPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.NoResultPanel.Controls.Add(Me.BilanLinkLabel)
+        Me.NoResultPanel.Controls.Add(Me.Label5)
+        Me.NoResultPanel.Controls.Add(Me.PictureBox1)
+        Me.NoResultPanel.Controls.Add(Me.NoResultLabel)
+        Me.NoResultPanel.Location = New System.Drawing.Point(0, -2)
+        Me.NoResultPanel.Name = "NoResultPanel"
+        Me.NoResultPanel.Size = New System.Drawing.Size(676, 533)
+        Me.NoResultPanel.TabIndex = 56
+        Me.NoResultPanel.Visible = False
+        '
+        'Label5
+        '
+        Me.Label5.Font = New System.Drawing.Font("Arial", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(18, 13)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(643, 52)
+        Me.Label5.TabIndex = 2
+        Me.Label5.Text = "Impossible d'afficher le PV"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.missed
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.PictureBox1.Location = New System.Drawing.Point(224, 76)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(231, 268)
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
+        '
+        'NoResultLabel
+        '
+        Me.NoResultLabel.Font = New System.Drawing.Font("Bahnschrift", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NoResultLabel.Location = New System.Drawing.Point(15, 345)
+        Me.NoResultLabel.Name = "NoResultLabel"
+        Me.NoResultLabel.Size = New System.Drawing.Size(649, 119)
+        Me.NoResultLabel.TabIndex = 0
+        Me.NoResultLabel.Text = "Quelques informations manquent dans l'historique de cet étudiant , veuillez les r" & _
+            "emplir et recharger la base de données à nouveau."
+        Me.NoResultLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'CrystalReportViewer1
         '
@@ -234,48 +279,22 @@ Partial Class PVPage
         Me.SpecialiteBox.Size = New System.Drawing.Size(68, 26)
         Me.SpecialiteBox.TabIndex = 2
         '
-        'NoResultPanel
+        'BilanLinkLabel
         '
-        Me.NoResultPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.NoResultPanel.Controls.Add(Me.Label5)
-        Me.NoResultPanel.Controls.Add(Me.PictureBox1)
-        Me.NoResultPanel.Controls.Add(Me.NoResultLabel)
-        Me.NoResultPanel.Location = New System.Drawing.Point(0, -2)
-        Me.NoResultPanel.Name = "NoResultPanel"
-        Me.NoResultPanel.Size = New System.Drawing.Size(676, 533)
-        Me.NoResultPanel.TabIndex = 56
-        Me.NoResultPanel.Visible = False
-        '
-        'Label5
-        '
-        Me.Label5.Font = New System.Drawing.Font("Arial", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(18, 26)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(643, 52)
-        Me.Label5.TabIndex = 2
-        Me.Label5.Text = "Impossible d'afficher le PV"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.missed
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.PictureBox1.Location = New System.Drawing.Point(224, 89)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(231, 268)
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
-        '
-        'NoResultLabel
-        '
-        Me.NoResultLabel.Font = New System.Drawing.Font("Bahnschrift", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NoResultLabel.Location = New System.Drawing.Point(15, 376)
-        Me.NoResultLabel.Name = "NoResultLabel"
-        Me.NoResultLabel.Size = New System.Drawing.Size(649, 137)
-        Me.NoResultLabel.TabIndex = 0
-        Me.NoResultLabel.Text = "Quelques informations manquent dans l'historique de cet étudiant , veu" & _
-            "illez les remplir et recharger la base de données à nouveau."
-        Me.NoResultLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.BilanLinkLabel.AutoSize = True
+        Me.BilanLinkLabel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BilanLinkLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BilanLinkLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.BilanLinkLabel.LinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.BilanLinkLabel.Location = New System.Drawing.Point(157, 472)
+        Me.BilanLinkLabel.Name = "BilanLinkLabel"
+        Me.BilanLinkLabel.Size = New System.Drawing.Size(352, 26)
+        Me.BilanLinkLabel.TabIndex = 6
+        Me.BilanLinkLabel.TabStop = True
+        Me.BilanLinkLabel.Text = "Cliquez ici pour voir le bilan detaillé"
+        Me.BilanLinkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.BilanLinkLabel.Visible = False
+        Me.BilanLinkLabel.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
         '
         'PVPage
         '
@@ -294,13 +313,14 @@ Partial Class PVPage
         Me.PVIntroPanel.PerformLayout()
         Me.PN_FORUMRECH.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
+        Me.NoResultPanel.ResumeLayout(False)
+        Me.NoResultPanel.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.LimitUpDown, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.NoResultPanel.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -324,6 +344,7 @@ Partial Class PVPage
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents NoResultLabel As System.Windows.Forms.Label
+    Friend WithEvents BilanLinkLabel As System.Windows.Forms.LinkLabel
     'Friend WithEvents Cryst12 As EsistHistoryManagement_v1.PvReport1
 
 End Class

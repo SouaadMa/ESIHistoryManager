@@ -24,27 +24,28 @@ Partial Class RNGPage
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.DetailPanel = New System.Windows.Forms.Panel()
-        Me.NoResultPanel = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel8 = New System.Windows.Forms.TableLayoutPanel()
         Me.AdresseLabel = New System.Windows.Forms.Label()
         Me.PromoLabel = New System.Windows.Forms.Label()
         Me.Matricule = New System.Windows.Forms.Label()
         Me.PrenomLabel = New System.Windows.Forms.Label()
         Me.NomLabel = New System.Windows.Forms.Label()
+        Me.NoResultPanel = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.NoResultLabel = New System.Windows.Forms.Label()
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.TitlePanel = New System.Windows.Forms.Panel()
         Me.ImprTotalLabel = New System.Windows.Forms.Label()
         Me.SortirButton = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.AvertToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.NoResultLabel = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.BilanLinkLabel = New System.Windows.Forms.LinkLabel()
         Me.DetailPanel.SuspendLayout()
-        Me.NoResultPanel.SuspendLayout()
         Me.TableLayoutPanel8.SuspendLayout()
-        Me.TitlePanel.SuspendLayout()
+        Me.NoResultPanel.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TitlePanel.SuspendLayout()
         Me.SuspendLayout()
         '
         'DetailPanel
@@ -58,18 +59,6 @@ Partial Class RNGPage
         Me.DetailPanel.Name = "DetailPanel"
         Me.DetailPanel.Size = New System.Drawing.Size(678, 640)
         Me.DetailPanel.TabIndex = 88
-        '
-        'NoResultPanel
-        '
-        Me.NoResultPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.NoResultPanel.Controls.Add(Me.Label2)
-        Me.NoResultPanel.Controls.Add(Me.PictureBox1)
-        Me.NoResultPanel.Controls.Add(Me.NoResultLabel)
-        Me.NoResultPanel.Location = New System.Drawing.Point(0, 111)
-        Me.NoResultPanel.Name = "NoResultPanel"
-        Me.NoResultPanel.Size = New System.Drawing.Size(678, 529)
-        Me.NoResultPanel.TabIndex = 55
-        Me.NoResultPanel.Visible = False
         '
         'TableLayoutPanel8
         '
@@ -164,6 +153,50 @@ Partial Class RNGPage
         Me.NomLabel.Text = "Nom"
         Me.NomLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'NoResultPanel
+        '
+        Me.NoResultPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.NoResultPanel.Controls.Add(Me.BilanLinkLabel)
+        Me.NoResultPanel.Controls.Add(Me.Label2)
+        Me.NoResultPanel.Controls.Add(Me.PictureBox1)
+        Me.NoResultPanel.Controls.Add(Me.NoResultLabel)
+        Me.NoResultPanel.Location = New System.Drawing.Point(0, 111)
+        Me.NoResultPanel.Name = "NoResultPanel"
+        Me.NoResultPanel.Size = New System.Drawing.Size(678, 529)
+        Me.NoResultPanel.TabIndex = 55
+        Me.NoResultPanel.Visible = False
+        '
+        'Label2
+        '
+        Me.Label2.Font = New System.Drawing.Font("Arial", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(18, 26)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(643, 52)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Impossible d'afficher le relevé de note générale"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.missed
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.PictureBox1.Location = New System.Drawing.Point(224, 89)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(231, 268)
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
+        '
+        'NoResultLabel
+        '
+        Me.NoResultLabel.Font = New System.Drawing.Font("Bahnschrift", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NoResultLabel.Location = New System.Drawing.Point(15, 370)
+        Me.NoResultLabel.Name = "NoResultLabel"
+        Me.NoResultLabel.Size = New System.Drawing.Size(649, 98)
+        Me.NoResultLabel.TabIndex = 0
+        Me.NoResultLabel.Text = "Quelques informations manquent dans l'historique de cet étudiant , veuillez les r" & _
+            "emplir et recharger la base de données à nouveau."
+        Me.NoResultLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'CrystalReportViewer1
         '
         Me.CrystalReportViewer1.ActiveViewIndex = -1
@@ -236,36 +269,22 @@ Partial Class RNGPage
         Me.AvertToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Warning
         Me.AvertToolTip.ToolTipTitle = "Avertissement"
         '
-        'NoResultLabel
+        'BilanLinkLabel
         '
-        Me.NoResultLabel.Font = New System.Drawing.Font("Bahnschrift", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NoResultLabel.Location = New System.Drawing.Point(15, 376)
-        Me.NoResultLabel.Name = "NoResultLabel"
-        Me.NoResultLabel.Size = New System.Drawing.Size(649, 137)
-        Me.NoResultLabel.TabIndex = 0
-        Me.NoResultLabel.Text = "Quelques informations manquent dans l'historique de cet étudiant , veu" & _
-            "illez les remplir et recharger la base de données à nouveau."
-        Me.NoResultLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.missed
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.PictureBox1.Location = New System.Drawing.Point(224, 89)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(231, 268)
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
-        '
-        'Label2
-        '
-        Me.Label2.Font = New System.Drawing.Font("Arial", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(18, 26)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(643, 52)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Impossible d'afficher le relevé de note générale"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.BilanLinkLabel.AutoSize = True
+        Me.BilanLinkLabel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BilanLinkLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BilanLinkLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.BilanLinkLabel.LinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.BilanLinkLabel.Location = New System.Drawing.Point(163, 477)
+        Me.BilanLinkLabel.Name = "BilanLinkLabel"
+        Me.BilanLinkLabel.Size = New System.Drawing.Size(352, 26)
+        Me.BilanLinkLabel.TabIndex = 6
+        Me.BilanLinkLabel.TabStop = True
+        Me.BilanLinkLabel.Text = "Cliquez ici pour voir le bilan detaillé"
+        Me.BilanLinkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.BilanLinkLabel.Visible = False
+        Me.BilanLinkLabel.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
         '
         'RNGPage
         '
@@ -282,12 +301,13 @@ Partial Class RNGPage
         Me.TopMost = True
         Me.WindowState = System.Windows.Forms.FormWindowState.Minimized
         Me.DetailPanel.ResumeLayout(False)
-        Me.NoResultPanel.ResumeLayout(False)
         Me.TableLayoutPanel8.ResumeLayout(False)
         Me.TableLayoutPanel8.PerformLayout()
+        Me.NoResultPanel.ResumeLayout(False)
+        Me.NoResultPanel.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TitlePanel.ResumeLayout(False)
         Me.TitlePanel.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -308,4 +328,5 @@ Partial Class RNGPage
     Friend WithEvents NoResultLabel As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents BilanLinkLabel As System.Windows.Forms.LinkLabel
 End Class

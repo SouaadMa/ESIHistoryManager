@@ -599,7 +599,7 @@
         CType(sender, Control).Padding = New Padding(25, 0, 0, 0)
     End Sub
 
-    Private Sub BT_SORTIR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_SORTIR.Click, SortirButton.Click
+    Private Sub BT_SORTIR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SortirButton.Click
         Me.Close()
         'Home.f.Show()
 

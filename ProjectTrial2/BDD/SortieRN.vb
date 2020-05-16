@@ -2,6 +2,7 @@
 
     Public dataSet As New DataSet
     Private nbreRN As Integer
+    Private bilan As String = ""
 
     Public Sub New(ByVal etud As Etudiant, ByVal promo As String)
 
@@ -34,6 +35,11 @@
         tableNotesMat = etud.GetNotesMat(listeChamps, listeConditions)
         '
 
+        If tableNotesMat.Rows.Count = 0 Then
+            bilan += "Cet étudiant, MATRICULE = " & etud.GetInfoChamps(BDD.champsMATRIN) & " n'a pas d'informations dans la table Notes " & vbNewLine
+            'Throw New InvalidCastException
+        End If
+
 
         '***********************************************'
         'Création de la collection des champs pour générer la requête2
@@ -50,6 +56,10 @@
         Dim reqSQL As String = Class_BDD.genereRechRequete(listeChamps, BDD.nomTableINSCRIPTION, BDD.nomTablePROMO, listeConditions, True)
         Dim tableINSCRIPTION As DataTable = BDD.executeRequete(reqSQL)
         '
+        If tableINSCRIPTION.Rows.Count = 0 Then
+            bilan += "Cet étudiant, MATRICULE = " & etud.GetInfoChamps(BDD.champsMATRIN) & " n'a pas d'informations dans la table INSCRIPTION, CodePromo = " & promo & vbNewLine
+            'Throw New InvalidCastException
+        End If
 
         '************Récuperation de la moyenne de Ratrappage*******************'
         listeChamps.Clear()
@@ -61,6 +71,11 @@
         'Console.WriteLine(reqSQL)
         Dim tableRATTRAP As DataTable = BDD.executeRequete(reqSQL)
 
+        If tableRATTRAP.Rows.Count = 0 Then
+            bilan += "Cet étudiant, MATRICULE = " & etud.GetInfoChamps(BDD.champsMATRIN) & " n'a pas d'informations dans la table NotesRATTRAP, CodePromo = " & promo & vbNewLine
+            'Throw New InvalidCastException
+        End If
+
         '***********Ajout de la moyenne de Rattrapage à la table INSCRIPTION**********
 
         tableINSCRIPTION.Columns.Add(BDD.champsMOYERA)
@@ -70,8 +85,6 @@
             tableINSCRIPTION.Rows(0).Item(BDD.champsMOYERA) = tableRATTRAP.Rows(0).Item(BDD.champsMOYERA)
 
         Catch ex As Exception
-
-            Console.WriteLine("Cet etudiant n'a pas d'informations dans la table NoteRATTRAP pour cette promo")
 
             tableINSCRIPTION.Rows(0).Item(BDD.champsMOYERA) = -1
 
@@ -85,17 +98,16 @@
             nbreRN = CType(tableINSCRIPTION.Rows.Item(0).Item(BDD.champsNBR_RN), Integer)
 
         Catch ex As Exception
-            Console.WriteLine("NBRERN NON TROUVE")
+
             nbreRN = 0
         End Try
         
-        Console.WriteLine(nbreRN)
-
-        'Ajout du caractère spécial 99.99 à la place des notes qu'on ne veut pas afficher
+        
+        'Ajout du caractère spécial 0.0 à la place des notes qu'on ne veut pas afficher
         ArrangeRATTRA(tableNotesMat, 0.0)
 
 
-        'Ajout des deux tables dans une DataSet
+        'Ajout des trois tables dans une DataSet
         'Etudiant
         dataSet.Tables.Add(dtEtud)
         'Notes + Matiere
@@ -103,8 +115,6 @@
         'INSCRIPTION + PROMO
         dataSet.Tables.Add(tableINSCRIPTION)
 
-        'Form1.ds = dataSet
-        'Form1.Show()
 
     End Sub
 
@@ -125,8 +135,6 @@
         Dim req As String
         req = Modif_BDD.genereModifRequete(etud.GetInfoChamps(BDD.champsMATRIN), listeModif, BDD.nomTableINSCRIPTION)
         req = Modif_BDD.AddCondition(req, New Critere(BDD.champsCodePromo, promo, BDD.nomTableINSCRIPTION))
-
-        'Console.WriteLine(req)
 
         BDD.executeRequete(req)
         nbreRN = int
@@ -153,9 +161,17 @@
 
         Next
 
+        Console.WriteLine(getBilan)
 
     End Sub
 
+    Public Function getBilan() As String
+        If bilan = "" Then
+            Return "Tout est bien passé!"
+        Else
+            Return bilan
+        End If
+    End Function
 
 End Class
 

@@ -1,5 +1,6 @@
-
 Public Class SortieAttestation
+
+    Private Shared bilan As String = ""
 
     Public Shared Function attestation(ByVal etud As Etudiant) As DataSet
 
@@ -48,6 +49,27 @@ Public Class SortieAttestation
 
         ChangeVides(dt2)                                                    ' Effacer les vides dans dt2
         dts.Tables.Add(dt2)                                                 ' Ajouter dt2 au dataset
+
+        If dts Is Nothing Then
+            Throw New InvalidCastException
+        Else
+            If dts.Tables.Count < 2 Then
+                Throw New InvalidCastException
+            Else
+                If dts.Tables(0).Rows.Count = 0 Or dts.Tables(1).Rows.Count = 0 Then
+                    bilan += "Cet étudiant, MATRICULE = " & etud.GetInfoChamps(BDD.champsMATRIN) & " lui manquent des informations dans la table INSCRIPTION. " & vbNewLine
+                    Throw New InvalidCastException
+                End If
+
+            End If
+
+        End If
+
+        Form1.ds = dts
+        Form1.Show()
+
+
+        Console.WriteLine(getBilan)
         '____________________________
         Return dts                                                          ' Retourner le data set dts
 
@@ -76,5 +98,13 @@ Public Class SortieAttestation
         Next
 
     End Sub
+
+    Public Shared Function getBilan() As String
+        If bilan = "" Then
+            Return "Tout est bien passé!"
+        Else
+            Return bilan
+        End If
+    End Function
 
 End Class

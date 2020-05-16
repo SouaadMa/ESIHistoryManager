@@ -1,5 +1,7 @@
 ﻿Public Class SortieRNG
 
+    Private Shared bilan As String = ""
+
     Public Shared Function RNG(ByVal etud As Etudiant) As DataSet
 
 
@@ -85,6 +87,8 @@
             Throw New RngImpossibleException()
         End If
 
+        Console.WriteLine(getBilan)
+
         Return ds
 
     End Function
@@ -98,12 +102,18 @@
         Dim req As String
         req = Modif_BDD.genereModifRequete(etud.GetInfoChamps(BDD.champsMATRIN), listeModif, BDD.nomTableEtudiant)
 
-        'Console.WriteLine(req)
-
         BDD.executeRequete(req)
 
         etud.InfosETUDIANT.Item(BDD.champsNBR_RNG) = i
 
     End Sub
+
+    Public Shared Function getBilan() As String
+        If bilan = "" Then
+            Return "Tout est bien passé!"
+        Else
+            Return bilan
+        End If
+    End Function
 
 End Class

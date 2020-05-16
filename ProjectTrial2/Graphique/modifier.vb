@@ -17,6 +17,8 @@
         'initialisation generale
         Worning.Visible = False
         BT_GENERALINFO.Checked = True
+        CompletLabel.Visible = False
+
         'initialiser les criteres de laffichage avant modification
 
         'initialiser :
@@ -105,6 +107,7 @@
     Private Sub BT_MODIFIER_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_MODIFIER.Click
         Dim j As Integer
         worning_format = False
+
         'no research if he had fill the long fealds with des chaines de char
 
         'exeption pour le code postal
@@ -120,106 +123,118 @@
             End While
         End If
 
-        'filling la collections des critere
-        If worning_format = False Then
-            Dim collection_critere As New List(Of Critere)
+        Dim dialog As DialogResult
+        dialog = MsgBox("Voulez-vous sauvegarder vos modifications ?", MessageBoxButtons.YesNo, "Confirmation")
+        If (dialog = Windows.Forms.DialogResult.Yes) Then
 
-            If TXT_ADR.Text <> esistselect.GetInfoChamps(BDD.champsADRESSE) And Me.TXT_ADR.Text <> "" Then
-                collection_critere.Add(New Critere(BDD.champsADRESSE, TXT_ADR.Text, BDD.nomTableEtudiant))
-            End If
+            'filling la collections des critere
+            If worning_format = False Then
+                Dim collection_critere As New List(Of Critere)
 
-            If Me.TXT_CODEPOS.Text <> esistselect.GetInfoChamps(BDD.champsCODEPOS) And Me.TXT_CODEPOS.Text <> "" Then
-                collection_critere.Add(New Critere(BDD.champsCODEPOS, Me.TXT_CODEPOS.Text, BDD.nomTableEtudiant))
-            End If
+                If TXT_ADR.Text <> esistselect.GetInfoChamps(BDD.champsADRESSE) And Me.TXT_ADR.Text <> "" Then
+                    collection_critere.Add(New Critere(BDD.champsADRESSE, TXT_ADR.Text, BDD.nomTableEtudiant))
+                End If
 
-            If Me.TXT_DATENAIS.Text <> esistselect.GetInfoChamps(BDD.champsDateNais) And Me.TXT_DATENAIS.Text <> "" Then
-                collection_critere.Add(New Critere(BDD.champsDateNais, Me.TXT_DATENAIS.Text, BDD.nomTableEtudiant))
-            End If
+                If Me.TXT_CODEPOS.Text <> esistselect.GetInfoChamps(BDD.champsCODEPOS) And Me.TXT_CODEPOS.Text <> "" Then
+                    collection_critere.Add(New Critere(BDD.champsCODEPOS, Me.TXT_CODEPOS.Text, BDD.nomTableEtudiant))
+                End If
 
-            If Me.TXT_ETDE.Text <> esistselect.GetInfoChamps(BDD.champsET_DE) And Me.TXT_ETDE.Text <> "" Then
-                collection_critere.Add(New Critere(BDD.champsET_DE, Me.TXT_ETDE.Text, BDD.nomTableEtudiant))
-            End If
+                If Me.TXT_DATENAIS.Text <> esistselect.GetInfoChamps(BDD.champsDateNais) And Me.TXT_DATENAIS.Text <> "" Then
+                    collection_critere.Add(New Critere(BDD.champsDateNais, Me.TXT_DATENAIS.Text, BDD.nomTableEtudiant))
+                End If
 
-            If Me.TXT_FILSDE.Text <> esistselect.GetInfoChamps(BDD.champsFILS_DE) And Me.TXT_FILSDE.Text <> "" Then
-                collection_critere.Add(New Critere(BDD.champsFILS_DE, Me.TXT_FILSDE.Text, BDD.nomTableEtudiant))
-            End If
+                If Me.TXT_ETDE.Text <> esistselect.GetInfoChamps(BDD.champsET_DE) And Me.TXT_ETDE.Text <> "" Then
+                    collection_critere.Add(New Critere(BDD.champsET_DE, Me.TXT_ETDE.Text, BDD.nomTableEtudiant))
+                End If
 
-            If Me.TXT_LIEUNA.Text <> esistselect.GetInfoChamps(BDD.champsLieuNaisA) And Me.TXT_LIEUNA.Text <> "" Then
-                collection_critere.Add(New Critere(BDD.champsLieuNaisA, Me.TXT_LIEUNA.Text, BDD.nomTableEtudiant))
-            End If
+                If Me.TXT_FILSDE.Text <> esistselect.GetInfoChamps(BDD.champsFILS_DE) And Me.TXT_FILSDE.Text <> "" Then
+                    collection_critere.Add(New Critere(BDD.champsFILS_DE, Me.TXT_FILSDE.Text, BDD.nomTableEtudiant))
+                End If
 
-            If Me.TXT_LIEUN.Text <> esistselect.GetInfoChamps(BDD.champsLieuNais) And Me.TXT_LIEUN.Text <> "" Then
-                collection_critere.Add(New Critere(BDD.champsLieuNais, Me.TXT_LIEUN.Text, BDD.nomTableEtudiant))
-            End If
+                If Me.TXT_LIEUNA.Text <> esistselect.GetInfoChamps(BDD.champsLieuNaisA) And Me.TXT_LIEUNA.Text <> "" Then
+                    collection_critere.Add(New Critere(BDD.champsLieuNaisA, Me.TXT_LIEUNA.Text, BDD.nomTableEtudiant))
+                End If
 
-            If Me.TXT_NomEtud.Text <> esistselect.GetInfoChamps(BDD.champsNomEtud) And Me.TXT_NomEtud.Text <> "" Then
-                collection_critere.Add(New Critere(BDD.champsNomEtud, Me.TXT_NomEtud.Text, BDD.nomTableEtudiant))
-            End If
+                If Me.TXT_LIEUN.Text <> esistselect.GetInfoChamps(BDD.champsLieuNais) And Me.TXT_LIEUN.Text <> "" Then
+                    collection_critere.Add(New Critere(BDD.champsLieuNais, Me.TXT_LIEUN.Text, BDD.nomTableEtudiant))
+                End If
 
-            If Me.TXT_NomEtudA.Text <> esistselect.GetInfoChamps(BDD.champsNomEtudA) And Me.TXT_NomEtudA.Text <> "" Then
-                collection_critere.Add(New Critere(BDD.champsNomEtudA, Me.TXT_NomEtudA.Text, BDD.nomTableEtudiant))
-            End If
+                If Me.TXT_NomEtud.Text <> esistselect.GetInfoChamps(BDD.champsNomEtud) And Me.TXT_NomEtud.Text <> "" Then
+                    collection_critere.Add(New Critere(BDD.champsNomEtud, Me.TXT_NomEtud.Text, BDD.nomTableEtudiant))
+                End If
 
-            If Me.TXT_Prenoms.Text <> esistselect.GetInfoChamps(BDD.champsPrenoms) And Me.TXT_Prenoms.Text <> "" Then
-                collection_critere.Add(New Critere(BDD.champsPrenoms, Me.TXT_Prenoms.Text, BDD.nomTableEtudiant))
-            End If
+                If Me.TXT_NomEtudA.Text <> esistselect.GetInfoChamps(BDD.champsNomEtudA) And Me.TXT_NomEtudA.Text <> "" Then
+                    collection_critere.Add(New Critere(BDD.champsNomEtudA, Me.TXT_NomEtudA.Text, BDD.nomTableEtudiant))
+                End If
 
-            If Me.TXT_PrenomsA.Text <> esistselect.GetInfoChamps(BDD.champsPrenomsA) And Me.TXT_PrenomsA.Text <> "" Then
-                collection_critere.Add(New Critere(BDD.champsPrenomsA, Me.TXT_PrenomsA.Text, BDD.nomTableEtudiant))
-            End If
+                If Me.TXT_Prenoms.Text <> esistselect.GetInfoChamps(BDD.champsPrenoms) And Me.TXT_Prenoms.Text <> "" Then
+                    collection_critere.Add(New Critere(BDD.champsPrenoms, Me.TXT_Prenoms.Text, BDD.nomTableEtudiant))
+                End If
 
-            If Me.CB_SEXE.Text <> esistselect.GetInfoChamps(BDD.champsSEXE) And Me.CB_SEXE.Text <> "" Then
-                collection_critere.Add(New Critere(BDD.champsSEXE, Me.CB_SEXE.SelectedIndex, BDD.nomTableEtudiant))
-            End If
+                If Me.TXT_PrenomsA.Text <> esistselect.GetInfoChamps(BDD.champsPrenomsA) And Me.TXT_PrenomsA.Text <> "" Then
+                    collection_critere.Add(New Critere(BDD.champsPrenomsA, Me.TXT_PrenomsA.Text, BDD.nomTableEtudiant))
+                End If
 
-            If Me.TXT_VILLE.Text <> esistselect.GetInfoChamps(BDD.champsVILLE) And Me.TXT_VILLE.Text <> "" Then
-                collection_critere.Add(New Critere(BDD.champsVILLE, Me.TXT_VILLE.Text, BDD.nomTableEtudiant))
-            End If
+                If Me.CB_SEXE.Text <> esistselect.GetInfoChamps(BDD.champsSEXE) And Me.CB_SEXE.Text <> "" Then
+                    collection_critere.Add(New Critere(BDD.champsSEXE, Me.CB_SEXE.SelectedIndex, BDD.nomTableEtudiant))
+                End If
 
-            If Me.CB_WILAYA.Text <> esistselect.GetInfoChamps(BDD.champsWILAYA) And Me.CB_WILAYA.Text <> "" Then
-                collection_critere.Add(New Critere(BDD.champsWILAYA, Me.CB_WILAYA.Text, BDD.nomTableEtudiant))
-                If (Login.Infosgenerale.wilayaactuelle.Rows.Contains(Me.CB_WILAYA.Text) = False) Then
+                If Me.TXT_VILLE.Text <> esistselect.GetInfoChamps(BDD.champsVILLE) And Me.TXT_VILLE.Text <> "" Then
+                    collection_critere.Add(New Critere(BDD.champsVILLE, Me.TXT_VILLE.Text, BDD.nomTableEtudiant))
+                End If
 
-                    Login.Infosgenerale.wilayaactuelle.LoadDataRow({Me.CB_WILAYA.Text}, LoadOption.Upsert)
+                If Me.CB_WILAYA.Text <> esistselect.GetInfoChamps(BDD.champsWILAYA) And Me.CB_WILAYA.Text <> "" Then
+                    collection_critere.Add(New Critere(BDD.champsWILAYA, Me.CB_WILAYA.Text, BDD.nomTableEtudiant))
+                    If (Login.Infosgenerale.wilayaactuelle.Rows.Contains(Me.CB_WILAYA.Text) = False) Then
 
+                        Login.Infosgenerale.wilayaactuelle.LoadDataRow({Me.CB_WILAYA.Text}, LoadOption.Upsert)
+
+                    End If
+                End If
+
+                If Me.CB_WILAYAN.Text <> esistselect.GetInfoChamps(BDD.champsWILNAIS) And Me.CB_WILAYAN.Text <> "" Then
+                    collection_critere.Add(New Critere(BDD.champsWILNAIS, Me.CB_WILAYAN.Text, BDD.nomTableEtudiant))
+                    If (Login.Infosgenerale.codewilayaN.Rows.Contains(Me.CB_WILAYAN.Text) = False) Then
+
+                        Login.Infosgenerale.codewilayaN.LoadDataRow({Me.CB_WILAYAN.Text}, LoadOption.Upsert)
+
+                    End If
+                End If
+
+                If Me.CB_WILAYANA.Text <> esistselect.GetInfoChamps(BDD.champsWilayaNaisA) And Me.CB_WILAYANA.Text <> "" Then
+                    collection_critere.Add(New Critere(BDD.champsWilayaNaisA, Me.CB_WILAYANA.Text, BDD.nomTableEtudiant))
+                    If (Login.Infosgenerale.wilayaNaissanceArabe.Rows.Contains(Me.CB_WILAYANA.Text) = False) Then
+                        Login.Infosgenerale.wilayaNaissanceArabe.LoadDataRow({Me.CB_WILAYANA.Text}, LoadOption.Upsert)
+                    End If
+                End If
+
+                If collection_critere.Any = False Then
+                    BT_MODIFIER.Enabled = False
+                    Worning.Visible = True
+                Else
+
+                    Modification.traitModifier(collection_critere, esistselect)
+
+                    For Each Critere As Critere In collection_critere
+                        CType(Home.f, affichResearchResult).StudentTable.Rows.Item(CType(Home.f, affichResearchResult).SelectedStudent - 1)(Critere.getChamps) = Critere.getValeur
+                        Console.WriteLine(CType(Home.f, affichResearchResult).SelectedStudent.ToString)
+
+                    Next
+                    CType(Home.f, affichResearchResult).StudentList.Clear()
+                    CType(Home.f, affichResearchResult).affich_pageResult()
+                    CType(Home.f, affichResearchResult).TableLayoutPanel1_Leave(TableLayoutPanel1, New EventArgs())
                 End If
             End If
+            BT_MODIFIER.Enabled = False
+            modifier_Load(Me, e)
+            CompletLabel.Visible = True
 
-            If Me.CB_WILAYAN.Text <> esistselect.GetInfoChamps(BDD.champsWILNAIS) And Me.CB_WILAYAN.Text <> "" Then
-                collection_critere.Add(New Critere(BDD.champsWILNAIS, Me.CB_WILAYAN.Text, BDD.nomTableEtudiant))
-                If (Login.Infosgenerale.codewilayaN.Rows.Contains(Me.CB_WILAYAN.Text) = False) Then
-
-                    Login.Infosgenerale.codewilayaN.LoadDataRow({Me.CB_WILAYAN.Text}, LoadOption.Upsert)
-
-                End If
-            End If
-
-            If Me.CB_WILAYANA.Text <> esistselect.GetInfoChamps(BDD.champsWilayaNaisA) And Me.CB_WILAYANA.Text <> "" Then
-                collection_critere.Add(New Critere(BDD.champsWilayaNaisA, Me.CB_WILAYANA.Text, BDD.nomTableEtudiant))
-                If (Login.Infosgenerale.wilayaNaissanceArabe.Rows.Contains(Me.CB_WILAYANA.Text) = False) Then
-                    Login.Infosgenerale.wilayaNaissanceArabe.LoadDataRow({Me.CB_WILAYANA.Text}, LoadOption.Upsert)
-                End If
-            End If
-
-            If collection_critere.Any = False Then
-                BT_MODIFIER.Enabled = False
-                Worning.Visible = True
-            Else
-
-                Modification.traitModifier(collection_critere, esistselect)
-
-                For Each Critere As Critere In collection_critere
-                    CType(Home.f, affichResearchResult).StudentTable.Rows.Item(CType(Home.f, affichResearchResult).SelectedStudent - 1)(Critere.getChamps) = Critere.getValeur
-                    Console.WriteLine(CType(Home.f, affichResearchResult).SelectedStudent.ToString)
-
-                Next
-                CType(Home.f, affichResearchResult).StudentList.Clear()
-                CType(Home.f, affichResearchResult).affich_pageResult()
-                CType(Home.f, affichResearchResult).TableLayoutPanel1_Leave(TableLayoutPanel1, New EventArgs())
-            End If
+        Else
+            modifier_Load(Me, e)
         End If
-        modifier_Load(Me, e)
-        BT_MODIFIER.Enabled = False
+
+
+
     End Sub
 
     Private Sub TXT_NomEtud_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_NomEtud.Click
@@ -339,6 +354,7 @@
     Private Sub TXT_NomEtud_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_NomEtud.MouseLeave
         If TXT_NomEtud.Text <> "" And TXT_NomEtud.Text <> esistselect.GetInfoChamps(BDD.champsNomEtud) Then
             BT_MODIFIER.Enabled = True
+            CompletLabel.Visible = False
             TXT_NomEtud.ForeColor = Color.DimGray
         Else
             Me.TXT_NomEtud.Text = esistselect.GetInfoChamps(BDD.champsNomEtud)
@@ -349,6 +365,7 @@
     Private Sub TXT_Prenoms_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_Prenoms.MouseLeave
         If TXT_Prenoms.Text <> "" And TXT_Prenoms.Text <> esistselect.GetInfoChamps(BDD.champsPrenoms) Then
             BT_MODIFIER.Enabled = True
+            CompletLabel.Visible = False
             TXT_Prenoms.ForeColor = Color.DimGray
         Else
             Me.TXT_Prenoms.Text = esistselect.GetInfoChamps(BDD.champsPrenoms)
@@ -359,6 +376,7 @@
     Private Sub TXT_NomEtudA_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_NomEtudA.MouseLeave
         If TXT_NomEtudA.Text <> "" And TXT_NomEtudA.Text <> esistselect.GetInfoChamps(BDD.champsNomEtudA) Then
             BT_MODIFIER.Enabled = True
+            CompletLabel.Visible = False
             TXT_NomEtudA.ForeColor = Color.DimGray
         Else
             Me.TXT_NomEtudA.Text = esistselect.GetInfoChamps(BDD.champsNomEtudA)
@@ -369,6 +387,7 @@
     Private Sub TXT_PrenomsA_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_PrenomsA.MouseLeave
         If TXT_PrenomsA.Text <> "" And TXT_PrenomsA.Text <> esistselect.GetInfoChamps(BDD.champsPrenomsA) Then
             BT_MODIFIER.Enabled = True
+            CompletLabel.Visible = False
             TXT_PrenomsA.ForeColor = Color.DimGray
         Else
             Me.TXT_PrenomsA.Text = esistselect.GetInfoChamps(BDD.champsPrenomsA)
@@ -379,6 +398,7 @@
     Private Sub CB_SEXE_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CB_SEXE.MouseLeave
         If CB_SEXE.Text <> "" And CB_SEXE.Text <> InfosGenerales.sexe(CInt(esistselect.GetInfoChamps(BDD.champsSEXE))) Then
             BT_MODIFIER.Enabled = True
+            CompletLabel.Visible = False
             CB_SEXE.ForeColor = Color.DimGray
         Else
             Me.CB_SEXE.Text = InfosGenerales.sexe(CInt(esistselect.GetInfoChamps(BDD.champsSEXE)))
@@ -389,6 +409,7 @@
     Private Sub TXT_FILSDE_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_FILSDE.MouseLeave
         If TXT_FILSDE.Text <> "" And TXT_FILSDE.Text <> esistselect.GetInfoChamps(BDD.champsFILS_DE) Then
             BT_MODIFIER.Enabled = True
+            CompletLabel.Visible = False
             TXT_FILSDE.ForeColor = Color.DimGray
         Else
             Me.TXT_FILSDE.Text = esistselect.GetInfoChamps(BDD.champsFILS_DE)
@@ -399,6 +420,7 @@
     Private Sub TXT_ETDE_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_ETDE.MouseLeave
         If TXT_ETDE.Text <> "" And TXT_ETDE.Text <> esistselect.GetInfoChamps(BDD.champsET_DE) Then
             BT_MODIFIER.Enabled = True
+            CompletLabel.Visible = False
             TXT_ETDE.ForeColor = Color.DimGray
         Else
             Me.TXT_ETDE.Text = esistselect.GetInfoChamps(BDD.champsET_DE)
@@ -409,6 +431,7 @@
     Private Sub TXT_LIEUNA_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_LIEUN.MouseLeave
         If TXT_LIEUNA.Text <> "" And TXT_LIEUNA.Text <> esistselect.GetInfoChamps(BDD.champsLieuNaisA) Then
             BT_MODIFIER.Enabled = True
+            CompletLabel.Visible = False
             TXT_LIEUNA.ForeColor = Color.DimGray
         Else
             Me.TXT_LIEUNA.Text = esistselect.GetInfoChamps(BDD.champsLieuNaisA)
@@ -419,6 +442,7 @@
     Private Sub CB_WILAYAN_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CB_WILAYAN.MouseLeave
         If CB_WILAYAN.Text <> "" And CB_WILAYAN.Text <> esistselect.GetInfoChamps(BDD.champsLieuNaisA) Then
             BT_MODIFIER.Enabled = True
+            CompletLabel.Visible = False
             CB_WILAYAN.ForeColor = Color.DimGray
         Else
             Me.CB_WILAYAN.Text = esistselect.GetInfoChamps(BDD.champsLieuNaisA)
@@ -429,6 +453,7 @@
     Private Sub TXT_LIEUN_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_LIEUNA.MouseLeave
         If TXT_LIEUN.Text <> "" And TXT_LIEUN.Text <> esistselect.GetInfoChamps(BDD.champsLieuNais) Then
             BT_MODIFIER.Enabled = True
+            CompletLabel.Visible = False
             TXT_LIEUN.ForeColor = Color.DimGray
         Else
             Me.TXT_LIEUN.Text = esistselect.GetInfoChamps(BDD.champsLieuNais)
@@ -439,6 +464,7 @@
     Private Sub CB_WILAYANA_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CB_WILAYANA.MouseLeave
         If CB_WILAYANA.Text <> "" And CB_WILAYANA.Text <> esistselect.GetInfoChamps(BDD.champsWilayaNaisA) Then
             BT_MODIFIER.Enabled = True
+            CompletLabel.Visible = False
             CB_WILAYANA.ForeColor = Color.DimGray
         Else
             Me.CB_WILAYANA.Text = esistselect.GetInfoChamps(BDD.champsWilayaNaisA)
@@ -449,6 +475,7 @@
     Private Sub TXT_ADR_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_ADR.MouseLeave
         If TXT_ADR.Text <> "" And TXT_ADR.Text <> esistselect.GetInfoChamps(BDD.champsADRESSE) Then
             BT_MODIFIER.Enabled = True
+            CompletLabel.Visible = False
             TXT_ADR.ForeColor = Color.DimGray
         Else
             Me.TXT_ADR.Text = esistselect.GetInfoChamps(BDD.champsADRESSE)
@@ -459,6 +486,7 @@
     Private Sub TXT_VILLE_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_VILLE.MouseLeave
         If TXT_VILLE.Text <> "" And TXT_VILLE.Text <> esistselect.GetInfoChamps(BDD.champsVILLE) Then
             BT_MODIFIER.Enabled = True
+            CompletLabel.Visible = False
             TXT_VILLE.ForeColor = Color.DimGray
         Else
             Me.TXT_VILLE.Text = esistselect.GetInfoChamps(BDD.champsVILLE)
@@ -469,6 +497,7 @@
     Private Sub CB_WILAYA_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CB_WILAYA.MouseLeave
         If CB_WILAYA.Text <> "" And CB_WILAYA.Text <> esistselect.GetInfoChamps(BDD.champsWILAYA) Then
             BT_MODIFIER.Enabled = True
+            CompletLabel.Visible = False
             CB_WILAYA.ForeColor = Color.DimGray
         Else
             Me.CB_WILAYA.Text = esistselect.GetInfoChamps(BDD.champsWILAYA)
@@ -479,6 +508,7 @@
     Private Sub TXT_CODEPOS_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_CODEPOS.MouseLeave
         If TXT_CODEPOS.Text <> "" And TXT_CODEPOS.Text <> esistselect.GetInfoChamps(BDD.champsCODEPOS) Then
             BT_MODIFIER.Enabled = True
+            CompletLabel.Visible = False
             TXT_CODEPOS.ForeColor = Color.DimGray
         Else
             Me.TXT_CODEPOS.Text = esistselect.GetInfoChamps(BDD.champsCODEPOS)
@@ -489,6 +519,7 @@
     Private Sub DTP_DATENAIS_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DTP_DATENAIS.MouseLeave
         If DTP_DATENAIS.Text <> "" And Me.DTP_DATENAIS.Text <> esistselect.GetInfoChamps(BDD.champsDateNais) Then
             BT_MODIFIER.Enabled = True
+            CompletLabel.Visible = False
             TXT_DATENAIS.Text = DTP_DATENAIS.Text
             DTP_DATENAIS.ForeColor = Color.DimGray
         Else

@@ -30,6 +30,9 @@ Partial Class modifier
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.BT_GENERALINFO = New System.Windows.Forms.RadioButton()
         Me.BT_INFORESIDENCE = New System.Windows.Forms.RadioButton()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.BT_SORTIR = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.TAB_PAGES = New System.Windows.Forms.TabControl()
         Me.P_GENERALITE = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
@@ -84,11 +87,10 @@ Partial Class modifier
         Me.Panel22 = New System.Windows.Forms.Panel()
         Me.LB_CODEPOS = New System.Windows.Forms.Label()
         Me.TXT_CODEPOS = New System.Windows.Forms.TextBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.BT_SORTIR = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.CompletLabel = New System.Windows.Forms.Label()
         Me.PN_MODIFIER.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.TAB_PAGES.SuspendLayout()
         Me.P_GENERALITE.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -110,7 +112,6 @@ Partial Class modifier
         Me.Panel20.SuspendLayout()
         Me.Panel21.SuspendLayout()
         Me.Panel22.SuspendLayout()
-        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'PN_MODIFIER
@@ -218,6 +219,47 @@ Partial Class modifier
         Me.BT_INFORESIDENCE.TabIndex = 5
         Me.BT_INFORESIDENCE.Text = "Residence          "
         Me.BT_INFORESIDENCE.UseVisualStyleBackColor = False
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.Transparent
+        Me.Panel1.Controls.Add(Me.CompletLabel)
+        Me.Panel1.Controls.Add(Me.BT_SORTIR)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(678, 82)
+        Me.Panel1.TabIndex = 51
+        '
+        'BT_SORTIR
+        '
+        Me.BT_SORTIR.BackColor = System.Drawing.Color.Transparent
+        Me.BT_SORTIR.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.sortiropp1
+        Me.BT_SORTIR.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BT_SORTIR.FlatAppearance.BorderSize = 0
+        Me.BT_SORTIR.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BT_SORTIR.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BT_SORTIR.ForeColor = System.Drawing.Color.White
+        Me.BT_SORTIR.Location = New System.Drawing.Point(622, 11)
+        Me.BT_SORTIR.Margin = New System.Windows.Forms.Padding(2, 2, 2, 100)
+        Me.BT_SORTIR.Name = "BT_SORTIR"
+        Me.BT_SORTIR.Size = New System.Drawing.Size(45, 45)
+        Me.BT_SORTIR.TabIndex = 45
+        Me.BT_SORTIR.UseVisualStyleBackColor = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 16.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(114, 19)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(355, 25)
+        Me.Label1.TabIndex = 12
+        Me.Label1.Text = "Modifer les informations de l'étudiant"
         '
         'TAB_PAGES
         '
@@ -861,45 +903,19 @@ Partial Class modifier
         Me.TXT_CODEPOS.TabIndex = 84
         Me.TXT_CODEPOS.Text = "code postale"
         '
-        'Panel1
+        'CompletLabel
         '
-        Me.Panel1.BackColor = System.Drawing.Color.Transparent
-        Me.Panel1.Controls.Add(Me.BT_SORTIR)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(678, 82)
-        Me.Panel1.TabIndex = 51
-        '
-        'BT_SORTIR
-        '
-        Me.BT_SORTIR.BackColor = System.Drawing.Color.Transparent
-        Me.BT_SORTIR.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.sortiropp1
-        Me.BT_SORTIR.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BT_SORTIR.FlatAppearance.BorderSize = 0
-        Me.BT_SORTIR.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BT_SORTIR.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BT_SORTIR.ForeColor = System.Drawing.Color.White
-        Me.BT_SORTIR.Location = New System.Drawing.Point(622, 11)
-        Me.BT_SORTIR.Margin = New System.Windows.Forms.Padding(2, 2, 2, 100)
-        Me.BT_SORTIR.Name = "BT_SORTIR"
-        Me.BT_SORTIR.Size = New System.Drawing.Size(45, 45)
-        Me.BT_SORTIR.TabIndex = 45
-        Me.BT_SORTIR.UseVisualStyleBackColor = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 16.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(109, 25)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(355, 25)
-        Me.Label1.TabIndex = 12
-        Me.Label1.Text = "Modifer les informations de l'étudiant"
+        Me.CompletLabel.AutoSize = True
+        Me.CompletLabel.BackColor = System.Drawing.Color.Transparent
+        Me.CompletLabel.Font = New System.Drawing.Font("Times New Roman", 15.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CompletLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.CompletLabel.Location = New System.Drawing.Point(194, 53)
+        Me.CompletLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.CompletLabel.Name = "CompletLabel"
+        Me.CompletLabel.Size = New System.Drawing.Size(435, 23)
+        Me.CompletLabel.TabIndex = 46
+        Me.CompletLabel.Text = "Les modifications ont été sauvegardées avec succès"
+        Me.CompletLabel.Visible = False
         '
         'modifier
         '
@@ -918,6 +934,8 @@ Partial Class modifier
         Me.PN_MODIFIER.ResumeLayout(False)
         Me.PN_MODIFIER.PerformLayout()
         Me.Panel3.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.TAB_PAGES.ResumeLayout(False)
         Me.P_GENERALITE.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
@@ -955,8 +973,6 @@ Partial Class modifier
         Me.Panel21.PerformLayout()
         Me.Panel22.ResumeLayout(False)
         Me.Panel22.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1024,4 +1040,5 @@ Partial Class modifier
     Friend WithEvents TXT_ETDE As System.Windows.Forms.TextBox
     Friend WithEvents SortirButton As System.Windows.Forms.Button
     Friend WithEvents Worning As System.Windows.Forms.Label
+    Friend WithEvents CompletLabel As System.Windows.Forms.Label
 End Class

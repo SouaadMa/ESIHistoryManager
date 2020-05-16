@@ -108,17 +108,8 @@ Public Class Login
         Me.MinimumSize = New System.Drawing.Size(1023, 700)
         Me.MaximumSize = New System.Drawing.Size(1050, 750)
 
-        'open our filestream
-        Dim stream As FileStream
-        stream = File.OpenRead("password.txt")
-
-        'create the binary formatter
-        Dim formatter As New BinaryFormatter
-        Login.password_ = formatter.Deserialize(stream)
-        stream.Close()
-
-        
-
+        Login.password_ = password.recover
+        'Login.password_ = New password("agent", "admin")
     End Sub
 
     

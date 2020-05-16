@@ -11,6 +11,7 @@
 
         ChargementButton.Enabled = False
         CompletLabel.Visible = False
+        RechargComplLabel.Visible = False
         'Panel2.AllowDrop = True
         'Panel3.AllowDrop = True
         'Panel4.AllowDrop = True
@@ -81,10 +82,14 @@
         Dim collection_files() As String = e.Argument
         If collection_files.Length > 1 Then
             eclat.ECLATEMENT(collection_files(0), collection_files(1), collection_files(2), collection_files(3), collection_files(4))
+            e.Result = 1
         Else
             eclat.RECHARGEMENT(collection_files(0))
+            e.Result = 2
         End If
+
         Login.Infosgenerale = New InfosGenerales()
+
     End Sub
 
     Private Sub ChargBackgroundWorker_ProgressChanged(ByVal sender As System.Object, ByVal e As System.ComponentModel.ProgressChangedEventArgs) Handles ChargBackgroundWorker.ProgressChanged
@@ -95,7 +100,14 @@
     Private Sub ChargBackgroundWorker_RunWorkerCompleted(ByVal sender As System.Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles ChargBackgroundWorker.RunWorkerCompleted
         eclat.progress = 0
         Panel1.Visible = True
-        CompletLabel.Visible = True
+        If e.Result = 1 Then
+            CompletLabel.Visible = True
+            RechargComplLabel.Visible = False
+        Else
+            CompletLabel.Visible = False
+            RechargComplLabel.Visible = True
+        End If
+        'e.C = True
     End Sub
 
     Private Sub Panel1_VisibleChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Panel1.VisibleChanged
@@ -109,10 +121,19 @@
     Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button8.Click, Button7.Click, Button6.Click, Button5.Click
         If CType(sender, Button).ImageIndex = 1 Then
             Panel1.Controls.Item("Button" + (CInt((CType(sender, Control).Name.Last()).ToString) - 4).ToString).Text = "Cliquez pour choisir le fichier"
+            Button4_TextChanged(Panel1.Controls.Item("Button" + (CInt((CType(sender, Control).Name.Last()).ToString) - 4).ToString), New EventArgs())
             CType(sender, Button).ImageIndex = 0
+        Else
+            Button4_Click(Panel1.Controls.Item("Button" + (CInt((CType(sender, Control).Name.Last()).ToString) - 4).ToString), New EventArgs())
         End If
     End Sub
+    Private Sub Button4_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.MouseLeave, Button2.MouseLeave, Button3.MouseLeave, Button4.MouseLeave
+        Button5_MouseLeave(Panel1.Controls.Item("Button" + (CInt((CType(sender, Control).Name.Last()).ToString) + 4).ToString), New System.EventArgs)
+    End Sub
 
+    Private Sub Button5_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button8.MouseLeave, Button7.MouseLeave, Button6.MouseLeave, Button5.MouseLeave
+        CType(sender, Control).Visible = False
+    End Sub
 End Class
 
 

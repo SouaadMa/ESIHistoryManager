@@ -19,12 +19,28 @@ Public Class RNGPage
     End Sub
 
     Private Sub RNGPage_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        'initialize the graphic componants values
+        NoResultPanel.Visible = False
+        'retrieve the print button and add a click handler to it
+        For Each ts As ToolStrip In CrystalReportViewer1.Controls.OfType(Of ToolStrip)()
+            For Each tsb As ToolStripButton In ts.Items.OfType(Of ToolStripButton)()
+                If tsb.AccessibleName.ToLower.Contains("Print") Or tsb.AccessibleName.ToLower.Contains("imprimer") Then
+                    AddHandler tsb.Click, AddressOf printButton_Click
+                End If
+            Next
+        Next
 
+        'initialize the graphic componants values
         CrystalReportViewer1.Enabled = True
         ' make the report viewer visible
         CrystalReportViewer1.Visible = True
         'disbale the affich button until any combobox values has been changed
+        ImprTotalLabel.Visible = False
+
+        NomLabel.Text = esistselect.GetInfoChamps(BDD.champsNomEtud)
+        PrenomLabel.Text = esistselect.GetInfoChamps(BDD.champsPrenoms)
+        Matricule.Text = esistselect.GetInfoChamps(BDD.champsMATRIN)
+        AdresseLabel.Text = esistselect.GetInfoChamps(BDD.champsVILLE) + esistselect.GetInfoChamps(BDD.champsWILAYA)
+        PromoLabel.Text = esistselect.GetInfoChamps(BDD.champsANNEEBAC)
         ' and that's it !
     End Sub
 
@@ -55,8 +71,8 @@ Public Class RNGPage
                 FormulaFields = cryrpt.Subreports.Item(i).DataDefinition.FormulaFields
                 codannee = "20" + ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.LastIndexOf("/") + 1)
                 codannee += "/" + (CInt(codannee) + 1).ToString
-                codprom = ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(0, 1) + IIf(ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(0, 1).Equals("1"), " er", " ème") + " Année "
-                codprom += IIf(ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(2, 3).Equals("TRC"), "Tronc Commun ", IIf(ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(2, 3).Equals("SIQ"), "Systeme d informatiques ", "Systeme d informations ")) + codannee
+                codprom = ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(0, 1) + IIf(ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(0, 1).Equals("1"), " ère", " ème") + " Année "
+                codprom += IIf(ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(2, 3).Equals("TRC"), "Tronc Commun ", IIf(ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(2, 3).Equals("SIQ"), "Systèmes informatiques ", "Systèmes d'informations ")) + codannee
                 If i <> 4 Then
                     'get the corresponding formula item
                     FormulaField = FormulaFields.Item(0)
@@ -131,12 +147,20 @@ Public Class RNGPage
             End If
 
         Catch ex As RngImpossibleException
-            MsgBox("Impossible de generer le RNG de cet etudiant", , "Erreur")
+            'MsgBox("Cet étudiant n'a pas obtenu son diplome ", , "Erreur")
+            CrystalReportViewer1.Visible = False
+            NoResultPanel.Visible = True
+            NoResultLabel.Text = "Cet étudiant n'a pas obtenu son diplome"
         Catch ex As Exception
-            MsgBox("Impossible de generer le releve de note general de cet etudiant", , "Erreur")
-            BT_SORTIR_Click(SortirButton, New EventArgs())
+            'MsgBox("Impossible de générer le relevé de note général de cet etudiant", , "Erreur")
+            'BT_SORTIR_Click(SortirButton, New EventArgs())
+            CrystalReportViewer1.Visible = False
+            NoResultPanel.Visible = True
+            NoResultLabel.Text = "Il existe quelques informations manquants dans l'historique de cet étudiant , veuillez les remplir et recharger la base de donnée à nouveau."
         End Try
-
+        If esistselect.GetInfoChamps(BDD.champsNBR_RNG) Then
+            ImprTotalLabel.Visible = True
+        End If
     End Sub
 
     Private Sub BT_SORTIR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SortirButton.Click
@@ -145,4 +169,34 @@ Public Class RNGPage
         Home.MainContainer2.Visible = False
         Home.MainContainer1.Visible = True
     End Sub
+
+    Private Sub ImprTotalLabel_VisibleChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ImprTotalLabel.VisibleChanged
+        If ImprTotalLabel.Visible Then
+            With AvertToolTip
+                .Active = True
+                .IsBalloon = True
+                .SetToolTip(sender, "Ce relevé de note a été imprimé déja" + esistselect.GetInfoChamps(BDD.champsNBR_RNG).ToString + "fois")
+                .Show("Ce relevé de note a été imprimé déja" + esistselect.GetInfoChamps(BDD.champsNBR_RNG).ToString + "fois", sender)
+                .ShowAlways = True
+            End With
+        Else
+            AvertToolTip.Active = False
+        End If
+    End Sub
+
+    Private Sub printButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        'MsgBox("Printed")
+        Dim dialog As DialogResult
+        ImprTotalLabel.Visible = False
+        dialog = MsgBox("Est-ce que le relevé de note général a été imprimé ?", MessageBoxButtons.YesNo, "Confirmer L'impression")
+        If (dialog = Windows.Forms.DialogResult.Yes) Then
+            SortieRNG.SetNbreRNG(esistselect, esistselect.GetInfoChamps(BDD.champsNBR_RNG) + 1)
+            ImprTotalLabel.Visible = True
+        Else
+            ImprTotalLabel.Visible = False
+        End If
+
+        'MsgBox.Show("Printed")
+    End Sub
+
 End Class

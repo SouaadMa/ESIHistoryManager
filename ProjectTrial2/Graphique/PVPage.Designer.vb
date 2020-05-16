@@ -38,12 +38,18 @@ Partial Class PVPage
         Me.PromoBox = New System.Windows.Forms.ComboBox()
         Me.NiveauBox = New System.Windows.Forms.ComboBox()
         Me.SpecialiteBox = New System.Windows.Forms.ComboBox()
+        Me.NoResultPanel = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.NoResultLabel = New System.Windows.Forms.Label()
         Me.PVIntroPanel.SuspendLayout()
         Me.PN_FORUMRECH.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.LimitUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.NoResultPanel.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PVIntroPanel
@@ -52,7 +58,7 @@ Partial Class PVPage
         Me.PVIntroPanel.Location = New System.Drawing.Point(0, 0)
         Me.PVIntroPanel.Margin = New System.Windows.Forms.Padding(0)
         Me.PVIntroPanel.Name = "PVIntroPanel"
-        Me.PVIntroPanel.Size = New System.Drawing.Size(675, 50)
+        Me.PVIntroPanel.Size = New System.Drawing.Size(676, 50)
         Me.PVIntroPanel.TabIndex = 46
         '
         'Label1
@@ -85,6 +91,7 @@ Partial Class PVPage
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.NoResultPanel)
         Me.Panel2.Controls.Add(Me.CrystalReportViewer1)
         Me.Panel2.Location = New System.Drawing.Point(0, 107)
         Me.Panel2.Name = "Panel2"
@@ -114,7 +121,7 @@ Partial Class PVPage
         Me.Panel1.Controls.Add(Me.SpecialiteBox)
         Me.Panel1.Location = New System.Drawing.Point(0, 49)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(675, 57)
+        Me.Panel1.Size = New System.Drawing.Size(676, 57)
         Me.Panel1.TabIndex = 47
         '
         'GroupBox1
@@ -227,6 +234,49 @@ Partial Class PVPage
         Me.SpecialiteBox.Size = New System.Drawing.Size(68, 26)
         Me.SpecialiteBox.TabIndex = 2
         '
+        'NoResultPanel
+        '
+        Me.NoResultPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.NoResultPanel.Controls.Add(Me.Label5)
+        Me.NoResultPanel.Controls.Add(Me.PictureBox1)
+        Me.NoResultPanel.Controls.Add(Me.NoResultLabel)
+        Me.NoResultPanel.Location = New System.Drawing.Point(0, -2)
+        Me.NoResultPanel.Name = "NoResultPanel"
+        Me.NoResultPanel.Size = New System.Drawing.Size(676, 533)
+        Me.NoResultPanel.TabIndex = 56
+        Me.NoResultPanel.Visible = False
+        '
+        'Label5
+        '
+        Me.Label5.Font = New System.Drawing.Font("Arial", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(18, 26)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(643, 52)
+        Me.Label5.TabIndex = 2
+        Me.Label5.Text = "Impossible d'afficher le PV"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.missed
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.PictureBox1.Location = New System.Drawing.Point(224, 89)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(231, 268)
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
+        '
+        'NoResultLabel
+        '
+        Me.NoResultLabel.Font = New System.Drawing.Font("Bahnschrift", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NoResultLabel.Location = New System.Drawing.Point(15, 376)
+        Me.NoResultLabel.Name = "NoResultLabel"
+        Me.NoResultLabel.Size = New System.Drawing.Size(649, 137)
+        Me.NoResultLabel.TabIndex = 0
+        Me.NoResultLabel.Text = "Il existe quelques informations manquants dans l'historique de cet étudiant , veu" & _
+            "illez les remplir et recharger la base de donnée à nouveau."
+        Me.NoResultLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'PVPage
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
@@ -249,6 +299,8 @@ Partial Class PVPage
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.LimitUpDown, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.NoResultPanel.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -268,6 +320,10 @@ Partial Class PVPage
     Friend WithEvents LimitUpDown As System.Windows.Forms.NumericUpDown
     Friend WithEvents AllCheckBox As System.Windows.Forms.CheckBox
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents NoResultPanel As System.Windows.Forms.Panel
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents NoResultLabel As System.Windows.Forms.Label
     'Friend WithEvents Cryst12 As EsistHistoryManagement_v1.PvReport1
 
 End Class

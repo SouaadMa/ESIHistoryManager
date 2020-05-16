@@ -62,6 +62,7 @@ Public Class Home
             .Width += 125
         End With
         HomeButton_Click(HomeButton, New System.EventArgs())
+        MenuButton_Click(MenuButton, New MouseEventArgs(MouseButtons.Middle, 1, 15, 15, 1))
 
         Login.Close()    ' close the login page 
 
@@ -431,24 +432,38 @@ Public Class Home
     End Sub
 
     Private Sub DetailButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DetailButton.Click
-        If f.GetType.ToString.Equals("EsistHistoryManagement_v1.affichResearchResult") Or f.GetType.ToString.Equals("EsistHistoryManagement_v1.ClassementPage") Then
             'Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
+            
+        If f.GetType.ToString.Equals("EsistHistoryManagement_v1.affichResearchResult") Or f.GetType.ToString.Equals("EsistHistoryManagement_v1.ClassementPage") Then
             If Not f Is Nothing Then
                 'f.Hide()
                 MainContainer1.Visible = False
             End If
-
+            If Not h Is Nothing Then
+                'f.Hide()
+                h.Close()
+            End If
             h = New details(CTypeDynamic(f, f.GetType()).StudentList.Item(0))        ' assign the search form to  the f form
-            h.TopLevel = False
-            h.TopMost = True
-            h.WindowState = FormWindowState.Normal
-            Me.MainContainer2.Controls.Add(h)        ' add the controlers of the searche page to the main form f 
-            h.Show()                                ' show the form f in the middle of the home page
-            Me.MainContainer2.Visible = True
-            Me.MainContainer1.Visible = False
-            'Me.MainContainer1.Width = 680            ' adjust its appearance
-
+        Else
+            If Not f Is Nothing Then
+                'f.Hide()
+                MainContainer1.Visible = False
+            End If
+            If Not h Is Nothing Then
+                'f.Hide()
+                h.Close()
+            End If
+            h = New details(CTypeDynamic(f, f.GetType()).esistselect)
         End If
+        h.TopLevel = False
+        h.TopMost = True
+        h.WindowState = FormWindowState.Normal
+        Me.MainContainer2.Controls.Add(h)        ' add the controlers of the searche page to the main form f 
+        h.Show()                                ' show the form f in the middle of the home page
+        Me.MainContainer2.Visible = True
+        Me.MainContainer1.Visible = False
+        'Me.MainContainer1.Width = 680            ' adjust its appearance
+
     End Sub
 
     Private Sub ModifButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ModifButton.Click
@@ -458,18 +473,32 @@ Public Class Home
                 'f.Hide()
                 MainContainer1.Visible = False
             End If
-
+            If Not h Is Nothing Then
+                'f.Hide()
+                h.Close()
+            End If
             h = New modifier(CTypeDynamic(f, f.GetType()).StudentList.Item(0))        ' assign the search form to  the f form
-            h.TopLevel = False
-            h.TopMost = True
-            h.WindowState = FormWindowState.Normal
-            Me.MainContainer2.Controls.Add(h)        ' add the controlers of the searche page to the main form f 
-            h.Show()                                ' show the form f in the middle of the home page
-            Me.MainContainer2.Visible = True
-            Me.MainContainer1.Visible = False
-            'Me.MainContainer1.Width = 680            ' adjust its appearance
-
+        Else
+            If Not f Is Nothing Then
+                'f.Hide()
+                MainContainer1.Visible = False
+            End If
+            If Not h Is Nothing Then
+                'f.Hide()
+                h.Close()
+            End If
+            h = New modifier(CTypeDynamic(f, f.GetType()).esistselect)
         End If
+        h.TopLevel = False
+        h.TopMost = True
+        h.WindowState = FormWindowState.Normal
+        Me.MainContainer2.Controls.Add(h)        ' add the controlers of the searche page to the main form f 
+        h.Show()                                ' show the form f in the middle of the home page
+        Me.MainContainer2.Visible = True
+        Me.MainContainer1.Visible = False
+        'Me.MainContainer1.Width = 680            ' adjust its appearance
+
+        'End If
     End Sub
 
     Private Sub RNButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RNButton.Click
@@ -479,18 +508,32 @@ Public Class Home
                 'f.Hide()
                 MainContainer1.Visible = False
             End If
-
+            If Not h Is Nothing Then
+                'f.Hide()
+                h.Close()
+            End If
             h = New RN(CTypeDynamic(f, f.GetType()).StudentList.Item(0))         ' assign the search form to  the f form
-            h.TopLevel = False
-            h.TopMost = True
-            h.WindowState = FormWindowState.Normal
-            Me.MainContainer2.Controls.Add(h)        ' add the controlers of the searche page to the main form f 
-            h.Show()                                ' show the form f in the middle of the home page
-            Me.MainContainer2.Visible = True
-            Me.MainContainer1.Visible = False
-            'Me.MainContainer1.Width = 680            ' adjust its appearance
-
+        Else
+            If Not f Is Nothing Then
+                'f.Hide()
+                MainContainer1.Visible = False
+            End If
+            If Not h Is Nothing Then
+                'f.Hide()
+                h.Close()
+            End If
+            h = New RN(CTypeDynamic(f, f.GetType()).esistselect)
         End If
+        h.TopLevel = False
+        h.TopMost = True
+        h.WindowState = FormWindowState.Normal
+        Me.MainContainer2.Controls.Add(h)        ' add the controlers of the searche page to the main form f 
+        h.Show()                                ' show the form f in the middle of the home page
+        Me.MainContainer2.Visible = True
+        Me.MainContainer1.Visible = False
+        'Me.MainContainer1.Width = 680            ' adjust its appearance
+
+        'End If
     End Sub
 
     Private Sub RNGButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RNGButton.Click
@@ -500,17 +543,32 @@ Public Class Home
                 'f.Hide()
                 MainContainer1.Visible = False
             End If
+            If Not h Is Nothing Then
+                'f.Hide()
+                h.Close()
+            End If
             h = New RNGPage(CTypeDynamic(f, f.GetType()).StudentList.Item(0))         ' assign the search form to  the f form
-            h.TopLevel = False
-            h.TopMost = True
-            h.WindowState = FormWindowState.Normal
-            Me.MainContainer2.Controls.Add(h)        ' add the controlers of the searche page to the main form f 
-            h.Show()                                ' show the form f in the middle of the home page
-            Me.MainContainer2.Visible = True
-            Me.MainContainer1.Visible = False
-            'Me.MainContainer1.Width = 680            ' adjust its appearance
-
+        Else
+            If Not f Is Nothing Then
+                'f.Hide()
+                MainContainer1.Visible = False
+            End If
+            If Not h Is Nothing Then
+                'f.Hide()
+                h.Close()
+            End If
+            h = New RNGPage(CTypeDynamic(f, f.GetType()).esistselect)
         End If
+        h.TopLevel = False
+        h.TopMost = True
+        h.WindowState = FormWindowState.Normal
+        Me.MainContainer2.Controls.Add(h)        ' add the controlers of the searche page to the main form f 
+        h.Show()                                ' show the form f in the middle of the home page
+        Me.MainContainer2.Visible = True
+        Me.MainContainer1.Visible = False
+        'Me.MainContainer1.Width = 680            ' adjust its appearance
+
+        'End If
     End Sub
 
     Private Sub PrintButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PrintButton.Click
@@ -520,18 +578,32 @@ Public Class Home
                 'f.Hide()
                 MainContainer1.Visible = False
             End If
-
+            If Not h Is Nothing Then
+                'f.Hide()
+                h.Close()
+            End If
             h = New Attestation(CTypeDynamic(f, f.GetType()).StudentList.Item(0))         ' assign the search form to  the f form
-            h.TopLevel = False
-            h.TopMost = True
-            h.WindowState = FormWindowState.Normal
-            Me.MainContainer2.Controls.Add(h)        ' add the controlers of the searche page to the main form f 
-            h.Show()                                ' show the form f in the middle of the home page
-            Me.MainContainer2.Visible = True
-            Me.MainContainer1.Visible = False
-            'Me.MainContainer1.Width = 680            ' adjust its appearance
-
+        Else
+            If Not f Is Nothing Then
+                'f.Hide()
+                MainContainer1.Visible = False
+            End If
+            If Not h Is Nothing Then
+                'f.Hide()
+                h.Close()
+            End If
+            h = New Attestation(CTypeDynamic(f, f.GetType()).esistselect)
         End If
+        h.TopLevel = False
+        h.TopMost = True
+        h.WindowState = FormWindowState.Normal
+        Me.MainContainer2.Controls.Add(h)        ' add the controlers of the searche page to the main form f 
+        h.Show()                                ' show the form f in the middle of the home page
+        Me.MainContainer2.Visible = True
+        Me.MainContainer1.Visible = False
+        'Me.MainContainer1.Width = 680            ' adjust its appearance
+
+        'End If
     End Sub
 
     Private Sub ProgressPanel_VisibleChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ProgressPanel.VisibleChanged
@@ -559,26 +631,26 @@ Public Class Home
         PictureBox2.Size = New System.Drawing.Size(226, (x * (PictureBox2.MaximumSize.Height)) \ 100)
     End Sub
 
-    Private Sub BT_CERT_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        If f.GetType.ToString.Equals("EsistHistoryManagement_v1.affichResearchResult") Or f.GetType.ToString.Equals("EsistHistoryManagement_v1.ClassementPage") Then
-            'Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
-            If Not f Is Nothing Then
-                'f.Hide()
-                MainContainer1.Visible = False
-            End If
+    'Private Sub BT_CERT_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    '    If f.GetType.ToString.Equals("EsistHistoryManagement_v1.affichResearchResult") Or f.GetType.ToString.Equals("EsistHistoryManagement_v1.ClassementPage") Then
+    '        'Me.PN_BIENVENUE.Visible = False 'hide the acceuil pane
+    '        If Not f Is Nothing Then
+    '            'f.Hide()
+    '            MainContainer1.Visible = False
+    '        End If
 
-            h = New Attestation(CType(f, affichResearchResult).StudentList.Item(0))        ' assign the search form to  the f form
-            h.TopLevel = False
-            h.TopMost = True
-            h.WindowState = FormWindowState.Normal
-            Me.MainContainer2.Controls.Add(h)        ' add the controlers of the searche page to the main form f 
-            h.Show()                                ' show the form f in the middle of the home page
-            Me.MainContainer2.Visible = True
-            Me.MainContainer1.Visible = False
-            'Me.MainContainer1.Width = 680            ' adjust its appearance
+    '        h = New Attestation(CType(f, affichResearchResult).StudentList.Item(0))        ' assign the search form to  the f form
+    '        h.TopLevel = False
+    '        h.TopMost = True
+    '        h.WindowState = FormWindowState.Normal
+    '        Me.MainContainer2.Controls.Add(h)        ' add the controlers of the searche page to the main form f 
+    '        h.Show()                                ' show the form f in the middle of the home page
+    '        Me.MainContainer2.Visible = True
+    '        Me.MainContainer1.Visible = False
+    '        'Me.MainContainer1.Width = 680            ' adjust its appearance
 
-        End If
-    End Sub
+    '    End If
+    'End Sub
 
 End Class
 

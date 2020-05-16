@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="AttestationDataSet" targetNamespace="http://tempuri.org/AttestationDataSet.xsd" xmlns:mstns="http://tempuri.org/AttestationDataSet.xsd" xmlns="http://tempuri.org/AttestationDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="AttestationDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="AttestationDataSet" msprop:Generator_UserDSName="AttestationDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Table2" msprop:Generator_TableClassName="Table2DataTable" msprop:Generator_TableVarName="tableTable2" msprop:Generator_RowChangedName="Table2RowChanged" msprop:Generator_TablePropName="Table2" msprop:Generator_RowDeletingName="Table2RowDeleting" msprop:Generator_RowChangingName="Table2RowChanging" msprop:Generator_RowEvHandlerName="Table2RowChangeEventHandler" msprop:Generator_RowDeletedName="Table2RowDeleted" msprop:Generator_RowClassName="Table2Row" msprop:Generator_UserTableName="Table2" msprop:Generator_RowEvArgName="Table2RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MATRIN" msprop:Generator_ColumnVarNameInTable="columnMATRIN" msprop:Generator_ColumnPropNameInRow="MATRIN" msprop:Generator_ColumnPropNameInTable="MATRINColumn" msprop:Generator_UserColumnName="MATRIN" type="xs:string" minOccurs="0" />
+              <xs:element name="NomEtud" msprop:Generator_ColumnVarNameInTable="columnNomEtud" msprop:Generator_ColumnPropNameInRow="NomEtud" msprop:Generator_ColumnPropNameInTable="NomEtudColumn" msprop:Generator_UserColumnName="NomEtud" type="xs:string" minOccurs="0" />
+              <xs:element name="Prenoms" msprop:Generator_ColumnVarNameInTable="columnPrenoms" msprop:Generator_ColumnPropNameInRow="Prenoms" msprop:Generator_ColumnPropNameInTable="PrenomsColumn" msprop:Generator_UserColumnName="Prenoms" type="xs:string" minOccurs="0" />
+              <xs:element name="DateNais" msprop:Generator_ColumnVarNameInTable="columnDateNais" msprop:Generator_ColumnPropNameInRow="DateNais" msprop:Generator_ColumnPropNameInTable="DateNaisColumn" msprop:Generator_UserColumnName="DateNais" type="xs:string" minOccurs="0" />
+              <xs:element name="LieuNais" msprop:Generator_ColumnVarNameInTable="columnLieuNais" msprop:Generator_ColumnPropNameInRow="LieuNais" msprop:Generator_ColumnPropNameInTable="LieuNaisColumn" msprop:Generator_UserColumnName="LieuNais" type="xs:string" minOccurs="0" />
+              <xs:element name="WILNAIS" msprop:Generator_ColumnVarNameInTable="columnWILNAIS" msprop:Generator_ColumnPropNameInRow="WILNAIS" msprop:Generator_ColumnPropNameInTable="WILNAISColumn" msprop:Generator_UserColumnName="WILNAIS" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Table1" msprop:Generator_TableClassName="Table1DataTable" msprop:Generator_TableVarName="tableTable1" msprop:Generator_TablePropName="Table1" msprop:Generator_RowDeletingName="Table1RowDeleting" msprop:Generator_RowChangingName="Table1RowChanging" msprop:Generator_RowEvHandlerName="Table1RowChangeEventHandler" msprop:Generator_RowDeletedName="Table1RowDeleted" msprop:Generator_UserTableName="Table1" msprop:Generator_RowChangedName="Table1RowChanged" msprop:Generator_RowEvArgName="Table1RowChangeEvent" msprop:Generator_RowClassName="Table1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MATRIN" msprop:Generator_ColumnVarNameInTable="columnMATRIN" msprop:Generator_ColumnPropNameInRow="MATRIN" msprop:Generator_ColumnPropNameInTable="MATRINColumn" msprop:Generator_UserColumnName="MATRIN" type="xs:string" minOccurs="0" />
+              <xs:element name="Annee" msprop:Generator_ColumnVarNameInTable="columnAnnee" msprop:Generator_ColumnPropNameInRow="Annee" msprop:Generator_ColumnPropNameInTable="AnneeColumn" msprop:Generator_UserColumnName="Annee" type="xs:string" minOccurs="0" />
+              <xs:element name="Niveau" msprop:Generator_ColumnVarNameInTable="columnNiveau" msprop:Generator_ColumnPropNameInRow="Niveau" msprop:Generator_ColumnPropNameInTable="NiveauColumn" msprop:Generator_UserColumnName="Niveau" type="xs:int" minOccurs="0" />
+              <xs:element name="Optin" msprop:Generator_ColumnVarNameInTable="columnOptin" msprop:Generator_ColumnPropNameInRow="Optin" msprop:Generator_ColumnPropNameInTable="OptinColumn" msprop:Generator_UserColumnName="Optin" type="xs:string" minOccurs="0" />
+              <xs:element name="DECIIN" msprop:Generator_ColumnVarNameInTable="columnDECIIN" msprop:Generator_ColumnPropNameInRow="DECIIN" msprop:Generator_ColumnPropNameInTable="DECIINColumn" msprop:Generator_UserColumnName="DECIIN" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

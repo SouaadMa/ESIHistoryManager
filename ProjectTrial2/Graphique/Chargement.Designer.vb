@@ -29,6 +29,7 @@ Partial Class Chargement
         Me.Label6 = New System.Windows.Forms.Label()
         Me.ChargementPanel = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.RechargComplLabel = New System.Windows.Forms.Label()
         Me.RechargementButton = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
@@ -55,7 +56,6 @@ Partial Class Chargement
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.ChargBackgroundWorker = New System.ComponentModel.BackgroundWorker()
         Me.FileSystemWatcher1 = New System.IO.FileSystemWatcher()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.TitlePanel.SuspendLayout()
         Me.ChargementPanel.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -114,7 +114,7 @@ Partial Class Chargement
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.Label7)
+        Me.Panel1.Controls.Add(Me.RechargComplLabel)
         Me.Panel1.Controls.Add(Me.RechargementButton)
         Me.Panel1.Controls.Add(Me.Button8)
         Me.Panel1.Controls.Add(Me.Button7)
@@ -137,6 +137,20 @@ Partial Class Chargement
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(701, 627)
         Me.Panel1.TabIndex = 35
+        '
+        'RechargComplLabel
+        '
+        Me.RechargComplLabel.AutoSize = True
+        Me.RechargComplLabel.BackColor = System.Drawing.Color.Transparent
+        Me.RechargComplLabel.Font = New System.Drawing.Font("Times New Roman", 15.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RechargComplLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.RechargComplLabel.Location = New System.Drawing.Point(157, 568)
+        Me.RechargComplLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.RechargComplLabel.Name = "RechargComplLabel"
+        Me.RechargComplLabel.Size = New System.Drawing.Size(386, 23)
+        Me.RechargComplLabel.TabIndex = 38
+        Me.RechargComplLabel.Text = "La base de donné a été rechargée avec succès"
+        Me.RechargComplLabel.Visible = False
         '
         'RechargementButton
         '
@@ -450,20 +464,6 @@ Partial Class Chargement
         Me.FileSystemWatcher1.EnableRaisingEvents = True
         Me.FileSystemWatcher1.SynchronizingObject = Me
         '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Font = New System.Drawing.Font("Times New Roman", 15.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.Label7.Location = New System.Drawing.Point(167, 568)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(353, 23)
-        Me.Label7.TabIndex = 38
-        Me.Label7.Text = "La base de donné est chargée avec succès"
-        Me.Label7.Visible = False
-        '
         'Chargement
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
@@ -519,5 +519,5 @@ Partial Class Chargement
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
     Friend WithEvents LineShape1 As Microsoft.VisualBasic.PowerPacks.LineShape
-    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents RechargComplLabel As System.Windows.Forms.Label
 End Class

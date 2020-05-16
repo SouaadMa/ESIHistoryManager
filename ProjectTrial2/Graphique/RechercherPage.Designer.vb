@@ -30,6 +30,8 @@ Partial Class RechercherPage
         Me.worningrech = New System.Windows.Forms.Label()
         Me.BT_LANCERRECH = New System.Windows.Forms.Button()
         Me.generalesGroupBox = New System.Windows.Forms.GroupBox()
+        Me.CB_ANNEE = New System.Windows.Forms.ComboBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.TXT_MERE = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TXT_PERE = New System.Windows.Forms.TextBox()
@@ -75,8 +77,6 @@ Partial Class RechercherPage
         Me.LB_ANNEEB = New System.Windows.Forms.Label()
         Me.PN_FORUMRECH = New System.Windows.Forms.Panel()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.CB_ANNEE = New System.Windows.Forms.ComboBox()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.RechIntroPanel.SuspendLayout()
         Me.RechButtons.SuspendLayout()
         Me.generalesGroupBox.SuspendLayout()
@@ -190,7 +190,28 @@ Partial Class RechercherPage
         Me.generalesGroupBox.Size = New System.Drawing.Size(620, 528)
         Me.generalesGroupBox.TabIndex = 45
         Me.generalesGroupBox.TabStop = False
-        Me.generalesGroupBox.Text = "Generalites"
+        Me.generalesGroupBox.Text = "Généralités"
+        '
+        'CB_ANNEE
+        '
+        Me.CB_ANNEE.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CB_ANNEE.FormattingEnabled = True
+        Me.CB_ANNEE.Location = New System.Drawing.Point(249, 479)
+        Me.CB_ANNEE.Margin = New System.Windows.Forms.Padding(2)
+        Me.CB_ANNEE.Name = "CB_ANNEE"
+        Me.CB_ANNEE.Size = New System.Drawing.Size(264, 28)
+        Me.CB_ANNEE.TabIndex = 45
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(61, 484)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(105, 17)
+        Me.Label7.TabIndex = 46
+        Me.Label7.Text = "Année d'entrée"
         '
         'TXT_MERE
         '
@@ -483,7 +504,7 @@ Partial Class RechercherPage
         Me.ResidenceLabel.Name = "ResidenceLabel"
         Me.ResidenceLabel.Size = New System.Drawing.Size(615, 35)
         Me.ResidenceLabel.TabIndex = 0
-        Me.ResidenceLabel.Text = "     Informations sur la residence"
+        Me.ResidenceLabel.Text = "     Informations sur la résidence"
         Me.ResidenceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label6
@@ -706,27 +727,6 @@ Partial Class RechercherPage
         '
         Me.BackgroundWorker1.WorkerReportsProgress = True
         Me.BackgroundWorker1.WorkerSupportsCancellation = True
-        '
-        'CB_ANNEE
-        '
-        Me.CB_ANNEE.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CB_ANNEE.FormattingEnabled = True
-        Me.CB_ANNEE.Location = New System.Drawing.Point(249, 479)
-        Me.CB_ANNEE.Margin = New System.Windows.Forms.Padding(2)
-        Me.CB_ANNEE.Name = "CB_ANNEE"
-        Me.CB_ANNEE.Size = New System.Drawing.Size(264, 28)
-        Me.CB_ANNEE.TabIndex = 45
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(61, 484)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(49, 17)
-        Me.Label7.TabIndex = 46
-        Me.Label7.Text = "Année"
         '
         'RechercherPage
         '

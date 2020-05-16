@@ -488,6 +488,7 @@
     <None Include="Resources\multimedia.png" />
     <None Include="Resources\Color Fill 4 copy 2.png" />
     <None Include="Resources\downarrow.png" />
+    <None Include="Resources\arrows.png" />
     <Content Include="Resources\page_num_current.png" />
     <None Include="Resources\Spinner-1s-220px.gif" />
     <None Include="Resources\table_blanc.png" />

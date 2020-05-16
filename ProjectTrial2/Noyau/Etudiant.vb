@@ -110,9 +110,11 @@
 
 
     Public Function GetInfoChamps(ByVal champs As String) As String
-
-        Return CType(InfosETUDIANT(champs), String)
-
+        Try
+            Return CType(InfosETUDIANT(champs), String)
+        Catch ex As InvalidCastException
+            Return "champs vide"
+        End Try
 
     End Function
 

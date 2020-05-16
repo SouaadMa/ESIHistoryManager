@@ -18,6 +18,11 @@
         ' make the report viewer visible
         CrystalReportViewer1.Visible = True
         
+        NomLabel.Text = esistselect.GetInfoChamps(BDD.champsNomEtud)
+        PrenomLabel.Text = esistselect.GetInfoChamps(BDD.champsPrenoms)
+        Matricule.Text = esistselect.GetInfoChamps(BDD.champsMATRIN)
+        AdresseLabel.Text = esistselect.GetInfoChamps(BDD.champsVILLE) + esistselect.GetInfoChamps(BDD.champsWILAYA)
+        PromoLabel.Text = esistselect.GetInfoChamps(BDD.champsANNEEBAC)
 
     End Sub
 
@@ -51,7 +56,7 @@
 
     End Sub
 
-    Private Sub BT_SORTIR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SortirButton.Click
+    Private Sub BT_SORTIR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Me.Close()
         'Home.f.Show()
         Home.MainContainer2.Visible = False

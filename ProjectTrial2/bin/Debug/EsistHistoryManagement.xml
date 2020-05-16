@@ -159,6 +159,10 @@ Represents a strongly typed in-memory cache of data.
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.arrows">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:EsistHistoryManagement_v1.My.Resources.Resources.Asset_2">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

@@ -121,7 +121,7 @@ Public Class RechercherPage
 
         'no research if he had fill nothing
 
-        If Me.TXT_MATRICUL.Text = "" And Me.TXT_MATRICULB.Text = "" And Me.TXT_MOYBAC.Text = "" And Me.TXT_NOM.Text = "" And Me.TXT_NOMA.Text = "" And Me.TXT_PRENOM.Text = "" And Me.TXT_PRENOMA.Text = "" And Me.CB_ANNEEB.Text = "" And Me.CB_SERI.Text = "" And Me.CB_SEXE.Text = "" And Me.CB_WILAYA.Text = "" And Me.CB_WILAYAB.Text = "" And Me.CB_WILAYAN.Text = "" And Me.CB_WILAYANA.Text = "" And Me.dtp_changed = False And TXT_MERE.Text = "" And TXT_PERE.Text = "" Then
+        If Me.TXT_MATRICUL.Text = "" And Me.TXT_MATRICULB.Text = "" And Me.TXT_MOYBAC.Text = "" And Me.TXT_NOM.Text = "" And Me.TXT_NOMA.Text = "" And Me.TXT_PRENOM.Text = "" And Me.TXT_PRENOMA.Text = "" And Me.CB_ANNEEB.Text = "" And Me.CB_ANNEE.Text = "" And Me.CB_SERI.Text = "" And Me.CB_SEXE.Text = "" And Me.CB_WILAYA.Text = "" And Me.CB_WILAYAB.Text = "" And Me.CB_WILAYAN.Text = "" And Me.CB_WILAYANA.Text = "" And Me.dtp_changed = False And TXT_MERE.Text = "" And TXT_PERE.Text = "" Then
             Me.worningrech.Visible = True
             Me.worningrech.Text = "Vous devez remplir en mois un champs !"
         Else

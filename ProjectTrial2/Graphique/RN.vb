@@ -22,20 +22,40 @@ Public Class RN
     Private Sub RN_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         'inisializer les panels
-        'initialiser de promo
+        'initialiser combo de promo
         'For Each cr As String In InfosGenerales.promo
         '    CB_ANNEE.Items.Add(cr)
         'Next
 
-        Dim allPromos As DataTable = esistselect.GetALL(BDD.champsCodePromo)
+        NomLabel.Text = esistselect.GetInfoChamps(BDD.champsNomEtud)
+        PrenomLabel.Text = esistselect.GetInfoChamps(BDD.champsPrenoms)
+        Matricule.Text = esistselect.GetInfoChamps(BDD.champsMATRIN)
+        AdresseLabel.Text = esistselect.GetInfoChamps(BDD.champsVILLE) + esistselect.GetInfoChamps(BDD.champsWILAYA)
+        PromoLabel.Text = esistselect.GetInfoChamps(BDD.champsANNEEBAC)
 
+        Dim allPromos As DataTable = esistselect.GetALL(BDD.champsCodePromo)
+        For Each row In allPromos.Rows
+            Dim codprom As String = ""
+            Dim codannee As String = ""
+            Dim prom = row(allPromos.Columns(0).ToString)
+            codannee = prom.Substring(prom.LastIndexOf("/") + 1)
+            codannee = codannee.Insert(0, IIf(CInt(codannee) > 11, "19", "20"))
+            codannee += "/" + (CInt(codannee) + 1).ToString
+            codprom = prom.Substring(0, 1) + IIf(prom.Substring(0, 1).Equals("1"), " ère", " ème") + " Année "
+            codprom += IIf(prom.Substring(2, 3).Equals("TRC"), "Tronc Commun ", IIf(prom.Substring(2, 3).Equals("SIQ"), "Systèmes informatiques ", "Systèmes d'informations ")) + codannee
+            row(allPromos.Columns(0).ToString) = codprom
+        Next
+        'CB_ANNEE.FormattingEnabled = True
         CB_ANNEE.DisplayMember = allPromos.Columns(0).ToString
+
+        'CB_ANNEE.FormatString = ""
         CB_ANNEE.ValueMember = allPromos.Columns(0).ToString
         CB_ANNEE.DataSource = allPromos
-        CB_ANNEE.Text = ""
+        CB_ANNEE.Text = "Veuillez choisir un année"
 
         'initialiser generale
         cb_anee = False
+        ImprTotalLabel.Visible = False
         BT_LOAD.Enabled = False
 
     End Sub
@@ -43,7 +63,7 @@ Public Class RN
     Private Sub BT_LOAD_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_LOAD.Click
         If cb_anee = True Then
 
-            RN = New SortieRN(esistselect, CB_ANNEE.Text) 'CB_ANNEE.Text)
+            RN = New SortieRN(esistselect, esistselect.GetALL(BDD.champsCodePromo).Rows(CB_ANNEE.SelectedIndex)(BDD.champsCodePromo).ToString) 'CB_ANNEE.Text)
 
             CrystalReportViewer1.Enabled = True
             Dim ds As DataSet = RN.dataSet 'the dataset which will be assigned to the report
@@ -61,11 +81,13 @@ Public Class RN
             Dim codniveau As String
             Dim codannee As String
 
-            codannee = IIf(CInt(CB_ANNEE.Text.Substring(CB_ANNEE.Text.LastIndexOf("/") + 1)) > 11, "19", "20")
-            codannee += CB_ANNEE.Text.Substring(CB_ANNEE.Text.LastIndexOf("/") + 1)
-            codannee += "/" + (CInt(codannee) + 1).ToString
-            codniveau = CB_ANNEE.Text.Substring(0, 1) + IIf(CB_ANNEE.Text.Substring(0, 1).Equals("1"), " ère", " ème") + " Année INGENIEUR"
-            codoptin = IIf(CB_ANNEE.Text.Substring(2, 3).Equals("TRC"), "Tronc Commun ", IIf(CB_ANNEE.Text.Substring(2, 3).Equals("SIQ"), "Systeme d informatiques ", "Systeme d informations "))
+            codannee = CB_ANNEE.Text.Substring(CB_ANNEE.Text.Count - 9) 'IIf(CInt(CB_ANNEE.Text.Substring(CB_ANNEE.Text.LastIndexOf("/") + 1)) > 11, "19", "20")
+            'codannee += CB_ANNEE.Text.Substring(CB_ANNEE.Text.LastIndexOf("/") + 1)
+            'codannee += "/" + (CInt(codannee) + 1).ToString
+            codniveau = CB_ANNEE.Text.Substring(0, 11) ' + IIf(CB_ANNEE.Text.Substring(0, 1).Equals("1"), " ère", " ème") + " Année INGENIEUR"
+            codoptin = CB_ANNEE.Text.Replace(codannee, "")
+            codoptin = codoptin.Replace(codniveau, "")
+            'IIf(CB_ANNEE.Text.Substring(2, 3).Equals("TRC"), "Tronc Commun ", IIf(CB_ANNEE.Text.Substring(2, 3).Equals("SIQ"), "Systèmes informatiques ", "Systèmes d'informations "))
 
             'initilize the textboxes of promotion and annee
             Dim TextObj As CrystalDecisions.CrystalReports.Engine.TextObject
@@ -155,6 +177,9 @@ Public Class RN
 
         End If
         cb_anee = False
+        If RN.GetNbreRN() > 0 Then
+            ImprTotalLabel.Visible = True
+        End If
     End Sub
 
     Private Sub CB_ANNEE_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CB_ANNEE.SelectedIndexChanged
@@ -162,9 +187,17 @@ Public Class RN
         BT_LOAD.Enabled = True
     End Sub
 
-    Private Sub BT_SORTIR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_SORTIR.Click, Button1.Click
+    Private Sub BT_SORTIR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_SORTIR.Click
         Me.Close()
         Home.MainContainer2.Visible = False
         Home.MainContainer1.Visible = True
     End Sub
+
+    Private Sub ImprTotalLabel_VisibleChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ImprTotalLabel.VisibleChanged
+        If ImprTotalLabel.Visible Then
+            AvertToolTip.SetToolTip(sender, "Ce relevé de note a été imprimé déja" + RN.GetNbreRN().ToString + "fois")
+            AvertToolTip.Show("Ce relevé de note a été imprimé déja" + RN.GetNbreRN().ToString + "fois", sender)
+        End If
+    End Sub
+
 End Class

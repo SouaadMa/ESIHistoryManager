@@ -25,6 +25,13 @@ Public Class RNGPage
         ' make the report viewer visible
         CrystalReportViewer1.Visible = True
         'disbale the affich button until any combobox values has been changed
+        ImprTotalLabel.Visible = False
+
+        NomLabel.Text = esistselect.GetInfoChamps(BDD.champsNomEtud)
+        PrenomLabel.Text = esistselect.GetInfoChamps(BDD.champsPrenoms)
+        Matricule.Text = esistselect.GetInfoChamps(BDD.champsMATRIN)
+        AdresseLabel.Text = esistselect.GetInfoChamps(BDD.champsVILLE) + esistselect.GetInfoChamps(BDD.champsWILAYA)
+        PromoLabel.Text = esistselect.GetInfoChamps(BDD.champsANNEEBAC)
         ' and that's it !
     End Sub
 
@@ -55,8 +62,8 @@ Public Class RNGPage
                 FormulaFields = cryrpt.Subreports.Item(i).DataDefinition.FormulaFields
                 codannee = "20" + ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.LastIndexOf("/") + 1)
                 codannee += "/" + (CInt(codannee) + 1).ToString
-                codprom = ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(0, 1) + IIf(ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(0, 1).Equals("1"), " er", " ème") + " Année "
-                codprom += IIf(ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(2, 3).Equals("TRC"), "Tronc Commun ", IIf(ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(2, 3).Equals("SIQ"), "Systeme d informatiques ", "Systeme d informations ")) + codannee
+                codprom = ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(0, 1) + IIf(ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(0, 1).Equals("1"), " ère", " ème") + " Année "
+                codprom += IIf(ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(2, 3).Equals("TRC"), "Tronc Commun ", IIf(ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(2, 3).Equals("SIQ"), "Systèmes informatiques ", "Systèmes d'informations ")) + codannee
                 If i <> 4 Then
                     'get the corresponding formula item
                     FormulaField = FormulaFields.Item(0)
@@ -131,12 +138,14 @@ Public Class RNGPage
             End If
 
         Catch ex As RngImpossibleException
-            MsgBox("Impossible de generer le RNG de cet etudiant", , "Erreur")
+            MsgBox("Impossible de générer le RNG de cet etudiant, il n'a pas completer les 5 ans ! ", , "Erreur")
         Catch ex As Exception
-            MsgBox("Impossible de generer le releve de note general de cet etudiant", , "Erreur")
+            MsgBox("Impossible de générer le relevé de note général de cet etudiant", , "Erreur")
             BT_SORTIR_Click(SortirButton, New EventArgs())
         End Try
-
+        If esistselect.GetInfoChamps(BDD.champsNBR_RNG) Then
+            ImprTotalLabel.Visible = True
+        End If
     End Sub
 
     Private Sub BT_SORTIR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SortirButton.Click
@@ -145,4 +154,12 @@ Public Class RNGPage
         Home.MainContainer2.Visible = False
         Home.MainContainer1.Visible = True
     End Sub
+
+    Private Sub ImprTotalLabel_VisibleChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ImprTotalLabel.VisibleChanged
+        If ImprTotalLabel.Visible Then
+            AvertToolTip.SetToolTip(sender, "Ce relevé de note a été imprimé déja" + esistselect.GetInfoChamps(BDD.champsNBR_RNG).ToString + "fois")
+            AvertToolTip.Show("Ce relevé de note a été imprimé déja" + esistselect.GetInfoChamps(BDD.champsNBR_RNG).ToString + "fois", sender)
+        End If
+    End Sub
+
 End Class

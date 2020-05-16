@@ -159,13 +159,13 @@ Public Class PVPage
             'BT_SORTIR_Click(SortirButton, New EventArgs())
             CrystalReportViewer1.Visible = False
             NoResultPanel.Visible = True
-            NoResultLabel.Text = "Il semble que les informations de quelques matières sont incomplètes, veuillez les remplir et recharger la base de donnée à nouveau."
+            NoResultLabel.Text = "Il semble que les informations de quelques matières sont incomplètes, veuillez les remplir et recharger la base de données à nouveau."
         Catch ex As InvalidCastException
             'MsgBox("Impossible de générer le relevé de note général de cet etudiant", , "Erreur")
             'BT_SORTIR_Click(SortirButton, New EventArgs())
             CrystalReportViewer1.Visible = False
             NoResultPanel.Visible = True
-            NoResultLabel.Text = "Il existe quelques informations manquants dans l'historique de quelques étudiants de cette promotion, veuillez les remplir et recharger la base de donnée à nouveau."
+            NoResultLabel.Text = "Quelques informations manquent dans l'historique de quelques étudiants de cette promotion, veuillez les remplir et recharger la base de données à nouveau."
         End Try
 
         

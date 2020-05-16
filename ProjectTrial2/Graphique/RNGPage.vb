@@ -156,7 +156,7 @@ Public Class RNGPage
             'BT_SORTIR_Click(SortirButton, New EventArgs())
             CrystalReportViewer1.Visible = False
             NoResultPanel.Visible = True
-            NoResultLabel.Text = "Il existe quelques informations manquants dans l'historique de cet étudiant , veuillez les remplir et recharger la base de donnée à nouveau."
+            NoResultLabel.Text = "Quelques informations manquent dans l'historique de cet étudiant , veuillez les remplir et recharger la base de données à nouveau."
         End Try
         If esistselect.GetInfoChamps(BDD.champsNBR_RNG) Then
             ImprTotalLabel.Visible = True

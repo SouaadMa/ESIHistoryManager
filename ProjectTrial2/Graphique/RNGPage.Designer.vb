@@ -243,8 +243,8 @@ Partial Class RNGPage
         Me.NoResultLabel.Name = "NoResultLabel"
         Me.NoResultLabel.Size = New System.Drawing.Size(649, 137)
         Me.NoResultLabel.TabIndex = 0
-        Me.NoResultLabel.Text = "Il existe quelques informations manquants dans l'historique de cet étudiant , veu" & _
-            "illez les remplir et recharger la base de donnée à nouveau."
+        Me.NoResultLabel.Text = "Quelques informations manquent dans l'historique de cet étudiant , veu" & _
+            "illez les remplir et recharger la base de données à nouveau."
         Me.NoResultLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'PictureBox1

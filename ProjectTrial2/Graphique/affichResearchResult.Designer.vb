@@ -84,13 +84,13 @@ Partial Class affichResearchResult
         Me.triLabel = New System.Windows.Forms.Label()
         Me.SortModeBox = New System.Windows.Forms.ComboBox()
         Me.AffPanel = New System.Windows.Forms.Panel()
-        Me.NoResultLabel = New System.Windows.Forms.Label()
         Me.TableLayoutPanel8 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.NoResultLabel = New System.Windows.Forms.Label()
         Me.EtudiantPanel.SuspendLayout()
         Me.TableLayoutPanel7.SuspendLayout()
         Me.TableLayoutPanel6.SuspendLayout()
@@ -935,11 +935,11 @@ Partial Class affichResearchResult
         '
         Me.triLabel.AutoSize = True
         Me.triLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.triLabel.Location = New System.Drawing.Point(23, 66)
+        Me.triLabel.Location = New System.Drawing.Point(9, 65)
         Me.triLabel.Name = "triLabel"
-        Me.triLabel.Size = New System.Drawing.Size(66, 20)
+        Me.triLabel.Size = New System.Drawing.Size(75, 20)
         Me.triLabel.TabIndex = 29
-        Me.triLabel.Text = "trie par :"
+        Me.triLabel.Text = "Trier par :"
         Me.triLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'SortModeBox
@@ -969,19 +969,6 @@ Partial Class affichResearchResult
         Me.AffPanel.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
         Me.AffPanel.Size = New System.Drawing.Size(678, 640)
         Me.AffPanel.TabIndex = 27
-        '
-        'NoResultLabel
-        '
-        Me.NoResultLabel.AutoEllipsis = True
-        Me.NoResultLabel.BackColor = System.Drawing.Color.White
-        Me.NoResultLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NoResultLabel.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.Asset_2
-        Me.NoResultLabel.Location = New System.Drawing.Point(12, 105)
-        Me.NoResultLabel.Name = "NoResultLabel"
-        Me.NoResultLabel.Padding = New System.Windows.Forms.Padding(0, 0, 0, 30)
-        Me.NoResultLabel.Size = New System.Drawing.Size(655, 477)
-        Me.NoResultLabel.TabIndex = 28
-        Me.NoResultLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'TableLayoutPanel8
         '
@@ -1071,6 +1058,19 @@ Partial Class affichResearchResult
         Me.Label5.TabIndex = 0
         Me.Label5.Text = "Nom"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'NoResultLabel
+        '
+        Me.NoResultLabel.AutoEllipsis = True
+        Me.NoResultLabel.BackColor = System.Drawing.Color.White
+        Me.NoResultLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NoResultLabel.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.Asset_2
+        Me.NoResultLabel.Location = New System.Drawing.Point(12, 105)
+        Me.NoResultLabel.Name = "NoResultLabel"
+        Me.NoResultLabel.Padding = New System.Windows.Forms.Padding(0, 0, 0, 30)
+        Me.NoResultLabel.Size = New System.Drawing.Size(655, 477)
+        Me.NoResultLabel.TabIndex = 28
+        Me.NoResultLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'affichResearchResult
         '

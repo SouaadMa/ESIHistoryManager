@@ -8,6 +8,13 @@ Public Class RechercherPage
 
     Private Sub recherche_load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
+        For Each b As Control In Home.NavBar.Controls
+            If b.GetType.ToString = "System.Windows.Forms.Button" Then
+                b.Enabled = False
+            End If
+        Next
+
+
         ' Set the default as the current Inputlanguage
         ArabicInput = InputLanguage.CurrentInputLanguage
         LatinInput = InputLanguage.CurrentInputLanguage
@@ -123,7 +130,7 @@ Public Class RechercherPage
 
         If Me.TXT_MATRICUL.Text = "" And Me.TXT_MATRICULB.Text = "" And Me.TXT_MOYBAC.Text = "" And Me.TXT_NOM.Text = "" And Me.TXT_NOMA.Text = "" And Me.TXT_PRENOM.Text = "" And Me.TXT_PRENOMA.Text = "" And Me.CB_ANNEEB.Text = "" And Me.CB_ANNEE.Text = "" And Me.CB_SERI.Text = "" And Me.CB_SEXE.Text = "" And Me.CB_WILAYA.Text = "" And Me.CB_WILAYAB.Text = "" And Me.CB_WILAYAN.Text = "" And Me.CB_WILAYANA.Text = "" And Me.dtp_changed = False And TXT_MERE.Text = "" And TXT_PERE.Text = "" Then
             Me.worningrech.Visible = True
-            Me.worningrech.Text = "Vous devez remplir en mois un champs !"
+            Me.worningrech.Text = "Vous devez remplir au mois un champs !"
         Else
 
             'no research if he had fill the long fealds with des chaines de char

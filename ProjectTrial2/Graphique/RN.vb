@@ -86,7 +86,7 @@ Public Class RN
             End With
             BT_LOAD.Enabled = False
             NoResultPanel.Visible = True
-            NoResultLabel.Text = "Il existe quelques informations manquants dans l'historique de cet étudiant , veuillez les remplir et recharger la base de donnée à nouveau."
+            NoResultLabel.Text = "Quelques informations manquent dans l'historique de cet étudiant dans cette année , veuillez les remplir et recharger la base de donnéez à nouveau."
 
         End Try
 
@@ -219,7 +219,7 @@ Public Class RN
             'BT_SORTIR_Click(SortirButton, New EventArgs())
             CrystalReportViewer1.Visible = False
             NoResultPanel.Visible = True
-            NoResultLabel.Text = "Il existe quelques informations manquants dans l'historique de cet étudiant , veuillez les remplir et recharger la base de donnée à nouveau."
+            NoResultLabel.Text = "Quelques informations manquent dans l'historique de cet étudiant , veuillez les remplir et recharger la base de données à nouveau."
         End Try
 
 

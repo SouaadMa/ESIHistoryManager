@@ -16,6 +16,9 @@
             For Each crit As Critere In criteres
 
                 If crit.getChamps.Equals(BDD.champsAnnee) Then
+                    If criteres.Count = 1 Then
+                        instructionSQL = Rech_BDD.genereRechRequetes(instructionSQL, Nothing, BDD.nomTableEtudiant)
+                    End If
                     crit.setTable(BDD.nomTableEtudiant)
                     instructionSQL = Class_BDD.AddLIKECondition(instructionSQL, crit, BDD.nomTableEtudiant)
                 Else

@@ -5,7 +5,6 @@
     Public Shared Function RNG(ByVal etud As Etudiant) As DataSet
 
 
-
         Dim dtEtud As New DataTable(BDD.nomTableEtudiant)
         Dim lignecomplete As DataRow = etud.InfosETUDIANT
 
@@ -19,19 +18,12 @@
         dtEtud.Columns.Add(BDD.champsDateNais)
         dtEtud.Columns.Add(BDD.champsLieuNais)
 
-        'dtEtud.Columns.Add(lignecomplete.Item(BDD.champsNomEtud))
-        'dtEtud.Columns.Add(lignecomplete.Item(BDD.champsPrenoms))
-        'dtEtud.Columns.Add(lignecomplete.Item(BDD.champsMATRIN))
-        'dtEtud.Columns.Add(lignecomplete.Item(BDD.champsDateNais))
-        'dtEtud.Columns.Add(lignecomplete.Item(BDD.champsLieuNais))
 
         dtEtud.Rows.Add({lignecomplete.Item(BDD.champsNomEtud), lignecomplete.Item(BDD.champsPrenoms), lignecomplete.Item(BDD.champsMATRIN), lignecomplete.Item(BDD.champsDateNais), lignecomplete.Item(BDD.champsLieuNais)})
 
         ds.Tables.Add(dtEtud)
 
-        'dtEtud.Clear()
-
-
+        
         Dim listeChamps As New List(Of String)
 
         Dim listeConditions As New List(Of Critere)
@@ -64,9 +56,9 @@
         listeChamps.Add(BDD.champsCOEFMA)
 
         Dim dt As DataTable
+        Dim nombreAnnees As Integer = 0
 
-
-        If etud.RNGPossible(Annees_Decisions) Then
+        If etud.RNGPossible(Annees_Decisions, nombreAnnees) Then
 
             For Each a As Critere In Annees_Decisions
 
@@ -79,11 +71,20 @@
                     dt = etud.GetNotesMat(listeChamps, listeConditions)
                     dt.TableName = "tableNotesMat" & a.getChamps().Substring(0, 1)
                     ds.Tables.Add(dt)
-                    'ds.Tables(0).i()
+
+                    If dt.Rows.Count = 0 Then
+                        bilan = "Les informations des Notes/Matière de cet étudiant de l'année " & a.getChamps & " n'existent pas."
+                    End If
 
                 End If
             Next
+            bilan = "Cet étudiant, MATRICULE = " & etud.GetInfoChamps(BDD.champsMATRIN) & " a " & nombreAnnees.ToString & " année(s) dans la table INSCRIPTION." & vbNewLine + bilan
+            bilan = "Il/Elle a été admis(e) en " & (ds.Tables.Count - 2).ToString & " année(s)." & vbNewLine
+            Console.WriteLine(getBilan)
         Else
+            bilan = "Cet étudiant, MATRICULE = " & etud.GetInfoChamps(BDD.champsMATRIN) & " a " & nombreAnnees.ToString & " année(s) dans la table INSCRIPTION." & vbNewLine + bilan
+            bilan = "Il/Elle a été admis(e) en " & (ds.Tables.Count - 2).ToString & " année(s)." & vbNewLine
+            Console.WriteLine(getBilan)
             Throw New RngImpossibleException()
         End If
 

@@ -2,18 +2,8 @@
 
     Implements IComparable(Of Etudiant)  'La classe implémente Comparable
 
-    'Private InfosETUDIANT As Dictionary(Of String, String) = New Dictionary(Of String, String)
     Public InfosETUDIANT As DataRow
-    'Private InfosINSCRIPTION As Dictionary(Of String, String) = New Dictionary(Of String, String)
-    'Private InfosGROUP As Dictionary(Of String, String) = New Dictionary(Of String, String)
-    'Private InfosSECTION As Dictionary(Of String, String) = New Dictionary(Of String, String)
-    'Private InfosPROMO As Dictionary(Of String, String) = New Dictionary(Of String, String)
-    'Private InfosNOTE As Dictionary(Of String, String) = New Dictionary(Of String, String)
-    'Private InfosMATIERE As Dictionary(Of String, String) = New Dictionary(Of String, String)
-    'Private InfosNOTERATRAP As Dictionary(Of String, String) = New Dictionary(Of String, String)
-    'Private InfosRATRAP As Dictionary(Of String, String) = New Dictionary(Of String, String)
-    'Public Anneedetude As New List(Of String)
-
+    
 
     Public Function getId() As String 'Getter pour l'Id
         Return Me.GetInfoChamps(BDD.champsMATRIN)
@@ -23,40 +13,6 @@
     Public Sub New(ByVal ligne As DataRow)
 
         InfosETUDIANT = ligne
-
-        If (False) Then
-
-            For Each champs As String In BDD.stringETUDIANT
-                'Console.Write(champs + " : ")
-                Try
-                    'Console.WriteLine(ligne(champs).ToString)
-                    'InfosETUDIANT.Add(champs, CType(ligne(champs), String))
-                Catch ex As InvalidCastException
-                    'Console.WriteLine("Valeur erronnee !")
-                End Try
-            Next
-            For Each champs As String In BDD.numETUDIANT
-                'Console.Write(champs + " : ")
-                Try
-                    'Console.WriteLine(ligne(champs).ToString)
-                    'InfosETUDIANT.Add(champs, CType(ligne(champs), String))
-                Catch ex As InvalidCastException
-                    'Console.WriteLine("Valeur erronnee !")
-
-                End Try
-
-            Next
-            For Each champs As String In BDD.boolETUDIANT
-                'Console.Write(champs + " : ")
-                Try
-                    'Console.WriteLine(ligne(champs).ToString)
-                    'InfosETUDIANT.Add(champs, CType(ligne(champs), String))
-                Catch ex As InvalidCastException
-                    'Console.WriteLine("Valeur erronnee !")
-                End Try
-            Next
-            'Console.WriteLine("------------------------------------------------------")
-        End If
 
     End Sub
 
@@ -129,8 +85,6 @@
         'Récuperation du résultat de la requête dans la BDD
         Dim dt As New DataTable
 
-        'Console.WriteLine(champs + " Table: " + BDD.GetTable(champs))
-
 
         dt = BDD.GetALL(champs, BDD.GetTable(champs), condition)
 
@@ -147,14 +101,16 @@
     Public Function GetNotesMat(ByVal listeChamps As List(Of String), ByVal listeConditions As List(Of Critere)) As DataTable
 
         Dim req As String = Class_BDD.genereRechRequete(listeChamps, BDD.nomTableNOTE, BDD.nomTableMATIERE, listeConditions, True)
-        'req = req.Insert(req.IndexOf(BDD.champsCodePromo), BDD.nomTableMATIERE + ".")
+
         Return BDD.executeRequete(req)
 
     End Function
 
 
-
-    Public Function RNGPossible(ByRef Annees_Decisions As List(Of Critere)) As Boolean
+    'Méthode qui vérifie la possibilité d'imprimer un RNG pour un étudiant.
+    'Elle retourne vrai si c'est possible, faux sinon
+    'nombreAnnees est le nombre des années qu'il a étudié (nombre de lignes de cet étudiant dans INSCRIPTION
+    Public Function RNGPossible(ByRef Annees_Decisions As List(Of Critere), ByRef nombreAnnees As Integer) As Boolean
 
         Dim dt As DataTable
         Dim sql As String = ""
@@ -164,6 +120,7 @@
         sql = Rech_BDD.genereRechRequetes(sql, New Critere(BDD.champsMATRIN, GetInfoChamps(BDD.champsMATRIN)), BDD.nomTableINSCRIPTION)
         dt = BDD.executeRequete(sql)
         dt = Classement.SortASCCollection(dt, BDD.champsCodePromo)
+        nombreAnnees = dt.Rows.Count
         For Each ligne As DataRow In dt.Rows
 
             If ligne(BDD.champsCodePromo).Substring(0, 1) = "5" Then

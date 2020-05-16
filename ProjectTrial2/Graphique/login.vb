@@ -109,7 +109,12 @@ Public Class Login
         Me.MaximumSize = New System.Drawing.Size(1050, 750)
 
         Login.password_ = password.recover
-        'Login.password_ = New password("agent", "admin")
+
+
+
+
+
+
     End Sub
 
     

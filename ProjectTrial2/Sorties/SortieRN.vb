@@ -2,7 +2,7 @@
 
     Public dataSet As New DataSet
     Private nbreRN As Integer
-    Private bilan As String = ""
+    Private Shared bilan As String = ""
 
     Public Sub New(ByVal etud As Etudiant, ByVal promo As String)
 
@@ -36,7 +36,7 @@
         '
 
         If tableNotesMat.Rows.Count = 0 Then
-            bilan += "Cet étudiant, MATRICULE = " & etud.GetInfoChamps(BDD.champsMATRIN) & " n'a pas d'informations dans la table Notes " & vbNewLine
+            bilan += "Cet étudiant, MATRICULE = " & etud.GetInfoChamps(BDD.champsMATRIN) & " n'a pas d'informations dans la table Notes, CodePromo = " & promo & vbNewLine
             'Throw New InvalidCastException
         End If
 
@@ -115,6 +115,14 @@
         'INSCRIPTION + PROMO
         dataSet.Tables.Add(tableINSCRIPTION)
 
+        If (dtEtud Is Nothing Or tableNotesMat Is Nothing Or tableINSCRIPTION Is Nothing) Then
+            Throw New InvalidCastException
+        Else
+            If dtEtud.Rows.Count = 0 Or tableNotesMat.Rows.Count = 0 Or tableINSCRIPTION.Rows.Count = 0 Then
+                Throw New InvalidCastException
+            End If
+        End If
+
 
     End Sub
 
@@ -165,7 +173,7 @@
 
     End Sub
 
-    Public Function getBilan() As String
+    Public Shared Function getBilan() As String
         If bilan = "" Then
             Return "Tout est bien passé!"
         Else

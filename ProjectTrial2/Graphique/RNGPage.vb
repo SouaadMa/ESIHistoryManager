@@ -19,8 +19,17 @@ Public Class RNGPage
     End Sub
 
     Private Sub RNGPage_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        'initialize the graphic componants values
+        NoResultPanel.Visible = False
+        'retrieve the print button and add a click handler to it
+        For Each ts As ToolStrip In CrystalReportViewer1.Controls.OfType(Of ToolStrip)()
+            For Each tsb As ToolStripButton In ts.Items.OfType(Of ToolStripButton)()
+                If tsb.AccessibleName.ToLower.Contains("Print") Or tsb.AccessibleName.ToLower.Contains("imprimer") Then
+                    AddHandler tsb.Click, AddressOf printButton_Click
+                End If
+            Next
+        Next
 
+        'initialize the graphic componants values
         CrystalReportViewer1.Enabled = True
         ' make the report viewer visible
         CrystalReportViewer1.Visible = True
@@ -138,10 +147,16 @@ Public Class RNGPage
             End If
 
         Catch ex As RngImpossibleException
-            MsgBox("Impossible de générer le RNG de cet etudiant, il n'a pas completer les 5 ans ! ", , "Erreur")
+            'MsgBox("Cet étudiant n'a pas obtenu son diplome ", , "Erreur")
+            CrystalReportViewer1.Visible = False
+            NoResultPanel.Visible = True
+            NoResultLabel.Text = "Cet étudiant n'a pas obtenu son diplome"
         Catch ex As Exception
-            MsgBox("Impossible de générer le relevé de note général de cet etudiant", , "Erreur")
-            BT_SORTIR_Click(SortirButton, New EventArgs())
+            'MsgBox("Impossible de générer le relevé de note général de cet etudiant", , "Erreur")
+            'BT_SORTIR_Click(SortirButton, New EventArgs())
+            CrystalReportViewer1.Visible = False
+            NoResultPanel.Visible = True
+            NoResultLabel.Text = "Il existe quelques informations manquants dans l'historique de cet étudiant , veuillez les remplir et recharger la base de donnée à nouveau."
         End Try
         If esistselect.GetInfoChamps(BDD.champsNBR_RNG) Then
             ImprTotalLabel.Visible = True
@@ -157,9 +172,31 @@ Public Class RNGPage
 
     Private Sub ImprTotalLabel_VisibleChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ImprTotalLabel.VisibleChanged
         If ImprTotalLabel.Visible Then
-            AvertToolTip.SetToolTip(sender, "Ce relevé de note a été imprimé déja" + esistselect.GetInfoChamps(BDD.champsNBR_RNG).ToString + "fois")
-            AvertToolTip.Show("Ce relevé de note a été imprimé déja" + esistselect.GetInfoChamps(BDD.champsNBR_RNG).ToString + "fois", sender)
+            With AvertToolTip
+                .Active = True
+                .IsBalloon = True
+                .SetToolTip(sender, "Ce relevé de note a été imprimé déja" + esistselect.GetInfoChamps(BDD.champsNBR_RNG).ToString + "fois")
+                .Show("Ce relevé de note a été imprimé déja" + esistselect.GetInfoChamps(BDD.champsNBR_RNG).ToString + "fois", sender)
+                .ShowAlways = True
+            End With
+        Else
+            AvertToolTip.Active = False
         End If
+    End Sub
+
+    Private Sub printButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        'MsgBox("Printed")
+        Dim dialog As DialogResult
+        ImprTotalLabel.Visible = False
+        dialog = MsgBox("Est-ce que le relevé de note général a été imprimé ?", MessageBoxButtons.YesNo, "Confirmer L'impression")
+        If (dialog = Windows.Forms.DialogResult.Yes) Then
+            SortieRNG.SetNbreRNG(esistselect, esistselect.GetInfoChamps(BDD.champsNBR_RNG) + 1)
+            ImprTotalLabel.Visible = True
+        Else
+            ImprTotalLabel.Visible = False
+        End If
+
+        'MsgBox.Show("Printed")
     End Sub
 
 End Class

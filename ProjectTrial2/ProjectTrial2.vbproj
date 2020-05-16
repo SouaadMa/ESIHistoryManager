@@ -115,9 +115,12 @@
     <Compile Include="BDD\Paire.vb" />
     <Compile Include="BDD\SortieAttestation.vb" />
     <Compile Include="BDD\SortiePV.vb" />
+    <Compile Include="BDD\SortiePV_AVEC_TRY_CATCH.vb" />
     <Compile Include="BDD\SortieRN.vb" />
     <Compile Include="BDD\SortieRNG.vb" />
     <Compile Include="BDD\ECLATEMMENT_TRAFFIC.vb" />
+    <Compile Include="Exceptions\NoMatierePVException.vb" />
+    <Compile Include="Exceptions\NoyearRNException.vb" />
     <Compile Include="Graphique\affichResearchResult.Designer.vb">
       <DependentUpon>affichResearchResult.vb</DependentUpon>
     </Compile>
@@ -132,18 +135,18 @@
     <Compile Include="Graphique\Attestation.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Graphique\AttestationCrystalReport.vb">
+    <Compile Include="Graphique\Reports\AttestationCrystalReport.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AttestationCrystalReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Graphique\AttestationDataSet.Designer.vb">
+    <Compile Include="Graphique\Datasets\AttestationDataSet.Designer.vb">
       <DependentUpon>AttestationDataSet.xsd</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Include="Graphique\AttestationDataSet.vb">
+    <Compile Include="Graphique\Datasets\AttestationDataSet.vb">
       <DependentUpon>AttestationDataSet.xsd</DependentUpon>
       <SubType>code</SubType>
     </Compile>
@@ -159,50 +162,50 @@
     <Compile Include="Graphique\PrincipalPage.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Graphique\CrystalReport1.vb">
+    <Compile Include="Graphique\Reports\CrystalReport1.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Graphique\RNDataSet.vb">
+    <Compile Include="Graphique\Datasets\RNDataSet.vb">
       <DependentUpon>RNDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Graphique\rng2lReport.vb">
+    <Compile Include="Graphique\Reports\rng2lReport.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rng2lReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Graphique\Form1.Designer.vb">
+    <Compile Include="Tests\Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
     </Compile>
-    <Compile Include="Graphique\Form1.vb">
+    <Compile Include="Tests\Form1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Graphique\PvDataSet.Designer.vb">
+    <Compile Include="Graphique\Datasets\PvDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PvDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Graphique\InfosGenerales.vb" />
-    <Compile Include="Graphique\password.vb" />
-    <Compile Include="Graphique\PvDataSet.vb">
+    <Compile Include="Graphique\Serializations\InfosGenerales.vb" />
+    <Compile Include="Graphique\Serializations\password.vb" />
+    <Compile Include="Graphique\Datasets\PvDataSet.vb">
       <DependentUpon>PvDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Graphique\PvReport.vb">
+    <Compile Include="Graphique\Reports\PvReport.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PvReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Graphique\RNCrystalReport.vb">
+    <Compile Include="Graphique\Reports\RNCrystalReport.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RNCrystalReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Graphique\RNDataSet.Designer.vb">
+    <Compile Include="Graphique\Datasets\RNDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RNDataSet.xsd</DependentUpon>
@@ -211,12 +214,6 @@
       <DependentUpon>RN.vb</DependentUpon>
     </Compile>
     <Compile Include="Graphique\RN.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Graphique\Historique.Designer.vb">
-      <DependentUpon>Historique.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Graphique\Historique.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Graphique\details.Designer.vb">
@@ -237,15 +234,15 @@
     <Compile Include="Graphique\PVPage.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Graphique\RNGDataSet.Designer.vb">
+    <Compile Include="Graphique\Datasets\RNGDataSet.Designer.vb">
       <DependentUpon>RNGDataSet.xsd</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Graphique\RNGDataSet.vb">
+    <Compile Include="Graphique\Datasets\RNGDataSet.vb">
       <DependentUpon>RNGDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Graphique\RngImpossibleException.vb" />
+    <Compile Include="Exceptions\RngImpossibleException.vb" />
     <Compile Include="Graphique\RNGPage.Designer.vb">
       <DependentUpon>RNGPage.vb</DependentUpon>
     </Compile>
@@ -258,7 +255,7 @@
     <Compile Include="Graphique\StatistiquePage.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Graphique\_5emeanneeReport.vb">
+    <Compile Include="Graphique\Reports\_5emeanneeReport.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>_5emeanneeReport.rpt</DependentUpon>
@@ -329,7 +326,7 @@
     <EmbeddedResource Include="Graphique\Attestation.resx">
       <DependentUpon>Attestation.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Graphique\AttestationCrystalReport.rpt">
+    <EmbeddedResource Include="Graphique\Reports\AttestationCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>AttestationCrystalReport.vb</LastGenOutput>
     </EmbeddedResource>
@@ -342,30 +339,27 @@
     <EmbeddedResource Include="Graphique\PrincipalPage.resx">
       <DependentUpon>PrincipalPage.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Graphique\CrystalReport1.rpt">
+    <EmbeddedResource Include="Graphique\Reports\CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Graphique\rng2lReport.rpt">
+    <EmbeddedResource Include="Graphique\Reports\rng2lReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rng2lReport.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Graphique\Form1.resx">
+    <EmbeddedResource Include="Tests\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Graphique\PvReport.rpt">
+    <EmbeddedResource Include="Graphique\Reports\PvReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>PvReport.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Graphique\RNCrystalReport.rpt">
+    <EmbeddedResource Include="Graphique\Reports\RNCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RNCrystalReport.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Graphique\RN.resx">
       <DependentUpon>RN.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Graphique\Historique.resx">
-      <DependentUpon>Historique.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Graphique\details.resx">
       <DependentUpon>details.vb</DependentUpon>
@@ -394,7 +388,7 @@
     <EmbeddedResource Include="Graphique\StatistiquePage.resx">
       <DependentUpon>StatistiquePage.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Graphique\_5emeanneeReport.rpt">
+    <EmbeddedResource Include="Graphique\Reports\_5emeanneeReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>_5emeanneeReport.vb</LastGenOutput>
     </EmbeddedResource>
@@ -407,48 +401,48 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Graphique\AttestationDataSet.xsc">
+    <None Include="Graphique\Datasets\AttestationDataSet.xsc">
       <DependentUpon>AttestationDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Graphique\AttestationDataSet.xsd">
+    <None Include="Graphique\Datasets\AttestationDataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>AttestationDataSet.Designer.vb</LastGenOutput>
     </None>
-    <None Include="Graphique\AttestationDataSet.xss">
+    <None Include="Graphique\Datasets\AttestationDataSet.xss">
       <DependentUpon>AttestationDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Graphique\PvDataSet.xsc">
+    <None Include="Graphique\Datasets\PvDataSet.xsc">
       <DependentUpon>PvDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Graphique\PvDataSet.xsd">
+    <None Include="Graphique\Datasets\PvDataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>PvDataSet.Designer.vb</LastGenOutput>
     </None>
-    <None Include="Graphique\PvDataSet.xss">
+    <None Include="Graphique\Datasets\PvDataSet.xss">
       <DependentUpon>PvDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Graphique\RNDataSet.xsc">
+    <None Include="Graphique\Datasets\RNDataSet.xsc">
       <DependentUpon>RNDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Graphique\RNDataSet.xsd">
+    <None Include="Graphique\Datasets\RNDataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>RNDataSet.Designer.vb</LastGenOutput>
     </None>
-    <None Include="Graphique\RNDataSet.xss">
+    <None Include="Graphique\Datasets\RNDataSet.xss">
       <DependentUpon>RNDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Graphique\RNGDataSet.xsc">
+    <None Include="Graphique\Datasets\RNGDataSet.xsc">
       <DependentUpon>RNGDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Graphique\RNGDataSet.xsd">
+    <None Include="Graphique\Datasets\RNGDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>RNGDataSet.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="Graphique\RNGDataSet.xss">
+    <None Include="Graphique\Datasets\RNGDataSet.xss">
       <DependentUpon>RNGDataSet.xsd</DependentUpon>
     </None>
     <None Include="My Project\app.manifest" />
@@ -489,6 +483,7 @@
     <None Include="Resources\Color Fill 4 copy 2.png" />
     <None Include="Resources\downarrow.png" />
     <None Include="Resources\arrows.png" />
+    <None Include="Resources\missed.png" />
     <Content Include="Resources\page_num_current.png" />
     <None Include="Resources\Spinner-1s-220px.gif" />
     <None Include="Resources\table_blanc.png" />
@@ -813,6 +808,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -41,10 +41,16 @@ Partial Class RN
         Me.Label1 = New System.Windows.Forms.Label()
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.AvertToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.NoResultPanel = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.NoResultLabel = New System.Windows.Forms.Label()
         Me.DetailPanel.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.TableLayoutPanel8.SuspendLayout()
         Me.TitlePanel.SuspendLayout()
+        Me.NoResultPanel.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DetailPanel
@@ -65,10 +71,11 @@ Partial Class RN
         Me.Panel1.Controls.Add(Me.BT_LOAD)
         Me.Panel1.Controls.Add(Me.CB_ANNEE)
         Me.Panel1.Controls.Add(Me.TitlePanel)
+        Me.Panel1.Controls.Add(Me.NoResultPanel)
         Me.Panel1.Controls.Add(Me.CrystalReportViewer1)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(678, 640)
+        Me.Panel1.Size = New System.Drawing.Size(679, 640)
         Me.Panel1.TabIndex = 88
         '
         'TableLayoutPanel8
@@ -218,7 +225,7 @@ Partial Class RN
         Me.TitlePanel.Dock = System.Windows.Forms.DockStyle.Top
         Me.TitlePanel.Location = New System.Drawing.Point(0, 0)
         Me.TitlePanel.Name = "TitlePanel"
-        Me.TitlePanel.Size = New System.Drawing.Size(678, 52)
+        Me.TitlePanel.Size = New System.Drawing.Size(679, 52)
         Me.TitlePanel.TabIndex = 0
         '
         'BT_SORTIR
@@ -270,7 +277,7 @@ Partial Class RN
         Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
         Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, 151)
         Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-        Me.CrystalReportViewer1.Size = New System.Drawing.Size(678, 489)
+        Me.CrystalReportViewer1.Size = New System.Drawing.Size(679, 489)
         Me.CrystalReportViewer1.TabIndex = 49
         Me.CrystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
         Me.CrystalReportViewer1.ToolPanelWidth = 100
@@ -280,12 +287,55 @@ Partial Class RN
         Me.AvertToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Warning
         Me.AvertToolTip.ToolTipTitle = "Avertissement"
         '
+        'NoResultPanel
+        '
+        Me.NoResultPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.NoResultPanel.Controls.Add(Me.NoResultLabel)
+        Me.NoResultPanel.Controls.Add(Me.Label3)
+        Me.NoResultPanel.Controls.Add(Me.PictureBox1)
+        Me.NoResultPanel.Location = New System.Drawing.Point(0, 151)
+        Me.NoResultPanel.Name = "NoResultPanel"
+        Me.NoResultPanel.Size = New System.Drawing.Size(680, 489)
+        Me.NoResultPanel.TabIndex = 88
+        Me.NoResultPanel.Visible = False
+        '
+        'Label3
+        '
+        Me.Label3.Font = New System.Drawing.Font("Arial", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(18, 8)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(643, 52)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "Impossible d'afficher le relevé de note"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.missed
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.PictureBox1.Location = New System.Drawing.Point(224, 71)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(231, 268)
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
+        '
+        'NoResultLabel
+        '
+        Me.NoResultLabel.Font = New System.Drawing.Font("Bahnschrift", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NoResultLabel.Location = New System.Drawing.Point(19, 341)
+        Me.NoResultLabel.Name = "NoResultLabel"
+        Me.NoResultLabel.Size = New System.Drawing.Size(649, 137)
+        Me.NoResultLabel.TabIndex = 3
+        Me.NoResultLabel.Text = "Il existe quelques informations manquants dans l'historique de cet étudiant , veu" & _
+            "illez les remplir et recharger la base de donnée à nouveau."
+        Me.NoResultLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'RN
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
         Me.AutoSize = True
         Me.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.background
-        Me.ClientSize = New System.Drawing.Size(678, 640)
+        Me.ClientSize = New System.Drawing.Size(681, 640)
         Me.Controls.Add(Me.DetailPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False
@@ -301,6 +351,8 @@ Partial Class RN
         Me.TableLayoutPanel8.PerformLayout()
         Me.TitlePanel.ResumeLayout(False)
         Me.TitlePanel.PerformLayout()
+        Me.NoResultPanel.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -322,4 +374,8 @@ Partial Class RN
     Friend WithEvents Matricule As System.Windows.Forms.Label
     Friend WithEvents PrenomLabel As System.Windows.Forms.Label
     Friend WithEvents NomLabel As System.Windows.Forms.Label
+    Friend WithEvents NoResultPanel As System.Windows.Forms.Panel
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents NoResultLabel As System.Windows.Forms.Label
 End Class

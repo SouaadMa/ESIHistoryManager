@@ -36,19 +36,7 @@ Public Class modifpassword
                 Login.password_._admin_mdp = TXT_PasswordN.Text
             End If
 
-            'serialiser password
-
-            'open our filestream
-            Dim stream As FileStream
-            stream = File.OpenWrite("password.txt")
-
-            'create the binary formatter
-            Dim formatter As New BinaryFormatter
-            formatter.Serialize(stream, Login.password_)
-
-
-
-            stream.Close()
+            Login.password_.serialize()
 
             Me.Close()
         End If

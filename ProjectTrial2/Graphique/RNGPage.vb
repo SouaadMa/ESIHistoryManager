@@ -72,7 +72,7 @@ Public Class RNGPage
                 codannee = "20" + ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.LastIndexOf("/") + 1)
                 codannee += "/" + (CInt(codannee) + 1).ToString
                 codprom = ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(0, 1) + IIf(ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(0, 1).Equals("1"), " ère", " ème") + " Année "
-                codprom += IIf(ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(2, 3).Equals("TRC"), "Tronc Commun ", IIf(ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(2, 3).Equals("SIQ"), "Systèmes informatiques ", "Systèmes d'informations ")) + codannee
+                codprom += IIf(ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(2, 3).Equals("TRC"), "Tronc Commun ", IIf(ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(2, 3).Equals("SIQ"), "Systèmes informatiques ", "Systèmes d'information ")) + codannee
                 If i <> 4 Then
                     'get the corresponding formula item
                     FormulaField = FormulaFields.Item(0)
@@ -150,7 +150,7 @@ Public Class RNGPage
             'MsgBox("Cet étudiant n'a pas obtenu son diplome ", , "Erreur")
             CrystalReportViewer1.Visible = False
             NoResultPanel.Visible = True
-            NoResultLabel.Text = "Cet étudiant n'a pas obtenu son diplome"
+            NoResultLabel.Text = "Cet étudiant n'a pas obtenu son diplôme"
         Catch ex As Exception
             'MsgBox("Impossible de générer le relevé de note général de cet etudiant", , "Erreur")
             'BT_SORTIR_Click(SortirButton, New EventArgs())

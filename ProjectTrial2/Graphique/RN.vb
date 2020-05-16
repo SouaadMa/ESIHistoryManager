@@ -55,7 +55,7 @@ Public Class RN
                 codannee = codannee.Insert(0, IIf(CInt(codannee) > 11, "19", "20"))
                 codannee += "/" + (CInt(codannee) + 1).ToString
                 codprom = prom.Substring(0, 1) + IIf(prom.Substring(0, 1).Equals("1"), " ère", " ème") + " Année "
-                codprom += IIf(prom.Substring(2, 3).Equals("TRC"), "Tronc Commun ", IIf(prom.Substring(2, 3).Equals("SIQ"), "Systèmes informatiques ", "Systèmes d'informations ")) + codannee
+                codprom += IIf(prom.Substring(2, 3).Equals("TRC"), "Tronc Commun ", IIf(prom.Substring(2, 3).Equals("SIQ"), "Systèmes informatiques ", "Systèmes d'information ")) + codannee
                 row(allPromos.Columns(0).ToString) = codprom
             Next
             'CB_ANNEE.FormattingEnabled = True

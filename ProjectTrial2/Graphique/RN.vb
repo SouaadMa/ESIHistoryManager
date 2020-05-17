@@ -10,6 +10,7 @@ Public Class RN
     Dim esistselect As Etudiant ' letudiant selection f affichresult
     Dim RN As SortieRN = Nothing
     Dim codepromo As String = ""
+    Dim allPromos As DataTable
 
     Public Sub New(ByVal e As Etudiant)
 
@@ -44,7 +45,7 @@ Public Class RN
 
 
         Try
-            Dim allPromos As DataTable = esistselect.GetALL(BDD.champsCodePromo)
+            allPromos = esistselect.GetALL(BDD.champsCodePromo)
             If allPromos.Rows.Count = 0 Then
                 Throw New NoyearRNException()
             End If
@@ -99,7 +100,7 @@ Public Class RN
         
         Try
             If cb_anee = True Then
-                codepromo = esistselect.GetALL(BDD.champsCodePromo).Rows(CB_ANNEE.SelectedIndex)(BDD.champsCodePromo).ToString
+                codepromo = allPromos.Rows(CB_ANNEE.SelectedIndex)(BDD.champsCodePromo).ToString
                 RN = New SortieRN(esistselect, codepromo) 'CB_ANNEE.Text)
 
                 CrystalReportViewer1.Enabled = True

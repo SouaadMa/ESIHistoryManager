@@ -528,17 +528,26 @@ Public Class RechercherPage
     Private Sub TXT_NOM_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TXT_PRENOMA.KeyPress, TXT_PRENOM.KeyPress, TXT_PERE.KeyPress, TXT_NOMA.KeyPress, TXT_NOM.KeyPress, TXT_MERE.KeyPress
         Dim c As Char = e.KeyChar
 
-
+        TXT_NOM_ALERT.Visible = False
+        TXT_PRENOM_ALERT.Visible = False
+        TXT_NOMA_ALERT.Visible = False
+        TXT_PRENOMA_ALERT.Visible = False
         'If  Char.IsDigit(c) And Not AscW(c) = 8 And Not AscW(c) = 32 Then
         '    e.Handled = True
         'Else
         If CType(sender, Control).Name.Equals("TXT_NOMA") Or CType(sender, Control).Name.Equals("TXT_PRENOMA") Then
             If Not Regex.IsMatch(c.ToString, "\p{IsArabic}") And Not AscW(c) = 8 And Not AscW(c) = 32 Then
                 e.Handled = True
+                generalesGroupBox.Controls.OfType(Of PictureBox).First(Function(x As PictureBox) (x.Name.Equals(CType(sender, Control).Name + "_ALERT"))).Visible = True
+            Else
+                generalesGroupBox.Controls.OfType(Of PictureBox).First(Function(x As PictureBox) (x.Name.Equals(CType(sender, Control).Name + "_ALERT"))).Visible = False
             End If
         Else
-            If Not Regex.IsMatch(c.ToString, "\p{L}") And Not AscW(c) = 8 And Not AscW(c) = 32 Then
+            If (Not Regex.IsMatch(c.ToString, "\p{L}") Or Regex.IsMatch(c.ToString, "\p{IsArabic}")) And Not AscW(c) = 8 And Not AscW(c) = 32 Then
                 e.Handled = True
+                generalesGroupBox.Controls.OfType(Of PictureBox).First(Function(x As PictureBox) (x.Name.Equals(CType(sender, Control).Name + "_ALERT"))).Visible = True
+            Else
+                generalesGroupBox.Controls.OfType(Of PictureBox).First(Function(x As PictureBox) (x.Name.Equals(CType(sender, Control).Name + "_ALERT"))).Visible = False
             End If
         End If
         'End If
@@ -563,4 +572,20 @@ Public Class RechercherPage
         End If
     End Sub
 
+    Private Sub TXT_NOM_ALERT_VisibleChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_PRENOMA_ALERT.VisibleChanged, TXT_PRENOM_ALERT.VisibleChanged, TXT_NOMA_ALERT.VisibleChanged, TXT_NOM_ALERT.VisibleChanged
+        Dim pct As PictureBox = sender
+        If pct.Visible Then
+            AvertToolTip.Active = True
+            AvertToolTip.IsBalloon = True
+            Dim txt As TextBox = generalesGroupBox.Controls.OfType(Of TextBox).First(Function(x As TextBox) (x.Name.Equals(pct.Name.Replace("_ALERT", ""))))
+            AvertToolTip.ToolTipIcon = ToolTipIcon.Error
+            AvertToolTip.ToolTipTitle = "Erreur"
+            Dim avert As String = "Vous devez saisir des lettres " + IIf(txt.Name.Equals("TXT_NOMA") Or txt.Name.Equals("TXT_PRENOMA"), "arabes", "françaises")
+            AvertToolTip.SetToolTip(pct, avert)
+            AvertToolTip.Show(avert, pct)
+        Else
+            AvertToolTip.Active = False
+            'AvertToolTip.SetToolTip(Nothing, "")
+        End If
+    End Sub
 End Class

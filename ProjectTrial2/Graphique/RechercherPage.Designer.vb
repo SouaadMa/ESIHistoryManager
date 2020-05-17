@@ -77,6 +77,11 @@ Partial Class RechercherPage
         Me.LB_ANNEEB = New System.Windows.Forms.Label()
         Me.PN_FORUMRECH = New System.Windows.Forms.Panel()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.TXT_NOMA_ALERT = New System.Windows.Forms.PictureBox()
+        Me.TXT_PRENOM_ALERT = New System.Windows.Forms.PictureBox()
+        Me.TXT_PRENOMA_ALERT = New System.Windows.Forms.PictureBox()
+        Me.TXT_NOM_ALERT = New System.Windows.Forms.PictureBox()
+        Me.AvertToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.RechIntroPanel.SuspendLayout()
         Me.RechButtons.SuspendLayout()
         Me.generalesGroupBox.SuspendLayout()
@@ -96,6 +101,10 @@ Partial Class RechercherPage
         Me.SplitContainer2.SuspendLayout()
         CType(Me.IMG_ALERTMOY, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PN_FORUMRECH.SuspendLayout()
+        CType(Me.TXT_NOMA_ALERT, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TXT_PRENOM_ALERT, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TXT_PRENOMA_ALERT, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TXT_NOM_ALERT, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RechIntroPanel
@@ -161,6 +170,10 @@ Partial Class RechercherPage
         '
         'generalesGroupBox
         '
+        Me.generalesGroupBox.Controls.Add(Me.TXT_NOM_ALERT)
+        Me.generalesGroupBox.Controls.Add(Me.TXT_PRENOMA_ALERT)
+        Me.generalesGroupBox.Controls.Add(Me.TXT_PRENOM_ALERT)
+        Me.generalesGroupBox.Controls.Add(Me.TXT_NOMA_ALERT)
         Me.generalesGroupBox.Controls.Add(Me.CB_ANNEE)
         Me.generalesGroupBox.Controls.Add(Me.Label7)
         Me.generalesGroupBox.Controls.Add(Me.TXT_MERE)
@@ -278,7 +291,7 @@ Partial Class RechercherPage
         'IMG_ALERTMTB
         '
         Me.IMG_ALERTMTB.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
-        Me.IMG_ALERTMTB.Location = New System.Drawing.Point(521, 72)
+        Me.IMG_ALERTMTB.Location = New System.Drawing.Point(518, 71)
         Me.IMG_ALERTMTB.Name = "IMG_ALERTMTB"
         Me.IMG_ALERTMTB.Size = New System.Drawing.Size(30, 30)
         Me.IMG_ALERTMTB.TabIndex = 38
@@ -288,7 +301,7 @@ Partial Class RechercherPage
         'IMG_ALERTMAT
         '
         Me.IMG_ALERTMAT.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
-        Me.IMG_ALERTMAT.Location = New System.Drawing.Point(521, 29)
+        Me.IMG_ALERTMAT.Location = New System.Drawing.Point(518, 27)
         Me.IMG_ALERTMAT.Name = "IMG_ALERTMAT"
         Me.IMG_ALERTMAT.Size = New System.Drawing.Size(30, 30)
         Me.IMG_ALERTMAT.TabIndex = 37
@@ -333,7 +346,6 @@ Partial Class RechercherPage
         Me.TXT_PRENOMA.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.TXT_PRENOMA.Size = New System.Drawing.Size(264, 26)
         Me.TXT_PRENOMA.TabIndex = 8
-        Me.TXT_PRENOMA.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TXT_NOMA
         '
@@ -344,7 +356,6 @@ Partial Class RechercherPage
         Me.TXT_NOMA.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.TXT_NOMA.Size = New System.Drawing.Size(264, 26)
         Me.TXT_NOMA.TabIndex = 9
-        Me.TXT_NOMA.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'LB_NOMA
         '
@@ -728,6 +739,46 @@ Partial Class RechercherPage
         Me.BackgroundWorker1.WorkerReportsProgress = True
         Me.BackgroundWorker1.WorkerSupportsCancellation = True
         '
+        'TXT_NOMA_ALERT
+        '
+        Me.TXT_NOMA_ALERT.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
+        Me.TXT_NOMA_ALERT.Location = New System.Drawing.Point(518, 159)
+        Me.TXT_NOMA_ALERT.Name = "TXT_NOMA_ALERT"
+        Me.TXT_NOMA_ALERT.Size = New System.Drawing.Size(30, 30)
+        Me.TXT_NOMA_ALERT.TabIndex = 47
+        Me.TXT_NOMA_ALERT.TabStop = False
+        Me.TXT_NOMA_ALERT.Visible = False
+        '
+        'TXT_PRENOM_ALERT
+        '
+        Me.TXT_PRENOM_ALERT.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
+        Me.TXT_PRENOM_ALERT.Location = New System.Drawing.Point(518, 203)
+        Me.TXT_PRENOM_ALERT.Name = "TXT_PRENOM_ALERT"
+        Me.TXT_PRENOM_ALERT.Size = New System.Drawing.Size(30, 30)
+        Me.TXT_PRENOM_ALERT.TabIndex = 48
+        Me.TXT_PRENOM_ALERT.TabStop = False
+        Me.TXT_PRENOM_ALERT.Visible = False
+        '
+        'TXT_PRENOMA_ALERT
+        '
+        Me.TXT_PRENOMA_ALERT.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
+        Me.TXT_PRENOMA_ALERT.Location = New System.Drawing.Point(518, 249)
+        Me.TXT_PRENOMA_ALERT.Name = "TXT_PRENOMA_ALERT"
+        Me.TXT_PRENOMA_ALERT.Size = New System.Drawing.Size(30, 30)
+        Me.TXT_PRENOMA_ALERT.TabIndex = 49
+        Me.TXT_PRENOMA_ALERT.TabStop = False
+        Me.TXT_PRENOMA_ALERT.Visible = False
+        '
+        'TXT_NOM_ALERT
+        '
+        Me.TXT_NOM_ALERT.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
+        Me.TXT_NOM_ALERT.Location = New System.Drawing.Point(518, 115)
+        Me.TXT_NOM_ALERT.Name = "TXT_NOM_ALERT"
+        Me.TXT_NOM_ALERT.Size = New System.Drawing.Size(30, 30)
+        Me.TXT_NOM_ALERT.TabIndex = 50
+        Me.TXT_NOM_ALERT.TabStop = False
+        Me.TXT_NOM_ALERT.Visible = False
+        '
         'RechercherPage
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
@@ -765,6 +816,10 @@ Partial Class RechercherPage
         Me.SplitContainer2.ResumeLayout(False)
         CType(Me.IMG_ALERTMOY, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PN_FORUMRECH.ResumeLayout(False)
+        CType(Me.TXT_NOMA_ALERT, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TXT_PRENOM_ALERT, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TXT_PRENOMA_ALERT, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TXT_NOM_ALERT, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -821,4 +876,9 @@ Partial Class RechercherPage
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents CB_ANNEE As System.Windows.Forms.ComboBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents TXT_NOM_ALERT As System.Windows.Forms.PictureBox
+    Friend WithEvents TXT_PRENOMA_ALERT As System.Windows.Forms.PictureBox
+    Friend WithEvents TXT_PRENOM_ALERT As System.Windows.Forms.PictureBox
+    Friend WithEvents TXT_NOMA_ALERT As System.Windows.Forms.PictureBox
+    Friend WithEvents AvertToolTip As System.Windows.Forms.ToolTip
 End Class

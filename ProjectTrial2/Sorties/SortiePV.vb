@@ -11,7 +11,7 @@
 
 
     Public Shared Function PV_DELIBERATION(ByVal NIVEAU As String, ByVal OPTIN As String, ByVal ANNEE As String) As DataSet
-
+        bilan = ""
         Dim dts As DataSet = New DataSet()
         Dim CodePromo As String
         Dim champ As List(Of String) = New List(Of String)
@@ -128,7 +128,7 @@
         End If
 
         '5') ajouter la column du ratrapage
-        dt1.Columns.Add("Moyenne Ratr", GetType(System.String))
+        dt1.Columns.Add("MoyenneRatr", GetType(System.Double))
 
 
         '6____________________________liaison entre dt1 et dt3 et dt4
@@ -149,14 +149,14 @@
 
                     End Try
                 Next
-                row1("Moyenne Ratr") = ""
-                row1("Moyenne Ratr") = dt4.Select("MATRIN = '" & row1("MATRIN") & "' ")(0)("MOYERA")
+                row1("MoyenneRatr") = 0
+                row1("MoyenneRatr") = dt4.Select("MATRIN = '" & row1("MATRIN") & "' ")(0)("MOYERA")
 
-                If row1("Moyenne Ratr") <> "" Then
+                If row1("MoyenneRatr") <> 0 Then
                     Console.WriteLine("MoyR")
 
-                    If row1(BDD.champsMOYEIN) >= row1("Moyenne Ratr") Then
-                        row1("Moyenne Ratr") = "_"
+                    If row1(BDD.champsMOYEIN) >= row1("MoyenneRatr") Then
+                        row1("MoyenneRatr") = 0
 
                     Else
                         row1(BDD.champsMENTIN) = dt4.Select("MATRIN = '" & row1("MATRIN") & "' ")(0)("MENTRA")
@@ -178,11 +178,11 @@
             Catch ex As Exception
                 Console.WriteLine("Exce")
                 If (row1("RATRIN") > 0) Then
-                    row1("Moyenne Ratr") = "_"
+                    row1("MoyenneRatr") = 0
                     bilan += "L'étudiant : MARICULE = " & row1("MATRIN") & ", son RATRIN=" & row1("RATRIN") & " mais sa note de ratrapage n'existe pas dans la table NoteRATRAP " & vbNewLine
 
                 Else
-                    row1("Moyenne Ratr") = "_"
+                    row1("MoyenneRatr") = 0
 
                 End If
             End Try
@@ -192,7 +192,11 @@
         Next
 
         dts.Tables.Add(dt1.Copy())
+        'dts.Tables(0).Columns.Item("RATRIN").ColumnName = "RATR"
+        'dts.Tables(0).Columns.Item("Moyenne Ratr").ColumnName = "MOYERA"
         dts.Tables.Add(dt2.Copy())  'to bring the coeffs of each modules
+        'dts.Tables(0).Columns.Item("MOYERA").ColumnName = "RATRIN"
+
 
 
 

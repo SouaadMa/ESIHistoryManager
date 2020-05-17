@@ -31,6 +31,7 @@ Partial Class RNGPage
         Me.PrenomLabel = New System.Windows.Forms.Label()
         Me.NomLabel = New System.Windows.Forms.Label()
         Me.NoResultPanel = New System.Windows.Forms.Panel()
+        Me.BilanLinkLabel = New System.Windows.Forms.LinkLabel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.NoResultLabel = New System.Windows.Forms.Label()
@@ -40,7 +41,6 @@ Partial Class RNGPage
         Me.SortirButton = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.AvertToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.BilanLinkLabel = New System.Windows.Forms.LinkLabel()
         Me.DetailPanel.SuspendLayout()
         Me.TableLayoutPanel8.SuspendLayout()
         Me.NoResultPanel.SuspendLayout()
@@ -166,6 +166,23 @@ Partial Class RNGPage
         Me.NoResultPanel.TabIndex = 55
         Me.NoResultPanel.Visible = False
         '
+        'BilanLinkLabel
+        '
+        Me.BilanLinkLabel.AutoSize = True
+        Me.BilanLinkLabel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BilanLinkLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BilanLinkLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.BilanLinkLabel.LinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.BilanLinkLabel.Location = New System.Drawing.Point(163, 477)
+        Me.BilanLinkLabel.Name = "BilanLinkLabel"
+        Me.BilanLinkLabel.Size = New System.Drawing.Size(352, 26)
+        Me.BilanLinkLabel.TabIndex = 6
+        Me.BilanLinkLabel.TabStop = True
+        Me.BilanLinkLabel.Text = "Cliquez ici pour voir le bilan detaillé"
+        Me.BilanLinkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.BilanLinkLabel.Visible = False
+        Me.BilanLinkLabel.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
+        '
         'Label2
         '
         Me.Label2.Font = New System.Drawing.Font("Arial", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -268,23 +285,6 @@ Partial Class RNGPage
         '
         Me.AvertToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Warning
         Me.AvertToolTip.ToolTipTitle = "Avertissement"
-        '
-        'BilanLinkLabel
-        '
-        Me.BilanLinkLabel.AutoSize = True
-        Me.BilanLinkLabel.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BilanLinkLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BilanLinkLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
-        Me.BilanLinkLabel.LinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.BilanLinkLabel.Location = New System.Drawing.Point(163, 477)
-        Me.BilanLinkLabel.Name = "BilanLinkLabel"
-        Me.BilanLinkLabel.Size = New System.Drawing.Size(352, 26)
-        Me.BilanLinkLabel.TabIndex = 6
-        Me.BilanLinkLabel.TabStop = True
-        Me.BilanLinkLabel.Text = "Cliquez ici pour voir le bilan detaillé"
-        Me.BilanLinkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.BilanLinkLabel.Visible = False
-        Me.BilanLinkLabel.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
         '
         'RNGPage
         '

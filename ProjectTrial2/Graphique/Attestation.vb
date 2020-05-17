@@ -14,6 +14,7 @@
     Private Sub attestation_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         'inisializer les panels
+        BilanLinkLabel.Visible = True
         NoResultPanel.Visible = False
         ' make the report viewer visible
         CrystalReportViewer1.Visible = True
@@ -56,8 +57,10 @@
             NoResultPanel.Visible = True
             NoResultLabel.Text = "Quelques informations manquent dans l'historique de cet étudiant , veuillez les remplir et recharger la base de données à nouveau."
             BilanLinkLabel.Visible = True
+
         End Try
-        
+
+        BilanLinkLabel.Visible = Not SortieAttestation.getBilan.Equals("Tout est bien passé!")
         ' and that's it !
 
         'Form1.ds = ds
@@ -73,6 +76,7 @@
     End Sub
 
     Private Sub BilanLinkLabel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BilanLinkLabel.Click
+        BilanPage.RichTextBox1.Clear()
         BilanPage.RichTextBox1.Text = SortieAttestation.getBilan()
         BilanPage.Show()
     End Sub

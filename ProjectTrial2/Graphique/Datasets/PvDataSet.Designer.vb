@@ -313,7 +313,7 @@ Partial Public Class PvDataSet
         
         Private columnRANGIN As Global.System.Data.DataColumn
         
-        Private columnMOYERA As Global.System.Data.DataColumn
+        Private columnMoyenneRatr As Global.System.Data.DataColumn
 
         Private columnADM As Global.System.Data.DataColumn
 
@@ -474,9 +474,9 @@ Partial Public Class PvDataSet
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public ReadOnly Property MOYERAColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property MoyenneRatrColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnMOYERA
+                Return Me.columnMoyenneRatr
             End Get
         End Property
 
@@ -541,10 +541,10 @@ Partial Public Class PvDataSet
                     ByVal MOYEIN As Double, _
                     ByVal MENTIN As Integer, _
                     ByVal RANGIN As Integer, _
-                    ByVal MOYERA As Double, _
+                    ByVal MoyenneRatr As Double, _
                     ByVal ADM As String) As DataTable1Row
             Dim rowDataTable1Row As DataTable1Row = CType(Me.NewRow, DataTable1Row)
-            Dim columnValuesArray() As Object = New Object() {MATRIN, NomEtud, Prenoms, DataColumn1, DataColumn2, DataColumn3, DataColumn4, DataColumn5, DataColumn6, DataColumn7, DataColumn8, ELIMININ, MOYEIN, MENTIN, RANGIN, MOYERA, ADM}
+            Dim columnValuesArray() As Object = New Object() {MATRIN, NomEtud, Prenoms, DataColumn1, DataColumn2, DataColumn3, DataColumn4, DataColumn5, DataColumn6, DataColumn7, DataColumn8, ELIMININ, MOYEIN, MENTIN, RANGIN, MoyenneRatr, ADM}
             rowDataTable1Row.ItemArray = columnValuesArray
             Me.Rows.Add(rowDataTable1Row)
             Return rowDataTable1Row
@@ -582,7 +582,7 @@ Partial Public Class PvDataSet
             Me.columnMOYEIN = MyBase.Columns("MOYEIN")
             Me.columnMENTIN = MyBase.Columns("MENTIN")
             Me.columnRANGIN = MyBase.Columns("RANGIN")
-            Me.columnMOYERA = MyBase.Columns("MOYERA")
+            Me.columnMoyenneRatr = MyBase.Columns("MoyenneRatr")
             Me.columnADM = MyBase.Columns("ADM")
         End Sub
 
@@ -619,8 +619,8 @@ Partial Public Class PvDataSet
             MyBase.Columns.Add(Me.columnMENTIN)
             Me.columnRANGIN = New Global.System.Data.DataColumn("RANGIN", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnRANGIN)
-            Me.columnMOYERA = New Global.System.Data.DataColumn("MOYERA", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnMOYERA)
+            Me.columnMoyenneRatr = New Global.System.Data.DataColumn("MoyenneRatr", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMoyenneRatr)
             Me.columnADM = New Global.System.Data.DataColumn("ADM", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnADM)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnMATRIN}, False))
@@ -783,7 +783,7 @@ Partial Public Class PvDataSet
                 End Try
             End Get
             Set(ByVal value As String)
-                Me(Me.tableDataTable1.MATRINColumn) = Value
+                Me(Me.tableDataTable1.MATRINColumn) = value
             End Set
         End Property
 
@@ -798,7 +798,7 @@ Partial Public Class PvDataSet
                 End Try
             End Get
             Set(ByVal value As String)
-                Me(Me.tableDataTable1.NomEtudColumn) = Value
+                Me(Me.tableDataTable1.NomEtudColumn) = value
             End Set
         End Property
 
@@ -813,7 +813,7 @@ Partial Public Class PvDataSet
                 End Try
             End Get
             Set(ByVal value As String)
-                Me(Me.tableDataTable1.PrenomsColumn) = Value
+                Me(Me.tableDataTable1.PrenomsColumn) = value
             End Set
         End Property
 
@@ -828,7 +828,7 @@ Partial Public Class PvDataSet
                 End Try
             End Get
             Set(ByVal value As Double)
-                Me(Me.tableDataTable1.DataColumn1Column) = Value
+                Me(Me.tableDataTable1.DataColumn1Column) = value
             End Set
         End Property
 
@@ -843,7 +843,7 @@ Partial Public Class PvDataSet
                 End Try
             End Get
             Set(ByVal value As Double)
-                Me(Me.tableDataTable1.DataColumn2Column) = Value
+                Me(Me.tableDataTable1.DataColumn2Column) = value
             End Set
         End Property
 
@@ -858,7 +858,7 @@ Partial Public Class PvDataSet
                 End Try
             End Get
             Set(ByVal value As Double)
-                Me(Me.tableDataTable1.DataColumn3Column) = Value
+                Me(Me.tableDataTable1.DataColumn3Column) = value
             End Set
         End Property
 
@@ -873,7 +873,7 @@ Partial Public Class PvDataSet
                 End Try
             End Get
             Set(ByVal value As Double)
-                Me(Me.tableDataTable1.DataColumn4Column) = Value
+                Me(Me.tableDataTable1.DataColumn4Column) = value
             End Set
         End Property
 
@@ -888,7 +888,7 @@ Partial Public Class PvDataSet
                 End Try
             End Get
             Set(ByVal value As Double)
-                Me(Me.tableDataTable1.DataColumn5Column) = Value
+                Me(Me.tableDataTable1.DataColumn5Column) = value
             End Set
         End Property
 
@@ -903,7 +903,7 @@ Partial Public Class PvDataSet
                 End Try
             End Get
             Set(ByVal value As Double)
-                Me(Me.tableDataTable1.DataColumn6Column) = Value
+                Me(Me.tableDataTable1.DataColumn6Column) = value
             End Set
         End Property
 
@@ -918,7 +918,7 @@ Partial Public Class PvDataSet
                 End Try
             End Get
             Set(ByVal value As Double)
-                Me(Me.tableDataTable1.DataColumn7Column) = Value
+                Me(Me.tableDataTable1.DataColumn7Column) = value
             End Set
         End Property
 
@@ -933,7 +933,7 @@ Partial Public Class PvDataSet
                 End Try
             End Get
             Set(ByVal value As Double)
-                Me(Me.tableDataTable1.DataColumn8Column) = Value
+                Me(Me.tableDataTable1.DataColumn8Column) = value
             End Set
         End Property
 
@@ -948,7 +948,7 @@ Partial Public Class PvDataSet
                 End Try
             End Get
             Set(ByVal value As Integer)
-                Me(Me.tableDataTable1.ELIMININColumn) = Value
+                Me(Me.tableDataTable1.ELIMININColumn) = value
             End Set
         End Property
 
@@ -963,7 +963,7 @@ Partial Public Class PvDataSet
                 End Try
             End Get
             Set(ByVal value As Double)
-                Me(Me.tableDataTable1.MOYEINColumn) = Value
+                Me(Me.tableDataTable1.MOYEINColumn) = value
             End Set
         End Property
 
@@ -978,7 +978,7 @@ Partial Public Class PvDataSet
                 End Try
             End Get
             Set(ByVal value As Integer)
-                Me(Me.tableDataTable1.MENTINColumn) = Value
+                Me(Me.tableDataTable1.MENTINColumn) = value
             End Set
         End Property
 
@@ -993,22 +993,22 @@ Partial Public Class PvDataSet
                 End Try
             End Get
             Set(ByVal value As Integer)
-                Me(Me.tableDataTable1.RANGINColumn) = Value
+                Me(Me.tableDataTable1.RANGINColumn) = value
             End Set
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Property MOYERA() As Double
+        Public Property MoyenneRatr() As Double
             Get
                 Try
-                    Return CType(Me(Me.tableDataTable1.MOYERAColumn), Double)
+                    Return CType(Me(Me.tableDataTable1.MoyenneRatrColumn), Double)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'MOYERA' in table 'DataTable1' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'MoyenneRatr' in table 'DataTable1' is DBNull.", e)
                 End Try
             End Get
             Set(ByVal value As Double)
-                Me(Me.tableDataTable1.MOYERAColumn) = Value
+                Me(Me.tableDataTable1.MoyenneRatrColumn) = value
             End Set
         End Property
 
@@ -1023,7 +1023,7 @@ Partial Public Class PvDataSet
                 End Try
             End Get
             Set(ByVal value As String)
-                Me(Me.tableDataTable1.ADMColumn) = Value
+                Me(Me.tableDataTable1.ADMColumn) = value
             End Set
         End Property
 
@@ -1209,14 +1209,14 @@ Partial Public Class PvDataSet
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Function IsMOYERANull() As Boolean
-            Return Me.IsNull(Me.tableDataTable1.MOYERAColumn)
+        Public Function IsMoyenneRatrNull() As Boolean
+            Return Me.IsNull(Me.tableDataTable1.MoyenneRatrColumn)
         End Function
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Sub SetMOYERANull()
-            Me(Me.tableDataTable1.MOYERAColumn) = Global.System.Convert.DBNull
+        Public Sub SetMoyenneRatrNull()
+            Me(Me.tableDataTable1.MoyenneRatrColumn) = Global.System.Convert.DBNull
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _

@@ -23,6 +23,7 @@ Partial Class PVPage
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.PVIntroPanel = New System.Windows.Forms.Panel()
+        Me.BilanLinkLabel = New System.Windows.Forms.LinkLabel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PN_FORUMRECH = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -42,7 +43,6 @@ Partial Class PVPage
         Me.PromoBox = New System.Windows.Forms.ComboBox()
         Me.NiveauBox = New System.Windows.Forms.ComboBox()
         Me.SpecialiteBox = New System.Windows.Forms.ComboBox()
-        Me.BilanLinkLabel = New System.Windows.Forms.LinkLabel()
         Me.PVIntroPanel.SuspendLayout()
         Me.PN_FORUMRECH.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -55,6 +55,7 @@ Partial Class PVPage
         '
         'PVIntroPanel
         '
+        Me.PVIntroPanel.Controls.Add(Me.BilanLinkLabel)
         Me.PVIntroPanel.Controls.Add(Me.Label1)
         Me.PVIntroPanel.Location = New System.Drawing.Point(0, 0)
         Me.PVIntroPanel.Margin = New System.Windows.Forms.Padding(0)
@@ -62,13 +63,31 @@ Partial Class PVPage
         Me.PVIntroPanel.Size = New System.Drawing.Size(676, 50)
         Me.PVIntroPanel.TabIndex = 46
         '
+        'BilanLinkLabel
+        '
+        Me.BilanLinkLabel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BilanLinkLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BilanLinkLabel.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
+        Me.BilanLinkLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BilanLinkLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.BilanLinkLabel.LinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.BilanLinkLabel.Location = New System.Drawing.Point(430, 16)
+        Me.BilanLinkLabel.Name = "BilanLinkLabel"
+        Me.BilanLinkLabel.Size = New System.Drawing.Size(199, 22)
+        Me.BilanLinkLabel.TabIndex = 6
+        Me.BilanLinkLabel.TabStop = True
+        Me.BilanLinkLabel.Text = "Voir le bilan detaillé"
+        Me.BilanLinkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BilanLinkLabel.Visible = False
+        Me.BilanLinkLabel.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 28.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(299, 3)
+        Me.Label1.Location = New System.Drawing.Point(295, 3)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(68, 44)
@@ -102,7 +121,6 @@ Partial Class PVPage
         'NoResultPanel
         '
         Me.NoResultPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.NoResultPanel.Controls.Add(Me.BilanLinkLabel)
         Me.NoResultPanel.Controls.Add(Me.Label5)
         Me.NoResultPanel.Controls.Add(Me.PictureBox1)
         Me.NoResultPanel.Controls.Add(Me.NoResultLabel)
@@ -279,23 +297,6 @@ Partial Class PVPage
         Me.SpecialiteBox.Size = New System.Drawing.Size(68, 26)
         Me.SpecialiteBox.TabIndex = 2
         '
-        'BilanLinkLabel
-        '
-        Me.BilanLinkLabel.AutoSize = True
-        Me.BilanLinkLabel.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BilanLinkLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BilanLinkLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
-        Me.BilanLinkLabel.LinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.BilanLinkLabel.Location = New System.Drawing.Point(157, 472)
-        Me.BilanLinkLabel.Name = "BilanLinkLabel"
-        Me.BilanLinkLabel.Size = New System.Drawing.Size(352, 26)
-        Me.BilanLinkLabel.TabIndex = 6
-        Me.BilanLinkLabel.TabStop = True
-        Me.BilanLinkLabel.Text = "Cliquez ici pour voir le bilan detaillé"
-        Me.BilanLinkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.BilanLinkLabel.Visible = False
-        Me.BilanLinkLabel.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
-        '
         'PVPage
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
@@ -314,7 +315,6 @@ Partial Class PVPage
         Me.PN_FORUMRECH.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.NoResultPanel.ResumeLayout(False)
-        Me.NoResultPanel.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

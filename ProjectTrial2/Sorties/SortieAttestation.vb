@@ -3,7 +3,7 @@ Public Class SortieAttestation
     Private Shared bilan As String = ""
 
     Public Shared Function attestation(ByVal etud As Etudiant) As DataSet
-
+        bilan = ""
         Dim dts As DataSet = New DataSet()                                  ' Le data set qui va contenir le résultat à retourner
 
         Dim champ As List(Of String) = New List(Of String)                  ' La liste des champs à rechercher 

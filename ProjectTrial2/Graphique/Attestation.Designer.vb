@@ -155,7 +155,6 @@ Partial Class Attestation
         'NoResultPanel
         '
         Me.NoResultPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.NoResultPanel.Controls.Add(Me.BilanLinkLabel)
         Me.NoResultPanel.Controls.Add(Me.NoResultLabel)
         Me.NoResultPanel.Controls.Add(Me.Label2)
         Me.NoResultPanel.Controls.Add(Me.PictureBox1)
@@ -212,6 +211,7 @@ Partial Class Attestation
         'TitlePanel
         '
         Me.TitlePanel.BackColor = System.Drawing.Color.Transparent
+        Me.TitlePanel.Controls.Add(Me.BilanLinkLabel)
         Me.TitlePanel.Controls.Add(Me.SortirButton)
         Me.TitlePanel.Controls.Add(Me.Label1)
         Me.TitlePanel.Dock = System.Windows.Forms.DockStyle.Top
@@ -257,18 +257,19 @@ Partial Class Attestation
         '
         'BilanLinkLabel
         '
-        Me.BilanLinkLabel.AutoSize = True
         Me.BilanLinkLabel.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BilanLinkLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BilanLinkLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BilanLinkLabel.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
+        Me.BilanLinkLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BilanLinkLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
         Me.BilanLinkLabel.LinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.BilanLinkLabel.Location = New System.Drawing.Point(163, 481)
+        Me.BilanLinkLabel.Location = New System.Drawing.Point(443, 16)
         Me.BilanLinkLabel.Name = "BilanLinkLabel"
-        Me.BilanLinkLabel.Size = New System.Drawing.Size(352, 26)
-        Me.BilanLinkLabel.TabIndex = 5
+        Me.BilanLinkLabel.Size = New System.Drawing.Size(199, 22)
+        Me.BilanLinkLabel.TabIndex = 46
         Me.BilanLinkLabel.TabStop = True
-        Me.BilanLinkLabel.Text = "Cliquez ici pour voir le bilan detaillé"
-        Me.BilanLinkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.BilanLinkLabel.Text = "Voir le bilan detaillé"
+        Me.BilanLinkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BilanLinkLabel.Visible = False
         Me.BilanLinkLabel.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
         '
@@ -289,7 +290,6 @@ Partial Class Attestation
         Me.TableLayoutPanel8.ResumeLayout(False)
         Me.TableLayoutPanel8.PerformLayout()
         Me.NoResultPanel.ResumeLayout(False)
-        Me.NoResultPanel.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TitlePanel.ResumeLayout(False)
         Me.TitlePanel.PerformLayout()

@@ -5,7 +5,7 @@
     Private Shared bilan As String = ""
 
     Public Sub New(ByVal etud As Etudiant, ByVal promo As String)
-
+        bilan = ""
         'Récupération des informations stockées dans la collection dans l'objet Etudiant
         Dim dtEtud As New DataTable(BDD.nomTableEtudiant)
         Dim lignecomplete As DataRow = etud.InfosETUDIANT

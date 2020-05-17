@@ -3,7 +3,7 @@
     Private Shared bilan As String = ""
 
     Public Shared Function RNG(ByVal etud As Etudiant) As DataSet
-
+        bilan = ""
 
         Dim dtEtud As New DataTable(BDD.nomTableEtudiant)
         Dim lignecomplete As DataRow = etud.InfosETUDIANT

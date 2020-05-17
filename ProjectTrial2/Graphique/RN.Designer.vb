@@ -23,6 +23,7 @@ Partial Class RN
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RN))
         Me.DetailPanel = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel8 = New System.Windows.Forms.TableLayoutPanel()
@@ -31,7 +32,6 @@ Partial Class RN
         Me.Matricule = New System.Windows.Forms.Label()
         Me.PrenomLabel = New System.Windows.Forms.Label()
         Me.NomLabel = New System.Windows.Forms.Label()
-        Me.ImprTotalLabel = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.BT_LOAD = New System.Windows.Forms.Button()
         Me.CB_ANNEE = New System.Windows.Forms.ComboBox()
@@ -45,6 +45,8 @@ Partial Class RN
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.AvertToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.ImprTotalLabel = New System.Windows.Forms.Label()
         Me.BilanLinkLabel = New System.Windows.Forms.LinkLabel()
         Me.DetailPanel.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -52,6 +54,7 @@ Partial Class RN
         Me.TitlePanel.SuspendLayout()
         Me.NoResultPanel.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DetailPanel
@@ -172,17 +175,6 @@ Partial Class RN
         Me.NomLabel.Text = "Nom"
         Me.NomLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'ImprTotalLabel
-        '
-        Me.ImprTotalLabel.Font = New System.Drawing.Font("Cambria", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ImprTotalLabel.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
-        Me.ImprTotalLabel.Location = New System.Drawing.Point(574, 115)
-        Me.ImprTotalLabel.Name = "ImprTotalLabel"
-        Me.ImprTotalLabel.Size = New System.Drawing.Size(20, 20)
-        Me.ImprTotalLabel.TabIndex = 52
-        Me.ImprTotalLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ImprTotalLabel.Visible = False
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -220,6 +212,7 @@ Partial Class RN
         'TitlePanel
         '
         Me.TitlePanel.BackColor = System.Drawing.Color.Transparent
+        Me.TitlePanel.Controls.Add(Me.BilanLinkLabel)
         Me.TitlePanel.Controls.Add(Me.BT_SORTIR)
         Me.TitlePanel.Controls.Add(Me.Label2)
         Me.TitlePanel.Controls.Add(Me.Label1)
@@ -274,7 +267,6 @@ Partial Class RN
         'NoResultPanel
         '
         Me.NoResultPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.NoResultPanel.Controls.Add(Me.BilanLinkLabel)
         Me.NoResultPanel.Controls.Add(Me.NoResultLabel)
         Me.NoResultPanel.Controls.Add(Me.Label3)
         Me.NoResultPanel.Controls.Add(Me.PictureBox1)
@@ -332,20 +324,38 @@ Partial Class RN
         Me.AvertToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Warning
         Me.AvertToolTip.ToolTipTitle = "Avertissement"
         '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.BlinkRate = 500
+        Me.ErrorProvider1.ContainerControl = Me
+        Me.ErrorProvider1.Icon = CType(resources.GetObject("ErrorProvider1.Icon"), System.Drawing.Icon)
+        '
+        'ImprTotalLabel
+        '
+        Me.ImprTotalLabel.Font = New System.Drawing.Font("Cambria", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ImprTotalLabel.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
+        Me.ImprTotalLabel.Location = New System.Drawing.Point(574, 115)
+        Me.ImprTotalLabel.Name = "ImprTotalLabel"
+        Me.ImprTotalLabel.Size = New System.Drawing.Size(20, 20)
+        Me.ImprTotalLabel.TabIndex = 52
+        Me.ImprTotalLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ImprTotalLabel.Visible = False
+        '
         'BilanLinkLabel
         '
-        Me.BilanLinkLabel.AutoSize = True
         Me.BilanLinkLabel.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BilanLinkLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BilanLinkLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BilanLinkLabel.Image = Global.EsistHistoryManagement_v1.My.Resources.Resources.alert1
+        Me.BilanLinkLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BilanLinkLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
         Me.BilanLinkLabel.LinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.BilanLinkLabel.Location = New System.Drawing.Point(164, 434)
+        Me.BilanLinkLabel.Location = New System.Drawing.Point(443, 18)
         Me.BilanLinkLabel.Name = "BilanLinkLabel"
-        Me.BilanLinkLabel.Size = New System.Drawing.Size(352, 26)
-        Me.BilanLinkLabel.TabIndex = 6
+        Me.BilanLinkLabel.Size = New System.Drawing.Size(199, 22)
+        Me.BilanLinkLabel.TabIndex = 44
         Me.BilanLinkLabel.TabStop = True
-        Me.BilanLinkLabel.Text = "Cliquez ici pour voir le bilan detaillé"
-        Me.BilanLinkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.BilanLinkLabel.Text = "Voir le bilan detaillé"
+        Me.BilanLinkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BilanLinkLabel.Visible = False
         Me.BilanLinkLabel.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
         '
@@ -371,8 +381,8 @@ Partial Class RN
         Me.TitlePanel.ResumeLayout(False)
         Me.TitlePanel.PerformLayout()
         Me.NoResultPanel.ResumeLayout(False)
-        Me.NoResultPanel.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -386,7 +396,6 @@ Partial Class RN
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents BT_SORTIR As System.Windows.Forms.Button
-    Friend WithEvents ImprTotalLabel As System.Windows.Forms.Label
     Friend WithEvents AvertToolTip As System.Windows.Forms.ToolTip
     Friend WithEvents TableLayoutPanel8 As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents AdresseLabel As System.Windows.Forms.Label
@@ -398,5 +407,7 @@ Partial Class RN
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents NoResultLabel As System.Windows.Forms.Label
+    Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
+    Friend WithEvents ImprTotalLabel As System.Windows.Forms.Label
     Friend WithEvents BilanLinkLabel As System.Windows.Forms.LinkLabel
 End Class

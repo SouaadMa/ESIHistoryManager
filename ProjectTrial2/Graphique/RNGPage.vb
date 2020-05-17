@@ -69,10 +69,11 @@ Public Class RNGPage
             Dim codannee As String
             For i As Integer = 0 To cryrpt.Subreports.Count - 1 Step 1
                 FormulaFields = cryrpt.Subreports.Item(i).DataDefinition.FormulaFields
-                codannee = "20" + ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.LastIndexOf("/") + 1)
+                codannee = ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.LastIndexOf("/") + 1)
+                codannee = codannee.Insert(0, IIf(CInt(codannee) > 11, "19", "20"))
                 codannee += "/" + (CInt(codannee) + 1).ToString
                 codprom = ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(0, 1) + IIf(ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(0, 1).Equals("1"), " ère", " ème") + " Année "
-                codprom += IIf(ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(2, 3).Equals("TRC"), "Tronc Commun ", IIf(ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(2, 3).Equals("SIQ"), "Systèmes informatiques ", "Systèmes d'information ")) + codannee
+                codprom += IIf(ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(2, 3).Equals("TRC"), "Tronc Commun ", IIf(ds.Tables(1).Rows(i)(BDD.champsCodePromo).ToString.Substring(2, 3).Equals("SIQ"), "Systèmes informatiques ", "Systèmes d''information ")) + codannee
                 If i <> 4 Then
                     'get the corresponding formula item
                     FormulaField = FormulaFields.Item(0)
@@ -101,7 +102,8 @@ Public Class RNGPage
                 Else
 
                     FormulaField = FormulaFields.Item("codepromo")
-                    FormulaField.Text = "'" + codprom + "'"
+                    FormulaField.Text = "'" + codprom + "' ;"
+
                     FormulaField = FormulaFields.Item("memoire")
                     FormulaField.Text = "'" + ds.Tables(1).Rows(i)(BDD.champsMOYEIN).ToString + "' ;"    '.Replace(",", ".")
                     FormulaField = FormulaFields.Item("annee")
@@ -151,13 +153,18 @@ Public Class RNGPage
             CrystalReportViewer1.Visible = False
             NoResultPanel.Visible = True
             NoResultLabel.Text = "Cet étudiant n'a pas obtenu son diplôme"
+            BilanLinkLabel.Visible = Not SortieRNG.getBilan.Equals("Tout est bien passé!")
         Catch ex As Exception
             'MsgBox("Impossible de générer le relevé de note général de cet etudiant", , "Erreur")
             'BT_SORTIR_Click(SortirButton, New EventArgs())
             CrystalReportViewer1.Visible = False
             NoResultPanel.Visible = True
             NoResultLabel.Text = "Quelques informations manquent dans l'historique de cet étudiant , veuillez les remplir et recharger la base de données à nouveau."
-            BilanLinkLabel.Visible = True
+            BilanLinkLabel.Visible = Not SortieRNG.getBilan.Equals("Tout est bien passé!")
+            'Finally
+            '    If Not SortiePV.getBilan.Equals("Tout est bien passé!") Then
+            '        BilanLinkLabel.Visible = True
+            '    End If
         End Try
         If esistselect.GetInfoChamps(BDD.champsNBR_RNG) Then
             ImprTotalLabel.Visible = True
@@ -201,6 +208,7 @@ Public Class RNGPage
     End Sub
 
     Private Sub BilanLinkLabel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BilanLinkLabel.Click
+        BilanPage.RichTextBox1.Clear()
         BilanPage.RichTextBox1.Text = SortieRNG.getBilan()
         BilanPage.Show()
     End Sub

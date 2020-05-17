@@ -33,6 +33,7 @@ Public Class PVPage
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AffichButton.Click
         Try
+            NoResultPanel.Visible = False
             CrystalReportViewer1.Enabled = True
             Dim ds As New DataSet   'the dataset which will be assigned to the report
             Dim cryrpt As New PvReport
@@ -57,7 +58,7 @@ Public Class PVPage
                     TextObj = CryObj
                     Select Case TextObj.Name
                         Case "PromoString"
-                            TextObj.Text = NiveauBox.Text + IIf(NiveauBox.SelectedIndex > 0, " er", " ème") + " ANNEE INGENIEUR - " + SpecialiteBox.Text
+                            TextObj.Text = NiveauBox.Text + IIf(NiveauBox.SelectedIndex > 0, " ère", " ème") + " ANNEE INGENIEUR - " + SpecialiteBox.Text
                         Case "AnneeString"
                             TextObj.Text = PromoBox.Text + " - " + (PromoBox.SelectedIndex + 1990).ToString
                     End Select
@@ -79,15 +80,15 @@ Public Class PVPage
             If ds.Tables.Count < 2 Or ds.Tables(1).Rows.Count = 0 Then
                 Throw New NoMatierePVException()
             End If
-            For i As Integer = 9 To ds.Tables(0).Columns.Count - 1 Step 1   ' for each subject in the datatable
+            For i As Integer = 10 To ds.Tables(0).Columns.Count - 2 Step 1   ' for each subject in the datatable
                 'get the corresponding formula item
-                FormulaField = FormulaFields.Item("UnboundNumber" + (i - 8).ToString)
+                FormulaField = FormulaFields.Item("UnboundNumber" + (i - 9).ToString)
                 'assign the corresponding subject colonnes to the formula
                 FormulaField.Text = "{" + cryrpt.Database.Tables.Item(0).Name + "." + cryrpt.Database.Tables(0).Fields.Item(i).Name + "} ;"
                 ' get the corresponding column header  
-                TextObj = CType(cryrpt.Section2.ReportObjects.Item("UnboundNumber" + (i - 8).ToString + "1Text"), CrystalDecisions.CrystalReports.Engine.TextObject)
+                TextObj = CType(cryrpt.Section2.ReportObjects.Item("UnboundNumber" + (i - 9).ToString + "1Text"), CrystalDecisions.CrystalReports.Engine.TextObject)
                 ' assign it the subject name and coeff
-                TextObj.Text = ds.Tables.Item(1).Rows(i - 9)(BDD.champsCOMAMA).ToString + Environment.NewLine + ds.Tables.Item(1).Rows(i - 9)(BDD.champsCOEFMA).ToString
+                TextObj.Text = ds.Tables.Item(1).Rows(i - 10)(BDD.champsCOMAMA).ToString + Environment.NewLine + ds.Tables.Item(1).Rows(i - 10)(BDD.champsCOEFMA).ToString
             Next
 
             ' calculate the blank space in the report (if the subjects counts is less than 8 )
@@ -124,7 +125,9 @@ Public Class PVPage
                     'if the field at the right of blank space , then shift it with its header to the right and suppress their names 
                     If (Fields3.Item(Fieldsnames.Item(0)).Left >= cryrpt.Section2.ReportObjects.Item("ELIMININ1").Left) Then
                         Fields3.Item(Fieldsnames.Item(0)).Left -= blankSpace \ 2
-                        Fields2.Item(Fieldsnames.Item(0) + "Text").Left -= blankSpace \ 2
+                        If Not Fieldsnames.Item(0).Equals("MoyenneRatr1") Then
+                            Fields2.Item(Fieldsnames.Item(0) + "Text").Left -= blankSpace \ 2
+                        End If
                         Fieldsnames.Remove(Fieldsnames.Item(0))
                     Else    ' if it is on the right , then shift it to the right with its header , but if it is the column of a formula , them
                         ' then shift just the header (crytal don't move formula fileds without a formula , the formula is in crytal
@@ -153,6 +156,8 @@ Public Class PVPage
             CrystalReportViewer1.Visible = True
             'disbale the affich button until any combobox values has been changed
             AffichButton.Enabled = False
+            'Form1.ds = ds
+            'Form1.Show()
             ' and that's it !
         Catch ex As NoMatierePVException
             'MsgBox("Impossible de générer le relevé de note général de cet etudiant", , "Erreur")
@@ -166,9 +171,9 @@ Public Class PVPage
             CrystalReportViewer1.Visible = False
             NoResultPanel.Visible = True
             NoResultLabel.Text = "Quelques informations manquent dans l'historique de quelques étudiants de cette promotion, veuillez les remplir et recharger la base de données à nouveau."
-            BilanLinkLabel.Visible = True
+            'BilanLinkLabel.Visible = True
         End Try
-
+        BilanLinkLabel.Visible = Not SortiePV.getBilan.Equals("Tout est bien passé!")
         
     End Sub
 
@@ -235,6 +240,7 @@ Public Class PVPage
     End Sub
 
     Private Sub BilanLinkLabel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BilanLinkLabel.Click
+        BilanPage.RichTextBox1.Clear()
         BilanPage.RichTextBox1.Text = SortiePV.getBilan()
         BilanPage.Show()
     End Sub

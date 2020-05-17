@@ -42,7 +42,7 @@
               <xs:element name="MOYEIN" msprop:Generator_ColumnVarNameInTable="columnMOYEIN" msprop:Generator_ColumnPropNameInRow="MOYEIN" msprop:Generator_ColumnPropNameInTable="MOYEINColumn" msprop:Generator_UserColumnName="MOYEIN" type="xs:double" minOccurs="0" />
               <xs:element name="MENTIN" msprop:Generator_ColumnVarNameInTable="columnMENTIN" msprop:Generator_ColumnPropNameInRow="MENTIN" msprop:Generator_ColumnPropNameInTable="MENTINColumn" msprop:Generator_UserColumnName="MENTIN" type="xs:int" minOccurs="0" />
               <xs:element name="RANGIN" msprop:Generator_ColumnVarNameInTable="columnRANGIN" msprop:Generator_ColumnPropNameInRow="RANGIN" msprop:Generator_ColumnPropNameInTable="RANGINColumn" msprop:Generator_UserColumnName="RANGIN" type="xs:int" minOccurs="0" />
-              <xs:element name="MOYERA" msprop:Generator_ColumnVarNameInTable="columnMOYERA" msprop:Generator_ColumnPropNameInRow="MOYERA" msprop:Generator_ColumnPropNameInTable="MOYERAColumn" msprop:Generator_UserColumnName="MOYERA" type="xs:double" minOccurs="0" />
+              <xs:element name="MoyenneRatr" msprop:Generator_ColumnVarNameInTable="columnMoyenneRatr" msprop:Generator_ColumnPropNameInRow="MoyenneRatr" msprop:Generator_ColumnPropNameInTable="MoyenneRatrColumn" msprop:Generator_UserColumnName="MoyenneRatr" type="xs:double" minOccurs="0" />
               <xs:element name="ADM" msprop:Generator_ColumnVarNameInTable="columnADM" msprop:Generator_ColumnPropNameInRow="ADM" msprop:Generator_ColumnPropNameInTable="ADMColumn" msprop:Generator_UserColumnName="ADM" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>

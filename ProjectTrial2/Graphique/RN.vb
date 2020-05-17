@@ -22,6 +22,7 @@ Public Class RN
 
     Private Sub RN_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         NoResultPanel.Visible = False
+        BilanLinkLabel.Visible = False
         For Each ts As ToolStrip In CrystalReportViewer1.Controls.OfType(Of ToolStrip)()
             For Each tsb As ToolStripButton In ts.Items.OfType(Of ToolStripButton)()
                 If tsb.AccessibleName.ToLower.Contains("Print") Or tsb.AccessibleName.ToLower.Contains("imprimer") Then
@@ -89,7 +90,7 @@ Public Class RN
             BT_LOAD.Enabled = False
             NoResultPanel.Visible = True
             NoResultLabel.Text = "Quelques informations manquent dans l'historique de cet étudiant dans cette année , veuillez les remplir et recharger la base de donnéez à nouveau."
-            BilanLinkLabel.Visible = True
+            'BilanLinkLabel.Visible = True
         End Try
 
     End Sub
@@ -222,7 +223,11 @@ Public Class RN
             CrystalReportViewer1.Visible = False
             NoResultPanel.Visible = True
             NoResultLabel.Text = "Quelques informations manquent dans l'historique de cet étudiant , veuillez les remplir et recharger la base de données à nouveau."
+        
         End Try
+        BilanLinkLabel.Visible = Not SortieRN.getBilan.Equals("Tout est bien passé!")
+        BilanLinkLabel.Enabled = Not SortieRN.getBilan.Equals("Tout est bien passé!")
+        'Console.WriteLine(SortieRN.getBilan)
 
 
     End Sub
@@ -284,7 +289,8 @@ Public Class RN
     End Sub
 
     Private Sub BilanLinkLabel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BilanLinkLabel.Click
-        'BilanPage.RichTextBox1.Text = RN.getBilan()
+        BilanPage.RichTextBox1.Clear()
+        BilanPage.RichTextBox1.Text = SortieRN.getBilan()
         BilanPage.Show()
     End Sub
 

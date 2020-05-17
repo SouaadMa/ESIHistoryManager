@@ -50,6 +50,25 @@
             bilan += "Cet étudiant, ayant le MATRICULE " & etud.getId & " n'a aucune information d'INSCRIPTION " & vbNewLine
         End If
 
+        '************Récuperation des moyennes de Rattrapage*******************'
+        listeChamps.Clear()
+        listeChamps.Add(BDD.champsMOYERA)
+
+        requete = Rech_BDD.genereRechRequetes("", New Critere(BDD.champsMATRIN, etud.GetInfoChamps(BDD.champsMATRIN)), BDD.nomTableNoteRATRAP)
+        
+
+        Dim tableRATTRAP As DataTable = BDD.executeRequete(requete)
+
+        If tableRATTRAP.Rows.Count = 0 Then
+            bilan += "Cet étudiant, ayant le MATRICULE = " & etud.GetInfoChamps(BDD.champsMATRIN) & " n'a pas d'informations dans la table NotesRATTRAP" & vbNewLine
+            'Throw New InvalidCastException
+        End If
+
+        ArrangeMOYERAs(dtInscrit, tableRATTRAP)
+
+        ds.Tables.Add(tableRATTRAP)
+        '***********************************************************************'
+
 
         listeChamps.Clear()
 
@@ -73,7 +92,11 @@
 
                     dt = etud.GetNotesMat(listeChamps, listeConditions)
                     dt.TableName = "tableNotesMat" & a.getChamps().Substring(0, 1)
+
+                    SortieRN.ArrangeRATTRA(dt, 0.0)
+
                     ds.Tables.Add(dt)
+
 
                     If dt.Rows.Count = 0 Then
                         bilan += "Les informations des Notes/Matière de cet étudiant de l'année " & a.getChamps & " n'existent pas."
@@ -84,6 +107,7 @@
             bilan = "Cet étudiant, ayant le MATRICULE = " & etud.GetInfoChamps(BDD.champsMATRIN) & " a " & nombreAnnees.ToString & " année(s) dans la table INSCRIPTION." & vbNewLine + bilan
             bilan += "Il/Elle a été admis(e) en " & (ds.Tables.Count - 2).ToString & " année(s)." & vbNewLine
             Console.WriteLine(getBilan)
+            
         Else
             bilan = "Cet étudiant, ayant le MATRICULE = " & etud.GetInfoChamps(BDD.champsMATRIN) & " a " & nombreAnnees.ToString & " année(s) dans la table INSCRIPTION." & vbNewLine + bilan
             bilan += "Il/Elle a été admis(e) en " & (ds.Tables.Count - 2).ToString & " année(s)." & vbNewLine
@@ -119,5 +143,48 @@
             Return bilan
         End If
     End Function
+
+
+    'Remplace la MOYEIN dans dtDest par MOYERA dans dtSource si MOYERA>MOYEIN
+    Public Shared Sub ArrangeMOYERAs(ByVal dtDest As DataTable, ByVal dtSource As DataTable)
+
+        Dim codePromo As String = ""
+        Dim i As Integer = 0
+        Dim rowS As DataRow
+
+        'On fait le tri pour avoir une correspondance entre les lignes des deux tables
+        'Dans ce cas, les tables sont déjà triés
+        '
+        'Classement.SortASCCollection(dtDest, BDD.champsCodePromo)
+        'Classement.SortASCCollection(dtSource, BDD.champsCodePromo)
+
+        For Each rowD As DataRow In dtDest.Rows
+
+            codePromo = CType(rowD.Item(BDD.champsCodePromo), String)
+
+
+            Try
+                rowS = dtSource.Rows(i)
+
+                If (CType(rowS(BDD.champsCodeRat), String).Equals(codePromo)) Then
+
+
+                    If CType(rowD(BDD.champsMOYEIN), Double).CompareTo(CType(rowS.Item(BDD.champsMOYERA), Double)) < 0 Then
+                        rowD(BDD.champsMOYEIN) = rowS.Item(BDD.champsMOYERA)
+                    End If
+                End If
+
+
+
+            Catch ex As Exception
+
+            End Try
+
+            i += 1
+
+        Next
+
+
+    End Sub
 
 End Class

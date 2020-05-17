@@ -36,7 +36,7 @@
         '
 
         If tableNotesMat.Rows.Count = 0 Then
-            bilan += "Cet étudiant, MATRICULE = " & etud.GetInfoChamps(BDD.champsMATRIN) & " n'a pas d'informations dans la table Notes, CodePromo = " & promo & vbNewLine
+            bilan += "Cet étudiant, ayant le MATRICULE = " & etud.GetInfoChamps(BDD.champsMATRIN) & " n'a pas d'informations dans la table Notes, CodePromo = " & promo & vbNewLine
             'Throw New InvalidCastException
         End If
 
@@ -57,7 +57,7 @@
         Dim tableINSCRIPTION As DataTable = BDD.executeRequete(reqSQL)
         '
         If tableINSCRIPTION.Rows.Count = 0 Then
-            bilan += "Cet étudiant, MATRICULE = " & etud.GetInfoChamps(BDD.champsMATRIN) & " n'a pas d'informations dans la table INSCRIPTION, CodePromo = " & promo & vbNewLine
+            bilan += "Cet étudiant, ayant le MATRICULE = " & etud.GetInfoChamps(BDD.champsMATRIN) & " n'a pas d'informations dans la table INSCRIPTION, CodePromo = " & promo & vbNewLine
             'Throw New InvalidCastException
         End If
 
@@ -72,7 +72,7 @@
         Dim tableRATTRAP As DataTable = BDD.executeRequete(reqSQL)
 
         If tableRATTRAP.Rows.Count = 0 Then
-            bilan += "Cet étudiant, MATRICULE = " & etud.GetInfoChamps(BDD.champsMATRIN) & " n'a pas d'informations dans la table NotesRATTRAP, CodePromo = " & promo & vbNewLine
+            bilan += "Cet étudiant, ayant le MATRICULE = " & etud.GetInfoChamps(BDD.champsMATRIN) & " n'a pas d'informations dans la table NotesRATTRAP, CodeRat = " & promo & vbNewLine
             'Throw New InvalidCastException
         End If
 
@@ -118,7 +118,7 @@
         If (dtEtud Is Nothing Or tableNotesMat Is Nothing Or tableINSCRIPTION Is Nothing) Then
             Throw New InvalidCastException
         Else
-            If dtEtud.Rows.Count = 0 Or tableNotesMat.Rows.Count = 0 Or tableINSCRIPTION.Rows.Count = 0 Then
+            If tableNotesMat.Rows.Count = 0 Or tableINSCRIPTION.Rows.Count = 0 Then
                 Throw New InvalidCastException
             End If
         End If

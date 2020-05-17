@@ -64,6 +64,8 @@ Public Class RN
             'CB_ANNEE.FormatString = ""
             CB_ANNEE.ValueMember = allPromos.Columns(0).ToString
             CB_ANNEE.DataSource = allPromos
+
+            'CB_ANNEE.DropDownStyle = ComboBoxStyle.DropDownList
             CB_ANNEE.Text = "Veuillez choisir un année"
 
             'initialiser generale
@@ -228,6 +230,10 @@ Public Class RN
     Private Sub CB_ANNEE_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CB_ANNEE.SelectedIndexChanged
         cb_anee = True
         BT_LOAD.Enabled = True
+    End Sub
+
+    Private Sub CB_ANNEE_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles CB_ANNEE.KeyPress
+        e.Handled = True
     End Sub
 
     Private Sub BT_SORTIR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_SORTIR.Click

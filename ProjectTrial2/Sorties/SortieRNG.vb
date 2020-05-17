@@ -46,6 +46,9 @@
         dtInscrit = Classement.SortASCCollection(dtInscrit, BDD.champsCodePromo)
         ds.Tables.Add(dtInscrit)
 
+        If (dtInscrit.Rows.Count = 0) Then
+            bilan += "Cet étudiant, ayant le MATRICULE " & etud.getId & " n'a aucune information d'INSCRIPTION " & vbNewLine
+        End If
 
 
         listeChamps.Clear()
@@ -73,17 +76,17 @@
                     ds.Tables.Add(dt)
 
                     If dt.Rows.Count = 0 Then
-                        bilan = "Les informations des Notes/Matière de cet étudiant de l'année " & a.getChamps & " n'existent pas."
+                        bilan += "Les informations des Notes/Matière de cet étudiant de l'année " & a.getChamps & " n'existent pas."
                     End If
 
                 End If
             Next
-            bilan = "Cet étudiant, MATRICULE = " & etud.GetInfoChamps(BDD.champsMATRIN) & " a " & nombreAnnees.ToString & " année(s) dans la table INSCRIPTION." & vbNewLine + bilan
-            bilan = "Il/Elle a été admis(e) en " & (ds.Tables.Count - 2).ToString & " année(s)." & vbNewLine
+            bilan = "Cet étudiant, ayant le MATRICULE = " & etud.GetInfoChamps(BDD.champsMATRIN) & " a " & nombreAnnees.ToString & " année(s) dans la table INSCRIPTION." & vbNewLine + bilan
+            bilan += "Il/Elle a été admis(e) en " & (ds.Tables.Count - 2).ToString & " année(s)." & vbNewLine
             Console.WriteLine(getBilan)
         Else
-            bilan = "Cet étudiant, MATRICULE = " & etud.GetInfoChamps(BDD.champsMATRIN) & " a " & nombreAnnees.ToString & " année(s) dans la table INSCRIPTION." & vbNewLine + bilan
-            bilan = "Il/Elle a été admis(e) en " & (ds.Tables.Count - 2).ToString & " année(s)." & vbNewLine
+            bilan = "Cet étudiant, ayant le MATRICULE = " & etud.GetInfoChamps(BDD.champsMATRIN) & " a " & nombreAnnees.ToString & " année(s) dans la table INSCRIPTION." & vbNewLine + bilan
+            bilan += "Il/Elle a été admis(e) en " & (ds.Tables.Count - 2).ToString & " année(s)." & vbNewLine
             Console.WriteLine(getBilan)
             Throw New RngImpossibleException()
         End If

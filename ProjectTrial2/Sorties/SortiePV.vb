@@ -45,10 +45,15 @@
         tab1 = BDD.nomTableINSCRIPTION
         tab2 = BDD.nomTableEtudiant
 
-
         requete = Class_BDD.genereRechRequete(champ, tab2, tab1, cond, True)
 
         dt1 = (BDD.executeRequete(requete))
+
+        If dt1.Rows.Count = 0 Then
+            bilan += "Cette promotion " & CodePromo & " ne contient aucun étudiant dans (Etudiant + INSCRIPTION)." & vbNewLine
+
+        End If
+
 
 
         '2)get all subject  of this promo  _________________________________________________
@@ -59,6 +64,14 @@
         Dim condition As Critere = New Critere(BDD.champsCodePromo, CodePromo)
 
         dt2 = BDD.GetALLChamps(BDD.champsCOMAMA, BDD.champsCOEFMA, condition)
+
+        If dt2.Rows.Count = 0 Then
+
+            bilan += "Cette promotion " & CodePromo & " ne contient aucune matière dans MATIERE." & vbNewLine
+
+        End If
+
+
         dt2 = Classement.SortDESCollection(dt2, BDD.champsCOEFMA)
 
         '3)get all "note' with 'matrin' for this promotion ________________________________________________()
@@ -68,7 +81,6 @@
         champ.Add(BDD.champsNOJUNO)
         champ.Add(BDD.champsNORANO)
         champ.Add(BDD.champsCOMANO)
-
 
 
         cond.Add(New Critere(BDD.champsCodePromo, CodePromo))
@@ -81,6 +93,10 @@
 
         dt3 = (BDD.executeRequete(requete))     '.Copy()
 
+        If dt3.Rows.Count = 0 Then
+            bilan += "Aucune note a été trouvée pour cette promotion " & CodePromo & "." & vbNewLine
+        End If
+
 
 
         '4)add champs of subject for each subject _______________________________________________
@@ -89,7 +105,6 @@
             dt1.Columns.Add(rows(BDD.champsCOMAMA), GetType(System.String))
             'MsgBox(rows("COMAMA"))
         Next
-
 
 
         '5)get all note de  ratrapage pour cette promotion  _______________________________________
@@ -104,11 +119,13 @@
         tab1 = BDD.nomTableINSCRIPTION
         tab2 = BDD.nomTableNoteRATRAP
 
-
-
         requete = Class_BDD.genereRechRequete(champ, tab1, tab2, cond, True)
 
         dt4 = (BDD.executeRequete(requete))         '.Copy()
+
+        If dt4.Rows.Count = 0 Then
+            bilan += "Aucune note de rattrapage n'a été trouvée pour cette promotion " & CodePromo & "." & vbNewLine
+        End If
 
         '5') ajouter la column du ratrapage
         dt1.Columns.Add("Moyenne Ratr", GetType(System.String))
@@ -180,6 +197,7 @@
 
 
         If dts Is Nothing Then
+            bilan = ""
             Throw New InvalidCastException
         Else
             If dts.Tables(0).Rows.Count = 0 Then

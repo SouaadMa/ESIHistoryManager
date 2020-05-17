@@ -30,6 +30,9 @@ Public Class SortieAttestation
 
         dt1 = (BDD.executeRequete(requete)).Copy()                          ' Mettre le résultat de recherche dans dt1
         ChangeVides(dt1)                                                    ' Effacer les vides dans dt1
+
+
+
         dts.Tables.Add(dt1)                                                 ' Ajouter dt1 au dataset
         '____________________________
         row = dt2.NewRow()                                                  'Créer un nouveau ligne row
@@ -64,9 +67,6 @@ Public Class SortieAttestation
             End If
 
         End If
-
-        Form1.ds = dts
-        Form1.Show()
 
 
         Console.WriteLine(getBilan)

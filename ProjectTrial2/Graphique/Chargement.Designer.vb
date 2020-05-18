@@ -29,6 +29,7 @@ Partial Class Chargement
         Me.Label6 = New System.Windows.Forms.Label()
         Me.ChargementPanel = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.BilanLinkLabel = New System.Windows.Forms.LinkLabel()
         Me.RechargComplLabel = New System.Windows.Forms.Label()
         Me.RechargementButton = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
@@ -56,6 +57,7 @@ Partial Class Chargement
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.ChargBackgroundWorker = New System.ComponentModel.BackgroundWorker()
         Me.FileSystemWatcher1 = New System.IO.FileSystemWatcher()
+        Me.BilanLinkLabel2 = New System.Windows.Forms.LinkLabel()
         Me.TitlePanel.SuspendLayout()
         Me.ChargementPanel.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -71,7 +73,7 @@ Partial Class Chargement
         Me.ChargementLabel.BackColor = System.Drawing.Color.Transparent
         Me.ChargementLabel.Font = New System.Drawing.Font("Times New Roman", 20.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChargementLabel.ForeColor = System.Drawing.Color.SteelBlue
-        Me.ChargementLabel.Location = New System.Drawing.Point(263, 16)
+        Me.ChargementLabel.Location = New System.Drawing.Point(263, 20)
         Me.ChargementLabel.Margin = New System.Windows.Forms.Padding(0)
         Me.ChargementLabel.Name = "ChargementLabel"
         Me.ChargementLabel.Size = New System.Drawing.Size(154, 31)
@@ -109,11 +111,13 @@ Partial Class Chargement
         Me.ChargementPanel.Location = New System.Drawing.Point(0, 0)
         Me.ChargementPanel.Margin = New System.Windows.Forms.Padding(0)
         Me.ChargementPanel.Name = "ChargementPanel"
-        Me.ChargementPanel.Size = New System.Drawing.Size(701, 668)
+        Me.ChargementPanel.Size = New System.Drawing.Size(701, 680)
         Me.ChargementPanel.TabIndex = 87
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.BilanLinkLabel2)
+        Me.Panel1.Controls.Add(Me.BilanLinkLabel)
         Me.Panel1.Controls.Add(Me.RechargComplLabel)
         Me.Panel1.Controls.Add(Me.RechargementButton)
         Me.Panel1.Controls.Add(Me.Button8)
@@ -135,8 +139,25 @@ Partial Class Chargement
         Me.Panel1.Controls.Add(Me.ShapeContainer1)
         Me.Panel1.Location = New System.Drawing.Point(0, 41)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(701, 627)
+        Me.Panel1.Size = New System.Drawing.Size(702, 640)
         Me.Panel1.TabIndex = 35
+        '
+        'BilanLinkLabel
+        '
+        Me.BilanLinkLabel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BilanLinkLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BilanLinkLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BilanLinkLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.BilanLinkLabel.LinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.BilanLinkLabel.Location = New System.Drawing.Point(422, 371)
+        Me.BilanLinkLabel.Name = "BilanLinkLabel"
+        Me.BilanLinkLabel.Size = New System.Drawing.Size(169, 22)
+        Me.BilanLinkLabel.TabIndex = 47
+        Me.BilanLinkLabel.TabStop = True
+        Me.BilanLinkLabel.Text = "Voir le bilan detaillé"
+        Me.BilanLinkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.BilanLinkLabel.Visible = False
+        Me.BilanLinkLabel.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
         '
         'RechargComplLabel
         '
@@ -144,12 +165,12 @@ Partial Class Chargement
         Me.RechargComplLabel.BackColor = System.Drawing.Color.Transparent
         Me.RechargComplLabel.Font = New System.Drawing.Font("Times New Roman", 15.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RechargComplLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.RechargComplLabel.Location = New System.Drawing.Point(157, 568)
+        Me.RechargComplLabel.Location = New System.Drawing.Point(69, 575)
         Me.RechargComplLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.RechargComplLabel.Name = "RechargComplLabel"
-        Me.RechargComplLabel.Size = New System.Drawing.Size(386, 23)
+        Me.RechargComplLabel.Size = New System.Drawing.Size(391, 23)
         Me.RechargComplLabel.TabIndex = 38
-        Me.RechargComplLabel.Text = "La base de donné a été rechargée avec succès"
+        Me.RechargComplLabel.Text = "La base de donné a été rechargée avec succès."
         Me.RechargComplLabel.Visible = False
         '
         'RechargementButton
@@ -159,7 +180,7 @@ Partial Class Chargement
         Me.RechargementButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.RechargementButton.Font = New System.Drawing.Font("Cambria", 13.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RechargementButton.ForeColor = System.Drawing.Color.White
-        Me.RechargementButton.Location = New System.Drawing.Point(269, 498)
+        Me.RechargementButton.Location = New System.Drawing.Point(265, 500)
         Me.RechargementButton.Name = "RechargementButton"
         Me.RechargementButton.Size = New System.Drawing.Size(160, 36)
         Me.RechargementButton.TabIndex = 31
@@ -170,7 +191,7 @@ Partial Class Chargement
         '
         Me.Button8.ImageIndex = 0
         Me.Button8.ImageList = Me.ImageList1
-        Me.Button8.Location = New System.Drawing.Point(592, 263)
+        Me.Button8.Location = New System.Drawing.Point(592, 260)
         Me.Button8.Margin = New System.Windows.Forms.Padding(0)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(22, 22)
@@ -189,7 +210,7 @@ Partial Class Chargement
         '
         Me.Button7.ImageIndex = 0
         Me.Button7.ImageList = Me.ImageList1
-        Me.Button7.Location = New System.Drawing.Point(592, 207)
+        Me.Button7.Location = New System.Drawing.Point(592, 204)
         Me.Button7.Margin = New System.Windows.Forms.Padding(0)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(22, 22)
@@ -201,7 +222,7 @@ Partial Class Chargement
         '
         Me.Button6.ImageIndex = 0
         Me.Button6.ImageList = Me.ImageList1
-        Me.Button6.Location = New System.Drawing.Point(592, 151)
+        Me.Button6.Location = New System.Drawing.Point(592, 148)
         Me.Button6.Margin = New System.Windows.Forms.Padding(0)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(22, 22)
@@ -213,7 +234,7 @@ Partial Class Chargement
         '
         Me.Button5.ImageIndex = 0
         Me.Button5.ImageList = Me.ImageList1
-        Me.Button5.Location = New System.Drawing.Point(592, 93)
+        Me.Button5.Location = New System.Drawing.Point(592, 90)
         Me.Button5.Margin = New System.Windows.Forms.Padding(0)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(22, 22)
@@ -227,7 +248,7 @@ Partial Class Chargement
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Times New Roman", 20.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Label5.Location = New System.Drawing.Point(257, 439)
+        Me.Label5.Location = New System.Drawing.Point(257, 432)
         Me.Label5.Margin = New System.Windows.Forms.Padding(0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(178, 31)
@@ -240,12 +261,12 @@ Partial Class Chargement
         Me.CompletLabel.BackColor = System.Drawing.Color.Transparent
         Me.CompletLabel.Font = New System.Drawing.Font("Times New Roman", 15.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CompletLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
-        Me.CompletLabel.Location = New System.Drawing.Point(167, 363)
+        Me.CompletLabel.Location = New System.Drawing.Point(69, 371)
         Me.CompletLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.CompletLabel.Name = "CompletLabel"
-        Me.CompletLabel.Size = New System.Drawing.Size(343, 23)
+        Me.CompletLabel.Size = New System.Drawing.Size(348, 23)
         Me.CompletLabel.TabIndex = 13
-        Me.CompletLabel.Text = "Le chargement est completé avec succès"
+        Me.CompletLabel.Text = "Le chargement est completé avec succès."
         Me.CompletLabel.Visible = False
         '
         'Button4
@@ -256,7 +277,7 @@ Partial Class Chargement
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button4.ForeColor = System.Drawing.SystemColors.ButtonShadow
-        Me.Button4.Location = New System.Drawing.Point(248, 253)
+        Me.Button4.Location = New System.Drawing.Point(248, 250)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(385, 44)
         Me.Button4.TabIndex = 30
@@ -271,7 +292,7 @@ Partial Class Chargement
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.SystemColors.ButtonShadow
-        Me.Button3.Location = New System.Drawing.Point(248, 196)
+        Me.Button3.Location = New System.Drawing.Point(248, 193)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(385, 44)
         Me.Button3.TabIndex = 29
@@ -286,7 +307,7 @@ Partial Class Chargement
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.SystemColors.ButtonShadow
-        Me.Button2.Location = New System.Drawing.Point(248, 139)
+        Me.Button2.Location = New System.Drawing.Point(248, 136)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(385, 44)
         Me.Button2.TabIndex = 28
@@ -298,7 +319,7 @@ Partial Class Chargement
         Me.Label4.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label4.Location = New System.Drawing.Point(62, 260)
+        Me.Label4.Location = New System.Drawing.Point(62, 257)
         Me.Label4.Name = "Label4"
         Me.Label4.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
         Me.Label4.Size = New System.Drawing.Size(165, 29)
@@ -311,7 +332,7 @@ Partial Class Chargement
         Me.Label3.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label3.Location = New System.Drawing.Point(62, 203)
+        Me.Label3.Location = New System.Drawing.Point(62, 200)
         Me.Label3.Name = "Label3"
         Me.Label3.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
         Me.Label3.Size = New System.Drawing.Size(165, 29)
@@ -324,7 +345,7 @@ Partial Class Chargement
         Me.Label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label2.Location = New System.Drawing.Point(62, 146)
+        Me.Label2.Location = New System.Drawing.Point(62, 143)
         Me.Label2.Name = "Label2"
         Me.Label2.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
         Me.Label2.Size = New System.Drawing.Size(165, 29)
@@ -337,7 +358,7 @@ Partial Class Chargement
         Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label1.Location = New System.Drawing.Point(62, 89)
+        Me.Label1.Location = New System.Drawing.Point(62, 86)
         Me.Label1.Name = "Label1"
         Me.Label1.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
         Me.Label1.Size = New System.Drawing.Size(165, 29)
@@ -352,7 +373,7 @@ Partial Class Chargement
         Me.ChargementButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ChargementButton.Font = New System.Drawing.Font("Cambria", 13.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChargementButton.ForeColor = System.Drawing.Color.White
-        Me.ChargementButton.Location = New System.Drawing.Point(269, 314)
+        Me.ChargementButton.Location = New System.Drawing.Point(269, 310)
         Me.ChargementButton.Name = "ChargementButton"
         Me.ChargementButton.Size = New System.Drawing.Size(160, 36)
         Me.ChargementButton.TabIndex = 22
@@ -369,7 +390,7 @@ Partial Class Chargement
         Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonShadow
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button1.ImageKey = "more.png"
-        Me.Button1.Location = New System.Drawing.Point(248, 82)
+        Me.Button1.Location = New System.Drawing.Point(248, 79)
         Me.Button1.Name = "Button1"
         Me.Button1.Padding = New System.Windows.Forms.Padding(15, 0, 15, 0)
         Me.Button1.Size = New System.Drawing.Size(385, 44)
@@ -383,7 +404,7 @@ Partial Class Chargement
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(701, 627)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(702, 640)
         Me.ShapeContainer1.TabIndex = 37
         Me.ShapeContainer1.TabStop = False
         '
@@ -393,10 +414,10 @@ Partial Class Chargement
         Me.LineShape1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash
         Me.LineShape1.BorderWidth = 2
         Me.LineShape1.Name = "LineShape1"
-        Me.LineShape1.X1 = 15
-        Me.LineShape1.X2 = 687
-        Me.LineShape1.Y1 = 407
-        Me.LineShape1.Y2 = 407
+        Me.LineShape1.X1 = 13
+        Me.LineShape1.X2 = 691
+        Me.LineShape1.Y1 = 414
+        Me.LineShape1.Y2 = 414
         '
         'ProgressPanel
         '
@@ -464,12 +485,29 @@ Partial Class Chargement
         Me.FileSystemWatcher1.EnableRaisingEvents = True
         Me.FileSystemWatcher1.SynchronizingObject = Me
         '
+        'BilanLinkLabel2
+        '
+        Me.BilanLinkLabel2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BilanLinkLabel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BilanLinkLabel2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BilanLinkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.BilanLinkLabel2.LinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
+        Me.BilanLinkLabel2.Location = New System.Drawing.Point(464, 575)
+        Me.BilanLinkLabel2.Name = "BilanLinkLabel2"
+        Me.BilanLinkLabel2.Size = New System.Drawing.Size(166, 22)
+        Me.BilanLinkLabel2.TabIndex = 48
+        Me.BilanLinkLabel2.TabStop = True
+        Me.BilanLinkLabel2.Text = "Voir le bilan detaillé"
+        Me.BilanLinkLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.BilanLinkLabel2.Visible = False
+        Me.BilanLinkLabel2.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(113, Byte), Integer))
+        '
         'Chargement
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
         Me.AutoSize = True
         Me.BackgroundImage = Global.EsistHistoryManagement_v1.My.Resources.Resources.background
-        Me.ClientSize = New System.Drawing.Size(704, 671)
+        Me.ClientSize = New System.Drawing.Size(704, 681)
         Me.Controls.Add(Me.ChargementPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -522,4 +560,6 @@ Partial Class Chargement
     Friend WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
     Friend WithEvents LineShape1 As Microsoft.VisualBasic.PowerPacks.LineShape
     Friend WithEvents RechargComplLabel As System.Windows.Forms.Label
+    Friend WithEvents BilanLinkLabel As System.Windows.Forms.LinkLabel
+    Friend WithEvents BilanLinkLabel2 As System.Windows.Forms.LinkLabel
 End Class

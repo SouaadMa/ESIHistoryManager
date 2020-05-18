@@ -6,6 +6,7 @@
     Private file3 As String = ""
     Private file4 As String = ""
     Private eclat As New ECLATEMENT()
+    Private f_access As String = "..\..\BDD_APPLICATION"
 
     Private Sub Chargement_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
@@ -76,14 +77,15 @@
     End Sub
 
     Private Sub ChargementButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChargementButton.Click
-        ChargBackgroundWorker.RunWorkerAsync({"..\..\BDD_APPLICATION", file1.Replace(".xlsx", ""), file2.Replace(".xlsx", ""), file3.Replace(".xlsx", ""), file4.Replace(".xlsx", "")})
+        ChargBackgroundWorker.RunWorkerAsync({f_access, file1.Replace(".xlsx", ""), file2.Replace(".xlsx", ""), file3.Replace(".xlsx", ""), file4.Replace(".xlsx", "")})
         'eclat.ECLATEMENT("..\..\BDD_APPLICATION", file1.Replace(".xlsx", ""), file2.Replace(".xlsx", ""), file3.Replace(".xlsx", ""), file4.Replace(".xlsx", ""))
         Panel1.Visible = False
     End Sub
 
     Private Sub RechargementButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RechargementButton.Click
         'eclat.RECHARGEMENT("..\..\BDD_APPLICATION")
-        ChargBackgroundWorker.RunWorkerAsync({"..\..\BDD_APPLICATION"})
+        ChargBackgroundWorker.RunWorkerAsync({f_access})
+        Panel1.Visible = False
     End Sub
 
     Private Sub ChargBackgroundWorker_DoWork(ByVal sender As System.Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles ChargBackgroundWorker.DoWork
@@ -151,16 +153,21 @@
     Private Sub Button5_MouseLeave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button8.MouseLeave, Button7.MouseLeave, Button6.MouseLeave, Button5.MouseLeave
         CType(sender, Control).Visible = False
     End Sub
+
+    Private Sub BilanLinkLabel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BilanLinkLabel.Click, BilanLinkLabel2.Click
+        BilanPage.RichTextBox1.Clear()
+        BilanPage.RichTextBox1.AppendText(eclat.pourcentage(f_access))
+        BilanPage.Show()
+    End Sub
+
+    Private Sub CompletLabel_VisibleChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CompletLabel.VisibleChanged
+        BilanLinkLabel.Visible = CompletLabel.Visible
+        'RechargComplLabel.Visible = Not CompletLabel.Visible
+    End Sub
+
+    Private Sub RechargComplLabel_VisibleChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RechargComplLabel.VisibleChanged
+        BilanLinkLabel2.Visible = RechargComplLabel.Visible
+        'CompletLabel.Visible = Not RechargComplLabel.Visible
+    End Sub
+
 End Class
-
-
-
-
-
-'ECLATEMENT("C:\Users\DELL\Documents\BDD_APPLICATION", "C:\Users\DELL\Documents\INSCRIT_00_04", "C:\Users\DELL\Documents\NOTE_00_04", "C:\Users\DELL\Documents\MATIERE_00_04", "C:\Users\DELL\Documents\RATRAP_00_04")
-'RECHARGEMENT("C:\Users\DELL\Documents\BDD_APPLICATION")
-'Dim r As New ECLATEMENT("..\..\BDD_APPLICATION", Button1.Text.Replace(".xlsx", ""), Button2.Text.Replace(".xlsx", ""), Button3.Text.Replace(".xlsx", ""), Button4.Text.Replace(".xlsx", ""))
-'System.IO.File.Delete("..\..\BDD_APPLICATION.accdb")
-'System.IO.File.Copy("..\..\BDD_VIDE.accdb", "..\..\BDD_APPLICATION.accdb", True)
-
-'_TRAFFIC("..\..\BDD_APPLICATION", Button1.Text.Replace(".xlsx", ""), Button2.Text.Replace(".xlsx", ""), Button3.Text.Replace(".xlsx", ""), Button4.Text.Replace(".xlsx", ""))

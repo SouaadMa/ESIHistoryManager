@@ -37,7 +37,7 @@ Partial Class BilanPage
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(375, 321)
+        Me.Panel1.Size = New System.Drawing.Size(408, 398)
         Me.Panel1.TabIndex = 0
         '
         'RechLabel
@@ -46,7 +46,7 @@ Partial Class BilanPage
         Me.RechLabel.BackColor = System.Drawing.Color.Transparent
         Me.RechLabel.Font = New System.Drawing.Font("Times New Roman", 22.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RechLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(104, Byte), Integer))
-        Me.RechLabel.Location = New System.Drawing.Point(116, 3)
+        Me.RechLabel.Location = New System.Drawing.Point(134, 3)
         Me.RechLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.RechLabel.Name = "RechLabel"
         Me.RechLabel.Size = New System.Drawing.Size(122, 34)
@@ -57,11 +57,11 @@ Partial Class BilanPage
         '
         Me.RichTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.RichTextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RichTextBox1.Location = New System.Drawing.Point(0, 45)
+        Me.RichTextBox1.Location = New System.Drawing.Point(0, 40)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.ReadOnly = True
         Me.RichTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical
-        Me.RichTextBox1.Size = New System.Drawing.Size(358, 755)
+        Me.RichTextBox1.Size = New System.Drawing.Size(389, 755)
         Me.RichTextBox1.TabIndex = 0
         Me.RichTextBox1.Text = ""
         '
@@ -69,11 +69,12 @@ Partial Class BilanPage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(375, 321)
+        Me.ClientSize = New System.Drawing.Size(408, 398)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "BilanPage"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Le Bilan"
         Me.TopMost = True
         Me.Panel1.ResumeLayout(False)

@@ -12,6 +12,7 @@ Public Class ECLATEMENT
     Dim strProvider As String, strSQL As String, intResult As Integer
     Public worker As System.ComponentModel.BackgroundWorker
     Public progress As Integer = 5
+    Public TOTAL As Double = 0
 
 
 
@@ -20,7 +21,7 @@ Public Class ECLATEMENT
         Call ECLATEMENT_NORMAL(F_ACCESS, EXCEL_INSCRIT, EXCEL_NOTE, EXCEL_MATIERE, EXCEL_RATRAP)
         Call ECLATEMENT_ACV(F_ACCESS, EXCEL_INSCRIT, EXCEL_NOTE, EXCEL_MATIERE, EXCEL_RATRAP)
         Call DOUBLES(F_ACCESS, EXCEL_INSCRIT, EXCEL_NOTE, EXCEL_MATIERE, EXCEL_RATRAP)
-
+        Call pourcentage(F_ACCESS)
     End Sub
 
 
@@ -77,7 +78,7 @@ Public Class ECLATEMENT
                 ta = New OleDbDataAdapter(cmd)
 
                 ta.Fill(dts) ' fill le data set par le résultat de l'éxécution de requete ( de data adapter ) 
-                'MsgBox(TABLE)
+
                 progress += 5
                 worker.ReportProgress(CInt(progress))
 
@@ -106,9 +107,9 @@ Public Class ECLATEMENT
                     strProvider = "Provider=Microsoft.Ace.OLEDB.12.0;Data Source=" & F_EXCEL & ".xlsx;Extended Properties=""Excel 12.0;HDR=Yes"""
                     SQL1 = "INSERT INTO [MS Access;Database=" & F_ACCESS & ".accdb].[ETUDIANT]  SELECT "
                     Champs = " MATRIN AS MATRIN,min(NomEtud) AS NomEtud,min(Prenoms) AS Prenoms ,min(NomEtudA) AS NomEtudA,min(PrenomsA) AS PrenomsA,min(MATRIC_INS) AS MATRIC_INS, min(DATENAIS) AS DateNais,min(LIEUNAISA) AS LieuNaisA ,min(WILNAISA) AS WilayaNaisA,min(LIEUNAIS) AS LieuNais, min(ADRESSE) AS ADRESSE, min(VILLE) AS VILLE, min(WILAYA) AS WILAYA , min(CODPOST) as CODEPOS,min(WILBAC) AS WILBAC,min(SERIEBAC) AS SERIEBAC, min(FILS_DE) AS FILS_DE,min(ET_DE) AS ET_DE,min(SEXE) AS  SEXE,min(WILNAIS) AS WILNAIS,min(MOYBAC) as MOYBAC ,min(ANNEEBAC) as ANNEEBAC "
-                    SQL2 = " From [INSCRIT$] where  MATRIN IS NOT NULL AND   MATRIC_INS IS NOT NULL  AND DATENAIS IS NOT NULL AND LIEUNAISA IS NOT NULL AND WILNAISA IS NOT NULL AND LIEUNAIS IS NOT NULL AND WILNAIS IS NOT NULL AND  ADRESSE IS NOT NULL AND CODPOST IS NOT NULL   AND VILLE IS NOT NULL AND WILAYA IS NOT NULL  AND WILBAC IS NOT NULL AND MOYBAC IS NOT NULL AND ANNEEBAC IS NOT NULL AND SERIEBAC IS NOT NULL AND SEXE IS NOT NULL AND  FILS_DE IS NOT NULL AND ET_DE IS NOT NULL AND NOT EXISTS  (SELECT MATRIN FROM [MS Access;Database=" & F_ACCESS & ".accdb].[ETUDIANT]  WHERE MATRIN=ETUDIANT.MATRIN )  GROUP BY (MATRIN)    "
+                    SQL2 = " From [INSCRIT$] where  MATRIN IS NOT NULL AND   MATRIC_INS IS NOT NULL  AND DATENAIS IS NOT NULL AND LIEUNAISA IS NOT NULL AND WILNAISA IS NOT NULL AND LIEUNAIS IS NOT NULL AND WILNAIS IS NOT NULL AND  ADRESSE IS NOT NULL AND CODPOST IS NOT NULL   AND VILLE IS NOT NULL AND WILAYA IS NOT NULL  AND WILBAC IS NOT NULL AND MOYBAC IS NOT NULL AND ANNEEBAC IS NOT NULL AND SERIEBAC IS NOT NULL AND SEXE IS NOT NULL AND  FILS_DE IS NOT NULL AND ET_DE IS NOT NULL AND    NomEtud  IS NOT NULL AND  Prenoms  IS NOT NULL AND  NomEtudA IS NOT NULL AND  PrenomsA IS NOT NULL AND  NOT EXISTS  (SELECT MATRIN FROM [MS Access;Database=" & F_ACCESS & ".accdb].[ETUDIANT]  WHERE MATRIN=ETUDIANT.MATRIN )  GROUP BY (MATRIN)    "
                     REQUETE = SQL1 & Champs & SQL2
-                    'AND  NomEtud  IS NOT NULL AND  Prenoms  IS NOT NULL AND  NomEtudA IS NOT NULL AND  PrenomsA IS NOT NULL 
+
 
 
                 Case "INSCRIPTION"
@@ -118,16 +119,6 @@ Public Class ECLATEMENT
                     Champs = "MATRIN AS MATRIN ,NG AS CodeGroupe,NS AS CodeSection,ANETIN&'" & ST & "'&OPTIIN&'" & ST & "'&ANSCIN AS CodePromo ,min(MOYEIN) AS MOYEIN,min(RANGIN) AS RANGIN,min(MENTIN) AS MENTIN,min(ELIMIN) AS ELIMININ,min(RATRIN) AS RATRIN,min(DECIIN) AS DECIIN,min(ADM) AS ADM ,min(DEC) AS DECI"
                     SQL2 = " From [INSCRIT$]   where  MATRIN IS NOT NULL AND NG IS NOT NULL  AND NS IS NOT NULL  AND  ANETIN IS NOT NULL AND OPTIIN IS NOT NULL  AND ANSCIN IS NOT NULL AND MOYEIN IS NOT NULL AND RANGIN IS NOT NULL AND MENTIN IS NOT NULL AND ELIMIN IS NOT NULL  AND RATRIN IS NOT NULL  AND DECIIN IS NOT NULL  AND ADM IS NOT NULL AND DEC  IS NOT NULL AND  NOT  EXISTS (SELECT MATRIN  FROM [MS Access;Database=" & F_ACCESS & ".accdb].[INSCRIPTION]  WHERE MATRIN=INSCRIPTION.MATRIN and CodePromo=ANETIN&'/'&OPTIIN&'/'&ANSCIN) GROUP BY MATRIN,NG,NS, ANETIN ,ANSCIN , OPTIIN"
                     REQUETE = SQL1 & Champs & SQL2
-
-                    'a enleve 
-                    'Case "PROMO"
-                    '   strProvider = "Provider=Microsoft.Ace.OLEDB.12.0;Data Source=" & F_EXCEL & ".xlsx;Extended Properties=""Excel 12.0;HDR=Yes"""
-                    '  SQL1 = "INSERT INTO [MS Access;Database=" & F_ACCESS & ".accdb].[PROMO] SELECT "
-                    ' Champs = "COUNT(*) AS  NbreEtudiant,ANETIN AS Niveau , OPTIIN AS Optin , ANSCIN AS Annee,ANETIN&'" & ST & "'&OPTIIN&'" & ST & "'&ANSCIN AS CodePromo  "
-                    'SQL2 = "FROM [INSCRIT$] WHERE ANETIN is NOT NULL AND OPTIIN IS NOT NULL AND ANSCIN IS NOT NULL  GROUP BY OPTIIN,ANETIN,ANSCIN "
-                    '
-                    'REQUETE = SQL1 & Champs & SQL2
-
 
 
                 Case "MATIERE"
@@ -356,11 +347,13 @@ Public Class ECLATEMENT
 
 
     Public Sub RECHARGEMENT(ByVal F_ACCESS As String)
-        progress += 2
+        progress = 0
         worker.ReportProgress(CInt(progress))
         Call RECHARGEMENT_FROM_ACV(F_ACCESS)
         Call FILTRE_ACV(F_ACCESS)
-
+        progress += 10
+        worker.ReportProgress(CInt(progress))
+        Call pourcentage(F_ACCESS)
     End Sub
     Public Sub RECHARGEMENT_FROM_ACV(ByVal F_ACCESS As String)
 
@@ -445,7 +438,7 @@ Public Class ECLATEMENT
                 ta = New OleDbDataAdapter(cmd)
 
                 ta.Fill(dts) ' fill le data set par le résultat de l'éxécution de requete ( de data adapter ) 
-                progress += 7
+                progress += 5
                 worker.ReportProgress(CInt(progress))
 
             Catch ex As Exception
@@ -521,14 +514,104 @@ Public Class ECLATEMENT
         End Try
     End Sub
 
+    Public Function pourcentage(ByVal F_ACCESS As String) As String
+        Dim Prc_ETUDIANT, Prc_INSCRIPTION, Prc_MATIERE, Prc_NOTES, Prc_NoteRATRAP As Double
+        'MsgBox("Ceci est le premier texte" & Chr(13) & Chr(10) & "Ceci  est le second texte...")
+        Prc_ETUDIANT = pourcentage_table("ETUDIANT", F_ACCESS)
+        Prc_INSCRIPTION = pourcentage_table("INSCRIPTION", F_ACCESS)
+        Prc_MATIERE = pourcentage_table("MATIERE", F_ACCESS)
+        Prc_NOTES = pourcentage_table("NOTES", F_ACCESS)
+        Prc_NoteRATRAP = pourcentage_table("NoteRATRAP", F_ACCESS)
+        TOTAL = Prc_ETUDIANT + Prc_INSCRIPTION + Prc_MATIERE + Prc_NOTES + Prc_NoteRATRAP
+        TOTAL = TOTAL / 5
+        Return vbNewLine + " le pourcentage du migration pour les tables : " & Chr(13) & Chr(10) & vbNewLine + vbNewLine + vbTab + " ETUDIANT : " & Math.Round(Prc_ETUDIANT, 2) & "%." & Chr(13) & Chr(10) & vbNewLine + vbTab + " INSCRIPTION : " & Math.Round(Prc_INSCRIPTION, 2) & "%." & Chr(13) & Chr(10) & vbNewLine + vbTab + " MATIERE : " & Math.Round(Prc_MATIERE, 2) & "%." & Chr(13) & Chr(10) & vbNewLine + vbTab + " NOTES : " & Math.Round(Prc_NOTES, 2) & "%." & Chr(13) & Chr(10) & vbNewLine + vbTab + " NoteRATRAP : " & Math.Round(Prc_NoteRATRAP, 2) & "%." & Chr(13) & Chr(10) & vbNewLine + vbNewLine + vbTab + " MIGRATION T0TAL : " & Math.Round(TOTAL, 2) & "%."
+    End Function
+    Public Function pourcentage_table(ByVal Table As String, ByVal F_ACCESS As String) As Double
+
+        cnx = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" & F_ACCESS & ".accdb")
+        Dim Nbr_lignes, Nbr_lignes_ACV, TOTAL As Long
+        Dim Prc As Double
+        Try
+            cnx.Open()                   ' ouvrir la connection avec la base de donnée
+            Try
+
+                Select Case Table
+
+                    Case "ETUDIANT"
+                        REQUETE = "select count(*) from ETUDIANT"
+
+                    Case "INSCRIPTION"
+                        REQUETE = "select count(*) from INSCRIPTION"
+
+                    Case "NOTES"
+                        REQUETE = "select count(*) from NOTES"
+
+                    Case "MATIERE"
+                        REQUETE = "select count(*) from MATIERE"
+
+                    Case "NoteRATRAP"
+                        REQUETE = "select count(*) from NoteRATRAP"
+
+                End Select
 
 
 
-    'Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-    '   ECLATEMENT("C:\Users\DELL\Documents\BDD_APPLICATION", "C:\Users\DELL\Documents\INSCRIT_00_04", "C:\Users\DELL\Documents\NOTE_00_04", "C:\Users\DELL\Documents\MATIERE_00_04", "C:\Users\DELL\Documents\RATRAP_00_04")
-    '  RECHARGEMENT("C:\Users\DELL\Documents\BDD_APPLICATION")
-    ' MsgBox("olilililililolilooooliloilolilooooliloooliloliooilooi")
-    'End Sub
+                cmd = New OleDbCommand(REQUETE, cnx)
+
+                ta = New OleDbDataAdapter(cmd)
+
+                ta.Fill(dts) ' fill le data set par le résultat de l'éxécution de requete ( de data adapter ) 
+
+                Nbr_lignes = cmd.ExecuteScalar
+
+                Select Case Table
+
+
+                    Case "ETUDIANT"
+                        REQUETE = "select count(*) from ETUDIANT_ACV"
+
+                    Case "INSCRIPTION"
+                        REQUETE = "select count(*) from INSCRIPTION_ACV"
+
+                    Case "NOTES"
+                        REQUETE = "select count(*) from NOTES_ACV"
+
+                    Case "MATIERE"
+                        REQUETE = "select count(*) from MATIERE_ACV"
+
+                    Case "NoteRATRAP"
+                        REQUETE = "select count(*) from NoteRATRAP_ACV"
+                End Select
+
+
+
+                cmd = New OleDbCommand(REQUETE, cnx)
+
+                ta = New OleDbDataAdapter(cmd)
+
+                ta.Fill(dts) ' fill le data set par le résultat de l'éxécution de requete ( de data adapter ) 
+
+                Nbr_lignes_ACV = cmd.ExecuteScalar
+
+            Catch ex As Exception
+
+                MsgBox(ex.Message)
+
+            End Try
+
+            TOTAL = Nbr_lignes + Nbr_lignes_ACV
+            Prc = (Nbr_lignes * 100) / TOTAL
+
+            cnx.Close()
+        Catch ex As Exception
+            MsgBox(" Connection not openning ! ")
+        End Try
+        Return Prc
+    End Function
+
+
+  
+
 End Class
 
 

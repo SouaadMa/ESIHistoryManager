@@ -28,8 +28,8 @@ Public Class StatistiquePage
     Private Title As String = ""
     Private stat As Statistiques
     Private TitleFont As Font
-    Private DecTable() As String = {"Vide", "Admis", "Admis avec rachat", "Redouble", "Non admis", "Abondan", "Maladie"}
-    Private SexeTable() As String = {"Masculin", "Féminin", "Autre"}
+    Private DecTable() As String = {"Vide", "Admis", "Admis avec rachat", "Redouble", "Non admis", "Abandon", "Maladie"}
+    Private SexeTable() As String = {"Autre", "Masculin", "Féminin"}
     'Private tooltips As List(Of ToolTip)
 
     Private Sub StatistiquePage_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Me.Load

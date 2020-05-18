@@ -140,56 +140,56 @@
     End Function
 
     ' Ancienne Méthode qui retourne une collection limitée d'étudiants, triée selon leurs moyennes
-    Public Shared Function TraitClassementA(ByVal criteres As List(Of Critere), Optional ByVal limite As Integer = 0) As DataTable
+    'Public Shared Function TraitClassementA(ByVal criteres As List(Of Critere), Optional ByVal limite As Integer = 0) As DataTable
 
-        Dim req = ""
+    '    Dim req = ""
 
-        Dim year As New String("")
-        Dim optio As New String("")
-        Dim niv As New String("")
-        Dim conditions As New List(Of Critere)
+    '    Dim year As New String("")
+    '    Dim optio As New String("")
+    '    Dim niv As New String("")
+    '    Dim conditions As New List(Of Critere)
 
-        ' This for each loop serves to create CodePromo and add it with the rest of the conditions..
+    '    ' This for each loop serves to create CodePromo and add it with the rest of the conditions..
 
-        For Each criterea As Critere In criteres
+    '    For Each criterea As Critere In criteres
 
-            If criterea.getChamps.Equals(BDD.champsAnnee) Then
-                year = criterea.getValeur
-            Else
-                If criterea.getChamps.Equals(BDD.champsOption) Then
-                    optio = criterea.getValeur
-                Else
-                    If criterea.getChamps.Equals(BDD.champsNiveau) Then
-                        niv = criterea.getValeur
-                    Else
-                        ' Other fields can be CodeSection and CodeGroupe
-                        conditions.Add(criterea)
+    '        If criterea.getChamps.Equals(BDD.champsAnnee) Then
+    '            year = criterea.getValeur
+    '        Else
+    '            If criterea.getChamps.Equals(BDD.champsOption) Then
+    '                optio = criterea.getValeur
+    '            Else
+    '                If criterea.getChamps.Equals(BDD.champsNiveau) Then
+    '                    niv = criterea.getValeur
+    '                Else
+    '                    ' Other fields can be CodeSection and CodeGroupe
+    '                    conditions.Add(criterea)
 
-                    End If
-                End If
-            End If
+    '                End If
+    '            End If
+    '        End If
 
-        Next
+    '    Next
 
-        Try
-            Dim codePromo As New Critere(BDD.champsCodePromo, New String(niv + "/" + optio + "/" + year))
-            conditions.Add(New Critere(BDD.champsCodePromo, codePromo))
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+    '    Try
+    '        Dim codePromo As New Critere(BDD.champsCodePromo, New String(niv + "/" + optio + "/" + year))
+    '        conditions.Add(New Critere(BDD.champsCodePromo, codePromo))
+    '    Catch ex As Exception
+    '        MsgBox(ex.Message)
+    '    End Try
 
-        Dim champsDemandes As New List(Of String)({BDD.champsNomEtud, BDD.champsPrenoms, BDD.champsRANGIN, BDD.champsMATRIN, BDD.champsMOYEIN})
+    '    Dim champsDemandes As New List(Of String)({BDD.champsNomEtud, BDD.champsPrenoms, BDD.champsRANGIN, BDD.champsMATRIN, BDD.champsMOYEIN})
 
-        req = Class_BDD.genereRechRequete(champsDemandes, BDD.nomTableEtudiant, BDD.nomTableINSCRIPTION, conditions, True)
-        If limite > 0 Then
-            Class_BDD.AjouterLimit_Requete(req, limite)
-        End If
-        Class_BDD.AjouterOrdre_Requete(req, BDD.champsMOYEIN)
+    '    req = Class_BDD.genereRechRequete(champsDemandes, BDD.nomTableEtudiant, BDD.nomTableINSCRIPTION, conditions, True)
+    '    If limite > 0 Then
+    '        Class_BDD.AjouterLimit_Requete(req, limite)
+    '    End If
+    '    Class_BDD.AjouterOrdre_Requete(req, BDD.champsMOYEIN)
 
-        Return BDD.executeRequete(req)
+    '    Return BDD.executeRequete(req)
 
 
-    End Function
+    'End Function
 
 
     ' Méthode pour filtrer une DataTable selon le critère en entrée

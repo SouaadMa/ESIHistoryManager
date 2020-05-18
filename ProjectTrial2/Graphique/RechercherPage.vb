@@ -301,7 +301,7 @@ Public Class RechercherPage
                 PN_FORUMRECH.Visible = False
                 Home.PictureBox2.Size = New System.Drawing.Size(226, 0)
                 Home.ProgressPanel.Visible = True
-
+                Home.MainContainer1.Visible = False
                 ' backgroundWorker1
                 BackgroundWorker1.WorkerReportsProgress = True
                 BackgroundWorker1.WorkerSupportsCancellation = True
@@ -314,7 +314,7 @@ Public Class RechercherPage
     End Sub
 
     Private Sub ResidenceLabel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ResidenceLabel.Click
-        'handle the residence caterorie label click
+        'handle the residence caterorie label click 
         SpliterMain.SplitterDistance = IIf(SplitContainer1.Panel2Collapsed, 190, 25)    'adjust the spliter distance
         SplitContainer1.Panel2Collapsed = Not SplitContainer1.Panel2Collapsed           'reverse the collapse state
         ResidenceLabel.ImageIndex = IIf(SplitContainer1.Panel2Collapsed, 0, 1)          'change the arrow image
@@ -417,6 +417,7 @@ Public Class RechercherPage
         ' Do some time-consuming work on this thread.
         Dim worker As System.ComponentModel.BackgroundWorker = DirectCast(sender, System.ComponentModel.BackgroundWorker)
         Dim collection_critere As List(Of Critere) = CType(e.Argument, List(Of Critere))
+        worker.ReportProgress(0)
         Try
             e.Result = search_inBackground(worker, e, collection_critere)
         Catch ex As NullReferenceException
@@ -445,12 +446,12 @@ Public Class RechercherPage
         Home.f.WindowState = FormWindowState.Normal
         Home.MainContainer1.Controls.Add(Home.f)        ' add the controlers of the searche page to the main form f 
         Home.f.Show()                                ' show the form f in the middle of the home page
-
+        Home.ProgressPanel.Visible = False
     End Sub
 
     Private Sub BackgroundWorker1_ProgressChanged(ByVal sender As System.Object, ByVal e As System.ComponentModel.ProgressChangedEventArgs) Handles BackgroundWorker1.ProgressChanged
-        'ProgressLabel.Text = e.ProgressPercentage.ToString + "%"
-        'PictureBox2.Size = New System.Drawing.Size(226, (e.ProgressPercentage * (PictureBox2.MaximumSize.Height)) \ 100)
+        Home.ProgressLabel.Text = e.ProgressPercentage.ToString + "%"
+        Home.PictureBox2.Size = New System.Drawing.Size(Home.PictureBox2.Width, (e.ProgressPercentage * (Home.PictureBox2.MaximumSize.Height)) \ 100)
     End Sub
 
     Private Function search_inBackground(ByVal bw As System.ComponentModel.BackgroundWorker, ByVal e As System.ComponentModel.DoWorkEventArgs, ByVal collection_critere As List(Of Critere)) As DataTable

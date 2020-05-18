@@ -607,10 +607,12 @@ Public Class Home
     End Sub
 
     Private Sub ProgressPanel_VisibleChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ProgressPanel.VisibleChanged
-
+        MainContainer1.Visible = Not ProgressPanel.Visible
+        MainContainer2.Visible = Not ProgressPanel.Visible
         If Not ProgressPanel.Visible Then
             x = 0
         Else
+
             ProgressLabel.Text = "0%"
             Home.alarm = New System.Threading.Timer(AddressOf alarm_Tick_1, Nothing, 0, 2)
         End If
@@ -618,7 +620,7 @@ Public Class Home
     End Sub
 
     Private Sub alarm_Tick_1(ByVal state As Object)
-        x += 5
+        x += 10
         If x > 100 Then
             alarm.Change(System.Threading.Timeout.Infinite, System.Threading.Timeout.Infinite)
             x = 0

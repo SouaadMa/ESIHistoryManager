@@ -8,7 +8,7 @@
         Dim resultatRech As DataTable = New DataTable
         'DataTable qui va contenir le résultat retourné par la BDD
         'La collection des étudiants à retourner à la fin de la méthode
-
+        'Dim x As Integer = 5
         'Console.WriteLine("c")
         'Pour chaque critère on fait appel à génèreRequete
         If Not bw.CancellationPending Then
@@ -24,9 +24,10 @@
                 Else
                     instructionSQL = Rech_BDD.genereRechRequetes(instructionSQL, crit, BDD.nomTableEtudiant)
                 End If
-
+                'x = x + 50 / criteres.Count
                 'bw.ReportProgress(CInt(x))
             Next
+            'x = 70
             'Console.WriteLine(instructionSQL)
             'On passe la requête finale à ExécuteRequ et on sauvegarde son résultat
             If Not bw.CancellationPending Then

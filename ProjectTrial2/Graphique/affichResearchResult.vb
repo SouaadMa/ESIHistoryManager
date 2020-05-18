@@ -44,10 +44,10 @@
         'appel a la fonction qui nous donne la collection des etudiants 
         Me.AffPanel.Dock = DockStyle.Fill   ' dock the seach form in the parent container
 
-        Console.WriteLine("results number is : " + StudentTable.Rows.Count.ToString)
+
         ' inisializer le nombre des esist
         Me.RechLabel.Text += "(" + StudentTable.Rows.Count.ToString + ")"
-        Console.WriteLine("pages number is : " + nb_page.ToString)
+
 
         If (StudentTable.Rows.Count = 0) Then
             EtudiantPanel.Visible = False
@@ -57,7 +57,7 @@
             NoResultLabel.Visible = True
             SortModeBox.Visible = False
             triLabel.Visible = False
-            Console.WriteLine("Liste des etudiants est vide")
+
         Else
             If SortDirectionAscendant Then
                 Classement.SortASCCollection(StudentTable, BDD.champsMATRIN)
@@ -152,7 +152,7 @@
             SelectedStudent = CType(sender.Name.ToString.Chars(sender.Name.ToString.Length - 1).ToString, Integer)
             StudentList.Clear()
             StudentList.Add(New Etudiant(StudentTable.Rows.Item(SelectedStudent - 1 + (CURRENT_PAGE - 1) * 7)))
-            Console.WriteLine(SelectedStudent - 1 + (CURRENT_PAGE - 1) * 7)
+
 
         End With
 
@@ -210,7 +210,7 @@
         Dim i As Integer = 0
         Dim cpt As Integer = (CURRENT_PAGE - 1) * 7
         StudentList.Clear()
-        'Console.WriteLine("Called !")
+
         While (cpt < StudentTable.Rows.Count And i < 7)
             'StudentList.Add(New Etudiant(StudentTable.Rows.Item(cpt)))
             Dim c As Control = EtudiantPanel.Controls.Find("Label" + (i + 1).ToString + "_1", True)(0)
@@ -368,7 +368,7 @@
         For Each ctrl As Control In ctrlParent.Controls
             If Not ctrl.GetType.ToString.Equals("System.Windows.Forms.TableLayoutPanel") Then
                 AddHandler ctrl.MouseClick, AddressOf TableLayoutPanel1_Leave
-                'Console.WriteLine(ctrl.Name)
+
                 If (ctrl.HasChildren) Then
                     watch_focusLocation(ctrl)
                 End If
@@ -389,36 +389,3 @@
     End Sub
 End Class
 
-
-'Console.Write(student.GetInfoChamps(BDD.champsNomEtud))
-'Console.Write(student.GetInfoChamps(BDD.champsPrenoms))
-'Console.Write(student.GetInfoChamps(BDD.champsMATRIN))
-'Console.Write(student.GetInfoChamps("ADRESSE"))
-'Console.Write(student.GetInfoChamps(BDD.champsVILLE))
-'Console.Write(student.GetInfoChamps(BDD.champsWILAYA))
-'Console.Write(student.GetInfoChamps(BDD.champsANNEEBAC))
-'Console.WriteLine()
-'Console.WriteLine()
-
-
-
-'Console.WriteLine("sorted by : " + SortModeBox.SelectedIndex.ToString)
-'For Each student In StudentList
-'    Console.Write(student.GetInfoChamps(BDD.champsNomEtud))
-'    Console.Write(student.GetInfoChamps(BDD.champsPrenoms))
-'    Console.Write(student.GetInfoChamps(BDD.champsMATRIN))
-'    Console.Write(student.GetInfoChamps("ADRESSE"))
-'    Console.Write(student.GetInfoChamps(BDD.champsVILLE))
-'    Console.Write(student.GetInfoChamps(BDD.champsWILAYA))
-'    Console.Write(student.GetInfoChamps(BDD.champsANNEEBAC))
-'    Console.WriteLine()
-'Next
-'Console.Write(student.GetInfoChamps(BDD.champsNomEtud))
-'Console.Write(student.GetInfoChamps(BDD.champsPrenoms))
-'Console.Write(student.GetInfoChamps(BDD.champsMATRIN))
-'Console.Write(student.GetInfoChamps("ADRESSE"))
-'Console.Write(student.GetInfoChamps(BDD.champsVILLE))
-'Console.Write(student.GetInfoChamps(BDD.champsWILAYA))
-'Console.Write(student.GetInfoChamps(BDD.champsANNEEBAC))
-'Console.WriteLine()
-'Console.WriteLine()

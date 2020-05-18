@@ -233,27 +233,26 @@ Public Class BDD
         dt = New DataTable()
 
         Try
-            'Console.WriteLine("problem here0")
+
             cnx.Open()                               ' ouvrir la connection avec la base de données
-            'Console.WriteLine("problem here1")
+
             cmd = New OleDbCommand(requete, cnx) ' la connection au commande
-            'Console.WriteLine("problem here2")
+
             ta = New OleDbDataAdapter(cmd)       ' creer un nouveau DataAdapter
-            'Console.WriteLine("problem here3")
+
             'ta.Fill(dts)                         ' remplir le data set par le résultat de l'éxécution de la requête ( de data adapter ) 
             ta.Fill(dt)
-            'Console.WriteLine("problem here4")
+
             'dt = dts.Tables("table")              'mettre dans le data table le résultat de l'éxécution de requête ( le data set )
-            'Console.WriteLine("problem here5")
+
 
         Catch ex As Exception
-            MsgBox("excecute recherche problem" + ex.Message())
-            Console.WriteLine(ex.Message + " " + requete)
+            MsgBox("Excecute recherche problem" + ex.Message())
+
         Finally
             cnx.Close()                              'fermer la connexion
         End Try
 
-        Console.WriteLine("Execute: " + requete)
         Return dt
 
     End Function
@@ -521,9 +520,6 @@ Public Class BDD
                 SqlQuery = Class_BDD.AddLIKECondition(SqlQuery, cond, nomTable)
             Next
 
-            'MsgBox("before execute")
-
-            'Console.WriteLine(SqlQuery)
 
             Return executeRequete(SqlQuery)
 

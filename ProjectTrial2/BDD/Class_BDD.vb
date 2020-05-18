@@ -72,21 +72,21 @@
                         Select Case (cond.getValeur.GetType).ToString ' Savoir le type de la valeur :
                             Case "System.String" '
                                 'valeur(Text)
-                                'Console.WriteLine("string")
+
                                 t1 = BDD.getStringTable(tab1)
                                 ' Chercher dans le tableau des champs Text
                                 t2 = BDD.getStringTable(tab2)
                                 valeur = "'" + cond.getValeur + "'"
                             Case GetType(Integer).ToString, GetType(Double).ToString '
                                 'valeur(Numérique)
-                                'Console.WriteLine("num")
+
                                 t1 = BDD.getNumTable(tab1)
                                 ' Chercher dans le tableau des champs Numerique
                                 t2 = BDD.getNumTable(tab2)
                                 valeur = cond.getValeur.ToString
                             Case "System.Boolean" '
                                 'valeur(Booleen)
-                                'Console.WriteLine("bool")
+
                                 t1 = BDD.getBoolTable(tab1)
                                 ' Chercher dans le tableau des champs Booleen
                                 t2 = BDD.getBoolTable(tab2)

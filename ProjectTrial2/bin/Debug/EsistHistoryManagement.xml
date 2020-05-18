@@ -6,47 +6,7 @@ EsistHistoryManagement
 </name>
 </assembly>
 <members>
-<member name="T:EsistHistoryManagement_v1.RNDataSetxsd.ETUDIANTDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNDataSetxsd.Table2DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNDataSetxsd.Table1DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNDataSetxsd.ETUDIANTRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNDataSetxsd.Table2Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNDataSetxsd.Table1Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNDataSetxsd.ETUDIANTRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNDataSetxsd.Table2RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNDataSetxsd.Table1RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNDataSetxsd">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.AttestationDataSet.Table2DataTable">
+<member name="T:EsistHistoryManagement_v1.AttestationDataSet.Table2DataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -71,110 +31,6 @@ Row event argument class
 Row event argument class
 </summary>
 </member><member name="T:EsistHistoryManagement_v1.AttestationDataSet">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.PvDataSet.DataTable1DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.PvDataSet.DataTable1Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.PvDataSet.DataTable1RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.PvDataSet">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.ETUDIANTDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.tableNotesMat1DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.Table1DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.tableNotesMat2DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.tableNotesMat3DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.tableNotesMat4DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.tableNotesMat5DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.ETUDIANTRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.tableNotesMat1Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.Table1Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.tableNotesMat2Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.tableNotesMat3Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.tableNotesMat4Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.tableNotesMat5Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.ETUDIANTRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.tableNotesMat1RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.Table1RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.tableNotesMat2RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.tableNotesMat3RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.tableNotesMat4RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.tableNotesMat5RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:EsistHistoryManagement_v1.RNGDataSet">
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
@@ -574,6 +430,150 @@ Represents a strongly typed in-memory cache of data.
 </member><member name="F:EsistHistoryManagement_v1.BDD.tableCorespondante">
  '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
+</member><member name="T:EsistHistoryManagement_v1.RNDataSetxsd.ETUDIANTDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNDataSetxsd.Table2DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNDataSetxsd.Table1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNDataSetxsd.ETUDIANTRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNDataSetxsd.Table2Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNDataSetxsd.Table1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNDataSetxsd.ETUDIANTRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNDataSetxsd.Table2RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNDataSetxsd.Table1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNDataSetxsd">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.PvDataSet.DataTable1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.PvDataSet.DataTable1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.PvDataSet.DataTable1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.PvDataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.ETUDIANTDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.tableNotesMat1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.Table1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.tableNotesMat2DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.tableNotesMat3DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.tableNotesMat4DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.tableNotesMat5DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.ETUDIANTRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.tableNotesMat1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.Table1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.tableNotesMat2Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.tableNotesMat3Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.tableNotesMat4Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.tableNotesMat5Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.ETUDIANTRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.tableNotesMat1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.Table1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.tableNotesMat2RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.tableNotesMat3RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.tableNotesMat4RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNGDataSet.tableNotesMat5RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:EsistHistoryManagement_v1.RNGDataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
 </member>
 </members>
 </doc>

@@ -98,7 +98,6 @@ Public Class StatistiquePage
         'initialiser sexe
         CHB_SEXE.Items.AddRange(InfosGenerales.sexe)
         CHB_SEXE.Height = 21 * CHB_SEXE.Items.Count
-        Console.WriteLine(CHB_SEXE.Height.ToString)
         'initialiser de matiere
         CHB_MAT.Items.AddRange(Login.Infosgenerale.matiere.AsEnumerable.Select(Function(dr) dr(0).ToString).ToArray)
         CHB_MAT.Height = 21 * CHB_MAT.Items.Count
@@ -365,14 +364,13 @@ Public Class StatistiquePage
         '    End If
         'Next
         With CType(sender.Parent.Parent, SplitContainer) 'CType(.Panel2.Controls.Item(0), CheckedListBox)
-            Console.WriteLine(.Name)
+
             .Panel2Collapsed = Not .Panel2Collapsed
-            Console.WriteLine(.Height.ToString + "   " + .Panel2.Controls.Item(0).Height.ToString + "    " + CType(.Panel2.Controls.Item(0), CheckedListBox).Items.Count.ToString)
             Dim h As Integer = IIf(CType(.Panel2.Controls.Item(0), CheckedListBox).Items.Count <= 17, (CType(.Panel2.Controls.Item(0), CheckedListBox).Items.Count) * 21, 17 * 21)
             .Height = 21 + IIf(CType(sender, Label).ImageIndex = 0, h, -h)
             CType(.Panel2.Controls.Item(0), CheckedListBox).BackColor = Color.White
             CType(.Panel2.Controls.Item(0), CheckedListBox).Height = h + 21
-            Console.WriteLine(.Height.ToString)
+
         End With
         CType(sender, Label).ImageIndex = (CType(sender, Label).ImageIndex + 1) Mod 2
     End Sub
@@ -851,7 +849,7 @@ End Class
 
 
 '    Dim stat2_1 As New Statistiques(domaine, New Critere(BDD.champsNOJUNO, 10), BDD.champsCOMAMA)
-'    Console.WriteLine(stat2_1.GetTotal("ALGO"))
+'    
 
 '    Dim stat2_2 As New Statistiques(domaine, New Critere(BDD.champsDECIIN, "REUSSITE"), BDD.champsCodeGroupe)
 

@@ -228,7 +228,7 @@ Public Class RN
         End Try
         BilanLinkLabel.Visible = Not SortieRN.getBilan.Equals("Tout est bien passé!")
         BilanLinkLabel.Enabled = Not SortieRN.getBilan.Equals("Tout est bien passé!")
-        'Console.WriteLine(SortieRN.getBilan)
+
 
 
     End Sub

@@ -106,16 +106,16 @@
             Next
             bilan = "Cet étudiant, ayant le MATRICULE = " & etud.GetInfoChamps(BDD.champsMATRIN) & " a " & nombreAnnees.ToString & " année(s) dans la table INSCRIPTION." & vbNewLine + bilan
             bilan += "Il/Elle a été admis(e) en " & (ds.Tables.Count - 2).ToString & " année(s)." & vbNewLine
-            Console.WriteLine(getBilan)
+
             
         Else
             bilan = "Cet étudiant, ayant le MATRICULE = " & etud.GetInfoChamps(BDD.champsMATRIN) & " a " & nombreAnnees.ToString & " année(s) dans la table INSCRIPTION." & vbNewLine + bilan
             bilan += "Il/Elle a été admis(e) en " & (ds.Tables.Count - 2).ToString & " année(s)." & vbNewLine
-            Console.WriteLine(getBilan)
+
             Throw New RngImpossibleException()
         End If
 
-        Console.WriteLine(getBilan)
+
 
         Return ds
 

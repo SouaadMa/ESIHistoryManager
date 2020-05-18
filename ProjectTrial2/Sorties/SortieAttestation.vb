@@ -68,8 +68,6 @@ Public Class SortieAttestation
 
         End If
 
-
-        Console.WriteLine(getBilan)
         '____________________________
         Return dts                                                          ' Retourner le data set dts
 

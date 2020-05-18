@@ -9,7 +9,6 @@
         'DataTable qui va contenir le résultat retourné par la BDD
         'La collection des étudiants à retourner à la fin de la méthode
         'Dim x As Integer = 5
-        'Console.WriteLine("c")
         'Pour chaque critère on fait appel à génèreRequete
         If Not bw.CancellationPending Then
 
@@ -28,7 +27,6 @@
                 'bw.ReportProgress(CInt(x))
             Next
             'x = 70
-            'Console.WriteLine(instructionSQL)
             'On passe la requête finale à ExécuteRequ et on sauvegarde son résultat
             If Not bw.CancellationPending Then
                 resultatRech = BDD.executeRequete(instructionSQL)
@@ -37,7 +35,6 @@
             Else
                 e.Cancel = True
             End If
-            'Console.WriteLine(" execute requete success")
 
             'Pour chaque ligne du DataTable on crée un objet étudiant
             'Et on ajoute l'objet créé à la collection des étudiants à retourner

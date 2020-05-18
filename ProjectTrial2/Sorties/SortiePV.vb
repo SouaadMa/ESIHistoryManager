@@ -153,7 +153,7 @@
                 row1("MoyenneRatr") = dt4.Select("MATRIN = '" & row1("MATRIN") & "' ")(0)("MOYERA")
 
                 If row1("MoyenneRatr") <> 0 Then
-                    Console.WriteLine("MoyR")
+
 
                     If row1(BDD.champsMOYEIN) >= row1("MoyenneRatr") Then
                         row1("MoyenneRatr") = 0
@@ -176,7 +176,7 @@
 
                 End If
             Catch ex As Exception
-                Console.WriteLine("Exce")
+
                 If (row1("RATRIN") > 0) Then
                     row1("MoyenneRatr") = 0
                     bilan += "L'étudiant : MARICULE = " & row1("MATRIN") & ", son RATRIN=" & row1("RATRIN") & " mais sa note de ratrapage n'existe pas dans la table NoteRATRAP " & vbNewLine
@@ -212,7 +212,6 @@
             End If
         End If
 
-        Console.WriteLine(getBilan)
 
         ' fin ____________________________________
         Return dts

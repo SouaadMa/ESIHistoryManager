@@ -47,8 +47,7 @@
             SelectedStudent = CType(sender.Name.ToString.Chars(sender.Name.ToString.Length - 1).ToString, Integer)
             StudentList.Clear()
             StudentList.Add(New Etudiant(BDD.GetFromTable(BDD.nomTableEtudiant, New Critere(BDD.champsMATRIN, filtredTable.Rows.Item(SelectedStudent - 1 + (CURRENT_PAGE - 1) * 7)(BDD.champsMATRIN), BDD.nomTableEtudiant))))
-            Console.WriteLine(SelectedStudent - 1 + (CURRENT_PAGE - 1) * 7)
-
+            
         End With
 
         For Each b As Control In Home.NavBar.Controls
@@ -59,39 +58,6 @@
 
     End Sub
 
-    'Private Sub P1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-    '    For Each b As Button In PagesButtons.Controls
-    '        b.BackgroundImage = My.Resources.page_num
-    '    Next
-
-    '    If CURRENT_PAGE <> 1 Or Not CType(sender, Control).Name.Equals("PrevButton") Then
-    '        If CType(sender, Control).Name.Equals("PrevButton") Or CURRENT_PAGE = nb_page Then
-    '            CURRENT_PAGE -= 1
-    '        Else
-    '            CURRENT_PAGE += 1
-    '        End If
-    '    End If
-
-    '    If CURRENT_PAGE = 1 Then
-    '        PrevButton.Enabled = False
-    '        MiddleButton.Enabled = True
-    '        NextButton.Enabled = True
-    '        PrevButton.BackgroundImage = My.Resources.page_num_current
-    '    ElseIf CURRENT_PAGE = nb_page Then
-    '        NextButton.BackgroundImage = My.Resources.page_num_current
-    '        PrevButton.Enabled = True
-    '        MiddleButton.Enabled = True
-    '        NextButton.Enabled = False
-    '    Else
-    '        PrevButton.Enabled = True
-    '        MiddleButton.Enabled = False
-    '        NextButton.Enabled = True
-    '        MiddleButton.BackgroundImage = My.Resources.page_num_current
-    '    End If
-
-    '    Console.WriteLine("the page is :" + CURRENT_PAGE.ToString)
-    '    affich_pageResult()
-    'End Sub
 
     Public Sub affich_pageResult()
 
@@ -133,7 +99,7 @@
             ctrl.Visible = True
         Next
         StudentList.Clear()
-        'Console.WriteLine("Called !")
+
         While (cpt < filtredTable.Rows.Count And i < 7)
             'StudentList.Add(New Etudiant(StudentTable.Rows.Item(cpt)))
             Dim c As Control = EtudiantPanel.Controls.Find("Label" + (i + 1).ToString + "_0", True)(0)
@@ -305,7 +271,7 @@
         For Each ctrl As Control In ctrlParent.Controls
             If Not ctrl.GetType.ToString.Equals("System.Windows.Forms.TableLayoutPanel") Then
                 AddHandler ctrl.MouseClick, AddressOf TableLayoutPanel1_Leave
-                'Console.WriteLine(ctrl.Name)
+
                 If (ctrl.HasChildren) Then
                     watch_focusLocation(ctrl)
                 End If
@@ -336,10 +302,8 @@
         'StudentTable = Recherche.traitRechercher(crit, RechercherPage.BackgroundWorker1, New System.ComponentModel.DoWorkEventArgs(Nothing))
 
         Me.RechLabel.Text = "Classement (" + StudentTable.Rows.Count.ToString + ")"
-        Console.WriteLine("results number is : " + StudentTable.Rows.Count.ToString)
         If (StudentTable.Rows.Count = 0) Then
             EtudiantPanel.Visible = False
-            Console.WriteLine("Liste des etudiants est vide")
         Else
             BT_P1.Visible = True
             BT_P2.Visible = True
@@ -357,7 +321,7 @@
         End If
         SpecialiteBox.Text = ""
         AllCheckBox.Checked = True
-            Console.WriteLine("pages number is : " + nb_page.ToString)
+
         Else
             MsgBox("Veuillez entrer une année comprise entre 1989 et 2011")
             ValueTextBox.Text = saveText
@@ -397,12 +361,6 @@
         'LimitDomain.Visible = EtudiantPanel.Visible
     End Sub
 
-    'Private Sub ValueTextBox_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ValueTextBox.Leave, ValueTextBox.Validated, ValueTextBox.LostFocus, ValueTextBox.KeyPress
-    '    ValueTextBox.ForeColor = Color.White
-    '    ValueTextBox.BackColor = Color.FromArgb(0, 64, 104)
-    '    Console.WriteLine(e.GetType.ToString)
-    '    GetClassemntResult()
-    'End Sub
 
     Private Sub ValueTextBox_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ValueTextBox.Click, ValueTextBox.MouseDoubleClick
         ValueTextBox.AutoCompleteCustomSource = collectionList
@@ -410,15 +368,13 @@
         ValueTextBox.ForeColor = Color.FromArgb(0, 64, 104)
     End Sub
 
-    'Private Sub ValueTextBox_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles ValueTextBox.KeyPress
-
-    'End Sub
+    
 
     Private Sub ValueTextBox_PreviewKeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PreviewKeyDownEventArgs) Handles ValueTextBox.PreviewKeyDown
         If e.KeyCode = Keys.Enter Then
             ValueTextBox.ForeColor = Color.White
             ValueTextBox.BackColor = Color.FromArgb(0, 64, 104)
-            Console.WriteLine(e.ToString)
+
             UpdateClassemntResult()
             Me.ActiveControl = Nothing
         End If

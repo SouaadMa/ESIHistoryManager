@@ -70,7 +70,6 @@
             reqSQL = Rech_BDD.genereRechRequetes("", New Critere(BDD.champsMATRIN, etud.GetInfoChamps(BDD.champsMATRIN)), BDD.nomTableNoteRATRAP)
             reqSQL = Rech_BDD.genereRechRequetes(reqSQL, New Critere(BDD.champsCodeRat, promo), BDD.nomTableNoteRATRAP)
 
-            'Console.WriteLine(reqSQL)
 
             Dim tableRATTRAP As DataTable = BDD.executeRequete(reqSQL)
 
@@ -181,7 +180,6 @@
 
         Next
 
-        Console.WriteLine(getBilan)
 
     End Sub
 

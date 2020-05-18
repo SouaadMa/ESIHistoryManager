@@ -75,16 +75,16 @@ Public Class Login
             Try
                 Infosgenerale = InfosGenerales.Recover()
             Catch ex As Exception
-                'Console.WriteLine(ex.Message)
+
                 Infosgenerale = New InfosGenerales()
             End Try
 
             If (Infosgenerale Is Nothing) Then
-                'Console.WriteLine("Nothing")
+
                 Infosgenerale = New InfosGenerales()
             Else
                 If Infosgenerale.isEmpty Then
-                    'Console.WriteLine("Empty")
+
                     Infosgenerale.reFill()
                 End If
             End If

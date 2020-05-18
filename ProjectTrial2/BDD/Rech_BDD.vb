@@ -138,13 +138,13 @@ Public Class Rech_BDD
 
             If req.Contains("*") Then
 
-                'Console.WriteLine(req)
+
 
                 req = req.Replace("*", StrChamps)
 
             Else
 
-                'Console.WriteLine("u" + req + "u")
+
 
                 req = req.Insert(req.IndexOf("SELECT") + "SELECT".Length, " " + StrChamps + ", ")
 

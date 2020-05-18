@@ -33,15 +33,15 @@
 
             Select Case (crit.getValeur.GetType).ToString       ' Savoir le type de la valeur :
                 Case "System.String"                                      ' valeur Text
-                    'Console.WriteLine("string")
+
                     tab = BDD.getStringTable(table)                                           ' Chercher dans le tableau des champs Text
                     valeur = "'" + crit.getValeur + "'"
                 Case GetType(Integer).ToString, GetType(Double).ToString  ' valeur Numérique
-                    'Console.WriteLine("num")
+
                     tab = BDD.getNumTable(table)                                               ' Chercher dans le tableau des champs Numerique                    
                     valeur = crit.getValeur.ToString
                 Case "System.Boolean"                                     ' valeur Booleen
-                    'Console.WriteLine("bool")
+
                     tab = BDD.getBoolTable(table)                                           ' Chercher dans le tableau des champs Booleen
                     valeur = crit.getValeur
                     'Case Else     tab = {}

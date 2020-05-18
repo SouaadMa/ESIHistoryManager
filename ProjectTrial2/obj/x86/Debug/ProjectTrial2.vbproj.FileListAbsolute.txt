@@ -22,7 +22,6 @@ C:\Users\SIRINE\Documents\Visual Studio 2010\Projects\ProjectTrial2\ProjectTrial
 C:\Users\SIRINE\Documents\Visual Studio 2010\Projects\ProjectTrial2\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.ClassementPage.resources
 C:\Users\SIRINE\Documents\Visual Studio 2010\Projects\ProjectTrial2\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.Form1.resources
 C:\Users\SIRINE\Documents\Visual Studio 2010\Projects\ProjectTrial2\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.RN.resources
-C:\Users\SIRINE\Documents\Visual Studio 2010\Projects\ProjectTrial2\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.Historique.resources
 C:\Users\SIRINE\Documents\Visual Studio 2010\Projects\ProjectTrial2\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.details.resources
 C:\Users\SIRINE\Documents\Visual Studio 2010\Projects\ProjectTrial2\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.modifier.resources
 C:\Users\SIRINE\Documents\Visual Studio 2010\Projects\ProjectTrial2\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.modifpassword.resources
@@ -86,3 +85,5 @@ C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\bin\Debug\EsistH
 C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\bin\Debug\EsistHistoryManagement.xml
 C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement.exe
 D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.BilanPage.resources
+C:\Users\SIRINE\Documents\Visual Studio 2010\Projects\ProjectTrial2\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.BilanPage.resources
+C:\Users\SIRINE\Documents\Visual Studio 2010\Projects\ProjectTrial2\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.PrincipalPage.resources

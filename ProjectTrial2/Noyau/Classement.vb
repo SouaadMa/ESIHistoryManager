@@ -42,7 +42,6 @@
         'requeteSQL = Class_BDD.AddLIKECondition(requeteSQL, BDD.champsCodePromo, New Critere(BDD.champsAnnee, (Integer.Parse(Annee) + 5).ToString, BDD.nomTableINSCRIPTION))
         ' requeteSQL == requeteSQL + " AND (CodePromo LIKE '%/Annee+5')"
 
-        'Console.WriteLine(requeteSQL)
 
         tableEtudiants = BDD.executeRequete(requeteSQL)
 
@@ -73,7 +72,6 @@
                 requeteSQL = Class_BDD.genereRechRequete(listeChamps, BDD.nomTableINSCRIPTION, BDD.nomTableNoteRATRAP, listeConditions, False)
                 requeteSQL = Class_BDD.AddONCondition(requeteSQL, BDD.nomTableINSCRIPTION, BDD.nomTableNoteRATRAP, BDD.champsCodePromo, BDD.champsCodeRat)
 
-                Console.WriteLine(requeteSQL)
 
                 dt.Merge(BDD.executeRequete(requeteSQL))
 
@@ -84,19 +82,14 @@
         Next
 
         If ((i <= 20) And collectionMat.Count > 0) Then
-            Console.WriteLine("<20")
+
             requeteSQL = ""
             requeteSQL = Class_BDD.genereRechRequete(listeChamps, BDD.nomTableINSCRIPTION, BDD.nomTableNoteRATRAP, listeConditions, False)
             requeteSQL = Class_BDD.AddONCondition(requeteSQL, BDD.nomTableINSCRIPTION, BDD.nomTableNoteRATRAP, BDD.champsCodePromo, BDD.champsCodeRat)
-            Console.WriteLine(requeteSQL)
+
             dt.Merge(BDD.executeRequete(requeteSQL))
         End If
 
-
-        'requeteSQL = Class_BDD.genereRechRequete(listeChamps, BDD.nomTableINSCRIPTION, BDD.nomTableNoteRATRAP, listeConditions, False)
-        'dt = BDD.executeRequete(requeteSQL)
-
-        'Console.WriteLine(dt.Equals(Nothing))
 
         calculMoyClassement(dt, tableEtudiants)
 
@@ -125,11 +118,9 @@
             Next
             If i > 0 Then
                 moy /= i
-                Console.WriteLine(i)
+
             End If
 
-
-            'Console.WriteLine(i.ToString + " " + etud(BDD.champsMATRIN))
 
             etud("MoyClassement") = moy
 
@@ -206,7 +197,6 @@
 
         Dim filter As String = BDD.CompareToCode(BDD.champsCodePromo, critere)
 
-        Console.WriteLine("filter:" + filter)
 
         Return dataTable.Select(filter).CopyToDataTable
 

@@ -39,10 +39,6 @@
 
         End If
 
-        'Console.WriteLine("domaine")
-        'show(domaine)
-        'Console.WriteLine("codeconditions")
-        'show(CodeConditions)
 
 
         '..............Conditions, Check :D
@@ -54,12 +50,6 @@
 
         Champs = prepareChamps()
 
-        'Console.WriteLine("champsRetour")
-        'show(Champs)
-
-        'Console.WriteLine("Paire")
-        'Console.WriteLine(PaireTables.elem1 + "." + PaireTables.elem2)
-        Console.WriteLine(PaireTables.elem1 + "." + PaireTables.elem2)
 
         '..............Champs, Check :DD
         '..............Tables, Check :DDD
@@ -90,10 +80,7 @@
 
         requeteSQL = Class_BDD.addGroupBy(requeteSQL, champRepartition, paireTables.elem2)
 
-        'Console.WriteLine(requeteSQL)
-
-
-
+        '
 
 
         dataTable = BDD.executeRequete(requeteSQL)
@@ -124,20 +111,16 @@
                 Case "System.Boolean"                                     ' valeur Booleen
                     valeur = critere.getValeur
                 Case Else
-                    Console.WriteLine("Erreur type FilterDataTableBy")
                     valeur = ""
             End Select
 
             filter = critere.getChamps + " = " + valeur
 
         Else
-
-            Console.WriteLine("La colonne avec laquelle vous voulez filtrer n'appartient pas à DataTable")
             Return Nothing
 
         End If
 
-        Console.WriteLine("Stat filter" + filter)
 
         Return dataTable.Select(filter).CopyToDataTable
 
@@ -157,18 +140,14 @@
                     filter = critere.getChamps + " < " + critere.getValeur.ToString
                 End If
             Else
-                Console.WriteLine("Vous êtes entrain de comparer avec un type non numérique")
                 Return Nothing
             End If
 
         Else
 
-            Console.WriteLine("La colonne avec laquelle vous voulez filtrer n'appartient pas à DataTable")
             Return Nothing
 
         End If
-
-        Console.WriteLine("filter: " + filter)
 
         Return dataTable.Select(filter).CopyToDataTable
 
@@ -222,7 +201,6 @@
                 Next
 
                 If Not valide Then
-                    Console.WriteLine("checktableDomaineStat" + cr.getChamps)
                 End If
 
             End If
@@ -321,9 +299,6 @@
 
         If tab1 = tab2 Then
 
-            'Console.WriteLine("tab1 = tab2")
-            'Console.WriteLine(tab1 + "." + tab2)
-
             req = Rech_BDD.genereRechRequetes(req, Nothing, tab1)
 
             For Each cond In conditions
@@ -342,13 +317,7 @@
 
             req = Class_BDD.genereRechRequete(champs, tab1, tab2, conditions, True)
 
-            'Console.WriteLine("DEUX TABS NON VIDES")
-            'Console.WriteLine(tab1 + "." + tab2)
-
-            'For Each cr In conditions
-            'Console.WriteLine(cr.getChamps)
-            'Next
-
+            '
         End If
 
         paireTables.elem1 = tab1
@@ -359,25 +328,7 @@
 
     End Function
 
-    Public Shared Sub show(ByVal list As List(Of Critere))
-
-        For Each cr In list
-            Console.WriteLine(cr.getChamps + cr.getValeur.ToString + cr.getTable)
-
-        Next
-
-        Console.WriteLine()
-    End Sub
-
-    Public Shared Sub show(ByVal list As List(Of String))
-
-        For Each cr In list
-            Console.WriteLine(cr)
-
-        Next
-
-        Console.WriteLine()
-    End Sub
+    
 
     Public Function ajouteConditions(ByVal req As String) As String
 

@@ -25,7 +25,7 @@
 
     Private Sub Panel2_DragDrop(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DragEventArgs)
         Dim files() As String = e.Data.GetData(DataFormats.FileDrop)
-        Console.WriteLine(files(0))
+
     End Sub
 
     Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click, Button2.Click, Button3.Click, Button4.Click

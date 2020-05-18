@@ -42,7 +42,6 @@ Public Class InfosGenerales
         section = Recherche.GetALL(BDD.champsCodeSection, BDD.nomTableSection)
         matiere = Recherche.GetALL(BDD.champsCOMAMA, BDD.nomTableMATIERE)
 
-        Console.WriteLine("Loading info generale DONE")
     End Sub
 
     Public Shared Function Recover() As InfosGenerales

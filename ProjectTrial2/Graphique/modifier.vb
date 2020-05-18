@@ -1,7 +1,10 @@
-﻿Public Class modifier
+﻿Imports System.Text.RegularExpressions
+Public Class modifier
 
     Public worning_format As Boolean
     Dim esistselect As Etudiant ' letudiant selection f affichresult
+    Private ArabicInput As InputLanguage
+    Private LatinInput As InputLanguage
 
     Public Sub New(ByVal e As Etudiant)
 
@@ -18,6 +21,23 @@
         Worning.Visible = False
         BT_GENERALINFO.Checked = True
         CompletLabel.Visible = False
+
+        ' Set the default as the current Inputlanguage
+        ArabicInput = InputLanguage.CurrentInputLanguage
+        LatinInput = InputLanguage.CurrentInputLanguage
+        'Iterate to find the available Arabic and latin Keyboards
+        Dim count As Integer = InputLanguage.InstalledInputLanguages.Count
+        For j As Integer = 0 To (count - 1)
+            If InputLanguage.InstalledInputLanguages(j).LayoutName.Contains("Arabic") = True Then
+                'Found an Arabic Keyboard
+                ArabicInput = InputLanguage.InstalledInputLanguages(j)
+            Else
+                If InputLanguage.InstalledInputLanguages(j).LayoutName.Contains("French") Or InputLanguage.InstalledInputLanguages(j).LayoutName.Contains("English") = True Then
+                    'Found an latin Keyboard
+                    LatinInput = InputLanguage.InstalledInputLanguages(j)
+                End If
+            End If
+        Next j
 
         'initialiser les criteres de laffichage avant modification
 
@@ -73,9 +93,9 @@
 
         Me.DTP_DATENAIS.Visible = False
 
-        
-            'boutton modifier 
-            BT_MODIFIER.Enabled = False
+
+        'boutton modifier 
+        BT_MODIFIER.Enabled = False
 
     End Sub
 
@@ -103,6 +123,64 @@
 
         End If
     End Sub
+
+    Private Sub TXT_NOM_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_ADR.Enter, TXT_FILSDE.Enter, TXT_ETDE.Enter, TXT_LIEUN.Enter, TXT_NomEtud.Enter, TXT_Prenoms.Enter, TXT_VILLE.Enter
+        InputLanguage.CurrentInputLanguage = LatinInput
+    End Sub
+
+    Private Sub TXT_NOMA_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_LIEUNA.Enter, TXT_NomEtudA.Enter, TXT_PrenomsA.Enter
+        InputLanguage.CurrentInputLanguage = ArabicInput
+    End Sub
+
+    Private Sub TXT_NOMA_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_ADR.Leave, TXT_FILSDE.Leave, TXT_ETDE.Leave, TXT_LIEUN.Leave, TXT_NomEtud.Leave, TXT_Prenoms.Leave, TXT_VILLE.Leave, TXT_LIEUNA.Leave, TXT_NomEtudA.Leave, TXT_PrenomsA.Leave
+        InputLanguage.CurrentInputLanguage = InputLanguage.DefaultInputLanguage
+    End Sub
+
+    Private Sub TXT_NOM_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TXT_ADR.KeyPress, TXT_FILSDE.KeyPress, TXT_ETDE.KeyPress, TXT_LIEUN.KeyPress, TXT_NomEtud.KeyPress, TXT_Prenoms.KeyPress, TXT_VILLE.KeyPress, TXT_LIEUNA.KeyPress, TXT_NomEtudA.KeyPress, TXT_PrenomsA.KeyPress
+        Dim c As Char = e.KeyChar
+
+
+        'If  Char.IsDigit(c) And Not AscW(c) = 8 And Not AscW(c) = 32 Then
+        '    e.Handled = True
+        'Else
+          
+            If (Not Regex.IsMatch(c.ToString, "\p{L}") Or Regex.IsMatch(c.ToString, "\p{IsArabic}")) And Not AscW(c) = 8 And Not AscW(c) = 32 Then
+                e.Handled = True
+                'generalesGroupBox.Controls.OfType(Of PictureBox).First(Function(x As PictureBox) (x.Name.Equals(CType(sender, Control).Name + "_ALERT"))).Visible = True
+            Else
+                'generalesGroupBox.Controls.OfType(Of PictureBox).First(Function(x As PictureBox) (x.Name.Equals(CType(sender, Control).Name + "_ALERT"))).Visible = False
+            End If
+
+        'End If
+        'If Char.IsPunctuation(c) Then
+        'e.Handled = True
+        'End If
+
+    End Sub
+
+    Private Sub TXT_NOM_KeyPressA(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TXT_LIEUNA.KeyPress, TXT_NomEtudA.KeyPress, TXT_PrenomsA.KeyPress
+        Dim c As Char = e.KeyChar
+
+
+        'If  Char.IsDigit(c) And Not AscW(c) = 8 And Not AscW(c) = 32 Then
+        '    e.Handled = True
+        'Else
+            If Not Regex.IsMatch(c.ToString, "\p{IsArabic}") And Not AscW(c) = 8 And Not AscW(c) = 32 Then
+                e.Handled = True
+                'generalesGroupBox.Controls.OfType(Of PictureBox).First(Function(x As PictureBox) (x.Name.Equals(CType(sender, Control).Name + "_ALERT"))).Visible = True
+            Else
+                'generalesGroupBox.Controls.OfType(Of PictureBox).First(Function(x As PictureBox) (x.Name.Equals(CType(sender, Control).Name + "_ALERT"))).Visible = False
+            End If
+        
+        'End If
+        'If Char.IsPunctuation(c) Then
+        'e.Handled = True
+        'End If
+
+    End Sub
+
+
+
 
     Private Sub BT_MODIFIER_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BT_MODIFIER.Click
         Dim j As Integer
@@ -217,7 +295,7 @@
 
                     For Each Critere As Critere In collection_critere
                         CType(Home.f, affichResearchResult).StudentTable.Rows.Item(CType(Home.f, affichResearchResult).SelectedStudent - 1)(Critere.getChamps) = Critere.getValeur
-                        Console.WriteLine(CType(Home.f, affichResearchResult).SelectedStudent.ToString)
+
 
                     Next
                     CType(Home.f, affichResearchResult).StudentList.Clear()
@@ -270,6 +348,10 @@
         Worning.Visible = False
         CB_SEXE.BackColor = Color.White
         CB_SEXE.ForeColor = Color.DarkGray
+    End Sub
+
+    Private Sub CB_SEXE_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles CB_SEXE.KeyPress
+        e.Handled = True
     End Sub
 
     Private Sub TXT_FILSDE_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TXT_FILSDE.Click

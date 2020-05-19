@@ -1,6 +1,8 @@
 ﻿Imports System
 Imports System.Reflection
 Imports System.Runtime.InteropServices
+Imports System.Security.Permissions
+'<Assembly: FileIOPermission(SecurityAction.RequestMinimum, read:="InfosGenerale.bin")> 
 
 ' General Information about an assembly is controlled through the following 
 ' set of attributes. Change these attribute values to modify the information

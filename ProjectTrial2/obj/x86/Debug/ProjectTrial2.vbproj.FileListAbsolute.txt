@@ -54,7 +54,6 @@ D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\
 D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.Resources.resources
 D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\ProjectTrial2.vbproj.GenerateResource.Cache
 D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement_v1.PrincipalPage.resources
-D:\@SEMESTRE 4\Projet_G18\FullApp\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\ProjectTrial2.vbprojResolveAssemblyReference.cache
 C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\bin\Debug\EsistHistoryManagement.exe.config
 C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement.xml
 C:\Users\hadia\Documents\Github\ESIHistoryManager\ProjectTrial2\obj\x86\Debug\EsistHistoryManagement.pdb

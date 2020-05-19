@@ -3,7 +3,7 @@
 Public Class BDD
 
     ' nom de fichier access
-    Public Const stringConnection = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\BDD_APPLICATION.accdb"
+    Public Const stringConnection = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=BDD_APPLICATION.accdb"
 
     'Les noms des tables de la BDD
     Public Const nomTableEtudiant = "ETUDIANT", nomTableINSCRIPTION = "INSCRIPTION"

@@ -46,7 +46,7 @@ Public Class InfosGenerales
 
     Public Shared Function Recover() As InfosGenerales
         Dim stream As FileStream
-        stream = File.OpenRead("InfosGenerale.txt")
+        stream = File.OpenRead("InfosGenerale.bin")
 
         'create the binary formatter
         Dim formatter As New BinaryFormatter
@@ -60,7 +60,7 @@ Public Class InfosGenerales
     Public Sub Save()
         'open our filestream
         Dim stream As FileStream
-        stream = File.OpenWrite("InfosGenerale.txt")
+        stream = File.OpenWrite("InfosGenerale.bin")
 
         'create the binary formatter
         Dim formatter As New BinaryFormatter

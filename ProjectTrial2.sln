@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ProjectTrial2", "ProjectTrial2\ProjectTrial2.vbproj", "{74E25838-676F-4FA2-B0E3-35574F33A3F6}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ESIHistoryManager setup", "ESIHistoryManager setup\ESIHistoryManager setup.vdproj", "{44AFF667-79C5-46F9-8D03-D66F4AFCF763}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,6 +15,9 @@ Global
 		{74E25838-676F-4FA2-B0E3-35574F33A3F6}.Debug|x86.Build.0 = Debug|x86
 		{74E25838-676F-4FA2-B0E3-35574F33A3F6}.Release|x86.ActiveCfg = Release|x86
 		{74E25838-676F-4FA2-B0E3-35574F33A3F6}.Release|x86.Build.0 = Release|x86
+		{44AFF667-79C5-46F9-8D03-D66F4AFCF763}.Debug|x86.ActiveCfg = Debug
+		{44AFF667-79C5-46F9-8D03-D66F4AFCF763}.Debug|x86.Build.0 = Debug
+		{44AFF667-79C5-46F9-8D03-D66F4AFCF763}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

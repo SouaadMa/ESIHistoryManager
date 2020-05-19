@@ -6,7 +6,7 @@
     Private file3 As String = ""
     Private file4 As String = ""
     Private eclat As New ECLATEMENT()
-    Private f_access As String = "..\..\BDD_APPLICATION"
+    Private f_access As String = "BDD_APPLICATION"
 
     Private Sub Chargement_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 

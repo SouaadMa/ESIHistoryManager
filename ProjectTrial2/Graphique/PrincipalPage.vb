@@ -39,7 +39,7 @@ Public Class PrincipalPage
 
     Private Sub Help_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Help_Button.Click
         'calling le guide en ligne
-        System.Diagnostics.Process.Start(String.Concat(System.AppDomain.CurrentDomain.BaseDirectory, "..\..\..\Help\index.html"))
+        System.Diagnostics.Process.Start(String.Concat(System.AppDomain.CurrentDomain.BaseDirectory, "Documentation\Help\index.html"))
     End Sub
 
     Private Sub Help_Button_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles Help_Button.MouseHover
